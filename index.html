@@ -309,6 +309,23 @@
   </div>
 </div>
 
+<!-- SET PASSWORD (first arrival via invitation) -->
+<div class="gate hidden" id="setpw">
+  <div class="gate-card">
+    <svg class="glogo" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="8" cy="8" r="5" stroke="#A87E3D" stroke-width="1.5"/><circle cx="8" cy="8" r="1.7" fill="#A87E3D"/>
+      <path d="M11.5 11.5L20 20M17 17l2.2-2.2M15 15l1.6-1.6" stroke="#A87E3D" stroke-width="1.5" stroke-linecap="round"/>
+    </svg>
+    <div class="eyebrow">Maison Amarine</div>
+    <h1 id="setpwTitle">Welcome</h1>
+    <p>Choose your password to enter your academy. You'll use it to sign in from now on.</p>
+    <input type="password" id="pw1" placeholder="Your new password" autocomplete="new-password">
+    <input type="password" id="pw2" placeholder="Confirm your password" autocomplete="new-password">
+    <button id="pwBtn">Enter my academy</button>
+    <div class="gate-err" id="pwErr"></div>
+  </div>
+</div>
+
 <div class="app hidden" id="app">
 
   <!-- SIDEBAR -->
@@ -855,10 +872,55 @@ document.getElementById('forgotLink').addEventListener('click',async()=>{
 });
 document.getElementById('logout').addEventListener('click',async()=>{await sb.auth.signOut();location.reload();});
 
-// ====== on load: resume existing session ======
+// ====== SET PASSWORD (first arrival via invite / recovery) ======
+let INVITE_MODE = false;
+function showSetPassword(name){
+  if(name) document.getElementById('setpwTitle').textContent = "Welcome, "+name.split(' ')[0];
+  document.getElementById('gate').classList.add('hidden');
+  document.getElementById('setpw').classList.remove('hidden');
+}
+async function submitNewPassword(){
+  const p1=document.getElementById('pw1').value;
+  const p2=document.getElementById('pw2').value;
+  const err=document.getElementById('pwErr');
+  const btn=document.getElementById('pwBtn');
+  err.textContent="";
+  if(p1.length<6){err.textContent="Please use at least 6 characters.";return;}
+  if(p1!==p2){err.textContent="The two passwords don't match.";return;}
+  btn.disabled=true;btn.textContent="Saving…";
+  const {data,error}=await sb.auth.updateUser({password:p1});
+  btn.disabled=false;btn.textContent="Enter my academy";
+  if(error){err.textContent="Could not save, please try again.";return;}
+  document.getElementById('setpw').classList.add('hidden');
+  await onSignedIn(data.user);
+}
+document.getElementById('pwBtn').addEventListener('click',submitNewPassword);
+document.getElementById('pw2').addEventListener('keydown',e=>{if(e.key==='Enter')submitNewPassword();});
+
+// détecter une arrivée par lien d'invitation / réinitialisation
+sb.auth.onAuthStateChange((event, session)=>{
+  if((event==='PASSWORD_RECOVERY' || event==='SIGNED_IN') && session && INVITE_MODE){
+    const meta = session.user.user_metadata || {};
+    showSetPassword(meta.full_name || '');
+  }
+});
+
+// ====== on load ======
 (async()=>{
+  // Un lien d'invitation/recovery contient un token dans l'URL (#access_token=... type=invite/recovery)
+  const hash = window.location.hash || '';
+  if(hash.includes('type=invite') || hash.includes('type=recovery') || hash.includes('type=signup')){
+    INVITE_MODE = true;
+  }
   const {data}=await sb.auth.getSession();
-  if(data.session){ await onSignedIn(data.session.user); }
+  if(data.session){
+    if(INVITE_MODE){
+      const meta = data.session.user.user_metadata || {};
+      showSetPassword(meta.full_name || '');
+    } else {
+      await onSignedIn(data.session.user);
+    }
+  }
 })();
 </script>
 </body>
