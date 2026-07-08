@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maison Amarine — The Academy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@500;600;700&family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ivory:#F8F4EC; --paper:#FFFFFF; --ink:#211C15; --ink-soft:#4a4238;
+    --gold:#A87E3D; --gold-deep:#8a6630; --gold-lt:#C9A867; --gold-wash:#F3EAD8;
+    --stone:#7d7568; --line:#E6DECE; --green:#5f7d52; --shadow:rgba(33,28,21,0.10);
+    --sidebar:#211C15;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--ivory);color:var(--ink);font-family:'Jost',sans-serif;font-weight:400;-webkit-font-smoothing:antialiased;line-height:1.55;}
+  ::selection{background:rgba(168,126,61,0.22);}
+  a{text-decoration:none;color:inherit;}
+
+  /* ---------- layout: sidebar + main ---------- */
+  .app{display:flex;min-height:100vh;}
+  .sidebar{
+    width:248px;flex-shrink:0;background:var(--sidebar);color:#EDE6D8;
+    display:flex;flex-direction:column;position:sticky;top:0;height:100vh;padding:26px 18px;
+  }
+  .sb-brand{display:flex;align-items:center;gap:10px;padding:0 8px 4px;margin-bottom:30px;}
+  .sb-brand svg{width:26px;height:26px;flex-shrink:0;}
+  .sb-brand .name{font-family:'Cormorant',serif;font-weight:700;font-size:21px;color:#F6F0E4;line-height:1;}
+  .sb-brand .name span{color:var(--gold-lt);}
+  .sb-brand .tag{display:block;font-size:7.5px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:#9a9184;margin-top:3px;}
+  .nav{display:flex;flex-direction:column;gap:4px;}
+  .nav-item{
+    display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:11px;cursor:pointer;
+    font-size:14.5px;font-weight:500;color:#c7bfae;transition:background .2s,color .2s;
+  }
+  .nav-item svg{width:19px;height:19px;flex-shrink:0;}
+  .nav-item:hover{background:rgba(255,255,255,.06);color:#F6F0E4;}
+  .nav-item.active{background:var(--gold);color:#fff;}
+  .nav-sep{height:1px;background:rgba(255,255,255,.09);margin:16px 8px;}
+  .sb-foot{margin-top:auto;padding:14px 10px 0;}
+  .sb-user{display:flex;align-items:center;gap:11px;}
+  .sb-user .av{width:36px;height:36px;border-radius:50%;background:var(--gold);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:15px;flex-shrink:0;}
+  .sb-user .un{font-size:13.5px;font-weight:600;color:#F6F0E4;line-height:1.2;}
+  .sb-user .ur{font-size:11px;color:#9a9184;}
+
+  .main{flex:1;min-width:0;}
+  .topbar-m{display:none;}
+  .page{max-width:940px;margin:0 auto;padding:38px 40px 60px;}
+  .page.hidden{display:none;}
+
+  /* ---------- shared bits ---------- */
+  .page-h{margin-bottom:8px;}
+  .page-h .eyebrow{font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;}
+  .page-h h1{font-family:'Cormorant',serif;font-weight:700;font-size:34px;line-height:1.1;color:var(--ink);}
+  .page-h p{font-size:15px;color:var(--ink-soft);margin-top:8px;max-width:620px;}
+
+  .btn-primary{display:inline-flex;align-items:center;gap:10px;font-size:15px;font-weight:600;color:#fff;background:var(--gold);border:none;border-radius:12px;padding:15px 26px;cursor:pointer;transition:background .2s,transform .2s,box-shadow .2s;box-shadow:0 6px 16px rgba(168,126,61,0.28);}
+  .btn-primary:hover{background:var(--gold-deep);transform:translateY(-2px);box-shadow:0 10px 22px rgba(168,126,61,0.34);}
+  .btn-primary svg{width:17px;height:17px;}
+
+  /* ================= PROGRAM PAGE ================= */
+  .resume{margin:26px 0 10px;background:var(--paper);border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 10px 30px var(--shadow);}
+  .resume-inner{display:flex;align-items:stretch;flex-wrap:wrap;}
+  .resume-left{flex:1;min-width:280px;padding:30px 34px;}
+  .resume-hi{font-size:15px;color:var(--stone);font-weight:500;margin-bottom:6px;}
+  .resume-left h2{font-family:'Cormorant',serif;font-weight:700;font-size:29px;line-height:1.15;color:var(--ink);margin-bottom:6px;}
+  .resume-left .desc{font-size:14.5px;color:var(--ink-soft);margin-bottom:22px;}
+  .resume-right{width:290px;background:var(--gold-wash);padding:30px 34px;display:flex;flex-direction:column;justify-content:center;gap:18px;border-left:1px solid var(--line);}
+  .prog-row{display:flex;align-items:baseline;justify-content:space-between;}
+  .prog-row .big{font-family:'Cormorant',serif;font-weight:700;font-size:40px;color:var(--gold);line-height:1;}
+  .prog-row .of{font-size:14px;color:var(--stone);font-weight:500;}
+  .prog-label{font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--stone);}
+  .bar-track{height:10px;background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden;}
+  .bar-fill{height:100%;background:linear-gradient(90deg,var(--gold-lt),var(--gold));border-radius:20px;transition:width 1s cubic-bezier(.22,.61,.36,1);}
+  .prog-sub{font-size:12.5px;color:var(--ink-soft);}
+  .sec-head{margin:40px 0 18px;}
+  .sec-head h3{font-family:'Cormorant',serif;font-weight:700;font-size:24px;color:var(--ink);}
+  .sec-head p{font-size:14px;color:var(--stone);margin-top:2px;}
+  .weeks{display:flex;flex-direction:column;gap:14px;margin-bottom:20px;}
+  .week{display:flex;align-items:center;gap:20px;width:100%;background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:20px 24px;cursor:pointer;text-align:left;font-family:inherit;transition:transform .2s,box-shadow .2s,border-color .2s;}
+  .week:hover{transform:translateY(-2px);box-shadow:0 12px 28px var(--shadow);border-color:var(--gold-lt);}
+  .week.locked{cursor:not-allowed;background:#faf7f0;opacity:.72;}
+  .week.locked:hover{transform:none;box-shadow:none;border-color:var(--line);}
+  .week-badge{width:54px;height:54px;flex-shrink:0;border-radius:14px;display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:'Cormorant',serif;font-weight:700;background:var(--gold-wash);color:var(--gold-deep);}
+  .week-badge .wk{font-size:9px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);font-family:'Jost',sans-serif;line-height:1;}
+  .week-badge .n{font-size:26px;line-height:1;}
+  .week.done .week-badge{background:var(--gold);color:#fff;}
+  .week.done .week-badge .wk{color:rgba(255,255,255,.85);}
+  .week.locked .week-badge{background:#efe9dc;color:var(--stone);}
+  .week.locked .week-badge .wk{color:var(--stone);}
+  .week-main{flex:1;min-width:0;}
+  .week-main h4{font-family:'Cormorant',serif;font-weight:600;font-size:21px;color:var(--ink);line-height:1.2;}
+  .week-main .wsub{font-size:13.5px;color:var(--ink-soft);margin-top:2px;}
+  .week-pill{display:inline-block;margin-top:8px;font-size:10.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--gold-deep);background:var(--gold-wash);padding:3px 10px;border-radius:20px;}
+  .week-right{flex-shrink:0;display:flex;align-items:center;gap:14px;}
+  .state{display:flex;align-items:center;gap:7px;font-size:13px;font-weight:600;}
+  .state.done{color:var(--gold);} .state.current{color:var(--ink);} .state.locked{color:var(--stone);}
+  .state .ic{width:20px;height:20px;display:flex;align-items:center;justify-content:center;}
+  .state .ic svg{width:18px;height:18px;}
+  .go{width:40px;height:40px;border-radius:50%;flex-shrink:0;background:var(--gold-wash);color:var(--gold-deep);display:flex;align-items:center;justify-content:center;font-size:18px;transition:background .2s,transform .2s;}
+  .week:hover .go{background:var(--gold);color:#fff;transform:translateX(3px);}
+  .week.locked .go{background:#efe9dc;color:var(--stone);}
+  .mentor{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;background:var(--ink);color:#F1E9D8;border-radius:18px;padding:30px 34px;margin-top:24px;}
+  .mentor h3{font-family:'Cormorant',serif;font-weight:700;font-size:24px;color:#F6F0E4;margin-bottom:5px;}
+  .mentor p{font-size:14px;color:#cfc7b6;max-width:460px;}
+  .mentor .btn-gold{font-size:14px;font-weight:600;color:var(--ink);background:var(--gold-lt);border:none;border-radius:12px;padding:15px 26px;cursor:pointer;white-space:nowrap;transition:background .2s,transform .2s;}
+  .mentor .btn-gold:hover{background:#d8bd8a;transform:translateY(-2px);}
+
+  /* ================= CAREER HUB ================= */
+  .intro-card{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:24px 28px;margin:24px 0 10px;box-shadow:0 8px 24px var(--shadow);}
+  .intro-card p{font-size:14.5px;color:var(--ink-soft);line-height:1.7;}
+  .intro-card p strong{color:var(--ink);font-weight:600;}
+  .note-band{display:flex;gap:12px;align-items:flex-start;background:var(--gold-wash);border-radius:12px;padding:15px 18px;margin:18px 0 4px;}
+  .note-band svg{width:20px;height:20px;flex-shrink:0;color:var(--gold-deep);margin-top:1px;}
+  .note-band p{font-size:13px;color:var(--ink-soft);line-height:1.6;}
+
+  .roles{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin:16px 0 8px;}
+  .role{background:var(--paper);border:1px solid var(--line);border-radius:15px;padding:22px 24px;transition:transform .2s,box-shadow .2s,border-color .2s;}
+  .role:hover{transform:translateY(-3px);box-shadow:0 14px 30px var(--shadow);border-color:var(--gold-lt);}
+  .role h4{font-family:'Cormorant',serif;font-weight:700;font-size:20px;color:var(--ink);margin-bottom:3px;}
+  .role .salary{display:inline-block;font-size:12px;font-weight:600;color:var(--gold-deep);background:var(--gold-wash);padding:3px 11px;border-radius:20px;margin-bottom:10px;}
+  .role p{font-size:13.5px;color:var(--ink-soft);line-height:1.6;}
+  .role .rel{font-size:12px;color:var(--stone);margin-top:10px;padding-top:10px;border-top:1px solid var(--line);}
+  .role .rel b{color:var(--gold-deep);font-weight:600;}
+
+  .agencies{display:flex;flex-direction:column;gap:12px;margin:16px 0 8px;}
+  .agency{display:flex;align-items:center;gap:18px;background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:18px 22px;transition:border-color .2s,transform .2s;}
+  .agency:hover{border-color:var(--gold-lt);transform:translateX(3px);}
+  .agency .flag{width:46px;height:46px;border-radius:11px;background:var(--gold-wash);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;}
+  .agency-main{flex:1;min-width:0;}
+  .agency-main .an{font-size:16px;font-weight:600;color:var(--ink);}
+  .agency-main .ad{font-size:13px;color:var(--ink-soft);margin-top:1px;}
+  .agency .region{font-size:11px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--stone);background:var(--ivory);border:1px solid var(--line);padding:5px 12px;border-radius:20px;white-space:nowrap;}
+
+  .platforms{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:16px 0 8px;}
+  .platform{background:var(--paper);border:1px solid var(--line);border-radius:13px;padding:16px 18px;text-align:center;transition:transform .2s,border-color .2s;}
+  .platform:hover{transform:translateY(-2px);border-color:var(--gold-lt);}
+  .platform .pn{font-size:14.5px;font-weight:600;color:var(--ink);}
+  .platform .pd{font-size:12px;color:var(--stone);margin-top:2px;}
+
+  /* ================= CODES LIBRARY ================= */
+  .lib-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin:24px 0;}
+  .lib-card{background:var(--paper);border:1px solid var(--line);border-radius:15px;padding:22px 24px;transition:transform .2s,box-shadow .2s,border-color .2s;cursor:pointer;}
+  .lib-card:hover{transform:translateY(-3px);box-shadow:0 14px 30px var(--shadow);border-color:var(--gold-lt);}
+  .lib-card .lc-ic{width:44px;height:44px;border-radius:12px;background:var(--gold-wash);color:var(--gold-deep);display:flex;align-items:center;justify-content:center;margin-bottom:14px;}
+  .lib-card .lc-ic svg{width:21px;height:21px;}
+  .lib-card h4{font-family:'Cormorant',serif;font-weight:700;font-size:19px;color:var(--ink);margin-bottom:5px;}
+  .lib-card p{font-size:13px;color:var(--ink-soft);line-height:1.6;}
+  .lib-card .lc-tag{font-size:11px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--gold-deep);margin-top:12px;display:inline-block;}
+
+  /* section titles inside pages */
+  .block-title{font-family:'Cormorant',serif;font-weight:700;font-size:22px;color:var(--ink);margin:34px 0 4px;}
+  .block-sub{font-size:13.5px;color:var(--stone);margin-bottom:6px;}
+
+  /* job region tabs + cards */
+  .job-tabs{display:flex;gap:8px;margin:14px 0 16px;flex-wrap:wrap;}
+  .job-tab{font-family:'Jost',sans-serif;font-size:13.5px;font-weight:600;color:var(--ink-soft);background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:9px 18px;cursor:pointer;transition:all .2s;}
+  .job-tab:hover{border-color:var(--gold-lt);}
+  .job-tab.active{background:var(--gold);color:#fff;border-color:var(--gold);}
+  .jobs{display:flex;flex-direction:column;gap:12px;}
+  .job{display:flex;align-items:flex-start;gap:18px;background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:20px 22px;transition:border-color .2s,transform .2s,box-shadow .2s;}
+  .job:hover{border-color:var(--gold-lt);transform:translateY(-2px);box-shadow:0 12px 26px var(--shadow);}
+  .job-loc{width:52px;flex-shrink:0;text-align:center;}
+  .job-loc .fl{font-size:22px;line-height:1.2;}
+  .job-loc .ct{font-size:10px;font-weight:600;letter-spacing:.03em;text-transform:uppercase;color:var(--stone);margin-top:2px;}
+  .job-main{flex:1;min-width:0;}
+  .job-main .jt{font-family:'Cormorant',serif;font-weight:700;font-size:19px;color:var(--ink);line-height:1.2;}
+  .job-main .jm{font-size:13px;color:var(--ink-soft);margin-top:3px;}
+  .job-main .jtags{display:flex;gap:7px;flex-wrap:wrap;margin-top:9px;}
+  .job-main .jtag{font-size:11px;font-weight:600;color:var(--gold-deep);background:var(--gold-wash);padding:3px 10px;border-radius:20px;}
+  .job-sal{flex-shrink:0;text-align:right;}
+  .job-sal .amt{font-family:'Cormorant',serif;font-weight:700;font-size:17px;color:var(--gold-deep);}
+  .job-sal .per{font-size:11px;color:var(--stone);}
+  @media(max-width:860px){
+    .job{flex-wrap:wrap;} .job-sal{text-align:left;width:100%;padding-top:8px;border-top:1px solid var(--line);}
+  }
+
+  /* calendar page */
+  .cal-phases{display:flex;flex-direction:column;gap:0;margin:24px 0 10px;position:relative;}
+  .cal-week{display:flex;gap:20px;padding:18px 0;border-bottom:1px solid var(--line);position:relative;}
+  .cal-week:last-child{border-bottom:none;}
+  .cal-marker{width:56px;flex-shrink:0;display:flex;flex-direction:column;align-items:center;}
+  .cal-marker .cm-dot{width:38px;height:38px;border-radius:50%;background:var(--gold-wash);color:var(--gold-deep);display:flex;align-items:center;justify-content:center;font-family:'Cormorant',serif;font-weight:700;font-size:17px;border:2px solid var(--gold-lt);}
+  .cal-week.done-cal .cm-dot{background:var(--gold);color:#fff;border-color:var(--gold);}
+  .cal-body{flex:1;min-width:0;}
+  .cal-body .cw-title{font-family:'Cormorant',serif;font-weight:700;font-size:18px;color:var(--ink);}
+  .cal-body .cw-sub{font-size:13px;color:var(--ink-soft);margin-top:2px;}
+  .cal-body .cw-events{display:flex;gap:8px;flex-wrap:wrap;margin-top:9px;}
+  .cw-ev{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:500;color:var(--ink-soft);background:var(--ivory);border:1px solid var(--line);padding:5px 11px;border-radius:20px;}
+  .cw-ev.mentor-ev{background:var(--gold-wash);color:var(--gold-deep);border-color:transparent;font-weight:600;}
+  .cw-ev svg{width:13px;height:13px;}
+
+  .my-cal{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:24px 26px;margin-top:20px;box-shadow:0 8px 24px var(--shadow);}
+  .my-cal h3{font-family:'Cormorant',serif;font-weight:700;font-size:21px;color:var(--ink);margin-bottom:4px;}
+  .my-cal p{font-size:13.5px;color:var(--ink-soft);margin-bottom:16px;}
+  .cal-add{display:flex;gap:10px;flex-wrap:wrap;}
+  .cal-add input{flex:1;min-width:180px;font-family:'Jost',sans-serif;font-size:14px;color:var(--ink);background:var(--ivory);border:1px solid var(--line);border-radius:11px;padding:12px 15px;outline:none;transition:border-color .2s;}
+  .cal-add input:focus{border-color:var(--gold-lt);}
+  .cal-add input[type=date]{max-width:170px;flex:0;}
+  .cal-add button{font-family:'Jost',sans-serif;font-size:14px;font-weight:600;color:#fff;background:var(--gold);border:none;border-radius:11px;padding:12px 22px;cursor:pointer;transition:background .2s;}
+  .cal-add button:hover{background:var(--gold-deep);}
+  .my-events{display:flex;flex-direction:column;gap:9px;margin-top:18px;}
+  .my-event{display:flex;align-items:center;gap:14px;background:var(--ivory);border:1px solid var(--line);border-radius:11px;padding:13px 16px;}
+  .my-event .me-date{font-size:12px;font-weight:600;color:var(--gold-deep);background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:6px 10px;text-align:center;min-width:64px;flex-shrink:0;}
+  .my-event .me-title{flex:1;font-size:14px;color:var(--ink);font-weight:500;}
+  .my-event .me-del{background:none;border:none;color:var(--stone);cursor:pointer;font-size:18px;line-height:1;padding:4px;transition:color .2s;}
+  .my-event .me-del:hover{color:#a44;}
+  .my-empty{font-size:13px;color:var(--stone);text-align:center;padding:18px;font-style:italic;}
+
+  /* ================= modal (shared) ================= */
+  .overlay{position:fixed;inset:0;z-index:200;background:rgba(33,28,21,0.55);-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);display:none;align-items:flex-start;justify-content:center;padding:50px 18px;overflow-y:auto;}
+  .overlay.open{display:flex;}
+  .modal{background:var(--ivory);border-radius:20px;max-width:640px;width:100%;box-shadow:0 40px 100px rgba(33,28,21,.4);animation:rise .4s cubic-bezier(.22,.61,.36,1);overflow:hidden;}
+  @keyframes rise{from{opacity:0;transform:translateY(22px);}to{opacity:1;transform:none;}}
+  .modal-head{padding:28px 32px 24px;background:var(--paper);border-bottom:1px solid var(--line);position:relative;}
+  .modal-head .row{display:flex;align-items:center;gap:12px;margin-bottom:12px;}
+  .modal-head .m-badge{width:46px;height:46px;border-radius:12px;background:var(--gold-wash);color:var(--gold-deep);display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:'Cormorant',serif;font-weight:700;flex-shrink:0;}
+  .modal-head .m-badge .wk{font-size:8px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);font-family:'Jost',sans-serif;}
+  .modal-head .m-badge .n{font-size:22px;line-height:1;}
+  .modal-head .m-pill{font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--gold-deep);background:var(--gold-wash);padding:4px 11px;border-radius:20px;}
+  .modal-head h2{font-family:'Cormorant',serif;font-weight:700;font-size:27px;line-height:1.15;color:var(--ink);}
+  .modal-head .m-sub{font-size:14px;color:var(--ink-soft);margin-top:4px;}
+  .modal-close{position:absolute;top:22px;right:24px;width:32px;height:32px;border-radius:50%;background:var(--ivory);border:1px solid var(--line);font-size:18px;color:var(--stone);cursor:pointer;line-height:1;transition:all .2s;}
+  .modal-close:hover{background:#fff;color:var(--ink);}
+  .modal-body{padding:26px 32px 30px;}
+  .m-obj{font-size:14.5px;color:var(--ink-soft);line-height:1.65;background:var(--gold-wash);border-radius:12px;padding:16px 18px;margin-bottom:22px;}
+  .m-steps-label{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--stone);margin-bottom:12px;}
+  .lesson{display:flex;align-items:center;gap:15px;padding:15px 16px;margin-bottom:10px;background:var(--paper);border:1px solid var(--line);border-radius:13px;transition:border-color .2s,background .2s;}
+  .lesson:hover{border-color:var(--gold-lt);}
+  .lesson.done{background:#fbfaf5;}
+  .lesson-ic{width:42px;height:42px;border-radius:11px;flex-shrink:0;background:var(--gold-wash);display:flex;align-items:center;justify-content:center;color:var(--gold-deep);}
+  .lesson-ic svg{width:19px;height:19px;}
+  .lesson-txt{flex:1;min-width:0;}
+  .lesson-txt .lt{font-size:15px;font-weight:600;color:var(--ink);}
+  .lesson-txt .lk{font-size:12.5px;color:var(--stone);margin-top:1px;}
+  .lesson-check{width:28px;height:28px;border-radius:50%;border:2px solid var(--line);flex-shrink:0;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;background:#fff;}
+  .lesson-check:hover{border-color:var(--gold-lt);}
+  .lesson-check.checked{background:var(--gold);border-color:var(--gold);}
+  .lesson-check svg{width:15px;height:15px;color:#fff;opacity:0;transition:opacity .2s;}
+  .lesson-check.checked svg{opacity:1;}
+  .modal-foot{padding:8px 32px 30px;}
+  .mark-week{width:100%;font-size:15px;font-weight:600;color:#fff;background:var(--gold);border:none;border-radius:13px;padding:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;transition:background .2s,transform .2s;}
+  .mark-week:hover{background:var(--gold-deep);transform:translateY(-2px);}
+  .mark-week svg{width:18px;height:18px;}
+  .mark-week.is-done{background:var(--green);}
+  .mark-week.is-done:hover{background:#4f6a45;}
+
+  /* mobile */
+  @media(max-width:860px){
+    .app{flex-direction:column;}
+    .sidebar{display:none;}
+    .topbar-m{display:flex;align-items:center;justify-content:space-between;padding:14px 18px;background:var(--sidebar);color:#F6F0E4;position:sticky;top:0;z-index:150;}
+    .topbar-m .name{font-family:'Cormorant',serif;font-weight:700;font-size:19px;}
+    .topbar-m .name span{color:var(--gold-lt);}
+    .m-tabs{display:flex;gap:6px;background:var(--sidebar);padding:0 12px 12px;position:sticky;top:48px;z-index:149;overflow-x:auto;}
+    .m-tab{white-space:nowrap;font-size:13px;font-weight:600;color:#c7bfae;padding:9px 15px;border-radius:20px;cursor:pointer;}
+    .m-tab.active{background:var(--gold);color:#fff;}
+    .page{padding:24px 18px 50px;}
+    .roles,.platforms,.lib-grid{grid-template-columns:1fr;}
+    .resume-inner{flex-direction:column;} .resume-right{width:100%;border-left:none;border-top:1px solid var(--line);}
+    .week-main .wsub{display:none;} .week-right .state span:not(.ic){display:none;}
+    .mentor{flex-direction:column;align-items:flex-start;}
+    .modal-head,.modal-body,.modal-foot{padding-left:22px;padding-right:22px;}
+    .page-h h1{font-size:28px;}
+  }
+  @media(min-width:861px){.m-tabs,.topbar-m{display:none;}}
+  @media(prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;transition-duration:.12s!important;}html{scroll-behavior:auto;}}
+
+  /* LOGIN GATE */
+  .gate{position:fixed;inset:0;z-index:500;background:var(--sidebar);display:flex;align-items:center;justify-content:center;padding:20px;}
+  .gate.hidden{display:none;}
+  .gate-card{background:var(--ivory);border-radius:20px;max-width:410px;width:100%;padding:42px 40px;box-shadow:0 40px 100px rgba(0,0,0,.4);text-align:center;}
+  .gate-card .glogo{width:40px;height:40px;margin:0 auto 20px;}
+  .gate-card .eyebrow{font-size:10px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;}
+  .gate-card h1{font-family:'Cormorant',serif;font-weight:700;font-size:30px;color:var(--ink);margin-bottom:6px;}
+  .gate-card p{font-size:13.5px;color:var(--ink-soft);margin-bottom:26px;}
+  .gate-card input{width:100%;font-family:'Jost',sans-serif;font-size:15px;color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:14px 16px;outline:none;margin-bottom:12px;transition:border-color .2s;}
+  .gate-card input:focus{border-color:var(--gold-lt);}
+  .gate-card button{width:100%;font-family:'Jost',sans-serif;font-size:15px;font-weight:600;color:#fff;background:var(--gold);border:none;border-radius:12px;padding:15px;cursor:pointer;transition:background .2s;}
+  .gate-card button:hover{background:var(--gold-deep);}
+  .gate-card button:disabled{opacity:.6;cursor:default;}
+  .gate-err{font-size:12.5px;color:#a4483f;margin-top:12px;min-height:16px;}
+  .gate-link{font-size:12.5px;color:var(--gold-deep);margin-top:18px;cursor:pointer;text-decoration:underline;display:inline-block;}
+  .app.hidden{display:none;}
+  .logout{display:flex;align-items:center;gap:9px;font-size:12.5px;font-weight:500;color:#9a9184;cursor:pointer;padding:8px 6px;margin-top:10px;transition:color .2s;}
+  .logout:hover{color:#F6F0E4;} .logout svg{width:16px;height:16px;}
+</style>
+</head>
+<body>
+
+<!-- LOGIN GATE -->
+<div class="gate" id="gate">
+  <div class="gate-card">
+    <svg class="glogo" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="8" cy="8" r="5" stroke="#A87E3D" stroke-width="1.5"/><circle cx="8" cy="8" r="1.7" fill="#A87E3D"/>
+      <path d="M11.5 11.5L20 20M17 17l2.2-2.2M15 15l1.6-1.6" stroke="#A87E3D" stroke-width="1.5" stroke-linecap="round"/>
+    </svg>
+    <div class="eyebrow">Maison Amarine</div>
+    <h1>Welcome back</h1>
+    <p>Sign in to enter your academy.</p>
+    <input type="email" id="gateEmail" placeholder="Your email" autocomplete="email">
+    <input type="password" id="gatePass" placeholder="Your password" autocomplete="current-password">
+    <button id="gateBtn">Sign in</button>
+    <div class="gate-err" id="gateErr"></div>
+    <span class="gate-link" id="forgotLink">Forgot your password?</span>
+  </div>
+</div>
+
+<div class="app hidden" id="app">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sb-brand">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="8" cy="8" r="5" stroke="#C9A867" stroke-width="1.5"/>
+        <circle cx="8" cy="8" r="1.7" fill="#C9A867"/>
+        <path d="M11.5 11.5L20 20M17 17l2.2-2.2M15 15l1.6-1.6" stroke="#C9A867" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+      <div><div class="name">Maison <span>Amarine</span></div><div class="tag">The Academy</div></div>
+    </div>
+    <nav class="nav" id="nav">
+      <div class="nav-item active" data-page="program">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 6h16M4 12h16M4 18h10" stroke-linecap="round"/></svg>
+        My Program
+      </div>
+      <div class="nav-item" data-page="career">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" stroke-linecap="round"/></svg>
+        Career Hub
+      </div>
+      <div class="nav-item" data-page="library">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 5v14M4 5a2 2 0 0 1 2-2h5v16H6a2 2 0 0 0-2 2M20 5v14M20 5a2 2 0 0 0-2-2h-5v16h5a2 2 0 0 1 2 2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Codes Library
+      </div>
+      <div class="nav-item" data-page="calendar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4" stroke-linecap="round"/></svg>
+        Calendar
+      </div>
+      <div class="nav-sep"></div>
+      <div class="nav-item" data-page="program" data-scroll="mentor">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6" stroke-linecap="round"/></svg>
+        Mentorship
+      </div>
+    </nav>
+    <div class="sb-foot">
+      <div class="sb-user">
+        <div class="av" id="sbAv">·</div>
+        <div><div class="un" id="sbName">—</div><div class="ur" id="sbRole">Student</div></div>
+      </div>
+      <div class="logout" id="logout"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9" stroke-linecap="round" stroke-linejoin="round"/></svg>Sign out</div>
+    </div>
+  </aside>
+
+  <!-- mobile topbar + tabs -->
+  <div class="topbar-m"><div class="name">Maison <span>Amarine</span></div><div class="av" style="width:32px;height:32px;border-radius:50%;background:#A87E3D;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:13px;">A</div></div>
+  <div class="m-tabs" id="mTabs">
+    <div class="m-tab active" data-page="program">Program</div>
+    <div class="m-tab" data-page="career">Career Hub</div>
+    <div class="m-tab" data-page="library">Codes Library</div>
+    <div class="m-tab" data-page="calendar">Calendar</div>
+  </div>
+
+  <main class="main">
+
+    <!-- ============ PAGE: PROGRAM ============ -->
+    <section class="page" id="page-program">
+      <div class="resume">
+        <div class="resume-inner">
+          <div class="resume-left">
+            <div class="resume-hi" id="hiLine">Hi Alexandra</div>
+            <h2 id="resumeTitle">Start Week 1</h2>
+            <div class="desc" id="resumeDesc">The World You Are Entering — who the ultra-wealthy are, and what they truly want.</div>
+            <button class="btn-primary" id="resumeBtn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="6 4 20 12 6 20 6 4" fill="currentColor" stroke="none"/></svg>
+              <span id="resumeBtnLabel">Start this week</span>
+            </button>
+          </div>
+          <div class="resume-right">
+            <div><div class="prog-label">Your progress</div><div class="prog-row"><span class="big" id="bigDone">0</span><span class="of">/ 8 weeks</span></div></div>
+            <div class="bar-track"><div class="bar-fill" id="barFill" style="width:0%"></div></div>
+            <div class="prog-sub" id="progSub">Welcome, let's begin your first week.</div>
+          </div>
+        </div>
+      </div>
+      <div class="sec-head"><h3>My program</h3><p>Finish a week to unlock the next. Take your time, this is a journey, not a race.</p></div>
+      <div class="weeks" id="weekList"></div>
+      <div class="mentor" id="mentor">
+        <div><h3>Your mentorship session</h3><p>Every week includes a personal session: feedback on your work, your questions, and guidance made for your path. It's included in your program.</p></div>
+        <button class="btn-gold" onclick="alert('In the live academy, this opens your booking calendar.')">Book my session</button>
+      </div>
+    </section>
+
+    <!-- ============ PAGE: CAREER HUB ============ -->
+    <section class="page hidden" id="page-career">
+      <div class="page-h">
+        <div class="eyebrow">Career Hub</div>
+        <h1>Where this world hires.</h1>
+        <p>The private-service world rarely advertises on job boards, it hires through trust, referral, and a handful of specialist agencies. This hub gives you the map: the roles, the pay, and exactly where to look, on both sides of the Atlantic.</p>
+      </div>
+
+      <div class="note-band">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01" stroke-linecap="round"/></svg>
+        <p>Maison Amarine gives you the tools and the map to build your own path, not a placement or guaranteed introductions. The roles and agencies below are real starting points for your own outreach. Listings move fast, always check each agency's live openings.</p>
+      </div>
+
+      <div class="block-title">The roles you're training for</div>
+      <div class="block-sub">What each one does, and what it typically pays.</div>
+      <div class="roles">
+        <div class="role">
+          <h4>Private Concierge / Lifestyle Manager</h4>
+          <span class="salary">≈ $70k–$150k+</span>
+          <p>The right hand of a UHNW individual or family: reservations, travel, sourcing the impossible, anticipating every need. The purest expression of what you learn here.</p>
+          <div class="rel"><b>Maps to:</b> Weeks 1–4 (codes, discretion, anticipation) + Week 5 (toolkit).</div>
+        </div>
+        <div class="role">
+          <h4>Estate / House Manager</h4>
+          <span class="salary">≈ $90k–$200k+</span>
+          <p>Runs one or several luxury residences: staff, vendors, budgets, standards, guest experience. A senior, trusted role, often the top of a household team.</p>
+          <div class="rel"><b>Maps to:</b> Week 5 (operations, staff, budgets) + Week 3 (trust).</div>
+        </div>
+        <div class="role">
+          <h4>Private / Executive PA to UHNW</h4>
+          <span class="salary">≈ $80k–$160k+</span>
+          <p>Manages a principal's calendar, communication, travel and personal life with total discretion. Often blends business and household support.</p>
+          <div class="rel"><b>Maps to:</b> Weeks 3–4 (presence, anticipation) + Week 5.</div>
+        </div>
+        <div class="role">
+          <h4>Guest Relations / Villa &amp; Chalet Host</h4>
+          <span class="salary">≈ $55k–$120k+</span>
+          <p>Front-of-house excellence in private villas, chalets, or ultra-luxury hospitality: welcoming guests, orchestrating their stay, embodying the codes of the house.</p>
+          <div class="rel"><b>Maps to:</b> Weeks 2–4 (codes, presence, service).</div>
+        </div>
+        <div class="role">
+          <h4>Chief of Staff (Private Household)</h4>
+          <span class="salary">≈ $150k–$350k+</span>
+          <p>The strategic head of a UHNW family's entire operation, across properties, staff, and lifestyle. The summit of a private-service career.</p>
+          <div class="rel"><b>Maps to:</b> The full program + years of built trust.</div>
+        </div>
+        <div class="role">
+          <h4>Yacht / Private Aviation Interior</h4>
+          <span class="salary">≈ $50k–$130k+</span>
+          <p>Chief stew, interior crew, or cabin service aboard superyachts and private jets, service at the very highest standard, on the move.</p>
+          <div class="rel"><b>Maps to:</b> Weeks 2–4 (service codes, anticipation).</div>
+        </div>
+      </div>
+
+      <div class="block-title">The specialist agencies</div>
+      <div class="block-sub">This world hires through these. Register with several, they're your real doors in.</div>
+      <div class="agencies" id="agencyList"></div>
+
+      <div class="block-title">Where else to look</div>
+      <div class="block-sub">Beyond agencies, keep an eye on these.</div>
+      <div class="platforms">
+        <div class="platform"><div class="pn">LinkedIn</div><div class="pd">Search "private" + role; follow agencies</div></div>
+        <div class="platform"><div class="pn">Agency job boards</div><div class="pd">Most post live roles weekly</div></div>
+        <div class="platform"><div class="pn">Referrals</div><div class="pd">Your network, the #1 real channel</div></div>
+      </div>
+
+      <div class="block-title">Live openings — a snapshot</div>
+      <div class="block-sub">Real roles from the market, grouped by region. <span id="jobsUpdated" style="color:var(--gold-deep);font-weight:600;"></span></div>
+      <div class="job-tabs" id="jobTabs">
+        <button class="job-tab active" data-region="americas">🌎 Americas</button>
+        <button class="job-tab" data-region="europe">🌍 Europe</button>
+        <button class="job-tab" data-region="mideast">🌏 Middle East &amp; Asia</button>
+      </div>
+      <div class="jobs" id="jobList"></div>
+
+      <div class="note-band" style="margin-top:22px;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01" stroke-linecap="round"/></svg>
+        <p>These listings are a monthly snapshot shown as examples of what the market offers. They are not live-updated in real time, always apply through each agency's current openings via the links above.</p>
+      </div>
+
+      <div class="note-band" style="margin-top:14px;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l2.5 6.5L21 9l-5 4.5L17.5 21 12 17l-5.5 4L8 13.5 3 9l6.5-.5z" stroke-linejoin="round"/></svg>
+        <p><strong>Week 6 of your program</strong> shows you exactly how to approach these agencies, present yourself, and turn cold outreach into your first introduction. Complete it before you start applying.</p>
+      </div>
+    </section>
+
+    <!-- ============ PAGE: CODES LIBRARY ============ -->
+    <section class="page hidden" id="page-library">
+      <div class="page-h">
+        <div class="eyebrow">Codes Library</div>
+        <h1>Your confidential references.</h1>
+        <p>The insider notes and reference documents from your program, gathered in one place. These are yours to keep, and to return to throughout your career.</p>
+      </div>
+      <div class="lib-grid" id="libGrid"></div>
+      <div class="note-band" style="margin-top:8px;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>
+        <p>Each note unlocks as you reach its week. Keep progressing through your program to open the full library.</p>
+      </div>
+    </section>
+
+    <!-- ============ PAGE: CALENDAR ============ -->
+    <section class="page hidden" id="page-calendar">
+      <div class="page-h">
+        <div class="eyebrow">Calendar</div>
+        <h1>Your journey, week by week.</h1>
+        <p>The rhythm of your eight weeks, your mentorship sessions, and the milestones ahead. Add your own dates below to keep everything in one place.</p>
+      </div>
+
+      <div class="block-title">The program rhythm</div>
+      <div class="block-sub">One week at a time. Each week ends with a personal mentorship session.</div>
+      <div class="cal-phases" id="calPhases"></div>
+
+      <div class="my-cal">
+        <h3>My dates</h3>
+        <p>Booked a mentorship call, an interview, or set yourself a deadline? Add it here.</p>
+        <div class="cal-add">
+          <input type="date" id="calDate" aria-label="Date">
+          <input type="text" id="calTitle" placeholder="e.g. Mentorship call with Émilie" aria-label="Event title">
+          <button id="calAddBtn">Add</button>
+        </div>
+        <div class="my-events" id="myEvents"></div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<!-- MODAL (week detail) -->
+<div class="overlay" id="overlay">
+  <div class="modal" role="dialog" aria-modal="true">
+    <div class="modal-head">
+      <div class="row"><div class="m-badge"><span class="wk">Week</span><span class="n" id="mBadgeN">1</span></div><span class="m-pill" id="mPill">Savoir</span></div>
+      <h2 id="modalTitle"></h2>
+      <div class="m-sub" id="modalSub"></div>
+      <button class="modal-close" id="modalClose" aria-label="Close">&times;</button>
+    </div>
+    <div class="modal-body">
+      <div class="m-obj" id="modalObj"></div>
+      <div class="m-steps-label">What you'll do this week</div>
+      <div id="lessonList"></div>
+    </div>
+    <div class="modal-foot">
+      <button class="mark-week" id="markWeek"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l5 5L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg><span id="markLabel">Mark this week as complete</span></button>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+// ====== CONFIG SUPABASE ======
+const SUPABASE_URL = "https://beexlhyvcngeopkkxoco.supabase.co";
+const SUPABASE_KEY = "sb_publishable_qVIwPd3lkJnSoObnYMuUKg_mn0i2LY9";
+if (typeof supabase === 'undefined') { document.getElementById('gateErr').textContent = "Connection issue — please refresh the page."; }
+const sb = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+const WEEKS = [
+  {no:1, pillar:"Savoir", title:"The World You Are Entering", sub:"Who the ultra-wealthy are, and what they truly want.", codeTitle:"Reading the client beneath the request",
+   obj:"Before any skill, you'll understand the client. This week changes how you see wealth, from the outside myth to the inside reality.",
+   lessons:[["Watch the lesson","Video · 18 min","video"],["Read the insider codes","Confidential note","note"],["Do the practice","Client empathy case study","task"],["Create your deliverable","Your client empathy map","file"]]},
+  {no:2, pillar:"Savoir", title:"The Codes of Luxury", sub:"The culture and etiquette that signal you belong.", codeTitle:"The words you'll never hear in a luxury setting",
+   obj:"This world runs on codes. This week you'll gain the cultural fluency to move within it, including the words you'll never hear in a luxury setting.",
+   lessons:[["Watch the lesson","Video · 22 min","video"],["Read the insider codes","Confidential note","note"],["Do the practice","Build your reference library","task"],["Create your deliverable","Your annotated Luxury Codes","file"]]},
+  {no:3, pillar:"Savoir-être", title:"Discretion, Trust & Presence", sub:"The posture that makes you irreplaceable.", codeTitle:"How trust is built, and instantly broken",
+   obj:"The most valuable quality in this world. This week is all about who you become, how you carry yourself and earn deep trust.",
+   lessons:[["Watch the lesson","Video · 20 min","video"],["Read the insider codes","Confidential note","note"],["Do the practice","Scenario training","task"],["Create your deliverable","Your personal code of conduct","file"]]},
+  {no:4, pillar:"Savoir-être", title:"The Art of Anticipation & Service", sub:"Solving what was never even asked.", codeTitle:"Anticipating three steps ahead",
+   obj:"Great service reacts fast; exceptional service means the moment never needed reacting to at all. Learn the method of anticipation.",
+   lessons:[["Watch the lesson","Video · 19 min","video"],["Read the insider codes","Confidential note","note"],["Do the practice","Anticipation drill","task"],["Create your deliverable","Your anticipation playbook","file"]]},
+  {no:5, pillar:"Savoir-faire", title:"The Operational Toolkit", sub:"Sourcing, logistics, vendors, budgets, staff.", codeTitle:"Building and protecting your black book",
+   obj:"This week turns posture into real capability, the practical systems that let you deliver reliably, at the highest level.",
+   lessons:[["Watch the lesson","Video · 24 min","video"],["Read the insider codes","Confidential note","note"],["Do the practice","Build a mock itinerary","task"],["Create your deliverable","Your operations toolkit","file"]]},
+  {no:6, pillar:"Savoir-faire", title:"The Network & The Market", sub:"Where the roles are, and how this world hires.", codeTitle:"Turning cold outreach into a warm introduction",
+   obj:"Skills need access. This week gives you the map and the method to build your own network, the tools, not a ready-made address book.",
+   lessons:[["Watch the lesson","Video · 21 min","video"],["Read the insider codes","Confidential note","note"],["Do the practice","Network mapping","task"],["Create your deliverable","Your market entry plan","file"]]},
+  {no:7, pillar:"Savoir-faire", title:"Positioning & Pricing Yourself", sub:"Knowing your worth, and holding it.", codeTitle:"Holding your price without flinching",
+   obj:"You'll learn to see yourself as a premium professional, price your value correctly, and hold that number with calm confidence.",
+   lessons:[["Watch the lesson","Video · 20 min","video"],["Read the insider codes","Confidential note","note"],["Do the practice","Pricing exercise","task"],["Create your deliverable","Your positioning & rate card","file"]]},
+  {no:8, pillar:"All pillars", title:"Your Launch — Role or Business", sub:"Land a private role, or build your own service.", codeTitle:"Your first ninety days",
+   obj:"The program ends in action. You'll turn everything you've built into a concrete launch plan for the path you choose.",
+   lessons:[["Watch the lesson","Video · 23 min","video"],["Read the insider codes","Confidential note","note"],["Do the practice","Build your launch plan","task"],["Your graduation session","Final mentorship review","mentor"]]},
+];
+
+const AGENCIES = [
+  ["Morgan & Mallet International","UHNW households, hospitality & yachts · offices London, Paris, Monaco, NY, LA, Miami, Dubai","🌍 US + Europe"],
+  ["Silver Swan Recruitment","Private residences, yachts, villas & chalets · London, Miami, Dubai","🌍 US + Europe"],
+  ["Rose's Agency","House & estate managers, PAs for UHNW families","🇺🇸 USA"],
+  ["Private Staff Group","Estate managers, PAs & household staff for UHNW principals","🇺🇸 USA"],
+  ["Harper Associates","Estate & private service, senior PAs to UHNW","🇺🇸 USA"],
+  ["Achieve Hospitality","Luxury hotels & private households · Monaco, Switzerland, France, Italy","🇪🇺 Europe"],
+  ["Luxury Assets","Private households, family offices, yachts & jets · London & Zurich","🇪🇺 Europe"],
+  ["Exclusive Household Staff","Butlers, house managers & private staff worldwide · London","🇪🇺 Europe"],
+];
+
+// Real market snapshot — update monthly. Each: [flag, city, title, meta, tags[], salary, per]
+const JOBS = {
+  americas:[
+    ["🇺🇸","New York","Estate Manager — HNW Family","Manhattan · Full-time · 5+ yrs household experience",["Estate Manager","On-site"],"$200k","/ year"],
+    ["🇺🇸","Palm Beach","House / Estate Manager — Multi-Residence","FL · Full-time · leads team of ~15 staff",["House Manager","Team lead"],"$120k+","/ year"],
+    ["🇺🇸","The Hamptons","Executive Housekeeper / House Manager","Bridgehampton · Year-round · oceanfront estate",["House Manager","Live-in option"],"$90–120k","/ year"],
+    ["🇺🇸","Midwest","Estate Manager & PA to UHNWI","Relocation + car + benefits · 10+ yrs required",["Estate Manager","Relocation"],"~$350k","package"],
+    ["🇺🇸","Menlo Park","House Manager / Personal Assistant","CA · Private tech-executive family",["House Manager","PA"],"$90–130k","/ year"],
+  ],
+  europe:[
+    ["🇲🇨","Monaco","Personal Assistant / Concierge — Social & Lifestyle","Private estate & family office · Full-time",["Concierge","Lifestyle"],"On request","competitive"],
+    ["🇲🇨","Monaco","Travelling Lifestyle PA (UHNW)","Monaco / South of France · Full-time · rota",["PA","Travel"],"On request","competitive"],
+    ["🇬🇧","London","Head Butler / House Manager","Private UHNW townhouse · live-out",["Butler","House Manager"],"£65–90k","/ year"],
+    ["🇨🇭","Switzerland","Chalet Host / Guest Relations","Seasonal · luxury private chalet",["Guest Relations","Seasonal"],"On request","+ live-in"],
+    ["🇫🇷","French Riviera","Villa Manager — Summer Estate","Antibes / Saint-Tropez · seasonal",["Villa Manager","Seasonal"],"On request","+ housing"],
+  ],
+  mideast:[
+    ["🇦🇪","Dubai","Private Lifestyle Manager — Royal Household","Full-time · VVIP experience required",["Lifestyle","VVIP"],"On request","tax-free"],
+    ["🇦🇪","Abu Dhabi","Estate Manager — Private Palace","Live-in · large household team",["Estate Manager","Live-in"],"On request","tax-free"],
+    ["🇸🇦","Riyadh","Head of Household Staff","UHNW family · multi-property",["Chief of Staff","Multi-property"],"On request","tax-free"],
+    ["🇸🇬","Singapore","Private PA to UHNW Principal","Full-time · discretion essential",["PA","Discretion"],"On request","competitive"],
+  ]
+};
+const JOBS_UPDATED = "Updated July 2026";
+
+const ICONS = {
+  video:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polygon points="7 4 20 12 7 20 7 4" fill="currentColor" stroke="none"/></svg>',
+  note:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 3h9l4 4v14H6z"/><path d="M15 3v4h4M9 12h6M9 16h4" stroke-linecap="round"/></svg>',
+  task:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 11l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/><rect x="4" y="4" width="16" height="16" rx="3"/></svg>',
+  file:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 3h7l5 5v13H7z"/><path d="M14 3v5h5"/><path d="M10 13h5M10 17h5" stroke-linecap="round"/></svg>',
+  mentor:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6" stroke-linecap="round"/></svg>',
+  check:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2"><path d="M5 12l5 5L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  checkSmall:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M5 12l5 5L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  lock:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>'
+};
+
+let USER=null, PROFILE=null;
+let state = { completed:{}, lessons:{} };
+
+function initials(n){return (n||"?").split(' ').map(w=>w[0]).slice(0,2).join('').toUpperCase();}
+
+// ====== AUTH + DATA (Supabase) ======
+async function doLogin(){
+  const email=document.getElementById('gateEmail').value.trim();
+  const pass=document.getElementById('gatePass').value;
+  const btn=document.getElementById('gateBtn');
+  document.getElementById('gateErr').textContent="";
+  if(!email||!pass){document.getElementById('gateErr').textContent="Please enter your email and password.";return;}
+  btn.disabled=true;btn.textContent="Signing in…";
+  const {data,error}=await sb.auth.signInWithPassword({email,password:pass});
+  btn.disabled=false;btn.textContent="Sign in";
+  if(error){document.getElementById('gateErr').textContent="Incorrect email or password.";return;}
+  await onSignedIn(data.user);
+}
+async function onSignedIn(user){
+  USER=user;
+  document.getElementById('gate').classList.add('hidden');
+  document.getElementById('app').classList.remove('hidden');
+  await loadProfile(); await loadProgress();
+  renderWeeks(); renderAgencies(); initJobTabs(); initCalAdd(); renderMyEvents();
+}
+async function loadProfile(){
+  const {data}=await sb.from('profiles').select('*').eq('id',USER.id).maybeSingle();
+  PROFILE=data||{full_name:(USER.email||'').split('@')[0],email:USER.email};
+  const name=PROFILE.full_name||(USER.email||'').split('@')[0];
+  document.getElementById('sbAv').textContent=initials(name);
+  document.getElementById('sbName').textContent=name;
+  document.getElementById('sbRole').textContent=(PROFILE.cohort? (PROFILE.cohort+' · Student'):'Student');
+  document.getElementById('hiLine').textContent="Hi "+name.split(' ')[0];
+}
+async function loadProgress(){
+  state={completed:{},lessons:{}};
+  const {data}=await sb.from('week_progress').select('*').eq('user_id',USER.id);
+  (data||[]).forEach(r=>{
+    if(r.completed)state.completed[r.week_number]=true;
+    state.lessons[r.week_number]=Array.isArray(r.lessons_done)?r.lessons_done:JSON.parse(r.lessons_done||'[]');
+  });
+}
+async function saveWeek(no){
+  const lessons=state.lessons[no]||WEEKS[no-1].lessons.map(()=>false);
+  const completed=!!state.completed[no];
+  await sb.from('week_progress').upsert({user_id:USER.id,week_number:no,completed,lessons_done:lessons,updated_at:new Date().toISOString()},{onConflict:'user_id,week_number'});
+}
+
+function highestUnlocked(){let u=1;for(let i=1;i<=8;i++){if(state.completed[i])u=i+1;}return Math.min(u,8);}
+function weekStatus(no){if(state.completed[no])return "done";if(no<=highestUnlocked())return "current";return "locked";}
+function lessonProgress(no){const arr=state.lessons[no];if(!arr)return 0;const d=arr.filter(Boolean).length;return Math.round(d/arr.length*100);}
+
+function renderWeeks(){
+  const list=document.getElementById('weekList');list.innerHTML="";
+  WEEKS.forEach(w=>{
+    const st=weekStatus(w.no);
+    const row=document.createElement(st==="locked"?'div':'button');
+    row.className="week "+st;
+    let stateHTML;
+    if(st==="done")stateHTML=`<span class="state done"><span class="ic">${ICONS.checkSmall}</span><span>Done</span></span>`;
+    else if(st==="current"){const lp=lessonProgress(w.no);stateHTML=lp>0?`<span class="state current"><span>${lp}% done</span></span>`:`<span class="state current"><span>Start now</span></span>`;}
+    else stateHTML=`<span class="state locked"><span class="ic">${ICONS.lock}</span><span>Locked</span></span>`;
+    const goHTML=(st==="locked")?`<span class="go">${ICONS.lock}</span>`:`<span class="go">&rarr;</span>`;
+    row.innerHTML=`<div class="week-badge"><span class="wk">Week</span><span class="n">${w.no}</span></div><div class="week-main"><h4>${w.title}</h4><div class="wsub">${w.sub}</div><span class="week-pill">${w.pillar}</span></div><div class="week-right">${stateHTML}${goHTML}</div>`;
+    if(st!=="locked")row.addEventListener('click',()=>openWeek(w.no));
+    list.appendChild(row);
+  });
+  updateResume(); renderLibrary(); renderCalendar();
+}
+function updateResume(){
+  const done=Object.values(state.completed).filter(Boolean).length;
+  const pct=Math.round(done/8*100);
+  document.getElementById('bigDone').textContent=done;
+  document.getElementById('barFill').style.width=pct+"%";
+  const cur=highestUnlocked();const w=WEEKS[cur-1];
+  if(done>=8){
+    document.getElementById('resumeTitle').textContent="You've completed the program";
+    document.getElementById('resumeDesc').textContent="Every week is done. The door is open, step through.";
+    document.getElementById('resumeBtnLabel').textContent="Review my program";
+    document.getElementById('progSub').textContent="Congratulations, you made it inside.";
+  } else {
+    document.getElementById('resumeTitle').textContent=(lessonProgress(cur)>0?"Continue Week "+cur:"Start Week "+cur);
+    document.getElementById('resumeDesc').textContent=w.title+" — "+w.sub;
+    document.getElementById('resumeBtnLabel').textContent=(lessonProgress(cur)>0?"Continue where you left off":"Start this week");
+    document.getElementById('progSub').textContent=done===0?"Welcome, let's begin your first week.":"Keep going, you're on your way in.";
+  }
+}
+
+function renderAgencies(){
+  const list=document.getElementById('agencyList');list.innerHTML="";
+  AGENCIES.forEach(a=>{
+    const el=document.createElement('div');el.className="agency";
+    el.innerHTML=`<div class="flag">${a[2].split(' ')[0]}</div><div class="agency-main"><div class="an">${a[0]}</div><div class="ad">${a[1]}</div></div><div class="region">${a[2].split(' ').slice(1).join(' ')}</div>`;
+    list.appendChild(el);
+  });
+}
+
+function renderJobs(region){
+  const list=document.getElementById('jobList');list.innerHTML="";
+  (JOBS[region]||[]).forEach(j=>{
+    const el=document.createElement('div');el.className="job";
+    const tags=j[4].map(t=>`<span class="jtag">${t}</span>`).join('');
+    el.innerHTML=`
+      <div class="job-loc"><div class="fl">${j[0]}</div><div class="ct">${j[1]}</div></div>
+      <div class="job-main"><div class="jt">${j[2]}</div><div class="jm">${j[3]}</div><div class="jtags">${tags}</div></div>
+      <div class="job-sal"><div class="amt">${j[5]}</div><div class="per">${j[6]}</div></div>`;
+    list.appendChild(el);
+  });
+}
+function initJobTabs(){
+  document.getElementById('jobsUpdated').textContent=JOBS_UPDATED;
+  document.querySelectorAll('.job-tab').forEach(t=>t.addEventListener('click',()=>{
+    document.querySelectorAll('.job-tab').forEach(x=>x.classList.remove('active'));
+    t.classList.add('active');
+    renderJobs(t.dataset.region);
+  }));
+  renderJobs('americas');
+}
+
+function renderCalendar(){
+  const box=document.getElementById('calPhases');box.innerHTML="";
+  WEEKS.forEach(w=>{
+    const done = state.completed[w.no];
+    const el=document.createElement('div');
+    el.className="cal-week"+(done?" done-cal":"");
+    el.innerHTML=`
+      <div class="cal-marker"><div class="cm-dot">${w.no}</div></div>
+      <div class="cal-body">
+        <div class="cw-title">Week ${w.no} — ${w.title}</div>
+        <div class="cw-sub">${w.sub}</div>
+        <div class="cw-events">
+          <span class="cw-ev">${ICONS.videoMini||''} Lessons & practice</span>
+          <span class="cw-ev mentor-ev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6" stroke-linecap="round"/></svg> Mentorship session</span>
+        </div>
+      </div>`;
+    box.appendChild(el);
+  });
+}
+
+let myEvents=[];
+function renderMyEvents(){
+  const box=document.getElementById('myEvents');box.innerHTML="";
+  if(myEvents.length===0){box.innerHTML='<div class="my-empty">No dates yet. Add your first one above.</div>';return;}
+  myEvents.sort((a,b)=>a.date.localeCompare(b.date));
+  myEvents.forEach((ev,i)=>{
+    const d=new Date(ev.date+"T00:00");
+    const label=isNaN(d)?ev.date:d.toLocaleDateString('en-US',{month:'short',day:'numeric'});
+    const row=document.createElement('div');row.className="my-event";
+    row.innerHTML=`<div class="me-date">${label}</div><div class="me-title">${ev.title}</div><button class="me-del" data-i="${i}" aria-label="Remove">&times;</button>`;
+    row.querySelector('.me-del').addEventListener('click',()=>{myEvents.splice(i,1);renderMyEvents();});
+    box.appendChild(row);
+  });
+}
+function initCalAdd(){
+  document.getElementById('calAddBtn').addEventListener('click',()=>{
+    const d=document.getElementById('calDate').value;
+    const t=document.getElementById('calTitle').value.trim();
+    if(!d||!t){return;}
+    myEvents.push({date:d,title:t});
+    document.getElementById('calDate').value="";document.getElementById('calTitle').value="";
+    renderMyEvents();
+  });
+}
+
+function renderLibrary(){
+  const grid=document.getElementById('libGrid');grid.innerHTML="";
+  WEEKS.forEach(w=>{
+    const unlocked = weekStatus(w.no)!=="locked";
+    const card=document.createElement('div');card.className="lib-card";
+    if(!unlocked){card.style.opacity="0.6";card.style.cursor="not-allowed";}
+    card.innerHTML=`
+      <div class="lc-ic">${unlocked?ICONS.note:ICONS.lock}</div>
+      <h4>${w.codeTitle}</h4>
+      <p>${unlocked? "Insider note from Week "+w.no+" — "+w.title+"." : "Unlocks when you reach Week "+w.no+"."}</p>
+      <span class="lc-tag">${unlocked? "Week "+w.no+" · Open" : "Locked"}</span>`;
+    if(unlocked) card.addEventListener('click',()=>openWeek(w.no));
+    grid.appendChild(card);
+  });
+}
+
+let activeWeek=null;
+function openWeek(no){
+  if(weekStatus(no)==="locked")return;
+  activeWeek=no;const w=WEEKS[no-1];
+  document.getElementById('mBadgeN').textContent=w.no;
+  document.getElementById('mPill').textContent=w.pillar;
+  document.getElementById('modalTitle').textContent=w.title;
+  document.getElementById('modalSub').textContent=w.sub;
+  document.getElementById('modalObj').textContent=w.obj;
+  if(!state.lessons[no])state.lessons[no]=w.lessons.map(()=>false);
+  const list=document.getElementById('lessonList');list.innerHTML="";
+  w.lessons.forEach((ls,i)=>{
+    const checked=state.lessons[no][i];
+    const row=document.createElement('div');row.className="lesson"+(checked?" done":"");
+    row.innerHTML=`<div class="lesson-ic">${ICONS[ls[2]]||ICONS.file}</div><div class="lesson-txt"><div class="lt">${ls[0]}</div><div class="lk">${ls[1]}</div></div><div class="lesson-check ${checked?'checked':''}">${ICONS.check}</div>`;
+    row.querySelector('.lesson-check').addEventListener('click',async(e)=>{e.stopPropagation();state.lessons[no][i]=!state.lessons[no][i];e.currentTarget.classList.toggle('checked');row.classList.toggle('done');await saveWeek(no);renderWeeks();});
+    list.appendChild(row);
+  });
+  const btn=document.getElementById('markWeek');
+  if(state.completed[no]){btn.classList.add('is-done');document.getElementById('markLabel').textContent="Completed, click to reopen";}
+  else{btn.classList.remove('is-done');document.getElementById('markLabel').textContent="Mark this week as complete";}
+  document.getElementById('overlay').classList.add('open');document.body.style.overflow="hidden";
+}
+function closeModal(){document.getElementById('overlay').classList.remove('open');document.body.style.overflow="";}
+document.getElementById('modalClose').addEventListener('click',closeModal);
+document.getElementById('overlay').addEventListener('click',e=>{if(e.target.id==='overlay')closeModal();});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
+document.getElementById('markWeek').addEventListener('click',async()=>{if(activeWeek==null)return;state.completed[activeWeek]=!state.completed[activeWeek];await saveWeek(activeWeek);renderWeeks();closeModal();});
+document.getElementById('resumeBtn').addEventListener('click',()=>{const done=Object.values(state.completed).filter(Boolean).length;openWeek(done>=8?8:highestUnlocked());});
+
+// ---------- navigation ----------
+function goPage(name, scrollTo){
+  document.querySelectorAll('.page').forEach(p=>p.classList.add('hidden'));
+  document.getElementById('page-'+name).classList.remove('hidden');
+  document.querySelectorAll('.nav-item').forEach(n=>n.classList.toggle('active', n.dataset.page===name && !n.dataset.scroll));
+  document.querySelectorAll('.m-tab').forEach(t=>t.classList.toggle('active', t.dataset.page===name));
+  window.scrollTo(0,0);
+  if(scrollTo){setTimeout(()=>{const el=document.getElementById(scrollTo);if(el)el.scrollIntoView({behavior:'smooth'});},60);}
+}
+document.querySelectorAll('.nav-item').forEach(n=>n.addEventListener('click',()=>goPage(n.dataset.page, n.dataset.scroll)));
+document.querySelectorAll('.m-tab').forEach(t=>t.addEventListener('click',()=>goPage(t.dataset.page)));
+
+// init
+// ====== auth wiring ======
+document.getElementById('gateBtn').addEventListener('click',doLogin);
+document.getElementById('gatePass').addEventListener('keydown',e=>{if(e.key==='Enter')doLogin();});
+document.getElementById('forgotLink').addEventListener('click',async()=>{
+  const email=document.getElementById('gateEmail').value.trim();
+  if(!email){document.getElementById('gateErr').textContent="Enter your email first, then click again.";return;}
+  const {error}=await sb.auth.resetPasswordForEmail(email,{redirectTo:window.location.origin});
+  document.getElementById('gateErr').textContent = error? "Could not send reset email." : "Check your inbox for a reset link.";
+});
+document.getElementById('logout').addEventListener('click',async()=>{await sb.auth.signOut();location.reload();});
+
+// ====== on load: resume existing session ======
+(async()=>{
+  const {data}=await sb.auth.getSession();
+  if(data.session){ await onSignedIn(data.session.user); }
+})();
+</script>
+</body>
+</html>
