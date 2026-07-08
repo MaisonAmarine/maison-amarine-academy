@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maison Amarine — Admin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@500;600;700&family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ivory:#F8F4EC; --paper:#FFFFFF; --ink:#211C15; --ink-soft:#4a4238;
+    --gold:#A87E3D; --gold-deep:#8a6630; --gold-lt:#C9A867; --gold-wash:#F3EAD8;
+    --stone:#7d7568; --line:#E6DECE; --green:#5f7d52; --red:#a4483f; --shadow:rgba(33,28,21,0.10);
+    --sidebar:#211C15;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--ivory);color:var(--ink);font-family:'Jost',sans-serif;font-weight:400;-webkit-font-smoothing:antialiased;line-height:1.55;}
+  ::selection{background:rgba(168,126,61,0.22);}
+
+  /* ---------- LOGIN GATE ---------- */
+  .gate{position:fixed;inset:0;z-index:500;background:var(--sidebar);display:flex;align-items:center;justify-content:center;padding:20px;}
+  .gate.hidden{display:none;}
+  .gate-card{background:var(--ivory);border-radius:20px;max-width:400px;width:100%;padding:40px 38px;box-shadow:0 40px 100px rgba(0,0,0,.4);text-align:center;}
+  .gate-card .glogo{width:38px;height:38px;margin:0 auto 18px;}
+  .gate-card .eyebrow{font-size:10px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;}
+  .gate-card h1{font-family:'Cormorant',serif;font-weight:700;font-size:28px;color:var(--ink);margin-bottom:6px;}
+  .gate-card p{font-size:13.5px;color:var(--ink-soft);margin-bottom:24px;}
+  .gate-card input{width:100%;font-family:'Jost',sans-serif;font-size:15px;color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:14px 16px;outline:none;margin-bottom:12px;transition:border-color .2s;}
+  .gate-card input:focus{border-color:var(--gold-lt);}
+  .gate-card button{width:100%;font-family:'Jost',sans-serif;font-size:15px;font-weight:600;color:#fff;background:var(--gold);border:none;border-radius:12px;padding:15px;cursor:pointer;transition:background .2s;}
+  .gate-card button:hover{background:var(--gold-deep);}
+  .gate-err{font-size:12.5px;color:var(--red);margin-top:12px;min-height:16px;}
+  .gate-hint{font-size:11px;color:var(--stone);margin-top:16px;font-style:italic;}
+
+  /* ---------- LAYOUT ---------- */
+  .app{display:flex;min-height:100vh;}
+  .sidebar{width:248px;flex-shrink:0;background:var(--sidebar);color:#EDE6D8;display:flex;flex-direction:column;position:sticky;top:0;height:100vh;padding:26px 18px;}
+  .sb-brand{display:flex;align-items:center;gap:10px;padding:0 8px 4px;margin-bottom:8px;}
+  .sb-brand svg{width:26px;height:26px;flex-shrink:0;}
+  .sb-brand .name{font-family:'Cormorant',serif;font-weight:700;font-size:21px;color:#F6F0E4;line-height:1;}
+  .sb-brand .name span{color:var(--gold-lt);}
+  .sb-brand .tag{display:block;font-size:7.5px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:#9a9184;margin-top:3px;}
+  .sb-role{font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-lt);background:rgba(201,168,103,.12);border:1px solid rgba(201,168,103,.25);border-radius:8px;padding:6px 10px;margin:14px 8px 24px;text-align:center;}
+  .nav{display:flex;flex-direction:column;gap:4px;}
+  .nav-item{display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:11px;cursor:pointer;font-size:14.5px;font-weight:500;color:#c7bfae;transition:background .2s,color .2s;}
+  .nav-item svg{width:19px;height:19px;flex-shrink:0;}
+  .nav-item:hover{background:rgba(255,255,255,.06);color:#F6F0E4;}
+  .nav-item.active{background:var(--gold);color:#fff;}
+  .sb-foot{margin-top:auto;padding:14px 8px 0;}
+  .logout{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:500;color:#9a9184;cursor:pointer;padding:10px 6px;transition:color .2s;}
+  .logout:hover{color:#F6F0E4;}
+  .logout svg{width:17px;height:17px;}
+
+  .main{flex:1;min-width:0;}
+  .page{max-width:960px;margin:0 auto;padding:38px 40px 60px;}
+  .page.hidden{display:none;}
+  .page-h{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:26px;flex-wrap:wrap;}
+  .page-h .eyebrow{font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;}
+  .page-h h1{font-family:'Cormorant',serif;font-weight:700;font-size:32px;line-height:1.1;color:var(--ink);}
+  .page-h p{font-size:14.5px;color:var(--ink-soft);margin-top:6px;max-width:560px;}
+  .btn-primary{display:inline-flex;align-items:center;gap:9px;font-family:'Jost',sans-serif;font-size:14.5px;font-weight:600;color:#fff;background:var(--gold);border:none;border-radius:12px;padding:13px 22px;cursor:pointer;white-space:nowrap;transition:background .2s,transform .2s,box-shadow .2s;box-shadow:0 6px 16px rgba(168,126,61,0.28);}
+  .btn-primary:hover{background:var(--gold-deep);transform:translateY(-2px);}
+  .btn-primary svg{width:17px;height:17px;}
+
+  /* ---------- stats ---------- */
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:30px;}
+  .stat{background:var(--paper);border:1px solid var(--line);border-radius:15px;padding:20px 22px;}
+  .stat .sv{font-family:'Cormorant',serif;font-weight:700;font-size:34px;color:var(--gold-deep);line-height:1;}
+  .stat .sl{font-size:12px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--stone);margin-top:6px;}
+
+  /* ---------- students table ---------- */
+  .panel{background:var(--paper);border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 8px 24px var(--shadow);}
+  .panel-head{display:flex;align-items:center;justify-content:space-between;padding:18px 24px;border-bottom:1px solid var(--line);}
+  .panel-head h3{font-family:'Cormorant',serif;font-weight:700;font-size:20px;color:var(--ink);}
+  .search{display:flex;align-items:center;gap:8px;background:var(--ivory);border:1px solid var(--line);border-radius:10px;padding:8px 12px;}
+  .search svg{width:15px;height:15px;color:var(--stone);}
+  .search input{border:none;background:none;outline:none;font-family:'Jost',sans-serif;font-size:13.5px;color:var(--ink);width:150px;}
+  table{width:100%;border-collapse:collapse;}
+  thead th{font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--stone);text-align:left;padding:14px 24px;border-bottom:1px solid var(--line);}
+  tbody td{padding:16px 24px;border-bottom:1px solid var(--line);font-size:14px;vertical-align:middle;}
+  tbody tr:last-child td{border-bottom:none;}
+  tbody tr:hover{background:#fdfbf6;}
+  .st-name{display:flex;align-items:center;gap:12px;}
+  .st-av{width:38px;height:38px;border-radius:50%;background:var(--gold);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:15px;flex-shrink:0;}
+  .st-name .nm{font-weight:600;color:var(--ink);}
+  .st-name .em{font-size:12.5px;color:var(--stone);}
+  .badge{font-size:11px;font-weight:600;letter-spacing:.03em;text-transform:uppercase;padding:4px 11px;border-radius:20px;display:inline-block;}
+  .badge.active{color:var(--green);background:#eaf0e6;}
+  .badge.invited{color:var(--gold-deep);background:var(--gold-wash);}
+  .badge.paused{color:var(--stone);background:#efe9dc;}
+  .prog-mini{display:flex;align-items:center;gap:9px;}
+  .prog-mini .track{width:80px;height:6px;background:var(--line);border-radius:20px;overflow:hidden;}
+  .prog-mini .fill{height:100%;background:var(--gold);border-radius:20px;}
+  .prog-mini .pct{font-size:12px;color:var(--ink-soft);font-weight:500;}
+  .row-actions{display:flex;gap:8px;justify-content:flex-end;}
+  .icon-btn{width:32px;height:32px;border-radius:8px;border:1px solid var(--line);background:var(--ivory);cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--stone);transition:all .2s;}
+  .icon-btn:hover{border-color:var(--gold-lt);color:var(--gold-deep);}
+  .icon-btn svg{width:15px;height:15px;}
+  .icon-btn.del:hover{border-color:#e0b4ae;color:var(--red);}
+  .empty-row td{text-align:center;color:var(--stone);font-style:italic;padding:30px;}
+
+  /* ---------- modal ---------- */
+  .overlay{position:fixed;inset:0;z-index:300;background:rgba(33,28,21,0.55);-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);display:none;align-items:center;justify-content:center;padding:30px 18px;overflow-y:auto;}
+  .overlay.open{display:flex;}
+  .modal{background:var(--ivory);border-radius:20px;max-width:520px;width:100%;box-shadow:0 40px 100px rgba(33,28,21,.4);animation:rise .4s cubic-bezier(.22,.61,.36,1);overflow:hidden;}
+  @keyframes rise{from{opacity:0;transform:translateY(22px);}to{opacity:1;transform:none;}}
+  .modal-head{padding:26px 30px 20px;background:var(--paper);border-bottom:1px solid var(--line);position:relative;}
+  .modal-head h2{font-family:'Cormorant',serif;font-weight:700;font-size:24px;color:var(--ink);}
+  .modal-head p{font-size:13px;color:var(--ink-soft);margin-top:3px;}
+  .modal-close{position:absolute;top:20px;right:22px;width:32px;height:32px;border-radius:50%;background:var(--ivory);border:1px solid var(--line);font-size:18px;color:var(--stone);cursor:pointer;transition:all .2s;}
+  .modal-close:hover{background:#fff;color:var(--ink);}
+  .modal-body{padding:24px 30px 10px;}
+  .field{margin-bottom:16px;}
+  .field label{display:block;font-size:12px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--stone);margin-bottom:6px;}
+  .field input,.field select{width:100%;font-family:'Jost',sans-serif;font-size:14.5px;color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:11px;padding:12px 15px;outline:none;transition:border-color .2s;}
+  .field input:focus,.field select:focus{border-color:var(--gold-lt);}
+  .field .row2{display:flex;gap:10px;}
+  .field .row2 input{flex:1;}
+  .gen-btn{font-family:'Jost',sans-serif;font-size:12.5px;font-weight:600;color:var(--gold-deep);background:var(--gold-wash);border:none;border-radius:10px;padding:0 16px;cursor:pointer;white-space:nowrap;transition:background .2s;}
+  .gen-btn:hover{background:#ecdfc6;}
+  .modal-foot{padding:16px 30px 26px;display:flex;gap:10px;}
+  .modal-foot button{flex:1;font-family:'Jost',sans-serif;font-size:14.5px;font-weight:600;border-radius:12px;padding:14px;cursor:pointer;transition:all .2s;}
+  .btn-cancel{background:var(--ivory);border:1px solid var(--line);color:var(--ink-soft);}
+  .btn-cancel:hover{background:#fff;}
+  .btn-save{background:var(--gold);border:none;color:#fff;}
+  .btn-save:hover{background:var(--gold-deep);}
+
+  /* access-created success */
+  .access-box{background:var(--paper);border:1px dashed var(--gold-lt);border-radius:13px;padding:18px 20px;margin-bottom:8px;}
+  .access-box .ab-l{font-size:11px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--stone);margin-bottom:3px;}
+  .access-box .ab-v{font-size:15px;font-weight:600;color:var(--ink);font-family:'Jost',sans-serif;word-break:break-all;display:flex;align-items:center;justify-content:space-between;gap:10px;}
+  .access-box .ab-v:not(:last-child){margin-bottom:12px;}
+  .copy-btn{font-size:11px;font-weight:600;color:var(--gold-deep);background:var(--gold-wash);border:none;border-radius:8px;padding:6px 12px;cursor:pointer;white-space:nowrap;}
+  .copy-btn:hover{background:#ecdfc6;}
+
+  /* settings */
+  .set-card{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:24px 28px;margin-bottom:16px;box-shadow:0 8px 24px var(--shadow);}
+  .set-card h3{font-family:'Cormorant',serif;font-weight:700;font-size:20px;margin-bottom:4px;}
+  .set-card p{font-size:13.5px;color:var(--ink-soft);margin-bottom:16px;}
+  .note-band{display:flex;gap:12px;align-items:flex-start;background:var(--gold-wash);border-radius:12px;padding:15px 18px;margin-top:20px;}
+  .note-band svg{width:20px;height:20px;flex-shrink:0;color:var(--gold-deep);margin-top:1px;}
+  .note-band p{font-size:13px;color:var(--ink-soft);line-height:1.6;}
+
+  .toast{position:fixed;bottom:26px;left:50%;transform:translateX(-50%) translateY(30px);background:var(--ink);color:#F6F0E4;font-size:13.5px;font-weight:500;padding:13px 24px;border-radius:12px;box-shadow:0 12px 30px rgba(0,0,0,.25);opacity:0;transition:all .3s;z-index:400;}
+  .toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
+
+  @media(max-width:860px){
+    .app{flex-direction:column;} .sidebar{width:100%;height:auto;position:static;flex-direction:row;align-items:center;padding:14px 18px;overflow-x:auto;}
+    .sb-brand{margin-bottom:0;} .sb-role,.sb-foot{display:none;}
+    .nav{flex-direction:row;margin-left:auto;} .nav-item{padding:9px 12px;font-size:13px;}
+    .nav-item span{display:none;}
+    .page{padding:24px 18px 50px;} .stats{grid-template-columns:repeat(2,1fr);}
+    .page-h{flex-direction:column;align-items:flex-start;}
+    table{font-size:13px;} thead th:nth-child(3),tbody td:nth-child(3){display:none;}
+  }
+  @media(prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;transition-duration:.12s!important;}}
+</style>
+</head>
+<body>
+
+<!-- LOGIN GATE -->
+<div class="gate" id="gate">
+  <div class="gate-card">
+    <svg class="glogo" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="8" cy="8" r="5" stroke="#A87E3D" stroke-width="1.5"/><circle cx="8" cy="8" r="1.7" fill="#A87E3D"/>
+      <path d="M11.5 11.5L20 20M17 17l2.2-2.2M15 15l1.6-1.6" stroke="#A87E3D" stroke-width="1.5" stroke-linecap="round"/>
+    </svg>
+    <div class="eyebrow">Maison Amarine</div>
+    <h1>Admin access</h1>
+    <p>Sign in to manage your students and their access.</p>
+    <input type="email" id="gateEmail" placeholder="Your admin email" autocomplete="email">
+    <input type="password" id="gatePass" placeholder="Your password" autocomplete="current-password">
+    <button id="gateBtn">Sign in</button>
+    <div class="gate-err" id="gateErr"></div>
+  </div>
+</div>
+
+<div class="app" id="app" style="display:none;">
+  <aside class="sidebar">
+    <div class="sb-brand">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="8" cy="8" r="5" stroke="#C9A867" stroke-width="1.5"/><circle cx="8" cy="8" r="1.7" fill="#C9A867"/>
+        <path d="M11.5 11.5L20 20M17 17l2.2-2.2M15 15l1.6-1.6" stroke="#C9A867" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+      <div><div class="name">Maison <span>Amarine</span></div><div class="tag">Admin Console</div></div>
+    </div>
+    <div class="sb-role">Founder access</div>
+    <nav class="nav" id="nav">
+      <div class="nav-item active" data-page="students">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="8" r="3.5"/><path d="M3 20c0-3.5 3-5.5 6-5.5s6 2 6 5.5" stroke-linecap="round"/><path d="M16 5.5a3 3 0 0 1 0 5.8M18 20c0-2.5-1-4.2-2.5-5" stroke-linecap="round"/></svg>
+        <span>Students</span>
+      </div>
+      <div class="nav-item" data-page="overview">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="8" height="8" rx="1.5"/><rect x="13" y="3" width="8" height="5" rx="1.5"/><rect x="13" y="11" width="8" height="10" rx="1.5"/><rect x="3" y="14" width="8" height="7" rx="1.5"/></svg>
+        <span>Overview</span>
+      </div>
+      <div class="nav-item" data-page="settings">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M5 19l2-2M17 7l2-2" stroke-linecap="round"/></svg>
+        <span>Settings</span>
+      </div>
+    </nav>
+    <div class="sb-foot"><div class="logout" id="logout"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9" stroke-linecap="round" stroke-linejoin="round"/></svg>Sign out</div></div>
+  </aside>
+
+  <main class="main">
+
+    <!-- STUDENTS -->
+    <section class="page" id="page-students">
+      <div class="page-h">
+        <div><div class="eyebrow">Students</div><h1>Your students</h1><p>Create access, track progress, and manage your cohort, all in one place.</p></div>
+        <button class="btn-primary" id="newBtn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 5v14M5 12h14" stroke-linecap="round"/></svg>Create access</button>
+      </div>
+      <div class="panel">
+        <div class="panel-head">
+          <h3>All students</h3>
+          <div class="search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4" stroke-linecap="round"/></svg><input type="text" id="searchInput" placeholder="Search…"></div>
+        </div>
+        <table>
+          <thead><tr><th>Student</th><th>Status</th><th>Progress</th><th>Access</th><th></th></tr></thead>
+          <tbody id="studentRows"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- OVERVIEW -->
+    <section class="page hidden" id="page-overview">
+      <div class="page-h"><div><div class="eyebrow">Overview</div><h1>At a glance</h1><p>A quick pulse on your academy.</p></div></div>
+      <div class="stats" id="statsBox"></div>
+      <div class="panel">
+        <div class="panel-head"><h3>Recent activity</h3></div>
+        <table><tbody id="activityRows"></tbody></table>
+      </div>
+    </section>
+
+    <!-- SETTINGS -->
+    <section class="page hidden" id="page-settings">
+      <div class="page-h"><div><div class="eyebrow">Settings</div><h1>Console settings</h1><p>Your academy details and access preferences.</p></div></div>
+      <div class="set-card">
+        <h3>Academy</h3>
+        <p>These details appear in student invitations.</p>
+        <div class="field"><label>Academy name</label><input type="text" value="Maison Amarine — The Luxury Concierge Academy" readonly></div>
+        <div class="field"><label>Student portal link</label><input type="text" value="https://themaisonamarine.com/academy" readonly></div>
+      </div>
+      <div class="set-card">
+        <h3>Payment</h3>
+        <p>Payment is handled with your own external payment links. Paste your default link, it will be suggested when you create an access.</p>
+        <div class="field"><label>Default payment link</label><input type="text" id="payLink" placeholder="https://buy.stripe.com/..."></div>
+      </div>
+      <div class="note-band">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01" stroke-linecap="round"/></svg>
+        <p>This is a design prototype. It lets you visualise and organise access management, but it does not create real secure logins on its own. For live, secure student accounts, connect this flow to a real back-end or a course platform later.</p>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<!-- CREATE / EDIT MODAL -->
+<div class="overlay" id="overlay">
+  <div class="modal">
+    <div class="modal-head">
+      <h2 id="modalTitle">Create student access</h2>
+      <p id="modalDesc">Set up a new student and generate their credentials.</p>
+      <button class="modal-close" id="modalClose">&times;</button>
+    </div>
+    <div class="modal-body" id="modalBody">
+      <div class="field"><label>Full name</label><input type="text" id="fName" placeholder="e.g. Alexandra Moreau"></div>
+      <div class="field"><label>Email</label><input type="email" id="fEmail" placeholder="alexandra@email.com"></div>
+      <div class="field"><label>Cohort</label><select id="fCohort"><option>Cohort I</option><option>Cohort II</option><option>Cohort III</option><option>Private / 1:1</option></select></div>
+      <div style="font-size:12.5px;color:var(--stone);line-height:1.6;margin-top:4px;">An invitation email will be sent automatically. The student clicks the link to set their own password and enter the academy.</div>
+    </div>
+    <div class="modal-foot">
+      <button class="btn-cancel" id="cancelBtn">Cancel</button>
+      <button class="btn-save" id="saveBtn">Create access</button>
+    </div>
+  </div>
+</div>
+
+<!-- ACCESS CREATED MODAL -->
+<div class="overlay" id="successOverlay">
+  <div class="modal">
+    <div class="modal-head">
+      <h2>Invitation sent</h2>
+      <p>Their access is created and an invitation email is on its way.</p>
+      <button class="modal-close" id="successClose">&times;</button>
+    </div>
+    <div class="modal-body">
+      <div class="access-box">
+        <div class="ab-l">Student</div>
+        <div class="ab-v"><span id="acUser"></span></div>
+        <div class="ab-l">Invitation sent to</div>
+        <div class="ab-v"><span id="acPass"></span></div>
+        <div class="ab-l">Portal link</div>
+        <div class="ab-v"><span id="acLink">https://maison-amarine-academy.vercel.app</span><button class="copy-btn" data-copy="acLink">Copy</button></div>
+      </div>
+      <div style="font-size:12.5px;color:var(--stone);line-height:1.6;margin-top:14px;">The student will receive an email with a secure link to set their password and enter the academy. You can also send them your payment link separately.</div>
+    </div>
+    <div class="modal-foot">
+      <button class="btn-cancel" id="copyAllBtn">Copy a welcome message</button>
+      <button class="btn-save" id="successDone">Done</button>
+    </div>
+  </div>
+</div>
+
+<!-- PROGRESS DETAIL MODAL -->
+<div class="overlay" id="progressOverlay">
+  <div class="modal">
+    <div class="modal-head">
+      <h2 id="pgName">Student</h2>
+      <p id="pgSub"></p>
+      <button class="modal-close" id="pgClose">&times;</button>
+    </div>
+    <div class="modal-body">
+      <div style="font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--stone);margin-bottom:6px;">Week by week</div>
+      <div id="pgWeeks"></div>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+// ====== CONFIG SUPABASE ======
+const WEEK_TITLES=["The World You Are Entering","The Codes of Luxury","Discretion, Trust & Presence","The Art of Anticipation & Service","The Operational Toolkit","The Network & The Market","Positioning & Pricing Yourself","Your Launch — Role or Business"];
+const SUPABASE_URL = "https://beexlhyvcngeopkkxoco.supabase.co";
+const SUPABASE_KEY = "sb_publishable_qVIwPd3lkJnSoObnYMuUKg_mn0i2LY9";
+const ADMIN_EMAIL = "academy@themaisonamarine.com";
+const sb = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+let SESSION = null;
+let students = [];
+
+function initials(name){return (name||"?").split(' ').map(w=>w[0]).slice(0,2).join('').toUpperCase();}
+function statusBadge(s){
+  const map={active:["active","Active"],invited:["invited","Invited"],paused:["paused","Paused"]};
+  const m=map[s]||map.invited; return `<span class="badge ${m[0]}">${m[1]}</span>`;
+}
+let toastT;
+function toast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');clearTimeout(toastT);toastT=setTimeout(()=>t.classList.remove('show'),2600);}
+
+// ====== AUTH ======
+async function tryLogin(){
+  const email=document.getElementById('gateEmail').value.trim();
+  const pass=document.getElementById('gatePass').value;
+  const btn=document.getElementById('gateBtn');
+  document.getElementById('gateErr').textContent="";
+  if(!email||!pass){document.getElementById('gateErr').textContent="Please enter your email and password.";return;}
+  btn.disabled=true;btn.textContent="Signing in…";
+  const {data,error}=await sb.auth.signInWithPassword({email,password:pass});
+  btn.disabled=false;btn.textContent="Sign in";
+  if(error){document.getElementById('gateErr').textContent="Incorrect email or password.";return;}
+  if(data.user.email !== ADMIN_EMAIL){
+    document.getElementById('gateErr').textContent="This account is not the admin.";
+    await sb.auth.signOut(); return;
+  }
+  SESSION = data.session;
+  enterApp();
+}
+async function enterApp(){
+  document.getElementById('gate').classList.add('hidden');
+  document.getElementById('app').style.display='flex';
+  await loadStudents(); renderOverview();
+}
+document.getElementById('gateBtn').addEventListener('click',tryLogin);
+document.getElementById('gatePass').addEventListener('keydown',e=>{if(e.key==='Enter')tryLogin();});
+document.getElementById('logout').addEventListener('click',async()=>{await sb.auth.signOut();location.reload();});
+
+// ====== LOAD STUDENTS (from profiles + progress) ======
+async function loadStudents(){
+  const {data,error}=await sb.from('profiles').select('*').order('created_at',{ascending:false});
+  if(error){toast('Could not load students');students=[];renderStudents();return;}
+  // charger toute la progression en une fois (l'admin peut tout lire)
+  const {data:progress}=await sb.from('week_progress').select('*');
+  const byUser={};
+  (progress||[]).forEach(r=>{
+    if(!byUser[r.user_id])byUser[r.user_id]={done:0,weeks:{}};
+    byUser[r.user_id].weeks[r.week_number]={completed:!!r.completed,lessons:Array.isArray(r.lessons_done)?r.lessons_done:[]};
+    if(r.completed)byUser[r.user_id].done++;
+  });
+  students=(data||[]).filter(p=>p.email!==ADMIN_EMAIL).map(p=>{
+    const pr=byUser[p.id]||{done:0,weeks:{}};
+    return {
+      id:p.id,
+      name:p.full_name||(p.email||'').split('@')[0],
+      email:p.email||'',
+      cohort:p.cohort||'Cohort I',
+      status:p.status||'invited',
+      weeksDone:pr.done,
+      progress:Math.round(pr.done/8*100),
+      weeks:pr.weeks
+    };
+  });
+  renderStudents();
+}
+
+function renderStudents(){
+  const q=(document.getElementById('searchInput').value||"").toLowerCase();
+  const body=document.getElementById('studentRows');body.innerHTML="";
+  const filtered=students.filter(s=>s.name.toLowerCase().includes(q)||s.email.toLowerCase().includes(q));
+  if(filtered.length===0){body.innerHTML='<tr class="empty-row"><td colspan="5">No students yet. Click "Create access" to invite your first.</td></tr>';return;}
+  filtered.forEach((s)=>{
+    const tr=document.createElement('tr');
+    tr.innerHTML=`
+      <td><div class="st-name"><div class="st-av">${initials(s.name)}</div><div><div class="nm">${s.name}</div><div class="em">${s.email}</div></div></div></td>
+      <td>${statusBadge(s.status)}</td>
+      <td><div class="prog-mini"><div class="track"><div class="fill" style="width:${s.progress}%"></div></div><span class="pct">${s.weeksDone}/8</span></div></td>
+      <td><span style="font-size:12.5px;color:var(--stone)">${s.cohort}</span></td>
+      <td><div class="row-actions"><button class="icon-btn" title="View progress" data-id="${s.id}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg></button></div></td>`;
+    body.appendChild(tr);
+  });
+  body.querySelectorAll('.icon-btn').forEach(b=>b.addEventListener('click',()=>{
+    const s=students.find(x=>x.id===b.dataset.id); if(s)showProgress(s);
+  }));
+}
+
+// ====== PROGRESS DETAIL MODAL ======
+function showProgress(s){
+  document.getElementById('pgName').textContent=s.name;
+  document.getElementById('pgSub').textContent=`${s.email} · ${s.cohort} · ${s.weeksDone}/8 weeks complete`;
+  const box=document.getElementById('pgWeeks');box.innerHTML="";
+  for(let n=1;n<=8;n++){
+    const w=s.weeks[n];
+    const done=w&&w.completed;
+    const lessons=w?w.lessons.filter(Boolean).length:0;
+    const state=done?'<span style="color:var(--green);font-weight:600;">✓ Completed</span>':(w&&lessons>0?`<span style="color:var(--gold-deep);font-weight:600;">In progress · ${lessons}/4 steps</span>`:'<span style="color:var(--stone);">Not started</span>');
+    const row=document.createElement('div');
+    row.style.cssText='display:flex;align-items:center;gap:14px;padding:13px 0;border-bottom:1px solid var(--line);';
+    row.innerHTML=`<div style="width:34px;height:34px;flex-shrink:0;border-radius:9px;background:${done?'var(--gold)':'var(--gold-wash)'};color:${done?'#fff':'var(--gold-deep)'};display:flex;align-items:center;justify-content:center;font-family:'Cormorant',serif;font-weight:700;font-size:15px;">${n}</div><div style="flex:1;min-width:0;"><div style="font-size:14px;font-weight:600;color:var(--ink);">${WEEK_TITLES[n-1]}</div><div style="font-size:12.5px;margin-top:1px;">${state}</div></div>`;
+    box.appendChild(row);
+  }
+  document.getElementById('progressOverlay').classList.add('open');
+}
+document.getElementById('pgClose').addEventListener('click',()=>document.getElementById('progressOverlay').classList.remove('open'));
+document.getElementById('progressOverlay').addEventListener('click',e=>{if(e.target.id==='progressOverlay')e.currentTarget.classList.remove('open');});
+document.getElementById('searchInput').addEventListener('input',renderStudents);
+
+// ====== CREATE ACCESS (calls Edge Function) ======
+function openModal(){
+  document.getElementById('modalTitle').textContent="Create student access";
+  document.getElementById('saveBtn').textContent="Create access & send invite";
+  fName.value=""; fEmail.value=""; fCohort.value="Cohort I";
+  document.getElementById('overlay').classList.add('open');
+}
+function closeModal(){document.getElementById('overlay').classList.remove('open');}
+document.getElementById('newBtn').addEventListener('click',openModal);
+document.getElementById('modalClose').addEventListener('click',closeModal);
+document.getElementById('cancelBtn').addEventListener('click',closeModal);
+document.getElementById('overlay').addEventListener('click',e=>{if(e.target.id==='overlay')closeModal();});
+
+document.getElementById('saveBtn').addEventListener('click',async()=>{
+  const name=fName.value.trim(), email=fEmail.value.trim(), cohort=fCohort.value;
+  if(!name||!email){toast('Please add a name and email');return;}
+  const btn=document.getElementById('saveBtn');
+  btn.disabled=true; btn.textContent="Sending invitation…";
+  try{
+    const {data:{session}}=await sb.auth.getSession();
+    const res=await fetch(`${SUPABASE_URL}/functions/v1/invite-student`,{
+      method:'POST',
+      headers:{
+        'Content-Type':'application/json',
+        'Authorization':`Bearer ${session.access_token}`,
+        'apikey':SUPABASE_KEY
+      },
+      body:JSON.stringify({email,full_name:name,cohort})
+    });
+    const out=await res.json();
+    btn.disabled=false; btn.textContent="Create access & send invite";
+    if(!res.ok || out.error){
+      toast(out.error || 'Could not create access');
+      return;
+    }
+    closeModal();
+    await loadStudents(); renderOverview();
+    showSuccess(name,email);
+  }catch(e){
+    btn.disabled=false; btn.textContent="Create access & send invite";
+    toast('Network error, please try again');
+  }
+});
+
+// ====== SUCCESS MODAL ======
+function showSuccess(name,email){
+  document.getElementById('acUser').textContent=name;
+  document.getElementById('acPass').textContent=email;
+  document.getElementById('successOverlay').classList.add('open');
+}
+document.getElementById('successClose').addEventListener('click',()=>document.getElementById('successOverlay').classList.remove('open'));
+document.getElementById('successDone').addEventListener('click',()=>document.getElementById('successOverlay').classList.remove('open'));
+document.getElementById('successOverlay').addEventListener('click',e=>{if(e.target.id==='successOverlay')e.currentTarget.classList.remove('open');});
+document.querySelectorAll('.copy-btn').forEach(b=>b.addEventListener('click',()=>{
+  const txt=document.getElementById(b.dataset.copy).textContent;
+  navigator.clipboard&&navigator.clipboard.writeText(txt); toast('Copied');
+}));
+document.getElementById('copyAllBtn').addEventListener('click',()=>{
+  const name=document.getElementById('acUser').textContent, email=document.getElementById('acPass').textContent;
+  const link=document.getElementById('acLink').textContent;
+  const text=`Welcome to Maison Amarine, ${name}.\n\nYour place in the academy is ready. You'll receive an invitation email at ${email} — click the link to set your password and enter your program at ${link}.\n\nWith warm regards,\nMaison Amarine`;
+  navigator.clipboard&&navigator.clipboard.writeText(text); toast('Invitation message copied');
+});
+
+// ====== OVERVIEW ======
+function renderOverview(){
+  const total=students.length;
+  const active=students.filter(s=>s.status==='active').length;
+  const invited=students.filter(s=>s.status==='invited').length;
+  document.getElementById('statsBox').innerHTML=`
+    <div class="stat"><div class="sv">${total}</div><div class="sl">Total students</div></div>
+    <div class="stat"><div class="sv">${active}</div><div class="sl">Active</div></div>
+    <div class="stat"><div class="sv">${invited}</div><div class="sl">Invited</div></div>
+    <div class="stat"><div class="sv">${total}</div><div class="sl">Cohort I</div></div>`;
+  const act=document.getElementById('activityRows');act.innerHTML="";
+  if(students.length===0){act.innerHTML='<tr class="empty-row"><td colspan="2" style="padding:30px;text-align:center;color:var(--stone);font-style:italic;">No students yet.</td></tr>';return;}
+  students.slice(0,6).forEach(s=>{
+    const tr=document.createElement('tr');
+    tr.innerHTML=`<td style="padding:16px 24px;"><div class="st-name"><div class="st-av">${initials(s.name)}</div><div><div class="nm">${s.name}</div><div class="em">${s.cohort}</div></div></div></td><td style="text-align:right;padding:16px 24px;">${statusBadge(s.status)}</td>`;
+    act.appendChild(tr);
+  });
+}
+
+// ====== NAV ======
+document.querySelectorAll('.nav-item').forEach(n=>n.addEventListener('click',()=>{
+  document.querySelectorAll('.page').forEach(p=>p.classList.add('hidden'));
+  document.getElementById('page-'+n.dataset.page).classList.remove('hidden');
+  document.querySelectorAll('.nav-item').forEach(x=>x.classList.remove('active'));
+  n.classList.add('active');
+  if(n.dataset.page==='overview')renderOverview();
+}));
+
+// ====== resume session on load ======
+(async()=>{
+  const {data}=await sb.auth.getSession();
+  if(data.session && data.session.user.email===ADMIN_EMAIL){ SESSION=data.session; enterApp(); }
+})();
+</script>
+</body>
+</html>
