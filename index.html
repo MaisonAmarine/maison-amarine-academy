@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maison Amarine — The Academy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@500;600;700&family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ivory:#F8F4EC; --paper:#FFFFFF; --ink:#211C15; --ink-soft:#4a4238;
+    --gold:#A87E3D; --gold-deep:#8a6630; --gold-lt:#C9A867; --gold-wash:#F3EAD8;
+    --stone:#7d7568; --line:#E6DECE; --green:#5f7d52; --red:#a4483f; --shadow:rgba(33,28,21,0.10);
+    --sidebar:#211C15;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--ivory);color:var(--ink);font-family:'Jost',sans-serif;font-weight:400;-webkit-font-smoothing:antialiased;line-height:1.55;}
+  ::selection{background:rgba(168,126,61,0.22);}
+  a{text-decoration:none;color:inherit;}
+
+  /* LOGIN */
+  .gate{position:fixed;inset:0;z-index:500;background:var(--sidebar);display:flex;align-items:center;justify-content:center;padding:20px;}
+  .gate.hidden{display:none;}
+  .gate-card{background:var(--ivory);border-radius:20px;max-width:410px;width:100%;padding:42px 40px;box-shadow:0 40px 100px rgba(0,0,0,.4);text-align:center;}
+  .gate-card .glogo{width:40px;height:40px;margin:0 auto 20px;}
+  .gate-card .eyebrow{font-size:10px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;}
+  .gate-card h1{font-family:'Cormorant',serif;font-weight:700;font-size:30px;color:var(--ink);margin-bottom:6px;}
+  .gate-card p{font-size:13.5px;color:var(--ink-soft);margin-bottom:26px;}
+  .gate-card input{width:100%;font-family:'Jost',sans-serif;font-size:15px;color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:14px 16px;outline:none;margin-bottom:12px;transition:border-color .2s;}
+  .gate-card input:focus{border-color:var(--gold-lt);}
+  .gate-card button{width:100%;font-family:'Jost',sans-serif;font-size:15px;font-weight:600;color:#fff;background:var(--gold);border:none;border-radius:12px;padding:15px;cursor:pointer;transition:background .2s;}
+  .gate-card button:hover{background:var(--gold-deep);}
+  .gate-card button:disabled{opacity:.6;cursor:default;}
+  .gate-err{font-size:12.5px;color:var(--red);margin-top:12px;min-height:16px;}
+  .gate-link{font-size:12.5px;color:var(--gold-deep);margin-top:18px;cursor:pointer;text-decoration:underline;display:inline-block;}
+
+  .app{display:flex;min-height:100vh;}
+  .app.hidden{display:none;}
+  .sidebar{width:248px;flex-shrink:0;background:var(--sidebar);color:#EDE6D8;display:flex;flex-direction:column;position:sticky;top:0;height:100vh;padding:26px 18px;}
+  .sb-brand{display:flex;align-items:center;gap:10px;padding:0 8px 4px;margin-bottom:30px;}
+  .sb-brand svg{width:26px;height:26px;flex-shrink:0;}
+  .sb-brand .name{font-family:'Cormorant',serif;font-weight:700;font-size:21px;color:#F6F0E4;line-height:1;}
+  .sb-brand .name span{color:var(--gold-lt);}
+  .sb-brand .tag{display:block;font-size:7.5px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:#9a9184;margin-top:3px;}
+  .nav{display:flex;flex-direction:column;gap:4px;}
+  .nav-item{display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:11px;cursor:pointer;font-size:14.5px;font-weight:500;color:#c7bfae;transition:background .2s,color .2s;}
+  .nav-item svg{width:19px;height:19px;flex-shrink:0;}
+  .nav-item:hover{background:rgba(255,255,255,.06);color:#F6F0E4;}
+  .nav-item.active{background:var(--gold);color:#fff;}
+  .nav-sep{height:1px;background:rgba(255,255,255,.09);margin:16px 8px;}
+  .sb-foot{margin-top:auto;padding:14px 8px 0;}
+  .sb-user{display:flex;align-items:center;gap:11px;margin-bottom:14px;}
+  .sb-user .av{width:36px;height:36px;border-radius:50%;background:var(--gold);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:15px;flex-shrink:0;}
+  .sb-user .un{font-size:13.5px;font-weight:600;color:#F6F0E4;line-height:1.2;}
+  .sb-user .ur{font-size:11px;color:#9a9184;}
+  .logout{display:flex;align-items:center;gap:9px;font-size:12.5px;font-weight:500;color:#9a9184;cursor:pointer;padding:8px 6px;transition:color .2s;}
+  .logout:hover{color:#F6F0E4;} .logout svg{width:16px;height:16px;}
+
+  .main{flex:1;min-width:0;}
+  .page{max-width:940px;margin:0 auto;padding:38px 40px 60px;}
+  .page.hidden{display:none;}
+  .page-h{margin-bottom:8px;}
+  .page-h .eyebrow{font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;}
+  .page-h h1{font-family:'Cormorant',serif;font-weight:700;font-size:34px;line-height:1.1;color:var(--ink);}
+  .page-h p{font-size:15px;color:var(--ink-soft);margin-top:8px;max-width:620px;}
+  .btn-primary{display:inline-flex;align-items:center;gap:10px;font-size:15px;font-weight:600;color:#fff;background:var(--gold);border:none;border-radius:12px;padding:15px 26px;cursor:pointer;transition:background .2s,transform .2s,box-shadow .2s;box-shadow:0 6px 16px rgba(168,126,61,0.28);}
+  .btn-primary:hover{background:var(--gold-deep);transform:translateY(-2px);}
+  .btn-primary svg{width:17px;height:17px;}
+
+  .resume{margin:26px 0 10px;background:var(--paper);border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 10px 30px var(--shadow);}
+  .resume-inner{display:flex;align-items:stretch;flex-wrap:wrap;}
+  .resume-left{flex:1;min-width:280px;padding:30px 34px;}
+  .resume-hi{font-size:15px;color:var(--stone);font-weight:500;margin-bottom:6px;}
+  .resume-left h2{font-family:'Cormorant',serif;font-weight:700;font-size:29px;line-height:1.15;color:var(--ink);margin-bottom:6px;}
+  .resume-left .desc{font-size:14.5px;color:var(--ink-soft);margin-bottom:22px;}
+  .resume-right{width:290px;background:var(--gold-wash);padding:30px 34px;display:flex;flex-direction:column;justify-content:center;gap:18px;border-left:1px solid var(--line);}
+  .prog-row{display:flex;align-items:baseline;justify-content:space-between;}
+  .prog-row .big{font-family:'Cormorant',serif;font-weight:700;font-size:40px;color:var(--gold);line-height:1;}
+  .prog-row .of{font-size:14px;color:var(--stone);font-weight:500;}
+  .prog-label{font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--stone);}
+  .bar-track{height:10px;background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden;}
+  .bar-fill{height:100%;background:linear-gradient(90deg,var(--gold-lt),var(--gold));border-radius:20px;transition:width 1s cubic-bezier(.22,.61,.36,1);}
+  .prog-sub{font-size:12.5px;color:var(--ink-soft);}
+  .sec-head{margin:40px 0 18px;}
+  .sec-head h3{font-family:'Cormorant',serif;font-weight:700;font-size:24px;color:var(--ink);}
+  .sec-head p{font-size:14px;color:var(--stone);margin-top:2px;}
+  .weeks{display:flex;flex-direction:column;gap:14px;margin-bottom:20px;}
+  .week{display:flex;align-items:center;gap:20px;width:100%;background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:20px 24px;cursor:pointer;text-align:left;font-family:inherit;transition:transform .2s,box-shadow .2s,border-color .2s;}
+  .week:hover{transform:translateY(-2px);box-shadow:0 12px 28px var(--shadow);border-color:var(--gold-lt);}
+  .week.locked{cursor:not-allowed;background:#faf7f0;opacity:.72;}
+  .week.locked:hover{transform:none;box-shadow:none;border-color:var(--line);}
+  .week-badge{width:54px;height:54px;flex-shrink:0;border-radius:14px;display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:'Cormorant',serif;font-weight:700;background:var(--gold-wash);color:var(--gold-deep);}
+  .week-badge .wk{font-size:9px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);font-family:'Jost',sans-serif;line-height:1;}
+  .week-badge .n{font-size:26px;line-height:1;}
+  .week.done .week-badge{background:var(--gold);color:#fff;}
+  .week.done .week-badge .wk{color:rgba(255,255,255,.85);}
+  .week.locked .week-badge{background:#efe9dc;color:var(--stone);}
+  .week.locked .week-badge .wk{color:var(--stone);}
+  .week-main{flex:1;min-width:0;}
+  .week-main h4{font-family:'Cormorant',serif;font-weight:600;font-size:21px;color:var(--ink);line-height:1.2;}
+  .week-main .wsub{font-size:13.5px;color:var(--ink-soft);margin-top:2px;}
+  .week-pill{display:inline-block;margin-top:8px;font-size:10.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--gold-deep);background:var(--gold-wash);padding:3px 10px;border-radius:20px;}
+  .week-right{flex-shrink:0;display:flex;align-items:center;gap:14px;}
+  .state{display:flex;align-items:center;gap:7px;font-size:13px;font-weight:600;}
+  .state.done{color:var(--gold);} .state.current{color:var(--ink);} .state.locked{color:var(--stone);}
+  .state .ic{width:20px;height:20px;display:flex;align-items:center;justify-content:center;}
+  .state .ic svg{width:18px;height:18px;}
+  .go{width:40px;height:40px;border-radius:50%;flex-shrink:0;background:var(--gold-wash);color:var(--gold-deep);display:flex;align-items:center;justify-content:center;font-size:18px;transition:background .2s,transform .2s;}
+  .week:hover .go{background:var(--gold);color:#fff;transform:translateX(3px);}
+  .week.locked .go{background:#efe9dc;color:var(--stone);}
+  .mentor{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;background:var(--ink);color:#F1E9D8;border-radius:18px;padding:30px 34px;margin-top:24px;}
+  .mentor h3{font-family:'Cormorant',serif;font-weight:700;font-size:24px;color:#F6F0E4;margin-bottom:5px;}
+  .mentor p{font-size:14px;color:#cfc7b6;max-width:460px;}
+  .mentor .btn-gold{font-size:14px;font-weight:600;color:var(--ink);background:var(--gold-lt);border:none;border-radius:12px;padding:15px 26px;cursor:pointer;white-space:nowrap;transition:background .2s,transform .2s;}
+  .mentor .btn-gold:hover{background:#d8bd8a;transform:translateY(-2px);}
+
+  /* modal */
+  .overlay{position:fixed;inset:0;z-index:200;background:rgba(33,28,21,0.55);-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);display:none;align-items:flex-start;justify-content:center;padding:50px 18px;overflow-y:auto;}
+  .overlay.open{display:flex;}
+  .modal{background:var(--ivory);border-radius:20px;max-width:640px;width:100%;box-shadow:0 40px 100px rgba(33,28,21,.4);animation:rise .4s cubic-bezier(.22,.61,.36,1);overflow:hidden;}
+  @keyframes rise{from{opacity:0;transform:translateY(22px);}to{opacity:1;transform:none;}}
+  .modal-head{padding:28px 32px 24px;background:var(--paper);border-bottom:1px solid var(--line);position:relative;}
+  .modal-head .row{display:flex;align-items:center;gap:12px;margin-bottom:12px;}
+  .modal-head .m-badge{width:46px;height:46px;border-radius:12px;background:var(--gold-wash);color:var(--gold-deep);display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:'Cormorant',serif;font-weight:700;flex-shrink:0;}
+  .modal-head .m-badge .wk{font-size:8px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);font-family:'Jost',sans-serif;}
+  .modal-head .m-badge .n{font-size:22px;line-height:1;}
+  .modal-head .m-pill{font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--gold-deep);background:var(--gold-wash);padding:4px 11px;border-radius:20px;}
+  .modal-head h2{font-family:'Cormorant',serif;font-weight:700;font-size:27px;line-height:1.15;color:var(--ink);}
+  .modal-head .m-sub{font-size:14px;color:var(--ink-soft);margin-top:4px;}
+  .modal-close{position:absolute;top:22px;right:24px;width:32px;height:32px;border-radius:50%;background:var(--ivory);border:1px solid var(--line);font-size:18px;color:var(--stone);cursor:pointer;transition:all .2s;}
+  .modal-close:hover{background:#fff;color:var(--ink);}
+  .modal-body{padding:26px 32px 30px;}
+  .m-obj{font-size:14.5px;color:var(--ink-soft);line-height:1.65;background:var(--gold-wash);border-radius:12px;padding:16px 18px;margin-bottom:22px;}
+  .m-steps-label{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--stone);margin-bottom:12px;}
+  .lesson{display:flex;align-items:center;gap:15px;padding:15px 16px;margin-bottom:10px;background:var(--paper);border:1px solid var(--line);border-radius:13px;transition:border-color .2s,background .2s;}
+  .lesson:hover{border-color:var(--gold-lt);}
+  .lesson.done{background:#fbfaf5;}
+  .lesson-ic{width:42px;height:42px;border-radius:11px;flex-shrink:0;background:var(--gold-wash);display:flex;align-items:center;justify-content:center;color:var(--gold-deep);}
+  .lesson-ic svg{width:19px;height:19px;}
+  .lesson-txt{flex:1;min-width:0;}
+  .lesson-txt .lt{font-size:15px;font-weight:600;color:var(--ink);}
+  .lesson-txt .lk{font-size:12.5px;color:var(--stone);margin-top:1px;}
+  .lesson-check{width:28px;height:28px;border-radius:50%;border:2px solid var(--line);flex-shrink:0;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;background:#fff;}
+  .lesson-check:hover{border-color:var(--gold-lt);}
+  .lesson-check.checked{background:var(--gold);border-color:var(--gold);}
+  .lesson-check svg{width:15px;height:15px;color:#fff;opacity:0;transition:opacity .2s;}
+  .lesson-check.checked svg{opacity:1;}
+  .modal-foot{padding:8px 32px 30px;}
+  .mark-week{width:100%;font-size:15px;font-weight:600;color:#fff;background:var(--gold);border:none;border-radius:13px;padding:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;transition:background .2s,transform .2s;}
+  .mark-week:hover{background:var(--gold-deep);transform:translateY(-2px);}
+  .mark-week svg{width:18px;height:18px;} .mark-week.is-done{background:var(--green);}
+
+  .toast{position:fixed;bottom:26px;left:50%;transform:translateX(-50%) translateY(30px);background:var(--ink);color:#F6F0E4;font-size:13.5px;font-weight:500;padding:13px 24px;border-radius:12px;box-shadow:0 12px 30px rgba(0,0,0,.25);opacity:0;transition:all .3s;z-index:400;}
+  .toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
+  .foot{border-top:1px solid var(--line);padding:26px 0;text-align:center;}
+  .foot p{font-size:12px;font-weight:500;letter-spacing:.06em;color:var(--stone);}
+
+  @media(max-width:860px){
+    .app{flex-direction:column;} .sidebar{width:100%;height:auto;position:static;flex-direction:row;align-items:center;padding:14px 18px;overflow-x:auto;}
+    .sb-brand{margin-bottom:0;} .nav{flex-direction:row;margin-left:auto;} .nav-sep{display:none;} .nav-item span{display:none;}
+    .sb-foot{display:none;}
+    .page{padding:24px 18px 50px;} .resume-inner{flex-direction:column;} .resume-right{width:100%;border-left:none;border-top:1px solid var(--line);}
+    .week-main .wsub{display:none;} .week-right .state span:not(.ic){display:none;}
+    .mentor{flex-direction:column;align-items:flex-start;} .page-h h1{font-size:28px;}
+    .modal-head,.modal-body,.modal-foot{padding-left:22px;padding-right:22px;}
+  }
+  @media(prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;transition-duration:.12s!important;}}
+</style>
+</head>
+<body>
+
+<!-- LOGIN GATE -->
+<div class="gate" id="gate">
+  <div class="gate-card">
+    <svg class="glogo" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="8" cy="8" r="5" stroke="#A87E3D" stroke-width="1.5"/><circle cx="8" cy="8" r="1.7" fill="#A87E3D"/>
+      <path d="M11.5 11.5L20 20M17 17l2.2-2.2M15 15l1.6-1.6" stroke="#A87E3D" stroke-width="1.5" stroke-linecap="round"/>
+    </svg>
+    <div class="eyebrow">Maison Amarine</div>
+    <h1 id="gateTitle">Welcome back</h1>
+    <p id="gateSub">Sign in to enter your academy.</p>
+    <input type="email" id="gateEmail" placeholder="Your email" autocomplete="email">
+    <input type="password" id="gatePass" placeholder="Your password" autocomplete="current-password">
+    <button id="gateBtn">Sign in</button>
+    <div class="gate-err" id="gateErr"></div>
+    <span class="gate-link" id="forgotLink">Forgot your password?</span>
+  </div>
+</div>
+
+<!-- APP -->
+<div class="app hidden" id="app">
+  <aside class="sidebar">
+    <div class="sb-brand">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="8" cy="8" r="5" stroke="#C9A867" stroke-width="1.5"/><circle cx="8" cy="8" r="1.7" fill="#C9A867"/>
+        <path d="M11.5 11.5L20 20M17 17l2.2-2.2M15 15l1.6-1.6" stroke="#C9A867" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+      <div><div class="name">Maison <span>Amarine</span></div><div class="tag">The Academy</div></div>
+    </div>
+    <nav class="nav">
+      <div class="nav-item active" data-page="program">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 6h16M4 12h16M4 18h10" stroke-linecap="round"/></svg><span>My Program</span>
+      </div>
+      <div class="nav-item" data-page="calendar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4" stroke-linecap="round"/></svg><span>Calendar</span>
+      </div>
+    </nav>
+    <div class="sb-foot">
+      <div class="sb-user"><div class="av" id="sbAv">·</div><div><div class="un" id="sbName">—</div><div class="ur" id="sbRole">Student</div></div></div>
+      <div class="logout" id="logout"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9" stroke-linecap="round" stroke-linejoin="round"/></svg>Sign out</div>
+    </div>
+  </aside>
+
+  <main class="main">
+    <section class="page" id="page-program">
+      <div class="resume">
+        <div class="resume-inner">
+          <div class="resume-left">
+            <div class="resume-hi" id="hiLine">Hi</div>
+            <h2 id="resumeTitle">Start Week 1</h2>
+            <div class="desc" id="resumeDesc">The World You Are Entering.</div>
+            <button class="btn-primary" id="resumeBtn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="6 4 20 12 6 20 6 4" fill="currentColor" stroke="none"/></svg><span id="resumeBtnLabel">Start this week</span></button>
+          </div>
+          <div class="resume-right">
+            <div><div class="prog-label">Your progress</div><div class="prog-row"><span class="big" id="bigDone">0</span><span class="of">/ 8 weeks</span></div></div>
+            <div class="bar-track"><div class="bar-fill" id="barFill" style="width:0%"></div></div>
+            <div class="prog-sub" id="progSub">Welcome, let's begin.</div>
+          </div>
+        </div>
+      </div>
+      <div class="sec-head"><h3>My program</h3><p>Finish a week to unlock the next. Take your time.</p></div>
+      <div class="weeks" id="weekList"></div>
+      <div class="mentor"><div><h3>Your mentorship session</h3><p>Every week includes a personal session. It's included in your program.</p></div><button class="btn-gold" onclick="alert('Booking calendar coming soon.')">Book my session</button></div>
+    </section>
+
+    <section class="page hidden" id="page-calendar">
+      <div class="page-h"><div class="eyebrow">Calendar</div><h1>Your journey, week by week.</h1><p>The rhythm of your eight weeks and your mentorship sessions.</p></div>
+      <div class="weeks" id="calList" style="margin-top:24px;"></div>
+    </section>
+  </main>
+</div>
+
+<!-- MODAL -->
+<div class="overlay" id="overlay">
+  <div class="modal">
+    <div class="modal-head">
+      <div class="row"><div class="m-badge"><span class="wk">Week</span><span class="n" id="mBadgeN">1</span></div><span class="m-pill" id="mPill">Savoir</span></div>
+      <h2 id="modalTitle"></h2><div class="m-sub" id="modalSub"></div>
+      <button class="modal-close" id="modalClose">&times;</button>
+    </div>
+    <div class="modal-body"><div class="m-obj" id="modalObj"></div><div class="m-steps-label">What you'll do this week</div><div id="lessonList"></div></div>
+    <div class="modal-foot"><button class="mark-week" id="markWeek"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l5 5L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg><span id="markLabel">Mark this week as complete</span></button></div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+// ====== CONFIG SUPABASE ======
+const SUPABASE_URL = "https://beexlhyvcngeopkkxoco.supabase.co";
+const SUPABASE_KEY = "sb_publishable_qVIwPd3lkJnSoObnYMuUKg_mn0i2LY9";
+if (typeof supabase === 'undefined') {
+  document.getElementById('gateErr').textContent = "Connection issue — please refresh the page.";
+}
+const sb = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+// ====== PROGRAM DATA ======
+const WEEKS = [
+  {no:1,pillar:"Savoir",title:"The World You Are Entering",sub:"Who the ultra-wealthy are, and what they truly want.",obj:"Before any skill, you'll understand the client. This week changes how you see wealth.",lessons:[["Watch the lesson","Video · 18 min","video"],["Read the insider codes","Confidential note","note"],["Do the practice","Client empathy case study","task"],["Create your deliverable","Your client empathy map","file"]]},
+  {no:2,pillar:"Savoir",title:"The Codes of Luxury",sub:"The culture and etiquette that signal you belong.",obj:"This world runs on codes. This week you'll gain the cultural fluency to move within it.",lessons:[["Watch the lesson","Video · 22 min","video"],["Read the insider codes","Confidential note","note"],["Do the practice","Build your reference library","task"],["Create your deliverable","Your annotated Luxury Codes","file"]]},
+  {no:3,pillar:"Savoir-être",title:"Discretion, Trust & Presence",sub:"The posture that makes you irreplaceable.",obj:"The most valuable quality in this world. This week is all about who you become.",lessons:[["Watch the lesson","Video · 20 min","video"],["Read the insider codes","Confidential note","note"],["Do the practice","Scenario training","task"],["Create your deliverable","Your personal code of conduct","file"]]},
+  {no:4,pillar:"Savoir-être",title:"The Art of Anticipation & Service",sub:"Solving what was never even asked.",obj:"Great service reacts fast; exceptional service anticipates. Learn the method.",lessons:[["Watch the lesson","Video · 19 min","video"],["Read the insider codes","Confidential note","note"],["Do the practice","Anticipation drill","task"],["Create your deliverable","Your anticipation playbook","file"]]},
+  {no:5,pillar:"Savoir-faire",title:"The Operational Toolkit",sub:"Sourcing, logistics, vendors, budgets, staff.",obj:"This week turns posture into real capability.",lessons:[["Watch the lesson","Video · 24 min","video"],["Read the insider codes","Confidential note","note"],["Do the practice","Build a mock itinerary","task"],["Create your deliverable","Your operations toolkit","file"]]},
+  {no:6,pillar:"Savoir-faire",title:"The Network & The Market",sub:"Where the roles are, and how this world hires.",obj:"Skills need access. This week gives you the map and the method to build your own network.",lessons:[["Watch the lesson","Video · 21 min","video"],["Read the insider codes","Confidential note","note"],["Do the practice","Network mapping","task"],["Create your deliverable","Your market entry plan","file"]]},
+  {no:7,pillar:"Savoir-faire",title:"Positioning & Pricing Yourself",sub:"Knowing your worth, and holding it.",obj:"Learn to see yourself as a premium professional and price your value correctly.",lessons:[["Watch the lesson","Video · 20 min","video"],["Read the insider codes","Confidential note","note"],["Do the practice","Pricing exercise","task"],["Create your deliverable","Your positioning & rate card","file"]]},
+  {no:8,pillar:"All pillars",title:"Your Launch — Role or Business",sub:"Land a private role, or build your own service.",obj:"The program ends in action. Turn everything into a concrete launch plan.",lessons:[["Watch the lesson","Video · 23 min","video"],["Read the insider codes","Confidential note","note"],["Do the practice","Build your launch plan","task"],["Your graduation session","Final mentorship review","mentor"]]},
+];
+const ICONS={video:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polygon points="7 4 20 12 7 20 7 4" fill="currentColor" stroke="none"/></svg>',note:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 3h9l4 4v14H6z"/><path d="M15 3v4h4M9 12h6M9 16h4" stroke-linecap="round"/></svg>',task:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 11l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/><rect x="4" y="4" width="16" height="16" rx="3"/></svg>',file:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 3h7l5 5v13H7z"/><path d="M14 3v5h5"/><path d="M10 13h5M10 17h5" stroke-linecap="round"/></svg>',mentor:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6" stroke-linecap="round"/></svg>',check:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2"><path d="M5 12l5 5L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg>',checkSmall:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M5 12l5 5L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg>',lock:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>'};
+
+// ====== STATE (loaded from Supabase) ======
+let USER=null, PROFILE=null;
+let state={completed:{},lessons:{}};
+
+function toast(m){const t=document.getElementById('toast');t.textContent=m;t.classList.add('show');clearTimeout(window._tt);window._tt=setTimeout(()=>t.classList.remove('show'),2200);}
+function initials(n){return (n||"?").split(' ').map(w=>w[0]).slice(0,2).join('').toUpperCase();}
+function highestUnlocked(){let u=1;for(let i=1;i<=8;i++){if(state.completed[i])u=i+1;}return Math.min(u,8);}
+function weekStatus(no){if(state.completed[no])return "done";if(no<=highestUnlocked())return "current";return "locked";}
+function lessonProgress(no){const a=state.lessons[no];if(!a)return 0;return Math.round(a.filter(Boolean).length/a.length*100);}
+
+// ====== AUTH ======
+async function doLogin(){
+  const email=document.getElementById('gateEmail').value.trim();
+  const pass=document.getElementById('gatePass').value;
+  const btn=document.getElementById('gateBtn');
+  document.getElementById('gateErr').textContent="";
+  if(!email||!pass){document.getElementById('gateErr').textContent="Please enter your email and password.";return;}
+  btn.disabled=true;btn.textContent="Signing in…";
+  const {data,error}=await sb.auth.signInWithPassword({email,password:pass});
+  btn.disabled=false;btn.textContent="Sign in";
+  if(error){document.getElementById('gateErr').textContent="Incorrect email or password.";return;}
+  await onSignedIn(data.user);
+}
+async function onSignedIn(user){
+  USER=user;
+  document.getElementById('gate').classList.add('hidden');
+  document.getElementById('app').classList.remove('hidden');
+  await loadProfile(); await loadProgress();
+  renderWeeks();
+}
+async function loadProfile(){
+  const {data}=await sb.from('profiles').select('*').eq('id',USER.id).maybeSingle();
+  PROFILE=data||{full_name:(USER.email||'').split('@')[0],email:USER.email};
+  const name=PROFILE.full_name||(USER.email||'').split('@')[0];
+  document.getElementById('sbAv').textContent=initials(name);
+  document.getElementById('sbName').textContent=name;
+  document.getElementById('sbRole').textContent=(PROFILE.cohort||'Student');
+  document.getElementById('hiLine').textContent="Hi "+(name.split(' ')[0]);
+}
+async function loadProgress(){
+  state={completed:{},lessons:{}};
+  const {data}=await sb.from('week_progress').select('*').eq('user_id',USER.id);
+  (data||[]).forEach(r=>{
+    if(r.completed)state.completed[r.week_number]=true;
+    state.lessons[r.week_number]=Array.isArray(r.lessons_done)?r.lessons_done:JSON.parse(r.lessons_done||'[]');
+  });
+}
+async function saveWeek(no){
+  const lessons=state.lessons[no]||WEEKS[no-1].lessons.map(()=>false);
+  const completed=!!state.completed[no];
+  await sb.from('week_progress').upsert({user_id:USER.id,week_number:no,completed,lessons_done:lessons,updated_at:new Date().toISOString()},{onConflict:'user_id,week_number'});
+}
+
+document.getElementById('gateBtn').addEventListener('click',doLogin);
+document.getElementById('gatePass').addEventListener('keydown',e=>{if(e.key==='Enter')doLogin();});
+document.getElementById('forgotLink').addEventListener('click',async()=>{
+  const email=document.getElementById('gateEmail').value.trim();
+  if(!email){document.getElementById('gateErr').textContent="Enter your email first, then click again.";return;}
+  const {error}=await sb.auth.resetPasswordForEmail(email,{redirectTo:window.location.origin});
+  document.getElementById('gateErr').textContent = error? "Could not send reset email." : "Check your inbox for a reset link.";
+});
+document.getElementById('logout').addEventListener('click',async()=>{await sb.auth.signOut();location.reload();});
+
+// ====== RENDER ======
+function renderWeeks(){
+  const list=document.getElementById('weekList');list.innerHTML="";
+  WEEKS.forEach(w=>{
+    const st=weekStatus(w.no);
+    const row=document.createElement(st==="locked"?'div':'button');
+    row.className="week "+st;
+    let sh;
+    if(st==="done")sh=`<span class="state done"><span class="ic">${ICONS.checkSmall}</span><span>Done</span></span>`;
+    else if(st==="current"){const lp=lessonProgress(w.no);sh=lp>0?`<span class="state current"><span>${lp}% done</span></span>`:`<span class="state current"><span>Start now</span></span>`;}
+    else sh=`<span class="state locked"><span class="ic">${ICONS.lock}</span><span>Locked</span></span>`;
+    const go=(st==="locked")?`<span class="go">${ICONS.lock}</span>`:`<span class="go">&rarr;</span>`;
+    row.innerHTML=`<div class="week-badge"><span class="wk">Week</span><span class="n">${w.no}</span></div><div class="week-main"><h4>${w.title}</h4><div class="wsub">${w.sub}</div><span class="week-pill">${w.pillar}</span></div><div class="week-right">${sh}${go}</div>`;
+    if(st!=="locked")row.addEventListener('click',()=>openWeek(w.no));
+    list.appendChild(row);
+  });
+  updateResume(); renderCalendar();
+}
+function updateResume(){
+  const done=Object.values(state.completed).filter(Boolean).length;
+  document.getElementById('bigDone').textContent=done;
+  document.getElementById('barFill').style.width=Math.round(done/8*100)+"%";
+  const cur=highestUnlocked();const w=WEEKS[cur-1];
+  if(done>=8){document.getElementById('resumeTitle').textContent="You've completed the program";document.getElementById('resumeDesc').textContent="Every week is done. The door is open.";document.getElementById('resumeBtnLabel').textContent="Review my program";document.getElementById('progSub').textContent="Congratulations, you made it inside.";}
+  else{document.getElementById('resumeTitle').textContent=(lessonProgress(cur)>0?"Continue Week "+cur:"Start Week "+cur);document.getElementById('resumeDesc').textContent=w.title;document.getElementById('resumeBtnLabel').textContent=(lessonProgress(cur)>0?"Continue where you left off":"Start this week");document.getElementById('progSub').textContent=done===0?"Welcome, let's begin.":"Keep going, you're on your way in.";}
+}
+function renderCalendar(){
+  const box=document.getElementById('calList');box.innerHTML="";
+  WEEKS.forEach(w=>{
+    const st=weekStatus(w.no);
+    const d=document.createElement('div');d.className="week "+(st==="done"?"done":"");
+    d.innerHTML=`<div class="week-badge"><span class="wk">Week</span><span class="n">${w.no}</span></div><div class="week-main"><h4>${w.title}</h4><div class="wsub">Lessons & practice · Mentorship session</div></div><div class="week-right"><span class="state ${st}">${st==="done"?"Completed":(st==="locked"?"Upcoming":"In progress")}</span></div>`;
+    box.appendChild(d);
+  });
+}
+
+let activeWeek=null;
+function openWeek(no){
+  if(weekStatus(no)==="locked")return;
+  activeWeek=no;const w=WEEKS[no-1];
+  document.getElementById('mBadgeN').textContent=w.no;
+  document.getElementById('mPill').textContent=w.pillar;
+  document.getElementById('modalTitle').textContent=w.title;
+  document.getElementById('modalSub').textContent=w.sub;
+  document.getElementById('modalObj').textContent=w.obj;
+  if(!state.lessons[no])state.lessons[no]=w.lessons.map(()=>false);
+  const list=document.getElementById('lessonList');list.innerHTML="";
+  w.lessons.forEach((ls,i)=>{
+    const ck=state.lessons[no][i];
+    const row=document.createElement('div');row.className="lesson"+(ck?" done":"");
+    row.innerHTML=`<div class="lesson-ic">${ICONS[ls[2]]||ICONS.file}</div><div class="lesson-txt"><div class="lt">${ls[0]}</div><div class="lk">${ls[1]}</div></div><div class="lesson-check ${ck?'checked':''}">${ICONS.check}</div>`;
+    row.querySelector('.lesson-check').addEventListener('click',async(e)=>{e.stopPropagation();state.lessons[no][i]=!state.lessons[no][i];e.currentTarget.classList.toggle('checked');row.classList.toggle('done');await saveWeek(no);renderWeeks();});
+    list.appendChild(row);
+  });
+  const btn=document.getElementById('markWeek');
+  if(state.completed[no]){btn.classList.add('is-done');document.getElementById('markLabel').textContent="Completed, click to reopen";}
+  else{btn.classList.remove('is-done');document.getElementById('markLabel').textContent="Mark this week as complete";}
+  document.getElementById('overlay').classList.add('open');document.body.style.overflow="hidden";
+}
+function closeModal(){document.getElementById('overlay').classList.remove('open');document.body.style.overflow="";}
+document.getElementById('modalClose').addEventListener('click',closeModal);
+document.getElementById('overlay').addEventListener('click',e=>{if(e.target.id==='overlay')closeModal();});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
+document.getElementById('markWeek').addEventListener('click',async()=>{if(activeWeek==null)return;state.completed[activeWeek]=!state.completed[activeWeek];await saveWeek(activeWeek);renderWeeks();closeModal();toast(state.completed[activeWeek]?"Week completed":"Week reopened");});
+document.getElementById('resumeBtn').addEventListener('click',()=>{const done=Object.values(state.completed).filter(Boolean).length;openWeek(done>=8?8:highestUnlocked());});
+document.querySelectorAll('.nav-item').forEach(n=>n.addEventListener('click',()=>{document.querySelectorAll('.page').forEach(p=>p.classList.add('hidden'));document.getElementById('page-'+n.dataset.page).classList.remove('hidden');document.querySelectorAll('.nav-item').forEach(x=>x.classList.remove('active'));n.classList.add('active');}));
+
+// ====== on load: check existing session ======
+(async()=>{
+  const {data}=await sb.auth.getSession();
+  if(data.session){ await onSignedIn(data.session.user); }
+})();
+</script>
+</body>
+</html>
