@@ -156,6 +156,36 @@
     table{font-size:13px;} thead th:nth-child(3),tbody td:nth-child(3){display:none;}
   }
   @media(prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;transition-duration:.12s!important;}}
+
+  /* MESSAGES (admin) */
+  .msg-dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:#e0574c;margin-left:6px;vertical-align:middle;}
+  .msg-layout{display:flex;gap:20px;height:min(68vh,640px);}
+  .msg-list{width:290px;flex-shrink:0;background:var(--paper);border:1px solid var(--line);border-radius:16px;overflow-y:auto;}
+  .msg-li{display:flex;align-items:center;gap:12px;padding:14px 16px;cursor:pointer;border-bottom:1px solid var(--line);transition:background .15s;}
+  .msg-li:hover{background:var(--ivory);}
+  .msg-li.active{background:var(--gold-wash);}
+  .msg-li .av{width:38px;height:38px;border-radius:50%;background:var(--gold);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:14px;flex-shrink:0;}
+  .msg-li .info{flex:1;min-width:0;}
+  .msg-li .nm{font-size:14px;font-weight:600;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+  .msg-li .pv{font-size:12px;color:var(--stone);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+  .msg-li .badge-dot{width:9px;height:9px;border-radius:50%;background:#e0574c;flex-shrink:0;}
+  .msg-conv{flex:1;display:flex;flex-direction:column;background:var(--paper);border:1px solid var(--line);border-radius:16px;overflow:hidden;min-width:0;}
+  .conv-head{padding:16px 22px;border-bottom:1px solid var(--line);background:var(--gold-wash);}
+  .conv-head h3{font-family:'Cormorant',serif;font-weight:700;font-size:19px;color:var(--ink);margin:0;}
+  .conv-head p{font-size:12px;color:var(--ink-soft);margin:1px 0 0;}
+  .conv-body{flex:1;overflow-y:auto;padding:20px 22px;display:flex;flex-direction:column;gap:11px;background:#fbf9f3;}
+  .conv-none{margin:auto;text-align:center;color:var(--stone);font-size:13.5px;max-width:280px;line-height:1.6;}
+  .cbubble{max-width:76%;padding:11px 15px;border-radius:15px;font-size:13.5px;line-height:1.5;}
+  .cbubble .when{display:block;font-size:10px;margin-top:4px;opacity:.6;}
+  .cbubble.them{align-self:flex-start;background:#fff;border:1px solid var(--line);color:var(--ink);border-bottom-left-radius:5px;}
+  .cbubble.me{align-self:flex-end;background:var(--gold);color:#fff;border-bottom-right-radius:5px;}
+  .cbubble.me .when{color:#fff;}
+  .conv-input{display:flex;gap:10px;padding:14px 18px;border-top:1px solid var(--line);background:var(--paper);}
+  .conv-input textarea{flex:1;resize:none;font-family:'Jost',sans-serif;font-size:13.5px;color:var(--ink);background:var(--ivory);border:1px solid var(--line);border-radius:11px;padding:11px 13px;outline:none;max-height:110px;line-height:1.4;}
+  .conv-input textarea:focus{border-color:var(--gold-lt);}
+  .conv-send{flex-shrink:0;background:var(--gold);color:#fff;border:none;border-radius:11px;padding:0 18px;font-family:'Jost',sans-serif;font-size:13.5px;font-weight:600;cursor:pointer;}
+  .conv-send:hover{background:var(--gold-deep);} .conv-send:disabled{opacity:.5;}
+  @media(max-width:760px){.msg-layout{flex-direction:column;height:auto;}.msg-list{width:100%;height:200px;}.msg-conv{height:440px;}}
 </style>
 </head>
 <body>
@@ -195,6 +225,10 @@
       <div class="nav-item" data-page="overview">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="8" height="8" rx="1.5"/><rect x="13" y="3" width="8" height="5" rx="1.5"/><rect x="13" y="11" width="8" height="10" rx="1.5"/><rect x="3" y="14" width="8" height="7" rx="1.5"/></svg>
         <span>Overview</span>
+      </div>
+      <div class="nav-item" data-page="messages">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Messages<span id="admMsgDot" class="msg-dot" style="display:none;"></span></span>
       </div>
       <div class="nav-item" data-page="settings">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M5 19l2-2M17 7l2-2" stroke-linecap="round"/></svg>
@@ -251,6 +285,16 @@
       <div class="note-band">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01" stroke-linecap="round"/></svg>
         <p>This is a design prototype. It lets you visualise and organise access management, but it does not create real secure logins on its own. For live, secure student accounts, connect this flow to a real back-end or a course platform later.</p>
+      </div>
+    </section>
+
+    <section class="page hidden" id="page-messages">
+      <div class="page-h"><div><div class="eyebrow">Messages</div><h1>Your students</h1><p>Your private conversations with each student. Reply personally, it's what makes your mentorship priceless.</p></div></div>
+      <div class="msg-layout">
+        <div class="msg-list" id="msgList"></div>
+        <div class="msg-conv" id="msgConv">
+          <div class="conv-body"><div class="conv-none" id="convNone">Select a student on the left to open your conversation.</div></div>
+        </div>
       </div>
     </section>
 
@@ -361,7 +405,7 @@ async function tryLogin(){
 async function enterApp(){
   document.getElementById('gate').classList.add('hidden');
   document.getElementById('app').style.display='flex';
-  await loadStudents(); renderOverview();
+  await loadStudents(); renderOverview(); loadInbox();
 }
 document.getElementById('gateBtn').addEventListener('click',tryLogin);
 document.getElementById('gatePass').addEventListener('keydown',e=>{if(e.key==='Enter')tryLogin();});
@@ -557,7 +601,102 @@ document.querySelectorAll('.nav-item').forEach(n=>n.addEventListener('click',()=
   document.querySelectorAll('.nav-item').forEach(x=>x.classList.remove('active'));
   n.classList.add('active');
   if(n.dataset.page==='overview')renderOverview();
+  if(n.dataset.page==='messages')loadInbox();
 }));
+
+// ====== MESSAGES (admin side) ======
+let allMessages=[], activeStudentId=null;
+function fmtTime(iso){
+  const d=new Date(iso); const now=new Date();
+  const opts={hour:'2-digit',minute:'2-digit'};
+  if(d.toDateString()===now.toDateString()) return d.toLocaleTimeString([], opts);
+  return d.toLocaleDateString([], {month:'short',day:'numeric'})+' · '+d.toLocaleTimeString([], opts);
+}
+function escapeHtml(s){return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+async function loadInbox(){
+  // charger tous les messages (l'admin peut tout lire)
+  const {data,error}=await sb.from('messages').select('*').order('created_at',{ascending:true});
+  if(error){return;}
+  allMessages=data||[];
+  renderInboxList();
+  updateAdminDot();
+  if(activeStudentId) renderConversation(activeStudentId);
+}
+function updateAdminDot(){
+  const unread=allMessages.some(m=>m.sender==='student' && !m.read_by_recipient);
+  document.getElementById('admMsgDot').style.display = unread ? 'inline-block' : 'none';
+}
+function renderInboxList(){
+  const list=document.getElementById('msgList'); list.innerHTML='';
+  // regrouper par élève, seulement ceux qui ont au moins un message OU tous les students connus
+  const byStudent={};
+  allMessages.forEach(m=>{ (byStudent[m.student_id]=byStudent[m.student_id]||[]).push(m); });
+  // fusionner avec la liste students pour avoir les noms
+  const rows=students.map(s=>{
+    const msgs=byStudent[s.id]||[];
+    const last=msgs.length?msgs[msgs.length-1]:null;
+    const unread=msgs.some(m=>m.sender==='student' && !m.read_by_recipient);
+    return {id:s.id,name:s.name,last,unread,hasMsg:msgs.length>0};
+  }).sort((a,b)=>{
+    if(a.last&&b.last) return new Date(b.last.created_at)-new Date(a.last.created_at);
+    if(a.last) return -1; if(b.last) return 1; return 0;
+  });
+  if(rows.length===0){ list.innerHTML='<div style="padding:24px;text-align:center;color:var(--stone);font-size:13px;">No students yet.</div>'; return; }
+  rows.forEach(r=>{
+    const div=document.createElement('div');
+    div.className='msg-li'+(r.id===activeStudentId?' active':'');
+    const preview=r.last? (r.last.sender==='admin'?'You: ':'')+r.last.body : 'No messages yet';
+    div.innerHTML=`<div class="av">${initials(r.name)}</div><div class="info"><div class="nm">${r.name}</div><div class="pv">${escapeHtml(preview)}</div></div>${r.unread?'<div class="badge-dot"></div>':''}`;
+    div.addEventListener('click',()=>openConversation(r.id));
+    list.appendChild(div);
+  });
+}
+async function openConversation(sid){
+  activeStudentId=sid;
+  renderInboxList();
+  renderConversation(sid);
+  // marquer comme lus les messages de l'élève
+  const unreadIds=allMessages.filter(m=>m.student_id===sid && m.sender==='student' && !m.read_by_recipient).map(m=>m.id);
+  if(unreadIds.length){
+    await sb.from('messages').update({read_by_recipient:true}).in('id',unreadIds);
+    allMessages.forEach(m=>{ if(unreadIds.includes(m.id))m.read_by_recipient=true; });
+    updateAdminDot(); renderInboxList();
+  }
+}
+function renderConversation(sid){
+  const s=students.find(x=>x.id===sid);
+  const conv=document.getElementById('msgConv');
+  const msgs=allMessages.filter(m=>m.student_id===sid);
+  conv.innerHTML=`
+    <div class="conv-head"><h3>${s?s.name:'Student'}</h3><p>${s?s.email:''}</p></div>
+    <div class="conv-body" id="convBody"></div>
+    <div class="conv-input"><textarea id="convInput" rows="1" placeholder="Write your reply…"></textarea><button class="conv-send" id="convSend">Send</button></div>`;
+  const body=conv.querySelector('#convBody');
+  if(msgs.length===0){ body.innerHTML='<div class="conv-none">No messages yet with this student.</div>'; }
+  else{
+    msgs.forEach(m=>{
+      const div=document.createElement('div');
+      div.className='cbubble '+(m.sender==='admin'?'me':'them');
+      div.innerHTML=`${escapeHtml(m.body)}<span class="when">${m.sender==='admin'?'You':(s?s.name.split(' ')[0]:'Student')} · ${fmtTime(m.created_at)}</span>`;
+      body.appendChild(div);
+    });
+    body.scrollTop=body.scrollHeight;
+  }
+  const send=conv.querySelector('#convSend');
+  const inp=conv.querySelector('#convInput');
+  const doSend=async()=>{
+    const txt=inp.value.trim(); if(!txt)return;
+    send.disabled=true;
+    const {error}=await sb.from('messages').insert({student_id:sid,sender:'admin',body:txt});
+    send.disabled=false;
+    if(error){toast('Could not send');return;}
+    inp.value=''; inp.style.height='auto';
+    await loadInbox();
+  };
+  send.addEventListener('click',doSend);
+  inp.addEventListener('keydown',e=>{if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();doSend();}});
+  inp.addEventListener('input',function(){this.style.height='auto';this.style.height=Math.min(this.scrollHeight,110)+'px';});
+}
 
 // ====== resume session on load ======
 (async()=>{
