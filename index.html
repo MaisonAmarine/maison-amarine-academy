@@ -294,22 +294,34 @@
 
   /* MESSAGES */
   .msg-dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:#e0574c;margin-left:7px;vertical-align:middle;}
-  .chat-wrap{background:var(--paper);border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 10px 30px var(--shadow);display:flex;flex-direction:column;height:min(66vh,620px);max-width:760px;}
-  .chat-head{padding:20px 26px;border-bottom:1px solid var(--line);background:var(--gold-wash);}
-  .chat-head h3{font-family:'Cormorant',serif;font-weight:700;font-size:21px;color:var(--ink);margin:0;}
-  .chat-head p{font-size:12.5px;color:var(--ink-soft);margin:2px 0 0;}
-  .chat-body{flex:1;overflow-y:auto;padding:22px 26px;display:flex;flex-direction:column;gap:12px;background:#fbf9f3;}
+  .chat-wrap{background:var(--paper);border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 14px 40px rgba(33,28,21,.10);display:flex;flex-direction:column;height:min(68vh,640px);max-width:780px;}
+  .chat-head{padding:18px 26px;border-bottom:1px solid var(--line);background:linear-gradient(120deg,var(--ink),#2e2820);display:flex;align-items:center;gap:14px;}
+  .chat-head .ch-av{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--gold-lt));color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Cormorant',serif;font-weight:700;font-size:19px;flex-shrink:0;}
+  .chat-head h3{font-family:'Cormorant',serif;font-weight:700;font-size:20px;color:#F6F0E4;margin:0;line-height:1.1;}
+  .chat-head p{font-size:12px;color:#b7ad9a;margin:2px 0 0;display:flex;align-items:center;gap:6px;}
+  .chat-head .pres{width:7px;height:7px;border-radius:50%;background:#6bbf74;display:inline-block;}
+  .chat-body{flex:1;overflow-y:auto;padding:22px 26px 16px;display:flex;flex-direction:column;gap:3px;background:#fbf9f3;}
   .chat-empty{margin:auto;text-align:center;color:var(--stone);font-size:13.5px;max-width:320px;line-height:1.6;}
-  .bubble{max-width:74%;padding:12px 16px;border-radius:16px;font-size:14px;line-height:1.5;position:relative;}
-  .bubble .when{display:block;font-size:10.5px;margin-top:5px;opacity:.6;}
-  .bubble.them{align-self:flex-start;background:#fff;border:1px solid var(--line);color:var(--ink);border-bottom-left-radius:5px;}
-  .bubble.me{align-self:flex-end;background:var(--gold);color:#fff;border-bottom-right-radius:5px;}
-  .bubble.me .when{color:#fff;}
-  .chat-input{display:flex;gap:10px;padding:16px 20px;border-top:1px solid var(--line);background:var(--paper);}
-  .chat-input textarea{flex:1;resize:none;font-family:'Jost',sans-serif;font-size:14px;color:var(--ink);background:var(--ivory);border:1px solid var(--line);border-radius:12px;padding:12px 14px;outline:none;max-height:120px;line-height:1.4;}
+  .day-sep{display:flex;align-items:center;justify-content:center;margin:16px 0 12px;}
+  .day-sep span{font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--stone);background:var(--gold-wash);padding:4px 14px;border-radius:20px;}
+  .mrow{display:flex;flex-direction:column;max-width:74%;margin-top:9px;animation:bubIn .28s cubic-bezier(.22,.61,.36,1);}
+  .mrow.grouped{margin-top:2px;}
+  .mrow.me{align-self:flex-end;align-items:flex-end;}
+  .mrow.them{align-self:flex-start;align-items:flex-start;}
+  @keyframes bubIn{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:none;}}
+  .mbubble{padding:11px 15px;border-radius:18px;font-size:14px;line-height:1.5;position:relative;word-wrap:break-word;}
+  .mrow.them .mbubble{background:#fff;border:1px solid var(--line);color:var(--ink);border-bottom-left-radius:5px;}
+  .mrow.them.grouped .mbubble{border-top-left-radius:8px;border-bottom-left-radius:5px;}
+  .mrow.me .mbubble{background:var(--gold);color:#fff;border-bottom-right-radius:5px;}
+  .mrow.me.grouped .mbubble{border-top-right-radius:8px;border-bottom-right-radius:5px;}
+  .mtime{display:inline-block;font-size:10px;margin-left:10px;opacity:.55;vertical-align:baseline;}
+  .read-status{font-size:10px;color:var(--stone);margin-top:3px;padding-right:3px;letter-spacing:.03em;}
+  .chat-input{display:flex;gap:10px;padding:14px 18px;border-top:1px solid var(--line);background:var(--paper);align-items:flex-end;}
+  .chat-input textarea{flex:1;resize:none;font-family:'Jost',sans-serif;font-size:14px;color:var(--ink);background:var(--ivory);border:1px solid var(--line);border-radius:14px;padding:12px 16px;outline:none;max-height:120px;line-height:1.4;transition:border-color .2s;}
   .chat-input textarea:focus{border-color:var(--gold-lt);}
-  .chat-send{flex-shrink:0;background:var(--gold);color:#fff;border:none;border-radius:12px;padding:0 20px;font-family:'Jost',sans-serif;font-size:14px;font-weight:600;cursor:pointer;transition:background .2s;}
-  .chat-send:hover{background:var(--gold-deep);} .chat-send:disabled{opacity:.5;cursor:default;}
+  .chat-send{flex-shrink:0;width:44px;height:44px;background:var(--gold);color:#fff;border:none;border-radius:50%;font-family:'Jost',sans-serif;cursor:pointer;transition:background .2s,transform .2s;display:flex;align-items:center;justify-content:center;}
+  .chat-send svg{width:18px;height:18px;}
+  .chat-send:hover{background:var(--gold-deep);transform:scale(1.06);} .chat-send:disabled{opacity:.5;cursor:default;transform:none;}
 
   /* THE JOURNAL */
   .journal-intro{font-size:14.5px;color:var(--ink-soft);max-width:640px;line-height:1.7;margin-top:6px;}
@@ -633,22 +645,25 @@
         </div>
         <div class="chat-input">
           <textarea id="commInput" rows="1" placeholder="Share something with the community…"></textarea>
-          <button class="chat-send" id="commSend">Send</button>
+          <button class="chat-send" id="commSend" title="Send"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
         </div>
       </div>
 
       <!-- MENTOR (private) -->
       <div class="chat-wrap" id="tab-mentor" style="margin-top:18px;display:none;">
         <div class="chat-head">
-          <h3>Émilie · Maison Amarine</h3>
-          <p>Your personal mentor · private conversation</p>
+          <div class="ch-av">É</div>
+          <div>
+            <h3>Émilie</h3>
+            <p><span class="pres"></span> Your personal mentor · Maison Amarine</p>
+          </div>
         </div>
         <div class="chat-body" id="chatBody">
           <div class="chat-empty" id="chatEmpty">This is the beginning of your private conversation. Say hello, ask a question about the program, or share where you are on your journey. Émilie reads every message personally.</div>
         </div>
         <div class="chat-input">
           <textarea id="chatInput" rows="1" placeholder="Write your message…"></textarea>
-          <button class="chat-send" id="chatSend">Send</button>
+          <button class="chat-send" id="chatSend" title="Send"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
         </div>
       </div>
     </section>
@@ -823,6 +838,7 @@ async function onSignedIn(user){
   await loadProfile(); await loadProgress();
   renderWeeks(); renderAgencies(); initJobTabs(); initCalAdd(); renderMyEvents();
   loadMessages(false);
+  startRealtime();
 }
 async function loadProfile(){
   const {data}=await sb.from('profiles').select('*').eq('id',USER.id).maybeSingle();
@@ -1121,33 +1137,58 @@ document.getElementById('commInput').addEventListener('input',function(){
 
 // ====== MESSAGES (student side) ======
 function fmtTime(iso){
-  const d=new Date(iso); const now=new Date();
-  const opts={hour:'2-digit',minute:'2-digit'};
-  if(d.toDateString()===now.toDateString()) return d.toLocaleTimeString([], opts);
-  return d.toLocaleDateString([], {month:'short',day:'numeric'})+' · '+d.toLocaleTimeString([], opts);
+  const d=new Date(iso);
+  return d.toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'});
 }
+function dateLabel(iso){
+  const d=new Date(iso); const now=new Date();
+  const today=new Date(now.getFullYear(),now.getMonth(),now.getDate());
+  const that=new Date(d.getFullYear(),d.getMonth(),d.getDate());
+  const diff=Math.round((today-that)/86400000);
+  if(diff===0) return 'Today';
+  if(diff===1) return 'Yesterday';
+  if(diff<7) return d.toLocaleDateString([], {weekday:'long'});
+  return d.toLocaleDateString([], {month:'long',day:'numeric',year:d.getFullYear()!==now.getFullYear()?'numeric':undefined});
+}
+let _msgCache=[]; // pour éviter de re-rendre à l'identique
 async function loadMessages(markRead){
   if(!USER) return;
   const {data,error}=await sb.from('messages').select('*').eq('student_id',USER.id).order('created_at',{ascending:true});
   if(error) return;
   const body=document.getElementById('chatBody');
   const empty=document.getElementById('chatEmpty');
-  body.querySelectorAll('.bubble').forEach(b=>b.remove());
-  if(!data || data.length===0){ if(empty)empty.style.display='block'; }
-  else{
-    if(empty)empty.style.display='none';
-    data.forEach(m=>{
-      const div=document.createElement('div');
-      div.className='bubble '+(m.sender==='student'?'me':'them');
-      div.innerHTML=`${escapeHtml(m.body)}<span class="when">${m.sender==='student'?'You':'Émilie'} · ${fmtTime(m.created_at)}</span>`;
-      body.appendChild(div);
-    });
-    body.scrollTop=body.scrollHeight;
+  // signature pour éviter re-render inutile (évite le clignotement en temps réel)
+  const sig=(data||[]).map(m=>m.id+':'+(m.read_by_recipient?1:0)).join(',');
+  if(sig!==_msgCache.sig){
+    _msgCache.sig=sig;
+    body.querySelectorAll('.day-sep,.mrow').forEach(b=>b.remove());
+    if(!data || data.length===0){ if(empty)empty.style.display='block'; }
+    else{
+      if(empty)empty.style.display='none';
+      let lastDay=null, lastSender=null, lastTime=0;
+      data.forEach((m,idx)=>{
+        const dl=dateLabel(m.created_at);
+        if(dl!==lastDay){
+          const sep=document.createElement('div'); sep.className='day-sep';
+          sep.innerHTML=`<span>${dl}</span>`; body.appendChild(sep);
+          lastDay=dl; lastSender=null;
+        }
+        const t=new Date(m.created_at).getTime();
+        const grouped = (m.sender===lastSender) && (t-lastTime < 5*60000);
+        const mine=m.sender==='student';
+        const row=document.createElement('div');
+        row.className='mrow '+(mine?'me':'them')+(grouped?' grouped':'');
+        const isLast = idx===data.length-1;
+        const readTag = (mine && isLast) ? `<span class="read-status">${m.read_by_recipient?'Read':'Sent'}</span>` : '';
+        row.innerHTML=`<div class="mbubble">${escapeHtml(m.body)}<span class="mtime">${fmtTime(m.created_at)}</span></div>${readTag}`;
+        body.appendChild(row);
+        lastSender=m.sender; lastTime=t;
+      });
+      body.scrollTop=body.scrollHeight;
+    }
   }
-  // messages non lus envoyés par l'admin -> point rouge
   const unread=(data||[]).some(m=>m.sender==='admin' && !m.read_by_recipient);
   document.getElementById('msgDot').style.display = unread ? 'inline-block' : 'none';
-  // marquer comme lus
   if(markRead && unread){
     const ids=(data||[]).filter(m=>m.sender==='admin' && !m.read_by_recipient).map(m=>m.id);
     if(ids.length){ await sb.from('messages').update({read_by_recipient:true}).in('id',ids);
@@ -1166,6 +1207,25 @@ async function sendMessage(){
   if(error){ toast('Could not send, please try again'); return; }
   inp.value=''; inp.style.height='auto';
   loadMessages(false);
+}
+// ====== REALTIME (messages + community) ======
+let _rtMsg=null, _rtComm=null;
+function startRealtime(){
+  if(!USER || !sb.channel) return;
+  try{
+    if(!_rtMsg){
+      _rtMsg=sb.channel('rt-messages-'+USER.id)
+        .on('postgres_changes',{event:'*',schema:'public',table:'messages',filter:'student_id=eq.'+USER.id},
+          ()=>{ const onMsg=document.getElementById('page-messages'); const vis=onMsg && !onMsg.classList.contains('hidden'); loadMessages(vis && document.getElementById('tab-mentor').style.display!=='none'); })
+        .subscribe();
+    }
+    if(!_rtComm){
+      _rtComm=sb.channel('rt-community')
+        .on('postgres_changes',{event:'*',schema:'public',table:'community_messages'},
+          ()=>{ const t=document.getElementById('tab-community'); if(t && t.style.display!=='none') loadCommunity(); })
+        .subscribe();
+    }
+  }catch(e){}
 }
 document.getElementById('chatSend').addEventListener('click',sendMessage);
 document.getElementById('chatInput').addEventListener('keydown',e=>{
