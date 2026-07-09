@@ -406,12 +406,35 @@ function renderStudents(){
       <td>${statusBadge(s.status)}</td>
       <td><div class="prog-mini"><div class="track"><div class="fill" style="width:${s.progress}%"></div></div><span class="pct">${s.weeksDone}/8</span></div></td>
       <td><span style="font-size:12.5px;color:var(--stone)">${s.cohort}</span></td>
-      <td><div class="row-actions"><button class="icon-btn" title="View progress" data-id="${s.id}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg></button></div></td>`;
+      <td><div class="row-actions"><button class="icon-btn" title="View progress" data-id="${s.id}" data-act="view"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg></button><button class="icon-btn del" title="Delete access" data-id="${s.id}" data-act="del"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16M9 7V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2M6 7l1 13h10l1-13" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div></td>`;
     body.appendChild(tr);
   });
   body.querySelectorAll('.icon-btn').forEach(b=>b.addEventListener('click',()=>{
-    const s=students.find(x=>x.id===b.dataset.id); if(s)showProgress(s);
+    const s=students.find(x=>x.id===b.dataset.id); if(!s)return;
+    if(b.dataset.act==='view') showProgress(s);
+    else if(b.dataset.act==='del') askDelete(s);
   }));
+}
+
+// ====== DELETE STUDENT (calls Edge Function) ======
+async function askDelete(s){
+  if(!confirm('Delete '+s.name+"'s access?\n\nThis permanently removes their account and all their progress. This cannot be undone.")) return;
+  try{
+    const {data:{session}}=await sb.auth.getSession();
+    const res=await fetch(`${SUPABASE_URL}/functions/v1/delete-student`,{
+      method:'POST',
+      headers:{
+        'Content-Type':'application/json',
+        'Authorization':`Bearer ${session.access_token}`,
+        'apikey':SUPABASE_KEY
+      },
+      body:JSON.stringify({user_id:s.id})
+    });
+    const out=await res.json();
+    if(!res.ok || out.error){ toast(out.error||'Could not delete'); return; }
+    toast(s.name+' removed');
+    await loadStudents(); renderOverview();
+  }catch(e){ toast('Network error, please try again'); }
 }
 
 // ====== PROGRESS DETAIL MODAL ======
