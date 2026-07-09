@@ -87,6 +87,7 @@
   .st-name .em{font-size:12.5px;color:var(--stone);}
   .badge{font-size:11px;font-weight:600;letter-spacing:.03em;text-transform:uppercase;padding:4px 11px;border-radius:20px;display:inline-block;}
   .badge.active{color:var(--green);background:#eaf0e6;}
+  .badge.completed{color:#fff;background:var(--gold);}
   .badge.invited{color:var(--gold-deep);background:var(--gold-wash);}
   .badge.paused{color:var(--stone);background:#efe9dc;}
   .prog-mini{display:flex;align-items:center;gap:9px;}
@@ -333,7 +334,7 @@ let students = [];
 
 function initials(name){return (name||"?").split(' ').map(w=>w[0]).slice(0,2).join('').toUpperCase();}
 function statusBadge(s){
-  const map={active:["active","Active"],invited:["invited","Invited"],paused:["paused","Paused"]};
+  const map={active:["active","In progress"],completed:["completed","Completed"],invited:["invited","Invited"],paused:["paused","Paused"]};
   const m=map[s]||map.invited; return `<span class="badge ${m[0]}">${m[1]}</span>`;
 }
 let toastT;
@@ -377,15 +378,23 @@ async function loadStudents(){
     if(!byUser[r.user_id])byUser[r.user_id]={done:0,weeks:{}};
     byUser[r.user_id].weeks[r.week_number]={completed:!!r.completed,lessons:Array.isArray(r.lessons_done)?r.lessons_done:[]};
     if(r.completed)byUser[r.user_id].done++;
+    // a-t-il coché au moins une leçon quelque part ?
+    const anyLesson=(Array.isArray(r.lessons_done)?r.lessons_done:[]).some(Boolean);
+    if(r.completed||anyLesson)byUser[r.user_id].started=true;
   });
   students=(data||[]).filter(p=>p.email!==ADMIN_EMAIL).map(p=>{
-    const pr=byUser[p.id]||{done:0,weeks:{}};
+    const pr=byUser[p.id]||{done:0,weeks:{},started:false};
+    // statut calculé en temps réel selon la progression
+    let status;
+    if(pr.done>=8) status='completed';
+    else if(pr.started||pr.done>0) status='active';
+    else status='invited';
     return {
       id:p.id,
       name:p.full_name||(p.email||'').split('@')[0],
       email:p.email||'',
       cohort:p.cohort||'Cohort I',
-      status:p.status||'invited',
+      status:status,
       weeksDone:pr.done,
       progress:Math.round(pr.done/8*100),
       weeks:pr.weeks
