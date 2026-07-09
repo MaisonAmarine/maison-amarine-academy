@@ -306,6 +306,22 @@
   .chat-input textarea:focus{border-color:var(--gold-lt);}
   .chat-send{flex-shrink:0;background:var(--gold);color:#fff;border:none;border-radius:12px;padding:0 20px;font-family:'Jost',sans-serif;font-size:14px;font-weight:600;cursor:pointer;transition:background .2s;}
   .chat-send:hover{background:var(--gold-deep);} .chat-send:disabled{opacity:.5;cursor:default;}
+
+  /* THE JOURNAL */
+  .journal-intro{font-size:14.5px;color:var(--ink-soft);max-width:640px;line-height:1.7;margin-top:6px;}
+  .journal-date{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-top:20px;margin-bottom:16px;}
+  .article{background:var(--paper);border:1px solid var(--line);border-radius:16px;overflow:hidden;margin-bottom:18px;transition:transform .2s,box-shadow .2s;}
+  .article:hover{transform:translateY(-2px);box-shadow:0 12px 30px var(--shadow);}
+  .article-body{padding:24px 28px;}
+  .article .cat{display:inline-block;font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-deep);background:var(--gold-wash);padding:4px 11px;border-radius:20px;margin-bottom:12px;}
+  .article h3{font-family:'Cormorant',serif;font-weight:700;font-size:24px;line-height:1.2;color:var(--ink);margin:0 0 8px;}
+  .article .lead{font-size:14px;color:var(--ink-soft);line-height:1.65;margin-bottom:14px;}
+  .article .read{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:600;color:var(--gold-deep);text-decoration:none;}
+  .article .read svg{width:14px;height:14px;transition:transform .2s;}
+  .article:hover .read svg{transform:translateX(3px);}
+  .article .src{font-size:11px;color:var(--stone);margin-left:auto;}
+  .article-foot{display:flex;align-items:center;gap:10px;}
+  .journal-note{margin-top:8px;font-size:12px;color:var(--stone);font-style:italic;text-align:center;padding:16px;}
 </style>
 </head>
 <body>
@@ -377,6 +393,10 @@
       <div class="nav-item" data-page="messages">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke-linecap="round" stroke-linejoin="round"/></svg>
         Messages<span id="msgDot" class="msg-dot" style="display:none;"></span>
+      </div>
+      <div class="nav-item" data-page="journal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h11a2 2 0 0 1 2 2v14H6a2 2 0 0 1-2-2z" stroke-linejoin="round"/><path d="M17 8h3v10a2 2 0 0 1-2 2M8 8h5M8 12h5M8 16h3" stroke-linecap="round"/></svg>
+        The Journal
       </div>
       <div class="nav-sep"></div>
       <div class="nav-item" data-page="program" data-scroll="mentor">
@@ -577,6 +597,16 @@
       </div>
     </section>
 
+    <section class="page hidden" id="page-journal">
+      <div class="page-h">
+        <div class="eyebrow">The Journal</div>
+        <h1>The world you are entering, this month.</h1>
+        <p class="journal-intro">A curated dispatch from the world of luxury, the openings, the movements, the quiet shifts that define the lives of those you will one day serve. Read it the way an insider reads the room: closely.</p>
+      </div>
+      <div id="journalList" style="margin-top:8px;"></div>
+      <div class="journal-note">Curated by Maison Amarine · Updated periodically. To read each story in full, follow the link to its source.</div>
+    </section>
+
   </main>
 </div>
 
@@ -605,6 +635,17 @@
 // ====== CONFIG SUPABASE ======
 const SUPABASE_URL = "https://beexlhyvcngeopkkxoco.supabase.co";
 const SUPABASE_KEY = "sb_publishable_qVIwPd3lkJnSoObnYMuUKg_mn0i2LY9";
+
+// ====== THE JOURNAL DATA ======
+const JOURNAL_EDITION = "Edition · Spring 2026";
+const JOURNAL = [
+  {cat:"Hospitality",title:"Louis Vuitton to open its first hotel on the Champs-Élysées",lead:"The maison makes its most ambitious move yet into experiential travel. Set on the Champs-Élysées in the heart of Paris, the ultra-luxury address is expected to translate the house's legacy of craftsmanship and travel heritage into immersive interiors, private salons and refined dining, positioning itself not as another Parisian palace, but as a contemporary landmark where fashion, architecture and hospitality meet.",src:"The Luxury Travel Expert",url:"https://theluxurytravelexpert.com/most-anticipated-luxury-hotel-openings-2026/"},
+  {cat:"The Icons Return",title:"The Waldorf Astoria reopens in New York after years of restoration",lead:"A true Manhattan icon returns. Following an extensive multi-year restoration, the Waldorf Astoria reemerges on Park Avenue with Manhattan's largest guest rooms, a 30,000-square-foot spa, and its restored Art Deco interiors, a renewed statement of legacy luxury in the heart of Midtown.",src:"Ourisman Travel",url:"https://ourismantravel.com/blog/15-new-luxury-hotels-to-experience-in-2026/"},
+  {cat:"Venice",title:"Hotel Danieli reopens as a Four Seasons, on one of Venice's most storied addresses",lead:"Set along the Grand Canal beside Piazza San Marco, the legendary Danieli reopens after a careful refurbishment overseen by designer Pierre-Yves Rochon. Three interconnected palazzi, one dating to the 14th century, linked by internal bridges, preserve the Venetian Gothic façades and centuries of accumulated art and antiques.",src:"The Luxury Travel Expert",url:"https://theluxurytravelexpert.com/most-anticipated-luxury-hotel-openings-2026/"},
+  {cat:"The Shift",title:"Why 'humanity' is becoming the new luxury",lead:"As hotels by big-name designers get copy-pasted around the world, the top of the market is turning away from the predictable. The most anticipated openings now share one of two things: a true independent spirit, or an ability to raise the bar in unquestionable ways. For those who serve this world, the lesson is clear, discernment and the human touch are the rarest currency.",src:"Bloomberg",url:"https://www.bloomberg.com/news/articles/2025-12-26/here-are-the-11-most-exciting-luxury-hotels-opening-in-2026"},
+  {cat:"Private Islands",title:"A 17-acre private island retreat opens off the coast of Provence",lead:"Zannier Bendor, owned by the French family behind Pernod Ricard, opens as a private-island destination off the Mediterranean coast, complete with restaurants, shopping, diving and, in keeping with the family business, several bars. A reminder that at the very top, privacy itself has become the ultimate amenity.",src:"Bloomberg",url:"https://www.bloomberg.com/news/articles/2025-12-26/here-are-the-11-most-exciting-luxury-hotels-opening-in-2026"},
+  {cat:"America",title:"The most anticipated US openings of the year, from Dallas to Napa",lead:"A new wave of American debuts is drawing designers, chefs and seasoned travelers before the doors even open, from The Knox in Dallas with interiors by Martin Brudnizki, to a fifty-room wine-country retreat along the Napa Valley Vine Trail where every room faces the vineyards. The private world is increasingly at home on American soil.",src:"Pursuitist",url:"https://pursuitist.com/top-new-us-luxury-hotels-opening-in-2026/"},
+];
 if (typeof supabase === 'undefined') { document.getElementById('gateErr').textContent = "Connection issue — please refresh the page."; }
 const sb = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
@@ -901,10 +942,33 @@ function goPage(name, scrollTo){
   document.querySelectorAll('.m-tab').forEach(t=>t.classList.toggle('active', t.dataset.page===name));
   window.scrollTo(0,0);
   if(name==='messages'){ loadMessages(true); }
+  if(name==='journal'){ renderJournal(); }
   if(scrollTo){setTimeout(()=>{const el=document.getElementById(scrollTo);if(el)el.scrollIntoView({behavior:'smooth'});},60);}
 }
 document.querySelectorAll('.nav-item').forEach(n=>n.addEventListener('click',()=>goPage(n.dataset.page, n.dataset.scroll)));
 document.querySelectorAll('.m-tab').forEach(t=>t.addEventListener('click',()=>goPage(t.dataset.page)));
+
+// ====== THE JOURNAL ======
+function renderJournal(){
+  const box=document.getElementById('journalList');
+  if(box.dataset.done==='1') return; // ne rendre qu'une fois
+  box.innerHTML = `<div class="journal-date">${JOURNAL_EDITION}</div>`;
+  JOURNAL.forEach(a=>{
+    const art=document.createElement('div');
+    art.className='article';
+    art.innerHTML=`<div class="article-body">
+      <span class="cat">${a.cat}</span>
+      <h3>${a.title}</h3>
+      <p class="lead">${a.lead}</p>
+      <div class="article-foot">
+        <a class="read" href="${a.url}" target="_blank" rel="noopener">Read the full story <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <span class="src">${a.src}</span>
+      </div>
+    </div>`;
+    box.appendChild(art);
+  });
+  box.dataset.done='1';
+}
 
 // ====== MESSAGES (student side) ======
 function fmtTime(iso){
