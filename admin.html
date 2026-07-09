@@ -186,6 +186,17 @@
   .conv-send{flex-shrink:0;background:var(--gold);color:#fff;border:none;border-radius:11px;padding:0 18px;font-family:'Jost',sans-serif;font-size:13.5px;font-weight:600;cursor:pointer;}
   .conv-send:hover{background:var(--gold-deep);} .conv-send:disabled{opacity:.5;}
   @media(max-width:760px){.msg-layout{flex-direction:column;height:auto;}.msg-list{width:100%;height:200px;}.msg-conv{height:440px;}}
+  .amsg-tabs{display:flex;gap:8px;border-bottom:1px solid var(--line);margin-top:6px;}
+  .amsg-tab{background:none;border:none;font-family:'Jost',sans-serif;font-size:14px;font-weight:600;color:var(--stone);padding:11px 16px;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1px;transition:color .2s,border-color .2s;}
+  .amsg-tab:hover{color:var(--ink);}
+  .amsg-tab.active{color:var(--gold-deep);border-bottom-color:var(--gold);}
+  .acbub{max-width:78%;align-self:flex-start;}
+  .acbub .who{font-size:11px;font-weight:600;color:var(--gold-deep);margin-bottom:3px;padding-left:2px;}
+  .acbub .msg{padding:10px 14px;border-radius:14px;font-size:13.5px;line-height:1.5;background:#fff;border:1px solid var(--line);color:var(--ink);}
+  .acbub.mine{align-self:flex-end;}
+  .acbub.mine .who{text-align:right;color:var(--gold-lt);}
+  .acbub.mine .msg{background:var(--ink);color:#F1E9D8;border:none;}
+  .acbub .when{display:block;font-size:10px;margin-top:4px;opacity:.6;}
 </style>
 </head>
 <body>
@@ -289,11 +300,24 @@
     </section>
 
     <section class="page hidden" id="page-messages">
-      <div class="page-h"><div><div class="eyebrow">Messages</div><h1>Your students</h1><p>Your private conversations with each student. Reply personally, it's what makes your mentorship priceless.</p></div></div>
-      <div class="msg-layout">
+      <div class="page-h"><div><div class="eyebrow">Messages</div><h1>Conversations</h1><p>Private lines with each student, and the shared Community salon.</p></div></div>
+      <div class="amsg-tabs">
+        <button class="amsg-tab active" data-atab="private">Private conversations</button>
+        <button class="amsg-tab" data-atab="community">Community salon</button>
+      </div>
+
+      <div class="msg-layout" id="atab-private" style="margin-top:16px;">
         <div class="msg-list" id="msgList"></div>
         <div class="msg-conv" id="msgConv">
           <div class="conv-body"><div class="conv-none" id="convNone">Select a student on the left to open your conversation.</div></div>
+        </div>
+      </div>
+
+      <div id="atab-community" style="margin-top:16px;display:none;">
+        <div class="msg-conv" style="max-width:820px;height:min(66vh,600px);">
+          <div class="conv-head"><h3>The Community</h3><p>The shared salon, every member sees this. Post to welcome, motivate, or set the tone.</p></div>
+          <div class="conv-body" id="acommBody"></div>
+          <div class="conv-input"><textarea id="acommInput" rows="1" placeholder="Write to the whole community…"></textarea><button class="conv-send" id="acommSend">Post</button></div>
         </div>
       </div>
     </section>
@@ -601,7 +625,7 @@ document.querySelectorAll('.nav-item').forEach(n=>n.addEventListener('click',()=
   document.querySelectorAll('.nav-item').forEach(x=>x.classList.remove('active'));
   n.classList.add('active');
   if(n.dataset.page==='overview')renderOverview();
-  if(n.dataset.page==='messages')loadInbox();
+  if(n.dataset.page==='messages'){loadInbox();loadAdminCommunity();}
 }));
 
 // ====== MESSAGES (admin side) ======
@@ -696,6 +720,49 @@ function renderConversation(sid){
   send.addEventListener('click',doSend);
   inp.addEventListener('keydown',e=>{if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();doSend();}});
   inp.addEventListener('input',function(){this.style.height='auto';this.style.height=Math.min(this.scrollHeight,110)+'px';});
+}
+
+// ====== ADMIN MESSAGE TABS + COMMUNITY ======
+document.querySelectorAll('.amsg-tab').forEach(t=>t.addEventListener('click',()=>{
+  document.querySelectorAll('.amsg-tab').forEach(x=>x.classList.remove('active'));
+  t.classList.add('active');
+  const tab=t.dataset.atab;
+  document.getElementById('atab-private').style.display = tab==='private'?'flex':'none';
+  document.getElementById('atab-community').style.display = tab==='community'?'block':'none';
+  try{ if(tab==='community') loadAdminCommunity(); }catch(e){}
+}));
+async function loadAdminCommunity(){
+  const {data,error}=await sb.from('community_messages').select('*').order('created_at',{ascending:true}).limit(200);
+  if(error) return;
+  const body=document.getElementById('acommBody'); if(!body) return;
+  body.innerHTML='';
+  if(!data || data.length===0){ body.innerHTML='<div class="conv-none">No community messages yet. Post the first one to set the tone.</div>'; return; }
+  data.forEach(m=>{
+    const mine=m.is_admin;
+    const div=document.createElement('div');
+    div.className='acbub'+(mine?' mine':'');
+    const who=mine?(m.author_name+' · You'):m.author_name;
+    div.innerHTML=`<div class="who">${escapeHtml(who)}</div><div class="msg">${escapeHtml(m.body)}<span class="when">${fmtTime(m.created_at)}</span></div>`;
+    body.appendChild(div);
+  });
+  body.scrollTop=body.scrollHeight;
+  // brancher l'envoi (une seule fois)
+  const send=document.getElementById('acommSend');
+  const inp=document.getElementById('acommInput');
+  if(send && !send.dataset.wired){
+    send.dataset.wired='1';
+    const doPost=async()=>{
+      const txt=inp.value.trim(); if(!txt)return;
+      send.disabled=true;
+      const {error}=await sb.from('community_messages').insert({author_id:SESSION.user.id,author_name:'Émilie',is_admin:true,body:txt});
+      send.disabled=false;
+      if(error){toast('Could not post');return;}
+      inp.value=''; inp.style.height='auto'; loadAdminCommunity();
+    };
+    send.addEventListener('click',doPost);
+    inp.addEventListener('keydown',e=>{if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();doPost();}});
+    inp.addEventListener('input',function(){this.style.height='auto';this.style.height=Math.min(this.scrollHeight,110)+'px';});
+  }
 }
 
 // ====== resume session on load ======

@@ -322,6 +322,22 @@
   .article .src{font-size:11px;color:var(--stone);margin-left:auto;}
   .article-foot{display:flex;align-items:center;gap:10px;}
   .journal-note{margin-top:8px;font-size:12px;color:var(--stone);font-style:italic;text-align:center;padding:16px;}
+
+  /* MESSAGE TABS (community / mentor) */
+  .msg-tabs{display:flex;gap:8px;margin-top:22px;border-bottom:1px solid var(--line);}
+  .msg-tab{display:inline-flex;align-items:center;gap:8px;background:none;border:none;font-family:'Jost',sans-serif;font-size:14px;font-weight:600;color:var(--stone);padding:12px 18px;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1px;transition:color .2s,border-color .2s;}
+  .msg-tab svg{width:17px;height:17px;}
+  .msg-tab:hover{color:var(--ink);}
+  .msg-tab.active{color:var(--gold-deep);border-bottom-color:var(--gold);}
+  .cbub{max-width:78%;align-self:flex-start;}
+  .cbub .who{font-size:11px;font-weight:600;color:var(--gold-deep);margin-bottom:3px;padding-left:2px;}
+  .cbub.mine{align-self:flex-end;}
+  .cbub.mine .who{text-align:right;color:var(--stone);}
+  .cbub .msg{padding:11px 15px;border-radius:15px;font-size:14px;line-height:1.5;background:#fff;border:1px solid var(--line);color:var(--ink);border-bottom-left-radius:5px;}
+  .cbub.mine .msg{background:var(--gold);color:#fff;border-bottom-left-radius:15px;border-bottom-right-radius:5px;}
+  .cbub .when{display:block;font-size:10px;margin-top:4px;opacity:.6;}
+  .cbub.admin .msg{background:var(--ink);color:#F1E9D8;border:none;}
+  .cbub.admin .who{color:var(--gold-lt);}
 </style>
 </head>
 <body>
@@ -579,16 +595,43 @@
     <section class="page hidden" id="page-messages">
       <div class="page-h">
         <div class="eyebrow">Messages</div>
-        <h1>Talk with Émilie</h1>
-        <p>Your private line to your mentor. Ask anything, anytime, this is part of your program.</p>
+        <h1>Your circle</h1>
+        <p>Two spaces: the Community, where your cohort gathers, and your private line to Émilie.</p>
       </div>
-      <div class="chat-wrap" style="margin-top:24px;">
+      <div class="msg-tabs">
+        <button class="msg-tab active" data-tab="community">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3 2.5-5 6-5s6 2 6 5" stroke-linecap="round"/><path d="M16 5.5a2.7 2.7 0 0 1 0 5.2M18 20c0-2.2-.8-3.8-2-4.6" stroke-linecap="round"/></svg>
+          Community
+        </button>
+        <button class="msg-tab" data-tab="mentor">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6" stroke-linecap="round"/></svg>
+          Émilie
+        </button>
+      </div>
+
+      <!-- COMMUNITY -->
+      <div class="chat-wrap" id="tab-community" style="margin-top:18px;">
+        <div class="chat-head">
+          <h3>The Community</h3>
+          <p>Your cohort. Share a win, ask for advice, lift each other up.</p>
+        </div>
+        <div class="chat-body" id="commBody">
+          <div class="chat-empty" id="commEmpty">This is the beginning of your community. Introduce yourself, share where you are on your journey, or simply say good morning. Every member sees this space.</div>
+        </div>
+        <div class="chat-input">
+          <textarea id="commInput" rows="1" placeholder="Share something with the community…"></textarea>
+          <button class="chat-send" id="commSend">Send</button>
+        </div>
+      </div>
+
+      <!-- MENTOR (private) -->
+      <div class="chat-wrap" id="tab-mentor" style="margin-top:18px;display:none;">
         <div class="chat-head">
           <h3>Émilie · Maison Amarine</h3>
-          <p>Your personal mentor</p>
+          <p>Your personal mentor · private conversation</p>
         </div>
         <div class="chat-body" id="chatBody">
-          <div class="chat-empty" id="chatEmpty">This is the beginning of your conversation. Say hello, ask a question about the program, or share where you are on your journey. Émilie reads every message personally.</div>
+          <div class="chat-empty" id="chatEmpty">This is the beginning of your private conversation. Say hello, ask a question about the program, or share where you are on your journey. Émilie reads every message personally.</div>
         </div>
         <div class="chat-input">
           <textarea id="chatInput" rows="1" placeholder="Write your message…"></textarea>
@@ -941,7 +984,7 @@ function goPage(name, scrollTo){
   document.querySelectorAll('.nav-item').forEach(n=>n.classList.toggle('active', n.dataset.page===name && !n.dataset.scroll));
   document.querySelectorAll('.m-tab').forEach(t=>t.classList.toggle('active', t.dataset.page===name));
   window.scrollTo(0,0);
-  if(name==='messages'){ loadMessages(true); }
+  if(name==='messages'){ loadMessages(true); loadCommunity(); }
   if(name==='journal'){ renderJournal(); }
   if(scrollTo){setTimeout(()=>{const el=document.getElementById(scrollTo);if(el)el.scrollIntoView({behavior:'smooth'});},60);}
 }
@@ -969,6 +1012,57 @@ function renderJournal(){
   });
   box.dataset.done='1';
 }
+
+// ====== MESSAGE TABS (community / mentor) ======
+document.querySelectorAll('.msg-tab').forEach(t=>t.addEventListener('click',()=>{
+  document.querySelectorAll('.msg-tab').forEach(x=>x.classList.remove('active'));
+  t.classList.add('active');
+  const tab=t.dataset.tab;
+  document.getElementById('tab-community').style.display = tab==='community'?'flex':'none';
+  document.getElementById('tab-mentor').style.display = tab==='mentor'?'flex':'none';
+  try{ if(tab==='community') loadCommunity(); if(tab==='mentor') loadMessages(true); }catch(e){}
+}));
+
+// ====== COMMUNITY (shared salon) ======
+async function loadCommunity(){
+  if(!USER) return;
+  const {data,error}=await sb.from('community_messages').select('*').order('created_at',{ascending:true}).limit(200);
+  if(error) return;
+  const body=document.getElementById('commBody');
+  const empty=document.getElementById('commEmpty');
+  body.querySelectorAll('.cbub').forEach(b=>b.remove());
+  if(!data || data.length===0){ if(empty)empty.style.display='block'; return; }
+  if(empty)empty.style.display='none';
+  data.forEach(m=>{
+    const mine = m.author_id===USER.id;
+    const div=document.createElement('div');
+    div.className='cbub'+(mine?' mine':'')+(m.is_admin?' admin':'');
+    const who = m.is_admin ? (m.author_name+' · Founder') : m.author_name;
+    div.innerHTML=`<div class="who">${mine?'You':escapeHtml(who)}</div><div class="msg">${escapeHtml(m.body)}<span class="when">${fmtTime(m.created_at)}</span></div>`;
+    body.appendChild(div);
+  });
+  body.scrollTop=body.scrollHeight;
+}
+async function sendCommunity(){
+  const inp=document.getElementById('commInput');
+  const txt=inp.value.trim();
+  if(!txt || !USER) return;
+  const btn=document.getElementById('commSend');
+  btn.disabled=true;
+  const name=(PROFILE && PROFILE.full_name) ? PROFILE.full_name : (USER.email||'').split('@')[0];
+  const {error}=await sb.from('community_messages').insert({author_id:USER.id,author_name:name,is_admin:false,body:txt});
+  btn.disabled=false;
+  if(error){ toast('Could not send, please try again'); return; }
+  inp.value=''; inp.style.height='auto';
+  loadCommunity();
+}
+document.getElementById('commSend').addEventListener('click',sendCommunity);
+document.getElementById('commInput').addEventListener('keydown',e=>{
+  if(e.key==='Enter' && !e.shiftKey){e.preventDefault();sendCommunity();}
+});
+document.getElementById('commInput').addEventListener('input',function(){
+  this.style.height='auto'; this.style.height=Math.min(this.scrollHeight,120)+'px';
+});
 
 // ====== MESSAGES (student side) ======
 function fmtTime(iso){
