@@ -314,10 +314,10 @@
   .mrow.them{align-self:flex-start;align-items:flex-start;}
   @keyframes bubIn{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:none;}}
   .mrow{position:relative;}
-  .mbubble{padding:8px 12px;border-radius:12px;font-size:14px;line-height:1.45;position:relative;word-wrap:break-word;box-shadow:0 1px 1.5px rgba(33,28,21,.08);}
-  .mrow.them .mbubble{background:#fff;color:var(--ink);border-top-left-radius:3px;}
+  .mbubble{padding:9px 14px;border-radius:18px;font-size:14px;line-height:1.45;position:relative;word-wrap:break-word;box-shadow:0 1px 1.5px rgba(33,28,21,.08);}
+  .mrow.them .mbubble{background:#fff;color:var(--ink);border-top-left-radius:6px;}
   .mrow.them:not(.grouped) .mbubble::before{content:"";position:absolute;top:0;left:-7px;width:0;height:0;border:7px solid transparent;border-top-color:#fff;border-right:0;}
-  .mrow.me .mbubble{background:var(--gold);color:#fff;border-top-right-radius:3px;}
+  .mrow.me .mbubble{background:var(--gold);color:#fff;border-top-right-radius:6px;}
   .mrow.me:not(.grouped) .mbubble::before{content:"";position:absolute;top:0;right:-7px;width:0;height:0;border:7px solid transparent;border-top-color:var(--gold);border-left:0;}
   .mrow.grouped .mbubble{border-radius:12px;}
   .mtime{display:inline-block;font-size:10px;margin-left:8px;opacity:.55;float:right;position:relative;top:5px;}
@@ -328,6 +328,17 @@
   .chat-input{display:flex;gap:12px;padding:16px 24px;border-top:1px solid var(--line);background:var(--paper);align-items:flex-end;}
   .chat-input textarea{flex:1;resize:none;font-family:'Jost',sans-serif;font-size:14px;color:var(--ink);background:var(--ivory);border:1px solid var(--line);border-radius:22px;padding:13px 20px;outline:none;max-height:120px;line-height:1.4;transition:border-color .2s,box-shadow .2s;}
   .chat-input textarea:focus{border-color:var(--gold-lt);box-shadow:0 0 0 3px rgba(201,168,103,.12);}
+  .chat-attach{flex-shrink:0;width:40px;height:40px;background:none;border:none;color:var(--stone);cursor:pointer;border-radius:50%;display:flex;align-items:center;justify-content:center;transition:background .18s,color .18s;}
+  .chat-attach svg{width:20px;height:20px;}
+  .chat-attach:hover{background:var(--gold-wash);color:var(--gold-deep);}
+  .chat-attach.recording{background:#f3e2e4;color:#a4483f;animation:recPulse 1.2s ease-in-out infinite;}
+  @keyframes recPulse{0%,100%{box-shadow:0 0 0 0 rgba(164,72,63,.3);}50%{box-shadow:0 0 0 6px rgba(164,72,63,0);}}
+  .attach-preview{display:flex;align-items:center;gap:10px;background:var(--gold-wash);border:1px solid var(--line);border-radius:12px;padding:8px 12px;margin:0 24px 8px;font-size:13px;color:var(--ink);}
+  .attach-preview .ap-name{flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+  .attach-preview .ap-x{cursor:pointer;color:var(--stone);flex-shrink:0;display:flex;}
+  .attach-preview .ap-x svg{width:15px;height:15px;}
+  .attach-preview audio{height:34px;}
+  .rec-timer{font-size:13px;color:#a4483f;font-weight:600;flex:1;}
   .chat-send{flex-shrink:0;width:46px;height:46px;background:linear-gradient(135deg,var(--gold),var(--gold-deep));color:#fff;border:none;border-radius:50%;font-family:'Jost',sans-serif;cursor:pointer;transition:transform .2s,box-shadow .2s;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(168,126,61,.32);}
   .chat-send svg{width:18px;height:18px;}
   .chat-send:hover{transform:scale(1.07);box-shadow:0 6px 16px rgba(168,126,61,.42);} .chat-send:disabled{opacity:.5;cursor:default;transform:none;}
@@ -354,11 +365,12 @@
   .wa-lh{padding:26px 24px 8px;}
   .wa-lh h2{font-family:'Cormorant',serif;font-weight:700;font-size:30px;color:var(--ink);letter-spacing:-.3px;}
   .wa-lh .sub{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-top:2px;}
-  .wa-search{margin:14px 20px 14px;background:var(--ivory);border:1px solid var(--line);border-radius:14px;padding:0 14px;display:flex;align-items:center;gap:10px;transition:border-color .2s,box-shadow .2s;}
+  .wa-search{margin:14px 20px 14px;background:var(--ivory);border:1px solid var(--line);border-radius:18px;padding:0 14px;display:flex;align-items:center;gap:10px;transition:border-color .2s,box-shadow .2s;}
   .wa-search:focus-within{border-color:var(--gold-lt);box-shadow:0 0 0 3px rgba(201,168,103,.12);}
   .wa-search svg{width:15px;height:15px;stroke:var(--stone);flex-shrink:0;}
   .wa-search input{flex:1;border:none;background:none;outline:none;font-family:'Jost',sans-serif;font-size:13px;color:var(--ink);padding:11px 0;}
   .wa-listlabel{font-size:10.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--stone);padding:4px 24px 8px;}
+  .pin-ic{width:12px;height:12px;stroke:var(--gold);vertical-align:middle;margin-left:5px;transform:rotate(30deg);opacity:.85;}
   .wa-item{display:flex;align-items:center;gap:14px;padding:14px 22px;cursor:pointer;border-left:3px solid transparent;transition:background .18s;position:relative;}
   .wa-item::after{content:"";position:absolute;left:78px;right:22px;bottom:0;height:1px;background:var(--line);opacity:.6;}
   .wa-item:last-child::after{display:none;}
@@ -398,9 +410,9 @@
   .cbub{position:relative;min-width:0;}
   .cbub .who{font-size:11.5px;font-weight:600;color:var(--gold-deep);margin-bottom:4px;padding-left:2px;}
   .crow.mine .cbub .who{text-align:right;color:var(--stone);}
-  .cbub .msg{padding:9px 13px;border-radius:12px;font-size:14px;line-height:1.45;background:#fff;color:var(--ink);border-top-left-radius:3px;word-wrap:break-word;position:relative;box-shadow:0 1px 1.5px rgba(33,28,21,.08);}
+  .cbub .msg{padding:9px 14px;border-radius:18px;font-size:14px;line-height:1.45;background:#fff;color:var(--ink);border-top-left-radius:6px;word-wrap:break-word;position:relative;box-shadow:0 1px 1.5px rgba(33,28,21,.08);}
   .cbub .msg::before{content:"";position:absolute;top:0;left:-7px;width:0;height:0;border:7px solid transparent;border-top-color:#fff;border-right:0;}
-  .crow.mine .cbub .msg{background:var(--gold);color:#fff;border-top-left-radius:12px;border-top-right-radius:3px;}
+  .crow.mine .cbub .msg{background:var(--gold);color:#fff;border-top-left-radius:18px;border-top-right-radius:6px;}
   .crow.mine .cbub .msg::before{left:auto;right:-7px;border-top-color:var(--gold);border-right:7px solid transparent;border-left:0;}
   .cbub .when{display:block;font-size:10px;margin-top:4px;opacity:.6;}
   .crow.admin .cbub .msg{background:var(--ink);color:#F1E9D8;}
@@ -461,6 +473,29 @@
   .vault-dl svg{width:14px;height:14px;transition:transform .2s;}
   .vault-card:hover .vault-dl svg{transform:translateY(2px);}
   @media(max-width:720px){.vault-grid{grid-template-columns:1fr;}}
+
+  /* THE REGISTER */
+  .reg-grid{display:flex;flex-direction:column;gap:16px;margin-top:6px;}
+  .reg-card{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:26px 28px;transition:transform .22s,box-shadow .22s,border-color .22s;position:relative;overflow:hidden;}
+  .reg-card::before{content:"";position:absolute;top:0;left:0;width:3px;height:100%;background:linear-gradient(180deg,var(--gold),var(--gold-lt));opacity:0;transition:opacity .22s;}
+  .reg-card:hover{transform:translateY(-3px);box-shadow:0 16px 36px rgba(33,28,21,.09);border-color:var(--gold-lt);}
+  .reg-card:hover::before{opacity:1;}
+  .reg-top{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:12px;}
+  .reg-name{font-family:'Cormorant',serif;font-weight:700;font-size:24px;color:var(--ink);line-height:1.1;}
+  .reg-tier{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-deep);background:var(--gold-wash);padding:5px 12px;border-radius:20px;white-space:nowrap;flex-shrink:0;}
+  .reg-loc{font-size:12px;color:var(--stone);letter-spacing:.02em;margin-bottom:14px;display:flex;align-items:center;gap:6px;}
+  .reg-loc svg{width:13px;height:13px;stroke:var(--gold);}
+  .reg-desc{font-size:13.5px;color:var(--ink-soft);line-height:1.6;margin-bottom:16px;}
+  .reg-meta{display:flex;flex-wrap:wrap;gap:20px;padding-top:14px;border-top:1px solid var(--line);}
+  .reg-metaitem{font-size:12px;}
+  .reg-metaitem .k{color:var(--stone);text-transform:uppercase;letter-spacing:.08em;font-size:10px;font-weight:600;margin-bottom:2px;}
+  .reg-metaitem .v{color:var(--ink);font-weight:500;}
+  .msg-media-img{display:block;margin-bottom:4px;}
+  .msg-media-img img{max-width:220px;max-height:260px;border-radius:12px;display:block;object-fit:cover;}
+  .msg-media-audio{display:block;margin-bottom:4px;max-width:240px;height:40px;}
+  .msg-media-file{display:inline-flex;align-items:center;gap:7px;margin-bottom:4px;padding:8px 12px;background:rgba(168,126,61,.1);border-radius:10px;text-decoration:none;color:inherit;font-size:13px;font-weight:500;}
+  .mrow.me .msg-media-file,.crow.mine .msg-media-file{background:rgba(255,255,255,.18);}
+  .msg-media-file svg{flex-shrink:0;}
 </style>
 </head>
 <body>
@@ -587,6 +622,10 @@
       <div class="nav-item" data-page="vault">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="12" cy="12" r="3"/><path d="M12 9v.01M12 15v.01M9 12h.01M15 12h.01" stroke-linecap="round"/></svg>
         The Vault
+      </div>
+      <div class="nav-item" data-page="register">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h13a2 2 0 0 1 2 2v14H6a2 2 0 0 1-2-2z" stroke-linejoin="round"/><path d="M8 8h7M8 12h7M8 16h4" stroke-linecap="round"/></svg>
+        The Register
       </div>
       <div class="nav-item" data-page="calendar">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4" stroke-linecap="round"/></svg>
@@ -801,6 +840,27 @@
       </div>
     </section>
 
+    <!-- ============ PAGE: THE REGISTER ============ -->
+    <section class="page hidden" id="page-register">
+      <div class="page-h">
+        <div class="eyebrow">The Register</div>
+        <h1>The houses of this world.</h1>
+        <p>The most respected private-service and concierge agencies in the world, the ones that place people into the households you are training to serve. Study them. Know their language. These are the doors you will one day knock upon.</p>
+      </div>
+
+      <div class="note-band">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01" stroke-linecap="round"/></svg>
+        <p>These are reference points for your own outreach, not partners of Maison Amarine, and we make no guarantee of placement. Each firm recruits on its own terms. Approach them with the discretion and poise you are learning here.</p>
+      </div>
+
+      <div class="reg-grid" id="regGrid"></div>
+
+      <div class="note-band" style="margin-top:20px;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l2.5 6.5L21 9l-5 4.5L17.5 21 12 17l-5.5 4L8 13.5 3 9l6.5-.5z" stroke-linejoin="round"/></svg>
+        <p><strong>Week 6</strong> of your program shows you exactly how to approach these houses, register with them, and turn a first introduction into an interview. The Vault holds the outreach template to begin.</p>
+      </div>
+    </section>
+
     <!-- ============ PAGE: CALENDAR ============ -->
     <section class="page hidden" id="page-calendar">
       <div class="page-h">
@@ -832,10 +892,10 @@
           <div class="wa-lh"><h2>Messages</h2><div class="sub">Maison Amarine</div></div>
           <div class="wa-search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4" stroke-linecap="round"/></svg><input id="waSearch" placeholder="Search"></div>
           <div class="wa-listlabel">Your conversations</div>
-          <div class="wa-item active" data-conv="community">
+          <div class="wa-item active pinned" data-conv="community">
             <div class="cav community">M</div>
             <div class="ci-mid">
-              <div class="ci-top"><span class="ci-name">The Community</span><span class="ci-time" id="commLastTime"></span></div>
+              <div class="ci-top"><span class="ci-name">The Community <svg class="pin-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 17v5M9 3h6l-1 7 3 3H7l3-3-1-7z" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="ci-time" id="commLastTime"></span></div>
               <div class="ci-prev" id="commPreview">Your cohort gathers here.</div>
             </div>
             <div class="ci-badge" id="commBadge" style="display:none;"></div>
@@ -862,7 +922,11 @@
             <div class="chat-body" id="commBody">
               <div class="chat-empty" id="commEmpty">This is the beginning of your community. Introduce yourself, share where you are on your journey, or simply say good morning. Every member sees this space.</div>
             </div>
+            <div class="attach-preview" id="commPreviewBox" style="display:none;"></div>
             <div class="chat-input">
+              <input type="file" id="commFile" accept="image/*,.pdf,.doc,.docx" style="display:none;">
+              <button class="chat-attach" id="commAttach" title="Attach a file"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 11.5l-8.5 8.5a5 5 0 0 1-7-7l8.5-8.5a3.3 3.3 0 0 1 4.7 4.7L10 17.5a1.7 1.7 0 0 1-2.3-2.3l7.8-7.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+              <button class="chat-attach" id="commMic" title="Record a voice message"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M6 11a6 6 0 0 0 12 0M12 17v4M8 21h8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
               <textarea id="commInput" rows="1" placeholder="Share something with the community…"></textarea>
               <button class="chat-send" id="commSend" title="Send"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
             </div>
@@ -878,7 +942,11 @@
             <div class="chat-body" id="chatBody">
               <div class="chat-empty" id="chatEmpty">This is the beginning of your private conversation. Say hello, ask a question about the program, or share where you are on your journey. Émilie reads every message personally.</div>
             </div>
+            <div class="attach-preview" id="chatPreview" style="display:none;"></div>
             <div class="chat-input">
+              <input type="file" id="chatFile" accept="image/*,.pdf,.doc,.docx" style="display:none;">
+              <button class="chat-attach" id="chatAttach" title="Attach a file"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 11.5l-8.5 8.5a5 5 0 0 1-7-7l8.5-8.5a3.3 3.3 0 0 1 4.7 4.7L10 17.5a1.7 1.7 0 0 1-2.3-2.3l7.8-7.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+              <button class="chat-attach" id="chatMic" title="Record a voice message"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M6 11a6 6 0 0 0 12 0M12 17v4M8 21h8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
               <textarea id="chatInput" rows="1" placeholder="Write your message…"></textarea>
               <button class="chat-send" id="chatSend" title="Send"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
             </div>
@@ -925,6 +993,7 @@
 // ====== CONFIG SUPABASE ======
 const SUPABASE_URL = "https://beexlhyvcngeopkkxoco.supabase.co";
 const SUPABASE_KEY = "sb_publishable_qVIwPd3lkJnSoObnYMuUKg_mn0i2LY9";
+const sb = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
 // ====== THE JOURNAL DATA ======
 const JOURNAL_EDITION = "Edition · Spring 2026";
@@ -936,8 +1005,37 @@ const JOURNAL = [
   {cat:"Private Islands",title:"A 17-acre private island retreat opens off the coast of Provence",lead:"Zannier Bendor, owned by the French family behind Pernod Ricard, opens as a private-island destination off the Mediterranean coast, complete with restaurants, shopping, diving and, in keeping with the family business, several bars. A reminder that at the very top, privacy itself has become the ultimate amenity.",src:"Bloomberg",url:"https://www.bloomberg.com/news/articles/2025-12-26/here-are-the-11-most-exciting-luxury-hotels-opening-in-2026"},
   {cat:"America",title:"The most anticipated US openings of the year, from Dallas to Napa",lead:"A new wave of American debuts is drawing designers, chefs and seasoned travelers before the doors even open, from The Knox in Dallas with interiors by Martin Brudnizki, to a fifty-room wine-country retreat along the Napa Valley Vine Trail where every room faces the vineyards. The private world is increasingly at home on American soil.",src:"Pursuitist",url:"https://pursuitist.com/top-new-us-luxury-hotels-opening-in-2026/"},
 ];
-if (typeof supabase === 'undefined') { document.getElementById('gateErr').textContent = "Connection issue — please refresh the page."; }
-const sb = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+// ====== THE REGISTER DATA ======
+const REGISTER = [
+  {name:"Sienna Charles",tier:"The First Circle",loc:"United States",desc:"Perhaps the definitive American reference. Since 2008, Sienna Charles has designed ultra-luxury travel and lifestyle experiences exclusively for ultra-high-net-worth members and their families, including household names and Fortune 500 leaders. Its founder is known for one of the most coveted address books in the world.",clients:"UHNW individuals & families",note:"Membership reportedly begins around $75k/year"},
+  {name:"Quintessentially",tier:"Global Institution",loc:"London · New York · 60+ countries",desc:"The house that created the modern model. Founded in 2000, it built the template every concierge company since is measured against, with a team of over 1,500 specialists operating across more than 60 countries. A strong presence in New York.",clients:"Avg. member net worth ~$36M",note:"The global benchmark"},
+  {name:"Knightsbridge Circle",tier:"Invitation Only",loc:"London · New York · Dubai",desc:"The discreet and ultra-exclusive end of the market. Launched in 2012 and independent ever since, it strictly limits its membership. Each member or family is paired with a personal manager who knows their world intimately.",clients:"Strictly capped membership",note:"Among the most private in the world"},
+  {name:"Elite Lifestyle Management (ELM)",tier:"Boutique Elite",loc:"San Diego, United States",desc:"A model example of a highly selective American boutique. Founded in 2014 with an international team of lifestyle managers, serving celebrated athletes, renowned tech founders, and Gulf royalty. The firm is famously selective in who it represents.",clients:"Accepts a small % of applicants yearly",note:"Boutique, deeply personal"},
+  {name:"Velocity Black",tier:"Modern · Tech",loc:"International",desc:"The most contemporary of the group, built around a direct-messaging interface that connects members to a concierge team handling reservations, upgrades, private experiences, and last-minute travel logistics, with a reputation for speed.",clients:"Digitally native UHNW",note:"Technology-forward service"},
+  {name:"John Paul Group",tier:"Corporate Leader",loc:"Paris · International",desc:"One of the leaders of global corporate concierge services. Founded in 2008, it operates at scale for both private members and major institutions, a different world from the boutiques, but a serious employer in the field.",clients:"Corporate & private",note:"Scale and structure"},
+  {name:"Ten Lifestyle Group",tier:"Established",loc:"International",desc:"A long-established concierge group serving private members and the clients of premium financial institutions worldwide. A reliable name to know when mapping the wider landscape of the industry.",clients:"Members & financial partners",note:"Broad international reach"},
+];
+function renderRegister(){
+  const box=document.getElementById('regGrid');
+  if(!box || box.dataset.done==='1') return;
+  REGISTER.forEach(a=>{
+    const c=document.createElement('div');
+    c.className='reg-card';
+    c.innerHTML=`
+      <div class="reg-top">
+        <div class="reg-name">${a.name}</div>
+        <span class="reg-tier">${a.tier}</span>
+      </div>
+      <div class="reg-loc"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 21s-7-6-7-11a7 7 0 0 1 14 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>${a.loc}</div>
+      <div class="reg-desc">${a.desc}</div>
+      <div class="reg-meta">
+        <div class="reg-metaitem"><div class="k">Clientele</div><div class="v">${a.clients}</div></div>
+        <div class="reg-metaitem"><div class="k">Note</div><div class="v">${a.note}</div></div>
+      </div>`;
+    box.appendChild(c);
+  });
+  box.dataset.done='1';
+}
 
 const WEEKS = [
   {no:1, pillar:"Savoir", title:"The World You Are Entering", sub:"Who the ultra-wealthy are, and what they truly want.", codeTitle:"Reading the client beneath the request",
@@ -1253,6 +1351,7 @@ function goPage(name, scrollTo){
   window.scrollTo(0,0);
   if(name==='messages'){ loadCommunity(); loadMessages(false); updateConvPreviews(); if(window.innerWidth>820){ selectConv(document.getElementById('waApp').dataset.active||'community'); } }
   if(name==='journal'){ renderJournal(); }
+  if(name==='register'){ renderRegister(); }
   if(scrollTo){setTimeout(()=>{const el=document.getElementById(scrollTo);if(el)el.scrollIntoView({behavior:'smooth'});},60);}
 }
 document.querySelectorAll('.nav-item').forEach(n=>n.addEventListener('click',()=>goPage(n.dataset.page, n.dataset.scroll)));
@@ -1337,7 +1436,9 @@ async function loadCommunity(){
     div.className='crow'+(mine?' mine':'')+(m.is_admin?' admin':'');
     const who = m.is_admin ? (m.author_name+' · Founder') : (mine?'You':m.author_name);
     const actions = mine ? `<div class="cbub-actions"><button class="cbub-act" data-edit="${m.id}" title="Edit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 20h9M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z" stroke-linecap="round" stroke-linejoin="round"/></svg></button><button class="cbub-act" data-del="${m.id}" title="Delete"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16M9 7V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2M6 7l1 13h10l1-13" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div>` : '';
-    div.innerHTML=`${avatarHTML(m.author_name, m.is_admin)}<div class="cbub">${!mine?`<div class="who">${escapeHtml(who)}</div>`:''}<div class="msg" data-body="${m.id}">${escapeHtml(m.body)}<span class="when">${fmtTime(m.created_at)}</span></div>${actions}</div>`;
+    const cMedia = m.media_url ? mediaHTML(m.media_url, m.media_type) : '';
+    const cBody = m.body ? escapeHtml(m.body) : '';
+    div.innerHTML=`${avatarHTML(m.author_name, m.is_admin)}<div class="cbub">${!mine?`<div class="who">${escapeHtml(who)}</div>`:''}<div class="msg" data-body="${m.id}">${cMedia}${cBody}<span class="when">${fmtTime(m.created_at)}</span></div>${actions}</div>`;
     body.appendChild(div);
   });
   // brancher les actions
@@ -1367,14 +1468,21 @@ async function editCommunity(id){
 async function sendCommunity(){
   const inp=document.getElementById('commInput');
   const txt=inp.value.trim();
-  if(!txt || !USER) return;
+  const media=pendingMedia.comm;
+  if((!txt && !media) || !USER) return;
   const btn=document.getElementById('commSend');
   btn.disabled=true;
   const name=(PROFILE && PROFILE.full_name) ? PROFILE.full_name : (USER.email||'').split('@')[0];
-  const {error}=await sb.from('community_messages').insert({author_id:USER.id,author_name:name,is_admin:false,body:txt});
+  let media_url=null, media_type=null;
+  if(media){
+    media_url = await uploadMedia(media.file, media.isVoice);
+    if(!media_url){ btn.disabled=false; toast('Could not upload the file, please try again'); return; }
+    media_type = mediaTypeOf(media.file, media.isVoice);
+  }
+  const {error}=await sb.from('community_messages').insert({author_id:USER.id,author_name:name,is_admin:false,body:txt,media_url,media_type});
   btn.disabled=false;
   if(error){ toast('Could not send, please try again'); return; }
-  inp.value=''; inp.style.height='auto';
+  inp.value=''; inp.style.height='auto'; clearPreview('comm');
   loadCommunity();
 }
 document.getElementById('commSend').addEventListener('click',sendCommunity);
@@ -1433,7 +1541,9 @@ async function loadMessages(markRead){
           ? `<span class="ticks read" title="Read"><svg viewBox="0 0 18 12" fill="none"><path d="M1 6.5L4.5 10L11 2.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M7 10L13.5 2.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>`
           : `<span class="ticks sent" title="Sent"><svg viewBox="0 0 12 12" fill="none"><path d="M1 6.5L4.5 10L11 2.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>`) : '';
         const pActions = mine ? `<div class="cbub-actions"><button class="cbub-act" data-pedit="${m.id}" title="Edit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 20h9M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z" stroke-linecap="round" stroke-linejoin="round"/></svg></button><button class="cbub-act" data-pdel="${m.id}" title="Delete"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16M9 7V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2M6 7l1 13h10l1-13" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div>` : '';
-        row.innerHTML=`<div class="mbubble" data-pbody="${m.id}">${escapeHtml(m.body)}<span class="mtime">${fmtTime(m.created_at)}${ticks}</span></div>${pActions}`;
+        const mediaBlock = m.media_url ? mediaHTML(m.media_url, m.media_type) : '';
+        const bodyText = m.body ? escapeHtml(m.body) : '';
+        row.innerHTML=`<div class="mbubble" data-pbody="${m.id}">${mediaBlock}${bodyText}<span class="mtime">${fmtTime(m.created_at)}${ticks}</span></div>${pActions}`;
         body.appendChild(row);
         lastSender=m.sender; lastTime=t;
       });
@@ -1452,18 +1562,108 @@ async function loadMessages(markRead){
   }
 }
 function escapeHtml(s){return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+
+// ============ MÉDIAS : pièces jointes + messages vocaux ============
+const pendingMedia = { priv:null, comm:null };
+const mediaRec = { priv:null, comm:null };
+
+function showPreview(scope, file, isVoice){
+  const box = document.getElementById(scope==='priv'?'chatPreview':'commPreviewBox');
+  pendingMedia[scope] = { file, isVoice };
+  const url = URL.createObjectURL(file);
+  if(isVoice){
+    box.innerHTML = `<audio controls src="${url}"></audio><span class="ap-x" title="Remove"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12" stroke-linecap="round"/></svg></span>`;
+  } else if(file.type.startsWith('image/')){
+    box.innerHTML = `<img src="${url}" style="width:34px;height:34px;border-radius:7px;object-fit:cover;"><span class="ap-name">${escapeHtml(file.name)}</span><span class="ap-x" title="Remove"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12" stroke-linecap="round"/></svg></span>`;
+  } else {
+    box.innerHTML = `<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="var(--gold-deep)" stroke-width="1.7"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg><span class="ap-name">${escapeHtml(file.name)}</span><span class="ap-x" title="Remove"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12" stroke-linecap="round"/></svg></span>`;
+  }
+  box.style.display='flex';
+  box.querySelector('.ap-x').addEventListener('click',()=>clearPreview(scope));
+}
+function clearPreview(scope){
+  pendingMedia[scope]=null;
+  const box=document.getElementById(scope==='priv'?'chatPreview':'commPreviewBox');
+  box.style.display='none'; box.innerHTML='';
+}
+async function uploadMedia(file, isVoice){
+  const ext = isVoice ? 'webm' : (file.name.split('.').pop()||'bin');
+  const path = `${USER.id}/${Date.now()}-${Math.random().toString(36).slice(2,8)}.${ext}`;
+  const { error } = await sb.storage.from('chat-media').upload(path, file, { upsert:false, contentType:file.type||'application/octet-stream' });
+  if(error){ console.error(error); return null; }
+  const { data } = sb.storage.from('chat-media').getPublicUrl(path);
+  return data ? data.publicUrl : null;
+}
+function mediaTypeOf(file, isVoice){
+  if(isVoice) return 'voice';
+  if(file.type.startsWith('image/')) return 'image';
+  return 'file';
+}
+async function toggleRecording(scope, btn){
+  if(mediaRec[scope]){ mediaRec[scope].stop(); return; }
+  if(!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia){ toast('Voice recording is not supported on this device'); return; }
+  let stream;
+  try{ stream = await navigator.mediaDevices.getUserMedia({audio:true}); }
+  catch(e){ toast('Microphone access was declined'); return; }
+  const rec = new MediaRecorder(stream);
+  const chunks=[];
+  rec.ondataavailable=e=>{ if(e.data.size>0) chunks.push(e.data); };
+  rec.onstop=()=>{
+    stream.getTracks().forEach(t=>t.stop());
+    btn.classList.remove('recording');
+    mediaRec[scope]=null;
+    const blob=new Blob(chunks,{type:'audio/webm'});
+    if(blob.size>0){
+      const f=new File([blob],`voice-${Date.now()}.webm`,{type:'audio/webm'});
+      showPreview(scope, f, true);
+    }
+  };
+  mediaRec[scope]=rec;
+  btn.classList.add('recording');
+  rec.start();
+}
+function wireMedia(){
+  const cf=document.getElementById('chatFile');
+  if(cf){
+    document.getElementById('chatAttach').addEventListener('click',()=>cf.click());
+    cf.addEventListener('change',()=>{ if(cf.files[0]) showPreview('priv',cf.files[0],false); cf.value=''; });
+    document.getElementById('chatMic').addEventListener('click',function(){ toggleRecording('priv',this); });
+  }
+  const kf=document.getElementById('commFile');
+  if(kf){
+    document.getElementById('commAttach').addEventListener('click',()=>kf.click());
+    kf.addEventListener('change',()=>{ if(kf.files[0]) showPreview('comm',kf.files[0],false); kf.value=''; });
+    document.getElementById('commMic').addEventListener('click',function(){ toggleRecording('comm',this); });
+  }
+}
+wireMedia();
+function mediaHTML(url, type){
+  if(!url) return '';
+  if(type==='image'){ return `<a href="${url}" target="_blank" rel="noopener" class="msg-media-img"><img src="${url}" loading="lazy"></a>`; }
+  if(type==='voice'){ return `<audio class="msg-media-audio" controls src="${url}"></audio>`; }
+  return `<a href="${url}" target="_blank" rel="noopener" class="msg-media-file"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg> Download attachment</a>`;
+}
+
 async function sendMessage(){
   const inp=document.getElementById('chatInput');
   const txt=inp.value.trim();
-  if(!txt || !USER) return;
+  const media=pendingMedia.priv;
+  if((!txt && !media) || !USER) return;
   const btn=document.getElementById('chatSend');
   btn.disabled=true;
-  const {error}=await sb.from('messages').insert({student_id:USER.id,sender:'student',body:txt});
+  let media_url=null, media_type=null;
+  if(media){
+    media_url = await uploadMedia(media.file, media.isVoice);
+    if(!media_url){ btn.disabled=false; toast('Could not upload the file, please try again'); return; }
+    media_type = mediaTypeOf(media.file, media.isVoice);
+  }
+  const {error}=await sb.from('messages').insert({student_id:USER.id,sender:'student',body:txt,media_url,media_type});
   btn.disabled=false;
   if(error){ toast('Could not send, please try again'); return; }
-  inp.value=''; inp.style.height='auto';
+  inp.value=''; inp.style.height='auto'; clearPreview('priv');
   loadMessages(false);
 }
+
 async function deletePrivate(id){
   if(!confirm('Delete this message?')) return;
   const {error}=await sb.from('messages').delete().eq('id',id);
