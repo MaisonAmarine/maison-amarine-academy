@@ -413,6 +413,54 @@
   .cbub-act{width:24px;height:24px;border-radius:7px;border:1px solid var(--line);background:var(--paper);color:var(--stone);cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0;transition:all .15s;}
   .cbub-act svg{width:12px;height:12px;}
   .cbub-act:hover{border-color:var(--gold-lt);color:var(--gold-deep);}
+  /* ONBOARDING CÉRÉMONIAL */
+  .onb{position:fixed;inset:0;z-index:9999;background:radial-gradient(120% 100% at 50% 0%,#2a241b,var(--ink) 70%);display:flex;align-items:center;justify-content:center;padding:30px;overflow-y:auto;}
+  .onb.hidden{display:none;}
+  .onb-inner{max-width:620px;width:100%;text-align:center;position:relative;padding:40px 0;}
+  .onb-step{animation:onbIn .8s cubic-bezier(.22,.61,.36,1);}
+  .onb-step.hidden{display:none;}
+  @keyframes onbIn{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:none;}}
+  .onb-key{width:64px;height:64px;margin:0 auto 30px;border:1px solid var(--gold-lt);border-radius:50%;display:flex;align-items:center;justify-content:center;animation:onbGlow 3s ease-in-out infinite;}
+  .onb-key svg{width:30px;height:30px;stroke:var(--gold-lt);}
+  @keyframes onbGlow{0%,100%{box-shadow:0 0 0 0 rgba(201,168,103,.0);}50%{box-shadow:0 0 30px 4px rgba(201,168,103,.22);}}
+  .onb-eyebrow{font-size:11px;letter-spacing:.34em;text-transform:uppercase;color:var(--gold-lt);margin-bottom:22px;}
+  .onb-title{font-family:'Cormorant',serif;font-weight:300;font-size:52px;line-height:1.05;color:#F6F0E4;letter-spacing:-.5px;margin-bottom:20px;}
+  .onb-title span{font-style:italic;color:var(--gold-lt);}
+  .onb-lede{font-size:16.5px;line-height:1.75;color:#c9c0ae;max-width:460px;margin:0 auto 40px;font-weight:300;}
+  .onb-portrait{width:76px;height:76px;margin:0 auto 24px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--gold-lt));color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Cormorant',serif;font-weight:700;font-size:32px;box-shadow:0 8px 30px rgba(201,168,103,.3);}
+  .onb-letter{max-width:500px;margin:0 auto 38px;text-align:left;}
+  .onb-letter p{font-family:'Cormorant',serif;font-size:19px;line-height:1.7;color:#e8dfce;margin-bottom:16px;font-weight:300;font-style:italic;}
+  .onb-sign{font-family:'Cormorant',serif;font-size:24px !important;color:var(--gold-lt) !important;font-style:italic;margin-top:26px !important;margin-bottom:0 !important;}
+  .onb-sign-sub{font-family:'Jost',sans-serif !important;font-size:11px !important;letter-spacing:.2em;text-transform:uppercase;color:var(--stone) !important;font-style:normal !important;margin-top:4px !important;}
+  .onb-h2{font-family:'Cormorant',serif;font-weight:300;font-size:38px;color:#F6F0E4;margin-bottom:34px;letter-spacing:-.3px;}
+  .onb-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:40px;}
+  .onb-card{background:rgba(255,255,255,.04);border:1px solid rgba(201,168,103,.18);border-radius:14px;padding:26px 18px;transition:transform .3s,border-color .3s;}
+  .onb-card:hover{transform:translateY(-4px);border-color:rgba(201,168,103,.4);}
+  .onb-ic{width:44px;height:44px;margin:0 auto 14px;border-radius:50%;background:rgba(201,168,103,.12);display:flex;align-items:center;justify-content:center;}
+  .onb-ic svg{width:21px;height:21px;stroke:var(--gold-lt);}
+  .onb-card h3{font-family:'Cormorant',serif;font-weight:600;font-size:19px;color:#F6F0E4;margin-bottom:7px;}
+  .onb-card p{font-size:12.5px;line-height:1.55;color:#a89f8d;}
+  .onb-next{background:linear-gradient(135deg,var(--gold),var(--gold-lt));color:var(--ink);border:none;padding:15px 40px;border-radius:30px;font-family:'Jost',sans-serif;font-size:14px;font-weight:600;letter-spacing:.04em;cursor:pointer;transition:transform .2s,box-shadow .2s;box-shadow:0 8px 24px rgba(201,168,103,.3);}
+  .onb-next:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(201,168,103,.42);}
+  .onb-dots{display:flex;gap:9px;justify-content:center;margin-top:44px;}
+  .onb-dot{width:7px;height:7px;border-radius:50%;background:rgba(201,168,103,.28);transition:all .3s;}
+  .onb-dot.active{background:var(--gold-lt);width:22px;border-radius:4px;}
+  @media(max-width:640px){.onb-title{font-size:40px;}.onb-cards{grid-template-columns:1fr;}.onb-h2{font-size:30px;}}
+  /* THE VAULT */
+  .vault-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:6px;}
+  .vault-card{display:flex;gap:18px;align-items:flex-start;background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:24px 26px;text-decoration:none;transition:transform .22s,box-shadow .22s,border-color .22s;position:relative;overflow:hidden;}
+  .vault-card::before{content:"";position:absolute;top:0;left:0;width:100%;height:2px;background:linear-gradient(90deg,var(--gold),var(--gold-lt));opacity:0;transition:opacity .22s;}
+  .vault-card:hover{transform:translateY(-4px);box-shadow:0 16px 36px rgba(33,28,21,.1);border-color:var(--gold-lt);}
+  .vault-card:hover::before{opacity:1;}
+  .vault-ic{width:52px;height:52px;flex-shrink:0;border-radius:13px;background:linear-gradient(135deg,var(--ink),#2e2820);display:flex;align-items:center;justify-content:center;}
+  .vault-ic svg{width:24px;height:24px;stroke:var(--gold-lt);}
+  .vault-info{flex:1;min-width:0;}
+  .vault-info h3{font-family:'Cormorant',serif;font-weight:700;font-size:21px;color:var(--ink);margin-bottom:5px;line-height:1.15;}
+  .vault-info p{font-size:13px;color:var(--ink-soft);line-height:1.55;margin-bottom:12px;}
+  .vault-dl{display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--gold-deep);}
+  .vault-dl svg{width:14px;height:14px;transition:transform .2s;}
+  .vault-card:hover .vault-dl svg{transform:translateY(2px);}
+  @media(max-width:720px){.vault-grid{grid-template-columns:1fr;}}
 </style>
 </head>
 <body>
@@ -452,6 +500,65 @@
   </div>
 </div>
 
+<!-- ONBOARDING CÉRÉMONIAL -->
+<div class="onb hidden" id="onb">
+  <div class="onb-inner">
+    <!-- Étape 1 : accueil cérémonial -->
+    <div class="onb-step" data-step="1">
+      <div class="onb-key">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.2"><circle cx="8" cy="8" r="5"/><path d="M11.5 11.5L20 20M17 17l2-2" stroke-linecap="round"/></svg>
+      </div>
+      <div class="onb-eyebrow">Maison Amarine</div>
+      <h1 class="onb-title">Welcome, <span id="onbName">Alexandra</span>.</h1>
+      <p class="onb-lede">You have been chosen to enter a world few ever see. Take a breath. Your journey begins now.</p>
+      <button class="onb-next" data-next>Begin</button>
+    </div>
+
+    <!-- Étape 2 : mot personnel d'Émilie -->
+    <div class="onb-step hidden" data-step="2">
+      <div class="onb-portrait">É</div>
+      <div class="onb-eyebrow">A word from your mentor</div>
+      <div class="onb-letter">
+        <p>I am so glad you are here.</p>
+        <p>What you are about to learn is not taught in schools. It is the invisible art of those who move quietly through the most private lives on earth, the art of anticipation, discretion, and trust.</p>
+        <p>I will walk this path beside you, every week. Ask me anything. Take your time. And remember: you were not enrolled. You were selected.</p>
+        <p class="onb-sign">Émilie</p>
+        <p class="onb-sign-sub">Founder, Maison Amarine</p>
+      </div>
+      <button class="onb-next" data-next>Continue</button>
+    </div>
+
+    <!-- Étape 3 : présentation des espaces -->
+    <div class="onb-step hidden" data-step="3">
+      <div class="onb-eyebrow">Your world, in three spaces</div>
+      <h2 class="onb-h2">Everything you need is here.</h2>
+      <div class="onb-cards">
+        <div class="onb-card">
+          <div class="onb-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 6h16M4 12h16M4 18h10" stroke-linecap="round"/></svg></div>
+          <h3>Your Program</h3>
+          <p>Eight weeks, unlocked one at a time. Begin with Week One.</p>
+        </div>
+        <div class="onb-card">
+          <div class="onb-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+          <h3>Your Circle</h3>
+          <p>A private line to me, and a community of women on the same path.</p>
+        </div>
+        <div class="onb-card">
+          <div class="onb-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 4h11a2 2 0 0 1 2 2v14H6a2 2 0 0 1-2-2z"/><path d="M17 8h3v10a2 2 0 0 1-2 2"/></svg></div>
+          <h3>The Journal</h3>
+          <p>The world of luxury, curated, so you always know its codes.</p>
+        </div>
+      </div>
+      <button class="onb-next" data-enter>Enter my academy</button>
+    </div>
+
+    <!-- progression -->
+    <div class="onb-dots">
+      <span class="onb-dot active"></span><span class="onb-dot"></span><span class="onb-dot"></span>
+    </div>
+  </div>
+</div>
+
 <div class="app hidden" id="app">
 
   <!-- SIDEBAR -->
@@ -476,6 +583,10 @@
       <div class="nav-item" data-page="library">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 5v14M4 5a2 2 0 0 1 2-2h5v16H6a2 2 0 0 0-2 2M20 5v14M20 5a2 2 0 0 0-2-2h-5v16h5a2 2 0 0 1 2 2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         Codes Library
+      </div>
+      <div class="nav-item" data-page="vault">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="12" cy="12" r="3"/><path d="M12 9v.01M12 15v.01M9 12h.01M15 12h.01" stroke-linecap="round"/></svg>
+        The Vault
       </div>
       <div class="nav-item" data-page="calendar">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4" stroke-linecap="round"/></svg>
@@ -640,6 +751,53 @@
       <div class="note-band" style="margin-top:8px;">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>
         <p>Each note unlocks as you reach its week. Keep progressing through your program to open the full library.</p>
+      </div>
+    </section>
+
+    <!-- ============ PAGE: THE VAULT ============ -->
+    <section class="page hidden" id="page-vault">
+      <div class="page-h">
+        <div class="eyebrow">The Vault</div>
+        <h1>Your toolkit for the world ahead.</h1>
+        <p>Refined, ready-to-use documents to help you present yourself and open doors, crafted to the standard of the world you are entering. Download, make them your own, and use them well.</p>
+      </div>
+      <div class="vault-grid">
+        <a class="vault-card" href="Maison-Amarine-CV-Template.pdf" target="_blank" rel="noopener">
+          <div class="vault-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5" stroke-linecap="round"/></svg></div>
+          <div class="vault-info">
+            <h3>The Private Concierge CV</h3>
+            <p>A proven one-page structure, elegantly laid out and ready to personalise.</p>
+            <span class="vault-dl">Download PDF <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v13M7 12l5 5 5-5M5 21h14" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </div>
+        </a>
+        <a class="vault-card" href="Maison-Amarine-Cover-Letter.pdf" target="_blank" rel="noopener">
+          <div class="vault-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 5h16v14H4z"/><path d="M4 7l8 6 8-6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="vault-info">
+            <h3>The Cover Letter</h3>
+            <p>Your introduction, composed with restraint. Short, warm, impeccably discreet.</p>
+            <span class="vault-dl">Download PDF <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v13M7 12l5 5 5-5M5 21h14" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </div>
+        </a>
+        <a class="vault-card" href="Maison-Amarine-Interview-Guide.pdf" target="_blank" rel="noopener">
+          <div class="vault-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M8 10h8M8 14h5M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="vault-info">
+            <h3>The Interview Guide</h3>
+            <p>The questions you will be asked, and the spirit in which to meet them.</p>
+            <span class="vault-dl">Download PDF <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v13M7 12l5 5 5-5M5 21h14" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </div>
+        </a>
+        <a class="vault-card" href="Maison-Amarine-Agency-Outreach.pdf" target="_blank" rel="noopener">
+          <div class="vault-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="vault-info">
+            <h3>Approaching an Agency</h3>
+            <p>The first email, and the principles behind opening a door quietly.</p>
+            <span class="vault-dl">Download PDF <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v13M7 12l5 5 5-5M5 21h14" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </div>
+        </a>
+      </div>
+      <div class="note-band" style="margin-top:20px;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l2.5 6.5L21 9l-5 4.5L17.5 21 12 17l-5.5 4L8 13.5 3 9l6.5-.5z" stroke-linejoin="round"/></svg>
+        <p>These are living templates. Make them your own, but keep their restraint, in this world, the way a document feels says as much as what it contains.</p>
       </div>
     </section>
 
@@ -1383,7 +1541,28 @@ async function submitNewPassword(){
   btn.disabled=false;btn.textContent="Enter my academy";
   if(error){err.textContent="Could not save, please try again.";return;}
   document.getElementById('setpw').classList.add('hidden');
-  await onSignedIn(data.user);
+  // première connexion → onboarding cérémonial
+  startOnboarding(data.user, (data.user.user_metadata||{}).full_name||'');
+}
+
+// ====== ONBOARDING ======
+function startOnboarding(user, fullName){
+  const first=(fullName||'').split(' ')[0] || 'there';
+  document.getElementById('onbName').textContent = first;
+  let step=1;
+  const onb=document.getElementById('onb');
+  onb.classList.remove('hidden');
+  function show(n){
+    onb.querySelectorAll('.onb-step').forEach(s=>s.classList.toggle('hidden', +s.dataset.step!==n));
+    onb.querySelectorAll('.onb-dot').forEach((d,i)=>d.classList.toggle('active', i===n-1));
+    step=n;
+  }
+  onb.querySelectorAll('[data-next]').forEach(b=>b.addEventListener('click',()=>show(step+1)));
+  onb.querySelectorAll('[data-enter]').forEach(b=>b.addEventListener('click',async()=>{
+    onb.classList.add('hidden');
+    await onSignedIn(user);
+  }));
+  show(1);
 }
 document.getElementById('pwBtn').addEventListener('click',submitNewPassword);
 document.getElementById('pw2').addEventListener('keydown',e=>{if(e.key==='Enter')submitNewPassword();});
