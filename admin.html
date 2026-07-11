@@ -650,8 +650,8 @@ let allMessages=[], activeStudentId=null;
 function fmtTime(iso){
   const d=new Date(iso); const now=new Date();
   const opts={hour:'2-digit',minute:'2-digit'};
-  if(d.toDateString()===now.toDateString()) return d.toLocaleTimeString([], opts);
-  return d.toLocaleDateString([], {month:'short',day:'numeric'})+' · '+d.toLocaleTimeString([], opts);
+  if(d.toDateString()===now.toDateString()) return d.toLocaleTimeString('en-US', opts);
+  return d.toLocaleDateString('en-US', {month:'short',day:'numeric'})+' · '+d.toLocaleTimeString('en-US', opts);
 }
 function escapeHtml(s){return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
 async function loadInbox(){

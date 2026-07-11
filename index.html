@@ -1500,7 +1500,7 @@ document.getElementById('commInput').addEventListener('input',function(){
 // ====== MESSAGES (student side) ======
 function fmtTime(iso){
   const d=new Date(iso);
-  return d.toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'});
+  return d.toLocaleTimeString('en-US', {hour:'2-digit',minute:'2-digit'});
 }
 function dateLabel(iso){
   const d=new Date(iso); const now=new Date();
@@ -1509,8 +1509,8 @@ function dateLabel(iso){
   const diff=Math.round((today-that)/86400000);
   if(diff===0) return 'Today';
   if(diff===1) return 'Yesterday';
-  if(diff<7) return d.toLocaleDateString([], {weekday:'long'});
-  return d.toLocaleDateString([], {month:'long',day:'numeric',year:d.getFullYear()!==now.getFullYear()?'numeric':undefined});
+  if(diff<7) return d.toLocaleDateString('en-US', {weekday:'long'});
+  return d.toLocaleDateString('en-US', {month:'long',day:'numeric',year:d.getFullYear()!==now.getFullYear()?'numeric':undefined});
 }
 let _msgCache=[]; // pour éviter de re-rendre à l'identique
 async function loadMessages(markRead){
