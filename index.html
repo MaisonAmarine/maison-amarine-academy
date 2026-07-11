@@ -48,7 +48,7 @@
 
   .main{flex:1;min-width:0;}
   .topbar-m{display:none;}
-  .page{max-width:940px;margin:0 auto;padding:38px 40px 60px;}
+  .page{max-width:1240px;margin:0 auto;padding:38px 56px 60px;}
   #page-messages{max-width:none;margin:0;padding:18px;}
   .page.hidden{display:none;}
 
@@ -87,6 +87,37 @@
   .sec-head h3{font-family:'Cormorant',serif;font-weight:700;font-size:24px;color:var(--ink);}
   .sec-head p{font-size:14px;color:var(--stone);margin-top:2px;}
   .weeks{display:flex;flex-direction:column;gap:14px;margin-bottom:20px;}
+  /* My Program — regroupé par pilier, 2 cartes par ligne */
+  .pillar-head{display:flex;align-items:center;gap:16px;margin:34px 0 20px;}
+  .pillar-head:first-child{margin-top:6px;}
+  .pillar-line{flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--line),transparent);}
+  .pillar-name{font-family:'Jost',sans-serif;font-size:12px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-deep);white-space:nowrap;}
+  .pillar-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+  .wcard{display:flex;flex-direction:column;background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:26px 26px 22px;cursor:pointer;text-align:left;font-family:inherit;transition:transform .22s,box-shadow .22s,border-color .22s;position:relative;overflow:hidden;min-height:200px;}
+  .wcard::before{content:"";position:absolute;top:0;left:0;width:100%;height:3px;background:linear-gradient(90deg,var(--gold),var(--gold-lt));opacity:0;transition:opacity .22s;}
+  .wcard:not(.locked):hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(33,28,21,.12);border-color:var(--gold-lt);}
+  .wcard:not(.locked):hover::before{opacity:1;}
+  .wcard.locked{cursor:not-allowed;background:#faf7f0;opacity:.7;}
+  .wcard-top{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:18px;}
+  .wcard-badge{width:56px;height:56px;flex-shrink:0;border-radius:15px;display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:'Cormorant',serif;font-weight:700;background:var(--gold-wash);color:var(--gold-deep);}
+  .wcard-badge .wk{font-size:9px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);font-family:'Jost',sans-serif;line-height:1;margin-bottom:2px;}
+  .wcard-badge .n{font-size:28px;line-height:1;}
+  .wcard.done .wcard-badge{background:linear-gradient(135deg,var(--gold),var(--gold-deep));color:#fff;}
+  .wcard.done .wcard-badge .wk{color:rgba(255,255,255,.85);}
+  .wcard.locked .wcard-badge{background:#efe9dc;color:var(--stone);}
+  .wcard-go{width:38px;height:38px;flex-shrink:0;border-radius:50%;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:18px;color:var(--gold-deep);transition:all .2s;}
+  .wcard:not(.locked):hover .wcard-go{background:var(--gold);color:#fff;border-color:var(--gold);}
+  .wcard-go.locked{color:var(--stone);}
+  .wcard-go .ic svg{width:15px;height:15px;}
+  .wcard-title{font-family:'Cormorant',serif;font-weight:700;font-size:23px;line-height:1.15;color:var(--ink);margin-bottom:7px;}
+  .wcard-sub{font-size:13.5px;color:var(--ink-soft);line-height:1.5;flex:1;margin-bottom:16px;}
+  .wcard-foot{display:flex;align-items:center;}
+  .wcard-state{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;letter-spacing:.03em;padding:6px 14px;border-radius:20px;}
+  .wcard-state .ic svg{width:13px;height:13px;}
+  .wcard-state.done{background:var(--gold-wash);color:var(--gold-deep);}
+  .wcard-state.current{background:var(--ink);color:var(--gold-lt);}
+  .wcard-state.locked{background:#efe9dc;color:var(--stone);}
+  @media(max-width:820px){.pillar-grid{grid-template-columns:1fr;}}
   .week{display:flex;align-items:center;gap:20px;width:100%;background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:20px 24px;cursor:pointer;text-align:left;font-family:inherit;transition:transform .2s,box-shadow .2s,border-color .2s;}
   .week:hover{transform:translateY(-2px);box-shadow:0 12px 28px var(--shadow);border-color:var(--gold-lt);}
   .week.locked{cursor:not-allowed;background:#faf7f0;opacity:.72;}
@@ -377,6 +408,9 @@
   .wa-search svg{width:15px;height:15px;stroke:var(--stone);flex-shrink:0;}
   .wa-search input{flex:1;border:none;background:none;outline:none;font-family:'Jost',sans-serif;font-size:13px;color:var(--ink);padding:11px 0;}
   .wa-listlabel{font-size:10.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--stone);padding:4px 24px 8px;}
+  .wa-searchresults{flex:1;overflow-y:auto;}
+  .wa-searchhint{font-size:13px;color:var(--stone);text-align:center;padding:24px 20px;font-style:italic;}
+  .cav[style]{color:#fff;font-weight:600;}
   .pin-ic{width:12px;height:12px;stroke:var(--gold);vertical-align:middle;margin-left:5px;transform:rotate(30deg);opacity:.85;}
   .wa-item{display:flex;align-items:center;gap:14px;padding:14px 22px;cursor:pointer;border-left:3px solid transparent;transition:background .18s;position:relative;}
   .wa-item::after{content:"";position:absolute;left:78px;right:22px;bottom:0;height:1px;background:var(--line);opacity:.6;}
@@ -926,7 +960,9 @@
         <!-- LEFT: conversation list -->
         <div class="wa-list" id="waList">
           <div class="wa-lh"><h2>Messages</h2><div class="sub">Maison Amarine</div></div>
-          <div class="wa-search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4" stroke-linecap="round"/></svg><input id="waSearch" placeholder="Search"></div>
+          <div class="wa-search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4" stroke-linecap="round"/></svg><input id="waSearch" placeholder="Search members by name…" autocomplete="off"></div>
+          <div class="wa-searchresults" id="waSearchResults" style="display:none;"></div>
+          <div id="waConvList">
           <div class="wa-listlabel">Your conversations</div>
           <div class="wa-item active pinned" data-conv="community">
             <div class="cav community">M</div>
@@ -943,6 +979,8 @@
               <div class="ci-prev" id="mentorPreview">Your personal mentor.</div>
             </div>
             <div class="ci-badge" id="mentorBadge" style="display:none;"></div>
+          </div>
+          <div id="waDmList"></div>
           </div>
         </div>
 
@@ -985,6 +1023,25 @@
               <button class="chat-attach" id="chatMic" title="Record a voice message"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M6 11a6 6 0 0 0 12 0M12 17v4M8 21h8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
               <textarea id="chatInput" rows="1" placeholder="Write your message…"></textarea>
               <button class="chat-send" id="chatSend" title="Send"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+            </div>
+          </div>
+          <!-- CONVERSATION PRIVÉE (DM entre membres) -->
+          <div class="wa-conv" id="tab-dm" style="display:none;">
+            <div class="wa-cvhead">
+              <button class="wa-back" data-back title="Back"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+              <div class="cav" id="dmAvatar">·</div>
+              <div><h3 id="dmName">Member</h3><p>Private conversation</p></div>
+            </div>
+            <div class="chat-body" id="dmBody">
+              <div class="chat-empty" id="dmEmpty">This is the beginning of your private conversation. Say hello.</div>
+            </div>
+            <div class="attach-preview" id="dmPreview" style="display:none;"></div>
+            <div class="chat-input">
+              <input type="file" id="dmFile" accept="image/*,.pdf,.doc,.docx" style="display:none;">
+              <button class="chat-attach" id="dmAttach" title="Attach a file"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 11.5l-8.5 8.5a5 5 0 0 1-7-7l8.5-8.5a3.3 3.3 0 0 1 4.7 4.7L10 17.5a1.7 1.7 0 0 1-2.3-2.3l7.8-7.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+              <button class="chat-attach" id="dmMic" title="Record a voice message"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M6 11a6 6 0 0 0 12 0M12 17v4M8 21h8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+              <textarea id="dmInput" rows="1" placeholder="Write your message…"></textarea>
+              <button class="chat-send" id="dmSend" title="Send"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
             </div>
           </div>
         </div>
@@ -1224,18 +1281,42 @@ function lessonProgress(no){const arr=state.lessons[no];if(!arr)return 0;const d
 
 function renderWeeks(){
   const list=document.getElementById('weekList');list.innerHTML="";
+  // grouper les semaines par pilier, dans l'ordre
+  const pillars=[];
   WEEKS.forEach(w=>{
-    const st=weekStatus(w.no);
-    const row=document.createElement(st==="locked"?'div':'button');
-    row.className="week "+st;
-    let stateHTML;
-    if(st==="done")stateHTML=`<span class="state done"><span class="ic">${ICONS.checkSmall}</span><span>Done</span></span>`;
-    else if(st==="current"){const lp=lessonProgress(w.no);stateHTML=lp>0?`<span class="state current"><span>${lp}% done</span></span>`:`<span class="state current"><span>Start now</span></span>`;}
-    else stateHTML=`<span class="state locked"><span class="ic">${ICONS.lock}</span><span>Locked</span></span>`;
-    const goHTML=(st==="locked")?`<span class="go">${ICONS.lock}</span>`:`<span class="go">&rarr;</span>`;
-    row.innerHTML=`<div class="week-badge"><span class="wk">Week</span><span class="n">${w.no}</span></div><div class="week-main"><h4>${w.title}</h4><div class="wsub">${w.sub}</div><span class="week-pill">${w.pillar}</span></div><div class="week-right">${stateHTML}${goHTML}</div>`;
-    if(st!=="locked")row.addEventListener('click',()=>openWeek(w.no));
-    list.appendChild(row);
+    let grp=pillars.find(p=>p.name===w.pillar);
+    if(!grp){ grp={name:w.pillar, weeks:[]}; pillars.push(grp); }
+    grp.weeks.push(w);
+  });
+  pillars.forEach(grp=>{
+    // titre de section (pilier)
+    const head=document.createElement('div');
+    head.className='pillar-head';
+    head.innerHTML=`<span class="pillar-line"></span><span class="pillar-name">${grp.name}</span><span class="pillar-line"></span>`;
+    list.appendChild(head);
+    // grille de cartes
+    const grid=document.createElement('div');
+    grid.className='pillar-grid';
+    grp.weeks.forEach(w=>{
+      const st=weekStatus(w.no);
+      const card=document.createElement(st==="locked"?'div':'button');
+      card.className="wcard "+st;
+      let stateHTML;
+      if(st==="done")stateHTML=`<span class="wcard-state done"><span class="ic">${ICONS.checkSmall}</span>Done</span>`;
+      else if(st==="current"){const lp=lessonProgress(w.no);stateHTML=`<span class="wcard-state current">${lp>0?lp+'% done':'Start now'}</span>`;}
+      else stateHTML=`<span class="wcard-state locked"><span class="ic">${ICONS.lock}</span>Locked</span>`;
+      card.innerHTML=`
+        <div class="wcard-top">
+          <div class="wcard-badge"><span class="wk">Week</span><span class="n">${w.no}</span></div>
+          ${st==="locked"?`<span class="wcard-go locked">${ICONS.lock}</span>`:`<span class="wcard-go">&rarr;</span>`}
+        </div>
+        <h4 class="wcard-title">${w.title}</h4>
+        <p class="wcard-sub">${w.sub}</p>
+        <div class="wcard-foot">${stateHTML}</div>`;
+      if(st!=="locked")card.addEventListener('click',()=>openWeek(w.no));
+      grid.appendChild(card);
+    });
+    list.appendChild(grid);
   });
   updateResume(); renderLibrary(); renderCalendar();
 }
@@ -1460,7 +1541,7 @@ function goPage(name, scrollTo){
   document.querySelectorAll('.nav-item').forEach(n=>n.classList.toggle('active', n.dataset.page===name && !n.dataset.scroll));
   document.querySelectorAll('.m-tab').forEach(t=>t.classList.toggle('active', t.dataset.page===name));
   window.scrollTo(0,0);
-  if(name==='messages'){ loadCommunity(); loadMessages(false); updateConvPreviews(); if(window.innerWidth>820){ selectConv(document.getElementById('waApp').dataset.active||'community'); } }
+  if(name==='messages'){ loadCommunity(); loadMessages(false); updateConvPreviews(); loadDmConversations(); if(window.innerWidth>820){ selectConv(document.getElementById('waApp').dataset.active||'community'); } }
   if(name==='journal'){ renderJournal(); }
   if(name==='register'){ renderRegister(); }
   if(scrollTo){setTimeout(()=>{const el=document.getElementById(scrollTo);if(el)el.scrollIntoView({behavior:'smooth'});},60);}
@@ -1491,18 +1572,145 @@ function renderJournal(){
 }
 
 // ====== CONVERSATION SWITCHER (list + view) ======
+let activeDmUser=null; // {id, name} du membre avec qui on discute en privé
 function selectConv(conv){
   document.querySelectorAll('.wa-item').forEach(x=>x.classList.toggle('active', x.dataset.conv===conv));
   document.getElementById('tab-community').style.display = conv==='community'?'flex':'none';
   document.getElementById('tab-mentor').style.display = conv==='mentor'?'flex':'none';
+  document.getElementById('tab-dm').style.display = conv==='dm'?'flex':'none';
   const app=document.getElementById('waApp');
-  app.dataset.active=conv; app.classList.add('open'); // 'open' = mobile shows conversation
+  app.dataset.active=conv; app.classList.add('open');
   try{ if(conv==='community') loadCommunity(); if(conv==='mentor') loadMessages(true); }catch(e){}
 }
-document.querySelectorAll('.wa-item').forEach(it=>it.addEventListener('click',()=>selectConv(it.dataset.conv)));
+document.querySelectorAll('.wa-item[data-conv]').forEach(it=>it.addEventListener('click',()=>selectConv(it.dataset.conv)));
 document.querySelectorAll('[data-back]').forEach(b=>b.addEventListener('click',()=>{
-  document.getElementById('waApp').classList.remove('open'); // retour à la liste (mobile)
+  document.getElementById('waApp').classList.remove('open');
 }));
+
+// ====== RECHERCHE DE MEMBRES ======
+let searchTimer=null;
+const waSearchInput=document.getElementById('waSearch');
+if(waSearchInput){
+  waSearchInput.addEventListener('input',()=>{
+    const q=waSearchInput.value.trim();
+    clearTimeout(searchTimer);
+    const results=document.getElementById('waSearchResults');
+    const convList=document.getElementById('waConvList');
+    if(!q){ results.style.display='none'; convList.style.display='block'; return; }
+    searchTimer=setTimeout(()=>searchMembers(q),250);
+  });
+}
+async function searchMembers(q){
+  const results=document.getElementById('waSearchResults');
+  const convList=document.getElementById('waConvList');
+  convList.style.display='none';
+  results.style.display='block';
+  results.innerHTML='<div class="wa-searchhint">Searching…</div>';
+  try{
+    const {data,error}=await sb.from('profiles').select('id,full_name').ilike('full_name','%'+q+'%').limit(20);
+    if(error){ results.innerHTML='<div class="wa-searchhint">Could not search right now.</div>'; return; }
+    const list=(data||[]).filter(p=>p.id!==USER.id && p.full_name);
+    if(!list.length){ results.innerHTML='<div class="wa-searchhint">No member found.</div>'; return; }
+    results.innerHTML='<div class="wa-listlabel">Members</div>';
+    list.forEach(p=>{
+      const item=document.createElement('div');
+      item.className='wa-item';
+      item.innerHTML=`<div class="cav" style="background:${avatarColor(p.full_name)}">${avatarInitials(p.full_name)}</div><div class="ci-mid"><div class="ci-top"><span class="ci-name">${escapeHtml(p.full_name)}</span></div><div class="ci-prev">Tap to start a conversation</div></div>`;
+      item.addEventListener('click',()=>openDm(p.id, p.full_name));
+      results.appendChild(item);
+    });
+  }catch(e){ results.innerHTML='<div class="wa-searchhint">Could not search right now.</div>'; }
+}
+function avatarInitials(name){ const parts=(name||'').trim().split(/\s+/); return ((parts[0]||'')[0]||'')+((parts[1]||'')[0]||''); }
+function avatarColor(name){ const colors=['#A87E3D','#8a6630','#5f7d52','#7d7568','#a4483f','#4a4238']; let h=0; for(const c of (name||'')) h=c.charCodeAt(0)+((h<<5)-h); return colors[Math.abs(h)%colors.length]; }
+
+// ====== CONVERSATION PRIVÉE (DM) ======
+let dmChannel=null;
+async function openDm(userId, userName){
+  activeDmUser={id:userId, name:userName};
+  // reset recherche
+  document.getElementById('waSearch').value='';
+  document.getElementById('waSearchResults').style.display='none';
+  document.getElementById('waConvList').style.display='block';
+  // en-tête
+  document.getElementById('dmName').textContent=userName;
+  const av=document.getElementById('dmAvatar');
+  av.textContent=avatarInitials(userName); av.style.background=avatarColor(userName);
+  selectConv('dm');
+  await loadDm();
+  // temps réel
+  if(dmChannel){ try{sb.removeChannel(dmChannel);}catch(e){} }
+  dmChannel=sb.channel('dm-'+Date.now()).on('postgres_changes',{event:'INSERT',schema:'public',table:'direct_messages'},()=>loadDm()).subscribe();
+}
+async function loadDm(){
+  if(!activeDmUser||!USER) return;
+  const body=document.getElementById('dmBody');
+  const {data,error}=await sb.from('direct_messages').select('*')
+    .or(`and(sender_id.eq.${USER.id},recipient_id.eq.${activeDmUser.id}),and(sender_id.eq.${activeDmUser.id},recipient_id.eq.${USER.id})`)
+    .order('created_at',{ascending:true});
+  if(error){ console.error(error); return; }
+  const msgs=data||[];
+  if(!msgs.length){ body.innerHTML='<div class="chat-empty">This is the beginning of your private conversation. Say hello.</div>'; return; }
+  body.innerHTML='';
+  let lastDate='';
+  msgs.forEach(m=>{
+    const dl=dateLabel(m.created_at);
+    if(dl!==lastDate){ const sep=document.createElement('div'); sep.className='day-sep'; sep.innerHTML=`<span>${dl}</span>`; body.appendChild(sep); lastDate=dl; }
+    const mine=m.sender_id===USER.id;
+    const row=document.createElement('div'); row.className='mrow '+(mine?'me':'them');
+    const media=m.media_url?mediaHTML(m.media_url,m.media_type):'';
+    const txt=m.body?escapeHtml(m.body):'';
+    row.innerHTML=`<div class="mbubble">${media}${txt}<span class="mtime">${fmtTime(m.created_at)}</span></div>`;
+    body.appendChild(row);
+  });
+  body.scrollTop=body.scrollHeight;
+  // marquer comme lus les messages reçus
+  try{ await sb.from('direct_messages').update({read_by_recipient:true}).eq('recipient_id',USER.id).eq('sender_id',activeDmUser.id).eq('read_by_recipient',false); }catch(e){}
+  loadDmConversations();
+}
+async function sendDm(){
+  const inp=document.getElementById('dmInput');
+  const txt=inp.value.trim();
+  const media=pendingMedia.dm;
+  if((!txt && !media) || !activeDmUser) return;
+  const btn=document.getElementById('dmSend'); btn.disabled=true;
+  let media_url=null, media_type=null;
+  if(media){ media_url=await uploadMedia(media.file, media.isVoice); if(!media_url){btn.disabled=false;toast('Could not upload');return;} media_type=mediaTypeOf(media.file, media.isVoice); }
+  const {error}=await sb.from('direct_messages').insert({sender_id:USER.id, recipient_id:activeDmUser.id, body:txt, media_url, media_type});
+  btn.disabled=false;
+  if(error){ toast('Could not send, please try again'); return; }
+  inp.value=''; inp.style.height='auto'; clearPreview('dm');
+  loadDm();
+}
+// liste des conversations privées existantes (dans la colonne de gauche)
+async function loadDmConversations(){
+  if(!USER) return;
+  const box=document.getElementById('waDmList');
+  try{
+    const {data}=await sb.from('direct_messages').select('*').or(`sender_id.eq.${USER.id},recipient_id.eq.${USER.id}`).order('created_at',{ascending:false});
+    if(!data||!data.length){ box.innerHTML=''; return; }
+    // regrouper par interlocuteur
+    const seen={}; const convs=[];
+    data.forEach(m=>{
+      const other = m.sender_id===USER.id ? m.recipient_id : m.sender_id;
+      if(!seen[other]){ seen[other]=true; convs.push({other, last:m}); }
+    });
+    // récupérer les noms
+    const ids=convs.map(c=>c.other);
+    const {data:profs}=await sb.from('profiles').select('id,full_name').in('id',ids);
+    const nameOf={}; (profs||[]).forEach(p=>nameOf[p.id]=p.full_name);
+    box.innerHTML='<div class="wa-listlabel">Direct messages</div>';
+    convs.forEach(c=>{
+      const nm=nameOf[c.other]||'Member';
+      const prev=(c.last.sender_id===USER.id?'You: ':'')+(c.last.body||'📎 Attachment');
+      const item=document.createElement('div');
+      item.className='wa-item'+(activeDmUser&&activeDmUser.id===c.other?' active':'');
+      item.innerHTML=`<div class="cav" style="background:${avatarColor(nm)}">${avatarInitials(nm)}</div><div class="ci-mid"><div class="ci-top"><span class="ci-name">${escapeHtml(nm)}</span><span class="ci-time">${fmtTime(c.last.created_at)}</span></div><div class="ci-prev">${escapeHtml(prev)}</div></div>`;
+      item.addEventListener('click',()=>openDm(c.other, nm));
+      box.appendChild(item);
+    });
+  }catch(e){ box.innerHTML=''; }
+}
 // met à jour les aperçus (dernier message + heure) dans la liste de gauche
 async function updateConvPreviews(){
   if(!USER) return;
@@ -1675,11 +1883,11 @@ async function loadMessages(markRead){
 function escapeHtml(s){return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
 
 // ============ MÉDIAS : pièces jointes + messages vocaux ============
-const pendingMedia = { priv:null, comm:null };
-const mediaRec = { priv:null, comm:null };
+const pendingMedia = { priv:null, comm:null, dm:null };
+const mediaRec = { priv:null, comm:null, dm:null };
 
 function showPreview(scope, file, isVoice){
-  const box = document.getElementById(scope==='priv'?'chatPreview':'commPreviewBox');
+  const box = document.getElementById(scope==='priv'?'chatPreview':(scope==='dm'?'dmPreview':'commPreviewBox'));
   pendingMedia[scope] = { file, isVoice };
   const url = URL.createObjectURL(file);
   if(isVoice){
@@ -1694,7 +1902,7 @@ function showPreview(scope, file, isVoice){
 }
 function clearPreview(scope){
   pendingMedia[scope]=null;
-  const box=document.getElementById(scope==='priv'?'chatPreview':'commPreviewBox');
+  const box=document.getElementById(scope==='priv'?'chatPreview':(scope==='dm'?'dmPreview':'commPreviewBox'));
   box.style.display='none'; box.innerHTML='';
 }
 async function uploadMedia(file, isVoice){
@@ -1745,6 +1953,12 @@ function wireMedia(){
     document.getElementById('commAttach').addEventListener('click',()=>kf.click());
     kf.addEventListener('change',()=>{ if(kf.files[0]) showPreview('comm',kf.files[0],false); kf.value=''; });
     document.getElementById('commMic').addEventListener('click',function(){ toggleRecording('comm',this); });
+  }
+  const df=document.getElementById('dmFile');
+  if(df){
+    document.getElementById('dmAttach').addEventListener('click',()=>df.click());
+    df.addEventListener('change',()=>{ if(df.files[0]) showPreview('dm',df.files[0],false); df.value=''; });
+    document.getElementById('dmMic').addEventListener('click',function(){ toggleRecording('dm',this); });
   }
 }
 wireMedia();
@@ -1817,6 +2031,14 @@ document.getElementById('chatInput').addEventListener('keydown',e=>{
   if(e.key==='Enter' && !e.shiftKey){e.preventDefault();sendMessage();}
 });
 document.getElementById('chatInput').addEventListener('input',function(){
+  this.style.height='auto'; this.style.height=Math.min(this.scrollHeight,120)+'px';
+});
+// DM privé
+document.getElementById('dmSend').addEventListener('click',sendDm);
+document.getElementById('dmInput').addEventListener('keydown',e=>{
+  if(e.key==='Enter' && !e.shiftKey){e.preventDefault();sendDm();}
+});
+document.getElementById('dmInput').addEventListener('input',function(){
   this.style.height='auto'; this.style.height=Math.min(this.scrollHeight,120)+'px';
 });
 

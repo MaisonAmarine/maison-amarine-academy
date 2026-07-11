@@ -54,6 +54,7 @@
 
   .main{flex:1;min-width:0;}
   .page{max-width:960px;margin:0 auto;padding:38px 40px 60px;}
+  #page-courses{max-width:1240px;}
   .page.hidden{display:none;}
   .page-h{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:26px;flex-wrap:wrap;padding-bottom:20px;border-bottom:1px solid var(--line);position:relative;}
   .page-h::after{content:"";position:absolute;bottom:-1px;left:0;width:64px;height:2px;background:linear-gradient(90deg,var(--gold),var(--gold-lt));}
@@ -215,8 +216,9 @@
   .acbub-act svg{width:12px;height:12px;}
   .acbub-act:hover{border-color:var(--gold-lt);color:var(--gold-deep);}
   /* COURSES EDITOR */
-  .courses-layout{display:flex;gap:20px;align-items:flex-start;}
-  .weeks-list{width:230px;flex-shrink:0;display:flex;flex-direction:column;gap:8px;}
+  .courses-layout{display:flex;gap:28px;align-items:flex-start;}
+  .weeks-list{width:250px;flex-shrink:0;display:flex;flex-direction:column;gap:9px;position:sticky;top:20px;}
+  .week-editor{flex:1;min-width:0;background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:36px 40px;}
   .week-tab{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:14px 16px;cursor:pointer;transition:all .18s;border-left:3px solid transparent;}
   .week-tab:hover{border-color:var(--gold-lt);}
   .week-tab.active{background:var(--gold-wash);border-left-color:var(--gold);}
@@ -224,13 +226,12 @@
   .week-tab .wt-title{font-family:'Cormorant',serif;font-weight:600;font-size:17px;color:var(--ink);margin-top:3px;line-height:1.2;}
   .week-tab .wt-status{font-size:11px;color:var(--stone);margin-top:4px;}
   .week-tab .wt-status.filled{color:var(--green);}
-  .week-editor{flex:1;min-width:0;background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:28px 30px;}
   .we-empty{color:var(--stone);font-size:14px;text-align:center;padding:60px 20px;}
-  .we-field{margin-bottom:22px;}
-  .we-field label{display:block;font-size:13px;font-weight:600;color:var(--ink);margin-bottom:7px;}
-  .we-hint{font-weight:400;color:var(--stone);font-size:12px;margin-left:6px;}
-  .we-field input[type=text],.we-field textarea{width:100%;font-family:'Jost',sans-serif;font-size:14px;color:var(--ink);background:var(--ivory);border:1px solid var(--line);border-radius:10px;padding:12px 14px;outline:none;transition:border-color .2s;resize:vertical;line-height:1.5;}
-  .we-field input[type=text]:focus,.we-field textarea:focus{border-color:var(--gold-lt);}
+  .we-field{margin-bottom:30px;}
+  .we-field label{display:block;font-size:13px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:10px;}
+  .we-hint{font-weight:400;color:var(--stone);font-size:11.5px;margin-left:6px;text-transform:none;letter-spacing:0;}
+  .we-field input[type=text],.we-field textarea{width:100%;font-family:'Jost',sans-serif;font-size:14.5px;color:var(--ink);background:var(--ivory);border:1px solid var(--line);border-radius:11px;padding:13px 16px;outline:none;transition:border-color .2s,background .2s;resize:vertical;line-height:1.6;}
+  .we-field input[type=text]:focus,.we-field textarea:focus{border-color:var(--gold-lt);background:#fff;}
   .we-docs{display:flex;flex-direction:column;gap:8px;margin-bottom:10px;}
   .we-doc{display:flex;align-items:center;gap:10px;background:var(--ivory);border:1px solid var(--line);border-radius:9px;padding:9px 12px;font-size:13px;}
   .we-doc .wd-name{flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:var(--ink);}
@@ -239,25 +240,29 @@
   .we-doc svg{flex-shrink:0;stroke:var(--gold-deep);}
   .we-adddoc{display:inline-flex;align-items:center;gap:7px;background:none;border:1px dashed var(--gold-lt);color:var(--gold-deep);border-radius:9px;padding:9px 14px;font-family:'Jost',sans-serif;font-size:13px;font-weight:500;cursor:pointer;transition:background .18s;}
   .we-adddoc:hover{background:var(--gold-wash);}
-  /* Éditeur des 4 étapes */
-  .we-steps{display:flex;flex-direction:column;gap:10px;}
-  .we-stepedit{display:flex;gap:12px;align-items:flex-start;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:14px;}
-  .we-stepnum{width:28px;height:28px;flex-shrink:0;border-radius:8px;background:var(--gold-wash);color:var(--gold-deep);font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center;font-family:'Jost',sans-serif;}
-  .we-stepfields{flex:1;display:flex;flex-direction:column;gap:8px;min-width:0;}
-  .we-steptitle,.we-stepsub{width:100%;font-family:'Jost',sans-serif;font-size:14px;color:var(--ink);background:var(--ivory);border:1px solid var(--line);border-radius:8px;padding:9px 12px;outline:none;transition:border-color .2s;}
+  /* Éditeur des 4 étapes — design spacieux */
+  .we-steps{display:flex;flex-direction:column;gap:18px;}
+  .we-stepedit{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:22px 24px;transition:border-color .2s,box-shadow .2s;}
+  .we-stepedit:focus-within{border-color:var(--gold-lt);box-shadow:0 6px 24px rgba(168,126,61,.1);}
+  .we-stephead{display:flex;gap:16px;align-items:center;width:100%;}
+  .we-stepnum{width:38px;height:38px;flex-shrink:0;border-radius:11px;background:linear-gradient(135deg,var(--gold),var(--gold-deep));color:#fff;font-weight:700;font-size:16px;display:flex;align-items:center;justify-content:center;font-family:'Cormorant',serif;box-shadow:0 3px 10px rgba(168,126,61,.28);}
+  .we-stepfields{flex:1;display:grid;grid-template-columns:1fr 1fr;gap:12px;min-width:0;}
+  .we-steptitle,.we-stepsub{width:100%;font-family:'Jost',sans-serif;font-size:14.5px;color:var(--ink);background:var(--ivory);border:1px solid var(--line);border-radius:10px;padding:12px 14px;outline:none;transition:border-color .2s;}
   .we-steptitle{font-weight:600;}
-  .we-stepsub{font-size:13px;color:var(--ink-soft);}
-  .we-steptitle:focus,.we-stepsub:focus{border-color:var(--gold-lt);}
-  .we-stepedit{flex-direction:column;}
-  .we-stephead{display:flex;gap:12px;align-items:flex-start;width:100%;}
-  .we-stepcontent{margin-top:12px;padding-top:12px;border-top:1px dashed var(--line);padding-left:40px;}
-  .we-steplabel{display:block;font-size:12px;font-weight:600;color:var(--ink-soft);margin:10px 0 5px;}
-  .we-steplabel span{font-weight:400;color:var(--stone);}
-  .we-stepvideo,.we-steptext{width:100%;font-family:'Jost',sans-serif;font-size:13px;color:var(--ink);background:var(--ivory);border:1px solid var(--line);border-radius:8px;padding:9px 12px;outline:none;resize:vertical;line-height:1.5;transition:border-color .2s;}
-  .we-stepvideo:focus,.we-steptext:focus{border-color:var(--gold-lt);}
-  .we-stepdoc{display:flex;align-items:center;gap:9px;background:var(--ivory);border:1px solid var(--line);border-radius:8px;padding:9px 12px;font-size:13px;color:var(--ink);}
+  .we-stepsub{color:var(--ink-soft);}
+  .we-steptitle:focus,.we-stepsub:focus{border-color:var(--gold-lt);background:#fff;}
+  .we-stepcontent{margin-top:18px;padding-top:18px;border-top:1px solid var(--line);display:grid;grid-template-columns:1fr 1fr;gap:16px 20px;}
+  .we-stepcontent .we-fullrow{grid-column:1 / -1;}
+  .we-steplabel{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:8px;}
+  .we-steplabel span{font-weight:400;text-transform:none;letter-spacing:0;color:var(--stone);font-size:11.5px;}
+  .we-stepvideo,.we-steptext{width:100%;font-family:'Jost',sans-serif;font-size:14px;color:var(--ink);background:var(--ivory);border:1px solid var(--line);border-radius:10px;padding:12px 14px;outline:none;resize:vertical;line-height:1.6;transition:border-color .2s;}
+  .we-stepvideo:focus,.we-steptext:focus{border-color:var(--gold-lt);background:#fff;}
+  .we-stepdoc{display:flex;align-items:center;gap:11px;background:var(--gold-wash);border:1px solid var(--line);border-radius:10px;padding:12px 14px;font-size:14px;color:var(--ink);}
+  .we-stepdoc svg{flex-shrink:0;}
   .we-stepdoc .wsd-name{flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:var(--ink-soft);}
-  .we-stepdoc .wsd-upload{font-size:12px;color:var(--gold-deep);cursor:pointer;text-decoration:underline;flex-shrink:0;}
+  .we-stepdoc .wsd-upload{font-size:12.5px;font-weight:600;color:var(--gold-deep);cursor:pointer;flex-shrink:0;padding:5px 12px;border:1px solid var(--gold-lt);border-radius:7px;background:#fff;transition:all .15s;}
+  .we-stepdoc .wsd-upload:hover{background:var(--gold);color:#fff;border-color:var(--gold);}
+  @media(max-width:900px){.we-stepfields{grid-template-columns:1fr;}.we-stepcontent{grid-template-columns:1fr;}}
   /* --- Éditeur à blocs libres --- */
   .we-blocks{display:flex;flex-direction:column;gap:12px;margin-bottom:12px;}
   .we-blockempty{font-size:13px;color:var(--stone);font-style:italic;padding:14px 0;text-align:center;}
@@ -824,12 +829,18 @@ function renderSteps(){
         </div>
       </div>
       <div class="we-stepcontent">
-        <label class="we-steplabel">Video link <span>(YouTube / Vimeo, optional)</span></label>
-        <input type="text" class="we-stepvideo" placeholder="https://youtu.be/…" value="${escapeAttr(s.video_url||'')}" data-sfield="video_url">
-        <label class="we-steplabel">Text <span>(the lesson, the codes, instructions… optional)</span></label>
-        <textarea class="we-steptext" rows="4" placeholder="Write the content of this step…" data-sfield="text">${escapeHtml(s.text||'')}</textarea>
-        <label class="we-steplabel">Document <span>(optional)</span></label>
-        <div class="we-stepdoc"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="var(--gold-deep)" stroke-width="1.7"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg><span class="wsd-name">${hasDoc?escapeHtml(s.doc_name||'Document'):'No file yet'}</span><span class="wsd-upload" data-stepdoc="${i}">${hasDoc?'Replace':'Upload file'}</span></div>
+        <div class="we-fullrow">
+          <label class="we-steplabel">Text <span>the lesson, the codes, instructions… (optional)</span></label>
+          <textarea class="we-steptext" rows="4" placeholder="Write the content of this step…" data-sfield="text">${escapeHtml(s.text||'')}</textarea>
+        </div>
+        <div>
+          <label class="we-steplabel">Video <span>YouTube / Vimeo (optional)</span></label>
+          <input type="text" class="we-stepvideo" placeholder="https://youtu.be/…" value="${escapeAttr(s.video_url||'')}" data-sfield="video_url">
+        </div>
+        <div>
+          <label class="we-steplabel">Document <span>(optional)</span></label>
+          <div class="we-stepdoc"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="var(--gold-deep)" stroke-width="1.7"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg><span class="wsd-name">${hasDoc?escapeHtml(s.doc_name||'Document'):'No file yet'}</span><span class="wsd-upload" data-stepdoc="${i}">${hasDoc?'Replace':'Upload'}</span></div>
+        </div>
       </div>`;
     el.querySelectorAll('[data-sfield]').forEach(inp=>{
       inp.addEventListener('input',()=>{ weekSteps[i][inp.dataset.sfield]=inp.value; });
