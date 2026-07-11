@@ -509,6 +509,18 @@
   .wc-doc{display:inline-flex;align-items:center;gap:10px;background:var(--gold-wash);border:1px solid var(--line);border-radius:11px;padding:12px 16px;font-size:14px;font-weight:500;color:var(--ink);text-decoration:none;transition:all .18s;margin-bottom:8px;}
   .wc-doc:hover{background:var(--wash);border-color:var(--gold-lt);transform:translateY(-1px);}
   .wc-doc svg{color:var(--gold-deep);flex-shrink:0;}
+  .wc-step{display:flex;align-items:center;gap:15px;background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin-bottom:10px;cursor:pointer;transition:all .18s;}
+  .wc-step:hover{border-color:var(--gold-lt);box-shadow:0 4px 14px rgba(33,28,21,.06);}
+  .wc-step-ic{width:42px;height:42px;flex-shrink:0;border-radius:11px;background:var(--gold-wash);display:flex;align-items:center;justify-content:center;}
+  .wc-step-ic svg{width:20px;height:20px;stroke:var(--gold-deep);}
+  .wc-step-txt{flex:1;min-width:0;}
+  .wc-step-t{font-family:'Cormorant',serif;font-weight:600;font-size:18px;color:var(--ink);line-height:1.2;}
+  .wc-step-s{font-size:12.5px;color:var(--stone);margin-top:2px;}
+  .wc-step-check{width:26px;height:26px;flex-shrink:0;border-radius:50%;border:2px solid var(--line);display:flex;align-items:center;justify-content:center;color:#fff;transition:all .18s;}
+  .wc-step.done .wc-step-check{background:var(--gold);border-color:var(--gold);}
+  .wc-step.done .wc-step-check svg{width:14px;height:14px;}
+  .wc-step.done .wc-step-ic{background:var(--gold);}
+  .wc-step.done .wc-step-ic svg{stroke:#fff;}
 </style>
 </head>
 <body>
@@ -997,8 +1009,6 @@
     <div class="modal-body">
       <div class="m-obj" id="modalObj"></div>
       <div id="weekContent"></div>
-      <div class="m-steps-label">What you'll do this week</div>
-      <div id="lessonList"></div>
     </div>
     <div class="modal-foot">
       <button class="mark-week" id="markWeek"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l5 5L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg><span id="markLabel">Mark this week as complete</span></button>
@@ -1341,15 +1351,6 @@ function openWeek(no){
   document.getElementById('modalSub').textContent=w.sub;
   document.getElementById('modalObj').textContent=w.obj;
   renderWeekContent(no);
-  if(!state.lessons[no])state.lessons[no]=w.lessons.map(()=>false);
-  const list=document.getElementById('lessonList');list.innerHTML="";
-  w.lessons.forEach((ls,i)=>{
-    const checked=state.lessons[no][i];
-    const row=document.createElement('div');row.className="lesson"+(checked?" done":"");
-    row.innerHTML=`<div class="lesson-ic">${ICONS[ls[2]]||ICONS.file}</div><div class="lesson-txt"><div class="lt">${ls[0]}</div><div class="lk">${ls[1]}</div></div><div class="lesson-check ${checked?'checked':''}">${ICONS.check}</div>`;
-    row.querySelector('.lesson-check').addEventListener('click',async(e)=>{e.stopPropagation();state.lessons[no][i]=!state.lessons[no][i];e.currentTarget.classList.toggle('checked');row.classList.toggle('done');await saveWeek(no);renderWeeks();});
-    list.appendChild(row);
-  });
   const btn=document.getElementById('markWeek');
   if(state.completed[no]){btn.classList.add('is-done');document.getElementById('markLabel').textContent="Completed, click to reopen";}
   else{btn.classList.remove('is-done');document.getElementById('markLabel').textContent="Mark this week as complete";}
@@ -1397,8 +1398,25 @@ function renderWeekContent(no){
       else if(b.type==='document' && b.url){
         html+=`<a class="wc-doc" href="${b.url}" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>${escapeHtml(b.name||'Document')}</a>`;
       }
+      else if(b.type==='step' && b.content){
+        const done = state.stepDone && state.stepDone[no] && state.stepDone[no][b.id];
+        html+=`<div class="wc-step${done?' done':''}" data-step="${b.id}"><div class="wc-step-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="wc-step-txt"><div class="wc-step-t">${escapeHtml(b.content)}</div>${b.subtitle?`<div class="wc-step-s">${escapeHtml(b.subtitle)}</div>`:''}</div><div class="wc-step-check">${done?'<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"3\"><path d=\"M5 12l5 5L19 7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>':''}</div></div>`;
+      }
     });
     box.innerHTML=html;
+    // rendre les steps cochables
+    box.querySelectorAll('.wc-step').forEach(el=>{
+      el.addEventListener('click',async()=>{
+        const id=el.dataset.step;
+        if(!state.stepDone) state.stepDone={};
+        if(!state.stepDone[no]) state.stepDone[no]={};
+        state.stepDone[no][id]=!state.stepDone[no][id];
+        el.classList.toggle('done');
+        const chk=el.querySelector('.wc-step-check');
+        chk.innerHTML = state.stepDone[no][id] ? '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg>' : '';
+        try{ await saveWeek(no); }catch(e){}
+      });
+    });
     return;
   }
   // ANCIEN format (compatibilité) : lesson_text + video_url + documents
