@@ -214,6 +214,61 @@
   .acbub-act{width:24px;height:24px;border-radius:7px;border:1px solid var(--line);background:var(--paper);color:var(--stone);cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0;transition:all .15s;}
   .acbub-act svg{width:12px;height:12px;}
   .acbub-act:hover{border-color:var(--gold-lt);color:var(--gold-deep);}
+  /* COURSES EDITOR */
+  .courses-layout{display:flex;gap:20px;align-items:flex-start;}
+  .weeks-list{width:230px;flex-shrink:0;display:flex;flex-direction:column;gap:8px;}
+  .week-tab{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:14px 16px;cursor:pointer;transition:all .18s;border-left:3px solid transparent;}
+  .week-tab:hover{border-color:var(--gold-lt);}
+  .week-tab.active{background:var(--gold-wash);border-left-color:var(--gold);}
+  .week-tab .wt-num{font-size:10.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-deep);}
+  .week-tab .wt-title{font-family:'Cormorant',serif;font-weight:600;font-size:17px;color:var(--ink);margin-top:3px;line-height:1.2;}
+  .week-tab .wt-status{font-size:11px;color:var(--stone);margin-top:4px;}
+  .week-tab .wt-status.filled{color:var(--green);}
+  .week-editor{flex:1;min-width:0;background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:28px 30px;}
+  .we-empty{color:var(--stone);font-size:14px;text-align:center;padding:60px 20px;}
+  .we-field{margin-bottom:22px;}
+  .we-field label{display:block;font-size:13px;font-weight:600;color:var(--ink);margin-bottom:7px;}
+  .we-hint{font-weight:400;color:var(--stone);font-size:12px;margin-left:6px;}
+  .we-field input[type=text],.we-field textarea{width:100%;font-family:'Jost',sans-serif;font-size:14px;color:var(--ink);background:var(--ivory);border:1px solid var(--line);border-radius:10px;padding:12px 14px;outline:none;transition:border-color .2s;resize:vertical;line-height:1.5;}
+  .we-field input[type=text]:focus,.we-field textarea:focus{border-color:var(--gold-lt);}
+  .we-docs{display:flex;flex-direction:column;gap:8px;margin-bottom:10px;}
+  .we-doc{display:flex;align-items:center;gap:10px;background:var(--ivory);border:1px solid var(--line);border-radius:9px;padding:9px 12px;font-size:13px;}
+  .we-doc .wd-name{flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:var(--ink);}
+  .we-doc .wd-x{cursor:pointer;color:var(--stone);display:flex;}
+  .we-doc .wd-x:hover{color:var(--red);}
+  .we-doc svg{flex-shrink:0;stroke:var(--gold-deep);}
+  .we-adddoc{display:inline-flex;align-items:center;gap:7px;background:none;border:1px dashed var(--gold-lt);color:var(--gold-deep);border-radius:9px;padding:9px 14px;font-family:'Jost',sans-serif;font-size:13px;font-weight:500;cursor:pointer;transition:background .18s;}
+  .we-adddoc:hover{background:var(--gold-wash);}
+  /* --- Éditeur à blocs libres --- */
+  .we-blocks{display:flex;flex-direction:column;gap:12px;margin-bottom:12px;}
+  .we-blockempty{font-size:13px;color:var(--stone);font-style:italic;padding:14px 0;text-align:center;}
+  .we-block{border:1px solid var(--line);border-radius:12px;background:var(--paper);overflow:hidden;}
+  .we-block-head{display:flex;align-items:center;gap:8px;padding:8px 12px;background:var(--ivory);border-bottom:1px solid var(--line);}
+  .we-block-type{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--gold-deep);}
+  .we-block-type svg{width:14px;height:14px;}
+  .we-block-ctrl{margin-left:auto;display:flex;gap:4px;}
+  .we-block-ctrl button{width:28px;height:28px;border:1px solid var(--line);background:var(--paper);border-radius:7px;display:flex;align-items:center;justify-content:center;cursor:pointer;color:var(--stone);transition:all .15s;}
+  .we-block-ctrl button:hover{background:var(--gold-wash);color:var(--gold-deep);border-color:var(--gold-lt);}
+  .we-block-ctrl button:disabled{opacity:.3;cursor:default;}
+  .we-block-ctrl button svg{width:15px;height:15px;}
+  .we-block-body{padding:12px;}
+  .we-block-body input[type=text],.we-block-body textarea{width:100%;font-family:'Jost',sans-serif;font-size:14px;color:var(--ink);background:var(--ivory);border:1px solid var(--line);border-radius:9px;padding:10px 12px;outline:none;resize:vertical;line-height:1.5;transition:border-color .2s;}
+  .we-block-body input[type=text]:focus,.we-block-body textarea:focus{border-color:var(--gold-lt);}
+  .we-block-body .heading-inp{font-family:'Cormorant',serif;font-size:19px;font-weight:600;}
+  .we-block-doc{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--ink);}
+  .we-block-doc svg{color:var(--gold-deep);flex-shrink:0;}
+  .we-block-doc .wbd-name{flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+  .we-block-doc .wbd-replace{font-size:12px;color:var(--gold-deep);cursor:pointer;text-decoration:underline;flex-shrink:0;}
+  .we-addbar{display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:14px;background:var(--ivory);border:1px solid var(--line);border-radius:12px;margin-bottom:22px;}
+  .we-addlabel{font-size:12px;font-weight:600;color:var(--stone);margin-right:2px;}
+  .we-addblock{display:inline-flex;align-items:center;gap:6px;background:var(--paper);border:1px solid var(--gold-lt);color:var(--gold-deep);border-radius:9px;padding:8px 14px;font-family:'Jost',sans-serif;font-size:13px;font-weight:500;cursor:pointer;transition:all .18s;}
+  .we-addblock:hover{background:var(--gold-wash);transform:translateY(-1px);}
+  .we-actions{display:flex;align-items:center;gap:16px;margin-top:8px;padding-top:20px;border-top:1px solid var(--line);}
+  .we-save{background:linear-gradient(135deg,var(--gold),var(--gold-deep));color:#fff;border:none;border-radius:11px;padding:12px 28px;font-family:'Jost',sans-serif;font-size:14px;font-weight:600;cursor:pointer;transition:transform .2s,box-shadow .2s;box-shadow:0 4px 12px rgba(168,126,61,.3);}
+  .we-save:hover{transform:translateY(-1px);box-shadow:0 6px 16px rgba(168,126,61,.4);}
+  .we-save:disabled{opacity:.5;transform:none;cursor:default;}
+  .we-status{font-size:13px;color:var(--green);font-weight:500;}
+  @media(max-width:800px){.courses-layout{flex-direction:column;}.weeks-list{width:100%;flex-direction:row;overflow-x:auto;}}
 </style>
 </head>
 <body>
@@ -254,6 +309,10 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="8" height="8" rx="1.5"/><rect x="13" y="3" width="8" height="5" rx="1.5"/><rect x="13" y="11" width="8" height="10" rx="1.5"/><rect x="3" y="14" width="8" height="7" rx="1.5"/></svg>
         <span>Overview</span>
       </div>
+      <div class="nav-item" data-page="courses">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 5v14a2 2 0 0 0 2 2h14V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 0z" stroke-linejoin="round"/><path d="M4 5a2 2 0 0 1 2-2h9v18" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 8h4M9 12h4" stroke-linecap="round"/></svg>
+        <span>Courses</span>
+      </div>
       <div class="nav-item" data-page="messages">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke-linecap="round" stroke-linejoin="round"/></svg>
         <span>Messages<span id="admMsgDot" class="msg-dot" style="display:none;"></span></span>
@@ -293,6 +352,44 @@
       <div class="panel">
         <div class="panel-head"><h3>Recent activity</h3></div>
         <table><tbody id="activityRows"></tbody></table>
+      </div>
+    </section>
+
+    <!-- COURSES -->
+    <section class="page hidden" id="page-courses">
+      <div class="page-h"><div><div class="eyebrow">Courses</div><h1>Your program content</h1><p>Edit each week's lesson, video and documents. Changes appear instantly for your students.</p></div></div>
+      <div class="courses-layout">
+        <div class="weeks-list" id="weeksList"></div>
+        <div class="week-editor" id="weekEditor">
+          <div class="we-empty" id="weEmpty">Select a week on the left to edit its content.</div>
+          <div class="we-form" id="weForm" style="display:none;">
+            <div class="we-field">
+              <label>Week title</label>
+              <input type="text" id="weTitle" placeholder="e.g. The World You Are Entering">
+            </div>
+            <div class="we-field">
+              <label>Short intro <span class="we-hint">a sentence or two shown at the top of the week</span></label>
+              <textarea id="weIntro" rows="2" placeholder="A short introduction to this week…"></textarea>
+            </div>
+            <div class="we-field">
+              <label>Content blocks <span class="we-hint">add and arrange your lesson freely, blocks appear in this order for students</span></label>
+              <div class="we-blocks" id="weBlocks"></div>
+              <div class="we-blockempty" id="weBlockEmpty">No blocks yet. Add your first block below.</div>
+            </div>
+            <div class="we-addbar">
+              <span class="we-addlabel">Add a block:</span>
+              <button class="we-addblock" data-addtype="heading" type="button"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 4v16M18 4v16M6 12h12" stroke-linecap="round"/></svg> Heading</button>
+              <button class="we-addblock" data-addtype="text" type="button"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h10" stroke-linecap="round"/></svg> Text</button>
+              <button class="we-addblock" data-addtype="video" type="button"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M10 9l5 3-5 3z" fill="currentColor"/></svg> Video</button>
+              <button class="we-addblock" data-addtype="document" type="button"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg> Document</button>
+            </div>
+            <input type="file" id="weBlockFile" accept=".pdf,.doc,.docx,image/*" style="display:none;">
+            <div class="we-actions">
+              <button class="we-save" id="weSave" type="button">Save changes</button>
+              <span class="we-status" id="weStatus"></span>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -642,8 +739,169 @@ document.querySelectorAll('.nav-item').forEach(n=>n.addEventListener('click',()=
   document.querySelectorAll('.nav-item').forEach(x=>x.classList.remove('active'));
   n.classList.add('active');
   if(n.dataset.page==='overview')renderOverview();
+  if(n.dataset.page==='courses')loadCourses();
   if(n.dataset.page==='messages'){loadInbox();loadAdminCommunity();}
 }));
+
+// ====== COURSES EDITOR ======
+let coursesData = [];
+let activeWeek = null;
+let weekBlocks = []; // blocs de la semaine en cours d'édition
+
+async function loadCourses(){
+  const {data,error}=await sb.from('course_weeks').select('*').order('week_number',{ascending:true});
+  if(error){ console.error(error); return; }
+  coursesData = data||[];
+  renderWeeksList();
+}
+function renderWeeksList(){
+  const list=document.getElementById('weeksList');
+  list.innerHTML='';
+  coursesData.forEach(w=>{
+    const nb = Array.isArray(w.blocks) ? w.blocks.length : 0;
+    const filled = nb>0 || !!(w.lesson_text && w.lesson_text.trim());
+    const div=document.createElement('div');
+    div.className='week-tab'+(activeWeek===w.week_number?' active':'');
+    div.innerHTML=`<div class="wt-num">Week ${w.week_number}</div><div class="wt-title">${escapeHtml(w.title||'Untitled')}</div><div class="wt-status ${filled?'filled':''}">${filled?'● '+(nb||'')+' block'+(nb>1?'s':'')+' · content added':'○ Empty'}</div>`;
+    div.addEventListener('click',()=>selectWeek(w.week_number));
+    list.appendChild(div);
+  });
+}
+// migration douce : si une ancienne semaine a lesson_text/video/documents mais pas de blocks, on les convertit en blocs
+function blocksFromLegacy(w){
+  const blocks=[];
+  if(w.lesson_text && w.lesson_text.trim()){ blocks.push({id:genId(),type:'text',content:w.lesson_text}); }
+  if(w.video_url && w.video_url.trim()){ blocks.push({id:genId(),type:'video',url:w.video_url}); }
+  if(Array.isArray(w.documents)){ w.documents.forEach(d=>blocks.push({id:genId(),type:'document',name:d.name,url:d.url})); }
+  return blocks;
+}
+function genId(){ return 'b'+Date.now()+Math.random().toString(36).slice(2,6); }
+
+function selectWeek(num){
+  activeWeek=num;
+  const w=coursesData.find(x=>x.week_number===num);
+  if(!w) return;
+  document.getElementById('weEmpty').style.display='none';
+  document.getElementById('weForm').style.display='block';
+  document.getElementById('weTitle').value = w.title||'';
+  document.getElementById('weIntro').value = w.intro||'';
+  // charger les blocs (ou migrer l'ancien format)
+  if(Array.isArray(w.blocks) && w.blocks.length){ weekBlocks = w.blocks.map(b=>({...b})); }
+  else { weekBlocks = blocksFromLegacy(w); }
+  renderBlocks();
+  document.getElementById('weStatus').textContent='';
+  renderWeeksList();
+}
+
+const BLOCK_META={
+  heading:{label:'Heading',icon:'<path d="M6 4v16M18 4v16M6 12h12" stroke-linecap="round"/>'},
+  text:{label:'Text',icon:'<path d="M4 6h16M4 12h16M4 18h10" stroke-linecap="round"/>'},
+  video:{label:'Video',icon:'<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M10 9l5 3-5 3z" fill="currentColor"/>'},
+  document:{label:'Document',icon:'<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/>'}
+};
+
+function renderBlocks(){
+  const box=document.getElementById('weBlocks');
+  const empty=document.getElementById('weBlockEmpty');
+  box.innerHTML='';
+  empty.style.display = weekBlocks.length ? 'none' : 'block';
+  weekBlocks.forEach((b,i)=>{
+    const meta=BLOCK_META[b.type]||BLOCK_META.text;
+    const el=document.createElement('div');
+    el.className='we-block';
+    let bodyHtml='';
+    if(b.type==='heading'){
+      bodyHtml=`<input type="text" class="heading-inp" placeholder="Section heading…" value="${escapeAttr(b.content||'')}" data-field="content">`;
+    } else if(b.type==='text'){
+      bodyHtml=`<textarea rows="5" placeholder="Write your lesson text here…" data-field="content">${escapeHtml(b.content||'')}</textarea>`;
+    } else if(b.type==='video'){
+      bodyHtml=`<input type="text" placeholder="YouTube or Vimeo link (unlisted works)…" value="${escapeAttr(b.url||'')}" data-field="url">`;
+    } else if(b.type==='document'){
+      bodyHtml=`<div class="we-block-doc"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke-width="1.7"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg><span class="wbd-name">${b.url?escapeHtml(b.name||'Document'):'No file yet'}</span><span class="wbd-replace" data-replace="${i}">${b.url?'Replace':'Upload file'}</span></div>`;
+    }
+    el.innerHTML=`
+      <div class="we-block-head">
+        <span class="we-block-type"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">${meta.icon}</svg>${meta.label}</span>
+        <div class="we-block-ctrl">
+          <button data-move="up" ${i===0?'disabled':''} title="Move up"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 15l-6-6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <button data-move="down" ${i===weekBlocks.length-1?'disabled':''} title="Move down"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <button data-del title="Delete"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        </div>
+      </div>
+      <div class="we-block-body">${bodyHtml}</div>`;
+    // écoute des champs
+    const field=el.querySelector('[data-field]');
+    if(field){ field.addEventListener('input',()=>{ weekBlocks[i][field.dataset.field]=field.value; }); }
+    // déplacer / supprimer
+    el.querySelector('[data-move="up"]').addEventListener('click',()=>{ if(i>0){ [weekBlocks[i-1],weekBlocks[i]]=[weekBlocks[i],weekBlocks[i-1]]; renderBlocks(); } });
+    el.querySelector('[data-move="down"]').addEventListener('click',()=>{ if(i<weekBlocks.length-1){ [weekBlocks[i+1],weekBlocks[i]]=[weekBlocks[i],weekBlocks[i+1]]; renderBlocks(); } });
+    el.querySelector('[data-del]').addEventListener('click',()=>{ weekBlocks.splice(i,1); renderBlocks(); });
+    // upload document
+    const rep=el.querySelector('[data-replace]');
+    if(rep){ rep.addEventListener('click',()=>{ pendingDocIndex=i; document.getElementById('weBlockFile').click(); }); }
+    box.appendChild(el);
+  });
+}
+function escapeAttr(s){ return (s||'').replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;'); }
+
+// ajouter un bloc
+document.querySelectorAll('.we-addblock').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const type=btn.dataset.addtype;
+    const nb={id:genId(),type};
+    if(type==='heading'||type==='text') nb.content='';
+    if(type==='video') nb.url='';
+    if(type==='document'){ nb.name=''; nb.url=''; }
+    weekBlocks.push(nb);
+    renderBlocks();
+  });
+});
+
+// upload d'un document pour un bloc
+let pendingDocIndex=null;
+document.getElementById('weBlockFile').addEventListener('change',async function(){
+  const file=this.files[0]; this.value='';
+  if(!file || pendingDocIndex==null) return;
+  const status=document.getElementById('weStatus');
+  status.style.color='var(--stone)'; status.textContent='Uploading '+file.name+'…';
+  const path=`week${activeWeek}/${Date.now()}-${file.name.replace(/[^a-zA-Z0-9.\-]/g,'_')}`;
+  const {error}=await sb.storage.from('course-docs').upload(path,file,{upsert:false,contentType:file.type||'application/octet-stream'});
+  if(error){ status.style.color='var(--red)'; status.textContent='Upload failed'; console.error(error); return; }
+  const {data}=sb.storage.from('course-docs').getPublicUrl(path);
+  weekBlocks[pendingDocIndex].name=file.name;
+  weekBlocks[pendingDocIndex].url=data.publicUrl;
+  pendingDocIndex=null;
+  renderBlocks();
+  status.style.color='var(--green)'; status.textContent='Document added';
+});
+
+// sauvegarder la semaine
+document.getElementById('weSave').addEventListener('click',async function(){
+  if(activeWeek==null) return;
+  this.disabled=true;
+  const status=document.getElementById('weStatus');
+  status.style.color='var(--stone)'; status.textContent='Saving…';
+  // nettoyer les blocs vides
+  const clean=weekBlocks.filter(b=>{
+    if(b.type==='heading'||b.type==='text') return (b.content||'').trim();
+    if(b.type==='video') return (b.url||'').trim();
+    if(b.type==='document') return (b.url||'').trim();
+    return false;
+  });
+  const payload={
+    title:document.getElementById('weTitle').value.trim(),
+    intro:document.getElementById('weIntro').value.trim(),
+    blocks:clean,
+    updated_at:new Date().toISOString()
+  };
+  const {error}=await sb.from('course_weeks').update(payload).eq('week_number',activeWeek);
+  this.disabled=false;
+  if(error){ status.style.color='var(--red)'; status.textContent='Could not save'; console.error(error); return; }
+  status.style.color='var(--green)'; status.textContent='✓ Saved';
+  const w=coursesData.find(x=>x.week_number===activeWeek);
+  if(w){ Object.assign(w,payload); }
+  renderWeeksList();
+});
 
 // ====== MESSAGES (admin side) ======
 let allMessages=[], activeStudentId=null;
