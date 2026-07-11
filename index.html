@@ -236,7 +236,14 @@
   .modal-body{padding:26px 32px 30px;}
   .m-obj{font-size:14.5px;color:var(--ink-soft);line-height:1.65;background:var(--gold-wash);border-radius:12px;padding:16px 18px;margin-bottom:22px;}
   .m-steps-label{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--stone);margin-bottom:12px;}
-  .lesson{display:flex;align-items:center;gap:15px;padding:15px 16px;margin-bottom:10px;background:var(--paper);border:1px solid var(--line);border-radius:13px;transition:border-color .2s,background .2s;}
+  .lesson{display:block;margin-bottom:10px;background:var(--paper);border:1px solid var(--line);border-radius:13px;transition:border-color .2s,background .2s;overflow:hidden;}
+  .lesson-main{display:flex;align-items:center;gap:15px;padding:15px 16px;}
+  .lesson.has-content .lesson-main{cursor:pointer;}
+  .lesson.has-content:hover{border-color:var(--gold-lt);}
+  .lesson-caret{display:inline-block;color:var(--gold-deep);font-size:11px;transition:transform .2s;margin-left:3px;}
+  .lesson.open .lesson-caret{transform:rotate(180deg);}
+  .lesson-content{max-height:0;overflow:hidden;transition:max-height .35s ease,padding .35s ease;padding:0 16px;}
+  .lesson.open .lesson-content{max-height:2000px;padding:4px 16px 16px;}
   .lesson:hover{border-color:var(--gold-lt);}
   .lesson.done{background:#fbfaf5;}
   .lesson-ic{width:42px;height:42px;border-radius:11px;flex-shrink:0;background:var(--gold-wash);display:flex;align-items:center;justify-content:center;color:var(--gold-deep);}
@@ -1009,6 +1016,8 @@
     <div class="modal-body">
       <div class="m-obj" id="modalObj"></div>
       <div id="weekContent"></div>
+      <div class="m-steps-label">What you'll do this week</div>
+      <div id="lessonList"></div>
     </div>
     <div class="modal-foot">
       <button class="mark-week" id="markWeek"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l5 5L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg><span id="markLabel">Mark this week as complete</span></button>
@@ -1351,6 +1360,42 @@ function openWeek(no){
   document.getElementById('modalSub').textContent=w.sub;
   document.getElementById('modalObj').textContent=w.obj;
   renderWeekContent(no);
+  // ---- les 4 étapes : texte d'origine, ou texte édité depuis l'admin si présent ----
+  const cc = COURSE_CONTENT[no];
+  let steps;
+  if(cc && Array.isArray(cc.steps) && cc.steps.length){
+    // étapes éditées dans l'admin (avec leur contenu)
+    steps = cc.steps.map((s,i)=>({
+      title: s.title || (w.lessons[i]?.[0]||''),
+      subtitle: s.subtitle || (w.lessons[i]?.[1]||''),
+      icon: w.lessons[i]?.[2] || 'file',
+      video_url: s.video_url||'', text: s.text||'', doc_url: s.doc_url||'', doc_name: s.doc_name||''
+    }));
+  } else {
+    // base d'origine, sans contenu
+    steps = w.lessons.map(ls=>({title:ls[0], subtitle:ls[1], icon:ls[2], video_url:'', text:'', doc_url:'', doc_name:''}));
+  }
+  if(!state.lessons[no])state.lessons[no]=steps.map(()=>false);
+  const list=document.getElementById('lessonList');list.innerHTML="";
+  steps.forEach((s,i)=>{
+    const checked=state.lessons[no][i];
+    const hasContent = s.video_url || s.text || s.doc_url;
+    const row=document.createElement('div');row.className="lesson"+(checked?" done":"")+(hasContent?" has-content":"");
+    // contenu déroulant
+    let contentHtml='';
+    if(hasContent){
+      const emb=ytEmbed(s.video_url);
+      if(emb) contentHtml+=`<div class="wc-video"><iframe src="${emb}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>`;
+      if(s.text && s.text.trim()){ const paras=s.text.split(/\n\s*\n/).map(p=>`<p>${escapeHtml(p).replace(/\n/g,'<br>')}</p>`).join(''); contentHtml+=`<div class="wc-lesson">${paras}</div>`; }
+      if(s.doc_url) contentHtml+=`<a class="wc-doc" href="${s.doc_url}" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>${escapeHtml(s.doc_name||'Document')}</a>`;
+    }
+    row.innerHTML=`<div class="lesson-main"><div class="lesson-ic">${ICONS[s.icon]||ICONS.file}</div><div class="lesson-txt"><div class="lt">${escapeHtml(s.title)}</div><div class="lk">${escapeHtml(s.subtitle)}${hasContent?' <span class="lesson-caret">▾</span>':''}</div></div><div class="lesson-check ${checked?'checked':''}">${ICONS.check}</div></div>${hasContent?`<div class="lesson-content">${contentHtml}</div>`:''}`;
+    // clic sur la case = cocher
+    row.querySelector('.lesson-check').addEventListener('click',async(e)=>{e.stopPropagation();state.lessons[no][i]=!state.lessons[no][i];e.currentTarget.classList.toggle('checked');row.classList.toggle('done');await saveWeek(no);renderWeeks();});
+    // clic sur l'étape = déplier/replier (si contenu)
+    if(hasContent){ row.querySelector('.lesson-main').addEventListener('click',(e)=>{ if(e.target.closest('.lesson-check'))return; row.classList.toggle('open'); }); }
+    list.appendChild(row);
+  });
   const btn=document.getElementById('markWeek');
   if(state.completed[no]){btn.classList.add('is-done');document.getElementById('markLabel').textContent="Completed, click to reopen";}
   else{btn.classList.remove('is-done');document.getElementById('markLabel').textContent="Mark this week as complete";}
@@ -1382,7 +1427,7 @@ function renderWeekContent(no){
   if(!c){ box.innerHTML=''; return; }
   let html='';
   if(c.intro && c.intro.trim()){ html+=`<p class="wc-intro">${escapeHtml(c.intro)}</p>`; }
-  // NOUVEAU : rendu par blocs libres
+  // blocs de contenu enrichi (optionnels) : titre, texte, vidéo, document
   const blocks = Array.isArray(c.blocks) ? c.blocks : null;
   if(blocks && blocks.length){
     blocks.forEach(b=>{
@@ -1398,40 +1443,7 @@ function renderWeekContent(no){
       else if(b.type==='document' && b.url){
         html+=`<a class="wc-doc" href="${b.url}" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>${escapeHtml(b.name||'Document')}</a>`;
       }
-      else if(b.type==='step' && b.content){
-        const done = state.stepDone && state.stepDone[no] && state.stepDone[no][b.id];
-        html+=`<div class="wc-step${done?' done':''}" data-step="${b.id}"><div class="wc-step-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="wc-step-txt"><div class="wc-step-t">${escapeHtml(b.content)}</div>${b.subtitle?`<div class="wc-step-s">${escapeHtml(b.subtitle)}</div>`:''}</div><div class="wc-step-check">${done?'<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"3\"><path d=\"M5 12l5 5L19 7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>':''}</div></div>`;
-      }
     });
-    box.innerHTML=html;
-    // rendre les steps cochables
-    box.querySelectorAll('.wc-step').forEach(el=>{
-      el.addEventListener('click',async()=>{
-        const id=el.dataset.step;
-        if(!state.stepDone) state.stepDone={};
-        if(!state.stepDone[no]) state.stepDone[no]={};
-        state.stepDone[no][id]=!state.stepDone[no][id];
-        el.classList.toggle('done');
-        const chk=el.querySelector('.wc-step-check');
-        chk.innerHTML = state.stepDone[no][id] ? '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg>' : '';
-        try{ await saveWeek(no); }catch(e){}
-      });
-    });
-    return;
-  }
-  // ANCIEN format (compatibilité) : lesson_text + video_url + documents
-  const emb=ytEmbed(c.video_url);
-  if(emb){ html+=`<div class="wc-video"><iframe src="${emb}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>`; }
-  if(c.lesson_text && c.lesson_text.trim()){
-    const paras=c.lesson_text.split(/\n\s*\n/).map(p=>`<p>${escapeHtml(p).replace(/\n/g,'<br>')}</p>`).join('');
-    html+=`<div class="wc-lesson">${paras}</div>`;
-  }
-  if(Array.isArray(c.documents) && c.documents.length){
-    html+='<div class="wc-docs-label">Documents</div><div class="wc-docs">';
-    c.documents.forEach(d=>{
-      html+=`<a class="wc-doc" href="${d.url}" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>${escapeHtml(d.name||'Document')}</a>`;
-    });
-    html+='</div>';
   }
   box.innerHTML=html;
 }

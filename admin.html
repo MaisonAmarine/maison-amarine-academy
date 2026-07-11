@@ -239,6 +239,25 @@
   .we-doc svg{flex-shrink:0;stroke:var(--gold-deep);}
   .we-adddoc{display:inline-flex;align-items:center;gap:7px;background:none;border:1px dashed var(--gold-lt);color:var(--gold-deep);border-radius:9px;padding:9px 14px;font-family:'Jost',sans-serif;font-size:13px;font-weight:500;cursor:pointer;transition:background .18s;}
   .we-adddoc:hover{background:var(--gold-wash);}
+  /* Éditeur des 4 étapes */
+  .we-steps{display:flex;flex-direction:column;gap:10px;}
+  .we-stepedit{display:flex;gap:12px;align-items:flex-start;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:14px;}
+  .we-stepnum{width:28px;height:28px;flex-shrink:0;border-radius:8px;background:var(--gold-wash);color:var(--gold-deep);font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center;font-family:'Jost',sans-serif;}
+  .we-stepfields{flex:1;display:flex;flex-direction:column;gap:8px;min-width:0;}
+  .we-steptitle,.we-stepsub{width:100%;font-family:'Jost',sans-serif;font-size:14px;color:var(--ink);background:var(--ivory);border:1px solid var(--line);border-radius:8px;padding:9px 12px;outline:none;transition:border-color .2s;}
+  .we-steptitle{font-weight:600;}
+  .we-stepsub{font-size:13px;color:var(--ink-soft);}
+  .we-steptitle:focus,.we-stepsub:focus{border-color:var(--gold-lt);}
+  .we-stepedit{flex-direction:column;}
+  .we-stephead{display:flex;gap:12px;align-items:flex-start;width:100%;}
+  .we-stepcontent{margin-top:12px;padding-top:12px;border-top:1px dashed var(--line);padding-left:40px;}
+  .we-steplabel{display:block;font-size:12px;font-weight:600;color:var(--ink-soft);margin:10px 0 5px;}
+  .we-steplabel span{font-weight:400;color:var(--stone);}
+  .we-stepvideo,.we-steptext{width:100%;font-family:'Jost',sans-serif;font-size:13px;color:var(--ink);background:var(--ivory);border:1px solid var(--line);border-radius:8px;padding:9px 12px;outline:none;resize:vertical;line-height:1.5;transition:border-color .2s;}
+  .we-stepvideo:focus,.we-steptext:focus{border-color:var(--gold-lt);}
+  .we-stepdoc{display:flex;align-items:center;gap:9px;background:var(--ivory);border:1px solid var(--line);border-radius:8px;padding:9px 12px;font-size:13px;color:var(--ink);}
+  .we-stepdoc .wsd-name{flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:var(--ink-soft);}
+  .we-stepdoc .wsd-upload{font-size:12px;color:var(--gold-deep);cursor:pointer;text-decoration:underline;flex-shrink:0;}
   /* --- Éditeur à blocs libres --- */
   .we-blocks{display:flex;flex-direction:column;gap:12px;margin-bottom:12px;}
   .we-blockempty{font-size:13px;color:var(--stone);font-style:italic;padding:14px 0;text-align:center;}
@@ -372,17 +391,20 @@
               <textarea id="weIntro" rows="2" placeholder="A short introduction to this week…"></textarea>
             </div>
             <div class="we-field">
-              <label>Content blocks <span class="we-hint">add and arrange your lesson freely, blocks appear in this order for students</span></label>
-              <div class="we-blocks" id="weBlocks"></div>
-              <div class="we-blockempty" id="weBlockEmpty">No blocks yet. Add your first block below.</div>
+              <label>The four steps <span class="we-hint">what the student does this week, edit the title and subtitle of each</span></label>
+              <div class="we-steps" id="weSteps"></div>
             </div>
-            <div class="we-addbar">
-              <span class="we-addlabel">Add a block:</span>
-              <button class="we-addblock" data-addtype="heading" type="button"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 4v16M18 4v16M6 12h12" stroke-linecap="round"/></svg> Heading</button>
-              <button class="we-addblock" data-addtype="text" type="button"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h10" stroke-linecap="round"/></svg> Text</button>
-              <button class="we-addblock" data-addtype="video" type="button"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M10 9l5 3-5 3z" fill="currentColor"/></svg> Video</button>
-              <button class="we-addblock" data-addtype="document" type="button"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg> Document</button>
-              <button class="we-addblock" data-addtype="step" type="button"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6" stroke-linecap="round" stroke-linejoin="round"/></svg> Step</button>
+            <div class="we-field">
+              <label>Extra content <span class="we-hint">optional: add videos, documents or text shown above the steps</span></label>
+              <div class="we-blocks" id="weBlocks"></div>
+              <div class="we-blockempty" id="weBlockEmpty">No extra content yet.</div>
+              <div class="we-addbar">
+                <span class="we-addlabel">Add:</span>
+                <button class="we-addblock" data-addtype="heading" type="button"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 4v16M18 4v16M6 12h12" stroke-linecap="round"/></svg> Heading</button>
+                <button class="we-addblock" data-addtype="text" type="button"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h10" stroke-linecap="round"/></svg> Text</button>
+                <button class="we-addblock" data-addtype="video" type="button"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M10 9l5 3-5 3z" fill="currentColor"/></svg> Video</button>
+                <button class="we-addblock" data-addtype="document" type="button"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg> Document</button>
+              </div>
             </div>
             <input type="file" id="weBlockFile" accept=".pdf,.doc,.docx,image/*" style="display:none;">
             <div class="we-actions">
@@ -778,6 +800,46 @@ function blocksFromLegacy(w){
 }
 function genId(){ return 'b'+Date.now()+Math.random().toString(36).slice(2,6); }
 
+// Les 4 étapes par défaut (la base d'origine), utilisées si la semaine n'a pas encore d'étapes éditées
+const DEFAULT_STEPS=[
+  {title:'Watch the lesson', subtitle:'Video · 18 min'},
+  {title:'Read the insider codes', subtitle:'Confidential note'},
+  {title:'Do the practice', subtitle:'Client empathy case study'},
+  {title:'Create your deliverable', subtitle:'Your client empathy map'}
+];
+let weekSteps=[];
+
+function renderSteps(){
+  const box=document.getElementById('weSteps');
+  box.innerHTML='';
+  weekSteps.forEach((s,i)=>{
+    const el=document.createElement('div');
+    el.className='we-stepedit';
+    const hasDoc = s.doc_url;
+    el.innerHTML=`
+      <div class="we-stephead"><div class="we-stepnum">${i+1}</div>
+        <div class="we-stepfields">
+          <input type="text" class="we-steptitle" placeholder="Step title (e.g. Watch the lesson)" value="${escapeAttr(s.title||'')}" data-sfield="title">
+          <input type="text" class="we-stepsub" placeholder="Subtitle (e.g. Video · 18 min)" value="${escapeAttr(s.subtitle||'')}" data-sfield="subtitle">
+        </div>
+      </div>
+      <div class="we-stepcontent">
+        <label class="we-steplabel">Video link <span>(YouTube / Vimeo, optional)</span></label>
+        <input type="text" class="we-stepvideo" placeholder="https://youtu.be/…" value="${escapeAttr(s.video_url||'')}" data-sfield="video_url">
+        <label class="we-steplabel">Text <span>(the lesson, the codes, instructions… optional)</span></label>
+        <textarea class="we-steptext" rows="4" placeholder="Write the content of this step…" data-sfield="text">${escapeHtml(s.text||'')}</textarea>
+        <label class="we-steplabel">Document <span>(optional)</span></label>
+        <div class="we-stepdoc"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="var(--gold-deep)" stroke-width="1.7"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg><span class="wsd-name">${hasDoc?escapeHtml(s.doc_name||'Document'):'No file yet'}</span><span class="wsd-upload" data-stepdoc="${i}">${hasDoc?'Replace':'Upload file'}</span></div>
+      </div>`;
+    el.querySelectorAll('[data-sfield]').forEach(inp=>{
+      inp.addEventListener('input',()=>{ weekSteps[i][inp.dataset.sfield]=inp.value; });
+    });
+    el.querySelector('[data-stepdoc]').addEventListener('click',()=>{ pendingStepDoc=i; document.getElementById('weBlockFile').click(); });
+    box.appendChild(el);
+  });
+}
+let pendingStepDoc=null;
+
 function selectWeek(num){
   activeWeek=num;
   const w=coursesData.find(x=>x.week_number===num);
@@ -786,9 +848,13 @@ function selectWeek(num){
   document.getElementById('weForm').style.display='block';
   document.getElementById('weTitle').value = w.title||'';
   document.getElementById('weIntro').value = w.intro||'';
-  // charger les blocs (ou migrer l'ancien format)
+  // charger les 4 étapes (éditées, ou celles par défaut)
+  if(Array.isArray(w.steps) && w.steps.length){ weekSteps = w.steps.map(s=>({...s})); }
+  else { weekSteps = DEFAULT_STEPS.map(s=>({...s})); }
+  renderSteps();
+  // charger les blocs de contenu extra
   if(Array.isArray(w.blocks) && w.blocks.length){ weekBlocks = w.blocks.map(b=>({...b})); }
-  else { weekBlocks = blocksFromLegacy(w); }
+  else { weekBlocks = []; }
   renderBlocks();
   document.getElementById('weStatus').textContent='';
   renderWeeksList();
@@ -798,8 +864,7 @@ const BLOCK_META={
   heading:{label:'Heading',icon:'<path d="M6 4v16M18 4v16M6 12h12" stroke-linecap="round"/>'},
   text:{label:'Text',icon:'<path d="M4 6h16M4 12h16M4 18h10" stroke-linecap="round"/>'},
   video:{label:'Video',icon:'<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M10 9l5 3-5 3z" fill="currentColor"/>'},
-  document:{label:'Document',icon:'<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/>'},
-  step:{label:'Step',icon:'<circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6" stroke-linecap="round" stroke-linejoin="round"/>'}
+  document:{label:'Document',icon:'<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/>'}
 };
 
 function renderBlocks(){
@@ -820,8 +885,6 @@ function renderBlocks(){
       bodyHtml=`<input type="text" placeholder="YouTube or Vimeo link (unlisted works)…" value="${escapeAttr(b.url||'')}" data-field="url">`;
     } else if(b.type==='document'){
       bodyHtml=`<div class="we-block-doc"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke-width="1.7"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg><span class="wbd-name">${b.url?escapeHtml(b.name||'Document'):'No file yet'}</span><span class="wbd-replace" data-replace="${i}">${b.url?'Replace':'Upload file'}</span></div>`;
-    } else if(b.type==='step'){
-      bodyHtml=`<input type="text" placeholder="Step title (e.g. Watch the lesson)…" value="${escapeAttr(b.content||'')}" data-field="content" style="margin-bottom:8px;"><input type="text" placeholder="Step subtitle (e.g. Video · 18 min)…" value="${escapeAttr(b.subtitle||'')}" data-field="subtitle">`;
     }
     el.innerHTML=`
       <div class="we-block-head">
@@ -857,7 +920,6 @@ document.querySelectorAll('.we-addblock').forEach(btn=>{
     if(type==='heading'||type==='text') nb.content='';
     if(type==='video') nb.url='';
     if(type==='document'){ nb.name=''; nb.url=''; }
-    if(type==='step'){ nb.content=''; nb.subtitle=''; }
     weekBlocks.push(nb);
     renderBlocks();
   });
@@ -867,17 +929,27 @@ document.querySelectorAll('.we-addblock').forEach(btn=>{
 let pendingDocIndex=null;
 document.getElementById('weBlockFile').addEventListener('change',async function(){
   const file=this.files[0]; this.value='';
-  if(!file || pendingDocIndex==null) return;
+  if(!file) return;
+  if(pendingDocIndex==null && pendingStepDoc==null) return;
   const status=document.getElementById('weStatus');
   status.style.color='var(--stone)'; status.textContent='Uploading '+file.name+'…';
   const path=`week${activeWeek}/${Date.now()}-${file.name.replace(/[^a-zA-Z0-9.\-]/g,'_')}`;
   const {error}=await sb.storage.from('course-docs').upload(path,file,{upsert:false,contentType:file.type||'application/octet-stream'});
   if(error){ status.style.color='var(--red)'; status.textContent='Upload failed'; console.error(error); return; }
   const {data}=sb.storage.from('course-docs').getPublicUrl(path);
-  weekBlocks[pendingDocIndex].name=file.name;
-  weekBlocks[pendingDocIndex].url=data.publicUrl;
-  pendingDocIndex=null;
-  renderBlocks();
+  if(pendingStepDoc!=null){
+    // document pour une étape
+    weekSteps[pendingStepDoc].doc_name=file.name;
+    weekSteps[pendingStepDoc].doc_url=data.publicUrl;
+    pendingStepDoc=null;
+    renderSteps();
+  } else {
+    // document pour un bloc extra
+    weekBlocks[pendingDocIndex].name=file.name;
+    weekBlocks[pendingDocIndex].url=data.publicUrl;
+    pendingDocIndex=null;
+    renderBlocks();
+  }
   status.style.color='var(--green)'; status.textContent='Document added';
 });
 
@@ -892,12 +964,12 @@ document.getElementById('weSave').addEventListener('click',async function(){
     if(b.type==='heading'||b.type==='text') return (b.content||'').trim();
     if(b.type==='video') return (b.url||'').trim();
     if(b.type==='document') return (b.url||'').trim();
-    if(b.type==='step') return (b.content||'').trim();
     return false;
   });
   const payload={
     title:document.getElementById('weTitle').value.trim(),
     intro:document.getElementById('weIntro').value.trim(),
+    steps:weekSteps.map(s=>({title:(s.title||'').trim(), subtitle:(s.subtitle||'').trim(), video_url:(s.video_url||'').trim(), text:(s.text||'').trim(), doc_url:s.doc_url||'', doc_name:s.doc_name||''})),
     blocks:clean,
     updated_at:new Date().toISOString()
   };
