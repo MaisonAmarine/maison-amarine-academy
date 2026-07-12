@@ -287,6 +287,20 @@
   .lesson-check.checked{background:var(--gold);border-color:var(--gold);}
   .lesson-check svg{width:15px;height:15px;color:#fff;opacity:0;transition:opacity .2s;}
   .lesson-check.checked svg{opacity:1;}
+  /* ---- Vue plein écran d'une étape ---- */
+  .step-view{position:absolute;inset:0;background:var(--paper,#fff);border-radius:inherit;display:flex;flex-direction:column;opacity:0;visibility:hidden;transform:translateX(24px);transition:opacity .3s ease,transform .3s ease,visibility .3s;z-index:5;overflow:hidden;}
+  .modal.step-open .step-view{opacity:1;visibility:visible;transform:none;}
+  .step-view-head{flex-shrink:0;padding:22px 32px 14px;border-bottom:1px solid var(--line);}
+  .step-back{display:inline-flex;align-items:center;gap:9px;background:none;border:none;cursor:pointer;font-family:inherit;font-size:13px;font-weight:600;letter-spacing:.02em;color:var(--gold-deep);padding:8px 14px 8px 10px;border-radius:10px;transition:background .18s,transform .18s;}
+  .step-back:hover{background:var(--gold-wash);transform:translateX(-2px);}
+  .step-back svg{color:var(--gold-deep);}
+  .step-view-body{flex:1;overflow-y:auto;padding:30px 40px 44px;}
+  .sv-eyebrow{font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;}
+  .sv-title{font-family:'Cormorant',Georgia,serif;font-size:36px;font-weight:600;line-height:1.14;color:var(--ink);margin-bottom:6px;}
+  .sv-sub{font-size:15px;color:var(--stone);font-style:italic;margin-bottom:26px;padding-bottom:24px;border-bottom:1px solid var(--line);}
+  .sv-text{margin-bottom:26px;}
+  .sv-text p{font-size:15.5px;line-height:1.78;color:var(--ink-soft);margin-bottom:14px;}
+  .sv-empty{font-size:14px;color:var(--stone);font-style:italic;}
   .modal-foot{padding:8px 32px 30px;}
   .mark-week{width:100%;font-size:15px;font-weight:600;color:#fff;background:var(--gold);border:none;border-radius:13px;padding:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;transition:background .2s,transform .2s;}
   .mark-week:hover{background:var(--gold-deep);transform:translateY(-2px);}
@@ -1076,6 +1090,13 @@
       <div class="m-steps-label">What you'll do this week</div>
       <div id="lessonList"></div>
     </div>
+    <!-- Vue plein écran d'une étape -->
+    <div class="step-view" id="stepView">
+      <div class="step-view-head">
+        <button class="step-back" id="stepBack" aria-label="Back"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Back to the week</span></button>
+      </div>
+      <div class="step-view-body" id="stepViewBody"></div>
+    </div>
     <div class="modal-foot">
       <button class="mark-week" id="markWeek"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l5 5L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg><span id="markLabel">Mark this week as complete</span></button>
     </div>
@@ -1462,19 +1483,11 @@ function openWeek(no){
     const checked=state.lessons[no][i];
     const hasContent = s.video_url || s.text || s.doc_url;
     const row=document.createElement('div');row.className="lesson"+(checked?" done":"")+(hasContent?" has-content":"");
-    // contenu déroulant
-    let contentHtml='';
-    if(hasContent){
-      const emb=ytEmbed(s.video_url);
-      if(emb) contentHtml+=`<div class="wc-video"><iframe src="${emb}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>`;
-      if(s.text && s.text.trim()){ const paras=s.text.split(/\n\s*\n/).map(p=>`<p>${escapeHtml(p).replace(/\n/g,'<br>')}</p>`).join(''); contentHtml+=`<div class="wc-lesson">${paras}</div>`; }
-      if(s.doc_url) contentHtml+=`<a class="wc-doc" href="${s.doc_url}" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>${escapeHtml(s.doc_name||'Document')}</a>`;
-    }
-    row.innerHTML=`<div class="lesson-main"><div class="lesson-ic">${ICONS[s.icon]||ICONS.file}</div><div class="lesson-txt"><div class="lt">${escapeHtml(s.title)}</div><div class="lk">${escapeHtml(s.subtitle)}${hasContent?' <span class="lesson-caret">▾</span>':''}</div></div><div class="lesson-check ${checked?'checked':''}">${ICONS.check}</div></div>${hasContent?`<div class="lesson-content">${contentHtml}</div>`:''}`;
+    row.innerHTML=`<div class="lesson-main"><div class="lesson-ic">${ICONS[s.icon]||ICONS.file}</div><div class="lesson-txt"><div class="lt">${escapeHtml(s.title)}</div><div class="lk">${escapeHtml(s.subtitle)}${hasContent?' <span class="lesson-caret">›</span>':''}</div></div><div class="lesson-check ${checked?'checked':''}">${ICONS.check}</div></div>`;
     // clic sur la case = cocher
     row.querySelector('.lesson-check').addEventListener('click',async(e)=>{e.stopPropagation();state.lessons[no][i]=!state.lessons[no][i];e.currentTarget.classList.toggle('checked');row.classList.toggle('done');await saveWeek(no);renderWeeks();});
-    // clic sur l'étape = déplier/replier (si contenu)
-    if(hasContent){ row.querySelector('.lesson-main').addEventListener('click',(e)=>{ if(e.target.closest('.lesson-check'))return; row.classList.toggle('open'); }); }
+    // clic sur l'étape = ouvrir la vue plein écran (si contenu)
+    if(hasContent){ row.querySelector('.lesson-main').addEventListener('click',(e)=>{ if(e.target.closest('.lesson-check'))return; openStepView(s); }); }
     list.appendChild(row);
   });
   const btn=document.getElementById('markWeek');
@@ -1482,7 +1495,27 @@ function openWeek(no){
   else{btn.classList.remove('is-done');document.getElementById('markLabel').textContent="Mark this week as complete";}
   document.getElementById('overlay').classList.add('open');document.body.style.overflow="hidden";
 }
-function closeModal(){document.getElementById('overlay').classList.remove('open');document.body.style.overflow="";}
+function closeModal(){document.getElementById('overlay').classList.remove('open');document.body.style.overflow="";closeStepView();}
+
+// ---- Vue plein écran d'une étape (texte, puis vidéo, puis document) ----
+function openStepView(s){
+  const body=document.getElementById('stepViewBody');
+  let html=`<div class="sv-eyebrow">${escapeHtml(s.subtitle||'Lesson')}</div><h2 class="sv-title">${escapeHtml(s.title)}</h2>`;
+  // 1) TEXTE d'abord
+  if(s.text && s.text.trim()){
+    const paras=s.text.split(/\n\s*\n/).map(p=>`<p>${escapeHtml(p).replace(/\n/g,'<br>')}</p>`).join('');
+    html+=`<div class="sv-text">${paras}</div>`;
+  }
+  // 2) VIDÉO ensuite
+  const emb=ytEmbed(s.video_url);
+  if(emb){ html+=`<div class="wc-video"><iframe src="${emb}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>`; }
+  // 3) DOCUMENT enfin
+  if(s.doc_url){ html+=`<a class="wc-doc" href="${s.doc_url}" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>${escapeHtml(s.doc_name||'Document')}</a>`; }
+  body.innerHTML=html;
+  body.scrollTop=0;
+  document.querySelector('.modal').classList.add('step-open');
+}
+function closeStepView(){ const m=document.querySelector('.modal'); if(m)m.classList.remove('step-open'); }
 
 // ---- contenu éditable des cours (édité depuis l'admin) ----
 let COURSE_CONTENT = {}; // {week_number: {title,intro,lesson_text,video_url,documents}}
@@ -1529,8 +1562,9 @@ function renderWeekContent(no){
   box.innerHTML=html;
 }
 document.getElementById('modalClose').addEventListener('click',closeModal);
+document.getElementById('stepBack').addEventListener('click',closeStepView);
 document.getElementById('overlay').addEventListener('click',e=>{if(e.target.id==='overlay')closeModal();});
-document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){const m=document.querySelector('.modal');if(m&&m.classList.contains('step-open')){closeStepView();}else{closeModal();}}});
 document.getElementById('markWeek').addEventListener('click',async()=>{if(activeWeek==null)return;state.completed[activeWeek]=!state.completed[activeWeek];await saveWeek(activeWeek);renderWeeks();closeModal();});
 document.getElementById('resumeBtn').addEventListener('click',()=>{const done=Object.values(state.completed).filter(Boolean).length;openWeek(done>=8?8:highestUnlocked());});
 
