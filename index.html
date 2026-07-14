@@ -681,6 +681,78 @@
   .job-count{width:100%;margin:6px 0 0;}
 }
 </style>
+
+<style>
+/* ══════════════ THE AMARINE JOURNAL — vraie mise en page de journal ══════════════ */
+.jn-paper{background:#FDFBF6;border:1px solid #E3DBCE;border-radius:4px;padding:44px 54px 34px;box-shadow:0 20px 60px rgba(33,28,21,.09);max-width:1080px;margin:6px auto 0;}
+@media(max-width:900px){ .jn-paper{padding:26px 22px 22px;} }
+
+/* --- Masthead --- */
+.jn-rule-top{height:3px;background:#2A2622;margin-bottom:3px;}
+.jn-masthead{text-align:center;padding-bottom:14px;}
+.jn-mh-line{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #2A2622;padding:6px 2px;font-family:'Jost',sans-serif;font-size:9.5px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:#6B635A;}
+.jn-mh-mid{letter-spacing:.3em;color:#B08D4F;}
+.jn-title{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:clamp(38px,6.4vw,72px);line-height:1;color:#2A2622;margin:16px 0 6px;letter-spacing:.005em;}
+.jn-strap{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;color:#8C8378;margin-bottom:16px;}
+.jn-dateline{display:flex;align-items:center;gap:14px;}
+.jn-dl-l{flex:1;height:1px;background:#2A2622;}
+.jn-dl-t{font-family:'Jost',sans-serif;font-size:10.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#2A2622;white-space:nowrap;}
+
+/* --- Éditorial --- */
+.jn-editorial{border-bottom:1px solid #E3DBCE;padding:22px 0 20px;text-align:center;max-width:720px;margin:0 auto;}
+.jn-ed-l{font-family:'Jost',sans-serif;font-size:9.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#B08D4F;margin-bottom:8px;}
+.jn-editorial h2{font-family:'Cormorant Garamond',serif;font-weight:600;font-style:italic;font-size:26px;line-height:1.25;color:#2A2622;margin:0 0 12px;}
+.jn-editorial p{font-family:'Cormorant Garamond',serif;font-size:17px;line-height:1.72;color:#3E3831;margin:0;}
+.jn-ed-sig{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;color:#B08D4F;margin-top:12px;}
+
+/* --- Une --- */
+.jn-lead{padding:26px 0 22px;border-bottom:2px solid #2A2622;}
+.jn-kicker{font-family:'Jost',sans-serif;font-size:9.5px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:#B08D4F;margin-bottom:8px;}
+.jn-dot{color:#CBAB73;margin:0 3px;}
+.jn-kicker-lead{text-align:center;}
+.jn-lead-h{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:clamp(28px,3.6vw,42px);line-height:1.13;color:#2A2622;margin:0 auto 12px;text-align:center;max-width:860px;}
+.jn-standfirst{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:19px;line-height:1.55;color:#5C554D;text-align:center;max-width:720px;margin:0 auto 20px;}
+.jn-lead-b{font-family:'Cormorant Garamond',serif;font-size:17.5px;line-height:1.75;color:#2A2622;column-count:2;column-gap:38px;column-rule:1px solid #EFE7DA;text-align:justify;hyphens:auto;}
+@media(max-width:760px){ .jn-lead-b{column-count:1;} }
+.jn-drop::first-letter{font-family:'Cormorant Garamond',serif;font-weight:700;float:left;font-size:60px;line-height:.82;padding:5px 9px 0 0;color:#B08D4F;}
+
+/* --- Filet de section --- */
+.jn-section-rule{display:flex;align-items:center;gap:16px;margin:26px 0 20px;}
+.jn-section-rule::before,.jn-section-rule::after{content:"";flex:1;height:1px;background:#2A2622;}
+.jn-section-rule span{font-family:'Jost',sans-serif;font-size:10.5px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:#2A2622;}
+
+/* --- Colonnes --- */
+.jn-cols{display:grid;grid-template-columns:1fr 296px;gap:0;}
+@media(max-width:900px){ .jn-cols{grid-template-columns:1fr;} }
+.jn-main{padding-right:34px;border-right:1px solid #E3DBCE;column-count:2;column-gap:32px;column-rule:1px solid #EFE7DA;}
+@media(max-width:900px){ .jn-main{column-count:1;padding-right:0;border-right:none;} }
+@media(max-width:1100px) and (min-width:901px){ .jn-main{column-count:1;} }
+.jn-art{break-inside:avoid;padding-bottom:20px;margin-bottom:20px;border-bottom:1px solid #EFE7DA;}
+.jn-h{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:22px;line-height:1.2;color:#2A2622;margin:0 0 9px;}
+.jn-b{font-family:'Cormorant Garamond',serif;font-size:15.6px;line-height:1.72;color:#3E3831;margin:0 0 12px;text-align:justify;hyphens:auto;}
+.jn-why{background:#F5EFE4;border-left:2px solid #B08D4F;border-radius:0 8px 8px 0;padding:11px 14px;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:14.6px;line-height:1.62;color:#3E3831;margin-bottom:11px;}
+.jn-why-l{display:block;font-family:'Jost',sans-serif;font-style:normal;font-size:8.6px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#8E6F3C;margin-bottom:4px;}
+.jn-src{display:inline-flex;align-items:center;gap:5px;font-family:'Jost',sans-serif;font-size:10.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#8C8378;text-decoration:none;}
+.jn-src:hover{color:#8E6F3C;}
+.jn-src svg{width:11px;height:11px;}
+
+/* --- Colonne de brèves --- */
+.jn-side{padding-left:28px;}
+@media(max-width:900px){ .jn-side{padding-left:0;margin-top:26px;border-top:2px solid #2A2622;padding-top:20px;} }
+.jn-side-h{font-family:'Jost',sans-serif;font-size:10.5px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:#2A2622;border-bottom:2px solid #2A2622;padding-bottom:7px;margin-bottom:16px;}
+.jn-brief h4{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:17px;line-height:1.24;color:#2A2622;margin:0 0 6px;}
+.jn-brief p{font-family:'Cormorant Garamond',serif;font-size:14.4px;line-height:1.68;color:#4A443C;margin:0 0 7px;}
+.jn-brief a{display:inline-flex;align-items:center;gap:5px;font-family:'Jost',sans-serif;font-size:9.6px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#8C8378;text-decoration:none;}
+.jn-brief a:hover{color:#8E6F3C;}
+.jn-brief a svg{width:10px;height:10px;}
+.jn-brief-rule{height:1px;background:#EFE7DA;margin:16px 0;}
+.jn-colophon{margin-top:24px;padding-top:14px;border-top:1px solid #2A2622;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:13.4px;line-height:1.62;color:#8C8378;}
+
+/* --- Pied --- */
+.jn-foot{margin-top:28px;}
+.jn-foot .jn-rule-top{margin-bottom:8px;}
+.jn-foot{display:flex;justify-content:space-between;font-family:'Jost',sans-serif;font-size:9.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#8C8378;}
+</style>
 </head>
 <body>
 
@@ -1193,13 +1265,7 @@
     </section>
 
     <section class="page hidden" id="page-journal">
-      <div class="page-h">
-        <div class="eyebrow">The Journal</div>
-        <h1>The world you are entering, this month.</h1>
-        <p class="journal-intro">A curated dispatch from the world of luxury, the openings, the movements, the quiet shifts that define the lives of those you will one day serve. Read it the way an insider reads the room: closely.</p>
-      </div>
-      <div id="journalList" style="margin-top:8px;"></div>
-      <div class="journal-note">Curated by Maison Amarine · Updated periodically. To read each story in full, follow the link to its source.</div>
+      <div id="journalList" style="margin-top:2px;"></div>
     </section>
 
   </main>
@@ -1296,16 +1362,81 @@ const SUPABASE_URL = "https://beexlhyvcngeopkkxoco.supabase.co";
 const SUPABASE_KEY = "sb_publishable_qVIwPd3lkJnSoObnYMuUKg_mn0i2LY9";
 const sb = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
-// ====== THE JOURNAL DATA ======
-const JOURNAL_EDITION = "Edition · Spring 2026";
+// ═══════════════════════════════════════════════════════════════════
+// THE AMARINE JOURNAL — édition hebdomadaire, mise à jour chaque lundi.
+// Toutes les histoires sont réelles et sourcées. "why" est le regard
+// d'Émilie : ce que l'élève doit en retenir pour son métier.
+// ═══════════════════════════════════════════════════════════════════
+const JOURNAL_NO      = "No. 1";
+const JOURNAL_DATE    = "Tuesday, 14 July 2026";
+const JOURNAL_STRAP   = "A weekly dispatch from the world you are entering";
+
+// L'éditorial : trois ou quatre phrases, la lecture de la semaine.
+const JOURNAL_EDITORIAL = {
+  title: "The week the market chose meaning over marble",
+  text: "Two things happened this month that belong in the same sentence. In Nara, a hotel group turned a 1908 prison into forty-eight suites and dared to put a museum inside it asking guests to think about liberty. And in the yacht world, the largest vessel ever built is a research ship with laboratories aboard. Neither is what luxury looked like ten years ago. The families you will serve are no longer buying the most expensive thing in the room. They are buying the thing that means something, and that nobody else has. Read the openings below with that in mind, because the person who can hold a conversation about the Nara prison is worth more, in a drawing room, than the person who can only name the price of a suite."
+};
+
+// L'article de une.
+const JOURNAL_LEAD = {
+  cat: "The Opening of the Year",
+  title: "A Meiji prison becomes a hotel, and asks its guests about freedom",
+  standfirst: "Hoshinoya has turned the former Nara Prison, built in 1908 by the inmates themselves, into forty-eight suites. It may be the most audacious hospitality project of the decade.",
+  body: "Working with the architect Rie Azuma, Hoshinoya Resorts has transformed the sole survivor of Keijiro Yamashita's Five Great Meiji Prisons into forty-eight suites, each one merging nine to eleven former cells, setting century-old red-brick masonry against contemporary finishes. The former detention block now houses a Japanese-French restaurant. And an adjoining museum, titled <i>An Eternal Question Posed by an Iconic Prison</i>, asks visitors to meditate on liberty inside spaces built to deny it.",
+  why: "This is the kind of address a principal will mention once, in passing, and expect you to have an opinion about. Not a price. An opinion. Read one article on it this week and you will be able to hold that conversation for the rest of your career.",
+  src: "Wallpaper*", url: "https://www.wallpaper.com/travel/hotels/best-new-hotels",
+  place: "Nara, Japan"
+};
+
+// Les articles de la semaine.
 const JOURNAL = [
-  {cat:"Hospitality",title:"Louis Vuitton to open its first hotel on the Champs-Élysées",lead:"The maison makes its most ambitious move yet into experiential travel. Set on the Champs-Élysées in the heart of Paris, the ultra-luxury address is expected to translate the house's legacy of craftsmanship and travel heritage into immersive interiors, private salons and refined dining, positioning itself not as another Parisian palace, but as a contemporary landmark where fashion, architecture and hospitality meet.",src:"The Luxury Travel Expert",url:"https://theluxurytravelexpert.com/most-anticipated-luxury-hotel-openings-2026/"},
-  {cat:"The Icons Return",title:"The Waldorf Astoria reopens in New York after years of restoration",lead:"A true Manhattan icon returns. Following an extensive multi-year restoration, the Waldorf Astoria reemerges on Park Avenue with Manhattan's largest guest rooms, a 30,000-square-foot spa, and its restored Art Deco interiors, a renewed statement of legacy luxury in the heart of Midtown.",src:"Ourisman Travel",url:"https://ourismantravel.com/blog/15-new-luxury-hotels-to-experience-in-2026/"},
-  {cat:"Venice",title:"Hotel Danieli reopens as a Four Seasons, on one of Venice's most storied addresses",lead:"Set along the Grand Canal beside Piazza San Marco, the legendary Danieli reopens after a careful refurbishment overseen by designer Pierre-Yves Rochon. Three interconnected palazzi, one dating to the 14th century, linked by internal bridges, preserve the Venetian Gothic façades and centuries of accumulated art and antiques.",src:"The Luxury Travel Expert",url:"https://theluxurytravelexpert.com/most-anticipated-luxury-hotel-openings-2026/"},
-  {cat:"The Shift",title:"Why 'humanity' is becoming the new luxury",lead:"As hotels by big-name designers get copy-pasted around the world, the top of the market is turning away from the predictable. The most anticipated openings now share one of two things: a true independent spirit, or an ability to raise the bar in unquestionable ways. For those who serve this world, the lesson is clear, discernment and the human touch are the rarest currency.",src:"Bloomberg",url:"https://www.bloomberg.com/news/articles/2025-12-26/here-are-the-11-most-exciting-luxury-hotels-opening-in-2026"},
-  {cat:"Private Islands",title:"A 17-acre private island retreat opens off the coast of Provence",lead:"Zannier Bendor, owned by the French family behind Pernod Ricard, opens as a private-island destination off the Mediterranean coast, complete with restaurants, shopping, diving and, in keeping with the family business, several bars. A reminder that at the very top, privacy itself has become the ultimate amenity.",src:"Bloomberg",url:"https://www.bloomberg.com/news/articles/2025-12-26/here-are-the-11-most-exciting-luxury-hotels-opening-in-2026"},
-  {cat:"America",title:"The most anticipated US openings of the year, from Dallas to Napa",lead:"A new wave of American debuts is drawing designers, chefs and seasoned travelers before the doors even open, from The Knox in Dallas with interiors by Martin Brudnizki, to a fifty-room wine-country retreat along the Napa Valley Vine Trail where every room faces the vineyards. The private world is increasingly at home on American soil.",src:"Pursuitist",url:"https://pursuitist.com/top-new-us-luxury-hotels-opening-in-2026/"},
+  {cat:"Greece", place:"Mykonos", title:"Fouquet's arrives on Paraga Beach, and trades the club for the calm",
+   body:"Fouquet's extends beyond Paris, New York, Courchevel and Saint-Barthélemy to a Grecian hotspot, on the southern coast of Mykonos. Divercity Architects have designed a sanctuary that, in the words of the brief, \"trades clubbing for calm\": sixty-one suites and three villas looking out over the Aegean, a spa in partnership with Dr Barbara Sturm with hyperbaric oxygen therapy, a flotation tank and an ice bath, and a basketball court carved directly into the rock.",
+   why:"Note the spa. Longevity, biohacking and recovery are now standard expectations at the top of the market, not curiosities. If your principal asks you to find a hyperbaric chamber, do not be surprised.",
+   src:"Wallpaper*", url:"https://www.wallpaper.com/travel/hotels/best-new-hotels"},
+
+  {cat:"Spain", place:"San Sebastián", title:"A 1914 Beaux-Arts cinema reopens as a hotel, in rose and velvet",
+   body:"One of Spain's earliest grand movie theatres has entered a second act. Isabel López Vilalta has recast the 1914 Beaux-Arts cinema as the Hotel Palacio Bellas Artes, Curio Collection by Hilton. The eighty-one rooms and suites are dressed in sumptuous shades of rose, with heavy drapery and velvet walls that nod to a theatrical past.",
+   why:"San Sebastián is quietly one of the most requested destinations in Europe for private clients, because of the food. Learn the three-star restaurants there before someone asks you to book one in August.",
+   src:"Wallpaper*", url:"https://www.wallpaper.com/travel/hotels/best-new-hotels"},
+
+  {cat:"Germany", place:"Munich", title:"The Dean lands in the Westend, with an oversized eye watching the lobby",
+   body:"The Irish lifestyle brand has arrived in Munich. Tatjana von Stein, a Munich native, has reworked a 1970s hotel block into two hundred and eighty-one rooms, fusing the city's Art Nouveau roots with 1980s club culture: glossy lacquer against burr wood, velvet against polished chrome, and a lobby dominated by an oversized eye motif channelling new-wave iconography. Four bars, one of them a hidden speakeasy.",
+   why:"Not every request will be for a palace. Principals increasingly want the interesting address rather than the grand one, and knowing the difference is a large part of taste.",
+   src:"Wallpaper*", url:"https://www.wallpaper.com/travel/hotels/best-new-hotels"},
+
+  {cat:"Balearics", place:"Mallorca", title:"On the quiet western coast, twenty-nine rooms facing the sea",
+   body:"Annua Signature debuts the Gran Hotel Margalida in the village of Banyalbufar, on the quieter western coast of Mallorca. The Madrid architect Álvaro Onieva and the interior designer Virginia Nieto have reinvented a historic building into a contemporary escape: twenty-nine rooms facing the sea, yellow accents, and a wellness space with an indoor pool.",
+   why:"The word to notice is <i>quieter</i>. When a family says they want Mallorca, the first question is always which Mallorca. Deià and Banyalbufar are not Palma, and confusing them is the kind of error that is never mentioned and never forgotten.",
+   src:"Wallpaper*", url:"https://www.wallpaper.com/travel/hotels/best-new-hotels"},
+
+  {cat:"Canada", place:"Montréal", title:"Stone vaults, velvet, and a music salon under Old Montreal",
+   body:"After a full transformation led by Corner Collection with Atelier Zébulon Perron, the Hôtel Nelligan reopens honouring its original stonework and exposed brick. Rich velvet sofas in curved shapes, deeply veined marble and warm wood run from the hundred and two rooms down to a modern Greek restaurant and a cocktail bar and music salon set within the old stone vaults.",
+   why:"North America is the deepest market for private household roles. Knowing its cities properly, and not only its coasts, is part of being taken seriously in an American interview.",
+   src:"Wallpaper*", url:"https://www.wallpaper.com/travel/hotels/best-new-hotels"},
+
+  {cat:"Safari", place:"Amboseli, Kenya", title:"Abercrombie & Kent returns to Kenya, in quarried stone rather than canvas",
+   body:"A&K's return to Kenya is a full-circle moment for the house that largely defined luxury safari travel in the 1960s. Pivoting away from the archetypal tented camp toward something permanent, Luxury Frontiers has created structures of quarried stone with sculptural roofs that nod to traditional mud-building forms, screened in timber.",
+   why:"Safari is one of the few remaining trips a principal genuinely cannot organise alone. If you can plan one properly, including the aviation and the timing of the migration, you are useful in a way that is difficult to replace.",
+   src:"Wallpaper*", url:"https://www.wallpaper.com/travel/hotels/best-new-hotels"},
 ];
+
+// La colonne de brèves, à droite.
+const JOURNAL_BRIEFS = [
+  {t:"The largest yacht ever built is a laboratory",
+   b:"REV Ocean, launching at nearly 195 metres, will be the largest yacht in the world, and it carries scientific laboratories and expedition platforms alongside the interiors. The signal is unmistakable: at the very top, purpose is becoming the ultimate luxury.",
+   src:"Elite Traveler", url:"https://elitetraveler.com/cars-jets-and-yachts/yachts/superyacht-launch-news"},
+  {t:"The superyacht market is expanding with global wealth",
+   b:"Rising numbers of billionaires and ultra-high-net-worth individuals are fuelling demand for larger and more sophisticated vessels, and the order books reflect it. Expect the Mediterranean season to be tighter, earlier, and more expensive every year you are in this profession.",
+   src:"Impact Wealth", url:"https://impactwealth.org/superyacht-market-booms-as-global-wealth-expands/"},
+  {t:"Door to destination: the jet, the yacht and the villa are now one booking",
+   b:"Private aviation is increasingly paired with yachts, villas and custom itineraries, to deliver a single seamless journey. This is your job description, written by the market: the person who joins those pieces together without a seam.",
+   src:"Travel Weekly", url:"https://www.travelweekly.com/World-of-Luxury/The-Future-of-Private-Jets-Catering-to-the-Evolving-High-Net-Worth-Traveler"},
+  {t:"Personalisation over prestige, access over ownership",
+   b:"The stated preference of UHNW travellers is shifting, according to charter analysts: personalisation over prestige, access over ownership, meaning over materialism. Everything in Week 4 of this programme is a preparation for exactly that shift.",
+   src:"CharterWorld", url:"https://www.charterworld.com/news/navigating-luxury-uhnwi-travel-trends-shaping-yacht-charter-2026"},
+];
+
 // ====== THE REGISTER DATA ======
 const REGISTER = [
   {name:"Sienna Charles",tier:"The First Circle",loc:"United States",desc:"Perhaps the definitive American reference. Since 2008, Sienna Charles has designed ultra-luxury travel and lifestyle experiences exclusively for ultra-high-net-worth members and their families, including household names and Fortune 500 leaders. Its founder is known for one of the most coveted address books in the world.",clients:"UHNW individuals & families",note:"Membership reportedly begins around $75k/year"},
@@ -1978,22 +2109,79 @@ document.querySelectorAll('.m-tab').forEach(t=>t.addEventListener('click',()=>go
 // ====== THE JOURNAL ======
 function renderJournal(){
   const box=document.getElementById('journalList');
-  if(box.dataset.done==='1') return; // ne rendre qu'une fois
-  box.innerHTML = `<div class="journal-date">${JOURNAL_EDITION}</div>`;
-  JOURNAL.forEach(a=>{
-    const art=document.createElement('div');
-    art.className='article';
-    art.innerHTML=`<div class="article-body">
-      <span class="cat">${a.cat}</span>
-      <h3>${a.title}</h3>
-      <p class="lead">${a.lead}</p>
-      <div class="article-foot">
-        <a class="read" href="${a.url}" target="_blank" rel="noopener">Read the full story <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        <span class="src">${a.src}</span>
+  if(box.dataset.done==='1') return;
+
+  const arts = JOURNAL.map(a=>`
+    <article class="jn-art">
+      <div class="jn-kicker">${escapeHtml(a.cat)} <span class="jn-dot">·</span> ${escapeHtml(a.place)}</div>
+      <h3 class="jn-h">${escapeHtml(a.title)}</h3>
+      <p class="jn-b">${a.body}</p>
+      <div class="jn-why"><span class="jn-why-l">Why it matters to you</span>${a.why}</div>
+      <a class="jn-src" href="${a.url}" target="_blank" rel="noopener">${escapeHtml(a.src)} ${ICO_EXT}</a>
+    </article>`).join('');
+
+  const briefs = JOURNAL_BRIEFS.map(b=>`
+    <div class="jn-brief">
+      <h4>${escapeHtml(b.t)}</h4>
+      <p>${escapeHtml(b.b)}</p>
+      <a href="${b.url}" target="_blank" rel="noopener">${escapeHtml(b.src)} ${ICO_EXT}</a>
+    </div>`).join('<div class="jn-brief-rule"></div>');
+
+  box.innerHTML = `
+  <div class="jn-paper">
+
+    <header class="jn-masthead">
+      <div class="jn-rule-top"></div>
+      <div class="jn-mh-line">
+        <span>${escapeHtml(JOURNAL_NO)}</span>
+        <span class="jn-mh-mid">Maison Amarine</span>
+        <span>Confidential</span>
       </div>
-    </div>`;
-    box.appendChild(art);
-  });
+      <h1 class="jn-title">The&nbsp;Amarine&nbsp;Journal</h1>
+      <div class="jn-strap">${escapeHtml(JOURNAL_STRAP)}</div>
+      <div class="jn-dateline">
+        <span class="jn-dl-l"></span>
+        <span class="jn-dl-t">${escapeHtml(JOURNAL_DATE)}</span>
+        <span class="jn-dl-l"></span>
+      </div>
+    </header>
+
+    <section class="jn-editorial">
+      <div class="jn-ed-l">From the editor</div>
+      <h2>${escapeHtml(JOURNAL_EDITORIAL.title)}</h2>
+      <p>${escapeHtml(JOURNAL_EDITORIAL.text)}</p>
+      <div class="jn-ed-sig">É. M.</div>
+    </section>
+
+    <section class="jn-lead">
+      <div class="jn-kicker jn-kicker-lead">${escapeHtml(JOURNAL_LEAD.cat)} <span class="jn-dot">·</span> ${escapeHtml(JOURNAL_LEAD.place)}</div>
+      <h2 class="jn-lead-h">${escapeHtml(JOURNAL_LEAD.title)}</h2>
+      <p class="jn-standfirst">${escapeHtml(JOURNAL_LEAD.standfirst)}</p>
+      <p class="jn-lead-b jn-drop">${JOURNAL_LEAD.body}</p>
+      <div class="jn-why"><span class="jn-why-l">Why it matters to you</span>${JOURNAL_LEAD.why}</div>
+      <a class="jn-src" href="${JOURNAL_LEAD.url}" target="_blank" rel="noopener">${escapeHtml(JOURNAL_LEAD.src)} ${ICO_EXT}</a>
+    </section>
+
+    <div class="jn-section-rule"><span>The Openings</span></div>
+
+    <div class="jn-cols">
+      <div class="jn-main">${arts}</div>
+      <aside class="jn-side">
+        <div class="jn-side-h">In Brief</div>
+        ${briefs}
+        <div class="jn-colophon">
+          The Amarine Journal is compiled each week for the mentees of Maison Amarine. Every story is real and linked to its source. Read it the way an insider reads a room: closely, and without ever repeating what you have read.
+        </div>
+      </aside>
+    </div>
+
+    <footer class="jn-foot">
+      <div class="jn-rule-top"></div>
+      <span>Maison Amarine · The Private Concierge Academy</span>
+      <span>${escapeHtml(JOURNAL_DATE)}</span>
+    </footer>
+
+  </div>`;
   box.dataset.done='1';
 }
 
