@@ -641,6 +641,12 @@
 .ss-bar.on{display:block;}
 .ss-bar i{display:block;height:100%;width:40%;background:var(--gold,#B08D4F);animation:ssmove 1s linear infinite;}
 @keyframes ssmove{0%{transform:translateX(-100%)}100%{transform:translateX(350%)}}
+.ss-book{display:flex;align-items:center;gap:13px;margin-top:14px;background:#fff;border:1px solid var(--gold-lt,#CBAB73);border-radius:13px;padding:15px 17px;}
+.ss-book .bk-t{flex:1;min-width:0;}
+.ss-book .bk-t .b1{font-size:14px;font-weight:600;color:var(--ink,#2A2622);}
+.ss-book .bk-t .b2{font-size:12.5px;color:var(--stone,#8C8378);margin-top:2px;line-height:1.5;}
+.ss-book a{flex-shrink:0;background:var(--gold,#B08D4F);color:#fff;font-size:13px;font-weight:600;text-decoration:none;padding:10px 18px;border-radius:9px;transition:background .15s;white-space:nowrap;}
+.ss-book a:hover{background:var(--gold-deep,#8E6F3C);}
 /* ===== TOAST (manquait entièrement dans le portail élève) ===== */
 #toast{position:fixed;left:50%;bottom:28px;transform:translate(-50%,20px);z-index:9999;
   background:#2A2622;color:#FBF8F3;font-size:13.5px;font-weight:500;letter-spacing:.01em;
@@ -1376,6 +1382,10 @@ const ICONS = {
 let USER=null, PROFILE=null;
 let SUBMISSIONS={};  // {week_number: row}
 
+// ⬇⬇⬇  ÉMILIE : COLLE TON LIEN CALENDLY ICI  ⬇⬇⬇
+const CALENDLY_URL = "https://calendly.com/academy-themaisonamarine/30-minute-one-on-one";
+// ⬆⬆⬆  (une seule ligne à changer)  ⬆⬆⬆
+
 // ===== TOAST (n'existait pas dans le portail élève, d'où les échecs silencieux) =====
 let __toastT=null;
 function toast(msg, bad){
@@ -1719,6 +1729,13 @@ function submitPanelHTML(no){
     if(r.feedback && r.feedback.trim()){
       inner += `<div class="ss-fb"><div class="fbl">Émilie's feedback</div><div class="fbt">${escapeHtml(r.feedback)}</div></div>`;
     }
+    inner += `<div class="ss-book">
+      <div class="bk-t">
+        <div class="b1">Now book your mentorship session</div>
+        <div class="b2">Choose a slot at least two days from now, so that I can read your work properly before we speak.</div>
+      </div>
+      <a href="${CALENDLY_URL}" target="_blank" rel="noopener">Book your session</a>
+    </div>`;
   } else {
     inner = `<div class="ss-drop" id="ssDrop">${ICO_UP}<div class="d1">Upload your deliverable</div><div class="d2">One PDF, before your mentorship session</div></div>`;
   }
