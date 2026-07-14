@@ -1747,9 +1747,22 @@ function wireSubmitPanel(no){
     const body=document.getElementById('stepViewBody');
     const panel=body.querySelector('.sv-submit');
     if(panel){ const tmp=document.createElement('div'); tmp.innerHTML=submitPanelHTML(no); panel.replaceWith(tmp.firstElementChild); wireSubmitPanel(no); }
+    refreshSubmitPill(no);
     toast('Deliverable submitted');
-    if(activeWeek===no) openModal(no);
   });
+}
+
+// met à jour la pastille sur la 4e étape de la semaine, sans reconstruire le modal
+function refreshSubmitPill(no){
+  if(activeWeek!==no) return;
+  const list=document.getElementById('lessonList'); if(!list) return;
+  const row=list.children[3]; if(!row) return;
+  const lt=row.querySelector('.lesson-txt .lt'); if(!lt) return;
+  const st=subState(no);
+  let pill=lt.querySelector('.sub-pill');
+  if(!pill){ pill=document.createElement('span'); lt.appendChild(document.createTextNode(' ')); lt.appendChild(pill); }
+  pill.className='sub-pill '+st.k;
+  pill.textContent=st.label;
 }
 
 async function uploadSubmission(no,file){
