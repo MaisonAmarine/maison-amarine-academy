@@ -641,6 +641,13 @@
 .ss-bar.on{display:block;}
 .ss-bar i{display:block;height:100%;width:40%;background:var(--gold,#B08D4F);animation:ssmove 1s linear infinite;}
 @keyframes ssmove{0%{transform:translateX(-100%)}100%{transform:translateX(350%)}}
+/* ===== TOAST (manquait entièrement dans le portail élève) ===== */
+#toast{position:fixed;left:50%;bottom:28px;transform:translate(-50%,20px);z-index:9999;
+  background:#2A2622;color:#FBF8F3;font-size:13.5px;font-weight:500;letter-spacing:.01em;
+  padding:12px 20px;border-radius:11px;box-shadow:0 8px 30px rgba(0,0,0,.22);
+  opacity:0;pointer-events:none;transition:opacity .22s,transform .22s;max-width:82vw;text-align:center;}
+#toast.show{opacity:1;transform:translate(-50%,0);}
+#toast.bad{background:#8A3A32;}
 </style>
 </head>
 <body>
@@ -1368,6 +1375,18 @@ const ICONS = {
 
 let USER=null, PROFILE=null;
 let SUBMISSIONS={};  // {week_number: row}
+
+// ===== TOAST (n'existait pas dans le portail élève, d'où les échecs silencieux) =====
+let __toastT=null;
+function toast(msg, bad){
+  let t=document.getElementById('toast');
+  if(!t){ t=document.createElement('div'); t.id='toast'; document.body.appendChild(t); }
+  t.textContent=msg;
+  t.classList.toggle('bad', !!bad);
+  t.classList.add('show');
+  clearTimeout(__toastT);
+  __toastT=setTimeout(()=>t.classList.remove('show'), 4200);
+}
 let state = { completed:{}, lessons:{} };
 
 function initials(n){return (n||"?").split(' ').map(w=>w[0]).slice(0,2).join('').toUpperCase();}
@@ -1721,9 +1740,9 @@ function wireSubmitPanel(no){
     const f=inp.files&&inp.files[0]; if(!f) return;
     if(f.size>25*1024*1024){ toast('File too large, 25 MB maximum'); return; }
     const bar=document.getElementById('ssBar'); if(bar) bar.classList.add('on');
-    const ok=await uploadSubmission(no,f);
+    const res=await uploadSubmission(no,f);
     if(bar) bar.classList.remove('on');
-    if(!ok){ toast('Could not upload, please try again'); return; }
+    if(!res.ok){ toast(res.msg, true); inp.value=''; return; }
     await loadSubmissions();
     const body=document.getElementById('stepViewBody');
     const panel=body.querySelector('.sv-submit');
@@ -1738,14 +1757,14 @@ async function uploadSubmission(no,file){
     const ext=(file.name.split('.').pop()||'pdf').toLowerCase();
     const path=`${USER.id}/week-${no}-${Date.now()}.${ext}`;
     const {error:upErr}=await sb.storage.from('submissions').upload(path,file,{upsert:false,contentType:file.type||'application/pdf'});
-    if(upErr) return false;
+    if(upErr){ console.error('[submit] storage:',upErr); return {ok:false, msg:'Storage: '+(upErr.message||'upload refused')}; }
     const {data:pub}=sb.storage.from('submissions').getPublicUrl(path);
     const row={user_id:USER.id, week_number:no, file_url:pub.publicUrl, file_name:file.name,
                submitted_at:new Date().toISOString(), status:'submitted', reviewed_at:null, feedback:null};
     const {error:dbErr}=await sb.from('submissions').upsert(row,{onConflict:'user_id,week_number'});
-    if(dbErr) return false;
-    return true;
-  }catch(e){ return false; }
+    if(dbErr){ console.error('[submit] table:',dbErr); return {ok:false, msg:'Database: '+(dbErr.message||'insert refused')}; }
+    return {ok:true};
+  }catch(e){ console.error('[submit]',e); return {ok:false, msg:e.message||'Unexpected error'}; }
 }
 
 // ---- contenu éditable des cours (édité depuis l'admin) ----
@@ -2391,5 +2410,6 @@ sb.auth.onAuthStateChange((event, session)=>{
   }
 })();
 </script>
+<div id="toast"></div>
 </body>
 </html>
