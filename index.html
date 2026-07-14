@@ -655,6 +655,32 @@
 #toast.show{opacity:1;transform:translate(-50%,0);}
 #toast.bad{background:#8A3A32;}
 </style>
+
+<style>
+/* ===== JOB BOARD (Career Hub) ===== */
+.jobs .job{text-decoration:none;color:inherit;cursor:pointer;}
+.jobs .job:hover{border-color:var(--gold-lt)!important;transform:translateY(-1px);box-shadow:0 6px 20px rgba(176,141,79,.10);}
+.jobs .job:hover .japply{background:var(--gold);color:#fff;border-color:var(--gold);}
+.job-main .jb{font-size:13px;line-height:1.6;color:var(--ink-soft,#5C554D);margin-top:7px;}
+.job-sal{text-align:right;flex-shrink:0;display:flex;flex-direction:column;align-items:flex-end;gap:5px;min-width:132px;}
+.job-sal .per{font-size:11px;color:var(--stone);}
+.japply{display:inline-flex;align-items:center;gap:6px;margin-top:5px;font-family:'Jost',sans-serif;font-size:12.5px;font-weight:600;color:var(--gold-deep,#8E6F3C);background:#fff;border:1px solid var(--gold-lt,#CBAB73);border-radius:8px;padding:7px 13px;transition:all .18s;white-space:nowrap;}
+.job-count{margin-left:auto;align-self:center;font-family:'Jost',sans-serif;font-size:12.5px;font-weight:600;color:var(--stone);}
+.boards{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px;}
+.board{display:flex;align-items:center;gap:14px;background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:17px 19px;text-decoration:none;color:inherit;transition:all .18s;}
+.board:hover{border-color:var(--gold-lt);transform:translateY(-1px);box-shadow:0 6px 20px rgba(176,141,79,.10);}
+.board:hover .bd-go{background:var(--gold);color:#fff;border-color:var(--gold);}
+.board .bd-t{flex:1;min-width:0;}
+.board .b1{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600;color:var(--ink);}
+.board .b2{font-size:12.5px;color:var(--stone);margin-top:2px;line-height:1.5;}
+.bd-go{display:inline-flex;align-items:center;gap:6px;flex-shrink:0;font-family:'Jost',sans-serif;font-size:12px;font-weight:600;color:var(--gold-deep,#8E6F3C);background:#fff;border:1px solid var(--gold-lt,#CBAB73);border-radius:8px;padding:7px 12px;transition:all .18s;}
+@media(max-width:760px){
+  .boards{grid-template-columns:1fr;}
+  .jobs .job{flex-wrap:wrap;}
+  .job-sal{text-align:left;align-items:flex-start;min-width:0;width:100%;margin-top:10px;}
+  .job-count{width:100%;margin:6px 0 0;}
+}
+</style>
 </head>
 <body>
 
@@ -868,6 +894,25 @@
         <p>Maison Amarine gives you the tools and the map to build your own path, not a placement or guaranteed introductions. The roles and agencies below are real starting points for your own outreach. Listings move fast, always check each agency's live openings.</p>
       </div>
 
+      <div class="block-title">Open roles</div>
+      <div class="block-sub">Real vacancies, live with the agencies that posted them. Click any role to read it in full and apply directly on the agency's own site. <span id="jobsUpdated" style="color:var(--gold-deep);font-weight:600;"></span></div>
+      <div class="job-tabs" id="jobTabs">
+        <button class="job-tab active" data-region="americas">🌎 Americas</button>
+        <button class="job-tab" data-region="europe">🌍 Europe</button>
+        <button class="job-tab" data-region="mideast">🌏 Middle East</button>
+        <span class="job-count" id="jobCount"></span>
+      </div>
+      <div class="jobs" id="jobList"></div>
+
+      <div class="note-band" style="margin-top:22px;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01" stroke-linecap="round"/></svg>
+        <p><b style="font-weight:600;">How to use this page.</b> Every role above is a real, published vacancy and every link takes you to the agency's own application page. Maison Amarine is not the employer, does not submit your application, and receives nothing if you are hired. Roles at this level close quickly: if a link has expired, use the live boards below, which are always current.</p>
+      </div>
+
+      <div class="block-title" style="margin-top:34px;">The live boards</div>
+      <div class="block-sub">Bookmark these four. They are updated by the agencies themselves, every day, and they never go stale.</div>
+      <div class="boards" id="jobBoards"></div>
+
       <div class="intro-card" style="margin-bottom:26px;">
         <p><b style="color:var(--gold);font-weight:500;">Start where you can actually be taken.</b> These roles form a ladder, not a menu. Coming from luxury hospitality or private aviation, a private concierge or personal assistant role is a natural first step. Coming from elsewhere, guest relations in a villa, a chalet or a yacht is usually the honest first rung, and it climbs quickly. Estate manager and chief of staff are the summit of a career, not the exit of a programme. Choose the rung you can reach, and be impeccable on it.</p>
       </div>
@@ -924,19 +969,7 @@
         <div class="platform"><div class="pn">Referrals</div><div class="pd">Your network, the #1 real channel</div></div>
       </div>
 
-      <div class="block-title">Live openings, a snapshot</div>
-      <div class="block-sub">Real roles from the market, grouped by region. <span id="jobsUpdated" style="color:var(--gold-deep);font-weight:600;"></span></div>
-      <div class="job-tabs" id="jobTabs">
-        <button class="job-tab active" data-region="americas">🌎 Americas</button>
-        <button class="job-tab" data-region="europe">🌍 Europe</button>
-        <button class="job-tab" data-region="mideast">🌏 Middle East &amp; Asia</button>
-      </div>
-      <div class="jobs" id="jobList"></div>
 
-      <div class="note-band" style="margin-top:22px;">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01" stroke-linecap="round"/></svg>
-        <p>These listings are a snapshot, kept as examples of what the market offers, and refreshed periodically. They are not live-updated in real time, always apply through each agency's current openings via the links above.</p>
-      </div>
 
       <div class="note-band" style="margin-top:14px;">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l2.5 6.5L21 9l-5 4.5L17.5 21 12 17l-5.5 4L8 13.5 3 9l6.5-.5z" stroke-linejoin="round"/></svg>
@@ -1344,29 +1377,78 @@ const AGENCIES = [
 ];
 
 // Real market snapshot — update monthly. Each: [flag, city, title, meta, tags[], salary, per]
+// ═══════════════════════════════════════════════════════════════════════
+// OFFRES RÉELLES. Chaque annonce pointe vers la vraie page de candidature.
+// Vérifiées le 14 juillet 2026. Les annonces se ferment vite : relire
+// régulièrement et supprimer celles qui ne répondent plus (voir LISEZ-MOI).
+// Format : {flag, city, country, title, agency, type, tags[], salary, posted, url, blurb}
+// ═══════════════════════════════════════════════════════════════════════
 const JOBS = {
   americas:[
-    ["🇺🇸","New York","Estate Manager — HNW Family","Manhattan · Full-time · 5+ yrs household experience",["Estate Manager","On-site"],"$200k","/ year"],
-    ["🇺🇸","Palm Beach","House / Estate Manager — Multi-Residence","FL · Full-time · leads team of ~15 staff",["House Manager","Team lead"],"$120k+","/ year"],
-    ["🇺🇸","The Hamptons","Executive Housekeeper / House Manager","Bridgehampton · Year-round · oceanfront estate",["House Manager","Live-in option"],"$90–120k","/ year"],
-    ["🇺🇸","Midwest","Estate Manager & PA to UHNWI","Relocation + car + benefits · 10+ yrs required",["Estate Manager","Relocation"],"~$350k","package"],
-    ["🇺🇸","Menlo Park","House Manager / Personal Assistant","CA · Private tech-executive family",["House Manager","PA"],"$90–130k","/ year"],
+    {flag:"🇺🇸",city:"Palo Alto",country:"California, USA",title:"Executive Personal Assistant / House Manager",agency:"Morgan & Mallet",type:"Permanent · Full time",tags:["PA-first","UHNW principal","Long-term"],salary:"On application",posted:"8 Jan 2026",
+     url:"https://www.householdstaff.agency/jobs/executive-personal-assistant-house-manager-job-palo-alto-california-usa/",
+     blurb:"A UHNW principal seeks a trusted right hand across all personal, administrative and lifestyle matters. Replaces a long-tenured professional who is retiring. Anticipation, judgement and discretion are described as critical."},
+    {flag:"🇺🇸",city:"Dallas",country:"Texas, USA",title:"House Manager / Personal Assistant · Three residences",agency:"Morgan & Mallet",type:"Permanent · Full time",tags:["Multi-property","Dallas / Austin / Aspen","Lifestyle"],salary:"On application",posted:"17 Mar 2026",
+     url:"https://www.householdstaff.agency/jobs/household-manager-job-dallas-texas-usa/",
+     blurb:"A high-profile principal seeks a polished house manager to oversee three luxury residences in Dallas, Austin and Aspen. Combines house management, PA support and butler-level service."},
+    {flag:"🇺🇸",city:"Dallas",country:"Texas, USA",title:"Senior Personal Assistant to the Principal",agency:"Morgan & Mallet",type:"Permanent · Full time",tags:["Senior PA","Fast-paced","On-call"],salary:"On application",posted:"17 Mar 2026",
+     url:"https://www.householdstaff.agency/jobs/senior-personal-assistant-job-dallas-texas-usa/",
+     blurb:"Discreet and proactive senior PA. Day-to-day logistics, calendaring, travel and a wide range of personal tasks arising at short notice. Service mindset and flawless execution."},
+    {flag:"🇺🇸",city:"Miami Beach",country:"Florida, USA",title:"Personal Assistant · Residential projects & household",agency:"Morgan & Mallet",type:"Permanent · Full time",tags:["PA","Vendors","Property"],salary:"On application",posted:"13 Feb 2026",
+     url:"https://www.householdstaff.agency/jobs/personal-assistant-job-miami-beach-florida-usa/",
+     blurb:"Oversee residential construction projects, manage household operations and provide comprehensive support to the principals. For someone who takes ownership and executes without direction."},
   ],
   europe:[
-    ["🇲🇨","Monaco","Personal Assistant / Concierge — Social & Lifestyle","Private estate & family office · Full-time",["Concierge","Lifestyle"],"On request","competitive"],
-    ["🇲🇨","Monaco","Travelling Lifestyle PA (UHNW)","Monaco / South of France · Full-time · rota",["PA","Travel"],"On request","competitive"],
-    ["🇬🇧","London","Head Butler / House Manager","Private UHNW townhouse · live-out",["Butler","House Manager"],"£65–90k","/ year"],
-    ["🇨🇭","Switzerland","Chalet Host / Guest Relations","Seasonal · luxury private chalet",["Guest Relations","Seasonal"],"On request","+ live-in"],
-    ["🇫🇷","French Riviera","Villa Manager — Summer Estate","Antibes / Saint-Tropez · seasonal",["Villa Manager","Seasonal"],"On request","+ housing"],
+    {flag:"🇫🇷",city:"Saint-Tropez",country:"France",title:"House Manager · UHNW family, 1,200 m² property",agency:"Morgan & Mallet",type:"CDI · Full time",tags:["Bilingual FR/EN","UHNW","Operational"],salary:"On application",posted:"2 Feb 2026",
+     url:"https://www.householdstaff.agency/jobs/house-manager-job-saint-tropez-france/",
+     blurb:"Exceptional private property in the heart of Saint-Tropez. A strategic role for a profile used to confidential environments and the highest levels of service. Operational excellence, absolute discretion."},
+    {flag:"🇫🇷",city:"Ramatuelle",country:"France",title:"House Manager · Secondary residence",agency:"Morgan & Mallet",type:"CDI · Full time",tags:["Staff accommodation","Immediate start"],salary:"On application",posted:"9 Jun 2026",
+     url:"https://www.householdstaff.agency/jobs/house-manager-job-ramatuelle-france/",
+     blurb:"Interior management of the home alongside the existing team. Permanent contract, available immediately. Staff accommodation is provided."},
+    {flag:"🇫🇷",city:"Megève",country:"Haute-Savoie, France",title:"House Manager · Private luxury chalet",agency:"Morgan & Mallet",type:"CDI · Full time",tags:["Chalet","Hospitality background","Immediate"],salary:"On application",posted:"7 Apr 2026",
+     url:"https://www.householdstaff.agency/jobs/housekeeper-house-manager-job-megeve-france/",
+     blurb:"General upkeep and household management of a privately owned luxury chalet. A strong background in high-end hospitality is expected."},
+    {flag:"🇫🇷",city:"Neuilly-sur-Seine",country:"France",title:"Versatile House Manager · Family home",agency:"Morgan & Mallet",type:"CDI · Full time",tags:["Family","Immediate start"],salary:"On application",posted:"12 Jun 2026",
+     url:"https://www.householdstaff.agency/jobs/house-manager-job-neuilly-sur-seine-france/",
+     blurb:"Upkeep of the house, meal preparation for the family, and after-school care of a nine-year-old. Permanent position, available immediately."},
+    {flag:"🇬🇧",city:"London",country:"United Kingdom",title:"Personal Assistant to a renowned music artist",agency:"Morgan & Mallet",type:"Consultancy · Part time",tags:["Entertainment","International travel","Flexible"],salary:"On application",posted:"1 Jul 2026",
+     url:"https://www.householdstaff.agency/jobs/personal-assistant-job-london-united-kingdom/",
+     blurb:"A renowned artist travelling regularly, seeking an exceptional PA to join a small dedicated team. Significant flexibility expected in days and hours."},
+    {flag:"🇬🇧",city:"UK & France",country:"Travelling",title:"Travelling Housekeeper · Private residences",agency:"Morgan & Mallet",type:"Permanent · Live-in",tags:["Travel","Live-in","Long-term"],salary:"On application",posted:"10 Jul 2026",
+     url:"https://www.householdstaff.agency/jobs/travelling-housekeeper-job-london-united-kingdom/",
+     blurb:"Support a respectful principal across private residences in the UK and France, with a long-term base in the UK. A rare lifestyle position offering stability and travel."},
+    {flag:"🇪🇸",city:"Wales & Málaga",country:"Spain / UK",title:"House Manager · Six residences",agency:"Morgan & Mallet",type:"Permanent · Full time",tags:["Six properties","Two countries","Logistics"],salary:"On application",posted:"14 Apr 2026",
+     url:"https://www.householdstaff.agency/jobs/house-manager-job-cardiff-wales-malaga-southern-spain/",
+     blurb:"Oversee the smooth operation of six private residences across Wales and Southern Spain. Full ownership of day-to-day logistics, suppliers and travel across two countries."},
+    {flag:"🇮🇹",city:"Florence",country:"Italy",title:"Housekeeper · International family, travel",agency:"Morgan & Mallet",type:"Permanent · Full time",tags:["First rung","International travel"],salary:"On application",posted:"10 Jul 2026",
+     url:"https://www.householdstaff.agency/jobs/housekeeper-job-florence-italy/",
+     blurb:"An international family recently settled in Florence. Permanent, full-time, with flexibility to travel internationally for extended periods (France and London)."},
   ],
   mideast:[
-    ["🇦🇪","Dubai","Private Lifestyle Manager — Royal Household","Full-time · VVIP experience required",["Lifestyle","VVIP"],"On request","tax-free"],
-    ["🇦🇪","Abu Dhabi","Estate Manager — Private Palace","Live-in · large household team",["Estate Manager","Live-in"],"On request","tax-free"],
-    ["🇸🇦","Riyadh","Head of Household Staff","UHNW family · multi-property",["Chief of Staff","Multi-property"],"On request","tax-free"],
-    ["🇸🇬","Singapore","Private PA to UHNW Principal","Full-time · discretion essential",["PA","Discretion"],"On request","competitive"],
+    {flag:"🇦🇪",city:"Ajman",country:"United Arab Emirates",title:"House Manager · Main house & family farm",agency:"Morgan & Mallet",type:"Permanent · Full time",tags:["Two properties","Leads staff","Long-term"],salary:"On application",posted:"17 Jun 2026",
+     url:"https://www.householdstaff.agency/jobs/house-manager-job-ajman-united-arab-emirates/",
+     blurb:"Oversee the full operation of the main house and the family farm house. Supervise household staff and coordinate all daily operations across the estate."},
+    {flag:"🇦🇪",city:"Dubai",country:"United Arab Emirates",title:"Senior Personal Assistant to the Principal",agency:"Morgan & Mallet",type:"Permanent · Live-out",tags:["Senior PA","Long-term","Discretion"],salary:"On application",posted:"5 Feb 2026",
+     url:"https://www.householdstaff.agency/jobs/senior-personal-assistant-job-dubai-uae/",
+     blurb:"Comprehensive administrative and organisational support. Full-time, live-out, long-term. Requires discretion, reliability and a high level of personal integrity."},
+    {flag:"🇦🇪",city:"Dubai",country:"United Arab Emirates",title:"HR & Executive Assistant · International holding",agency:"Morgan & Mallet",type:"Permanent · Full time",tags:["Family office","Senior","Not entry level"],salary:"On application",posted:"10 Jul 2026",
+     url:"https://www.householdstaff.agency/jobs/human-resources-executive-assistant-job-dubai-uae/",
+     blurb:"Support three partners across HR, administrative, contractual and operational matters. Emphatically not an entry-level position: a polished professional with a proven record in a demanding environment."},
+    {flag:"🇰🇼",city:"Kuwait City",country:"Kuwait",title:"House Manager · Supervising a team of 12",agency:"Morgan & Mallet",type:"Permanent · Full time",tags:["Team of 12","Family office","Discreet"],salary:"On application",posted:"5 Feb 2026",
+     url:"https://www.householdstaff.agency/jobs/house-manager-job-kuwait-city-kuwait/",
+     blurb:"A high-profile family seeks an experienced and discreet house manager. Reporting to the principal or the family office, supervising twelve household staff."},
   ]
 };
-const JOBS_UPDATED = "Updated July 2026";
+
+// Les job boards en direct des agences : toujours à jour, jamais périmés.
+const JOB_BOARDS = [
+  ["Morgan & Mallet International","Household, estate & family office · 8 offices worldwide","https://www.householdstaff.agency/jobs/"],
+  ["Silver Swan Recruitment","Private staffing for UHNW · London, Dubai, US","https://silverswanrecruitment.com/search-jobs/"],
+  ["Private House Jobs","The largest private-household job board in Europe","https://www.privatehousejobs.com/"],
+  ["Estate Jobs","Estate & private service roles, United States","https://estatejobs.com/"],
+];
+
+const JOBS_UPDATED = "Live roles · verified 14 July 2026";
 
 const ICONS = {
   video:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polygon points="7 4 20 12 7 20 7 4" fill="currentColor" stroke="none"/></svg>',
@@ -1539,18 +1621,46 @@ function renderAgencies(){
   });
 }
 
+const ICO_EXT='<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/></svg>';
+
 function renderJobs(region){
   const list=document.getElementById('jobList');list.innerHTML="";
-  (JOBS[region]||[]).forEach(j=>{
-    const el=document.createElement('div');el.className="job";
-    const tags=j[4].map(t=>`<span class="jtag">${t}</span>`).join('');
+  const arr = JOBS[region]||[];
+  document.getElementById('jobCount').textContent = arr.length + (arr.length===1?' live role':' live roles');
+  arr.forEach(j=>{
+    const el=document.createElement('a');
+    el.className="job";
+    el.href=j.url; el.target="_blank"; el.rel="noopener";
+    const tags=(j.tags||[]).map(t=>`<span class="jtag">${escapeHtml(t)}</span>`).join('');
     el.innerHTML=`
-      <div class="job-loc"><div class="fl">${j[0]}</div><div class="ct">${j[1]}</div></div>
-      <div class="job-main"><div class="jt">${j[2]}</div><div class="jm">${j[3]}</div><div class="jtags">${tags}</div></div>
-      <div class="job-sal"><div class="amt">${j[5]}</div><div class="per">${j[6]}</div></div>`;
+      <div class="job-loc"><div class="fl">${j.flag}</div><div class="ct">${escapeHtml(j.city)}</div></div>
+      <div class="job-main">
+        <div class="jt">${escapeHtml(j.title)}</div>
+        <div class="jm"><b>${escapeHtml(j.agency)}</b> · ${escapeHtml(j.country)} · ${escapeHtml(j.type)}</div>
+        <div class="jb">${escapeHtml(j.blurb)}</div>
+        <div class="jtags">${tags}</div>
+      </div>
+      <div class="job-sal">
+        <div class="amt">${escapeHtml(j.salary)}</div>
+        <div class="per">Posted ${escapeHtml(j.posted)}</div>
+        <span class="japply">View &amp; apply ${ICO_EXT}</span>
+      </div>`;
     list.appendChild(el);
   });
 }
+
+function renderJobBoards(){
+  const box=document.getElementById('jobBoards'); if(!box) return;
+  box.innerHTML = JOB_BOARDS.map(b=>`
+    <a class="board" href="${b[2]}" target="_blank" rel="noopener">
+      <div class="bd-t">
+        <div class="b1">${escapeHtml(b[0])}</div>
+        <div class="b2">${escapeHtml(b[1])}</div>
+      </div>
+      <span class="bd-go">Open board ${ICO_EXT}</span>
+    </a>`).join('');
+}
+
 function initJobTabs(){
   document.getElementById('jobsUpdated').textContent=JOBS_UPDATED;
   document.querySelectorAll('.job-tab').forEach(t=>t.addEventListener('click',()=>{
@@ -1559,6 +1669,8 @@ function initJobTabs(){
     renderJobs(t.dataset.region);
   }));
   renderJobs('americas');
+  document.querySelectorAll('.job-tab').forEach(x=>x.classList.toggle('active', x.dataset.region==='americas'));
+  renderJobBoards();
 }
 
 function renderCalendar(){
