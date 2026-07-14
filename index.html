@@ -682,76 +682,88 @@
 }
 </style>
 
+
+
+
+
 <style>
-/* ══════════════ THE AMARINE JOURNAL — vraie mise en page de journal ══════════════ */
-.jn-paper{background:#FDFBF6;border:1px solid #E3DBCE;border-radius:4px;padding:44px 54px 34px;box-shadow:0 20px 60px rgba(33,28,21,.09);max-width:1080px;margin:6px auto 0;}
-@media(max-width:900px){ .jn-paper{padding:26px 22px 22px;} }
+/* ═════════ THE AMARINE JOURNAL ═════════ */
+.j{max-width:1180px;margin:0 auto;padding:0 8px 56px;}
+.j *{box-sizing:border-box;}
 
-/* --- Masthead --- */
-.jn-rule-top{height:3px;background:#2A2622;margin-bottom:3px;}
-.jn-masthead{text-align:center;padding-bottom:14px;}
-.jn-mh-line{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #2A2622;padding:6px 2px;font-family:'Jost',sans-serif;font-size:9.5px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:#6B635A;}
-.jn-mh-mid{letter-spacing:.3em;color:#B08D4F;}
-.jn-title{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:clamp(38px,6.4vw,72px);line-height:1;color:#2A2622;margin:16px 0 6px;letter-spacing:.005em;}
-.jn-strap{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;color:#8C8378;margin-bottom:16px;}
-.jn-dateline{display:flex;align-items:center;gap:14px;}
-.jn-dl-l{flex:1;height:1px;background:#2A2622;}
-.jn-dl-t{font-family:'Jost',sans-serif;font-size:10.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#2A2622;white-space:nowrap;}
+/* Hero */
+.j-hero{text-align:center;padding:44px 0 56px;border-bottom:1px solid var(--line,#E3DBCE);margin-bottom:56px;}
+.j-badge{display:inline-flex;align-items:center;gap:10px;font-family:'Jost',sans-serif;font-size:10.5px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-deep,#8E6F3C);}
+.j-badge b{font-weight:400;color:var(--gold-lt,#CBAB73);}
+.j-hero h1{font-family:'Cormorant',serif;font-weight:500;font-size:clamp(44px,5.6vw,64px);line-height:1.05;color:var(--ink,#2A2622);margin:20px 0 14px;letter-spacing:-.012em;}
+.j-hero p{font-family:'Cormorant',serif;font-style:italic;font-weight:300;font-size:21px;color:var(--stone,#8C8378);margin:0;}
 
-/* --- Éditorial --- */
-.jn-editorial{border-bottom:1px solid #E3DBCE;padding:22px 0 20px;text-align:center;max-width:720px;margin:0 auto;}
-.jn-ed-l{font-family:'Jost',sans-serif;font-size:9.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#B08D4F;margin-bottom:8px;}
-.jn-editorial h2{font-family:'Cormorant Garamond',serif;font-weight:600;font-style:italic;font-size:26px;line-height:1.25;color:#2A2622;margin:0 0 12px;}
-.jn-editorial p{font-family:'Cormorant Garamond',serif;font-size:17px;line-height:1.72;color:#3E3831;margin:0;}
-.jn-ed-sig{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;color:#B08D4F;margin-top:12px;}
+/* Éditorial : titre à gauche, texte à droite */
+.j-ed{display:grid;grid-template-columns:200px minmax(0,1fr);gap:56px;padding-bottom:56px;margin-bottom:56px;border-bottom:1px solid var(--line,#E3DBCE);}
+.j-ed-k{font-family:'Jost',sans-serif;font-size:10px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold,#B08D4F);}
+.j-ed-sig{font-family:'Cormorant',serif;font-style:italic;font-size:20px;color:var(--stone,#8C8378);margin-top:12px;}
+.j-ed-right h2{font-family:'Cormorant',serif;font-weight:500;font-style:italic;font-size:30px;line-height:1.32;color:var(--ink,#2A2622);margin:0 0 20px;max-width:22ch;}
+.j-ed-right p{font-family:'Cormorant',serif;font-weight:300;font-size:20px;line-height:1.9;color:#3E3831;margin:0;max-width:66ch;}
 
-/* --- Une --- */
-.jn-lead{padding:26px 0 22px;border-bottom:2px solid #2A2622;}
-.jn-kicker{font-family:'Jost',sans-serif;font-size:9.5px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:#B08D4F;margin-bottom:8px;}
-.jn-dot{color:#CBAB73;margin:0 3px;}
-.jn-kicker-lead{text-align:center;}
-.jn-lead-h{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:clamp(28px,3.6vw,42px);line-height:1.13;color:#2A2622;margin:0 auto 12px;text-align:center;max-width:860px;}
-.jn-standfirst{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:19px;line-height:1.55;color:#5C554D;text-align:center;max-width:720px;margin:0 auto 20px;}
-.jn-lead-b{font-family:'Cormorant Garamond',serif;font-size:17.5px;line-height:1.75;color:#2A2622;column-count:2;column-gap:38px;column-rule:1px solid #EFE7DA;text-align:justify;hyphens:auto;}
-@media(max-width:760px){ .jn-lead-b{column-count:1;} }
-.jn-drop::first-letter{font-family:'Cormorant Garamond',serif;font-weight:700;float:left;font-size:60px;line-height:.82;padding:5px 9px 0 0;color:#B08D4F;}
+/* Une */
+.j-lead{margin-bottom:64px;}
+.j-lead-top{text-align:center;margin-bottom:40px;}
+.j-lead-top h2{font-family:'Cormorant',serif;font-weight:500;font-size:clamp(32px,4vw,46px);line-height:1.14;color:var(--ink,#2A2622);margin:0 auto 20px;max-width:20ch;letter-spacing:-.01em;}
+.j-stand{font-family:'Cormorant',serif;font-style:italic;font-weight:300;font-size:22px;line-height:1.6;color:var(--stone,#8C8378);margin:0 auto;max-width:58ch;}
+.j-lead-body{font-size:21px!important;}
 
-/* --- Filet de section --- */
-.jn-section-rule{display:flex;align-items:center;gap:16px;margin:26px 0 20px;}
-.jn-section-rule::before,.jn-section-rule::after{content:"";flex:1;height:1px;background:#2A2622;}
-.jn-section-rule span{font-family:'Jost',sans-serif;font-size:10.5px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:#2A2622;}
+/* La grille de lecture : texte large à gauche, note à droite */
+.j-row{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:64px;align-items:start;padding-bottom:48px;margin-bottom:48px;border-bottom:1px solid var(--line,#E3DBCE);}
+.j-row:last-of-type{border-bottom:none;}
+.j-col-main h3{font-family:'Cormorant',serif;font-weight:500;font-size:32px;line-height:1.2;color:var(--ink,#2A2622);margin:0 0 18px;max-width:24ch;letter-spacing:-.005em;}
+.j-col-main p{font-family:'Cormorant',serif;font-weight:300;font-size:20px;line-height:1.92;color:#3E3831;margin:0 0 22px;max-width:64ch;}
 
-/* --- Colonnes --- */
-.jn-cols{display:grid;grid-template-columns:1fr 296px;gap:0;}
-@media(max-width:900px){ .jn-cols{grid-template-columns:1fr;} }
-.jn-main{padding-right:34px;border-right:1px solid #E3DBCE;column-count:2;column-gap:32px;column-rule:1px solid #EFE7DA;}
-@media(max-width:900px){ .jn-main{column-count:1;padding-right:0;border-right:none;} }
-@media(max-width:1100px) and (min-width:901px){ .jn-main{column-count:1;} }
-.jn-art{break-inside:avoid;padding-bottom:20px;margin-bottom:20px;border-bottom:1px solid #EFE7DA;}
-.jn-h{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:22px;line-height:1.2;color:#2A2622;margin:0 0 9px;}
-.jn-b{font-family:'Cormorant Garamond',serif;font-size:15.6px;line-height:1.72;color:#3E3831;margin:0 0 12px;text-align:justify;hyphens:auto;}
-.jn-why{background:#F5EFE4;border-left:2px solid #B08D4F;border-radius:0 8px 8px 0;padding:11px 14px;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:14.6px;line-height:1.62;color:#3E3831;margin-bottom:11px;}
-.jn-why-l{display:block;font-family:'Jost',sans-serif;font-style:normal;font-size:8.6px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#8E6F3C;margin-bottom:4px;}
-.jn-src{display:inline-flex;align-items:center;gap:5px;font-family:'Jost',sans-serif;font-size:10.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#8C8378;text-decoration:none;}
-.jn-src:hover{color:#8E6F3C;}
-.jn-src svg{width:11px;height:11px;}
+.j-eyebrow{display:flex;align-items:center;gap:9px;font-family:'Jost',sans-serif;font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--stone,#8C8378);margin-bottom:14px;}
+.j-eyebrow b{font-weight:400;color:var(--gold-lt,#CBAB73);}
+.j-eyebrow-c{justify-content:center;color:var(--gold-deep,#8E6F3C);}
 
-/* --- Colonne de brèves --- */
-.jn-side{padding-left:28px;}
-@media(max-width:900px){ .jn-side{padding-left:0;margin-top:26px;border-top:2px solid #2A2622;padding-top:20px;} }
-.jn-side-h{font-family:'Jost',sans-serif;font-size:10.5px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:#2A2622;border-bottom:2px solid #2A2622;padding-bottom:7px;margin-bottom:16px;}
-.jn-brief h4{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:17px;line-height:1.24;color:#2A2622;margin:0 0 6px;}
-.jn-brief p{font-family:'Cormorant Garamond',serif;font-size:14.4px;line-height:1.68;color:#4A443C;margin:0 0 7px;}
-.jn-brief a{display:inline-flex;align-items:center;gap:5px;font-family:'Jost',sans-serif;font-size:9.6px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#8C8378;text-decoration:none;}
-.jn-brief a:hover{color:#8E6F3C;}
-.jn-brief a svg{width:10px;height:10px;}
-.jn-brief-rule{height:1px;background:#EFE7DA;margin:16px 0;}
-.jn-colophon{margin-top:24px;padding-top:14px;border-top:1px solid #2A2622;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:13.4px;line-height:1.62;color:#8C8378;}
+/* La note d'Émilie, en marge */
+.j-note{background:var(--gold-wash,#F5EFE4);border-radius:18px;padding:24px 26px;}
+.j-note-k{font-family:'Jost',sans-serif;font-size:9.5px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-deep,#8E6F3C);margin-bottom:10px;}
+.j-note p{font-family:'Cormorant',serif;font-style:italic;font-weight:300;font-size:18px;line-height:1.78;color:#3E3831;margin:0;}
+.j-note-lead{background:#fff;border:1px solid var(--gold-lt,#CBAB73);}
 
-/* --- Pied --- */
-.jn-foot{margin-top:28px;}
-.jn-foot .jn-rule-top{margin-bottom:8px;}
-.jn-foot{display:flex;justify-content:space-between;font-family:'Jost',sans-serif;font-size:9.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#8C8378;}
+.j-src{display:inline-flex;align-items:center;gap:7px;font-family:'Jost',sans-serif;font-size:10.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--stone,#8C8378);text-decoration:none;transition:color .18s;}
+.j-src:hover{color:var(--gold-deep,#8E6F3C);}
+.j-src svg{width:12px;height:12px;}
+
+/* Filet de section */
+.j-sec{text-align:center;margin:0 0 48px;position:relative;}
+.j-sec::before{content:"";position:absolute;top:50%;left:0;right:0;height:1px;background:var(--line,#E3DBCE);}
+.j-sec span{position:relative;display:inline-block;background:var(--bg,#FBF8F3);padding:0 26px;font-family:'Jost',sans-serif;font-size:10.5px;font-weight:600;letter-spacing:.26em;text-transform:uppercase;color:var(--gold-deep,#8E6F3C);}
+
+/* Brèves */
+.j-briefs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin-bottom:56px;}
+.j-brief{display:block;background:var(--paper,#FBF8F3);border:1px solid var(--line,#E3DBCE);border-radius:20px;padding:30px 32px;text-decoration:none;color:inherit;transition:border-color .2s,transform .2s,box-shadow .2s;}
+.j-brief:hover{border-color:var(--gold-lt,#CBAB73);transform:translateY(-2px);box-shadow:0 14px 34px rgba(33,28,21,.06);}
+.j-brief h4{font-family:'Cormorant',serif;font-weight:500;font-size:24px;line-height:1.26;color:var(--ink,#2A2622);margin:0 0 12px;}
+.j-brief p{font-family:'Cormorant',serif;font-weight:300;font-size:18px;line-height:1.8;color:#4A443C;margin:0 0 16px;}
+.j-brief span{display:inline-flex;align-items:center;gap:6px;font-family:'Jost',sans-serif;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--stone,#8C8378);}
+.j-brief span svg{width:11px;height:11px;}
+
+.j-foot{text-align:center;font-family:'Cormorant',serif;font-style:italic;font-size:16px;color:var(--stone,#8C8378);padding-top:36px;border-top:1px solid var(--line,#E3DBCE);}
+
+@media(max-width:1000px){
+  .j-row{grid-template-columns:1fr;gap:28px;}
+  .j-ed{grid-template-columns:1fr;gap:20px;padding-bottom:40px;margin-bottom:40px;}
+  .j-ed-sig{margin-top:4px;}
+  .j-briefs{grid-template-columns:1fr;}
+  .j-col-main p,.j-ed-right p{max-width:none;}
+}
+@media(max-width:640px){
+  .j-hero{padding:24px 0 32px;margin-bottom:36px;}
+  .j-hero h1{font-size:38px;}
+  .j-col-main h3{font-size:27px;}
+  .j-col-main p,.j-lead-body,.j-ed-right p{font-size:18.5px!important;line-height:1.85;}
+  .j-stand{font-size:19px;}
+  .j-note{padding:20px 21px;}
+  .j-brief{padding:24px 22px;}
+}
 </style>
 </head>
 <body>
@@ -2112,74 +2124,75 @@ function renderJournal(){
   if(box.dataset.done==='1') return;
 
   const arts = JOURNAL.map(a=>`
-    <article class="jn-art">
-      <div class="jn-kicker">${escapeHtml(a.cat)} <span class="jn-dot">·</span> ${escapeHtml(a.place)}</div>
-      <h3 class="jn-h">${escapeHtml(a.title)}</h3>
-      <p class="jn-b">${a.body}</p>
-      <div class="jn-why"><span class="jn-why-l">Why it matters to you</span>${a.why}</div>
-      <a class="jn-src" href="${a.url}" target="_blank" rel="noopener">${escapeHtml(a.src)} ${ICO_EXT}</a>
+    <article class="j-row">
+      <div class="j-col-main">
+        <div class="j-eyebrow">${escapeHtml(a.cat)}<b>·</b>${escapeHtml(a.place)}</div>
+        <h3>${escapeHtml(a.title)}</h3>
+        <p>${a.body}</p>
+        <a class="j-src" href="${a.url}" target="_blank" rel="noopener">${escapeHtml(a.src)} ${ICO_EXT}</a>
+      </div>
+      <aside class="j-col-note">
+        <div class="j-note">
+          <div class="j-note-k">Why it matters to you</div>
+          <p>${a.why}</p>
+        </div>
+      </aside>
     </article>`).join('');
 
   const briefs = JOURNAL_BRIEFS.map(b=>`
-    <div class="jn-brief">
+    <a class="j-brief" href="${b.url}" target="_blank" rel="noopener">
       <h4>${escapeHtml(b.t)}</h4>
       <p>${escapeHtml(b.b)}</p>
-      <a href="${b.url}" target="_blank" rel="noopener">${escapeHtml(b.src)} ${ICO_EXT}</a>
-    </div>`).join('<div class="jn-brief-rule"></div>');
+      <span>${escapeHtml(b.src)} ${ICO_EXT}</span>
+    </a>`).join('');
 
   box.innerHTML = `
-  <div class="jn-paper">
+  <div class="j">
 
-    <header class="jn-masthead">
-      <div class="jn-rule-top"></div>
-      <div class="jn-mh-line">
-        <span>${escapeHtml(JOURNAL_NO)}</span>
-        <span class="jn-mh-mid">Maison Amarine</span>
-        <span>Confidential</span>
-      </div>
-      <h1 class="jn-title">The&nbsp;Amarine&nbsp;Journal</h1>
-      <div class="jn-strap">${escapeHtml(JOURNAL_STRAP)}</div>
-      <div class="jn-dateline">
-        <span class="jn-dl-l"></span>
-        <span class="jn-dl-t">${escapeHtml(JOURNAL_DATE)}</span>
-        <span class="jn-dl-l"></span>
-      </div>
+    <header class="j-hero">
+      <div class="j-badge">${escapeHtml(JOURNAL_NO)}<b>·</b>${escapeHtml(JOURNAL_DATE)}</div>
+      <h1>The Amarine Journal</h1>
+      <p>${escapeHtml(JOURNAL_STRAP)}</p>
     </header>
 
-    <section class="jn-editorial">
-      <div class="jn-ed-l">From the editor</div>
-      <h2>${escapeHtml(JOURNAL_EDITORIAL.title)}</h2>
-      <p>${escapeHtml(JOURNAL_EDITORIAL.text)}</p>
-      <div class="jn-ed-sig">É. M.</div>
+    <section class="j-ed">
+      <div class="j-ed-left">
+        <div class="j-ed-k">From the editor</div>
+        <div class="j-ed-sig">Émilie</div>
+      </div>
+      <div class="j-ed-right">
+        <h2>${escapeHtml(JOURNAL_EDITORIAL.title)}</h2>
+        <p>${escapeHtml(JOURNAL_EDITORIAL.text)}</p>
+      </div>
     </section>
 
-    <section class="jn-lead">
-      <div class="jn-kicker jn-kicker-lead">${escapeHtml(JOURNAL_LEAD.cat)} <span class="jn-dot">·</span> ${escapeHtml(JOURNAL_LEAD.place)}</div>
-      <h2 class="jn-lead-h">${escapeHtml(JOURNAL_LEAD.title)}</h2>
-      <p class="jn-standfirst">${escapeHtml(JOURNAL_LEAD.standfirst)}</p>
-      <p class="jn-lead-b jn-drop">${JOURNAL_LEAD.body}</p>
-      <div class="jn-why"><span class="jn-why-l">Why it matters to you</span>${JOURNAL_LEAD.why}</div>
-      <a class="jn-src" href="${JOURNAL_LEAD.url}" target="_blank" rel="noopener">${escapeHtml(JOURNAL_LEAD.src)} ${ICO_EXT}</a>
-    </section>
-
-    <div class="jn-section-rule"><span>The Openings</span></div>
-
-    <div class="jn-cols">
-      <div class="jn-main">${arts}</div>
-      <aside class="jn-side">
-        <div class="jn-side-h">In Brief</div>
-        ${briefs}
-        <div class="jn-colophon">
-          The Amarine Journal is compiled each week for the mentees of Maison Amarine. Every story is real and linked to its source. Read it the way an insider reads a room: closely, and without ever repeating what you have read.
+    <article class="j-lead">
+      <div class="j-lead-top">
+        <div class="j-eyebrow j-eyebrow-c">${escapeHtml(JOURNAL_LEAD.cat)}<b>·</b>${escapeHtml(JOURNAL_LEAD.place)}</div>
+        <h2>${escapeHtml(JOURNAL_LEAD.title)}</h2>
+        <p class="j-stand">${escapeHtml(JOURNAL_LEAD.standfirst)}</p>
+      </div>
+      <div class="j-row">
+        <div class="j-col-main">
+          <p class="j-lead-body">${JOURNAL_LEAD.body}</p>
+          <a class="j-src" href="${JOURNAL_LEAD.url}" target="_blank" rel="noopener">${escapeHtml(JOURNAL_LEAD.src)} ${ICO_EXT}</a>
         </div>
-      </aside>
-    </div>
+        <aside class="j-col-note">
+          <div class="j-note j-note-lead">
+            <div class="j-note-k">Why it matters to you</div>
+            <p>${JOURNAL_LEAD.why}</p>
+          </div>
+        </aside>
+      </div>
+    </article>
 
-    <footer class="jn-foot">
-      <div class="jn-rule-top"></div>
-      <span>Maison Amarine · The Private Concierge Academy</span>
-      <span>${escapeHtml(JOURNAL_DATE)}</span>
-    </footer>
+    <div class="j-sec"><span>The openings</span></div>
+    ${arts}
+
+    <div class="j-sec"><span>In brief</span></div>
+    <div class="j-briefs">${briefs}</div>
+
+    <footer class="j-foot">Compiled each week for the mentees of Maison Amarine. Every story is real, and linked to its source.</footer>
 
   </div>`;
   box.dataset.done='1';
