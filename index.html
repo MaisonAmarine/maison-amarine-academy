@@ -610,6 +610,38 @@
   .wc-step.done .wc-step-ic{background:var(--gold);}
   .wc-step.done .wc-step-ic svg{stroke:#fff;}
 </style>
+
+<style>
+/* ===== SUBMIT ZONE (Module 4) ===== */
+.sub-pill{display:inline-block;font-size:11px;font-weight:600;letter-spacing:.04em;padding:2px 9px;border-radius:20px;margin-left:7px;vertical-align:middle;}
+.sub-pill.todo{background:#F1EDE5;color:#8C8378;}
+.sub-pill.sent{background:var(--gold-wash,#F5EFE4);color:var(--gold-deep,#8E6F3C);}
+.sub-pill.seen{background:#E7F1E9;color:#3F7A52;}
+.sv-submit{margin-top:26px;border:1px solid var(--line,#E3DBCE);background:var(--paper,#FBF8F3);border-radius:16px;padding:22px 24px;}
+.sv-submit h3{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:var(--ink,#2A2622);margin:0 0 4px;}
+.sv-submit .ss-lede{font-size:13.5px;color:var(--stone,#8C8378);line-height:1.6;margin:0 0 16px;}
+.ss-drop{border:1.5px dashed var(--gold-lt,#CBAB73);border-radius:13px;background:#fff;padding:24px;text-align:center;cursor:pointer;transition:background .18s,border-color .18s;}
+.ss-drop:hover{background:var(--gold-wash,#F5EFE4);border-color:var(--gold,#B08D4F);}
+.ss-drop svg{width:26px;height:26px;stroke:var(--gold,#B08D4F);margin-bottom:7px;}
+.ss-drop .d1{font-size:14px;font-weight:600;color:var(--ink,#2A2622);}
+.ss-drop .d2{font-size:12.5px;color:var(--stone,#8C8378);margin-top:3px;}
+.ss-file{display:flex;align-items:center;gap:12px;background:#fff;border:1px solid var(--line,#E3DBCE);border-radius:13px;padding:14px 16px;}
+.ss-file .fi{width:34px;height:34px;flex-shrink:0;border-radius:9px;background:var(--gold-wash,#F5EFE4);display:flex;align-items:center;justify-content:center;}
+.ss-file .fi svg{width:17px;height:17px;stroke:var(--gold-deep,#8E6F3C);}
+.ss-file .fn{flex:1;min-width:0;}
+.ss-file .fn a{font-size:14px;font-weight:600;color:var(--ink,#2A2622);text-decoration:none;display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.ss-file .fn a:hover{color:var(--gold-deep,#8E6F3C);}
+.ss-file .fd{font-size:12px;color:var(--stone,#8C8378);margin-top:2px;}
+.ss-replace{font-size:12.5px;font-weight:600;color:var(--gold-deep,#8E6F3C);background:none;border:none;cursor:pointer;padding:6px 10px;border-radius:8px;flex-shrink:0;}
+.ss-replace:hover{background:var(--gold-wash,#F5EFE4);}
+.ss-fb{margin-top:14px;background:#fff;border:1px solid var(--line,#E3DBCE);border-left:3px solid var(--gold,#B08D4F);border-radius:10px;padding:13px 15px;}
+.ss-fb .fbl{font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--gold-deep,#8E6F3C);margin-bottom:5px;}
+.ss-fb .fbt{font-size:13.5px;color:var(--ink,#2A2622);line-height:1.65;white-space:pre-wrap;}
+.ss-bar{height:3px;border-radius:3px;background:#EFE9DE;overflow:hidden;margin-top:12px;display:none;}
+.ss-bar.on{display:block;}
+.ss-bar i{display:block;height:100%;width:40%;background:var(--gold,#B08D4F);animation:ssmove 1s linear infinite;}
+@keyframes ssmove{0%{transform:translateX(-100%)}100%{transform:translateX(350%)}}
+</style>
 </head>
 <body>
 
@@ -761,7 +793,7 @@
     <div class="sb-foot">
       <div class="sb-user">
         <div class="av" id="sbAv">·</div>
-        <div><div class="un" id="sbName">,</div><div class="ur" id="sbRole">Student</div></div>
+        <div><div class="un" id="sbName">&nbsp;</div><div class="ur" id="sbRole">Student</div></div>
       </div>
       <div class="logout" id="logout"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9" stroke-linecap="round" stroke-linejoin="round"/></svg>Sign out</div>
     </div>
@@ -827,7 +859,7 @@
         <p><b style="color:var(--gold);font-weight:500;">Start where you can actually be taken.</b> These roles form a ladder, not a menu. Coming from luxury hospitality or private aviation, a private concierge or personal assistant role is a natural first step. Coming from elsewhere, guest relations in a villa, a chalet or a yacht is usually the honest first rung, and it climbs quickly. Estate manager and chief of staff are the summit of a career, not the exit of a programme. Choose the rung you can reach, and be impeccable on it.</p>
       </div>
       <div class="block-title">The roles this craft leads to</div>
-      <div class="block-sub">What each one does, what it typically pays in 2026, and where it sits on the ladder.</div>
+      <div class="block-sub">What each one does, what it typically pays, and where it sits on the ladder.</div>
       <div class="roles">
         <div class="role">
           <h4>Private Concierge / Lifestyle Manager</h4>
@@ -1263,28 +1295,28 @@ function renderRegister(){
 const WEEKS = [
   {no:1, pillar:"Savoir", title:"The World You Are Entering", sub:"Who the ultra-wealthy are, and what they truly want.", codeTitle:"Reading the client beneath the request",
    obj:"Before any skill, you'll understand the client. This week changes how you see wealth, from the outside myth to the inside reality.",
-   lessons:[["Watch the lesson","Video · 22 min + the full written course","video","Maison-Amarine-W1-Module-1-The-Lesson.pdf"],["Read the insider codes","Confidential note","note","Maison-Amarine-W1-Module-2-The-Insider-Codes.pdf"],["Do the practice","Ten cases, and what they test","task","Maison-Amarine-W1-Module-3-The-Practice.pdf"],["Create your deliverable","Your client empathy map","file","Maison-Amarine-W1-Module-4-The-Deliverable.pdf"]]},
+   lessons:[["Watch the lesson","Video · 18 min","video"],["Read the insider codes","Confidential note","note"],["Do the practice","Client empathy case study","task"],["Create your deliverable","Your client empathy map","file"]]},
   {no:2, pillar:"Savoir", title:"The Codes of Luxury", sub:"The culture and etiquette that signal you belong.", codeTitle:"The words you'll never hear in a luxury setting",
    obj:"This world runs on codes. This week you'll gain the cultural fluency to move within it, including the words you'll never hear in a luxury setting.",
-   lessons:[["Watch the lesson","Video · 22 min","video"],["Read the insider codes","Confidential note","note","Maison-Amarine-Note-W2-The-Codes-of-Luxury.pdf"],["Do the practice","Build your reference library","task"],["Create your deliverable","Your annotated Luxury Codes","file"]]},
+   lessons:[["Watch the lesson","Video · 22 min","video"],["Read the insider codes","Confidential note","note"],["Do the practice","Build your reference library","task"],["Create your deliverable","Your annotated Luxury Codes","file"]]},
   {no:3, pillar:"Savoir-être", title:"Discretion, Trust & Presence", sub:"The posture that makes you irreplaceable.", codeTitle:"How trust is built, and instantly broken",
    obj:"The most valuable quality in this world. This week is all about who you become, how you carry yourself and earn deep trust.",
-   lessons:[["Watch the lesson","Video · 20 min","video"],["Read the insider codes","Confidential note","note","Maison-Amarine-Note-W3-Discretion-Trust-and-Presence.pdf"],["Do the practice","Scenario training","task"],["Create your deliverable","Your personal code of conduct","file"]]},
+   lessons:[["Watch the lesson","Video · 20 min","video"],["Read the insider codes","Confidential note","note"],["Do the practice","Scenario training","task"],["Create your deliverable","Your personal code of conduct","file"]]},
   {no:4, pillar:"Savoir-être", title:"The Art of Anticipation & Service", sub:"Solving what was never even asked.", codeTitle:"Anticipating three steps ahead",
    obj:"Great service reacts fast; exceptional service means the moment never needed reacting to at all. Learn the method of anticipation.",
-   lessons:[["Watch the lesson","Video · 19 min","video"],["Read the insider codes","Confidential note","note","Maison-Amarine-Note-W4-The-Art-of-Anticipation.pdf"],["Do the practice","Anticipation drill","task"],["Create your deliverable","Your anticipation playbook","file"]]},
+   lessons:[["Watch the lesson","Video · 19 min","video"],["Read the insider codes","Confidential note","note"],["Do the practice","Anticipation drill","task"],["Create your deliverable","Your anticipation playbook","file"]]},
   {no:5, pillar:"Savoir-faire", title:"The Operational Toolkit", sub:"Sourcing, logistics, vendors, budgets, staff.", codeTitle:"Building and protecting your black book",
    obj:"This week turns posture into real capability, the practical systems that let you deliver reliably, at the highest level.",
-   lessons:[["Watch the lesson","Video · 24 min","video"],["Read the insider codes","Confidential note","note","Maison-Amarine-Note-W5-The-Craft.pdf"],["Do the practice","Build a mock itinerary","task"],["Create your deliverable","Your operations toolkit","file"]]},
+   lessons:[["Watch the lesson","Video · 24 min","video"],["Read the insider codes","Confidential note","note"],["Do the practice","Build a mock itinerary","task"],["Create your deliverable","Your operations toolkit","file"]]},
   {no:6, pillar:"Savoir-faire", title:"The Network & The Market", sub:"Where the roles are, and how this world hires.", codeTitle:"Turning cold outreach into a warm introduction",
    obj:"Skills need access. This week gives you the map and the method to build your own network, the tools, not a ready-made address book.",
-   lessons:[["Watch the lesson","Video · 21 min","video"],["Read the insider codes","Confidential note","note","Maison-Amarine-Note-W6-The-Map-of-the-Market.pdf"],["Do the practice","Network mapping","task"],["Create your deliverable","Your market entry plan","file"]]},
+   lessons:[["Watch the lesson","Video · 21 min","video"],["Read the insider codes","Confidential note","note"],["Do the practice","Network mapping","task"],["Create your deliverable","Your market entry plan","file"]]},
   {no:7, pillar:"Savoir-faire", title:"Your Candidacy", sub:"Presenting yourself to a world that does not like to be sold to.", codeTitle:"How to be chosen without ever selling yourself",
    obj:"This week we build the dossier that opens interviews: your CV, your letter, your references, and the composure to sit in front of a family or an agency without ever appearing to sell.",
-   lessons:[["Watch the lesson","Video · 20 min","video"],["Read the insider codes","Confidential note","note","Maison-Amarine-Note-W7-Your-Candidacy.pdf"],["Do the practice","Mock interview & references","task"],["Create your deliverable","Your complete candidacy dossier","file"]]},
+   lessons:[["Watch the lesson","Video · 20 min","video"],["Read the insider codes","Confidential note","note"],["Do the practice","Mock interview & references","task"],["Create your deliverable","Your complete candidacy dossier","file"]]},
   {no:8, pillar:"All pillars", title:"Your First Ninety Days", sub:"Entering a house, and being kept.", codeTitle:"The first ninety days inside a house",
    obj:"Getting in is not the achievement. Being kept is. This week is the method for your first ninety days: learning a house, earning its trust, and never losing it.",
-   lessons:[["Watch the lesson","Video · 23 min","video"],["Read the insider codes","Confidential note","note","Maison-Amarine-Note-W8-Your-First-Ninety-Days.pdf"],["Do the practice","Your entry plan, week by week","task"],["Your graduation session","Final mentorship review","mentor"]]},
+   lessons:[["Watch the lesson","Video · 23 min","video"],["Read the insider codes","Confidential note","note"],["Do the practice","Your entry plan, week by week","task"],["Your graduation session","Final mentorship review","mentor"]]},
 ];
 
 const AGENCIES = [
@@ -1335,6 +1367,7 @@ const ICONS = {
 };
 
 let USER=null, PROFILE=null;
+let SUBMISSIONS={};  // {week_number: row}
 let state = { completed:{}, lessons:{} };
 
 function initials(n){return (n||"?").split(' ').map(w=>w[0]).slice(0,2).join('').toUpperCase();}
@@ -1375,7 +1408,7 @@ async function onSignedIn(user){
   USER=user;
   document.getElementById('gate').classList.add('hidden');
   document.getElementById('app').classList.remove('hidden');
-  await loadProfile(); await loadProgress();
+  await loadProfile(); await loadProgress(); await loadSubmissions();
   renderWeeks(); renderAgencies(); initJobTabs(); initCalAdd(); renderMyEvents();
   loadCourseContent();
   loadMessages(false);
@@ -1579,26 +1612,26 @@ function openWeek(no){
       title: s.title || (w.lessons[i]?.[0]||''),
       subtitle: s.subtitle || (w.lessons[i]?.[1]||''),
       icon: w.lessons[i]?.[2] || 'file',
-      video_url: s.video_url||'', text: s.text||'',
-      doc_url: s.doc_url || (w.lessons[i]?.[3]||''),
-      doc_name: s.doc_name || (w.lessons[i]?.[3]? 'Open the document (PDF)':'')
+      video_url: s.video_url||'', text: s.text||'', doc_url: s.doc_url||'', doc_name: s.doc_name||''
     }));
   } else {
     // base d'origine, sans contenu
-    steps = w.lessons.map(ls=>({title:ls[0], subtitle:ls[1], icon:ls[2], video_url:'', text:'',
-                                doc_url: ls[3]||'', doc_name: ls[3]? 'Open the document (PDF)':''}));
+    steps = w.lessons.map(ls=>({title:ls[0], subtitle:ls[1], icon:ls[2], video_url:'', text:'', doc_url:'', doc_name:''}));
   }
   if(!state.lessons[no])state.lessons[no]=steps.map(()=>false);
   const list=document.getElementById('lessonList');list.innerHTML="";
   steps.forEach((s,i)=>{
     const checked=state.lessons[no][i];
-    const hasContent = s.video_url || s.text || s.doc_url;
+    const isSubmit = (i===3);
+    const hasContent = s.video_url || s.text || s.doc_url || isSubmit;
+    const st = isSubmit ? subState(no) : null;
+    const pill = st ? ` <span class="sub-pill ${st.k}">${st.label}</span>` : '';
     const row=document.createElement('div');row.className="lesson"+(checked?" done":"")+(hasContent?" has-content":"");
-    row.innerHTML=`<div class="lesson-main"><div class="lesson-ic">${ICONS[s.icon]||ICONS.file}</div><div class="lesson-txt"><div class="lt">${escapeHtml(s.title)}</div><div class="lk">${escapeHtml(s.subtitle)}${hasContent?' <span class="lesson-caret">›</span>':''}</div></div><div class="lesson-check ${checked?'checked':''}">${ICONS.check}</div></div>`;
+    row.innerHTML=`<div class="lesson-main"><div class="lesson-ic">${ICONS[s.icon]||ICONS.file}</div><div class="lesson-txt"><div class="lt">${escapeHtml(s.title)}${pill}</div><div class="lk">${escapeHtml(s.subtitle)}${hasContent?' <span class="lesson-caret">›</span>':''}</div></div><div class="lesson-check ${checked?'checked':''}">${ICONS.check}</div></div>`;
     // clic sur la case = cocher
     row.querySelector('.lesson-check').addEventListener('click',async(e)=>{e.stopPropagation();state.lessons[no][i]=!state.lessons[no][i];e.currentTarget.classList.toggle('checked');row.classList.toggle('done');await saveWeek(no);renderWeeks();});
     // clic sur l'étape = ouvrir la vue plein écran (si contenu)
-    if(hasContent){ row.querySelector('.lesson-main').addEventListener('click',(e)=>{ if(e.target.closest('.lesson-check'))return; openStepView(s); }); }
+    if(hasContent){ row.querySelector('.lesson-main').addEventListener('click',(e)=>{ if(e.target.closest('.lesson-check'))return; openStepView(s, no, i); }); }
     list.appendChild(row);
   });
   const btn=document.getElementById('markWeek');
@@ -1609,7 +1642,7 @@ function openWeek(no){
 function closeModal(){document.getElementById('overlay').classList.remove('open');document.body.style.overflow="";closeStepView();}
 
 // ---- Vue plein écran d'une étape (texte, puis vidéo, puis document) ----
-function openStepView(s){
+function openStepView(s, weekNo, stepIdx){
   const body=document.getElementById('stepViewBody');
   let html=`<div class="sv-eyebrow">${escapeHtml(s.subtitle||'Lesson')}</div><h2 class="sv-title">${escapeHtml(s.title)}</h2>`;
   // 1) TEXTE d'abord
@@ -1622,13 +1655,98 @@ function openStepView(s){
   if(emb){ html+=`<div class="wc-video"><iframe src="${emb}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>`; }
   // 3) DOCUMENT enfin
   if(s.doc_url){ html+=`<a class="wc-doc" href="${s.doc_url}" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>${escapeHtml(s.doc_name||'Document')}</a>`; }
+  // 4) ZONE DE DÉPÔT (Module 4 uniquement)
+  if(stepIdx===3 && weekNo){ html += submitPanelHTML(weekNo); }
   body.innerHTML=html;
+  if(stepIdx===3 && weekNo){ wireSubmitPanel(weekNo); }
   body.scrollTop=0;
   document.querySelector('.modal').classList.add('step-open');
 }
 function closeStepView(){ const m=document.querySelector('.modal'); if(m)m.classList.remove('step-open'); }
 
 
+
+
+// ================= SUBMISSIONS (dépôt des travaux, Module 4) =================
+async function loadSubmissions(){
+  SUBMISSIONS={};
+  try{
+    const {data}=await sb.from('submissions').select('*').eq('user_id',USER.id);
+    (data||[]).forEach(r=>{ SUBMISSIONS[r.week_number]=r; });
+  }catch(e){}
+}
+function subState(no){
+  const r=SUBMISSIONS[no];
+  if(!r) return {k:'todo', label:'Not submitted'};
+  if(r.status==='reviewed') return {k:'seen', label:'Reviewed'};
+  return {k:'sent', label:'Submitted'};
+}
+function fmtDate(iso){
+  try{ return new Date(iso).toLocaleDateString(undefined,{day:'numeric',month:'short',year:'numeric'}); }catch(e){ return ''; }
+}
+const ICO_DOC='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>';
+const ICO_UP='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M12 3v13"/><path d="M7 8l5-5 5 5"/></svg>';
+
+function submitPanelHTML(no){
+  const r=SUBMISSIONS[no], st=subState(no);
+  let inner;
+  if(r && r.file_url){
+    inner = `<div class="ss-file">
+      <div class="fi">${ICO_DOC}</div>
+      <div class="fn"><a href="${r.file_url}" target="_blank" rel="noopener">${escapeHtml(r.file_name||'Your deliverable')}</a>
+      <div class="fd">Submitted ${fmtDate(r.submitted_at)}${r.status==='reviewed'?' · reviewed by Émilie':''}</div></div>
+      <button class="ss-replace" id="ssReplace">Replace</button>
+    </div>`;
+    if(r.feedback && r.feedback.trim()){
+      inner += `<div class="ss-fb"><div class="fbl">Émilie's feedback</div><div class="fbt">${escapeHtml(r.feedback)}</div></div>`;
+    }
+  } else {
+    inner = `<div class="ss-drop" id="ssDrop">${ICO_UP}<div class="d1">Upload your deliverable</div><div class="d2">One PDF, before your mentorship session</div></div>`;
+  }
+  return `<div class="sv-submit">
+    <h3>Submit your work <span class="sub-pill ${st.k}">${st.label}</span></h3>
+    <p class="ss-lede">Everything you produced this week goes here, in a single PDF. Not by email, and not in the chat. I read it before your session, so that the session is spent on the correction rather than on the reading.</p>
+    ${inner}
+    <div class="ss-bar" id="ssBar"><i></i></div>
+    <input type="file" id="ssFile" accept=".pdf,.doc,.docx" style="display:none;">
+  </div>`;
+}
+
+function wireSubmitPanel(no){
+  const inp=document.getElementById('ssFile'); if(!inp) return;
+  const open=()=>inp.click();
+  const drop=document.getElementById('ssDrop'); if(drop) drop.addEventListener('click',open);
+  const rep=document.getElementById('ssReplace'); if(rep) rep.addEventListener('click',open);
+  inp.addEventListener('change',async()=>{
+    const f=inp.files&&inp.files[0]; if(!f) return;
+    if(f.size>25*1024*1024){ toast('File too large, 25 MB maximum'); return; }
+    const bar=document.getElementById('ssBar'); if(bar) bar.classList.add('on');
+    const ok=await uploadSubmission(no,f);
+    if(bar) bar.classList.remove('on');
+    if(!ok){ toast('Could not upload, please try again'); return; }
+    await loadSubmissions();
+    const body=document.getElementById('stepViewBody');
+    const panel=body.querySelector('.sv-submit');
+    if(panel){ const tmp=document.createElement('div'); tmp.innerHTML=submitPanelHTML(no); panel.replaceWith(tmp.firstElementChild); wireSubmitPanel(no); }
+    toast('Deliverable submitted');
+    if(activeWeek===no) openModal(no);
+  });
+}
+
+async function uploadSubmission(no,file){
+  try{
+    const ext=(file.name.split('.').pop()||'pdf').toLowerCase();
+    const path=`${USER.id}/week-${no}-${Date.now()}.${ext}`;
+    const {error:upErr}=await sb.storage.from('submissions').upload(path,file,{upsert:false,contentType:file.type||'application/pdf'});
+    if(upErr) return false;
+    const {data:pub}=sb.storage.from('submissions').getPublicUrl(path);
+    const row={user_id:USER.id, week_number:no, file_url:pub.publicUrl, file_name:file.name,
+               submitted_at:new Date().toISOString(), status:'submitted', reviewed_at:null, feedback:null};
+    const {error:dbErr}=await sb.from('submissions').upsert(row,{onConflict:'user_id,week_number'});
+    if(dbErr) return false;
+    return true;
+  }catch(e){ return false; }
+}
 
 // ---- contenu éditable des cours (édité depuis l'admin) ----
 let COURSE_CONTENT = {}; // {week_number: {title,intro,lesson_text,video_url,documents}}

@@ -298,6 +298,22 @@
   .we-status{font-size:13px;color:var(--green);font-weight:500;}
   @media(max-width:800px){.courses-layout{flex-direction:column;}.weeks-list{width:100%;flex-direction:row;overflow-x:auto;}}
 </style>
+
+<style>
+/* ===== SUBMISSIONS (admin) ===== */
+.sub-chip{display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:600;padding:3px 10px;border-radius:20px;}
+.sub-chip.none{background:#F1EDE5;color:#8C8378;}
+.sub-chip.some{background:var(--gold-wash,#F5EFE4);color:var(--gold-deep,#8E6F3C);}
+.sub-chip.all{background:#E7F1E9;color:#3F7A52;}
+.pg-sub{display:flex;align-items:center;gap:9px;margin-top:7px;background:var(--paper,#FBF8F3);border:1px solid var(--line,#E3DBCE);border-radius:11px;padding:9px 12px;}
+.pg-sub a{flex:1;min-width:0;font-size:13px;font-weight:600;color:var(--ink,#2A2622);text-decoration:none;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.pg-sub a:hover{color:var(--gold-deep,#8E6F3C);}
+.pg-sub .pd{font-size:11.5px;color:var(--stone,#8C8378);flex-shrink:0;}
+.pg-rev{font-size:12px;font-weight:600;border:1px solid var(--gold-lt,#CBAB73);color:var(--gold-deep,#8E6F3C);background:#fff;border-radius:8px;padding:5px 11px;cursor:pointer;flex-shrink:0;}
+.pg-rev:hover{background:var(--gold,#B08D4F);color:#fff;border-color:var(--gold,#B08D4F);}
+.pg-rev.done{background:#E7F1E9;color:#3F7A52;border-color:#CFE3D5;cursor:default;}
+.pg-none{font-size:12.5px;color:var(--stone,#8C8378);margin-top:5px;font-style:italic;}
+</style>
 </head>
 <body>
 
@@ -367,7 +383,7 @@
           <div class="search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4" stroke-linecap="round"/></svg><input type="text" id="searchInput" placeholder="Search…"></div>
         </div>
         <table>
-          <thead><tr><th>Student</th><th>Status</th><th>Progress</th><th>Access</th><th></th></tr></thead>
+          <thead><tr><th>Student</th><th>Status</th><th>Progress</th><th>Deliverables</th><th>Access</th><th></th></tr></thead>
           <tbody id="studentRows"></tbody>
         </table>
       </div>
@@ -431,7 +447,7 @@
       <div class="set-card">
         <h3>Academy</h3>
         <p>These details appear in student invitations.</p>
-        <div class="field"><label>Academy name</label><input type="text" value="Maison Amarine, The Private Concierge Academy" readonly></div>
+        <div class="field"><label>Academy name</label><input type="text" value="Maison Amarine — The Luxury Concierge Academy" readonly></div>
         <div class="field"><label>Student portal link</label><input type="text" value="https://themaisonamarine.com/academy" readonly></div>
       </div>
       <div class="set-card">
@@ -540,7 +556,7 @@
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
 // ====== CONFIG SUPABASE ======
-const WEEK_TITLES=["The World You Are Entering","The Codes of Luxury","Discretion, Trust & Presence","The Art of Anticipation & Service","The Operational Toolkit","The Network & The Market","Positioning & Pricing Yourself","Your Launch — Role or Business"];
+const WEEK_TITLES=["The World You Are Entering","The Codes of Luxury","Discretion, Trust & Presence","The Art of Anticipation & Service","The Operational Toolkit","The Network & The Market","Your Candidacy","Your First Ninety Days"];
 const SUPABASE_URL = "https://beexlhyvcngeopkkxoco.supabase.co";
 const SUPABASE_KEY = "sb_publishable_qVIwPd3lkJnSoObnYMuUKg_mn0i2LY9";
 const ADMIN_EMAIL = "academy@themaisonamarine.com";
@@ -590,6 +606,10 @@ async function loadStudents(){
   if(error){toast('Could not load students');students=[];renderStudents();return;}
   // charger toute la progression en une fois (l'admin peut tout lire)
   const {data:progress}=await sb.from('week_progress').select('*');
+  // charger tous les rendus
+  const {data:subs}=await sb.from('submissions').select('*');
+  const subsBy={};
+  (subs||[]).forEach(r=>{ if(!subsBy[r.user_id])subsBy[r.user_id]={}; subsBy[r.user_id][r.week_number]=r; });
   const byUser={};
   (progress||[]).forEach(r=>{
     if(!byUser[r.user_id])byUser[r.user_id]={done:0,weeks:{}};
@@ -606,8 +626,12 @@ async function loadStudents(){
     if(pr.done>=8) status='completed';
     else if(pr.started||pr.done>0) status='active';
     else status='invited';
+    const sub=subsBy[p.id]||{};
+    const subCount=Object.keys(sub).length;
     return {
       id:p.id,
+      subs:sub,
+      subCount:subCount,
       name:p.full_name||(p.email||'').split('@')[0],
       email:p.email||'',
       cohort:p.cohort||'Cohort I',
@@ -624,13 +648,14 @@ function renderStudents(){
   const q=(document.getElementById('searchInput').value||"").toLowerCase();
   const body=document.getElementById('studentRows');body.innerHTML="";
   const filtered=students.filter(s=>s.name.toLowerCase().includes(q)||s.email.toLowerCase().includes(q));
-  if(filtered.length===0){body.innerHTML='<tr class="empty-row"><td colspan="5">No students yet. Click "Create access" to invite your first.</td></tr>';return;}
+  if(filtered.length===0){body.innerHTML='<tr class="empty-row"><td colspan="6">No students yet. Click "Create access" to invite your first.</td></tr>';return;}
   filtered.forEach((s)=>{
     const tr=document.createElement('tr');
     tr.innerHTML=`
       <td><div class="st-name"><div class="st-av">${initials(s.name)}</div><div><div class="nm">${s.name}</div><div class="em">${s.email}</div></div></div></td>
       <td>${statusBadge(s.status)}</td>
       <td><div class="prog-mini"><div class="track"><div class="fill" style="width:${s.progress}%"></div></div><span class="pct">${s.weeksDone}/8</span></div></td>
+      <td><span class="sub-chip ${s.subCount===0?'none':(s.subCount>=8?'all':'some')}">${s.subCount}/8</span></td>
       <td><span style="font-size:12.5px;color:var(--stone)">${s.cohort}</span></td>
       <td><div class="row-actions"><button class="icon-btn" title="View progress" data-id="${s.id}" data-act="view"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg></button><button class="icon-btn del" title="Delete access" data-id="${s.id}" data-act="del"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16M9 7V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2M6 7l1 13h10l1-13" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div></td>`;
     body.appendChild(tr);
@@ -675,9 +700,38 @@ function showProgress(s){
     const state=done?'<span style="color:var(--green);font-weight:600;">✓ Completed</span>':(w&&lessons>0?`<span style="color:var(--gold-deep);font-weight:600;">In progress · ${lessons}/4 steps</span>`:'<span style="color:var(--stone);">Not started</span>');
     const row=document.createElement('div');
     row.style.cssText='display:flex;align-items:center;gap:14px;padding:13px 0;border-bottom:1px solid var(--line);';
-    row.innerHTML=`<div style="width:34px;height:34px;flex-shrink:0;border-radius:9px;background:${done?'var(--gold)':'var(--gold-wash)'};color:${done?'#fff':'var(--gold-deep)'};display:flex;align-items:center;justify-content:center;font-family:'Cormorant',serif;font-weight:700;font-size:15px;">${n}</div><div style="flex:1;min-width:0;"><div style="font-size:14px;font-weight:600;color:var(--ink);">${WEEK_TITLES[n-1]}</div><div style="font-size:12.5px;margin-top:1px;">${state}</div></div>`;
+    const sub=(s.subs||{})[n];
+    let subHtml;
+    if(sub && sub.file_url){
+      const d=new Date(sub.submitted_at).toLocaleDateString(undefined,{day:'numeric',month:'short'});
+      const reviewed = sub.status==='reviewed';
+      subHtml = `<div class="pg-sub">
+        <a href="${sub.file_url}" target="_blank" rel="noopener">${escapeHtml(sub.file_name||'Deliverable')}</a>
+        <span class="pd">${d}</span>
+        <button class="pg-rev ${reviewed?'done':''}" data-w="${n}" ${reviewed?'disabled':''}>${reviewed?'Reviewed':'Mark reviewed'}</button>
+      </div>`;
+    } else {
+      subHtml = `<div class="pg-none">No deliverable submitted</div>`;
+    }
+    row.style.cssText='padding:13px 0;border-bottom:1px solid var(--line);';
+    row.innerHTML=`<div style="display:flex;align-items:center;gap:14px;"><div style="width:34px;height:34px;flex-shrink:0;border-radius:9px;background:${done?'var(--gold)':'var(--gold-wash)'};color:${done?'#fff':'var(--gold-deep)'};display:flex;align-items:center;justify-content:center;font-family:'Cormorant',serif;font-weight:700;font-size:15px;">${n}</div><div style="flex:1;min-width:0;"><div style="font-size:14px;font-weight:600;color:var(--ink);">${WEEK_TITLES[n-1]}</div><div style="font-size:12.5px;margin-top:1px;">${state}</div></div></div>${subHtml}`;
     box.appendChild(row);
   }
+  box.querySelectorAll('.pg-rev').forEach(b=>{
+    if(b.disabled) return;
+    b.addEventListener('click',async()=>{
+      const wk=parseInt(b.dataset.w,10);
+      b.disabled=true; b.textContent='Saving...';
+      const {error}=await sb.from('submissions')
+        .update({status:'reviewed', reviewed_at:new Date().toISOString()})
+        .eq('user_id',s.id).eq('week_number',wk);
+      if(error){ toast('Could not save'); b.disabled=false; b.textContent='Mark reviewed'; return; }
+      b.classList.add('done'); b.textContent='Reviewed';
+      if(s.subs && s.subs[wk]) s.subs[wk].status='reviewed';
+      toast('Marked as reviewed');
+      await loadStudents();
+    });
+  });
   document.getElementById('progressOverlay').classList.add('open');
 }
 document.getElementById('pgClose').addEventListener('click',()=>document.getElementById('progressOverlay').classList.remove('open'));
