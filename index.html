@@ -981,6 +981,33 @@
   .mj-name{font-size:38px;} .mj-lead h2{font-size:27px;} .mj-art h3{font-size:24px;}
   .mj-body p,.mj-lead .mj-body p{font-size:18px;line-height:1.78;}
 }
+/* Journal paginated reader + archive */
+.mj-idx{display:block;width:100%;text-align:left;cursor:pointer;font-family:'Jost',sans-serif;}
+.mj-idx:hover{border-color:var(--gold-lt);box-shadow:0 26px 54px rgba(33,28,21,.11),0 3px 8px rgba(33,28,21,.04);transform:translateY(-2px);}
+.mj-idx h3{font-family:'Cormorant',serif;font-weight:500;font-size:27px;line-height:1.16;color:var(--ink);margin:0 0 12px;max-width:46ch;}
+.mj-idx h2{font-family:'Cormorant',serif;font-weight:500;font-size:clamp(28px,4vw,42px);line-height:1.1;color:var(--ink);margin:0 auto 16px;max-width:24ch;letter-spacing:-.01em;}
+.mj-teaser{font-family:'Cormorant',serif;font-weight:300;font-size:18px;line-height:1.6;color:var(--ink-soft);margin:0 0 16px;max-width:70ch;}
+.mj-read{display:inline-flex;align-items:center;gap:7px;font-family:'Jost',sans-serif;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-deep);}
+.mj-idx-lead{border-top:3px solid var(--gold);text-align:center;padding-top:36px;}
+.mj-idx-lead .mj-read{justify-content:center;}
+.mj-artbar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:18px;}
+.mj-artbar-issue{font-family:'Jost',sans-serif;font-size:10.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--stone);}
+.mj-back{background:none;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:7px;font-family:'Jost',sans-serif;font-size:12.5px;font-weight:600;color:var(--gold-deep);padding:6px 2px;}
+.mj-back:hover{opacity:.6;}
+.mj-page{text-align:center;}
+.mj-page .mj-cat{justify-content:center;}
+.mj-page-h1{font-family:'Cormorant',serif;font-weight:500;font-size:clamp(32px,4.8vw,50px);line-height:1.08;color:var(--ink);letter-spacing:-.012em;margin:0 auto 20px;max-width:22ch;}
+.mj-body-lg{max-width:66ch;}
+.mj-body-lg p{font-size:20px;line-height:1.9;}
+.mj-nav{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:6px 0 4px;}
+.mj-nav-b{background:var(--paper);border:1px solid var(--line);border-radius:24px;cursor:pointer;display:inline-flex;align-items:center;gap:8px;font-family:'Jost',sans-serif;font-size:13px;font-weight:600;color:var(--ink);padding:11px 22px;transition:border-color .18s,color .18s;}
+.mj-nav-b:hover{border-color:var(--gold-lt);color:var(--gold-deep);}
+.mj-pastbar{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;background:var(--gold-wash);border:1px solid var(--gold-lt);border-radius:12px;padding:12px 18px;margin-bottom:20px;font-family:'Jost',sans-serif;font-size:13px;color:var(--ink-soft);}
+.mj-pastbar button{background:none;border:none;cursor:pointer;font-family:'Jost',sans-serif;font-size:13px;font-weight:600;color:var(--gold-deep);display:inline-flex;align-items:center;gap:6px;}
+.mj-archbtn{background:var(--ink);color:#F3EAD8;border:none;border-radius:26px;cursor:pointer;font-family:'Jost',sans-serif;font-size:13.5px;font-weight:600;letter-spacing:.03em;padding:14px 32px;display:inline-flex;align-items:center;gap:9px;margin:2px auto 26px;}
+.mj-archbtn:hover{background:#000;}
+.mj-arch-empty{background:var(--paper);border:1px dashed var(--line);border-radius:16px;padding:36px 30px;text-align:center;font-family:'Jost',sans-serif;font-size:14px;color:var(--stone);line-height:1.65;}
+.mj-arch-item h3{margin-bottom:8px;}
 
 @media(max-width:1000px){
   .j-row{grid-template-columns:1fr;gap:28px;}
@@ -3050,85 +3077,117 @@ document.querySelectorAll('.nav-item').forEach(n=>n.addEventListener('click',()=
 document.querySelectorAll('.m-tab').forEach(t=>t.addEventListener('click',()=>goPage(t.dataset.page)));
 
 // ====== THE JOURNAL ======
-function renderJournal(){
-  const box=document.getElementById('journalList');
-  if(box.dataset.done==='1') return;
-  const paras = t => (t||'').split(/\n\s*\n/).map(p=>`<p>${p.trim()}</p>`).join('');
-  const why = w => w ? `<aside class="jn-why"><div class="jn-why-k">Why this matters to you</div><p>${w}</p></aside>` : '';
-  const src = (s,u) => `<a class="jn-src" href="${u}" target="_blank" rel="noopener">Read in full at ${escapeHtml(s)} ${ICO_EXT}</a>`;
+// ====== THE AMARINE JOURNAL — lecture paginée (1 page / article) + archives ======
+const ICO_ARR='<svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+const ICO_ARL='<svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M11 6l-6 6 6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+let jEdition=null, jIsCurrent=true, jArchive=null;
+const jParas = t => (t||'').split(/\n\s*\n/).map(p=>`<p>${p.trim()}</p>`).join('');
+function jCurrentEdition(){ return {no:JOURNAL_NO,date:JOURNAL_DATE,strap:JOURNAL_STRAP,lead:JOURNAL_LEAD,articles:JOURNAL||[],briefs:JOURNAL_BRIEFS||[]}; }
+function jAllArticles(ed){ return [Object.assign({isLead:true},ed.lead)].concat(ed.articles||[]); }
+function jTeaser(a){ const t=(a.standfirst||a.body||'').split(/\n/)[0].replace(/<[^>]+>/g,''); return t.length>150? t.slice(0,148).trim()+'…' : t; }
 
-  // regrouper les articles par rubrique, dans l'ordre d'apparition
+function renderJournal(){ jEdition=jCurrentEdition(); jIsCurrent=true; renderJCover(); }
+
+function renderJCover(){
+  const box=document.getElementById('journalList'); const ed=jEdition;
   const groups=[], gi={};
-  JOURNAL.forEach(a=>{ const s=a.section||'The Stories'; if(!(s in gi)){ gi[s]=groups.length; groups.push({name:s,items:[]}); } groups[gi[s]].items.push(a); });
-  const groupsHtml = groups.map(g=>`
-    <div class="jn-sec"><span>${escapeHtml(g.name)}</span></div>
-    ${g.items.map(a=>`
-      <article class="jn-art">
-        <div class="jn-cat">${escapeHtml(a.cat)}<b>·</b>${escapeHtml(a.place)}</div>
-        <h3 class="jn-h2">${escapeHtml(a.title)}</h3>
-        <div class="jn-body">${paras(a.body)}</div>
-        ${src(a.src,a.url)}
-        ${why(a.why)}
-      </article>`).join('')}`).join('');
-
-  const briefs = JOURNAL_BRIEFS.map(b=>`
-    <a class="jn-brief" href="${b.url}" target="_blank" rel="noopener">
-      <h4>${escapeHtml(b.t)}</h4><p>${escapeHtml(b.b)}</p><span>${escapeHtml(b.src)} ${ICO_EXT}</span>
-    </a>`).join('');
-
-  // sommaire "In this issue"
-  const tocItems=[{cat:JOURNAL_LEAD.cat,title:JOURNAL_LEAD.title,id:'mj-lead'}]
-    .concat(JOURNAL.map((a,i)=>({cat:a.cat,title:a.title,id:'mj-a'+i})));
-  const toc=tocItems.map(it=>`<a class="mj-toc-item" onclick="var e=document.getElementById('${it.id}');if(e)e.scrollIntoView({behavior:'smooth',block:'start'});"><span class="mj-toc-cat">${escapeHtml(it.cat)}</span><span class="mj-toc-ti">${escapeHtml(it.title)}</span></a>`).join('');
-
-  const groups2=[], gi2={};
-  JOURNAL.forEach((a,i)=>{ const s=a.section||'The Stories'; if(!(s in gi2)){ gi2[s]=groups2.length; groups2.push({name:s,items:[]}); } groups2[gi2[s]].items.push({a,i}); });
-  const groupsCards = groups2.map(g=>`
+  (ed.articles||[]).forEach((a,i)=>{ const s=a.section||'The Stories'; if(!(s in gi)){gi[s]=groups.length;groups.push({name:s,items:[]});} groups[gi[s]].items.push({a,idx:i+1}); });
+  const groupsHtml=groups.map(g=>`
     <div class="mj-sec"><span>${escapeHtml(g.name)}</span></div>
-    ${g.items.map(({a,i})=>`
-      <article class="mj-card mj-art" id="mj-a${i}">
+    ${g.items.map(({a,idx})=>`
+      <button class="mj-card mj-idx" onclick="openJArticle(${idx})">
         <div class="mj-cat">${escapeHtml(a.cat)}<b>·</b>${escapeHtml(a.place)}</div>
         <h3>${escapeHtml(a.title)}</h3>
-        <div class="mj-body">${paras(a.body)}</div>
-        ${why(a.why)}
-        ${src(a.src,a.url)}
-      </article>`).join('')}`).join('');
-
-  const briefCards = JOURNAL_BRIEFS.map(b=>`
+        <p class="mj-teaser">${escapeHtml(jTeaser(a))}</p>
+        <span class="mj-read">Read the story ${ICO_ARR}</span>
+      </button>`).join('')}`).join('');
+  const briefCards=(ed.briefs||[]).map(b=>`
     <a class="mj-brief" href="${b.url}" target="_blank" rel="noopener">
       <h4>${escapeHtml(b.t)}</h4><p>${escapeHtml(b.b)}</p><span>${escapeHtml(b.src)} ${ICO_EXT}</span>
     </a>`).join('');
-
-  box.innerHTML = `
+  const pastBanner = jIsCurrent ? '' :
+    `<div class="mj-pastbar">You are reading a past edition. <button onclick="renderJournal()">Back to the current issue ${ICO_ARR}</button></div>`;
+  box.innerHTML=`
   <div class="mj">
+    ${pastBanner}
     <header class="mj-mast">
-      <div class="mj-issue">${escapeHtml(JOURNAL_NO)} &middot; ${escapeHtml(JOURNAL_DATE)}</div>
+      <div class="mj-issue">${escapeHtml(ed.no)} &middot; ${escapeHtml(ed.date)}</div>
       <h1 class="mj-name">The Amarine Journal</h1>
-      <div class="mj-strap">${escapeHtml(JOURNAL_STRAP)}</div>
+      <div class="mj-strap">${escapeHtml(ed.strap)}</div>
       <div class="mj-mrule"></div>
     </header>
 
-    <section class="mj-card"><div class="mj-toc-k">In this issue</div>${toc}</section>
-
-    <article class="mj-card mj-lead" id="mj-lead">
+    <button class="mj-card mj-idx mj-idx-lead" onclick="openJArticle(0)">
       <div class="mj-kicker">The lead story</div>
-      <div class="mj-cat">${escapeHtml(JOURNAL_LEAD.cat)}<b>·</b>${escapeHtml(JOURNAL_LEAD.place)}</div>
-      <h2>${escapeHtml(JOURNAL_LEAD.title)}</h2>
-      <p class="mj-stand">${escapeHtml(JOURNAL_LEAD.standfirst)}</p>
-      <div class="mj-body">${paras(JOURNAL_LEAD.body)}</div>
-      ${why(JOURNAL_LEAD.why)}
-      ${src(JOURNAL_LEAD.src,JOURNAL_LEAD.url)}
-    </article>
+      <div class="mj-cat" style="justify-content:center;">${escapeHtml(ed.lead.cat)}<b>·</b>${escapeHtml(ed.lead.place)}</div>
+      <h2>${escapeHtml(ed.lead.title)}</h2>
+      <p class="mj-stand">${escapeHtml(ed.lead.standfirst)}</p>
+      <span class="mj-read">Read the story ${ICO_ARR}</span>
+    </button>
 
-    ${groupsCards}
+    ${groupsHtml}
 
     <div class="mj-sec"><span>In brief</span></div>
     <div class="mj-briefs">${briefCards}</div>
 
+    ${ jIsCurrent ? `<div style="text-align:center;"><button class="mj-archbtn" onclick="renderJArchive()">Browse past editions ${ICO_ARR}</button></div>` : '' }
     <footer class="mj-foot">Compiled fresh each week. Every story is real and linked to its original source.</footer>
   </div>`;
-  box.dataset.done='1';
+  box.dataset.done=''; window.scrollTo(0,0);
 }
+
+function openJArticle(i){
+  const box=document.getElementById('journalList'); const ed=jEdition; const all=jAllArticles(ed);
+  if(i<0||i>=all.length) return;
+  const a=all[i];
+  const prev = i>0 ? `<button class="mj-nav-b" onclick="openJArticle(${i-1})">${ICO_ARL} Previous</button>` : `<span></span>`;
+  const next = i<all.length-1 ? `<button class="mj-nav-b" onclick="openJArticle(${i+1})">Next ${ICO_ARR}</button>` : `<span></span>`;
+  box.innerHTML=`
+  <div class="mj">
+    <div class="mj-artbar">
+      <button class="mj-back" onclick="renderJCover()">${ICO_ARL} Contents</button>
+      <span class="mj-artbar-issue">${escapeHtml(ed.no)} &middot; ${escapeHtml(ed.date)}</span>
+    </div>
+    <article class="mj-card mj-page">
+      ${a.isLead?'<div class="mj-kicker" style="text-align:center;">The lead story</div>':''}
+      <div class="mj-cat">${escapeHtml(a.cat)}<b>·</b>${escapeHtml(a.place)}</div>
+      <h1 class="mj-page-h1">${escapeHtml(a.title)}</h1>
+      ${a.standfirst?`<p class="mj-stand">${escapeHtml(a.standfirst)}</p>`:''}
+      <div class="mj-body mj-body-lg">${jParas(a.body)}</div>
+      ${a.why?`<div class="mj-why"><div class="mj-why-k">Why this matters to you</div><p>${a.why}</p></div>`:''}
+      <a class="mj-src" href="${a.url}" target="_blank" rel="noopener">Read in full at ${escapeHtml(a.src)} ${ICO_EXT}</a>
+    </article>
+    <div class="mj-nav">${prev}${next}</div>
+    <div style="text-align:center;margin-top:6px;"><button class="mj-back" onclick="renderJCover()">${ICO_ARL} Back to contents</button></div>
+  </div>`;
+  window.scrollTo(0,0);
+}
+
+async function renderJArchive(){
+  const box=document.getElementById('journalList');
+  box.innerHTML=`<div class="mj"><div class="mj-artbar"><button class="mj-back" onclick="renderJournal()">${ICO_ARL} Current issue</button></div><div class="j-loading"><div class="j-spin"></div><span>Loading past editions…</span></div></div>`;
+  if(jArchive===null){ try{ jArchive=await fetchLive('journal-archive.json'); }catch(e){ jArchive=[]; } if(!Array.isArray(jArchive)) jArchive=[]; }
+  let list;
+  if(!jArchive.length){
+    list=`<div class="mj-arch-empty">No past editions yet. The first one will appear here next week, once a new issue is published. Every edition is kept, so nothing is ever lost.</div>`;
+  } else {
+    list=jArchive.map((ed,idx)=>`
+      <button class="mj-card mj-idx mj-arch-item" onclick="openPastEdition(${idx})">
+        <div class="mj-cat">${escapeHtml(ed.no||'Edition')}<b>·</b>${escapeHtml(ed.date||'')}</div>
+        <h3>${escapeHtml((ed.lead&&ed.lead.title)||'Edition')}</h3>
+        <span class="mj-read">Read this edition ${ICO_ARR}</span>
+      </button>`).join('');
+  }
+  box.innerHTML=`
+  <div class="mj">
+    <div class="mj-artbar"><button class="mj-back" onclick="renderJournal()">${ICO_ARL} Current issue</button></div>
+    <header class="mj-mast"><div class="mj-issue">The archive</div><h1 class="mj-name">Past editions</h1><div class="mj-strap">Every issue of The Amarine Journal, kept for you.</div><div class="mj-mrule"></div></header>
+    ${list}
+    <footer class="mj-foot">A new edition is published each week and added here.</footer>
+  </div>`;
+  window.scrollTo(0,0);
+}
+function openPastEdition(idx){ if(!jArchive||!jArchive[idx])return; jEdition=jArchive[idx]; jIsCurrent=false; renderJCover(); }
 
 // ====== CONVERSATION SWITCHER (list + view) ======
 let activeDmUser=null; // {id, name} du membre avec qui on discute en privé
