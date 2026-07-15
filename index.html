@@ -841,6 +841,48 @@
 .j-brief span svg{width:11px;height:11px;}
 
 .j-foot{text-align:center;font-family:'Cormorant',serif;font-style:italic;font-size:16px;color:var(--stone,#8C8378);padding-top:36px;border-top:1px solid var(--line,#E3DBCE);}
+/* ===== The Amarine Journal v4 — luxury magazine, single readable column ===== */
+.jn{max-width:760px;margin:0 auto;padding:2px 0 8px;}
+.jn-mast{text-align:center;padding:4px 0 28px;border-bottom:2px solid var(--ink);margin-bottom:46px;}
+.jn-issue{font-family:'Jost',sans-serif;font-size:10.5px;font-weight:600;letter-spacing:.26em;text-transform:uppercase;color:var(--gold-deep);}
+.jn-name{font-family:'Cormorant',serif;font-weight:500;font-size:clamp(40px,5.4vw,58px);line-height:1.02;color:var(--ink);letter-spacing:-.01em;margin:14px 0 12px;}
+.jn-strap{font-family:'Cormorant',serif;font-style:italic;font-weight:300;font-size:19px;color:var(--stone);}
+.jn-cat{display:flex;align-items:center;gap:9px;font-family:'Jost',sans-serif;font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:14px;}
+.jn-cat b{font-weight:400;color:var(--gold-lt);}
+.jn-cat-lead{justify-content:center;}
+.jn-lead{text-align:center;padding-bottom:48px;margin-bottom:16px;border-bottom:1px solid var(--line);}
+.jn-h1{font-family:'Cormorant',serif;font-weight:500;font-size:clamp(30px,4vw,44px);line-height:1.12;color:var(--ink);letter-spacing:-.01em;margin:0 auto 18px;max-width:20ch;}
+.jn-stand{font-family:'Cormorant',serif;font-style:italic;font-weight:300;font-size:21px;line-height:1.55;color:var(--stone);margin:0 auto 28px;max-width:52ch;}
+.jn-body{max-width:64ch;margin:0 auto;text-align:left;}
+.jn-body p{font-family:'Cormorant',serif;font-weight:300;font-size:19.5px;line-height:1.85;color:#3E3831;margin:0 0 18px;}
+.jn-body p:last-child{margin-bottom:0;}
+.jn-body-lead p{font-size:20.5px;}
+.jn-art{padding-bottom:46px;margin-bottom:46px;border-bottom:1px solid var(--line);}
+.jn-art:last-of-type{border-bottom:none;}
+.jn-h2{font-family:'Cormorant',serif;font-weight:500;font-size:30px;line-height:1.18;color:var(--ink);letter-spacing:-.005em;margin:0 0 16px;max-width:28ch;}
+.jn-src{display:inline-flex;align-items:center;gap:7px;margin-top:18px;font-family:'Jost',sans-serif;font-size:10.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-deep);text-decoration:none;transition:opacity .18s;}
+.jn-src:hover{opacity:.6;}
+.jn-src svg{width:12px;height:12px;}
+.jn-why{background:var(--gold-wash);border-radius:16px;padding:20px 24px;margin:26px auto 0;max-width:64ch;text-align:left;}
+.jn-why-k{font-family:'Jost',sans-serif;font-size:9.5px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:9px;}
+.jn-why p{font-family:'Cormorant',serif;font-style:italic;font-weight:300;font-size:18px;line-height:1.72;color:#3E3831;margin:0;}
+.jn-sec{text-align:center;margin:0 0 42px;position:relative;}
+.jn-sec::before{content:"";position:absolute;top:50%;left:0;right:0;height:1px;background:var(--line);}
+.jn-sec span{position:relative;background:var(--ivory);padding:0 22px;font-family:'Jost',sans-serif;font-size:10.5px;font-weight:600;letter-spacing:.26em;text-transform:uppercase;color:var(--gold-deep);}
+.jn-briefs{margin-bottom:50px;}
+.jn-brief{display:block;padding:22px 0;border-top:1px solid var(--line);text-decoration:none;color:inherit;transition:opacity .18s;}
+.jn-brief:first-child{border-top:none;padding-top:4px;}
+.jn-brief:hover{opacity:.65;}
+.jn-brief h4{font-family:'Cormorant',serif;font-weight:500;font-size:23px;line-height:1.25;color:var(--ink);margin:0 0 9px;}
+.jn-brief p{font-family:'Cormorant',serif;font-weight:300;font-size:18px;line-height:1.7;color:#4A443C;margin:0 0 12px;}
+.jn-brief span{display:inline-flex;align-items:center;gap:6px;font-family:'Jost',sans-serif;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--stone);}
+.jn-brief span svg{width:11px;height:11px;}
+.jn-foot{text-align:center;font-family:'Cormorant',serif;font-style:italic;font-size:16px;color:var(--stone);padding-top:34px;border-top:1px solid var(--line);}
+@media(max-width:560px){
+  .jn-name{font-size:34px;} .jn-h1{font-size:27px;} .jn-h2{font-size:25px;}
+  .jn-body p{font-size:18px;line-height:1.8;} .jn-body-lead p{font-size:18.5px;}
+  .jn-stand{font-size:18.5px;} .jn-why{padding:18px;}
+}
 
 @media(max-width:1000px){
   .j-row{grid-template-columns:1fr;gap:28px;}
@@ -1256,20 +1298,20 @@
     <section class="page hidden" id="page-register">
       <div class="page-h">
         <div class="eyebrow">The Register</div>
-        <h1>The houses of this world.</h1>
-        <p>The most respected private-service and concierge agencies in the world, the ones that place people into the households you are training to serve. Study them. Know their language. These are the doors you will one day knock upon.</p>
+        <h1>The names that shape this world.</h1>
+        <p>These are the most influential houses in luxury lifestyle management and private concierge: the companies that set the standard, the tone and much of the vocabulary of the world you are entering. You will rarely be employed by them, your roles live inside private households, but you should know them the way an insider does. Being able to speak fluently about this landscape is part of belonging to it.</p>
       </div>
 
       <div class="note-band">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01" stroke-linecap="round"/></svg>
-        <p>These are reference points for your own outreach, not partners of Maison Amarine, and we make no guarantee of placement. Each firm recruits on its own terms. Approach them with the discretion and poise you are learning here.</p>
+        <p>A quiet note on what this is. The Register is here for your fluency, not your applications. The agencies that actually place private concierges and house managers into families live in your Career Hub. Study these names to understand the industry; go to the Career Hub to find the roles.</p>
       </div>
 
       <div class="reg-grid" id="regGrid"></div>
 
       <div class="note-band" style="margin-top:20px;">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l2.5 6.5L21 9l-5 4.5L17.5 21 12 17l-5.5 4L8 13.5 3 9l6.5-.5z" stroke-linejoin="round"/></svg>
-        <p><strong>Week 6</strong> of your program shows you exactly how to approach these houses, register with them, and turn a first introduction into an interview. The Vault holds the outreach template to begin.</p>
+        <p><strong>Week 6</strong> of your program maps this whole market for you: who serves, who hires, who places, and how a first introduction becomes an interview. Pair it with your <strong>Career Hub</strong>, where the live roles and the real placement agencies are waiting.</p>
       </div>
     </section>
 
@@ -2751,78 +2793,52 @@ document.querySelectorAll('.m-tab').forEach(t=>t.addEventListener('click',()=>go
 function renderJournal(){
   const box=document.getElementById('journalList');
   if(box.dataset.done==='1') return;
+  const paras = t => (t||'').split(/\n\s*\n/).map(p=>`<p>${p.trim()}</p>`).join('');
+  const why = w => w ? `<aside class="jn-why"><div class="jn-why-k">Why this matters to you</div><p>${w}</p></aside>` : '';
+  const src = (s,u) => `<a class="jn-src" href="${u}" target="_blank" rel="noopener">Read in full at ${escapeHtml(s)} ${ICO_EXT}</a>`;
 
-  const arts = JOURNAL.map(a=>`
-    <article class="j-row">
-      <div class="j-col-main">
-        <div class="j-eyebrow">${escapeHtml(a.cat)}<b>·</b>${escapeHtml(a.place)}</div>
-        <h3>${escapeHtml(a.title)}</h3>
-        <p>${a.body}</p>
-        <a class="j-src" href="${a.url}" target="_blank" rel="noopener">${escapeHtml(a.src)} ${ICO_EXT}</a>
-      </div>
-      <aside class="j-col-note">
-        <div class="j-note">
-          <div class="j-note-k">Why it matters to you</div>
-          <p>${a.why}</p>
-        </div>
-      </aside>
-    </article>`).join('');
+  // regrouper les articles par rubrique, dans l'ordre d'apparition
+  const groups=[], gi={};
+  JOURNAL.forEach(a=>{ const s=a.section||'The Stories'; if(!(s in gi)){ gi[s]=groups.length; groups.push({name:s,items:[]}); } groups[gi[s]].items.push(a); });
+  const groupsHtml = groups.map(g=>`
+    <div class="jn-sec"><span>${escapeHtml(g.name)}</span></div>
+    ${g.items.map(a=>`
+      <article class="jn-art">
+        <div class="jn-cat">${escapeHtml(a.cat)}<b>·</b>${escapeHtml(a.place)}</div>
+        <h3 class="jn-h2">${escapeHtml(a.title)}</h3>
+        <div class="jn-body">${paras(a.body)}</div>
+        ${src(a.src,a.url)}
+        ${why(a.why)}
+      </article>`).join('')}`).join('');
 
   const briefs = JOURNAL_BRIEFS.map(b=>`
-    <a class="j-brief" href="${b.url}" target="_blank" rel="noopener">
-      <h4>${escapeHtml(b.t)}</h4>
-      <p>${escapeHtml(b.b)}</p>
-      <span>${escapeHtml(b.src)} ${ICO_EXT}</span>
+    <a class="jn-brief" href="${b.url}" target="_blank" rel="noopener">
+      <h4>${escapeHtml(b.t)}</h4><p>${escapeHtml(b.b)}</p><span>${escapeHtml(b.src)} ${ICO_EXT}</span>
     </a>`).join('');
 
   box.innerHTML = `
-  <div class="j">
-
-    <header class="j-hero">
-      <div class="j-badge">${escapeHtml(JOURNAL_NO)}<b>·</b>${escapeHtml(JOURNAL_DATE)}</div>
-      <h1>The Amarine Journal</h1>
-      <p>${escapeHtml(JOURNAL_STRAP)}</p>
+  <div class="jn">
+    <header class="jn-mast">
+      <div class="jn-issue">${escapeHtml(JOURNAL_NO)} &middot; ${escapeHtml(JOURNAL_DATE)}</div>
+      <h1 class="jn-name">The Amarine Journal</h1>
+      <div class="jn-strap">${escapeHtml(JOURNAL_STRAP)}</div>
     </header>
 
-    <section class="j-ed">
-      <div class="j-ed-left">
-        <div class="j-ed-k">From the editor</div>
-        <div class="j-ed-sig">Émilie</div>
-      </div>
-      <div class="j-ed-right">
-        <h2>${escapeHtml(JOURNAL_EDITORIAL.title)}</h2>
-        <p>${escapeHtml(JOURNAL_EDITORIAL.text)}</p>
-      </div>
-    </section>
-
-    <article class="j-lead">
-      <div class="j-lead-top">
-        <div class="j-eyebrow j-eyebrow-c">${escapeHtml(JOURNAL_LEAD.cat)}<b>·</b>${escapeHtml(JOURNAL_LEAD.place)}</div>
-        <h2>${escapeHtml(JOURNAL_LEAD.title)}</h2>
-        <p class="j-stand">${escapeHtml(JOURNAL_LEAD.standfirst)}</p>
-      </div>
-      <div class="j-row">
-        <div class="j-col-main">
-          <p class="j-lead-body">${JOURNAL_LEAD.body}</p>
-          <a class="j-src" href="${JOURNAL_LEAD.url}" target="_blank" rel="noopener">${escapeHtml(JOURNAL_LEAD.src)} ${ICO_EXT}</a>
-        </div>
-        <aside class="j-col-note">
-          <div class="j-note j-note-lead">
-            <div class="j-note-k">Why it matters to you</div>
-            <p>${JOURNAL_LEAD.why}</p>
-          </div>
-        </aside>
-      </div>
+    <article class="jn-lead">
+      <div class="jn-cat jn-cat-lead">${escapeHtml(JOURNAL_LEAD.cat)}<b>·</b>${escapeHtml(JOURNAL_LEAD.place)}</div>
+      <h2 class="jn-h1">${escapeHtml(JOURNAL_LEAD.title)}</h2>
+      <p class="jn-stand">${escapeHtml(JOURNAL_LEAD.standfirst)}</p>
+      <div class="jn-body jn-body-lead">${paras(JOURNAL_LEAD.body)}</div>
+      ${src(JOURNAL_LEAD.src,JOURNAL_LEAD.url)}
+      ${why(JOURNAL_LEAD.why)}
     </article>
 
-    <div class="j-sec"><span>The openings</span></div>
-    ${arts}
+    ${groupsHtml}
 
-    <div class="j-sec"><span>In brief</span></div>
-    <div class="j-briefs">${briefs}</div>
+    <div class="jn-sec"><span>In brief</span></div>
+    <div class="jn-briefs">${briefs}</div>
 
-    <footer class="j-foot">Compiled each week for the mentees of Maison Amarine. Every story is real, and linked to its source.</footer>
-
+    <footer class="jn-foot">Compiled fresh each week. Every story is real and linked to its original source.</footer>
   </div>`;
   box.dataset.done='1';
 }
