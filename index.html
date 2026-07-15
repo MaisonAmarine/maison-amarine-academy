@@ -1015,8 +1015,13 @@
 .j-tab{display:inline-flex;align-items:center;gap:8px;background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:8px 16px;cursor:pointer;font-family:'Jost',sans-serif;transition:border-color .16s,background .16s;}
 .j-tab:hover{border-color:var(--gold-lt);}
 .j-tab.active{background:var(--ink);border-color:var(--ink);}
-.j-tab-n{font-size:11px;font-weight:600;letter-spacing:.05em;color:var(--gold-deep);}
+.j-tab-n{font-size:12px;font-weight:600;letter-spacing:.05em;color:var(--gold-deep);flex:none;}
 .j-tab.active .j-tab-n{color:var(--gold-lt);}
+.j-tab-tx{display:flex;flex-direction:column;line-height:1.2;text-align:left;}
+.j-tab-p{font-size:12.5px;font-weight:600;color:var(--ink);white-space:nowrap;}
+.j-tab-s{font-size:11px;font-weight:400;color:var(--stone);white-space:nowrap;}
+.j-tab.active .j-tab-p{color:#fff;}
+.j-tab.active .j-tab-s{color:var(--gold-lt);}
 .j-tab-l{font-size:12.5px;font-weight:500;color:var(--ink-soft);}
 .j-tab.active .j-tab-l{color:#F3EAD8;}
 @media(max-width:620px){ .j-tabs{flex-wrap:nowrap;overflow-x:auto;justify-content:flex-start;padding-bottom:6px;-webkit-overflow-scrolling:touch;} .j-tab{flex:none;} }
@@ -3110,7 +3115,8 @@ function renderJPager(){
   let tabs='';
   all.forEach((a,i)=>{
     const nn=String(i+1).padStart(2,'0');
-    tabs+=`<button class="j-tab ${i===jPage?'active':''}" onclick="goJPage(${i})"><span class="j-tab-n">${nn}</span><span class="j-tab-l">${escapeHtml(a.isLead?'Lead':a.place)}</span></button>`;
+    const subj = a.tag ? escapeHtml(a.tag) : escapeHtml((a.title||'').split(/[,:]/)[0].split(' ').slice(0,4).join(' '));
+    tabs+=`<button class="j-tab ${i===jPage?'active':''}" onclick="goJPage(${i})"><span class="j-tab-n">${nn}</span><span class="j-tab-tx"><span class="j-tab-p">${a.isLead?'★ ':''}${escapeHtml(a.place)}</span><span class="j-tab-s">${subj}</span></span></button>`;
   });
   if(hasBriefs){ const bi=all.length; tabs+=`<button class="j-tab ${jPage===bi?'active':''}" onclick="goJPage(${bi})"><span class="j-tab-n">✦</span><span class="j-tab-l">In brief</span></button>`; }
   // ---- contenu de la page active ----
