@@ -229,6 +229,12 @@
   .lesson.intro-lesson{background:var(--gold-wash);border:1px solid var(--gold-lt);}
   .lesson.intro-lesson .lesson-ic{color:var(--gold-deep);}
   .lesson.intro-lesson .lt{color:var(--gold-deep);}
+  .practice-nudge{display:flex;align-items:center;gap:14px;margin-top:14px;padding:16px 18px;background:var(--gold-wash);border:1px solid var(--gold-lt);border-radius:14px;flex-wrap:wrap;}
+  .practice-nudge .pn-ic{width:34px;height:34px;flex:none;color:var(--gold-deep);}
+  .practice-nudge .pn-ic svg{width:34px;height:34px;}
+  .practice-nudge .pn-txt{flex:1;min-width:200px;font-family:'Jost',sans-serif;font-size:13px;color:var(--ink-soft);line-height:1.5;}
+  .practice-nudge .pn-txt b{color:var(--ink);}
+  .practice-nudge .pr-btn{white-space:nowrap;}
 
   .roles{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin:16px 0 8px;}
   .role{background:var(--paper);border:1px solid var(--line);border-radius:15px;padding:22px 24px;transition:transform .2s,box-shadow .2s,border-color .2s;}
@@ -1605,7 +1611,31 @@ const PRACTICE = [
    {scene:"One craft, many names", stem:"A friend says 'so you want to be a butler?'. What is the most accurate reply?", options:[
      {t:"Yes, basically a modern butler.", ok:false, fb:"Butler is only one of the names. Boxing yourself into it makes you miss most of the market."},
      {t:"It is one craft with several titles: house manager, private PA, estate manager, concierge. Same skill, different doors.", ok:true, fb:"The person who searches only one noun concludes the market is closed. It is not; they were looking for the wrong word."},
-     {t:"No, it is completely different from anything like that.", ok:false, fb:"It is not unrelated. Denying the lineage is as inaccurate as reducing it to one title."}]}
+     {t:"No, it is completely different from anything like that.", ok:false, fb:"It is not unrelated. Denying the lineage is as inaccurate as reducing it to one title."}]},
+   {scene:"Myth and reality", stem:"What do the ultra-wealthy most want from the person who serves them?", options:[
+     {t:"To be impressed by their taste and their world.", ok:false, fb:"They are surrounded by people who are impressed. What is rare, and valuable, is someone unbothered by it who simply gets things right."},
+     {t:"To feel their private life is safe, seamless and quietly handled.", ok:true, fb:"Peace of mind is the product. Everything else is decoration."},
+     {t:"To be treated like celebrities at every moment.", ok:false, fb:"Performance and fuss are what they escape at home. Calm competence is the real luxury."}]},
+   {scene:"Warmth is not an invitation", stem:"At dinner the principal offers you a glass of wine, warmly, as if to a friend. You:", options:[
+     {t:"Accept and relax; they clearly want you to feel like family.", ok:false, fb:"Warmth is lovely, but it is not permission to step out of your role. The line protects you both."},
+     {t:"Decline graciously and stay in your role, without making it awkward.", ok:true, fb:"Warm, easy, and still professional. Holding the line kindly is a skill in itself."},
+     {t:"Accept, but only a small amount to be polite.", ok:false, fb:"A small yes is still a yes to blurring the line. Decline with warmth instead."}]},
+   {scene:"New money, old money", stem:"A guest boasts loudly about the price of everything they own. In this world, that usually signals:", options:[
+     {t:"The very top of the wealth ladder.", ok:false, fb:"Announcing prices is rarely the language of the oldest wealth. Restraint tends to signal more than noise."},
+     {t:"Someone still proving it, rather than someone at ease with it.", ok:true, fb:"The most established rarely mention cost. Discretion and understatement are their tells."},
+     {t:"Nothing at all; wealth is wealth.", ok:false, fb:"The codes differ, and reading them is part of your craft. How money is spoken about says a great deal."}]},
+   {scene:"What discreet really costs", stem:"A friend asks, over dinner, which celebrity you work for. You:", options:[
+     {t:"Tell them, but swear them to secrecy.", ok:false, fb:"A secret shared is a secret gone, and you have just shown you cannot hold one."},
+     {t:"Smile and say you work for a private family, and leave it there.", ok:true, fb:"Warm, final, and revealing nothing. This is the reflex that keeps you employable."},
+     {t:"Drop a hint and let them guess.", ok:false, fb:"A hint is a leak with deniability. It is still a leak."}]},
+   {scene:"The real product", stem:"Stripped of the glamour, what are you truly selling a household?", options:[
+     {t:"Luxury and lifestyle.", ok:false, fb:"They already have those. What they cannot easily buy is the next answer."},
+     {t:"Trust, discretion and a life that runs without friction.", ok:true, fb:"That is the whole business. Everything else is the setting."},
+     {t:"Long hours and hard work.", ok:false, fb:"Effort is assumed. It is not what makes you valuable or rare."}]},
+   {scene:"Reading beneath the request", stem:"The principal snaps 'why is the car not here?' when it is actually early. The real message is usually:", options:[
+     {t:"They are angry at you specifically.", ok:false, fb:"Taking it personally is the rookie error. The request is rarely about you."},
+     {t:"They are anxious about something ahead, and the worry landed on the car.", ok:true, fb:"Read the emotion beneath the words. Solve the feeling, not just the sentence."},
+     {t:"They want you to defend yourself.", ok:false, fb:"Defending yourself escalates. Calmly easing the underlying worry de-escalates."}]}
  ]},
  {no:2, title:"The codes of luxury", type:"flash", cards:[
    {term:"Principal", def:"The person you serve, in a household or private capacity. The preferred term over boss, employer or client.", note:"Using it naturally signals you understand this world."},
@@ -1615,7 +1645,14 @@ const PRACTICE = [
    {term:"Amuse-bouche", def:"A single bite-sized morsel served before the meal, chosen by the chef, never charged for.", note:"The chef's handshake. Acknowledging it graciously flatters the kitchen."},
    {term:"NDA", def:"A non-disclosure agreement, binding you to silence about everything you see and learn, often permanently.", note:"Not a formality, the floor. Behave as if one existed even where none was signed."},
    {term:"Savoir-faire", def:"Knowing how to do: expertise and the quiet competence to handle any situation gracefully.", note:"Competence made to look effortless. Shown, never announced."},
-   {term:"Patina", def:"The soft sheen age gives to fine leather, wood, silver or a watch. Prized as evidence of quality that has endured.", note:"Old money treasures it. To over-restore an heirloom is to erase its story."}
+   {term:"Patina", def:"The soft sheen age gives to fine leather, wood, silver or a watch. Prized as evidence of quality that has endured.", note:"Old money treasures it. To over-restore an heirloom is to erase its story."},
+   {term:"Family office", def:"The private structure managing a wealthy family's wealth, affairs and often its staff. Single-family serves one family; multi-family serves several.", note:"Often it is the family office, not the family, that truly hires you."},
+   {term:"Estate manager", def:"The professional who runs one or several private residences: staff, vendors, budgets, standards and the guest experience.", note:"Where a concierge arranges, an estate manager governs."},
+   {term:"Maitre d'hotel", def:"The head of a fine dining room: reservations, seating and the guest experience. Often shortened to maitre d'.", note:"A relationship with a great maitre d' opens tables no booking system can."},
+   {term:"Sommelier", def:"The wine specialist of a fine restaurant, responsible for the list, the pairings and guiding the guest.", note:"Ask their guidance rather than performing knowledge; it yields the finest pairing."},
+   {term:"Michelin star", def:"A distinction for culinary excellence, from one star (very good) to three (worth a special journey).", note:"One star is a real achievement; three is exceptionally rare. Speak of them accurately."},
+   {term:"Concierge", def:"The professional who arranges, obtains and solves on behalf of a principal or guest: reservations, access, the impossible request.", note:"The currency is the network and the reputation that opens doors."},
+   {term:"White tie", def:"The most formal evening dress code: tailcoat, white waistcoat and white bow tie. Above black tie.", note:"Recognising it on an invitation saves a principal a conspicuous, memorable error."}
  ]},
  {no:3, title:"Discretion, trust & presence", type:"quiz", items:[
    {stem:"Which best defines discretion?", options:[
@@ -1637,7 +1674,27 @@ const PRACTICE = [
    {stem:"'White glove' service means:", options:[
      {t:"Wearing gloves at all times.", ok:false, fb:"The gloves are the origin of the phrase, not its meaning today."},
      {t:"Service of the highest care and meticulous attention to detail.", ok:true, fb:"Use the phrase only where you can truly deliver the standard it implies."},
-     {t:"Formal service reserved for royalty.", ok:false, fb:"Not restricted to royalty; it describes a standard of care."}]}
+     {t:"Formal service reserved for royalty.", ok:false, fb:"Not restricted to royalty; it describes a standard of care."}]},
+   {stem:"A journalist contacts you asking about your employer. You:", options:[
+     {t:"Give a harmless, positive comment to protect their image.", ok:false, fb:"Any comment at all is a breach, however kind. You are not a spokesperson."},
+     {t:"Decline entirely, and report the contact to the family office.", ok:true, fb:"No comment, and flag it. Journalists count on a friendly slip."},
+     {t:"Ignore it and tell no one.", ok:false, fb:"Declining is right, but the household should know it happened."}]},
+   {stem:"Trust in a household is built mainly through:", options:[
+     {t:"One grand gesture that proves your worth.", ok:false, fb:"Trust is not won in a single act. It is accrued."},
+     {t:"A thousand small, consistent, reliable moments.", ok:true, fb:"Reliability repeated is what earns deep trust, and it breaks in a single lapse."},
+     {t:"Being liked by everyone in the house.", ok:false, fb:"Being liked is pleasant but not the same as being trusted."}]},
+   {stem:"You realise you made an error only you know about. You:", options:[
+     {t:"Fix it quietly and never mention it.", ok:false, fb:"Hiding it is the one failure that rarely survives discovery. Own it early."},
+     {t:"Disclose it plainly, with the fix already in hand.", ok:true, fb:"Fact, fix, ownership. Trust survives an honest mistake; it rarely survives a hidden one."},
+     {t:"Wait to see if anyone notices.", ok:false, fb:"Waiting turns a small error into a concealment. Get ahead of it."}]},
+   {stem:"The right inner posture toward the people you serve is:", options:[
+     {t:"Servile: do whatever is asked, without a view of your own.", ok:false, fb:"Servility earns little respect. You serve from competence, not submission."},
+     {t:"A professional serving from a place of pride and judgement.", ok:true, fb:"Dignity on both sides. You serve well because you are good at it, not because you are small."},
+     {t:"An equal who can push back freely on anything.", ok:false, fb:"Nor is it partnership. It is professional service delivered with self-respect."}]},
+   {stem:"The safest rule for anything you see inside the home is:", options:[
+     {t:"It can be shared if it is not embarrassing.", ok:false, fb:"You are not the judge of what is harmless. The rule is simpler than that."},
+     {t:"It stays inside the walls, full stop.", ok:true, fb:"Assume everything is confidential. That single reflex prevents most disasters."},
+     {t:"It can be shared once you have left the role.", ok:false, fb:"Discretion does not expire when the job does."}]}
  ]},
  {no:4, title:"The art of anticipation", type:"scenario", items:[
    {scene:"Before it is asked", stem:"The principal has an early flight tomorrow and has not mentioned breakfast. Anticipation means:", options:[
@@ -1655,7 +1712,31 @@ const PRACTICE = [
    {scene:"Naming your failure", stem:"In the anticipation playbook you write how you would most likely fail. Why does naming it help?", options:[
      {t:"It does not; dwelling on failure is negative.", ok:false, fb:"Naming a risk is not dwelling; it is the first step to guarding against it."},
      {t:"Because the failure mode you can name is the one you can catch before it happens.", ok:true, fb:"The self-awareness to name your pattern is precisely what stops you repeating it in a real house."},
-     {t:"So your mentor can grade you on honesty.", ok:false, fb:"It is for you, not for a grade. This work is a private instrument."}]}
+     {t:"So your mentor can grade you on honesty.", ok:false, fb:"It is for you, not for a grade. This work is a private instrument."}]},
+   {scene:"The weather ahead", stem:"You see a storm forecast for the day of the principal's outdoor event. You:", options:[
+     {t:"Say nothing; it may pass.", ok:false, fb:"Hope is not a plan. Anticipation means acting on the forecast now."},
+     {t:"Quietly prepare a covered alternative and brief the team, before being asked.", ok:true, fb:"You have solved the problem before it exists. That is the whole craft."},
+     {t:"Cancel the event to be safe.", ok:false, fb:"Overreacting removes their choice. Prepare the option; let them decide."}]},
+   {scene:"The returning guest", stem:"A guest who visited months ago is coming again. Anticipation looks like:", options:[
+     {t:"Treating them as a first-time visitor.", ok:false, fb:"You noted their preferences last time. Not using them wastes the memory that makes you valuable."},
+     {t:"Quietly restoring the room and details they liked before, unprompted.", ok:true, fb:"The guest feels remembered without a word. That is anticipation as care."},
+     {t:"Asking them to remind you what they preferred.", ok:false, fb:"Asking undoes the magic. Your notes exist so they never have to repeat themselves."}]},
+   {scene:"The double-booking", stem:"You spot two commitments overlapping in the principal's diary next week. You:", options:[
+     {t:"Wait for them to notice.", ok:false, fb:"By the time they notice, it is a crisis. Catch it now."},
+     {t:"Flag it early with a proposed resolution for each option.", ok:true, fb:"You bring the problem and the solution together. That is what makes you easy to keep."},
+     {t:"Cancel the one you think matters less.", ok:false, fb:"Deciding for them oversteps. Surface it with options instead."}]},
+   {scene:"The small comfort", stem:"On a long flight you know the principal always feels cold. You:", options:[
+     {t:"Wait for them to ask for a blanket.", ok:false, fb:"You already know. Making them ask is a missed anticipation."},
+     {t:"Have their preferred blanket and a warm drink ready before takeoff.", ok:true, fb:"Comfort arranged before the need is spoken. A thousand of these build indispensability."},
+     {t:"Turn up the cabin heat for everyone.", ok:false, fb:"Solving it for the whole cabin misses the point; anticipate for the person."}]},
+   {scene:"When not to anticipate", stem:"You sense the principal is upset about something personal. The anticipatory move is:", options:[
+     {t:"Ask directly what is wrong so you can help.", ok:false, fb:"Some things are not yours to enter. Prying, even kindly, oversteps."},
+     {t:"Quietly ease the day's logistics and give them space, without comment.", ok:true, fb:"Smooth the practical, respect the private. Presence, not intrusion."},
+     {t:"Act especially cheerful to lift the mood.", ok:false, fb:"Performing brightness at someone's low moment reads as tone-deaf. Calm and space serve better."}]},
+   {scene:"Enough is enough", stem:"There is a real risk in over-anticipating. It is:", options:[
+     {t:"Doing so much that the principal feels watched or crowded.", ok:true, fb:"Anticipation must stay invisible and light. Smothering is its shadow side."},
+     {t:"Spending too little money.", ok:false, fb:"Cost is not the danger here; presence that tips into intrusion is."},
+     {t:"There is no risk; more is always better.", ok:false, fb:"More is not always better. Calibrated, unnoticed anticipation is the goal."}]}
  ]},
  {no:5, title:"The craft & the yacht", type:"flash", cards:[
    {term:"APA", def:"Advance Provisioning Allowance: a sum, often 25 to 35% of the charter fee, held by the captain to cover fuel, food, dockage and extras during a charter.", note:"The quoted price is never the real number. Learn to read the all-in figure."},
@@ -1665,7 +1746,14 @@ const PRACTICE = [
    {term:"MYBA agreement", def:"The standard industry charter contract that sets the terms between the principal and the yacht.", note:"Know it exists and roughly what it covers before you negotiate."},
    {term:"Delivery / redelivery", def:"The times and places the yacht is handed over and returned, which define where the charter legally begins and ends.", note:"Getting these wrong can quietly cost days of fee."},
    {term:"Crew gratuity", def:"A tip for the crew, customarily 5 to 15% of the charter fee, on top of everything else.", note:"Budget it in from the start so it never surprises the principal."},
-   {term:"Empty leg", def:"A private jet repositioning flight with no passengers, offered at a fraction of the charter price.", note:"Knowing the market lets you offer real value without compromising privacy."}
+   {term:"Empty leg", def:"A private jet repositioning flight with no passengers, offered at a fraction of the charter price.", note:"Knowing the market lets you offer real value without compromising privacy."},
+   {term:"VAT (on charter)", def:"Value Added Tax added to a charter depending on the cruising waters, sometimes a significant percentage on top of the fee.", note:"Ask which waters, and fold VAT into the all-in figure you quote."},
+   {term:"Purser", def:"On a larger yacht, the person managing the interior's administration, accounts and the APA.", note:"For money and reconciliations, the purser is often who you deal with, not the captain."},
+   {term:"Fractional ownership", def:"Sharing a jet or yacht with others, buying a set number of hours or weeks rather than the whole asset.", note:"A middle path between chartering and owning; know it exists when advising travel."},
+   {term:"Provenance", def:"The documented ownership history of an artwork or antique. Strong provenance authenticates and protects value.", note:"Always ask for it before advising a purchase; a gap raises questions."},
+   {term:"Decanting", def:"Pouring wine off its sediment into a decanter to let it breathe. Older reds especially benefit.", note:"Offer to decant a mature red unprompted; it shows care and improves the glass."},
+   {term:"Mise en place", def:"Everything in its place: all preparation done before service begins. A principle far beyond the kitchen.", note:"Everything anticipated and ready, so the moment itself unfolds without friction."},
+   {term:"Turndown service", def:"The evening preparation of a room for sleep: bed opened, curtains drawn, lights softened, a small touch left.", note:"Anticipation made visible. Study its logic and apply it everywhere."}
  ]},
  {no:6, title:"The map of the market", type:"quiz", items:[
    {stem:"How are the best private-service roles usually filled?", options:[
@@ -1683,7 +1771,27 @@ const PRACTICE = [
    {stem:"A gap in your CV from a confidential household is best presented as:", options:[
      {t:"Left blank to avoid awkward questions.", ok:false, fb:"A blank invites worse suspicion. Handle it, do not hide it."},
      {t:"Private household, dates, scope; bound by confidentiality, reference via the family office.", ok:true, fb:"Framed this way, the confidential role becomes a credential, not a hole."},
-     {t:"Explained in full detail to prove it is real.", ok:false, fb:"Detail is the one thing you must not give. The discretion is the proof."}]}
+     {t:"Explained in full detail to prove it is real.", ok:false, fb:"Detail is the one thing you must not give. The discretion is the proof."}]},
+   {stem:"Most private roles are never advertised because:", options:[
+     {t:"Families are too busy to post them.", ok:false, fb:"It is not about time. It is about trust and privacy."},
+     {t:"This world hires through trust and referral, quietly.", ok:true, fb:"The door is trust, not a job board. That is why the map matters."},
+     {t:"The roles do not really exist.", ok:false, fb:"They very much exist; they simply move through private channels."}]},
+   {stem:"A specialist agency's real job is to:", options:[
+     {t:"Find you any role quickly.", ok:false, fb:"Speed is not their value. Trust is."},
+     {t:"Vouch for you to a family, staking their own reputation.", ok:true, fb:"They place people they would trust in a home. That is why poise is part of qualifying."},
+     {t:"Negotiate the highest salary for you.", ok:false, fb:"They serve the placement fit first, not your maximum number."}]},
+   {stem:"When registering with several agencies, you should:", options:[
+     {t:"Exaggerate slightly to stand out on each.", ok:false, fb:"A consultant has seen ten thousand CVs. Inflation is spotted, and you are quietly dropped."},
+     {t:"Be consistent, honest and specific across all of them.", ok:true, fb:"Consistency and truth are checkable, and being checkable is your advantage."},
+     {t:"Tell each one you are exclusive to them.", ok:false, fb:"A lie that unravels the moment they compare notes."}]},
+   {stem:"The strongest introduction into a household comes from:", options:[
+     {t:"A cold application to a job post.", ok:false, fb:"Cold is the weakest entry in a world that hires warm."},
+     {t:"A trusted person already inside this world vouching for you.", ok:true, fb:"A warm referral is worth more than any advert. Build the relationships that create them."},
+     {t:"A large social media following.", ok:false, fb:"Visibility is not trust here; it can even work against discretion."}]},
+   {stem:"Approaching this market, patience is:", options:[
+     {t:"A weakness; move fast and apply everywhere.", ok:false, fb:"Spraying applications reads as unselective. This world rewards the considered approach."},
+     {t:"A strength; the right role is worth waiting and preparing for.", ok:true, fb:"Poise and patience are themselves part of the qualification."},
+     {t:"Irrelevant; it is purely about luck.", ok:false, fb:"It is preparation meeting a warm introduction, not luck."}]}
  ]},
  {no:7, title:"Your candidacy", type:"scenario", items:[
    {scene:"The first 90 seconds", stem:"In an interview, the family is really deciding:", options:[
@@ -1701,7 +1809,27 @@ const PRACTICE = [
    {scene:"Send it Monday", stem:"Your dossier is 'nearly ready' but you keep polishing. The instruction is:", options:[
      {t:"Wait until it is perfect.", ok:false, fb:"'Perfect' is how good candidates never apply. Perfection is the enemy here."},
      {t:"Send it. A sent good dossier beats an unsent perfect one, every time.", ok:true, fb:"Momentum beats polish. The market rewards the one who actually shows up."},
-     {t:"Ask three friends to review it first.", ok:false, fb:"More opinions rarely help and usually delay. Trust the work and send."}]}
+     {t:"Ask three friends to review it first.", ok:false, fb:"More opinions rarely help and usually delay. Trust the work and send."}]},
+   {scene:"The trap question", stem:"An interviewer asks 'tell me about a time you disagreed with an employer.' The best answer:", options:[
+     {t:"Share a story where you were proven right.", ok:false, fb:"Being right at your employer's expense signals someone hard to live with."},
+     {t:"Show you can hold a view privately, raise it respectfully once, then support the decision.", ok:true, fb:"They are testing whether you are safe, not whether you win arguments."},
+     {t:"Say you never disagree with employers.", ok:false, fb:"That reads as either dishonest or spineless. Neither reassures."}]},
+   {scene:"Following up", stem:"A week after the interview you have heard nothing. You:", options:[
+     {t:"Send several messages to show enthusiasm.", ok:false, fb:"Pestering reads as needy. Presence, not pressure."},
+     {t:"Send one short, gracious note, then let it rest.", ok:true, fb:"Poised, warm, and unhurried. That itself is a good signal."},
+     {t:"Assume rejection and stop.", ok:false, fb:"Silence is not a no. One graceful follow-up is right."}]},
+   {scene:"The salary anchor", stem:"You are asked your current salary, which is low. You:", options:[
+     {t:"State it, and let it anchor the offer low.", ok:false, fb:"Past pay need not define future worth. Redirect to the value of this role."},
+     {t:"Speak to the market value of the role and your researched expectation.", ok:true, fb:"Calm, evidence-based, forward-looking. You set a fair anchor without dishonesty."},
+     {t:"Refuse to answer at all.", ok:false, fb:"Flat refusal reads as awkward. Redirect gracefully instead."}]},
+   {scene:"The photograph", stem:"On a private-service CV, a photo should be:", options:[
+     {t:"A glamorous, stylised portrait.", ok:false, fb:"Glamour is the wrong register. This is a document, not a portfolio."},
+     {t:"Simple, professional and understated, if included at all.", ok:true, fb:"Understated and neat, matching the quiet tone of the whole document."},
+     {t:"A casual holiday snap to seem approachable.", ok:false, fb:"Too casual undercuts your seriousness. Keep it professional."}]},
+   {scene:"Why they will regret you", stem:"The single question behind every interview is:", options:[
+     {t:"Are you the most talented candidate?", ok:false, fb:"Talent helps, but it is not the fear they are testing."},
+     {t:"Will we regret letting this person into our private life?", ok:true, fb:"Everything you do in the room either soothes or feeds that fear. Aim to soothe it."},
+     {t:"Do you have the longest CV?", ok:false, fb:"Length is not the question. Safety and fit are."}]}
  ]},
  {no:8, title:"Your first ninety days", type:"scenario", items:[
    {scene:"The first fortnight", stem:"In your first two weeks in a new house you spot six things done badly. You:", options:[
@@ -1719,7 +1847,31 @@ const PRACTICE = [
    {scene:"The housekeeper", stem:"The housekeeper warmly tells you the last manager was 'a disaster, honestly'. You:", options:[
      {t:"Agree, to bond with her.", ok:false, fb:"You have just shown you will criticise the absent. She will assume you will do it to her too."},
      {t:"Stay warm but neutral, and never join in running anyone down.", ok:true, fb:"Alliances built on shared contempt curdle. Kindness without gossip is the safer ground."},
-     {t:"Report the conversation to the principal.", ok:false, fb:"Tale-bearing in your first days poisons the staff room. Let it pass."}]}
+     {t:"Report the conversation to the principal.", ok:false, fb:"Tale-bearing in your first days poisons the staff room. Let it pass."}]},
+   {scene:"Learning the names", stem:"On day one in a new house, your first priority is:", options:[
+     {t:"Show everyone how capable you are.", ok:false, fb:"Day one is for listening, not performing. Capability shows later."},
+     {t:"Learn every name, from the gardener to the night driver, and use them tomorrow.", ok:true, fb:"Names learned on day one and used on day two are how respect quietly begins."},
+     {t:"Start reorganising the systems you find.", ok:false, fb:"Reorganising before you understand is the reformer's error. Observe first."}]},
+   {scene:"The tempting research", stem:"The night before you start, you feel an urge to search the family online. You:", options:[
+     {t:"Research thoroughly; it looks like diligence.", ok:false, fb:"Curiosity dressed as diligence is still curiosity, and in a house it has another name."},
+     {t:"Do not. Everything you need you will be told or will observe.", ok:true, fb:"Restraint here is the first act of discretion, before you have even arrived."},
+     {t:"Just look at their public photos.", ok:false, fb:"A little looking is still looking. Hold the line from the start."}]},
+   {scene:"The unglamorous task", stem:"In week one you notice a tedious job nobody wants to do. You:", options:[
+     {t:"Leave it; it is beneath your role.", ok:false, fb:"Nothing is beneath you in the first weeks. Standing on rank early costs you goodwill."},
+     {t:"Quietly take it on once, without being asked and without mentioning it.", ok:true, fb:"Doing the unwanted task, silently, buys more trust than any speech."},
+     {t:"Delegate it immediately to someone junior.", ok:false, fb:"Delegating before you have earned standing reads as entitled."}]},
+   {scene:"The housekeeper's knowledge", stem:"The long-serving housekeeper knows the house better than you. You:", options:[
+     {t:"Assert your authority so she respects the hierarchy.", ok:false, fb:"Asserting over experience creates an enemy who can quietly undo you."},
+     {t:"Genuinely ask her opinion on something that matters, early, and take it.", ok:true, fb:"Respect shown early to those who know the house is repaid many times over."},
+     {t:"Avoid her so she cannot challenge you.", ok:false, fb:"Avoidance breeds suspicion. Engage with genuine respect instead."}]},
+   {scene:"The house manual", stem:"By day sixty, nobody has asked you for a house manual. You:", options:[
+     {t:"Skip it; if no one wants it, why bother.", ok:false, fb:"The manual is for the house's resilience and your own value, asked for or not."},
+     {t:"Build it anyway: the house, the people, the standards, the emergencies.", ok:true, fb:"Quiet, unrequested thoroughness is precisely what makes you hard to replace."},
+     {t:"Wait until you are asked.", ok:false, fb:"The best professionals do it before being asked. That is the point."}]},
+   {scene:"The offer to overshare", stem:"A trusted-seeming colleague invites you, warmly, to say what you 'really think' of the principal. You:", options:[
+     {t:"Share honestly, since they seem safe.", ok:false, fb:"The warm invitation to indiscretion is a classic test, and a trap. Feel the pull, and decline it."},
+     {t:"Stay warm, say something fair and neutral, and reveal nothing.", ok:true, fb:"You feel the pull, and you do not say it. That restraint is the whole profession in a moment."},
+     {t:"Change the subject abruptly and coldly.", ok:false, fb:"Neutral warmth beats cold. You can decline without a chill."}]}
  ]}
 ];
 const PR_DONE = {};
@@ -2387,6 +2539,12 @@ function openWeek(no){
     if(hasContent){ row.querySelector('.lesson-main').addEventListener('click',(e)=>{ if(e.target.closest('.lesson-check'))return; openStepView(s, no, i); }); }
     list.appendChild(row);
   });
+  // ---- invitation à s'entraîner dans l'onglet Practice ----
+  const nudge=document.createElement('div');
+  nudge.className='practice-nudge';
+  nudge.innerHTML=`<div class="pn-ic">${ICONS.intro}</div><div class="pn-txt"><b>Ready to make it stick?</b><br>Test yourself with this week's exercise in the Practice tab. A quick, playful way to lock it in, and you can replay it as often as you like.</div><button class="pr-btn" id="pnGo">Go to Practice &rarr;</button>`;
+  list.appendChild(nudge);
+  const pg=nudge.querySelector('#pnGo'); if(pg) pg.addEventListener('click',()=>{ closeModal(); goPage('practice'); });
   const btn=document.getElementById('markWeek');
   if(state.completed[no]){btn.classList.add('is-done');document.getElementById('markLabel').textContent="Completed, click to reopen";}
   else{btn.classList.remove('is-done');document.getElementById('markLabel').textContent="Mark this week as complete";}
