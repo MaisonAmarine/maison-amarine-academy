@@ -1,61 +1,15 @@
 {
-  "updated": "Live roles + boards · updated 15 July 2026",
+  "updated": "Live roles + boards · verified 15 July 2026",
   "boards": [
-    [
-      "Morgan & Mallet",
-      "Household, estate & family office · US offices NY, LA, Miami",
-      "https://www.householdstaff.agency/jobs/"
-    ],
-    [
-      "Silver Swan Recruitment",
-      "Private household staff · New York, Miami, LA, SF",
-      "https://silverswanrecruitment.com/house-manager-jobs/"
-    ],
-    [
-      "Rose's Agency",
-      "US job board · house & estate managers",
-      "https://rosesagency.com/job-board/category/House+&+Estate+Managers"
-    ],
-    [
-      "MyStaffHq",
-      "UHNW estate manager & private roles, US & worldwide",
-      "https://www.mystaffhq.com/jobs/estate-manager"
-    ],
-    [
-      "EstateJobs.com",
-      "Estate & private-service roles across the US",
-      "https://www.estatejobs.com/"
-    ],
-    [
-      "Colonial Domestic Agency",
-      "Domestic & estate staffing, nationwide US",
-      "https://colonialdomestics.com/current-job-openings/"
-    ],
-    [
-      "Bespoke Bureau",
-      "Estate managers & household staff",
-      "https://bespokebureau.com/"
-    ],
-    [
-      "Polo & Tweed",
-      "Household staffing & training",
-      "https://poloandtweed.com/find-staff/"
-    ],
-    [
-      "LinkedIn Jobs",
-      "Live search: estate & house manager, private PA (US)",
-      "https://www.linkedin.com/jobs/search/?keywords=estate%20manager%20private%20household&location=United%20States"
-    ],
-    [
-      "Indeed",
-      "Live search: private estate manager (US)",
-      "https://www.indeed.com/jobs?q=private+estate+manager&l=United+States"
-    ],
-    [
-      "ZipRecruiter",
-      "Live search: UHNW estate manager (US)",
-      "https://www.ziprecruiter.com/Jobs/Uhnw-Estate-Manager"
-    ]
+    ["Morgan & Mallet", "Household, estate & family office · US offices NY, LA, Miami", "https://www.householdstaff.agency/jobs/"],
+    ["Colonial Agency", "Domestic & estate staffing since 1963 · nationwide US", "https://colonialdomestics.com/job-openings/"],
+    ["Rose's Agency", "California private-staff job board · house & estate managers", "https://rosesagency.com/job-board"],
+    ["MyStaffHq", "UHNW household job board · estate manager & private roles", "https://www.mystaffhq.com/jobs/estate-manager"],
+    ["Silver Swan Recruitment", "Private household staff · New York, Miami, LA, SF", "https://silverswanrecruitment.com/house-manager-jobs/"],
+    ["EstateJobs.com", "Estate & private-service roles across the US", "https://www.estatejobs.com/"],
+    ["LinkedIn Jobs", "Live search: estate & house manager, private PA (US)", "https://www.linkedin.com/jobs/search/?keywords=estate%20manager%20private%20household&location=United%20States"],
+    ["Indeed", "Live search: private estate manager (US)", "https://www.indeed.com/jobs?q=private+estate+manager&l=United+States"],
+    ["ZipRecruiter", "Live search: UHNW estate manager (US)", "https://www.ziprecruiter.com/Jobs/Uhnw-Estate-Manager"]
   ],
   "jobs": {
     "americas": [
@@ -63,35 +17,53 @@
         "flag": "🇺🇸",
         "city": "Palm Beach",
         "country": "Florida, USA",
-        "title": "Estate Manager · Oceanfront estate + US residences",
-        "agency": "Silver Swan Recruitment",
+        "title": "Director of Residence · UHNW family",
+        "agency": "Colonial Agency",
         "type": "Permanent · Full time",
-        "tags": [
-          "Estate Manager",
-          "Relocation",
-          "Full benefits"
-        ],
-        "salary": "$120–140k",
+        "tags": ["Senior", "UHNW", "Full benefits"],
+        "salary": "$300k",
         "posted": "Live role",
-        "url": "https://silverswanrecruitment.com/job/estate-manager-palm-beach-florida-4260/",
-        "blurb": "A 20,000 sq ft oceanfront property in South Florida, with oversight of additional US residences. Full medical, dental and vision, 401k, stock enrollment after a year, and relocation for out-of-state candidates."
+        "url": "https://colonialdomestics.com/jobs/job-111891/",
+        "blurb": "A UHNW family in Palm Beach seeks a Director of Residence to lead the household. Starting salary around $300k plus a full benefits package. A top-tier estate leadership role."
       },
       {
         "flag": "🇺🇸",
-        "city": "New York",
-        "country": "New York, USA",
-        "title": "Estate Manager to a high-profile principal",
-        "agency": "Colonial Domestic Agency",
+        "city": "Los Angeles / SF / Ojai",
+        "country": "California, USA",
+        "title": "Estate Manager · Multi-residence",
+        "agency": "MyStaffHq · British American Household Staffing",
         "type": "Permanent · Full time",
-        "tags": [
-          "Estate Manager",
-          "Full benefits",
-          "Senior"
-        ],
-        "salary": "$200k",
+        "tags": ["Estate Manager", "Multi-property", "California"],
+        "salary": "On application",
         "posted": "Live role",
-        "url": "https://colonialdomestics.com/current-job-openings/",
-        "blurb": "Estate manager for a high-net-worth New York principal. Starting salary around $200k plus a full benefits package. Several years in a UHNW private household expected."
+        "url": "https://www.mystaffhq.com/jobs/356807192-kp781-full-time-estate-manager-los-angeles-san-francisco-ojai-ca",
+        "blurb": "A full-time estate manager to oversee private residences across Los Angeles, San Francisco and Ojai. Estate operations, staff coordination and security awareness across multiple properties."
+      },
+      {
+        "flag": "🇺🇸",
+        "city": "Menlo Park",
+        "country": "California, USA",
+        "title": "House Manager / Personal Assistant",
+        "agency": "Rose's Agency",
+        "type": "Permanent · Full time",
+        "tags": ["House Manager", "PA", "Tech family"],
+        "salary": "On application",
+        "posted": "9 Jun 2026",
+        "url": "https://rosesagency.com/job-board/full-time-house-managerpa-menlo-park",
+        "blurb": "A family of technology executives in the AI industry, newly welcoming their first child, seeks a House Manager and PA to run the primary residence. Discretion, efficiency and proactive problem-solving valued."
+      },
+      {
+        "flag": "🇺🇸",
+        "city": "Brentwood",
+        "country": "California, USA",
+        "title": "Estate Head Butler · CEO & family",
+        "agency": "Colonial Agency",
+        "type": "Permanent · Full time",
+        "tags": ["Head Butler", "Formal service", "Estate"],
+        "salary": "$150–175k",
+        "posted": "Live role",
+        "url": "https://colonialdomestics.com/jobs/job-112008/",
+        "blurb": "A high-profile CEO and family in Brentwood seek an Estate Head Butler. Formal and informal service, anticipation and impeccable standards. Salary $150k to $175k depending on experience."
       },
       {
         "flag": "🇺🇸",
@@ -100,15 +72,24 @@
         "title": "Executive Personal Assistant / House Manager",
         "agency": "Morgan & Mallet",
         "type": "Permanent · Full time",
-        "tags": [
-          "PA-first",
-          "UHNW principal",
-          "Long-term"
-        ],
+        "tags": ["PA-first", "UHNW principal", "Long-term"],
         "salary": "On application",
         "posted": "8 Jan 2026",
         "url": "https://www.householdstaff.agency/jobs/executive-personal-assistant-house-manager-job-palo-alto-california-usa/",
-        "blurb": "A UHNW principal seeks a trusted right hand across all personal, administrative and lifestyle matters. Replaces a long-tenured professional who is retiring. Anticipation, judgement and discretion are described as critical."
+        "blurb": "A UHNW principal seeks a trusted right hand across all personal, administrative and lifestyle matters. Anticipation, judgement and discretion are described as critical."
+      },
+      {
+        "flag": "🇺🇸",
+        "city": "Austin",
+        "country": "Texas, USA",
+        "title": "Personal / Family Assistant to a principal",
+        "agency": "Rose's Agency",
+        "type": "Permanent · Full time",
+        "tags": ["PA", "Discretion", "London / US"],
+        "salary": "On application",
+        "posted": "18 May 2026",
+        "url": "https://rosesagency.com/job-board/full-time-personalfamily-assistant-in-austin-tx",
+        "blurb": "High-level administrative and executive support to a principal, managing private and professional affairs between London and the United States. Independent judgement and total discretion."
       },
       {
         "flag": "🇺🇸",
@@ -117,11 +98,7 @@
         "title": "House Manager / Personal Assistant · Three residences",
         "agency": "Morgan & Mallet",
         "type": "Permanent · Full time",
-        "tags": [
-          "Multi-property",
-          "Dallas / Austin / Aspen",
-          "Lifestyle"
-        ],
+        "tags": ["Multi-property", "Dallas / Austin / Aspen", "Lifestyle"],
         "salary": "On application",
         "posted": "17 Mar 2026",
         "url": "https://www.householdstaff.agency/jobs/household-manager-job-dallas-texas-usa/",
@@ -129,37 +106,29 @@
       },
       {
         "flag": "🇺🇸",
-        "city": "Dallas",
-        "country": "Texas, USA",
-        "title": "Senior Personal Assistant to the Principal",
-        "agency": "Morgan & Mallet",
+        "city": "Clearwater",
+        "country": "Florida, USA",
+        "title": "Houseman / Junior House Manager",
+        "agency": "Colonial Agency",
         "type": "Permanent · Full time",
-        "tags": [
-          "Senior PA",
-          "Fast-paced",
-          "On-call"
-        ],
-        "salary": "On application",
-        "posted": "17 Mar 2026",
-        "url": "https://www.householdstaff.agency/jobs/senior-personal-assistant-job-dallas-texas-usa/",
-        "blurb": "Discreet and proactive senior PA. Day-to-day logistics, calendaring, travel and a wide range of personal tasks arising at short notice. Service mindset and flawless execution."
+        "tags": ["First rung", "House Manager", "Full benefits"],
+        "salary": "$120k",
+        "posted": "Live role",
+        "url": "https://colonialdomestics.com/jobs/job-112279/",
+        "blurb": "A high-profile executive in Clearwater seeks a Houseman and Junior House Manager. A strong entry point into house management, at $120k plus full benefits."
       },
       {
         "flag": "🇺🇸",
-        "city": "Miami Beach",
-        "country": "Florida, USA",
-        "title": "Personal Assistant · Residential projects & household",
-        "agency": "Morgan & Mallet",
+        "city": "San Francisco",
+        "country": "California, USA",
+        "title": "Estate Manager · Private residence",
+        "agency": "MyStaffHq · British American Household Staffing",
         "type": "Permanent · Full time",
-        "tags": [
-          "PA",
-          "Vendors",
-          "Property"
-        ],
+        "tags": ["Estate Manager", "San Francisco"],
         "salary": "On application",
-        "posted": "13 Feb 2026",
-        "url": "https://www.householdstaff.agency/jobs/personal-assistant-job-miami-beach-florida-usa/",
-        "blurb": "Oversee residential construction projects, manage household operations and provide comprehensive support to the principals. For someone who takes ownership and executes without direction."
+        "posted": "Live role",
+        "url": "https://www.mystaffhq.com/jobs/157257724-kp727-full-time-estate-manager-san-francisco-ca",
+        "blurb": "A full-time estate manager for a private San Francisco residence: household operations, staff and vendor coordination, and the standards of a UHNW home."
       }
     ],
     "europe": [
@@ -170,11 +139,7 @@
         "title": "House Manager · UHNW family, 1,200 m² property",
         "agency": "Morgan & Mallet",
         "type": "CDI · Full time",
-        "tags": [
-          "Bilingual FR/EN",
-          "UHNW",
-          "Operational"
-        ],
+        "tags": ["Bilingual FR/EN", "UHNW", "Operational"],
         "salary": "On application",
         "posted": "2 Feb 2026",
         "url": "https://www.householdstaff.agency/jobs/house-manager-job-saint-tropez-france/",
@@ -187,10 +152,7 @@
         "title": "House Manager · Secondary residence",
         "agency": "Morgan & Mallet",
         "type": "CDI · Full time",
-        "tags": [
-          "Staff accommodation",
-          "Immediate start"
-        ],
+        "tags": ["Staff accommodation", "Immediate start"],
         "salary": "On application",
         "posted": "9 Jun 2026",
         "url": "https://www.householdstaff.agency/jobs/house-manager-job-ramatuelle-france/",
@@ -203,11 +165,7 @@
         "title": "House Manager · Private luxury chalet",
         "agency": "Morgan & Mallet",
         "type": "CDI · Full time",
-        "tags": [
-          "Chalet",
-          "Hospitality background",
-          "Immediate"
-        ],
+        "tags": ["Chalet", "Hospitality background", "Immediate"],
         "salary": "On application",
         "posted": "7 Apr 2026",
         "url": "https://www.householdstaff.agency/jobs/housekeeper-house-manager-job-megeve-france/",
@@ -220,10 +178,7 @@
         "title": "Versatile House Manager · Family home",
         "agency": "Morgan & Mallet",
         "type": "CDI · Full time",
-        "tags": [
-          "Family",
-          "Immediate start"
-        ],
+        "tags": ["Family", "Immediate start"],
         "salary": "On application",
         "posted": "12 Jun 2026",
         "url": "https://www.householdstaff.agency/jobs/house-manager-job-neuilly-sur-seine-france/",
@@ -236,11 +191,7 @@
         "title": "Personal Assistant to a renowned music artist",
         "agency": "Morgan & Mallet",
         "type": "Consultancy · Part time",
-        "tags": [
-          "Entertainment",
-          "International travel",
-          "Flexible"
-        ],
+        "tags": ["Entertainment", "International travel", "Flexible"],
         "salary": "On application",
         "posted": "1 Jul 2026",
         "url": "https://www.householdstaff.agency/jobs/personal-assistant-job-london-united-kingdom/",
@@ -253,11 +204,7 @@
         "title": "Travelling Housekeeper · Private residences",
         "agency": "Morgan & Mallet",
         "type": "Permanent · Live-in",
-        "tags": [
-          "Travel",
-          "Live-in",
-          "Long-term"
-        ],
+        "tags": ["Travel", "Live-in", "Long-term"],
         "salary": "On application",
         "posted": "10 Jul 2026",
         "url": "https://www.householdstaff.agency/jobs/travelling-housekeeper-job-london-united-kingdom/",
@@ -270,11 +217,7 @@
         "title": "House Manager · Six residences",
         "agency": "Morgan & Mallet",
         "type": "Permanent · Full time",
-        "tags": [
-          "Six properties",
-          "Two countries",
-          "Logistics"
-        ],
+        "tags": ["Six properties", "Two countries", "Logistics"],
         "salary": "On application",
         "posted": "14 Apr 2026",
         "url": "https://www.householdstaff.agency/jobs/house-manager-job-cardiff-wales-malaga-southern-spain/",
@@ -287,10 +230,7 @@
         "title": "Housekeeper · International family, travel",
         "agency": "Morgan & Mallet",
         "type": "Permanent · Full time",
-        "tags": [
-          "First rung",
-          "International travel"
-        ],
+        "tags": ["First rung", "International travel"],
         "salary": "On application",
         "posted": "10 Jul 2026",
         "url": "https://www.householdstaff.agency/jobs/housekeeper-job-florence-italy/",
@@ -305,11 +245,7 @@
         "title": "House Manager · Main house & family farm",
         "agency": "Morgan & Mallet",
         "type": "Permanent · Full time",
-        "tags": [
-          "Two properties",
-          "Leads staff",
-          "Long-term"
-        ],
+        "tags": ["Two properties", "Leads staff", "Long-term"],
         "salary": "On application",
         "posted": "17 Jun 2026",
         "url": "https://www.householdstaff.agency/jobs/house-manager-job-ajman-united-arab-emirates/",
@@ -322,11 +258,7 @@
         "title": "Senior Personal Assistant to the Principal",
         "agency": "Morgan & Mallet",
         "type": "Permanent · Live-out",
-        "tags": [
-          "Senior PA",
-          "Long-term",
-          "Discretion"
-        ],
+        "tags": ["Senior PA", "Long-term", "Discretion"],
         "salary": "On application",
         "posted": "5 Feb 2026",
         "url": "https://www.householdstaff.agency/jobs/senior-personal-assistant-job-dubai-uae/",
@@ -339,11 +271,7 @@
         "title": "HR & Executive Assistant · International holding",
         "agency": "Morgan & Mallet",
         "type": "Permanent · Full time",
-        "tags": [
-          "Family office",
-          "Senior",
-          "Not entry level"
-        ],
+        "tags": ["Family office", "Senior", "Not entry level"],
         "salary": "On application",
         "posted": "10 Jul 2026",
         "url": "https://www.householdstaff.agency/jobs/human-resources-executive-assistant-job-dubai-uae/",
@@ -356,11 +284,7 @@
         "title": "House Manager · Supervising a team of 12",
         "agency": "Morgan & Mallet",
         "type": "Permanent · Full time",
-        "tags": [
-          "Team of 12",
-          "Family office",
-          "Discreet"
-        ],
+        "tags": ["Team of 12", "Family office", "Discreet"],
         "salary": "On application",
         "posted": "5 Feb 2026",
         "url": "https://www.householdstaff.agency/jobs/house-manager-job-kuwait-city-kuwait/",
