@@ -1024,6 +1024,14 @@
 .j-tab.active .j-tab-s{color:var(--gold-lt);}
 .j-tab-l{font-size:12.5px;font-weight:500;color:var(--ink-soft);}
 .j-tab.active .j-tab-l{color:#F3EAD8;}
+.j-tab-ic{display:flex;flex:none;color:var(--gold);}
+.j-tab-ic svg{width:16px;height:16px;}
+.j-tab.active .j-tab-ic{color:var(--gold-lt);}
+.mj-cat-ic{display:inline-flex;color:var(--gold);margin-right:2px;}
+.mj-cat-ic svg{width:16px;height:16px;}
+.mj-orn{display:flex;align-items:center;justify-content:center;gap:14px;margin-top:16px;}
+.mj-orn span{width:44px;height:1px;background:var(--gold-lt);display:block;}
+.mj-orn b{color:var(--gold);font-size:13px;font-weight:400;line-height:1;}
 @media(max-width:620px){ .j-tabs{flex-wrap:nowrap;overflow-x:auto;justify-content:flex-start;padding-bottom:6px;-webkit-overflow-scrolling:touch;} .j-tab{flex:none;} }
 
 @media(max-width:1000px){
@@ -3098,6 +3106,17 @@ document.querySelectorAll('.m-tab').forEach(t=>t.addEventListener('click',()=>go
 const ICO_ARR='<svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 const ICO_ARL='<svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M11 6l-6 6 6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 let jEdition=null, jIsCurrent=true, jArchive=null, jPage=0;
+function jIcon(a){
+  const s=(((a&&a.section)||'')+' '+((a&&a.cat)||'')+' '+((a&&a.title)||'')).toLowerCase();
+  let d;
+  if(/yacht|sail|marine| sea|boat|superyacht/.test(s)) d='M3 17l9-4 9 4M5.5 17l1.3 3h10.4l1.3-3M12 3v10';
+  else if(/aviation|jet|flight|plane|aircraft|air /.test(s)) d='M22 3L2 11l7 2 2 7z';
+  else if(/safari|escape|journey|island|mountain|trek|wild/.test(s)) d='M3 20l6-11 4 6 3-4 5 9z';
+  else if(/market|wealth|money|invest|econom/.test(s)) d='M4 19V5M4 19h16M8 16v-5M12 16V8M16 16v-9';
+  else if(/hotel|opening|resort|suite|palace|villa|stay|house|home/.test(s)) d='M3 20v-8a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v8M3 15h18M7 10V7h6v3';
+  else d='M12 3l2.4 6.1L21 11l-6.6 1.9L12 19l-2.4-6.1L3 11l6.6-1.9z';
+  return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="'+d+'"/></svg>';
+}
 const jParas = t => (t||'').split(/\n\s*\n/).map(p=>`<p>${p.trim()}</p>`).join('');
 function jCurrentEdition(){ return {no:JOURNAL_NO,date:JOURNAL_DATE,strap:JOURNAL_STRAP,lead:JOURNAL_LEAD,articles:JOURNAL||[],briefs:JOURNAL_BRIEFS||[]}; }
 function jAllArticles(ed){ return [Object.assign({isLead:true},ed.lead)].concat(ed.articles||[]); }
@@ -3116,7 +3135,7 @@ function renderJPager(){
   all.forEach((a,i)=>{
     const nn=String(i+1).padStart(2,'0');
     const subj = a.tag ? escapeHtml(a.tag) : escapeHtml((a.title||'').split(/[,:]/)[0].split(' ').slice(0,4).join(' '));
-    tabs+=`<button class="j-tab ${i===jPage?'active':''}" onclick="goJPage(${i})"><span class="j-tab-n">${nn}</span><span class="j-tab-tx"><span class="j-tab-p">${a.isLead?'★ ':''}${escapeHtml(a.place)}</span><span class="j-tab-s">${subj}</span></span></button>`;
+    tabs+=`<button class="j-tab ${i===jPage?'active':''}" onclick="goJPage(${i})"><span class="j-tab-ic">${jIcon(a)}</span><span class="j-tab-n">${nn}</span><span class="j-tab-tx"><span class="j-tab-p">${a.isLead?'★ ':''}${escapeHtml(a.place)}</span><span class="j-tab-s">${subj}</span></span></button>`;
   });
   if(hasBriefs){ const bi=all.length; tabs+=`<button class="j-tab ${jPage===bi?'active':''}" onclick="goJPage(${bi})"><span class="j-tab-n">✦</span><span class="j-tab-l">In brief</span></button>`; }
   // ---- contenu de la page active ----
@@ -3127,7 +3146,7 @@ function renderJPager(){
     const a=all[jPage];
     content=`<article class="mj-card mj-page">
       ${a.isLead?'<div class="mj-kicker" style="text-align:center;">The lead story</div>':''}
-      <div class="mj-cat">${escapeHtml(a.cat)}<b>·</b>${escapeHtml(a.place)}</div>
+      <div class="mj-cat"><span class="mj-cat-ic">${jIcon(a)}</span>${escapeHtml(a.cat)}<b>·</b>${escapeHtml(a.place)}</div>
       <h1 class="mj-page-h1">${escapeHtml(a.title)}</h1>
       ${a.standfirst?`<p class="mj-stand">${escapeHtml(a.standfirst)}</p>`:''}
       <div class="mj-body mj-body-lg">${jParas(a.body)}</div>
@@ -3145,6 +3164,7 @@ function renderJPager(){
       <div class="mj-issue">${escapeHtml(ed.no)} &middot; ${escapeHtml(ed.date)}</div>
       <h1 class="mj-name">The Amarine Journal</h1>
       <div class="mj-strap">${escapeHtml(ed.strap)}</div>
+      <div class="mj-orn"><span></span><b>&#10070;</b><span></span></div>
     </header>
     <nav class="j-tabs">${tabs}</nav>
     ${content}
@@ -3219,7 +3239,7 @@ function openJArticle(i){
     </div>
     <article class="mj-card mj-page">
       ${a.isLead?'<div class="mj-kicker" style="text-align:center;">The lead story</div>':''}
-      <div class="mj-cat">${escapeHtml(a.cat)}<b>·</b>${escapeHtml(a.place)}</div>
+      <div class="mj-cat"><span class="mj-cat-ic">${jIcon(a)}</span>${escapeHtml(a.cat)}<b>·</b>${escapeHtml(a.place)}</div>
       <h1 class="mj-page-h1">${escapeHtml(a.title)}</h1>
       ${a.standfirst?`<p class="mj-stand">${escapeHtml(a.standfirst)}</p>`:''}
       <div class="mj-body mj-body-lg">${jParas(a.body)}</div>
