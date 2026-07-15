@@ -154,6 +154,21 @@
   .note-band{display:flex;gap:12px;align-items:flex-start;background:var(--gold-wash);border-radius:12px;padding:15px 18px;margin:18px 0 4px;}
   .note-band svg{width:20px;height:20px;flex-shrink:0;color:var(--gold-deep);margin-top:1px;}
   .note-band p{font-size:13px;color:var(--ink-soft);line-height:1.6;}
+  /* ===== The Screening Room ===== */
+  .sr-wrap{margin-top:20px;display:flex;flex-direction:column;gap:26px;}
+  .sr-group-h{font-family:'Cormorant',serif;font-weight:400;font-size:23px;color:var(--ink);letter-spacing:-.2px;display:flex;align-items:center;gap:12px;margin-bottom:2px;}
+  .sr-group-h::after{content:"";flex:1;height:1px;background:var(--line);}
+  .sr-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px;margin-top:12px;}
+  a.sr-card{display:flex;flex-direction:column;gap:8px;background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:17px 18px;text-decoration:none;color:inherit;transition:border-color .18s,box-shadow .18s,transform .18s;}
+  a.sr-card:hover{border-color:var(--gold-lt);box-shadow:0 8px 22px var(--shadow);transform:translateY(-2px);}
+  .sr-top{display:flex;justify-content:space-between;align-items:baseline;gap:10px;}
+  .sr-title{font-family:'Cormorant',serif;font-weight:500;font-size:19px;line-height:1.15;color:var(--ink);}
+  .sr-kind{font-family:'Jost',sans-serif;font-size:9.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-deep);white-space:nowrap;flex-shrink:0;padding-top:3px;}
+  .sr-why{font-size:13px;color:var(--ink-soft);line-height:1.55;}
+  .sr-foot{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:2px;padding-top:10px;border-top:1px solid var(--line);}
+  .sr-plat{font-size:11.5px;font-weight:600;color:var(--ink);background:var(--gold-wash);border-radius:20px;padding:4px 11px;}
+  .sr-go{font-size:11px;font-weight:600;letter-spacing:.04em;color:var(--gold-deep);display:flex;align-items:center;gap:5px;opacity:.85;}
+  .sr-go svg{width:13px;height:13px;}
 
   .roles{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin:16px 0 8px;}
   .role{background:var(--paper);border:1px solid var(--line);border-radius:15px;padding:22px 24px;transition:transform .2s,box-shadow .2s,border-color .2s;}
@@ -904,6 +919,10 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h11a2 2 0 0 1 2 2v14H6a2 2 0 0 1-2-2z" stroke-linejoin="round"/><path d="M17 8h3v10a2 2 0 0 1-2 2M8 8h5M8 12h5M8 16h3" stroke-linecap="round"/></svg>
         The Journal
       </div>
+      <div class="nav-item" data-page="screening">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 9h18M8 5v4M16 5v4M8 19v-4M16 19v-4" stroke-linecap="round"/></svg>
+        The Screening Room
+      </div>
       <div class="nav-item" data-page="vault">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="12" cy="12" r="3"/><path d="M12 9v.01M12 15v.01M9 12h.01M15 12h.01" stroke-linecap="round"/></svg>
         The Vault
@@ -942,6 +961,7 @@
     <div class="m-tab" data-page="career">Career Hub</div>
     <div class="m-tab" data-page="register">Register</div>
     <div class="m-tab" data-page="journal">Journal</div>
+    <div class="m-tab" data-page="screening">Screening Room</div>
     <div class="m-tab" data-page="vault">Vault</div>
     <div class="m-tab" data-page="library">Library</div>
     <div class="m-tab" data-page="calendar">Calendar</div>
@@ -1293,6 +1313,26 @@
       <div id="journalList" style="margin-top:2px;"></div>
     </section>
 
+    <section class="page hidden" id="page-screening">
+      <div class="page-h">
+        <div class="eyebrow">The Screening Room</div>
+        <h1>Watch the world you are entering.</h1>
+        <p>The finest way to absorb the codes of private service is to see them. This is a curated list of films, series and documentaries that live inside this world: the great houses, the yachts, the families, and above all the art of serving them with discretion. Watch a few before you finish the program. You will recognise, on screen, everything we teach.</p>
+      </div>
+
+      <div class="note-band">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01" stroke-linecap="round"/></svg>
+        <p>Watch the satirical ones with a critical eye. They exist to help you understand this world, not to be taken literally. Tap any title to find where it is streaming in your country.</p>
+      </div>
+
+      <div class="sr-wrap" id="screeningList"></div>
+
+      <div class="note-band" style="margin-top:20px;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l2.5 6.5L21 9l-5 4.5L17.5 21 12 17l-5.5 4L8 13.5 3 9l6.5-.5z" stroke-linejoin="round"/></svg>
+        <p><strong>Start with two:</strong> <em>The Remains of the Day</em> for the soul of the craft, and <em>The White Lotus</em> for the world as it is today.</p>
+      </div>
+    </section>
+
   </main>
 </div>
 
@@ -1472,6 +1512,50 @@ const REGISTER = [
   {name:"John Paul Group",tier:"Corporate Leader",loc:"Paris · International",desc:"One of the leaders of global corporate concierge services. Founded in 2008, it operates at scale for both private members and major institutions, a different world from the boutiques, but a serious employer in the field.",clients:"Corporate & private",note:"Scale and structure"},
   {name:"Ten Lifestyle Group",tier:"Established",loc:"International",desc:"A long-established concierge group serving private members and the clients of premium financial institutions worldwide. A reliable name to know when mapping the wider landscape of the industry.",clients:"Members & financial partners",note:"Broad international reach"},
 ];
+// ====== THE SCREENING ROOM DATA ======
+// Plateformes indiquées pour les États-Unis (élèves américains). Les droits tournent :
+// chaque carte renvoie vers une recherche JustWatch US, toujours à jour.
+const SCREENING = {
+  "Series":[
+    {title:"The White Lotus", plat:"Max", why:"A luxury resort seen from the staff side: serving ultra-wealthy guests, discretion, and the emotional weight of the work. The world exactly as it is today."},
+    {title:"Succession", plat:"Max", why:"A UHNW family, its family office, its chiefs of staff and assistants. The finest study of the codes and power games of the very rich."},
+    {title:"Downton Abbey", plat:"Peacock", why:"The great house and its hierarchy of staff, with Carson the butler as a model. Service as a craft, and as dignity."},
+    {title:"The Crown", plat:"Netflix", why:"The royal household, the protocol, the staff around a principal. Service at the very highest level."},
+    {title:"Below Deck", plat:"Peacock", why:"A yacht crew, the chief stewardess, charter guests, the tips. Your yachting chapter, brought to life on screen."},
+    {title:"Jeeves and Wooster", plat:"BritBox or rent", why:"The archetype of the gentleman's valet: anticipation and discretion raised to an art, in a lighter register."},
+  ],
+  "Films":[
+    {title:"The Remains of the Day", plat:"Rent or buy", why:"The definitive film on the butler. Service, restraint, and what it costs. Essential viewing."},
+    {title:"Gosford Park", plat:"Rent or buy", why:"The world upstairs and the world downstairs, and the invisible staff who see everything. A lesson in discretion."},
+    {title:"Triangle of Sadness", plat:"Hulu (rotates)", why:"The superyacht, the crew and the ultra-rich, service culture pushed to satire. Sharp and instructive."},
+    {title:"Parasite", plat:"Hulu (rotates)", why:"Serving a wealthy household: class, proximity, and the line you must never cross."},
+    {title:"The Menu", plat:"Max", why:"Haute cuisine and the theatre of service, with a very dark twist. For the sense of absolute detail."},
+  ],
+  "Documentaries":[
+    {title:"The Queen of Versailles", plat:"Free on Tubi", why:"A billionaire family, their household and their staff, filmed up close. The real thing, unfiltered."},
+    {title:"Generation Wealth", plat:"Rent or buy", why:"The psychology and aesthetics of extreme wealth. To understand the people your students will serve."},
+    {title:"Chef's Table", plat:"Netflix", why:"The obsession with standards behind world-class hospitality."},
+  ]
+};
+function renderScreening(){
+  const box=document.getElementById('screeningList');
+  if(!box || box.dataset.done==='1') return;
+  const ext='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 5h5v5M19 5l-8 8M12 5H6a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-6" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  let html='';
+  for(const group in SCREENING){
+    const cards=SCREENING[group].map(m=>{
+      const jw='https://www.justwatch.com/us/search?q='+encodeURIComponent(m.title);
+      return `<a class="sr-card" href="${jw}" target="_blank" rel="noopener">
+        <div class="sr-top"><div class="sr-title">${escapeHtml(m.title)}</div><div class="sr-kind">${escapeHtml(group.replace(/s$/,''))}</div></div>
+        <div class="sr-why">${escapeHtml(m.why)}</div>
+        <div class="sr-foot"><span class="sr-plat">${escapeHtml(m.plat)}</span><span class="sr-go">Where to watch ${ext}</span></div>
+      </a>`;
+    }).join('');
+    html+=`<div class="sr-group"><div class="sr-group-h">${escapeHtml(group)}</div><div class="sr-grid">${cards}</div></div>`;
+  }
+  box.innerHTML=html;
+  box.dataset.done='1';
+}
 function renderRegister(){
   const box=document.getElementById('regGrid');
   if(!box || box.dataset.done==='1') return;
@@ -2186,6 +2270,7 @@ function goPage(name, scrollTo){
   if(name==='messages'){ loadCommunity(); loadMessages(false); updateConvPreviews(); loadDmConversations(); if(window.innerWidth>820){ selectConv(document.getElementById('waApp').dataset.active||'community'); } }
   if(name==='journal'){ bootJournal(); }
   if(name==='register'){ renderRegister(); }
+  if(name==='screening'){ renderScreening(); }
   if(scrollTo){setTimeout(()=>{const el=document.getElementById(scrollTo);if(el)el.scrollIntoView({behavior:'smooth'});},60);}
 }
 document.querySelectorAll('.nav-item').forEach(n=>n.addEventListener('click',()=>goPage(n.dataset.page, n.dataset.scroll)));
