@@ -235,6 +235,39 @@
   .practice-nudge .pn-txt{flex:1;min-width:200px;font-family:'Jost',sans-serif;font-size:13px;color:var(--ink-soft);line-height:1.5;}
   .practice-nudge .pn-txt b{color:var(--ink);}
   .practice-nudge .pr-btn{white-space:nowrap;}
+  /* ===== CV Review ===== */
+  .cv-wrap{max-width:900px;}
+  .cv-input{width:100%;min-height:230px;resize:vertical;background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:20px 22px;font-family:'Jost',sans-serif;font-size:14px;line-height:1.6;color:var(--ink);outline:none;transition:border-color .18s;}
+  .cv-input:focus{border-color:var(--gold-lt);}
+  .cv-bar{display:flex;align-items:center;gap:18px;margin-top:14px;flex-wrap:wrap;}
+  .cv-btn{font-family:'Jost',sans-serif;font-size:14px;font-weight:600;color:#fff;background:var(--gold);border:none;border-radius:24px;padding:12px 30px;cursor:pointer;transition:background .18s;}
+  .cv-btn:hover{background:var(--gold-deep);}
+  .cv-priv{display:inline-flex;align-items:center;gap:6px;font-family:'Jost',sans-serif;font-size:12px;color:var(--stone);}
+  .cv-empty{margin-top:26px;padding:22px;border:1px dashed var(--line);border-radius:14px;color:var(--stone);font-family:'Jost',sans-serif;font-size:14px;text-align:center;}
+  .cv-res{margin-top:30px;}
+  .cv-top{display:flex;align-items:center;gap:26px;background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:26px 30px;margin-bottom:22px;flex-wrap:wrap;}
+  .cv-ring{width:104px;height:104px;border-radius:50%;flex:none;display:flex;align-items:center;justify-content:center;position:relative;}
+  .cv-ring .cv-num{font-family:'Cormorant',serif;font-weight:500;font-size:34px;color:var(--ink);}
+  .cv-ring .cv-den{font-family:'Jost',sans-serif;font-size:11px;color:var(--stone);position:absolute;bottom:24px;}
+  .cv-tt{flex:1;min-width:220px;}
+  .cv-band{font-family:'Cormorant',serif;font-weight:500;font-size:26px;line-height:1.1;margin:0 0 6px;}
+  .cv-good .cv-band,.cv-good.cv-band{color:#5f7d52;}
+  .cv-mid .cv-band,.cv-mid.cv-band{color:var(--gold-deep);}
+  .cv-low .cv-band,.cv-low.cv-band{color:#b06a4a;}
+  .cv-sub{font-family:'Jost',sans-serif;font-size:13.5px;color:var(--ink-soft);line-height:1.55;}
+  .cv-cols{display:grid;grid-template-columns:1fr;gap:16px;}
+  .cv-group{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:22px 24px;}
+  .cv-group h3{font-family:'Jost',sans-serif;font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;margin:0 0 14px;display:flex;align-items:center;gap:8px;}
+  .cv-group.g-strong h3{color:#5f7d52;}
+  .cv-group.g-fix h3{color:#b06a4a;}
+  .cv-group.g-consider h3{color:var(--gold-deep);}
+  .cv-item{padding:11px 0;border-top:1px solid var(--line);}
+  .cv-item:first-of-type{border-top:none;}
+  .cv-item .it-t{font-family:'Jost',sans-serif;font-size:13.5px;font-weight:600;color:var(--ink);margin-bottom:3px;}
+  .cv-item .it-d{font-family:'Jost',sans-serif;font-size:13px;color:var(--ink-soft);line-height:1.55;}
+  .cv-mini{font-family:'Jost',sans-serif;font-size:13px;color:var(--ink-soft);line-height:1.55;padding:7px 0;border-top:1px solid var(--line);}
+  .cv-mini:first-of-type{border-top:none;}
+  @media(min-width:760px){ .cv-cols{grid-template-columns:1fr 1fr;} .cv-group.g-fix{grid-column:1 / -1;} }
 
   .roles{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin:16px 0 8px;}
   .role{background:var(--paper);border:1px solid var(--line);border-radius:15px;padding:22px 24px;transition:transform .2s,box-shadow .2s,border-color .2s;}
@@ -1074,6 +1107,10 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" stroke-linecap="round"/></svg>
         Career Hub
       </div>
+      <div class="nav-item" data-page="cv">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 3h7l5 5v13H7z" stroke-linejoin="round"/><path d="M14 3v5h5M9.5 13l2 2 3.5-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        CV Review
+      </div>
       <div class="nav-item" data-page="register">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h13a2 2 0 0 1 2 2v14H6a2 2 0 0 1-2-2z" stroke-linejoin="round"/><path d="M8 8h7M8 12h7M8 16h4" stroke-linecap="round"/></svg>
         The Register
@@ -1123,6 +1160,7 @@
     <div class="m-tab active" data-page="program">Program</div>
     <div class="m-tab" data-page="practice">Practice</div>
     <div class="m-tab" data-page="career">Career Hub</div>
+    <div class="m-tab" data-page="cv">CV Review</div>
     <div class="m-tab" data-page="register">Register</div>
     <div class="m-tab" data-page="journal">Journal</div>
     <div class="m-tab" data-page="screening">Screening Room</div>
@@ -1170,6 +1208,23 @@
         <p>One playful exercise for every week of the program: real situations to judge, quick quizzes, and vocabulary cards. Nothing here is graded and nothing is watched. Play it as many times as you like. This is where the knowledge becomes yours.</p>
       </div>
       <div id="practiceWrap"></div>
+    </section>
+
+    <!-- ============ PAGE: CV REVIEW ============ -->
+    <section class="page hidden" id="page-cv">
+      <div class="page-h">
+        <div class="eyebrow">CV Review</div>
+        <h1>Have your CV read the way an agency would.</h1>
+        <p>Paste your CV below and this tool checks it against the exact standards this world hires on, the ones you learn in Week 7. You get a score and specific, honest fixes in seconds. Nothing you paste ever leaves your browser, it is completely private.</p>
+      </div>
+      <div class="cv-wrap">
+        <textarea id="cvInput" class="cv-input" placeholder="Paste the full text of your CV here, then press Analyse."></textarea>
+        <div class="cv-bar">
+          <button class="cv-btn" onclick="analyzeCV()">Analyse my CV</button>
+          <span class="cv-priv"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg> Private · nothing is uploaded or stored</span>
+        </div>
+        <div id="cvResult"></div>
+      </div>
     </section>
 
     <!-- ============ PAGE: CAREER HUB ============ -->
@@ -1686,6 +1741,72 @@ const REGISTER = [
   {name:"John Paul Group",tier:"Corporate Leader",loc:"Paris · International",desc:"One of the leaders of global corporate concierge services. Founded in 2008, it operates at scale for both private members and major institutions, a different world from the boutiques, but a serious employer in the field.",clients:"Corporate & private",note:"Scale and structure"},
   {name:"Ten Lifestyle Group",tier:"Established",loc:"International",desc:"A long-established concierge group serving private members and the clients of premium financial institutions worldwide. A reliable name to know when mapping the wider landscape of the industry.",clients:"Members & financial partners",note:"Broad international reach"},
 ];
+// ====== CV REVIEW (analyseur local, rien n'est envoyé) ======
+function analyzeCV(){
+  const raw=(document.getElementById('cvInput').value||'').trim();
+  const box=document.getElementById('cvResult');
+  if(raw.length<60){ box.innerHTML='<div class="cv-empty">Paste a little more of your CV, at least a few lines, to get a proper read.</div>'; return; }
+  const text=raw, low=text.toLowerCase();
+  const words=(text.match(/\S+/g)||[]).length;
+  let score=100; const strong=[], fix=[], consider=[];
+
+  const fluff=["passionate","dynamic","dedicated","hardworking","hard-working","detail-oriented","detail oriented","motivated","enthusiastic","team player","go-getter","results-driven","results driven","proactive","self-starter","self starter","driven","meticulous","conscientious"];
+  const ff=fluff.filter(w=>low.includes(w));
+  if(ff.length){ score-=Math.min(ff.length*4,20); fix.push({t:"Cut the empty adjectives", d:"Found: "+ff.map(f=>'“'+escapeHtml(f)+'”').join(', ')+". Every candidate writes these, none can be checked, and they take the space where evidence should be. Replace each one with a fact that proves it."}); }
+  else strong.push("No empty self-adjectives, you let the facts speak.");
+
+  const duty=["responsible for","duties included","duties included:","in charge of","tasked with","responsibilities included","assisted with","helped with"];
+  const df=duty.filter(w=>low.includes(w));
+  if(df.length){ score-=Math.min(df.length*5,15); fix.push({t:"Turn duties into scope", d:"Phrases like "+df.map(f=>'“'+escapeHtml(f)+'”').join(', ')+" describe tasks, not scale. Reframe as measurable scope: not “responsible for travel”, but “coordinated travel for a family of five across three residences, including private aviation.” A fact can be checked; a duty cannot."}); }
+
+  const nums=(text.match(/\d/g)||[]).length;
+  if(nums<3){ score-=15; fix.push({t:"Add real numbers", d:"There are almost no figures here. Scope is proven with numbers: how many residences, how large a staff, a family of how many, what budgets, how many years. Add them wherever they are true."}); }
+  else strong.push("Concrete figures are present, and checkable scope is exactly what earns a callback.");
+
+  if(words<120){ score-=10; fix.push({t:"It reads thin", d:"At roughly "+words+" words this is likely under a page. Build it out with scope and evidence until it fills one to two full pages."}); }
+  else if(words>950){ score-=10; fix.push({t:"It runs long", d:"At roughly "+words+" words this is likely more than two pages. A private-service CV is two pages, no more. Cut the oldest and least relevant first."}); }
+  else strong.push("Length looks right for a clean two-page CV.");
+
+  const fp=(low.match(/\bi\b/g)||[]).length + (low.match(/\bmy\b/g)||[]).length;
+  if(fp>6){ score-=8; fix.push({t:"Drop the first person", d:"You use “I” and “my” often ("+fp+" times). A CV is written impersonally, in clipped lines that begin with a verb: “Managed…”, “Coordinated…”, never “I managed…”."}); }
+
+  const hasEmail=/[\w.+-]+@[\w-]+\.[\w.-]+/.test(text);
+  if(!hasEmail){ score-=8; fix.push({t:"No contact email found", d:"Make sure one clean, professional email address sits clearly at the top of the page."}); }
+  else strong.push("A contact email is present.");
+
+  const ins=["principal","private household","family office","uhnw","ultra-high-net-worth","household","estate","discretion","confidential","bespoke","protocol","hnw","private service","concierge"];
+  const inf=ins.filter(w=>low.includes(w));
+  if(inf.length>=3) strong.push("Insider vocabulary is present ("+inf.slice(0,4).map(escapeHtml).join(', ')+"), which signals you know this world.");
+  else consider.push("Little of the insider vocabulary appears. Where it is true, use the right register: <b>principal</b>, <b>private household</b>, <b>family office</b>, <b>discretion</b>. It quietly signals fluency.");
+
+  consider.push("<b>Never name a confidential principal.</b> If your best role cannot be named, write: “private household, dates, scope; bound by confidentiality, reference available via the family office.” Handled this way, it becomes your strongest line.");
+  consider.push("<b>Keep the design plain.</b> Two pages, no colour, no columns, no photograph of a suitcase. It is a document, not a portfolio.");
+  consider.push("<b>Tailor it to each role.</b> Lead with the experience that matches the specific house or agency you are writing to, and cut what does not serve it.");
+
+  score=Math.max(4,Math.min(100,Math.round(score)));
+  const band = score>=85?["Ready to send","cv-good","This reads like a professional, checkable CV. Fix any small points below and send it."]
+    : score>=65?["Nearly there","cv-mid","A solid base. Work through the fixes below and it will move into agency-ready territory."]
+    : ["Needs work","cv-low","There is real room to sharpen this. The fixes below are the fastest wins, in order."];
+
+  const strongHtml = strong.length? `<div class="cv-group g-strong"><h3>✓ Strengths</h3>${strong.map(s=>`<div class="cv-mini">${s}</div>`).join('')}</div>`:'';
+  const fixHtml = fix.length? `<div class="cv-group g-fix"><h3>→ Fix these</h3>${fix.map(it=>`<div class="cv-item"><div class="it-t">${escapeHtml(it.t)}</div><div class="it-d">${it.d}</div></div>`).join('')}</div>`
+    : `<div class="cv-group g-strong"><h3>✓ Fix these</h3><div class="cv-mini">Nothing major to fix. Impressive.</div></div>`;
+  const consHtml = `<div class="cv-group g-consider"><h3>◆ Always remember</h3>${consider.map(s=>`<div class="cv-mini">${s}</div>`).join('')}</div>`;
+
+  box.innerHTML = `<div class="cv-res ${band[1]}">
+    <div class="cv-top">
+      <div class="cv-ring" style="background:conic-gradient(var(--gold) ${score*3.6}deg, var(--line) 0deg);">
+        <div style="width:80px;height:80px;border-radius:50%;background:var(--paper);display:flex;flex-direction:column;align-items:center;justify-content:center;">
+          <span class="cv-num">${score}</span><span style="font-family:'Jost',sans-serif;font-size:10px;color:var(--stone);margin-top:-4px;">/ 100</span>
+        </div>
+      </div>
+      <div class="cv-tt"><div class="cv-band">${band[0]}</div><div class="cv-sub">${band[2]}</div></div>
+    </div>
+    <div class="cv-cols">${fixHtml}${strongHtml}${consHtml}</div>
+  </div>`;
+  box.scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
 // ====== PRACTICE DATA (mix: scenarios, quizzes, flashcards) ======
 const PRACTICE = [
  {no:1, title:"The world you are entering", type:"scenario", items:[
