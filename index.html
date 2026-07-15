@@ -883,6 +883,57 @@
   .jn-body p{font-size:18px;line-height:1.8;} .jn-body-lead p{font-size:18.5px;}
   .jn-stand{font-size:18.5px;} .jn-why{padding:18px;}
 }
+/* ===== The Amarine Journal v5 — framed magazine cards ===== */
+.mj{max-width:820px;margin:0 auto;}
+.mj-mast{text-align:center;padding:8px 0 26px;margin-bottom:22px;}
+.mj-issue{font-family:'Jost',sans-serif;font-size:10.5px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:var(--gold-deep);}
+.mj-name{font-family:'Cormorant',serif;font-weight:500;font-size:clamp(44px,6.4vw,64px);line-height:1;color:var(--ink);margin:14px 0 12px;letter-spacing:-.01em;}
+.mj-strap{font-family:'Cormorant',serif;font-style:italic;font-weight:300;font-size:19px;color:var(--stone);}
+.mj-mrule{width:70px;height:2px;background:var(--gold);margin:22px auto 0;}
+.mj-card{background:var(--paper);border:1px solid var(--line);border-radius:20px;box-shadow:0 20px 44px rgba(33,28,21,.07),0 2px 6px rgba(33,28,21,.03);padding:42px 46px;margin-bottom:22px;}
+.mj-toc-k{text-align:center;font-family:'Jost',sans-serif;font-size:10px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:6px;}
+.mj-toc-item{display:flex;align-items:baseline;gap:14px;padding:12px 0;border-bottom:1px solid var(--line);text-decoration:none;color:inherit;cursor:pointer;}
+.mj-toc-item:last-child{border-bottom:none;padding-bottom:0;}
+.mj-toc-cat{font-family:'Jost',sans-serif;font-size:9.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-deep);width:120px;flex:none;padding-top:4px;}
+.mj-toc-ti{font-family:'Cormorant',serif;font-weight:500;font-size:19px;line-height:1.25;color:var(--ink);}
+.mj-toc-item:hover .mj-toc-ti{color:var(--gold-deep);}
+.mj-cat{display:inline-flex;align-items:center;gap:8px;font-family:'Jost',sans-serif;font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:15px;}
+.mj-cat b{font-weight:400;color:var(--gold-lt);}
+.mj-lead{border-top:3px solid var(--gold);text-align:center;padding-top:36px;}
+.mj-kicker{font-family:'Jost',sans-serif;font-size:10px;font-weight:600;letter-spacing:.26em;text-transform:uppercase;color:var(--gold-lt);margin-bottom:14px;}
+.mj-lead .mj-cat{justify-content:center;}
+.mj-lead h2{font-family:'Cormorant',serif;font-weight:500;font-size:clamp(30px,4.4vw,44px);line-height:1.12;color:var(--ink);margin:0 auto 18px;max-width:20ch;letter-spacing:-.01em;}
+.mj-stand{font-family:'Cormorant',serif;font-style:italic;font-weight:300;font-size:21px;line-height:1.55;color:var(--stone);max-width:52ch;margin:0 auto 24px;}
+.mj-body{max-width:60ch;margin:0 auto;text-align:left;}
+.mj-body p{font-family:'Cormorant',serif;font-weight:300;font-size:19px;line-height:1.82;color:var(--ink-soft);margin:0 0 16px;}
+.mj-body p:last-child{margin-bottom:0;}
+.mj-lead .mj-body p{font-size:20px;}
+.mj-art h3{font-family:'Cormorant',serif;font-weight:500;font-size:28px;line-height:1.18;color:var(--ink);margin:0 0 15px;max-width:30ch;}
+.mj-why{background:var(--gold-wash);border:1px solid var(--gold-lt);border-radius:14px;padding:18px 22px;margin:24px auto 0;max-width:60ch;text-align:left;}
+.mj-why-k{font-family:'Jost',sans-serif;font-size:9.5px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:8px;}
+.mj-why p{font-family:'Cormorant',serif;font-style:italic;font-weight:300;font-size:17.5px;line-height:1.7;color:var(--ink-soft);margin:0;}
+.mj-src{display:inline-flex;align-items:center;gap:7px;margin-top:18px;font-family:'Jost',sans-serif;font-size:10.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-deep);text-decoration:none;}
+.mj-src:hover{opacity:.6;}
+.mj-src svg{width:12px;height:12px;}
+.mj-sec{text-align:center;position:relative;margin:4px 0 22px;}
+.mj-sec::before{content:"";position:absolute;top:50%;left:0;right:0;height:1px;background:#d9cfba;}
+.mj-sec span{position:relative;background:var(--ivory);padding:0 20px;font-family:'Jost',sans-serif;font-size:10.5px;font-weight:600;letter-spacing:.26em;text-transform:uppercase;color:var(--gold-deep);}
+.mj-briefs{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:22px;}
+.mj-brief{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:26px 28px;text-decoration:none;color:inherit;box-shadow:0 12px 30px rgba(33,28,21,.05);transition:transform .18s,box-shadow .18s;}
+.mj-brief:hover{transform:translateY(-2px);box-shadow:0 18px 40px rgba(33,28,21,.08);}
+.mj-brief h4{font-family:'Cormorant',serif;font-weight:500;font-size:21px;line-height:1.24;color:var(--ink);margin:0 0 9px;}
+.mj-brief p{font-family:'Cormorant',serif;font-weight:300;font-size:17px;line-height:1.6;color:#4A443C;margin:0 0 12px;}
+.mj-brief span{font-family:'Jost',sans-serif;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--stone);display:inline-flex;align-items:center;gap:6px;}
+.mj-brief span svg{width:11px;height:11px;}
+.mj-foot{text-align:center;font-family:'Cormorant',serif;font-style:italic;font-size:16px;color:var(--stone);padding-top:10px;}
+@media(max-width:620px){
+  .mj-card{padding:30px 24px;}
+  .mj-toc-cat{width:auto;}
+  .mj-toc-item{flex-direction:column;gap:3px;}
+  .mj-briefs{grid-template-columns:1fr;}
+  .mj-name{font-size:38px;} .mj-lead h2{font-size:27px;} .mj-art h3{font-size:24px;}
+  .mj-body p,.mj-lead .mj-body p{font-size:18px;line-height:1.78;}
+}
 
 @media(max-width:1000px){
   .j-row{grid-template-columns:1fr;gap:28px;}
@@ -2816,29 +2867,56 @@ function renderJournal(){
       <h4>${escapeHtml(b.t)}</h4><p>${escapeHtml(b.b)}</p><span>${escapeHtml(b.src)} ${ICO_EXT}</span>
     </a>`).join('');
 
+  // sommaire "In this issue"
+  const tocItems=[{cat:JOURNAL_LEAD.cat,title:JOURNAL_LEAD.title,id:'mj-lead'}]
+    .concat(JOURNAL.map((a,i)=>({cat:a.cat,title:a.title,id:'mj-a'+i})));
+  const toc=tocItems.map(it=>`<a class="mj-toc-item" onclick="var e=document.getElementById('${it.id}');if(e)e.scrollIntoView({behavior:'smooth',block:'start'});"><span class="mj-toc-cat">${escapeHtml(it.cat)}</span><span class="mj-toc-ti">${escapeHtml(it.title)}</span></a>`).join('');
+
+  const groups2=[], gi2={};
+  JOURNAL.forEach((a,i)=>{ const s=a.section||'The Stories'; if(!(s in gi2)){ gi2[s]=groups2.length; groups2.push({name:s,items:[]}); } groups2[gi2[s]].items.push({a,i}); });
+  const groupsCards = groups2.map(g=>`
+    <div class="mj-sec"><span>${escapeHtml(g.name)}</span></div>
+    ${g.items.map(({a,i})=>`
+      <article class="mj-card mj-art" id="mj-a${i}">
+        <div class="mj-cat">${escapeHtml(a.cat)}<b>·</b>${escapeHtml(a.place)}</div>
+        <h3>${escapeHtml(a.title)}</h3>
+        <div class="mj-body">${paras(a.body)}</div>
+        ${why(a.why)}
+        ${src(a.src,a.url)}
+      </article>`).join('')}`).join('');
+
+  const briefCards = JOURNAL_BRIEFS.map(b=>`
+    <a class="mj-brief" href="${b.url}" target="_blank" rel="noopener">
+      <h4>${escapeHtml(b.t)}</h4><p>${escapeHtml(b.b)}</p><span>${escapeHtml(b.src)} ${ICO_EXT}</span>
+    </a>`).join('');
+
   box.innerHTML = `
-  <div class="jn">
-    <header class="jn-mast">
-      <div class="jn-issue">${escapeHtml(JOURNAL_NO)} &middot; ${escapeHtml(JOURNAL_DATE)}</div>
-      <h1 class="jn-name">The Amarine Journal</h1>
-      <div class="jn-strap">${escapeHtml(JOURNAL_STRAP)}</div>
+  <div class="mj">
+    <header class="mj-mast">
+      <div class="mj-issue">${escapeHtml(JOURNAL_NO)} &middot; ${escapeHtml(JOURNAL_DATE)}</div>
+      <h1 class="mj-name">The Amarine Journal</h1>
+      <div class="mj-strap">${escapeHtml(JOURNAL_STRAP)}</div>
+      <div class="mj-mrule"></div>
     </header>
 
-    <article class="jn-lead">
-      <div class="jn-cat jn-cat-lead">${escapeHtml(JOURNAL_LEAD.cat)}<b>·</b>${escapeHtml(JOURNAL_LEAD.place)}</div>
-      <h2 class="jn-h1">${escapeHtml(JOURNAL_LEAD.title)}</h2>
-      <p class="jn-stand">${escapeHtml(JOURNAL_LEAD.standfirst)}</p>
-      <div class="jn-body jn-body-lead">${paras(JOURNAL_LEAD.body)}</div>
-      ${src(JOURNAL_LEAD.src,JOURNAL_LEAD.url)}
+    <section class="mj-card"><div class="mj-toc-k">In this issue</div>${toc}</section>
+
+    <article class="mj-card mj-lead" id="mj-lead">
+      <div class="mj-kicker">The lead story</div>
+      <div class="mj-cat">${escapeHtml(JOURNAL_LEAD.cat)}<b>·</b>${escapeHtml(JOURNAL_LEAD.place)}</div>
+      <h2>${escapeHtml(JOURNAL_LEAD.title)}</h2>
+      <p class="mj-stand">${escapeHtml(JOURNAL_LEAD.standfirst)}</p>
+      <div class="mj-body">${paras(JOURNAL_LEAD.body)}</div>
       ${why(JOURNAL_LEAD.why)}
+      ${src(JOURNAL_LEAD.src,JOURNAL_LEAD.url)}
     </article>
 
-    ${groupsHtml}
+    ${groupsCards}
 
-    <div class="jn-sec"><span>In brief</span></div>
-    <div class="jn-briefs">${briefs}</div>
+    <div class="mj-sec"><span>In brief</span></div>
+    <div class="mj-briefs">${briefCards}</div>
 
-    <footer class="jn-foot">Compiled fresh each week. Every story is real and linked to its original source.</footer>
+    <footer class="mj-foot">Compiled fresh each week. Every story is real and linked to its original source.</footer>
   </div>`;
   box.dataset.done='1';
 }
