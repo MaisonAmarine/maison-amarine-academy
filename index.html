@@ -237,6 +237,16 @@
   .practice-nudge .pr-btn{white-space:nowrap;}
   /* ===== CV Review ===== */
   .cv-wrap{max-width:900px;}
+  .cv-drop{display:flex;align-items:center;gap:16px;width:100%;background:var(--gold-wash);border:1.5px dashed var(--gold-lt);border-radius:16px;padding:22px 24px;cursor:pointer;transition:background .18s,border-color .18s;}
+  .cv-drop:hover,.cv-drop.drag{background:#efe2c8;border-color:var(--gold);}
+  .cv-drop svg{width:30px;height:30px;color:var(--gold-deep);flex:none;}
+  .cv-drop-t{display:flex;flex-direction:column;gap:3px;}
+  .cv-drop-t b{font-family:'Jost',sans-serif;font-size:15px;color:var(--ink);}
+  .cv-drop-t span{font-family:'Jost',sans-serif;font-size:12.5px;color:var(--stone);}
+  .cv-status{font-family:'Jost',sans-serif;font-size:13px;color:var(--gold-deep);min-height:18px;margin:10px 2px 0;}
+  .cv-or{text-align:center;position:relative;margin:16px 0;}
+  .cv-or::before{content:"";position:absolute;top:50%;left:0;right:0;height:1px;background:var(--line);}
+  .cv-or span{position:relative;background:var(--ivory);padding:0 16px;font-family:'Jost',sans-serif;font-size:11.5px;letter-spacing:.06em;color:var(--stone);}
   .cv-input{width:100%;min-height:230px;resize:vertical;background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:20px 22px;font-family:'Jost',sans-serif;font-size:14px;line-height:1.6;color:var(--ink);outline:none;transition:border-color .18s;}
   .cv-input:focus{border-color:var(--gold-lt);}
   .cv-bar{display:flex;align-items:center;gap:18px;margin-top:14px;flex-wrap:wrap;}
@@ -1218,10 +1228,17 @@
         <p>Paste your CV below and this tool checks it against the exact standards this world hires on, the ones you learn in Week 7. You get a score and specific, honest fixes in seconds. Nothing you paste ever leaves your browser, it is completely private.</p>
       </div>
       <div class="cv-wrap">
+        <label class="cv-drop" id="cvDrop" ondragover="event.preventDefault();this.classList.add('drag');" ondragleave="this.classList.remove('drag');" ondrop="event.preventDefault();this.classList.remove('drag');cvHandleFile(event.dataTransfer.files[0]);">
+          <input type="file" id="cvFile" accept=".pdf,.docx,.txt" style="display:none;" onchange="cvHandleFile(this.files[0]); this.value='';">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 16V4M12 4l-4 4M12 4l4 4" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 16v3a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-3" stroke-linecap="round"/></svg>
+          <div class="cv-drop-t"><b>Upload your CV</b><span>PDF, Word (.docx) or text file — click here or drag it in</span></div>
+        </label>
+        <div class="cv-status" id="cvFileStatus"></div>
+        <div class="cv-or"><span>or paste the text below</span></div>
         <textarea id="cvInput" class="cv-input" placeholder="Paste the full text of your CV here, then press Analyse."></textarea>
         <div class="cv-bar">
           <button class="cv-btn" onclick="analyzeCV()">Analyse my CV</button>
-          <span class="cv-priv"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg> Private · nothing is uploaded or stored</span>
+          <span class="cv-priv"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg> Private · read in your browser, never uploaded or stored</span>
         </div>
         <div id="cvResult"></div>
       </div>
@@ -1742,6 +1759,49 @@ const REGISTER = [
   {name:"Ten Lifestyle Group",tier:"Established",loc:"International",desc:"A long-established concierge group serving private members and the clients of premium financial institutions worldwide. A reliable name to know when mapping the wider landscape of the industry.",clients:"Members & financial partners",note:"Broad international reach"},
 ];
 // ====== CV REVIEW (analyseur local, rien n'est envoyé) ======
+function cvLoadScript(src){
+  return new Promise((res,rej)=>{
+    if(document.querySelector('script[data-lib="'+src+'"]')) return res();
+    const s=document.createElement('script'); s.src=src; s.dataset.lib=src;
+    s.onload=()=>res(); s.onerror=()=>rej(new Error('load '+src));
+    document.head.appendChild(s);
+  });
+}
+async function cvHandleFile(file){
+  if(!file) return;
+  const status=document.getElementById('cvFileStatus');
+  const name=(file.name||'').toLowerCase();
+  status.textContent='Reading “'+file.name+'”…';
+  try{
+    let text='';
+    if(name.endsWith('.pdf')){
+      await cvLoadScript('https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js');
+      if(window.pdfjsLib) pdfjsLib.GlobalWorkerOptions.workerSrc='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+      const buf=await file.arrayBuffer();
+      const pdf=await pdfjsLib.getDocument({data:buf}).promise;
+      for(let p=1;p<=pdf.numPages;p++){ const pg=await pdf.getPage(p); const c=await pg.getTextContent(); text+=c.items.map(it=>it.str).join(' ')+'\n'; }
+    } else if(name.endsWith('.docx')){
+      await cvLoadScript('https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.6.0/mammoth.browser.min.js');
+      const buf=await file.arrayBuffer();
+      const r=await mammoth.extractRawText({arrayBuffer:buf}); text=r.value||'';
+    } else if(name.endsWith('.txt')){
+      text=await file.text();
+    } else if(name.endsWith('.doc')){
+      status.textContent='Old “.doc” files can’t be read here. Save it as PDF or .docx and try again.'; return;
+    } else {
+      status.textContent='Please upload a PDF, a Word .docx, or a text file.'; return;
+    }
+    text=(text||'').replace(/[ \t]+/g,' ').replace(/\s+\n/g,'\n').trim();
+    if(text.length<40){ status.textContent='Could not read enough text from that file. If it is a scanned image, paste the text into the box instead.'; return; }
+    document.getElementById('cvInput').value=text;
+    status.textContent='Read from “'+file.name+'”. Analysing…';
+    analyzeCV();
+    status.textContent='✓ Read from “'+file.name+'”. You can edit the text above and analyse again.';
+  }catch(e){
+    console.warn('CV read error',e);
+    status.textContent='Sorry, that file could not be read. Try a PDF or .docx, or paste the text into the box.';
+  }
+}
 function analyzeCV(){
   const raw=(document.getElementById('cvInput').value||'').trim();
   const box=document.getElementById('cvResult');
