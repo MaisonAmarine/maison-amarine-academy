@@ -169,6 +169,66 @@
   .sr-plat{font-size:11.5px;font-weight:600;color:var(--ink);background:var(--gold-wash);border-radius:20px;padding:4px 11px;}
   .sr-go{font-size:11px;font-weight:600;letter-spacing:.04em;color:var(--gold-deep);display:flex;align-items:center;gap:5px;opacity:.85;}
   .sr-go svg{width:13px;height:13px;}
+  /* ===== Practice ===== */
+  .pr-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;margin-top:22px;}
+  .pr-card{text-align:left;background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:20px;cursor:pointer;transition:border-color .18s,box-shadow .18s,transform .18s;font-family:'Jost',sans-serif;}
+  .pr-card:hover{border-color:var(--gold-lt);box-shadow:0 10px 26px var(--shadow);transform:translateY(-2px);}
+  .pr-card .pr-wk{font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);}
+  .pr-card .pr-ti{font-family:'Cormorant',serif;font-weight:500;font-size:22px;color:var(--ink);line-height:1.15;margin:7px 0 10px;}
+  .pr-badge{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:600;color:var(--ink-soft);background:var(--gold-wash);border-radius:20px;padding:4px 11px;}
+  .pr-card .pr-go{margin-top:14px;font-size:12.5px;font-weight:600;color:var(--gold-deep);display:flex;align-items:center;gap:6px;}
+  .pr-card .pr-done{color:var(--green);}
+  /* runner */
+  .pr-run{max-width:720px;margin:8px auto 0;}
+  .pr-top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:14px;}
+  .pr-back{background:none;border:none;cursor:pointer;font-family:'Jost',sans-serif;font-size:13.5px;font-weight:600;color:var(--ink-soft);display:flex;align-items:center;gap:7px;padding:6px 2px;}
+  .pr-back:hover{color:var(--gold-deep);}
+  .pr-prog{flex:1;height:7px;background:var(--line);border-radius:20px;overflow:hidden;max-width:280px;}
+  .pr-prog-fill{height:100%;background:linear-gradient(90deg,var(--gold),var(--gold-lt));border-radius:20px;transition:width .35s ease;}
+  .pr-count{font-family:'Jost',sans-serif;font-size:12.5px;font-weight:600;color:var(--stone);white-space:nowrap;}
+  .pr-stage{position:relative;}
+  .pr-q{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:26px 26px 22px;}
+  .pr-scene{font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;}
+  .pr-stem{font-family:'Cormorant',serif;font-weight:500;font-size:23px;line-height:1.3;color:var(--ink);margin-bottom:20px;}
+  .pr-opts{display:flex;flex-direction:column;gap:11px;}
+  .pr-opt{text-align:left;background:#fff;border:1.5px solid var(--line);border-radius:12px;padding:14px 16px;cursor:pointer;font-family:'Jost',sans-serif;font-size:14.5px;color:var(--ink);line-height:1.45;transition:border-color .15s,background .15s;display:flex;gap:12px;align-items:flex-start;}
+  .pr-opt:hover{border-color:var(--gold-lt);}
+  .pr-opt .pr-key{width:24px;height:24px;flex:none;border-radius:50%;border:1.5px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;color:var(--stone);}
+  .pr-opt.correct{border-color:var(--green);background:#f2f6ee;}
+  .pr-opt.correct .pr-key{background:var(--green);border-color:var(--green);color:#fff;}
+  .pr-opt.wrong{border-color:#c98a7a;background:#f8efeb;}
+  .pr-opt.wrong .pr-key{background:#c07c68;border-color:#c07c68;color:#fff;}
+  .pr-opt.dim{opacity:.55;}
+  .pr-opt[disabled]{cursor:default;}
+  .pr-fb{margin-top:16px;border-radius:12px;padding:15px 17px;font-family:'Jost',sans-serif;font-size:13.5px;line-height:1.55;color:var(--ink-soft);background:var(--gold-wash);border:1px solid var(--gold-lt);}
+  .pr-fb b{color:var(--ink);}
+  .pr-next{margin-top:18px;display:flex;justify-content:flex-end;}
+  .pr-btn{font-family:'Jost',sans-serif;font-size:14px;font-weight:600;color:#fff;background:var(--gold);border:none;border-radius:24px;padding:11px 26px;cursor:pointer;transition:background .18s;}
+  .pr-btn:hover{background:var(--gold-deep);}
+  .pr-btn.ghost{background:none;color:var(--gold-deep);border:1.5px solid var(--gold-lt);}
+  /* flashcards */
+  .pr-flash{perspective:1400px;margin-top:6px;}
+  .pr-flip{position:relative;width:100%;min-height:280px;transform-style:preserve-3d;transition:transform .55s cubic-bezier(.2,.7,.2,1);cursor:pointer;}
+  .pr-flip.flipped{transform:rotateY(180deg);}
+  .pr-face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:18px;border:1px solid var(--line);background:var(--paper);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:34px;}
+  .pr-face.back{transform:rotateY(180deg);background:var(--ink);border-color:var(--ink);}
+  .pr-face .fc-k{font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;}
+  .pr-face.front .fc-term{font-family:'Cormorant',serif;font-weight:500;font-size:34px;color:var(--ink);line-height:1.1;}
+  .pr-face .fc-hint{margin-top:16px;font-family:'Jost',sans-serif;font-size:12px;color:var(--stone);}
+  .pr-face.back .fc-k{color:var(--gold-lt);}
+  .pr-face.back .fc-def{font-family:'Jost',sans-serif;font-size:15px;color:#F3EAD8;line-height:1.6;max-width:460px;}
+  .pr-face.back .fc-note{margin-top:14px;font-family:'Cormorant-Italic',serif;font-style:italic;font-size:16px;color:var(--gold-lt);line-height:1.4;max-width:460px;}
+  .pr-fnav{display:flex;align-items:center;justify-content:space-between;margin-top:18px;gap:12px;}
+  /* result */
+  .pr-result{text-align:center;background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:44px 30px;}
+  .pr-result .pr-score{font-family:'Cormorant',serif;font-weight:300;font-size:60px;color:var(--gold-deep);line-height:1;}
+  .pr-result h2{font-family:'Cormorant',serif;font-weight:500;font-size:28px;color:var(--ink);margin:8px 0 6px;}
+  .pr-result p{font-family:'Jost',sans-serif;font-size:14.5px;color:var(--ink-soft);max-width:440px;margin:0 auto 22px;line-height:1.6;}
+  .pr-result .pr-acts{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+  @media(max-width:560px){ .pr-stem{font-size:20px;} .pr-face.front .fc-term{font-size:27px;} }
+  .lesson.intro-lesson{background:var(--gold-wash);border:1px solid var(--gold-lt);}
+  .lesson.intro-lesson .lesson-ic{color:var(--gold-deep);}
+  .lesson.intro-lesson .lt{color:var(--gold-deep);}
 
   .roles{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin:16px 0 8px;}
   .role{background:var(--paper);border:1px solid var(--line);border-radius:15px;padding:22px 24px;transition:transform .2s,box-shadow .2s,border-color .2s;}
@@ -907,6 +967,10 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 6h16M4 12h16M4 18h10" stroke-linecap="round"/></svg>
         My Program
       </div>
+      <div class="nav-item" data-page="practice">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l2.4 5 5.6.8-4 3.9 1 5.6L12 15.9 6.9 18.3l1-5.6-4-3.9 5.6-.8z" stroke-linejoin="round"/></svg>
+        Practice
+      </div>
       <div class="nav-item" data-page="career">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" stroke-linecap="round"/></svg>
         Career Hub
@@ -958,6 +1022,7 @@
   <div class="topbar-m"><div class="name">Maison <span>Amarine</span></div><div class="av" style="width:32px;height:32px;border-radius:50%;background:#A87E3D;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:13px;">A</div></div>
   <div class="m-tabs" id="mTabs">
     <div class="m-tab active" data-page="program">Program</div>
+    <div class="m-tab" data-page="practice">Practice</div>
     <div class="m-tab" data-page="career">Career Hub</div>
     <div class="m-tab" data-page="register">Register</div>
     <div class="m-tab" data-page="journal">Journal</div>
@@ -996,6 +1061,16 @@
         <div><h3>Your mentorship session</h3><p>Every week includes a personal session: feedback on your work, your questions, and guidance made for your path. It's included in your program.</p></div>
         <a class="btn-gold" href="https://calendly.com/academy-themaisonamarine/30-minute-one-on-one" target="_blank" rel="noopener" style="display:inline-block;text-decoration:none;">Book my session</a>
       </div>
+    </section>
+
+    <!-- ============ PAGE: PRACTICE ============ -->
+    <section class="page hidden" id="page-practice">
+      <div class="page-h">
+        <div class="eyebrow">Practice</div>
+        <h1>Learn it by doing it.</h1>
+        <p>One playful exercise for every week of the program: real situations to judge, quick quizzes, and vocabulary cards. Nothing here is graded and nothing is watched. Play it as many times as you like. This is where the knowledge becomes yours.</p>
+      </div>
+      <div id="practiceWrap"></div>
     </section>
 
     <!-- ============ PAGE: CAREER HUB ============ -->
@@ -1512,6 +1587,233 @@ const REGISTER = [
   {name:"John Paul Group",tier:"Corporate Leader",loc:"Paris · International",desc:"One of the leaders of global corporate concierge services. Founded in 2008, it operates at scale for both private members and major institutions, a different world from the boutiques, but a serious employer in the field.",clients:"Corporate & private",note:"Scale and structure"},
   {name:"Ten Lifestyle Group",tier:"Established",loc:"International",desc:"A long-established concierge group serving private members and the clients of premium financial institutions worldwide. A reliable name to know when mapping the wider landscape of the industry.",clients:"Members & financial partners",note:"Broad international reach"},
 ];
+// ====== PRACTICE DATA (mix: scenarios, quizzes, flashcards) ======
+const PRACTICE = [
+ {no:1, title:"The world you are entering", type:"scenario", items:[
+   {scene:"The interview", stem:"The principal asks why you want to work in private service. Which answer opens the door?", options:[
+     {t:"Honestly, the lifestyle: the travel, the houses, the world it gives me access to.", ok:false, fb:"This is about what the role gives you. They are listening for what you give them. It quietly signals the wrong priority."},
+     {t:"I find real satisfaction in making someone's life run seamlessly, without them having to notice how.", ok:true, fb:"Service framed as craft and care, not access. This is the register that reassures a principal."},
+     {t:"I'm very organised, hard-working and I learn fast.", ok:false, fb:"True perhaps, but generic. Every candidate says it, and it reveals nothing about whether you understand this world."}]},
+   {scene:"Day one", stem:"On your first day you overhear something private about the family. What do you do with it?", options:[
+     {t:"Mention gently that you're there for them, so they feel supported.", ok:false, fb:"You have just shown you register and repeat private things. That is the opposite of what earns trust."},
+     {t:"Nothing. You act as though you never heard it, now and forever.", ok:true, fb:"Discretion is not silence about secrets you are told; it is vigilance over everything you happen to see or hear."},
+     {t:"Note it down, in case it is useful later.", ok:false, fb:"Keeping a private ledger on the family is exactly the instinct that ends careers in this world."}]},
+   {scene:"The reference", stem:"A recruiter asks for a reference from a confidential household you served. The right move?", options:[
+     {t:"Give the principal's name; proof matters more than discretion here.", ok:false, fb:"Naming a confidential principal to win a job is the clearest possible signal that you cannot be trusted with the next one."},
+     {t:"Offer: reference available through the family office, and name no one.", ok:true, fb:"You prove the role was real without breaching a confidence. Handled this way, the unnamed house becomes your strongest line."},
+     {t:"Say you are sorry, you cannot provide any reference at all.", ok:false, fb:"Too far. You can absolutely provide one, through the proper channel. Refusing outright reads as evasive."}]},
+   {scene:"One craft, many names", stem:"A friend says 'so you want to be a butler?'. What is the most accurate reply?", options:[
+     {t:"Yes, basically a modern butler.", ok:false, fb:"Butler is only one of the names. Boxing yourself into it makes you miss most of the market."},
+     {t:"It is one craft with several titles: house manager, private PA, estate manager, concierge. Same skill, different doors.", ok:true, fb:"The person who searches only one noun concludes the market is closed. It is not; they were looking for the wrong word."},
+     {t:"No, it is completely different from anything like that.", ok:false, fb:"It is not unrelated. Denying the lineage is as inaccurate as reducing it to one title."}]}
+ ]},
+ {no:2, title:"The codes of luxury", type:"flash", cards:[
+   {term:"Principal", def:"The person you serve, in a household or private capacity. The preferred term over boss, employer or client.", note:"Using it naturally signals you understand this world."},
+   {term:"Discretion", def:"The disciplined art of holding what you know: what never needs to be mentioned, recorded or repeated.", note:"Not silence about secrets. A permanent vigilance over information."},
+   {term:"Bespoke", def:"Made entirely to individual specification, from scratch, for one client. Stronger than 'made to measure', which adjusts an existing pattern.", note:"Reserve the word for what is truly built from nothing."},
+   {term:"Black tie", def:"An evening dress code: a dinner jacket with a black bow tie. Less formal than white tie.", note:"A business suit at a black-tie event is a quiet failure."},
+   {term:"Amuse-bouche", def:"A single bite-sized morsel served before the meal, chosen by the chef, never charged for.", note:"The chef's handshake. Acknowledging it graciously flatters the kitchen."},
+   {term:"NDA", def:"A non-disclosure agreement, binding you to silence about everything you see and learn, often permanently.", note:"Not a formality, the floor. Behave as if one existed even where none was signed."},
+   {term:"Savoir-faire", def:"Knowing how to do: expertise and the quiet competence to handle any situation gracefully.", note:"Competence made to look effortless. Shown, never announced."},
+   {term:"Patina", def:"The soft sheen age gives to fine leather, wood, silver or a watch. Prized as evidence of quality that has endured.", note:"Old money treasures it. To over-restore an heirloom is to erase its story."}
+ ]},
+ {no:3, title:"Discretion, trust & presence", type:"quiz", items:[
+   {stem:"Which best defines discretion?", options:[
+     {t:"Never gossiping about your employer.", ok:false, fb:"Closer, but too narrow. Discretion goes well beyond not gossiping."},
+     {t:"A permanent vigilance over the flow of information around the person you serve.", ok:true, fb:"It governs everything you see, hear and record, not only what you say."},
+     {t:"Keeping the household's secrets only until you leave the job.", ok:false, fb:"Discretion does not expire when the role does. Often it is permanent, and always feels so."}]},
+   {stem:"'Presence without intrusion' describes the ideal of which role?", options:[
+     {t:"The butler, and by extension all fine personal service.", ok:true, fb:"To be available and anticipatory without ever imposing yourself is the whole art."},
+     {t:"The chef.", ok:false, fb:"Not specifically. The phrase is the signature of front-of-house personal service."},
+     {t:"The security detail.", ok:false, fb:"Security is about protection. This phrase is about the grace of service."}]},
+   {stem:"The most respectful term for the person you work for is:", options:[
+     {t:"The principal.", ok:true, fb:"Using it naturally marks you as someone who knows the register of this world."},
+     {t:"The boss.", ok:false, fb:"Too casual. It signals an outsider's vocabulary."},
+     {t:"The client.", ok:false, fb:"'Client' suits a concierge company, not a private household."}]},
+   {stem:"In a private household, an NDA should be treated as:", options:[
+     {t:"A formality you sign and forget.", ok:false, fb:"It is not a formality; it is the minimum standard."},
+     {t:"The floor, not the ceiling: you would behave the same even without it.", ok:true, fb:"The professionals worth hiring act as though one existed even where none was signed."},
+     {t:"Optional if the family trusts you.", ok:false, fb:"Trust is earned partly through respecting it, not a reason to ignore it."}]},
+   {stem:"'White glove' service means:", options:[
+     {t:"Wearing gloves at all times.", ok:false, fb:"The gloves are the origin of the phrase, not its meaning today."},
+     {t:"Service of the highest care and meticulous attention to detail.", ok:true, fb:"Use the phrase only where you can truly deliver the standard it implies."},
+     {t:"Formal service reserved for royalty.", ok:false, fb:"Not restricted to royalty; it describes a standard of care."}]}
+ ]},
+ {no:4, title:"The art of anticipation", type:"scenario", items:[
+   {scene:"Before it is asked", stem:"The principal has an early flight tomorrow and has not mentioned breakfast. Anticipation means:", options:[
+     {t:"Wait until morning and ask what they would like.", ok:false, fb:"Asking is not anticipating. By morning it is already late."},
+     {t:"Quietly arrange a light, travel-friendly option to be ready, offered without fanfare.", ok:true, fb:"You solve the need before it is spoken, and you do not take credit for it."},
+     {t:"Prepare a full formal breakfast to be safe.", ok:false, fb:"Over-delivering can be as clumsy as under-delivering. Anticipation is calibrated, not maximal."}]},
+   {scene:"The unspoken preference", stem:"You notice the principal always leaves sparkling water untouched but finishes still water. Next time you:", options:[
+     {t:"Ask which they prefer, to be sure.", ok:false, fb:"You already have the answer from observation. Asking makes them do the work."},
+     {t:"Simply stock and serve still water, and quietly note the preference.", ok:true, fb:"Anticipation is built from a thousand small observations acted on silently."},
+     {t:"Serve both every time so they can choose.", ok:false, fb:"This pushes the decision back onto them. The point is to remove the decision."}]},
+   {scene:"The gap you spotted", stem:"You realise no one has booked the usual car for a recurring Friday appointment. You:", options:[
+     {t:"Wait, in case plans changed.", ok:false, fb:"Assuming and waiting is how balls get dropped. Confirm, do not hope."},
+     {t:"Discreetly confirm the appointment still stands, and book the car if so.", ok:true, fb:"Anticipation plus a light-touch check. You cover the gap without presuming."},
+     {t:"Book the car and say nothing, assuming it is the same.", ok:false, fb:"Blindly assuming can create waste or error. A quiet confirmation first is cleaner."}]},
+   {scene:"Naming your failure", stem:"In the anticipation playbook you write how you would most likely fail. Why does naming it help?", options:[
+     {t:"It does not; dwelling on failure is negative.", ok:false, fb:"Naming a risk is not dwelling; it is the first step to guarding against it."},
+     {t:"Because the failure mode you can name is the one you can catch before it happens.", ok:true, fb:"The self-awareness to name your pattern is precisely what stops you repeating it in a real house."},
+     {t:"So your mentor can grade you on honesty.", ok:false, fb:"It is for you, not for a grade. This work is a private instrument."}]}
+ ]},
+ {no:5, title:"The craft & the yacht", type:"flash", cards:[
+   {term:"APA", def:"Advance Provisioning Allowance: a sum, often 25 to 35% of the charter fee, held by the captain to cover fuel, food, dockage and extras during a charter.", note:"The quoted price is never the real number. Learn to read the all-in figure."},
+   {term:"Charter fee", def:"The base price to hire a yacht for a period, before APA, VAT and crew gratuity.", note:"Always quote the principal the all-in cost, not the sticker price."},
+   {term:"The Captain", def:"Has absolute authority aboard, in law, over the vessel and everyone on it, including the principal's requests.", note:"You ask 'what is possible?', you do not instruct."},
+   {term:"Chief stewardess", def:"Runs the interior service and guest experience aboard. Your true counterpart on the yacht.", note:"Build this relationship first; the whole trip runs through it."},
+   {term:"MYBA agreement", def:"The standard industry charter contract that sets the terms between the principal and the yacht.", note:"Know it exists and roughly what it covers before you negotiate."},
+   {term:"Delivery / redelivery", def:"The times and places the yacht is handed over and returned, which define where the charter legally begins and ends.", note:"Getting these wrong can quietly cost days of fee."},
+   {term:"Crew gratuity", def:"A tip for the crew, customarily 5 to 15% of the charter fee, on top of everything else.", note:"Budget it in from the start so it never surprises the principal."},
+   {term:"Empty leg", def:"A private jet repositioning flight with no passengers, offered at a fraction of the charter price.", note:"Knowing the market lets you offer real value without compromising privacy."}
+ ]},
+ {no:6, title:"The map of the market", type:"quiz", items:[
+   {stem:"How are the best private-service roles usually filled?", options:[
+     {t:"Through public job boards and open applications.", ok:false, fb:"Rarely. The best roles are filled before they are ever advertised."},
+     {t:"Through trust, referral, and a handful of specialist agencies.", ok:true, fb:"This is why the map, and how you enter it, matters more than a CV blast."},
+     {t:"Through social media adverts.", ok:false, fb:"No. This world is discreet and hires quietly."}]},
+   {stem:"A 'family office' is:", options:[
+     {t:"The room where the family works.", ok:false, fb:"It is an organisation, not a room."},
+     {t:"The private structure managing a wealthy family's wealth, affairs and often its staff.", ok:true, fb:"Often it is the family office, not the family, that truly hires you."},
+     {t:"A co-working space for entrepreneurs.", ok:false, fb:"Unrelated. Here it means the family's private management structure."}]},
+   {stem:"When you approach an agency, the impression to give is:", options:[
+     {t:"Eager and available, applying to everything.", ok:false, fb:"Reads as unselective and slightly desperate. Not the register of this world."},
+     {t:"Discreet, poised, and clear about the specific value you offer.", ok:true, fb:"Agencies place people they would trust in a home. Poise is part of the qualification."},
+     {t:"Impressive: list every skill and every famous person you have met.", ok:false, fb:"Name-dropping breaks the very discretion they are screening for."}]},
+   {stem:"A gap in your CV from a confidential household is best presented as:", options:[
+     {t:"Left blank to avoid awkward questions.", ok:false, fb:"A blank invites worse suspicion. Handle it, do not hide it."},
+     {t:"Private household, dates, scope; bound by confidentiality, reference via the family office.", ok:true, fb:"Framed this way, the confidential role becomes a credential, not a hole."},
+     {t:"Explained in full detail to prove it is real.", ok:false, fb:"Detail is the one thing you must not give. The discretion is the proof."}]}
+ ]},
+ {no:7, title:"Your candidacy", type:"scenario", items:[
+   {scene:"The first 90 seconds", stem:"In an interview, the family is really deciding:", options:[
+     {t:"Whether you are the most impressive candidate.", ok:false, fb:"Impressiveness is not the question, and can even work against you."},
+     {t:"Whether they will regret you: whether you are safe, discreet and easy to live with.", ok:true, fb:"They are checking for reassurance, not brilliance."},
+     {t:"Whether you have the most experience.", ok:false, fb:"Experience helps, but it is not what the first impression is testing."}]},
+   {scene:"The CV", stem:"Which line belongs on a private-service CV?", options:[
+     {t:"'Passionate, dynamic, dedicated professional.'", ok:false, fb:"Empty adjectives every candidate writes. They take the space evidence should fill."},
+     {t:"'Coordinated travel for a family of five across three residences, including private aviation.'", ok:true, fb:"A checkable fact, not a claim. That is exactly the register that earns a callback."},
+     {t:"'References: a well-known royal family.'", ok:false, fb:"Pointing to a confidential principal, even vaguely, is disqualifying."}]},
+   {scene:"The salary question", stem:"Asked your salary expectation, the composed move is:", options:[
+     {t:"Undersell yourself to seem easy to hire.", ok:false, fb:"Undervaluing yourself reads as insecurity, and sets a low anchor for years."},
+     {t:"State a clear, researched range calmly, without apology.", ok:true, fb:"Calm clarity about your worth is itself a sign of a professional."},
+     {t:"Refuse to discuss money at this stage.", ok:false, fb:"Evasion reads as awkwardness. It is a fair question; answer it with poise."}]},
+   {scene:"Send it Monday", stem:"Your dossier is 'nearly ready' but you keep polishing. The instruction is:", options:[
+     {t:"Wait until it is perfect.", ok:false, fb:"'Perfect' is how good candidates never apply. Perfection is the enemy here."},
+     {t:"Send it. A sent good dossier beats an unsent perfect one, every time.", ok:true, fb:"Momentum beats polish. The market rewards the one who actually shows up."},
+     {t:"Ask three friends to review it first.", ok:false, fb:"More opinions rarely help and usually delay. Trust the work and send."}]}
+ ]},
+ {no:8, title:"Your first ninety days", type:"scenario", items:[
+   {scene:"The first fortnight", stem:"In your first two weeks in a new house you spot six things done badly. You:", options:[
+     {t:"Start fixing them to prove your value.", ok:false, fb:"Everything that looks stupid has a history, usually a person. Fixing fast makes enemies fast."},
+     {t:"Write them down, change nothing, and learn the reasons first.", ok:true, fb:"Observe before you reform. The list waits; trust does not come back once lost."},
+     {t:"Raise them all with the principal at once.", ok:false, fb:"You will be seen as the reformer who arrived and criticised. A classic early failure."}]},
+   {scene:"The mistake", stem:"You make a visible mistake on day thirty. The rule is:", options:[
+     {t:"Take forty minutes to explain how it happened.", ok:false, fb:"The forty-minute defence is exactly the trap. Explaining is losing."},
+     {t:"Take four: fact, fix, ownership, and move on.", ok:true, fb:"Name it, solve it, own it, and do not relitigate it."},
+     {t:"Say nothing and hope it is not noticed.", ok:false, fb:"Hiding a mistake is the single fastest way to lose a household's trust."}]},
+   {scene:"Week six", stem:"In your sixth week everything feels like it is collapsing and you consider resigning. You:", options:[
+     {t:"Resign; clearly it is not working.", ok:false, fb:"The week-six crash is universal and it passes around week ten. Quitting now is quitting on a curve, not a job."},
+     {t:"Remember the crash is normal, and keep going.", ok:true, fb:"You even wrote yourself a note for this day. Ride it out; it lifts."},
+     {t:"Demand a review to see if you are failing.", ok:false, fb:"You are not failing; you are in the dip everyone hits. A panicked review just spreads your doubt."}]},
+   {scene:"The housekeeper", stem:"The housekeeper warmly tells you the last manager was 'a disaster, honestly'. You:", options:[
+     {t:"Agree, to bond with her.", ok:false, fb:"You have just shown you will criticise the absent. She will assume you will do it to her too."},
+     {t:"Stay warm but neutral, and never join in running anyone down.", ok:true, fb:"Alliances built on shared contempt curdle. Kindness without gossip is the safer ground."},
+     {t:"Report the conversation to the principal.", ok:false, fb:"Tale-bearing in your first days poisons the staff room. Let it pass."}]}
+ ]}
+];
+const PR_DONE = {};
+let prState = null;
+function prBadge(t){ return t==='flash' ? 'Flashcards' : t==='quiz' ? 'Quick quiz' : 'Scenario'; }
+function renderPractice(){
+  const wrap=document.getElementById('practiceWrap'); if(!wrap) return;
+  wrap.innerHTML='<div class="pr-grid">'+PRACTICE.map(w=>`
+    <button class="pr-card" onclick="startPractice(${w.no})">
+      <div class="pr-wk">Week ${w.no}</div>
+      <div class="pr-ti">${escapeHtml(w.title)}</div>
+      <span class="pr-badge">${prBadge(w.type)}</span>
+      <div class="pr-go ${PR_DONE[w.no]?'pr-done':''}">${PR_DONE[w.no]?'Completed · play again':'Start'} &rarr;</div>
+    </button>`).join('')+'</div>';
+}
+function startPractice(no){
+  const w=PRACTICE.find(x=>x.no===no); if(!w) return;
+  window.scrollTo(0,0);
+  if(w.type==='flash'){ prState={no:no,i:0,flipped:false}; renderFlashRunner(); }
+  else { prState={no:no,i:0,score:0,answered:false}; renderQuizRunner(); }
+}
+function prHeader(w,i,total){
+  return `<div class="pr-top">
+      <button class="pr-back" onclick="renderPractice()">&larr; All exercises</button>
+      <div class="pr-prog"><div class="pr-prog-fill" style="width:${Math.round(i/total*100)}%"></div></div>
+      <div class="pr-count">${Math.min(i+1,total)} / ${total}</div>
+    </div>`;
+}
+function renderQuizRunner(){
+  const w=PRACTICE.find(x=>x.no===prState.no);
+  const wrap=document.getElementById('practiceWrap');
+  const total=w.items.length, i=prState.i;
+  if(i>=total) return renderResult(w);
+  const it=w.items[i], keys=['A','B','C','D'];
+  const opts=it.options.map((o,oi)=>`<button class="pr-opt" data-i="${oi}" onclick="prAnswer(${oi})"><span class="pr-key">${keys[oi]}</span><span>${escapeHtml(o.t)}</span></button>`).join('');
+  wrap.innerHTML=`<div class="pr-run">${prHeader(w,i,total)}
+    <div class="pr-q">
+      ${it.scene?`<div class="pr-scene">${escapeHtml(it.scene)}</div>`:''}
+      <div class="pr-stem">${escapeHtml(it.stem)}</div>
+      <div class="pr-opts" id="prOpts">${opts}</div>
+      <div id="prFbSlot"></div>
+    </div></div>`;
+}
+function prAnswer(oi){
+  if(!prState || prState.answered) return; prState.answered=true;
+  const w=PRACTICE.find(x=>x.no===prState.no), it=w.items[prState.i], chosen=it.options[oi];
+  if(chosen.ok) prState.score++;
+  document.querySelectorAll('#prOpts .pr-opt').forEach((b,bi)=>{
+    b.setAttribute('disabled','');
+    if(it.options[bi].ok) b.classList.add('correct');
+    else if(bi===oi) b.classList.add('wrong');
+    else b.classList.add('dim');
+  });
+  const last = prState.i>=w.items.length-1;
+  const fb = (chosen.ok?'<b>Exactly right.</b> ':'<b>Not quite.</b> ')+escapeHtml(chosen.fb);
+  document.getElementById('prFbSlot').innerHTML=`<div class="pr-fb">${fb}</div><div class="pr-next"><button class="pr-btn" onclick="prNext()">${last?'See my result':'Next'} &rarr;</button></div>`;
+}
+function prNext(){ prState.i++; prState.answered=false; window.scrollTo(0,0); renderQuizRunner(); }
+function renderResult(w){
+  const wrap=document.getElementById('practiceWrap'), total=w.items.length, s=prState.score, pct=s/total;
+  PR_DONE[w.no]=true;
+  let title,msg;
+  if(pct===1){ title="Flawless."; msg="Every answer right. You have genuinely absorbed this week, and that instinct is exactly what a household feels in the room."; }
+  else if(pct>=0.6){ title="Well played."; msg="A strong pass. Read the feedback on the ones you missed, then run it again and watch it click into place."; }
+  else { title="Good. Now go again."; msg="This is how the learning happens: play, read why, replay. Give it another round and it will move fast."; }
+  wrap.innerHTML=`<div class="pr-run"><div class="pr-result">
+    <div class="pr-score">${s}/${total}</div><h2>${title}</h2><p>${msg}</p>
+    <div class="pr-acts"><button class="pr-btn" onclick="startPractice(${w.no})">Play again</button><button class="pr-btn ghost" onclick="renderPractice()">All exercises</button></div>
+  </div></div>`;
+}
+function renderFlashRunner(){
+  const w=PRACTICE.find(x=>x.no===prState.no), wrap=document.getElementById('practiceWrap');
+  const total=w.cards.length, i=prState.i, c=w.cards[i];
+  wrap.innerHTML=`<div class="pr-run">${prHeader(w,i,total)}
+    <div class="pr-flash">
+      <div class="pr-flip ${prState.flipped?'flipped':''}" id="prFlip" onclick="prFlip()">
+        <div class="pr-face front"><div class="fc-k">Term</div><div class="fc-term">${escapeHtml(c.term)}</div><div class="fc-hint">tap to reveal</div></div>
+        <div class="pr-face back"><div class="fc-k">Meaning</div><div class="fc-def">${escapeHtml(c.def)}</div>${c.note?`<div class="fc-note">${escapeHtml(c.note)}</div>`:''}</div>
+      </div>
+    </div>
+    <div class="pr-fnav">
+      <button class="pr-btn ghost" onclick="prFlashPrev()" ${i===0?'disabled':''}>&larr; Previous</button>
+      ${ i>=total-1 ? `<button class="pr-btn" onclick="prFlashDone()">Finish &check;</button>` : `<button class="pr-btn" onclick="prFlashNext()">Next &rarr;</button>` }
+    </div></div>`;
+}
+function prFlip(){ prState.flipped=!prState.flipped; const el=document.getElementById('prFlip'); if(el) el.classList.toggle('flipped', prState.flipped); }
+function prFlashNext(){ prState.i++; prState.flipped=false; renderFlashRunner(); }
+function prFlashPrev(){ prState.i=Math.max(0,prState.i-1); prState.flipped=false; renderFlashRunner(); }
+function prFlashDone(){
+  PR_DONE[prState.no]=true;
+  const w=PRACTICE.find(x=>x.no===prState.no), wrap=document.getElementById('practiceWrap');
+  wrap.innerHTML=`<div class="pr-run"><div class="pr-result"><div class="pr-score">${w.cards.length}</div><h2>Cards reviewed.</h2><p>Come back to these whenever you like. The words become yours by repetition, and fluency in them is what quietly marks the insider.</p><div class="pr-acts"><button class="pr-btn" onclick="startPractice(${w.no})">Review again</button><button class="pr-btn ghost" onclick="renderPractice()">All exercises</button></div></div></div>`;
+}
+
 // ====== THE SCREENING ROOM DATA ======
 // Plateformes indiquées pour les États-Unis (élèves américains). Les droits tournent :
 // chaque carte renvoie vers une recherche JustWatch US, toujours à jour.
@@ -1758,7 +2060,8 @@ const ICONS = {
   mentor:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6" stroke-linecap="round"/></svg>',
   check:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2"><path d="M5 12l5 5L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg>',
   checkSmall:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M5 12l5 5L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg>',
-  lock:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>'
+  lock:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>',
+  intro:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l2.4 5 5.6.8-4 3.9 1 5.6L12 15.9 6.9 18.3l1-5.6-4-3.9 5.6-.8z" stroke-linejoin="round"/></svg>'
 };
 
 let USER=null, PROFILE=null;
@@ -2061,6 +2364,15 @@ function openWeek(no){
   }
   if(!state.lessons[no])state.lessons[no]=steps.map(()=>false);
   const list=document.getElementById('lessonList');list.innerHTML="";
+  // ---- petit module d'introduction (Semaine 1 uniquement) ----
+  if(no===1){
+    const intro={ title:"Welcome to Maison Amarine", subtitle:"Start here · a 2-minute introduction", icon:"intro",
+      text:"Welcome. You are about to step inside a world very few people ever see from within: the private lives of the ultra-wealthy, and the quiet, remarkable craft of caring for them.\n\nHere is how it works. Eight weeks, and each one holds the same four things: a lesson to watch, a confidential note to read, a practice to do, and one deliverable to create and send me. Finish a week to unlock the next. There is no race here. Give each week the time it deserves.\n\nA few things to know before you begin. This is one craft with several names, house manager, private PA, estate manager, concierge, and you are training for all of them. Nothing you learn here is theory; every lesson comes from real houses and real situations. And you are never alone in it: every week includes a personal session with me.\n\nOne promise. By the end of these eight weeks, you will not simply know about this world. You will know how to belong in it. Take a breath, and let's begin." };
+    const irow=document.createElement('div'); irow.className="lesson has-content intro-lesson";
+    irow.innerHTML=`<div class="lesson-main"><div class="lesson-ic">${ICONS.intro}</div><div class="lesson-txt"><div class="lt">${escapeHtml(intro.title)}</div><div class="lk">${escapeHtml(intro.subtitle)} <span class="lesson-caret">›</span></div></div></div>`;
+    irow.querySelector('.lesson-main').addEventListener('click',()=>openStepView(intro, no, -1));
+    list.appendChild(irow);
+  }
   steps.forEach((s,i)=>{
     const checked=state.lessons[no][i];
     const isSubmit = (i===3);
@@ -2271,6 +2583,7 @@ function goPage(name, scrollTo){
   if(name==='journal'){ bootJournal(); }
   if(name==='register'){ renderRegister(); }
   if(name==='screening'){ renderScreening(); }
+  if(name==='practice'){ renderPractice(); }
   if(scrollTo){setTimeout(()=>{const el=document.getElementById(scrollTo);if(el)el.scrollIntoView({behavior:'smooth'});},60);}
 }
 document.querySelectorAll('.nav-item').forEach(n=>n.addEventListener('click',()=>goPage(n.dataset.page, n.dataset.scroll)));
