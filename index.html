@@ -1008,6 +1008,18 @@
 .mj-archbtn:hover{background:#000;}
 .mj-arch-empty{background:var(--paper);border:1px dashed var(--line);border-radius:16px;padding:36px 30px;text-align:center;font-family:'Jost',sans-serif;font-size:14px;color:var(--stone);line-height:1.65;}
 .mj-arch-item h3{margin-bottom:8px;}
+/* page tabs at the top of the journal */
+.mj-mast-sm{padding:4px 0 18px;margin-bottom:0;}
+.mj-mast-sm .mj-name{font-size:clamp(34px,5vw,50px);margin:10px 0 8px;}
+.j-tabs{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin:18px 0 24px;}
+.j-tab{display:inline-flex;align-items:center;gap:8px;background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:8px 16px;cursor:pointer;font-family:'Jost',sans-serif;transition:border-color .16s,background .16s;}
+.j-tab:hover{border-color:var(--gold-lt);}
+.j-tab.active{background:var(--ink);border-color:var(--ink);}
+.j-tab-n{font-size:11px;font-weight:600;letter-spacing:.05em;color:var(--gold-deep);}
+.j-tab.active .j-tab-n{color:var(--gold-lt);}
+.j-tab-l{font-size:12.5px;font-weight:500;color:var(--ink-soft);}
+.j-tab.active .j-tab-l{color:#F3EAD8;}
+@media(max-width:620px){ .j-tabs{flex-wrap:nowrap;overflow-x:auto;justify-content:flex-start;padding-bottom:6px;-webkit-overflow-scrolling:touch;} .j-tab{flex:none;} }
 
 @media(max-width:1000px){
   .j-row{grid-template-columns:1fr;gap:28px;}
@@ -3080,13 +3092,64 @@ document.querySelectorAll('.m-tab').forEach(t=>t.addEventListener('click',()=>go
 // ====== THE AMARINE JOURNAL — lecture paginée (1 page / article) + archives ======
 const ICO_ARR='<svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 const ICO_ARL='<svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M11 6l-6 6 6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>';
-let jEdition=null, jIsCurrent=true, jArchive=null;
+let jEdition=null, jIsCurrent=true, jArchive=null, jPage=0;
 const jParas = t => (t||'').split(/\n\s*\n/).map(p=>`<p>${p.trim()}</p>`).join('');
 function jCurrentEdition(){ return {no:JOURNAL_NO,date:JOURNAL_DATE,strap:JOURNAL_STRAP,lead:JOURNAL_LEAD,articles:JOURNAL||[],briefs:JOURNAL_BRIEFS||[]}; }
 function jAllArticles(ed){ return [Object.assign({isLead:true},ed.lead)].concat(ed.articles||[]); }
 function jTeaser(a){ const t=(a.standfirst||a.body||'').split(/\n/)[0].replace(/<[^>]+>/g,''); return t.length>150? t.slice(0,148).trim()+'…' : t; }
 
-function renderJournal(){ jEdition=jCurrentEdition(); jIsCurrent=true; renderJCover(); }
+function renderJournal(){ jEdition=jCurrentEdition(); jIsCurrent=true; jPage=0; renderJPager(); }
+
+function renderJPager(){
+  const box=document.getElementById('journalList'); const ed=jEdition;
+  const all=jAllArticles(ed);
+  const hasBriefs=!!(ed.briefs && ed.briefs.length);
+  const total=all.length+(hasBriefs?1:0);
+  if(jPage<0)jPage=0; if(jPage>=total)jPage=total-1;
+  // ---- onglets de pages ----
+  let tabs='';
+  all.forEach((a,i)=>{
+    const nn=String(i+1).padStart(2,'0');
+    tabs+=`<button class="j-tab ${i===jPage?'active':''}" onclick="goJPage(${i})"><span class="j-tab-n">${nn}</span><span class="j-tab-l">${escapeHtml(a.isLead?'Lead':a.place)}</span></button>`;
+  });
+  if(hasBriefs){ const bi=all.length; tabs+=`<button class="j-tab ${jPage===bi?'active':''}" onclick="goJPage(${bi})"><span class="j-tab-n">✦</span><span class="j-tab-l">In brief</span></button>`; }
+  // ---- contenu de la page active ----
+  let content;
+  if(hasBriefs && jPage===all.length){
+    content=`<article class="mj-card mj-page"><div class="mj-kicker" style="text-align:center;">In brief</div><div class="mj-briefs" style="margin-top:6px;">${ed.briefs.map(b=>`<a class="mj-brief" href="${b.url}" target="_blank" rel="noopener"><h4>${escapeHtml(b.t)}</h4><p>${escapeHtml(b.b)}</p><span>${escapeHtml(b.src)} ${ICO_EXT}</span></a>`).join('')}</div></article>`;
+  } else {
+    const a=all[jPage];
+    content=`<article class="mj-card mj-page">
+      ${a.isLead?'<div class="mj-kicker" style="text-align:center;">The lead story</div>':''}
+      <div class="mj-cat">${escapeHtml(a.cat)}<b>·</b>${escapeHtml(a.place)}</div>
+      <h1 class="mj-page-h1">${escapeHtml(a.title)}</h1>
+      ${a.standfirst?`<p class="mj-stand">${escapeHtml(a.standfirst)}</p>`:''}
+      <div class="mj-body mj-body-lg">${jParas(a.body)}</div>
+      ${a.why?`<div class="mj-why"><div class="mj-why-k">Why this matters to you</div><p>${a.why}</p></div>`:''}
+      <a class="mj-src" href="${a.url}" target="_blank" rel="noopener">Read in full at ${escapeHtml(a.src)} ${ICO_EXT}</a>
+    </article>`;
+  }
+  const prev = jPage>0?`<button class="mj-nav-b" onclick="goJPage(${jPage-1})">${ICO_ARL} Previous</button>`:`<span></span>`;
+  const next = jPage<total-1?`<button class="mj-nav-b" onclick="goJPage(${jPage+1})">Next ${ICO_ARR}</button>`:`<span></span>`;
+  const pastBanner = jIsCurrent?'':`<div class="mj-pastbar">You are reading a past edition. <button onclick="renderJournal()">Back to the current issue ${ICO_ARR}</button></div>`;
+  box.innerHTML=`
+  <div class="mj">
+    ${pastBanner}
+    <header class="mj-mast mj-mast-sm">
+      <div class="mj-issue">${escapeHtml(ed.no)} &middot; ${escapeHtml(ed.date)}</div>
+      <h1 class="mj-name">The Amarine Journal</h1>
+      <div class="mj-strap">${escapeHtml(ed.strap)}</div>
+    </header>
+    <nav class="j-tabs">${tabs}</nav>
+    ${content}
+    <div class="mj-nav">${prev}${next}</div>
+    <div style="text-align:center;margin-top:8px;">
+      ${jIsCurrent?`<button class="mj-back" onclick="renderJArchive()">${ICO_ARL} Past editions</button>`:`<button class="mj-back" onclick="renderJournal()">${ICO_ARL} Current issue</button>`}
+    </div>
+  </div>`;
+  window.scrollTo(0,0);
+}
+function goJPage(i){ jPage=i; renderJPager(); }
 
 function renderJCover(){
   const box=document.getElementById('journalList'); const ed=jEdition;
@@ -3187,7 +3250,7 @@ async function renderJArchive(){
   </div>`;
   window.scrollTo(0,0);
 }
-function openPastEdition(idx){ if(!jArchive||!jArchive[idx])return; jEdition=jArchive[idx]; jIsCurrent=false; renderJCover(); }
+function openPastEdition(idx){ if(!jArchive||!jArchive[idx])return; jEdition=jArchive[idx]; jIsCurrent=false; jPage=0; renderJPager(); }
 
 // ====== CONVERSATION SWITCHER (list + view) ======
 let activeDmUser=null; // {id, name} du membre avec qui on discute en privé
