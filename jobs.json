@@ -1,29 +1,98 @@
 {
-  "updated": "Live roles · verified 14 July 2026",
+  "updated": "Live roles + boards · updated 15 July 2026",
   "boards": [
     [
-      "Morgan & Mallet International",
-      "Household, estate & family office · 8 offices worldwide",
+      "Morgan & Mallet",
+      "Household, estate & family office · US offices NY, LA, Miami",
       "https://www.householdstaff.agency/jobs/"
     ],
     [
       "Silver Swan Recruitment",
-      "Private staffing for UHNW · London, Dubai, US",
-      "https://silverswanrecruitment.com/search-jobs/"
+      "Private household staff · New York, Miami, LA, SF",
+      "https://silverswanrecruitment.com/house-manager-jobs/"
     ],
     [
-      "Private House Jobs",
-      "The largest private-household job board in Europe",
-      "https://www.privatehousejobs.com/"
+      "Rose's Agency",
+      "US job board · house & estate managers",
+      "https://rosesagency.com/job-board/category/House+&+Estate+Managers"
     ],
     [
-      "Estate Jobs",
-      "Estate & private service roles, United States",
-      "https://estatejobs.com/"
+      "MyStaffHq",
+      "UHNW estate manager & private roles, US & worldwide",
+      "https://www.mystaffhq.com/jobs/estate-manager"
+    ],
+    [
+      "EstateJobs.com",
+      "Estate & private-service roles across the US",
+      "https://www.estatejobs.com/"
+    ],
+    [
+      "Colonial Domestic Agency",
+      "Domestic & estate staffing, nationwide US",
+      "https://colonialdomestics.com/current-job-openings/"
+    ],
+    [
+      "Bespoke Bureau",
+      "Estate managers & household staff",
+      "https://bespokebureau.com/"
+    ],
+    [
+      "Polo & Tweed",
+      "Household staffing & training",
+      "https://poloandtweed.com/find-staff/"
+    ],
+    [
+      "LinkedIn Jobs",
+      "Live search: estate & house manager, private PA (US)",
+      "https://www.linkedin.com/jobs/search/?keywords=estate%20manager%20private%20household&location=United%20States"
+    ],
+    [
+      "Indeed",
+      "Live search: private estate manager (US)",
+      "https://www.indeed.com/jobs?q=private+estate+manager&l=United+States"
+    ],
+    [
+      "ZipRecruiter",
+      "Live search: UHNW estate manager (US)",
+      "https://www.ziprecruiter.com/Jobs/Uhnw-Estate-Manager"
     ]
   ],
   "jobs": {
     "americas": [
+      {
+        "flag": "🇺🇸",
+        "city": "Palm Beach",
+        "country": "Florida, USA",
+        "title": "Estate Manager · Oceanfront estate + US residences",
+        "agency": "Silver Swan Recruitment",
+        "type": "Permanent · Full time",
+        "tags": [
+          "Estate Manager",
+          "Relocation",
+          "Full benefits"
+        ],
+        "salary": "$120–140k",
+        "posted": "Live role",
+        "url": "https://silverswanrecruitment.com/job/estate-manager-palm-beach-florida-4260/",
+        "blurb": "A 20,000 sq ft oceanfront property in South Florida, with oversight of additional US residences. Full medical, dental and vision, 401k, stock enrollment after a year, and relocation for out-of-state candidates."
+      },
+      {
+        "flag": "🇺🇸",
+        "city": "New York",
+        "country": "New York, USA",
+        "title": "Estate Manager to a high-profile principal",
+        "agency": "Colonial Domestic Agency",
+        "type": "Permanent · Full time",
+        "tags": [
+          "Estate Manager",
+          "Full benefits",
+          "Senior"
+        ],
+        "salary": "$200k",
+        "posted": "Live role",
+        "url": "https://colonialdomestics.com/current-job-openings/",
+        "blurb": "Estate manager for a high-net-worth New York principal. Starting salary around $200k plus a full benefits package. Several years in a UHNW private household expected."
+      },
       {
         "flag": "🇺🇸",
         "city": "Palo Alto",
