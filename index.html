@@ -265,6 +265,10 @@
   .cv-mid .cv-band,.cv-mid.cv-band{color:var(--gold-deep);}
   .cv-low .cv-band,.cv-low.cv-band{color:#b06a4a;}
   .cv-sub{font-family:'Jost',sans-serif;font-size:13.5px;color:var(--ink-soft);line-height:1.55;}
+  .cv-review{background:var(--paper);border:1px solid var(--line);border-left:3px solid var(--gold);border-radius:14px;padding:24px 28px;margin-bottom:22px;}
+  .cv-review-k{font-family:'Jost',sans-serif;font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:12px;}
+  .cv-review p{font-family:'Cormorant',serif;font-weight:300;font-size:19px;line-height:1.72;color:var(--ink-soft);margin:0 0 14px;}
+  .cv-review p:last-child{margin-bottom:0;}
   .cv-cols{display:grid;grid-template-columns:1fr;gap:16px;}
   .cv-group{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:22px 24px;}
   .cv-group h3{font-family:'Jost',sans-serif;font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;margin:0 0 14px;display:flex;align-items:center;gap:8px;}
@@ -1848,6 +1852,29 @@ function analyzeCV(){
     : score>=65?["Nearly there","cv-mid","A solid base. Work through the fixes below and it will move into agency-ready territory."]
     : ["Needs work","cv-low","There is real room to sharpen this. The fixes below are the fastest wins, in order."];
 
+  // ---- avis écrit, en langage naturel (composé à partir des constats) ----
+  const rv=[];
+  rv.push(score>=85 ? "This is a strong CV. It already reads the way a private household or a specialist agency would want it to, and it needs only a light polish before you send it."
+    : score>=65 ? "There is a good CV in here. The bones are right, and a few specific changes will lift it from promising into genuinely agency-ready."
+    : "This CV is not quite ready to send yet, and that is completely normal, almost nobody's first draft is. The encouraging part is that everything holding it back is fixable, and fast.");
+  const problems=[];
+  if(ff.length) problems.push("it leans on adjectives such as "+ff.slice(0,2).map(f=>'“'+escapeHtml(f)+'”').join(' and ')+", the kind every candidate writes and none can prove; each one should be swapped for a fact that demonstrates it");
+  if(df.length) problems.push("it describes duties rather than scale, and a phrase like “responsible for travel” tells a reader far less than “coordinated travel for a family of five across three residences”");
+  if(nums<3) problems.push("it is missing numbers, and in this world scope is proven with figures, how many residences, how large a staff, what budgets");
+  if(fp>6) problems.push("it is written in the first person, where a CV wants clipped, impersonal lines that begin with a verb");
+  if(words<120) problems.push("it reads a little thin and could carry more evidence");
+  else if(words>950) problems.push("it runs long, and a private-service CV should sit within two pages");
+  if(!hasEmail) problems.push("there is no clear contact email at the top");
+  if(problems.length){
+    rv.push("The main things to work on: "+problems.slice(0,3).join("; ")+".");
+  }
+  if(strong.length){
+    rv.push("What already works in your favour: "+strong.slice(0,2).map(s=>s.replace(/\.$/,'').charAt(0).toLowerCase()+s.replace(/\.$/,'').slice(1)).join(", and ")+".");
+  }
+  rv.push("One rule above all: never name a confidential principal. Framed as “private household, bound by confidentiality, reference available via the family office,” a discreet role becomes your strongest line, not a gap.");
+  rv.push(score>=85 ? "Make the small fixes below and send it with confidence." : "Make the changes below, paste it back in, and watch the score climb. You are closer than it feels.");
+  const reviewHtml=`<div class="cv-review"><div class="cv-review-k">A note on your CV</div>${rv.map(p=>`<p>${p}</p>`).join('')}</div>`;
+
   const strongHtml = strong.length? `<div class="cv-group g-strong"><h3>✓ Strengths</h3>${strong.map(s=>`<div class="cv-mini">${s}</div>`).join('')}</div>`:'';
   const fixHtml = fix.length? `<div class="cv-group g-fix"><h3>→ Fix these</h3>${fix.map(it=>`<div class="cv-item"><div class="it-t">${escapeHtml(it.t)}</div><div class="it-d">${it.d}</div></div>`).join('')}</div>`
     : `<div class="cv-group g-strong"><h3>✓ Fix these</h3><div class="cv-mini">Nothing major to fix. Impressive.</div></div>`;
@@ -1862,6 +1889,7 @@ function analyzeCV(){
       </div>
       <div class="cv-tt"><div class="cv-band">${band[0]}</div><div class="cv-sub">${band[2]}</div></div>
     </div>
+    ${reviewHtml}
     <div class="cv-cols">${fixHtml}${strongHtml}${consHtml}</div>
   </div>`;
   box.scrollIntoView({behavior:'smooth',block:'nearest'});
