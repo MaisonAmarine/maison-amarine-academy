@@ -1032,6 +1032,14 @@
 .mj-orn{display:flex;align-items:center;justify-content:center;gap:14px;margin-top:16px;}
 .mj-orn span{width:44px;height:1px;background:var(--gold-lt);display:block;}
 .mj-orn b{color:var(--gold);font-size:13px;font-weight:400;line-height:1;}
+.mj-subline{font-family:'Jost',sans-serif;font-size:9px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--stone);margin-top:14px;}
+.mj-runhead{display:flex;justify-content:space-between;align-items:center;gap:12px;border-top:1.5px solid var(--ink);border-bottom:1px solid var(--ink);padding:7px 0;margin-bottom:24px;font-family:'Jost',sans-serif;font-size:9px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--stone);}
+.mj-runhead span:first-child{color:var(--ink);}
+.mj-runhead span:nth-child(2){color:var(--gold-deep);}
+.mj-byline{font-family:'Jost',sans-serif;font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--stone);margin:0 0 24px;}
+.mj-body-lg p.mj-dropcap::first-letter{font-family:'Cormorant',serif;font-weight:600;float:left;font-size:62px;line-height:.78;padding:5px 12px 0 0;color:var(--gold-deep);}
+.mj-pull{border:none;border-top:2px solid var(--gold-lt);border-bottom:2px solid var(--gold-lt);margin:28px auto;padding:18px 0;max-width:60ch;font-family:'Cormorant',serif;font-style:italic;font-weight:500;font-size:25px;line-height:1.32;color:var(--ink);text-align:center;}
+.mj-endmark{text-align:center;color:var(--gold);font-size:15px;margin-top:22px;letter-spacing:.3em;}
 @media(max-width:620px){ .j-tabs{flex-wrap:nowrap;overflow-x:auto;justify-content:flex-start;padding-bottom:6px;-webkit-overflow-scrolling:touch;} .j-tab{flex:none;} }
 
 @media(max-width:1000px){
@@ -3144,12 +3152,24 @@ function renderJPager(){
     content=`<article class="mj-card mj-page"><div class="mj-kicker" style="text-align:center;">In brief</div><div class="mj-briefs" style="margin-top:6px;">${ed.briefs.map(b=>`<a class="mj-brief" href="${b.url}" target="_blank" rel="noopener"><h4>${escapeHtml(b.t)}</h4><p>${escapeHtml(b.b)}</p><span>${escapeHtml(b.src)} ${ICO_EXT}</span></a>`).join('')}</div></article>`;
   } else {
     const a=all[jPage];
+    const ps=(a.body||'').split(/\n\s*\n/).map(p=>p.trim()).filter(Boolean);
+    let bodyHtml='';
+    ps.forEach((p,pi)=>{
+      bodyHtml += pi===0 ? `<p class="mj-dropcap">${p}</p>` : `<p>${p}</p>`;
+      if(pi===0 && ps.length>1){
+        const sent=(ps[1].replace(/<[^>]+>/g,'').match(/[^.!?]+[.!?]/)||[''])[0].trim();
+        if(sent.length>30 && sent.length<180) bodyHtml += `<blockquote class="mj-pull">${escapeHtml(sent)}</blockquote>`;
+      }
+    });
+    bodyHtml += '<div class="mj-endmark">&#10070;</div>';
     content=`<article class="mj-card mj-page">
+      <div class="mj-runhead"><span>The Amarine Journal</span><span>${escapeHtml(a.section||a.cat||'')}</span><span>${escapeHtml(ed.no)}</span></div>
       ${a.isLead?'<div class="mj-kicker" style="text-align:center;">The lead story</div>':''}
       <div class="mj-cat"><span class="mj-cat-ic">${jIcon(a)}</span>${escapeHtml(a.cat)}<b>·</b>${escapeHtml(a.place)}</div>
       <h1 class="mj-page-h1">${escapeHtml(a.title)}</h1>
       ${a.standfirst?`<p class="mj-stand">${escapeHtml(a.standfirst)}</p>`:''}
-      <div class="mj-body mj-body-lg">${jParas(a.body)}</div>
+      <div class="mj-byline">By the Amarine Desk &middot; ${escapeHtml((a.place||'').toUpperCase())}</div>
+      <div class="mj-body mj-body-lg">${bodyHtml}</div>
       ${a.why?`<div class="mj-why"><div class="mj-why-k">Why this matters to you</div><p>${a.why}</p></div>`:''}
       <a class="mj-src" href="${a.url}" target="_blank" rel="noopener">Read in full at ${escapeHtml(a.src)} ${ICO_EXT}</a>
     </article>`;
@@ -3165,6 +3185,7 @@ function renderJPager(){
       <h1 class="mj-name">The Amarine Journal</h1>
       <div class="mj-strap">${escapeHtml(ed.strap)}</div>
       <div class="mj-orn"><span></span><b>&#10070;</b><span></span></div>
+      <div class="mj-subline">Private circulation &middot; For the mentees of Maison Amarine</div>
     </header>
     <nav class="j-tabs">${tabs}</nav>
     ${content}
