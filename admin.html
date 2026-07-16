@@ -201,12 +201,16 @@
   .msg-li:hover{background:var(--ivory);}
   .msg-li.active{background:linear-gradient(100deg,var(--gold-wash),rgba(243,234,216,.4));border-left-color:var(--gold);}
   .msg-li .av{width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--gold-lt));color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Cormorant',serif;font-weight:700;font-size:17px;flex-shrink:0;box-shadow:0 3px 8px rgba(33,28,21,.14);}
+  .msg-li .av.av-photo{background-size:cover;background-position:center;background-repeat:no-repeat;}
   .msg-li .info{flex:1;min-width:0;}
+  .msg-li .li-top{display:flex;align-items:baseline;justify-content:space-between;gap:8px;}
+  .msg-li .li-time{font-size:10.5px;color:var(--stone);flex-shrink:0;}
   .msg-li .nm{font-size:14.5px;font-weight:600;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
   .msg-li .pv{font-size:12.5px;color:var(--stone);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:2px;}
   .msg-li .badge-dot{width:9px;height:9px;border-radius:50%;background:#e0574c;flex-shrink:0;}
   .msg-conv{flex:1;display:flex;flex-direction:column;background:var(--paper);border:1px solid var(--line);border-radius:16px;overflow:hidden;min-width:0;}
-  .conv-head{padding:16px 24px;border-bottom:1px solid rgba(201,168,103,.2);background:linear-gradient(120deg,var(--ink),#2e2820);position:relative;}
+  .conv-head{padding:15px 24px;border-bottom:1px solid rgba(201,168,103,.2);background:linear-gradient(120deg,var(--ink),#2e2820);position:relative;display:flex;align-items:center;gap:14px;}
+  .conv-head .ch-av{width:44px;height:44px;border-radius:50%;flex-shrink:0;background:linear-gradient(135deg,var(--gold),var(--gold-lt));color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Cormorant',serif;font-weight:700;font-size:17px;background-size:cover;background-position:center;}
   .conv-head::after{content:"";position:absolute;bottom:0;left:0;width:100%;height:1px;background:linear-gradient(90deg,var(--gold),transparent);opacity:.4;}
   .conv-head h3{font-family:'Cormorant',serif;font-weight:700;font-size:20px;color:#F6F0E4;margin:0;}
   .conv-head p{font-size:12px;color:#b7ad9a;margin:2px 0 0;}
@@ -225,6 +229,28 @@
   .conv-send{flex-shrink:0;background:linear-gradient(135deg,var(--gold),var(--gold-deep));color:#fff;border:none;border-radius:22px;padding:0 22px;height:44px;font-family:'Jost',sans-serif;font-size:13.5px;font-weight:600;cursor:pointer;transition:transform .2s,box-shadow .2s;box-shadow:0 4px 12px rgba(168,126,61,.32);}
   .conv-send:hover{transform:translateY(-1px);box-shadow:0 6px 16px rgba(168,126,61,.42);} .conv-send:disabled{opacity:.5;transform:none;}
   @media(max-width:760px){.msg-layout{flex-direction:column;height:auto;}.msg-listwrap{width:100%;}.msg-list{height:200px;}.msg-conv{height:440px;}}
+  /* ===== chat style élève porté dans l'admin ===== */
+  .conv-body{background-color:#f5efe4;background-image:radial-gradient(rgba(168,126,61,.055) 1px,transparent 1px),linear-gradient(180deg,#f7f1e7,#f2ebdd);background-size:24px 24px,100% 100%;display:flex;flex-direction:column;gap:2px;}
+  .day-sep{display:flex;align-items:center;justify-content:center;margin:14px 0 10px;}
+  .day-sep span{font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-deep,#8a6630);background:rgba(255,255,255,.85);padding:5px 16px;border-radius:20px;box-shadow:0 2px 8px rgba(33,28,21,.06);}
+  .mrow{display:flex;flex-direction:column;max-width:76%;margin-top:9px;position:relative;animation:bubIn .26s cubic-bezier(.22,.61,.36,1);}
+  @keyframes bubIn{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:none;}}
+  .mrow.grouped{margin-top:2px;}
+  .mrow.me{align-self:flex-end;align-items:flex-end;}
+  .mrow.them{align-self:flex-start;align-items:flex-start;}
+  .mbubble{padding:9px 14px;border-radius:18px;font-size:14px;line-height:1.45;position:relative;word-wrap:break-word;box-shadow:0 1px 1.5px rgba(33,28,21,.08);}
+  .mrow.them .mbubble{background:#fff;color:var(--ink);border-top-left-radius:6px;}
+  .mrow.me .mbubble{background:var(--gold);color:#fff;border-top-right-radius:6px;}
+  .mrow.grouped .mbubble{border-radius:13px;}
+  .mrow .who2{font-family:'Cormorant',serif;font-weight:700;font-size:13.5px;color:var(--gold-deep,#8a6630);margin:0 0 3px 5px;}
+  .mtime{display:block;font-size:10px;margin-top:3px;opacity:.8;text-align:right;}
+  .mrow.me .mtime{color:rgba(255,255,255,.9);} .mrow.them .mtime{color:var(--stone);}
+  .ticks{display:inline-flex;margin-left:4px;vertical-align:-2px;} .ticks svg{width:15px;height:11px;}
+  .ticks.read{color:#8ec9ff;} .ticks.sent{color:rgba(255,255,255,.7);}
+  .mrow .cbub-actions{display:flex;gap:8px;opacity:0;transition:opacity .18s;margin-top:4px;}
+  .mrow:hover .cbub-actions{opacity:1;}
+  .cbub-act{background:none;border:none;color:var(--stone);cursor:pointer;padding:2px;}
+  .cbub-act svg{width:15px;height:15px;}
   .conv-icon{flex:none;width:38px;height:38px;border-radius:10px;border:1px solid var(--line);background:#fff;color:var(--stone);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .18s;}
   .conv-icon svg{width:19px;height:19px;}
   .conv-icon:hover{border-color:var(--gold-lt,#C9A867);color:var(--gold-deep,#8a6630);}
@@ -544,7 +570,7 @@
 
       <div id="atab-community" style="margin-top:16px;display:none;">
         <div class="msg-conv" style="max-width:820px;height:min(66vh,600px);">
-          <div class="conv-head"><h3>The Community</h3><p>The shared salon, every member sees this. Post to welcome, motivate, or set the tone.</p></div>
+          <div class="conv-head"><div class="ch-av">M</div><div><h3>The Community</h3><p>The shared salon, every member sees this. Post to welcome, motivate, or set the tone.</p></div></div>
           <div class="conv-body" id="acommBody"></div>
           <div class="conv-prev" id="acommPrev" style="display:none;"></div>
           <div class="conv-input">
@@ -1215,6 +1241,18 @@ function fmtTime(iso){
   return d.toLocaleDateString('en-US', {month:'short',day:'numeric'})+' · '+d.toLocaleTimeString('en-US', opts);
 }
 function escapeHtml(s){return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function fmtHM(iso){ try{ return new Date(iso).toLocaleTimeString('en-US',{hour:'2-digit',minute:'2-digit'}); }catch(e){ return ''; } }
+function admDayLabel(iso){
+  const d=new Date(iso), now=new Date();
+  const today=new Date(now.getFullYear(),now.getMonth(),now.getDate());
+  const that=new Date(d.getFullYear(),d.getMonth(),d.getDate());
+  const diff=Math.round((today-that)/86400000);
+  if(diff===0) return 'Today'; if(diff===1) return 'Yesterday';
+  if(diff<7) return d.toLocaleDateString('en-US',{weekday:'long'});
+  return d.toLocaleDateString('en-US',{month:'long',day:'numeric',year:d.getFullYear()!==now.getFullYear()?'numeric':undefined});
+}
+const TICK_READ='<svg viewBox="0 0 18 12" fill="none"><path d="M1 6.5L4.5 10L11 2.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M7 10L13.5 2.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+const TICK_SENT='<svg viewBox="0 0 12 12" fill="none"><path d="M1 6.5L4.5 10L11 2.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 async function loadInbox(){
   // charger tous les messages (l'admin peut tout lire)
   const {data,error}=await sb.from('messages').select('*').order('created_at',{ascending:true});
@@ -1240,7 +1278,7 @@ function renderInboxList(){
     const msgs=byStudent[s.id]||[];
     const last=msgs.length?msgs[msgs.length-1]:null;
     const unread=msgs.some(m=>m.sender==='student' && !m.read_by_recipient);
-    return {id:s.id,name:s.name,last,unread,hasMsg:msgs.length>0};
+    return {id:s.id,name:s.name,avatar:s.avatar,last,unread,hasMsg:msgs.length>0};
   }).sort((a,b)=>{
     if(a.last&&b.last) return new Date(b.last.created_at)-new Date(a.last.created_at);
     if(a.last) return -1; if(b.last) return 1; return 0;
@@ -1250,8 +1288,10 @@ function renderInboxList(){
   rows.forEach(r=>{
     const div=document.createElement('div');
     div.className='msg-li'+(r.id===activeStudentId?' active':'');
-    const preview=r.last? (r.last.sender==='admin'?'You: ':'')+r.last.body : 'No messages yet';
-    div.innerHTML=`<div class="av">${initials(r.name)}</div><div class="info"><div class="nm">${r.name}</div><div class="pv">${escapeHtml(preview)}</div></div>${r.unread?'<div class="badge-dot"></div>':''}`;
+    const preview=r.last? (r.last.sender==='admin'?'You: ':'')+(r.last.body||(r.last.media_url?'Attachment':'')) : 'No messages yet';
+    const av = r.avatar ? `<div class="av av-photo" style="background-image:url('${r.avatar}')"></div>` : `<div class="av">${initials(r.name)}</div>`;
+    const time = r.last ? `<div class="li-time">${fmtHM(r.last.created_at)}</div>` : '';
+    div.innerHTML=`${av}<div class="info"><div class="li-top"><span class="nm">${escapeHtml(r.name)}</span>${time}</div><div class="pv">${escapeHtml(preview)}</div></div>${r.unread?'<div class="badge-dot"></div>':''}`;
     div.addEventListener('click',()=>openConversation(r.id));
     list.appendChild(div);
   });
@@ -1273,7 +1313,7 @@ function renderConversation(sid){
   const conv=document.getElementById('msgConv');
   const msgs=allMessages.filter(m=>m.student_id===sid);
   conv.innerHTML=`
-    <div class="conv-head"><h3>${s?s.name:'Student'}</h3><p>${s?s.email:''}</p></div>
+    <div class="conv-head"><div class="ch-av${s&&s.avatar?' av-photo':''}"${s&&s.avatar?` style="background-image:url('${s.avatar}')"`:''}>${s&&s.avatar?'':initials(s?s.name:'?')}</div><div><h3>${s?s.name:'Student'}</h3><p>${s?s.email:''}</p></div></div>
     <div class="conv-body" id="convBody"></div>
     <div class="conv-prev" id="convPrev" style="display:none;"></div>
     <div class="conv-input">
@@ -1285,11 +1325,19 @@ function renderConversation(sid){
   const body=conv.querySelector('#convBody');
   if(msgs.length===0){ body.innerHTML='<div class="conv-none">No messages yet with this student.</div>'; }
   else{
-    msgs.forEach(m=>{
-      const div=document.createElement('div');
-      div.className='cbubble '+(m.sender==='admin'?'me':'them');
-      div.innerHTML=`${admMediaHTML(m.media_url,m.media_type)}${escapeHtml(m.body||'')}<span class="when">${m.sender==='admin'?'You':(s?s.name.split(' ')[0]:'Student')} · ${fmtTime(m.created_at)}</span>`;
-      body.appendChild(div);
+    let lastDay=null,lastSender=null,lastTime=0;
+    msgs.forEach((m,idx)=>{
+      const dl=admDayLabel(m.created_at);
+      if(dl!==lastDay){ const sep=document.createElement('div'); sep.className='day-sep'; sep.innerHTML='<span>'+dl+'</span>'; body.appendChild(sep); lastDay=dl; lastSender=null; }
+      const t=new Date(m.created_at).getTime();
+      const grouped=(m.sender===lastSender)&&(t-lastTime<5*60000);
+      const mine=m.sender==='admin';
+      const ticks= mine ? (m.read_by_recipient?'<span class="ticks read">'+TICK_READ+'</span>':'<span class="ticks sent">'+TICK_SENT+'</span>') : '';
+      const row=document.createElement('div');
+      row.className='mrow '+(mine?'me':'them')+(grouped?' grouped':'');
+      row.innerHTML='<div class="mbubble">'+admMediaHTML(m.media_url,m.media_type)+escapeHtml(m.body||'')+'<span class="mtime">'+fmtHM(m.created_at)+ticks+'</span></div>';
+      body.appendChild(row);
+      lastSender=m.sender; lastTime=t;
     });
     body.scrollTop=body.scrollHeight;
   }
@@ -1403,16 +1451,18 @@ async function loadAdminCommunity(){
   if(error){ body.innerHTML='<div class="conv-none">Could not load the salon.</div>'; return; }
   body.innerHTML='';
   if(!data || data.length===0){ body.innerHTML='<div class="conv-none">No community messages yet. Post the first one to set the tone.</div>'; return; }
+  let lastDay=null;
   data.forEach(m=>{
+    const dl=admDayLabel(m.created_at);
+    if(dl!==lastDay){ const sep=document.createElement('div'); sep.className='day-sep'; sep.innerHTML='<span>'+dl+'</span>'; body.appendChild(sep); lastDay=dl; }
     const mine=m.is_admin;
-    const div=document.createElement('div');
-    div.className='acbub'+(mine?' mine':'');
-    const who=mine?(m.author_name+' · You'):m.author_name;
-    // l'admin peut supprimer tout, et éditer ses propres messages
-    const editBtn = mine ? `<button class="acbub-act" data-aedit="${m.id}" title="Edit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 20h9M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z" stroke-linecap="round" stroke-linejoin="round"/></svg></button>` : '';
-    const actions = `<div class="acbub-actions">${editBtn}<button class="acbub-act" data-adel="${m.id}" title="Delete"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16M9 7V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2M6 7l1 13h10l1-13" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div>`;
-    div.innerHTML=`<div class="who">${escapeHtml(who)}</div><div class="msg" data-abody="${m.id}">${admMediaHTML(m.media_url,m.media_type)}${escapeHtml(m.body||'')}<span class="when">${fmtTime(m.created_at)}</span></div>${actions}`;
-    body.appendChild(div);
+    const row=document.createElement('div');
+    row.className='mrow '+(mine?'me':'them');
+    const whoLabel = mine ? '' : `<div class="who2">${escapeHtml(m.author_name||'Member')}</div>`;
+    const editBtn = mine ? `<button class="cbub-act" data-aedit="${m.id}" title="Edit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 20h9M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z" stroke-linecap="round" stroke-linejoin="round"/></svg></button>` : '';
+    const actions = `<div class="cbub-actions">${editBtn}<button class="cbub-act" data-adel="${m.id}" title="Delete"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16M9 7V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2M6 7l1 13h10l1-13" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div>`;
+    row.innerHTML=`${whoLabel}<div class="mbubble" data-abody="${m.id}">${admMediaHTML(m.media_url,m.media_type)}${escapeHtml(m.body||'')}<span class="mtime">${fmtHM(m.created_at)}</span></div>${actions}`;
+    body.appendChild(row);
   });
   body.querySelectorAll('[data-adel]').forEach(b=>b.addEventListener('click',()=>adminDeleteComm(b.dataset.adel)));
   body.querySelectorAll('[data-aedit]').forEach(b=>b.addEventListener('click',()=>adminEditComm(b.dataset.aedit)));
