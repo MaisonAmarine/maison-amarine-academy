@@ -594,6 +594,30 @@
   .sv-text p{font-family:'Cormorant',serif;font-weight:400;font-size:19.5px;line-height:1.82;color:#3E3831;margin:0 0 15px;}
   .sv-text p{font-size:15.5px;line-height:1.78;color:var(--ink-soft);margin-bottom:14px;}
   .sv-empty{font-size:14px;color:var(--stone);font-style:italic;}
+  /* ---- Lecteur de cours paginé (premium reading) ---- */
+  .step-view-body{padding:30px 40px 40px;}
+  .lsn{max-width:660px;margin:0 auto;}
+  .lsn-runhead{display:flex;justify-content:space-between;align-items:center;font-family:'Jost',sans-serif;font-size:9.5px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--stone);padding-bottom:14px;margin-bottom:22px;border-bottom:1px solid var(--line);}
+  .lsn .sv-eyebrow{text-align:center;}
+  .lsn .sv-title{text-align:center;font-size:40px;line-height:1.1;margin-bottom:24px;}
+  .lsn-h{font-family:'Cormorant',serif;font-weight:600;font-size:27px;line-height:1.2;color:var(--ink);margin:6px 0 18px;padding-bottom:12px;border-bottom:1px solid var(--gold-wash);}
+  .lsn-cont{font-family:'Jost',sans-serif;font-size:10px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-lt);text-align:center;margin-bottom:16px;}
+  .lsn-body p.lsn-p{font-family:'Cormorant',Georgia,serif;font-weight:400;font-size:20px;line-height:1.86;color:#3E3831;margin:0 0 17px;text-align:justify;-webkit-hyphens:auto;hyphens:auto;}
+  .lsn-body p.lsn-drop::first-letter{font-family:'Cormorant',serif;font-weight:600;font-size:62px;line-height:.78;float:left;padding:8px 12px 0 0;color:var(--gold);}
+  .lsn-endmark{text-align:center;color:var(--gold-lt);font-size:20px;margin:26px 0 4px;}
+  .lsn-tabs{display:flex;gap:8px;overflow-x:auto;padding:22px 0 4px;margin-top:16px;border-top:1px solid var(--line);scrollbar-width:thin;}
+  .lsn-tab{flex:0 0 auto;font-family:'Jost',sans-serif;font-size:12px;font-weight:600;color:var(--ink-soft);background:var(--ivory);border:1px solid var(--line);border-radius:20px;padding:8px 15px;cursor:pointer;max-width:220px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;transition:all .18s;}
+  .lsn-tab:hover{border-color:var(--gold-lt);color:var(--gold-deep);}
+  .lsn-tab.active{background:var(--gold);border-color:var(--gold);color:#fff;}
+  .lsn-foot{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:14px;}
+  .lsn-nav{display:inline-flex;align-items:center;gap:8px;font-family:'Jost',sans-serif;font-size:13px;font-weight:600;color:var(--gold-deep);background:var(--paper);border:1px solid var(--line);border-radius:11px;padding:11px 18px;cursor:pointer;transition:all .18s;}
+  .lsn-nav:hover:not(:disabled){border-color:var(--gold-lt);background:var(--gold-wash);}
+  .lsn-nav:disabled{opacity:.35;cursor:default;}
+  .lsn-count{font-family:'Jost',sans-serif;font-size:11.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--stone);}
+  .lsn-dlrow{display:flex;justify-content:center;margin-top:22px;padding-top:20px;border-top:1px solid var(--line);}
+  .lsn-dl{display:inline-flex;align-items:center;gap:9px;font-family:'Jost',sans-serif;font-size:13px;font-weight:600;color:var(--ink);background:var(--gold-wash);border:1px solid var(--gold-lt);border-radius:24px;padding:11px 22px;cursor:pointer;transition:all .18s;}
+  .lsn-dl:hover{background:var(--gold);border-color:var(--gold);color:#fff;}
+  @media(max-width:620px){ .step-view-body{padding:22px 18px 30px;} .lsn .sv-title{font-size:30px;} .lsn-body p.lsn-p{font-size:18px;line-height:1.8;text-align:left;} .lsn-foot{flex-wrap:wrap;} }
   .modal-foot{padding:8px 32px 30px;}
   .mark-week{width:100%;font-size:15px;font-weight:600;color:#fff;background:var(--gold);border:none;border-radius:13px;padding:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;transition:background .2s,transform .2s;}
   .mark-week:hover{background:var(--gold-deep);transform:translateY(-2px);}
@@ -3467,25 +3491,112 @@ function openWeek(no){
 function closeModal(){document.getElementById('overlay').classList.remove('open');document.body.style.overflow="";closeStepView();}
 
 // ---- Vue plein écran d'une étape (texte, puis vidéo, puis document) ----
+// ---- Lecture paginée d'un cours (pages par chapitre, façon Journal) ----
+let svState=null;
+function paginateLesson(text){
+  const pages=[];
+  if(!text||!text.trim()) return pages;
+  const blocks=text.split(/\n\s*\n/).map(b=>b.trim()).filter(Boolean);
+  const isHeading=b=>/^#{1,3}\s+/.test(b) || (/^\*\*[^*]+\*\*$/.test(b));
+  const headingText=b=>b.replace(/^#{1,3}\s+/,'').replace(/^\*\*/,'').replace(/\*\*$/,'').trim();
+  let cur={heading:null,paras:[],cont:false};
+  blocks.forEach(b=>{
+    if(isHeading(b)){
+      if(cur.heading!==null || cur.paras.length) pages.push(cur);
+      cur={heading:headingText(b),paras:[],cont:false};
+    } else {
+      if(cur.paras.length>=6){ pages.push(cur); cur={heading:null,paras:[],cont:true}; }
+      cur.paras.push(b);
+    }
+  });
+  if(cur.heading!==null || cur.paras.length) pages.push(cur);
+  return pages;
+}
 function openStepView(s, weekNo, stepIdx){
-  const body=document.getElementById('stepViewBody');
-  let html=`<div class="sv-eyebrow">${escapeHtml(s.subtitle||'Lesson')}</div><h2 class="sv-title">${escapeHtml(s.title)}</h2>`;
-  // 1) TEXTE d'abord
-  if(s.text && s.text.trim()){
-    const paras=s.text.split(/\n\s*\n/).map(p=>`<p>${escapeHtml(p).replace(/\n/g,'<br>')}</p>`).join('');
-    html+=`<div class="sv-text">${paras}</div>`;
-  }
-  // 2) VIDÉO ensuite
-  const emb=ytEmbed(s.video_url);
-  if(emb){ html+=`<div class="wc-video"><iframe src="${emb}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>`; }
-  // 3) DOCUMENT enfin
-  if(s.doc_url){ html+=`<a class="wc-doc" href="${s.doc_url}" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>${escapeHtml(s.doc_name||'Document')}</a>`; }
-  // 4) ZONE DE DÉPÔT (Module 4 uniquement)
-  if(stepIdx===3 && weekNo){ html += submitPanelHTML(weekNo); }
-  body.innerHTML=html;
-  if(stepIdx===3 && weekNo){ wireSubmitPanel(weekNo); }
-  body.scrollTop=0;
+  let pages=paginateLesson(s.text||'');
+  if(pages.length===0) pages=[{heading:null,paras:[],cont:false}];
+  svState={s:s, weekNo:weekNo, stepIdx:stepIdx, pages:pages, pageIdx:0};
+  renderSvPage();
   document.querySelector('.modal').classList.add('step-open');
+}
+function renderSvPage(){
+  const {s,pages,pageIdx,stepIdx,weekNo}=svState, n=pages.length, last=pageIdx===n-1;
+  const body=document.getElementById('stepViewBody');
+  const pg=pages[pageIdx];
+  let html=`<article class="lsn"><div class="lsn-runhead"><span>${escapeHtml(s.subtitle||'The lesson')}</span><span>Maison Amarine</span></div>`;
+  if(pageIdx===0){ html+=`<div class="sv-eyebrow">${escapeHtml(s.subtitle||'Lesson')}</div><h2 class="sv-title">${escapeHtml(s.title)}</h2>`; }
+  if(pg){
+    if(pg.heading){ html+=`<h3 class="lsn-h">${escapeHtml(pg.heading)}</h3>`; }
+    else if(pg.cont){ html+=`<div class="lsn-cont">continued</div>`; }
+    const dropOn=(pageIdx===0 || !!pg.heading);
+    const paras=pg.paras.map((p,i)=>{
+      const cls=(i===0 && dropOn && !pg.cont) ? 'lsn-p lsn-drop' : 'lsn-p';
+      return `<p class="${cls}">${escapeHtml(p).replace(/\n/g,'<br>')}</p>`;
+    }).join('');
+    html+=`<div class="lsn-body">${paras}</div>`;
+  }
+  if(last){
+    const emb=ytEmbed(s.video_url);
+    if(emb){ html+=`<div class="wc-video"><iframe src="${emb}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>`; }
+    if(s.doc_url){ html+=`<a class="wc-doc" href="${s.doc_url}" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>${escapeHtml(s.doc_name||'Attached document')}</a>`; }
+    if(stepIdx===3 && weekNo){ html += submitPanelHTML(weekNo); }
+    html+=`<div class="lsn-endmark">&#10022;</div>`;
+  }
+  html+=`</article>`;
+  html+=renderLsnNav(pageIdx,n);
+  body.innerHTML=html;
+  if(last && stepIdx===3 && weekNo){ wireSubmitPanel(weekNo); }
+  body.scrollTop=0;
+}
+function renderLsnNav(idx,n){
+  const dl=`<div class="lsn-dlrow"><button class="lsn-dl" onclick="downloadLesson()"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg> Download this lesson (PDF)</button></div>`;
+  if(n<=1){ return dl; }
+  const tabs=svState.pages.map((p,k)=>{
+    const label=p.heading?escapeHtml(p.heading):('Page '+(k+1));
+    return `<button class="lsn-tab${k===idx?' active':''}" onclick="svGo(${k})">${label}</button>`;
+  }).join('');
+  return `<nav class="lsn-tabs">${tabs}</nav>
+    <div class="lsn-foot">
+      <button class="lsn-nav" onclick="svGo(${idx-1})" ${idx===0?'disabled':''}>${ICO_ARL} Previous</button>
+      <span class="lsn-count">Page ${idx+1} / ${n}</span>
+      <button class="lsn-nav" onclick="svGo(${idx+1})" ${idx>=n-1?'disabled':''}>Next ${ICO_ARR}</button>
+    </div>${dl}`;
+}
+function svGo(k){ if(!svState||k<0||k>=svState.pages.length) return; svState.pageIdx=k; renderSvPage(); }
+function downloadLesson(){
+  if(!svState) return;
+  const s=svState.s;
+  const esc=t=>String(t).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+  const secs=svState.pages.map(pg=>{
+    const h=pg.heading?`<h2>${esc(pg.heading)}</h2>`:'';
+    const ps=pg.paras.map(p=>`<p>${esc(p).replace(/\n/g,'<br>')}</p>`).join('');
+    return `<section>${h}${ps}</section>`;
+  }).join('');
+  const title=esc(s.title||'Lesson'), eyebrow=esc(s.subtitle||'Maison Amarine');
+  const html=`<!DOCTYPE html><html><head><meta charset="utf-8"><title>${title} · Maison Amarine</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    @page{size:A4;margin:22mm 20mm;}
+    *{box-sizing:border-box;margin:0;}
+    body{font-family:'Cormorant Garamond',Georgia,serif;color:#2A2622;line-height:1.68;}
+    .hd{text-align:center;border-bottom:1px solid #d8cdb6;padding-bottom:20px;margin-bottom:30px;}
+    .eyebrow{font-family:'Jost',sans-serif;font-size:10px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:#8a6630;}
+    h1{font-size:34px;font-weight:600;color:#211C15;margin-top:8px;line-height:1.12;}
+    .kicker{font-family:'Jost',sans-serif;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:#a89a7d;margin-top:12px;}
+    section{margin-bottom:20px;}
+    h2{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:#8a6630;margin:26px 0 8px;}
+    p{font-size:15px;margin-bottom:12px;text-align:justify;}
+    section:first-of-type p:first-of-type::first-letter{font-size:52px;font-weight:600;float:left;line-height:.82;padding:6px 10px 0 0;color:#A87E3D;}
+    .ft{margin-top:34px;padding-top:16px;border-top:1px solid #d8cdb6;text-align:center;font-family:'Jost',sans-serif;font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:#a89a7d;}
+  </style></head><body>
+  <div class="hd"><div class="eyebrow">${eyebrow}</div><h1>${title}</h1><div class="kicker">The Private Concierge Academy</div></div>
+  ${secs}
+  <div class="ft">Maison Amarine · Confidential, for the use of our mentees only</div>
+  <script>window.onload=function(){setTimeout(function(){window.print();},350);};<\/script>
+  </body></html>`;
+  const w=window.open('','_blank');
+  if(w){ w.document.write(html); w.document.close(); }
+  else if(typeof toast==='function'){ toast('Allow pop-ups to download the lesson'); }
 }
 function closeStepView(){ const m=document.querySelector('.modal'); if(m)m.classList.remove('step-open'); }
 
