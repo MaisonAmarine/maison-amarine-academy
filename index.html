@@ -255,7 +255,7 @@
   .ref-s{font-size:12.5px;color:var(--stone);line-height:1.4;}
   .ref-go{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-deep);white-space:nowrap;}
   .ref-dl-k{font-family:'Jost',sans-serif;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--stone);margin:6px 0 14px;}
-  .ref-reader{display:none;max-width:760px;}
+  .ref-reader{display:none;max-width:900px;margin:0 auto;}
   #page-vault.reading .page-h,#page-vault.reading .ref-intro,#page-vault.reading #refGrid,#page-vault.reading .ref-dl-k,#page-vault.reading .vault-grid,#page-vault.reading .note-band{display:none;}
   #page-vault.reading .ref-reader{display:block;}
   .rf-back{background:none;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:7px;font-family:'Jost',sans-serif;font-size:12.5px;font-weight:600;color:var(--gold-deep);padding:6px 2px;margin-bottom:14px;}
@@ -497,7 +497,7 @@
   /* ================= modal (shared) ================= */
   .overlay{position:fixed;inset:0;z-index:200;background:rgba(33,28,21,0.55);-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);display:none;align-items:flex-start;justify-content:center;padding:50px 18px;overflow-y:auto;}
   .overlay.open{display:flex;}
-  .modal{background:var(--ivory);border-radius:20px;max-width:640px;width:100%;box-shadow:0 40px 100px rgba(33,28,21,.4);animation:rise .4s cubic-bezier(.22,.61,.36,1);overflow:hidden;}
+  .modal{background:var(--ivory);border-radius:20px;max-width:720px;width:100%;box-shadow:0 40px 100px rgba(33,28,21,.4);animation:rise .4s cubic-bezier(.22,.61,.36,1);overflow:hidden;}
   @keyframes rise{from{opacity:0;transform:translateY(22px);}to{opacity:1;transform:none;}}
   .modal-head{padding:28px 32px 24px;background:var(--paper);border-bottom:1px solid var(--line);position:relative;}
   .modal-head .row{display:flex;align-items:center;gap:12px;margin-bottom:12px;}
@@ -544,6 +544,7 @@
   .sv-title{font-family:'Cormorant',Georgia,serif;font-size:36px;font-weight:600;line-height:1.14;color:var(--ink);margin-bottom:6px;}
   .sv-sub{font-size:15px;color:var(--stone);font-style:italic;margin-bottom:26px;padding-bottom:24px;border-bottom:1px solid var(--line);}
   .sv-text{margin-bottom:26px;}
+  .sv-text p{font-family:'Cormorant',serif;font-weight:400;font-size:19.5px;line-height:1.82;color:#3E3831;margin:0 0 15px;}
   .sv-text p{font-size:15.5px;line-height:1.78;color:var(--ink-soft);margin-bottom:14px;}
   .sv-empty{font-size:14px;color:var(--stone);font-style:italic;}
   .modal-foot{padding:8px 32px 30px;}
@@ -831,10 +832,10 @@
   .msg-media-file svg{flex-shrink:0;}
   /* Contenu de cours (blocs) côté élève */
   #weekContent{margin:6px 0 8px;}
-  .wc-intro{font-family:'Cormorant',serif;font-size:19px;font-style:italic;color:var(--ink-soft);line-height:1.5;margin-bottom:20px;padding-bottom:18px;border-bottom:1px solid var(--line);}
+  .wc-intro{font-family:'Cormorant',serif;font-size:20.5px;font-style:italic;color:var(--ink-soft);line-height:1.72;margin-bottom:24px;padding-bottom:20px;border-bottom:1px solid var(--line);}
   .wc-heading{font-family:'Cormorant',serif;font-weight:600;font-size:24px;color:var(--ink);margin:24px 0 12px;}
   .wc-lesson{margin-bottom:16px;}
-  .wc-lesson p{font-size:15px;line-height:1.7;color:var(--ink-soft);margin-bottom:12px;}
+  .wc-lesson p{font-family:'Cormorant',serif;font-weight:400;font-size:19px;line-height:1.82;color:#3E3831;margin-bottom:14px;}
   .wc-video{position:relative;width:100%;padding-bottom:56.25%;height:0;margin:16px 0 20px;border-radius:14px;overflow:hidden;box-shadow:0 10px 30px rgba(33,28,21,.12);}
   .wc-video iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0;}
   .wc-docs-label{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-deep);margin:18px 0 10px;}
