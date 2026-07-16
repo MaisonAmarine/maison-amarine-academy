@@ -1405,9 +1405,11 @@ async function loadAdminCommunity(){
       if(error){ const r2=await sb.from('community_messages').insert({author_id:uid,author_name:'Émilie',body:txt,media_url,media_type}); error=r2.error; }
       send.disabled=false;
       if(error){
+        const msg=error.message||error.code||JSON.stringify(error);
+        try{ alert('COMMUNITY POST ERROR:\n\n'+msg+'\n\n(fais une capture de ce message pour Claude)'); }catch(e){}
         const box=document.getElementById('acommPrev');
         if(box){ box.style.display='flex'; box.style.background='#fdecea'; box.style.borderColor='#e0b4b0';
-          box.innerHTML='<span class="ap-name" style="color:#a3352b;white-space:normal;">Post blocked: '+escapeHtml(error.message||error.code||JSON.stringify(error))+'</span><button class="ap-x">&times;</button>';
+          box.innerHTML='<span class="ap-name" style="color:#a3352b;white-space:normal;">Post blocked: '+escapeHtml(msg)+'</span><button class="ap-x">&times;</button>';
           box.querySelector('.ap-x').addEventListener('click',()=>{box.style.display='none';box.style.background='';box.style.borderColor='';box.innerHTML='';}); }
         console.warn('community post error',error); return;
       }
