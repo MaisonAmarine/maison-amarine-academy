@@ -581,7 +581,7 @@
   .lesson-check svg{width:15px;height:15px;color:#fff;opacity:0;transition:opacity .2s;}
   .lesson-check.checked svg{opacity:1;}
   /* ---- Vue plein écran d'une étape ---- */
-  .step-view{position:absolute;inset:0;background:var(--paper,#fff);border-radius:inherit;display:flex;flex-direction:column;opacity:0;visibility:hidden;transform:translateX(24px);transition:opacity .3s ease,transform .3s ease,visibility .3s;z-index:5;overflow:hidden;}
+  .step-view{position:fixed;inset:0;background:var(--paper,#fff);border-radius:0;display:flex;flex-direction:column;opacity:0;visibility:hidden;transform:translateX(24px);transition:opacity .3s ease,transform .3s ease,visibility .3s;z-index:300;overflow:hidden;}
   .modal.step-open .step-view{opacity:1;visibility:visible;transform:none;}
   .step-view-head{flex-shrink:0;padding:22px 32px 14px;border-bottom:1px solid var(--line);}
   .step-back{display:inline-flex;align-items:center;gap:9px;background:none;border:none;cursor:pointer;font-family:inherit;font-size:13px;font-weight:600;letter-spacing:.02em;color:var(--gold-deep);padding:8px 14px 8px 10px;border-radius:10px;transition:background .18s,transform .18s;}
