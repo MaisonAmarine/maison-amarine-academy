@@ -2938,13 +2938,27 @@ function avatarColor(name){
 }
 // Annuaire des photos de profil (partagé) : chaque élève voit celles des autres
 let AVATARS={};
+const FOUNDER_EMAIL='academy@themaisonamarine.com';
+let MENTOR_AVATAR=null;
 async function loadAvatarDirectory(){
   try{
     const {data}=await sb.from('profiles').select('id,full_name,avatar_url');
     const map={};
     (data||[]).forEach(p=>{ if(p.avatar_url){ map['id:'+p.id]=p.avatar_url; if(p.full_name) map['nm:'+p.full_name.trim().toLowerCase()]=p.avatar_url; } });
     AVATARS=map;
+    try{
+      const {data:f}=await sb.from('profiles').select('avatar_url').eq('email',FOUNDER_EMAIL).maybeSingle();
+      if(f && f.avatar_url) MENTOR_AVATAR=f.avatar_url;
+    }catch(e){}
+    if(!MENTOR_AVATAR && map['nm:émilie']) MENTOR_AVATAR=map['nm:émilie'];
+    applyMentorAvatar();
   }catch(e){}
+}
+function applyMentorAvatar(){
+  if(!MENTOR_AVATAR) return;
+  document.querySelectorAll('.cav.emilie').forEach(el=>{
+    el.style.backgroundImage="url('"+MENTOR_AVATAR+"')"; el.style.backgroundSize='cover'; el.style.backgroundPosition='center'; el.textContent='';
+  });
 }
 function avatarPhoto(name, authorId){
   if(authorId && AVATARS['id:'+authorId]) return AVATARS['id:'+authorId];
