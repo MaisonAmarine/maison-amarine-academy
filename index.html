@@ -599,6 +599,8 @@
   .lsn-vault .rf-head{margin-bottom:24px;}
   .lsn-vault .rf-sec:last-of-type{border-bottom:none;}
   .lsn-vault button.rf-dl{border:none;cursor:pointer;font-family:'Jost',sans-serif;}
+  .lsn-vault .rf-body p.lsn-label{font-family:'Jost',sans-serif;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-deep);margin:20px 0 4px;}
+  .lsn-vault .rf-body p.lsn-label strong{font-weight:600;color:var(--gold-deep);}
   @media(max-width:620px){ .step-view-body{padding:22px 18px 30px;} }
   .modal-foot{padding:8px 32px 30px;}
   .mark-week{width:100%;font-size:15px;font-weight:600;color:#fff;background:var(--gold);border:none;border-radius:13px;padding:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;transition:background .2s,transform .2s;}
@@ -2928,7 +2930,7 @@ async function onSignedIn(user){
   document.getElementById('app').classList.remove('hidden');
   await loadProfile(); await loadProgress(); await loadSubmissions();
   renderWeeks(); renderAgencies(); bootCareerHub(); initCalAdd(); renderMyEvents();
-  loadCourseContent();
+  loadCourseContent(); loadLessonDefaults();
   loadMessages(false);
   startRealtime();
 }
@@ -3421,19 +3423,23 @@ function openWeek(no){
   renderWeekContent(no);
   // ---- les 4 étapes : texte d'origine, ou texte édité depuis l'admin si présent ----
   const cc = COURSE_CONTENT[no];
-  let steps;
-  if(cc && Array.isArray(cc.steps) && cc.steps.length){
-    // étapes éditées dans l'admin (avec leur contenu)
-    steps = cc.steps.map((s,i)=>({
-      title: s.title || (w.lessons[i]?.[0]||''),
-      subtitle: s.subtitle || (w.lessons[i]?.[1]||''),
-      icon: w.lessons[i]?.[2] || 'file',
-      video_url: s.video_url||'', text: s.text||'', doc_url: s.doc_url||'', doc_name: s.doc_name||''
-    }));
-  } else {
-    // base d'origine, sans contenu
-    steps = w.lessons.map(ls=>({title:ls[0], subtitle:ls[1], icon:ls[2], video_url:'', text:'', doc_url:'', doc_name:''}));
-  }
+  const ccSteps = (cc && Array.isArray(cc.steps)) ? cc.steps : [];
+  const defSteps = ((LESSON_DEFAULTS && (LESSON_DEFAULTS[String(no)]||LESSON_DEFAULTS[no]))||{}).steps || [];
+  // Priorité : contenu admin (Supabase) > contenu par défaut intégré (lessons.json) > base sans contenu
+  const steps = w.lessons.map((ls,i)=>{
+    const s = ccSteps[i]||{}, d = defSteps[i]||{};
+    const txt  = (s.text && s.text.trim()) ? s.text : (d.text||'');
+    const doc  = (s.doc_url && s.doc_url.trim()) ? s.doc_url : (d.doc||'');
+    return {
+      title: s.title || ls[0] || '',
+      subtitle: s.subtitle || ls[1] || '',
+      icon: ls[2] || 'file',
+      video_url: s.video_url||'',
+      text: txt,
+      doc_url: doc,
+      doc_name: s.doc_name || (doc?'The full module (PDF)':'')
+    };
+  });
   if(!state.lessons[no])state.lessons[no]=steps.map(()=>false);
   const list=document.getElementById('lessonList');list.innerHTML="";
   // ---- petit module d'introduction (Semaine 1 uniquement) ----
@@ -3475,12 +3481,18 @@ function closeModal(){document.getElementById('overlay').classList.remove('open'
 // ---- Vue plein écran d'une étape (texte, puis vidéo, puis document) ----
 // ---- Lecture d'un cours façon Vault : lecture continue + sommaire + Download PDF ----
 let svCur=null;
+function mdInline(t){
+  let h=escapeHtml(t);
+  h=h.replace(/\*\*([^*]+)\*\*/g,'<strong>$1</strong>');
+  h=h.replace(/(^|[^*])\*([^*\n]+)\*(?!\*)/g,'$1<em>$2</em>');
+  return h.replace(/\n/g,'<br>');
+}
 function lessonSections(text){
   const out=[];
   if(!text||!text.trim()) return out;
   const blocks=text.split(/\n\s*\n/).map(b=>b.trim()).filter(Boolean);
-  const isHeading=b=>/^#{1,3}\s+/.test(b) || (/^\*\*[^*]+\*\*$/.test(b));
-  const headingText=b=>b.replace(/^#{1,3}\s+/,'').replace(/^\*\*/,'').replace(/\*\*$/,'').trim();
+  const isHeading=b=>/^#{1,3}\s+/.test(b);
+  const headingText=b=>b.replace(/^#{1,3}\s+/,'').trim();
   let cur={heading:null,paras:[]};
   blocks.forEach(b=>{
     if(isHeading(b)){
@@ -3497,7 +3509,11 @@ function openStepView(s, weekNo, stepIdx){
   svCur={s:s, weekNo:weekNo, stepIdx:stepIdx, secs:secsData};
   const toc=secsData.map((x,i)=> x.heading ? `<a class="rf-toc" onclick="var e=document.getElementById('lsec${i}');if(e)e.scrollIntoView({behavior:'smooth',block:'start'});">${escapeHtml(x.heading)}</a>` : '').join('');
   const secs=secsData.map((x,i)=>{
-    const bodyhtml=x.paras.map(p=>`<p>${escapeHtml(p).replace(/\n/g,'<br>')}</p>`).join('');
+    const bodyhtml=x.paras.map(p=>{
+      const bare=p.replace(/^\*\*/,'').replace(/\*\*$/,'');
+      const isLabel=/^\*\*[^*]+\*\*$/.test(p);
+      return isLabel ? `<p class="lsn-label">${mdInline(bare)}</p>` : `<p>${mdInline(p)}</p>`;
+    }).join('');
     const h=x.heading?`<h2>${escapeHtml(x.heading)}</h2>`:'';
     return `<article class="rf-sec" id="lsec${i}">${h}<div class="rf-body">${bodyhtml}</div></article>`;
   }).join('');
@@ -3523,9 +3539,10 @@ function downloadLesson(){
   if(!svCur) return;
   const s=svCur.s;
   const esc=t=>String(t).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+  const md=t=>{ let h=esc(t); h=h.replace(/\*\*([^*]+)\*\*/g,'<strong>$1</strong>'); h=h.replace(/(^|[^*])\*([^*\n]+)\*(?!\*)/g,'$1<em>$2</em>'); return h.replace(/\n/g,'<br>'); };
   const secs=svCur.secs.map(pg=>{
     const h=pg.heading?`<h2>${esc(pg.heading)}</h2>`:'';
-    const ps=pg.paras.map(p=>`<p>${esc(p).replace(/\n/g,'<br>')}</p>`).join('');
+    const ps=pg.paras.map(p=>`<p>${md(p)}</p>`).join('');
     return `<section>${h}${ps}</section>`;
   }).join('');
   const title=esc(s.title||'Lesson'), eyebrow=esc(s.subtitle||'Maison Amarine');
@@ -3667,6 +3684,13 @@ async function loadCourseContent(){
     const {data}=await sb.from('course_weeks').select('*');
     (data||[]).forEach(w=>{ COURSE_CONTENT[w.week_number]=w; });
   }catch(e){}
+}
+// Contenu par défaut des 8 semaines (texte intégré + PDF), chargé en live.
+// Si tu édites un cours dans l'admin (Supabase), ta version prend le dessus.
+let LESSON_DEFAULTS = {};
+async function loadLessonDefaults(){
+  try{ LESSON_DEFAULTS = await fetchLive('lessons.json') || {}; }
+  catch(e){ console.warn('lessons.json indisponible', e); }
 }
 function ytEmbed(url){
   if(!url) return null;
