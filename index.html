@@ -919,6 +919,24 @@
   .onb-dot{width:7px;height:7px;border-radius:50%;background:rgba(201,168,103,.28);transition:all .3s;}
   .onb-dot.active{background:var(--gold-lt);width:22px;border-radius:4px;}
   @media(max-width:640px){.onb-title{font-size:40px;}.onb-cards{grid-template-columns:1fr;}.onb-h2{font-size:30px;}}
+  /* ===== Tour guidé ===== */
+  .tour-mask{position:fixed;inset:0;z-index:400;display:none;}
+  .tour-mask.on{display:block;}
+  .tour-spot{position:absolute;border-radius:12px;box-shadow:0 0 0 9999px rgba(20,16,12,.66);transition:left .35s cubic-bezier(.22,.61,.36,1),top .35s cubic-bezier(.22,.61,.36,1),width .35s,height .35s;pointer-events:none;}
+  .tour-skip{position:fixed;top:18px;right:22px;background:rgba(255,253,248,.94);border:1px solid var(--line);border-radius:22px;padding:9px 18px;font-family:'Jost',sans-serif;font-size:12px;font-weight:600;color:var(--ink-soft);cursor:pointer;box-shadow:0 4px 14px rgba(33,28,21,.18);}
+  .tour-card{position:absolute;width:310px;max-width:86vw;background:var(--paper);border:1px solid var(--gold-lt);border-radius:16px;padding:20px 22px;box-shadow:0 24px 60px rgba(33,28,21,.4);transition:left .35s cubic-bezier(.22,.61,.36,1),top .35s cubic-bezier(.22,.61,.36,1);}
+  .tour-k{font-family:'Jost',sans-serif;font-size:10px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-deep);}
+  .tour-card h3{font-family:'Cormorant',serif;font-weight:600;font-size:23px;color:var(--ink);margin:6px 0 8px;line-height:1.15;}
+  .tour-card p{font-size:13.5px;line-height:1.62;color:var(--ink-soft);margin:0;}
+  .tour-foot{display:flex;align-items:center;justify-content:space-between;margin-top:18px;}
+  .tour-count{font-family:'Jost',sans-serif;font-size:11px;font-weight:600;letter-spacing:.06em;color:var(--stone);}
+  .tour-actions{display:flex;gap:8px;}
+  .tour-btn{font-family:'Jost',sans-serif;font-size:12.5px;font-weight:600;border-radius:20px;padding:8px 17px;cursor:pointer;border:1px solid var(--line);background:var(--paper);color:var(--ink-soft);transition:all .18s;}
+  .tour-btn:hover{border-color:var(--gold-lt);}
+  .tour-btn.primary{background:var(--gold);border-color:var(--gold);color:#fff;}
+  .tour-btn.primary:hover{background:var(--gold-deep);}
+  .tour-help{position:fixed;bottom:22px;right:22px;z-index:120;width:46px;height:46px;border-radius:50%;background:var(--gold);color:#fff;border:none;box-shadow:0 8px 24px rgba(168,126,61,.42);cursor:pointer;font-family:'Cormorant',serif;font-weight:700;font-size:22px;align-items:center;justify-content:center;transition:transform .2s;}
+  .tour-help:hover{transform:translateY(-2px);}
   /* THE VAULT */
   .vault-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:6px;}
   .vault-card{display:flex;gap:18px;align-items:flex-start;background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:24px 26px;text-decoration:none;transition:transform .22s,box-shadow .22s,border-color .22s;position:relative;overflow:hidden;}
@@ -1389,6 +1407,22 @@
     <!-- progression -->
     <div class="onb-dots">
       <span class="onb-dot active"></span><span class="onb-dot"></span><span class="onb-dot"></span>
+    </div>
+  </div>
+</div>
+
+<!-- TOUR GUIDÉ DYNAMIQUE -->
+<button class="tour-help" id="tourHelp" title="Replay the guided tour" aria-label="Replay the guided tour" style="display:none;">?</button>
+<div class="tour-mask" id="tourMask" aria-hidden="true">
+  <div class="tour-spot" id="tourSpot"></div>
+  <button class="tour-skip" id="tourSkip">Skip tour</button>
+  <div class="tour-card" id="tourCard">
+    <div class="tour-k" id="tourK"></div>
+    <h3 id="tourTitle"></h3>
+    <p id="tourBody"></p>
+    <div class="tour-foot">
+      <span class="tour-count" id="tourCount"></span>
+      <div class="tour-actions"><button class="tour-btn" id="tourBack">Back</button><button class="tour-btn primary" id="tourNext">Next</button></div>
     </div>
   </div>
 </div>
@@ -3005,6 +3039,8 @@ async function onSignedIn(user){
   loadCourseContent(); loadLessonDefaults(); loadAvatarDirectory();
   loadMessages(false);
   startRealtime();
+  const th=document.getElementById('tourHelp'); if(th) th.style.display='flex';
+  try{ if(!localStorage.getItem('ma_tour_v1')) setTimeout(()=>{ try{ startTour(); }catch(e){} }, 1000); }catch(e){}
 }
 async function loadProfile(){
   const {data}=await sb.from('profiles').select('*').eq('id',USER.id).maybeSingle();
@@ -4666,6 +4702,61 @@ function startOnboarding(user, fullName){
   }));
   show(1);
 }
+
+// ====== TOUR GUIDÉ DYNAMIQUE ======
+const TOUR_STEPS=[
+  {sel:null, k:'Welcome', title:'A quick tour of your academy', body:"Here is everything inside, in under a minute. You can replay this any time with the gold button in the corner."},
+  {page:'program', sel:'.nav-item[data-page="program"]:not([data-scroll])', k:'My Program', title:'My Program', body:'Your eight weeks. Each opens a module with a lesson to watch and read, the insider codes, a practice, and one deliverable to send me. Finish a week to unlock the next.'},
+  {page:'practice', sel:'.nav-item[data-page="practice"]', k:'Practice', title:'Practice', body:'Short, playful exercises to make each week stick, with points, badges and best scores. Replay them as often as you like.'},
+  {page:'career', sel:'.nav-item[data-page="career"]', k:'Career Hub', title:'Career Hub', body:'Real, live roles from the agencies of this world, plus the boards to search yourself. Your own starting points for outreach.'},
+  {page:'cv', sel:'.nav-item[data-page="cv"]', k:'CV Review', title:'CV Review', body:'Upload your CV and get an instant, honest read on what to fix before you send it anywhere.'},
+  {page:'vault', sel:'.nav-item[data-page="vault"]', k:'The Vault', title:'The Vault', body:'Your reference library: the toolkit, the casebook, cultural fluency, the CV and more. Read them here, or download them.'},
+  {page:'library', sel:'.nav-item[data-page="library"]', k:'Codes Library', title:'Codes Library', body:'The vocabulary and codes of the private world, defined plainly, so you always know how to speak.'},
+  {page:'register', sel:'.nav-item[data-page="register"]', k:'The Register', title:'The Register', body:'The houses and agencies that set the standard of this world. Know them the way an insider does.'},
+  {page:'journal', sel:'.nav-item[data-page="journal"]', k:'The Journal', title:'The Journal', body:'A weekly dispatch from the world you are entering, refreshed for you every week.'},
+  {page:'screening', sel:'.nav-item[data-page="screening"]', k:'Screening Room', title:'The Screening Room', body:'Films, series and documentaries that teach the codes of luxury, hand-picked for you.'},
+  {page:'calendar', sel:'.nav-item[data-page="calendar"]', k:'Calendar', title:'Your Calendar', body:'Your eight weeks laid out on real dates, at your own rhythm. Add your own mentorship calls and deadlines.'},
+  {page:'messages', sel:'.nav-item[data-page="messages"]', k:'Messages', title:'Messages', body:'Your private line to me, and the community salon with the others on your path. Ask me anything, any time.'},
+  {sel:'#sbUser', k:'Your profile', title:'Your profile', body:'Add your photo and details here. It is how you appear across the academy. Click your name any time to edit it.'},
+  {sel:null, k:'You are ready', title:"That's your academy", body:'Take one week at a time, do the work honestly, and write to me the moment anything is unclear. Welcome inside.'}
+];
+let tourI=0;
+function startTour(){ tourI=0; document.getElementById('tourMask').classList.add('on'); showTourStep(); }
+function endTour(){ document.getElementById('tourMask').classList.remove('on'); try{localStorage.setItem('ma_tour_v1','1');}catch(e){} }
+function showTourStep(){
+  const s=TOUR_STEPS[tourI];
+  if(s.page){ try{ goPage(s.page); }catch(e){} }
+  setTimeout(()=>positionTour(s), s.page?140:10);
+}
+function positionTour(s){
+  const spot=document.getElementById('tourSpot'), card=document.getElementById('tourCard');
+  const vw=window.innerWidth, vh=window.innerHeight;
+  document.getElementById('tourK').textContent=s.k;
+  document.getElementById('tourTitle').textContent=s.title;
+  document.getElementById('tourBody').textContent=s.body;
+  document.getElementById('tourCount').textContent=(tourI+1)+' / '+TOUR_STEPS.length;
+  document.getElementById('tourBack').style.visibility=tourI===0?'hidden':'visible';
+  document.getElementById('tourNext').textContent=tourI===TOUR_STEPS.length-1?'Done':'Next';
+  const el = s.sel ? document.querySelector(s.sel) : null;
+  const r = el ? el.getBoundingClientRect() : null;
+  if(r && r.width>0 && vw>880){
+    spot.style.display='block';
+    spot.style.left=(r.left-6)+'px'; spot.style.top=(r.top-6)+'px'; spot.style.width=(r.width+12)+'px'; spot.style.height=(r.height+12)+'px';
+    let cw=310, cx=r.right+18, cy=Math.min(Math.max(r.top-6,14), vh-250);
+    if(cx+cw>vw-12) cx=Math.max(14, r.left-cw-18);
+    card.style.left=cx+'px'; card.style.top=cy+'px'; card.style.transform='none';
+  } else {
+    spot.style.display='block'; spot.style.left='50%'; spot.style.top='-300px'; spot.style.width='0'; spot.style.height='0';
+    card.style.left='50%'; card.style.top='50%'; card.style.transform='translate(-50%,-50%)';
+  }
+}
+function tourNext(){ if(tourI>=TOUR_STEPS.length-1){ endTour(); return; } tourI++; showTourStep(); }
+function tourBack(){ if(tourI>0){ tourI--; showTourStep(); } }
+document.getElementById('tourNext').addEventListener('click',tourNext);
+document.getElementById('tourBack').addEventListener('click',tourBack);
+document.getElementById('tourSkip').addEventListener('click',endTour);
+document.getElementById('tourHelp').addEventListener('click',startTour);
+
 document.getElementById('pwBtn').addEventListener('click',submitNewPassword);
 document.getElementById('pw2').addEventListener('keydown',e=>{if(e.key==='Enter')submitNewPassword();});
 
