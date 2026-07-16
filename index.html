@@ -597,8 +597,8 @@
   .sv-text p{font-size:15.5px;line-height:1.78;color:var(--ink-soft);margin-bottom:14px;}
   .sv-empty{font-size:14px;color:var(--stone);font-style:italic;}
   /* ---- Lecture d'un cours façon Vault (dans la fenêtre module) ---- */
-  .step-view-body{padding:32px 60px 46px;}
-  .lsn-vault{max-width:1080px;margin:0 auto;}
+  .step-view-body{padding:30px 44px 46px;}
+  .lsn-vault{max-width:1220px;margin:0 auto;}
   .lsn-vault .rf-head{margin-bottom:24px;}
   .lsn-vault .rf-sec:last-of-type{border-bottom:none;}
   .lsn-vault button.rf-dl{border:none;cursor:pointer;font-family:'Jost',sans-serif;}
@@ -613,7 +613,7 @@
   .lsn-ch-t{flex:1;font-family:'Cormorant',serif;font-weight:500;font-size:21px;color:var(--ink);line-height:1.25;}
   .lsn-ch-go{color:var(--gold-deep);opacity:.55;display:inline-flex;transition:opacity .18s,transform .18s;}
   .lsn-ch:hover .lsn-ch-go{opacity:1;transform:translateX(3px);}
-  .lsn-reading{max-width:800px;}
+  .lsn-reading{max-width:1000px;}
   .lsn-toc-back{display:inline-flex;align-items:center;gap:8px;background:none;border:none;cursor:pointer;font-family:'Jost',sans-serif;font-size:12.5px;font-weight:600;letter-spacing:.02em;color:var(--gold-deep);padding:6px 10px 6px 0;margin-bottom:14px;transition:transform .18s;}
   .lsn-toc-back:hover{transform:translateX(-3px);}
   .lsn-chapmark{font-family:'Jost',sans-serif;font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;}
@@ -636,6 +636,23 @@
   .lsn-reading ul.lsn-list li{position:relative;padding-left:26px;margin:0 0 13px;font-family:'Cormorant',Georgia,serif;font-size:21px;line-height:1.7;color:#332E28;}
   .lsn-reading ul.lsn-list li::before{content:"";position:absolute;left:3px;top:15px;width:8px;height:8px;border-radius:50%;background:var(--gold);}
   .lsn-reading ol.lsn-list li strong,.lsn-reading ul.lsn-list li strong{font-weight:600;color:var(--ink);background:linear-gradient(transparent 60%, var(--gold-wash) 0);}
+  /* chapeau / sous-titre sous le titre de chapitre */
+  .lsn-reading .lsn-dek{font-family:'Cormorant',serif;font-style:italic;font-size:23px;line-height:1.5;color:var(--gold-deep);margin:-8px 0 24px;font-weight:500;}
+  /* débrief : entrée à numéro romain */
+  .lsn-roman{display:flex;align-items:baseline;gap:12px;margin-top:38px;}
+  .lsn-roman-n{font-family:'Jost',sans-serif;font-size:13px;font-weight:700;letter-spacing:.05em;color:#fff;background:var(--gold);border-radius:7px;padding:3px 10px;flex:none;}
+  /* cartes de cas */
+  .lsn-case{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:26px 30px;margin:22px 0;box-shadow:0 10px 30px rgba(33,28,21,.05);}
+  .lsn-case-head{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:16px;padding-bottom:16px;border-bottom:1px solid var(--gold-wash);}
+  .lsn-case-k{font-family:'Jost',sans-serif;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#fff;background:var(--gold);border-radius:20px;padding:6px 15px;flex:none;}
+  .lsn-case-t{font-family:'Cormorant',serif;font-weight:600;font-size:27px;line-height:1.1;color:var(--ink);}
+  .lsn-case-scn{font-family:'Cormorant',Georgia,serif;font-size:20.5px;line-height:1.78;color:#332E28;}
+  .lsn-case-scn strong{font-weight:600;color:var(--ink);background:linear-gradient(transparent 60%, var(--gold-wash) 0);}
+  .lsn-case-task{margin-top:18px;background:var(--gold-wash);border-radius:12px;padding:16px 20px;}
+  .lsn-case-solo{padding:0;border:none;box-shadow:none;background:none;}
+  .lsn-case-solo .lsn-case-task{margin-top:6px;}
+  .lsn-task-k{display:block;font-family:'Jost',sans-serif;font-size:10.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:8px;}
+  .lsn-case-task > div{font-family:'Cormorant',serif;font-size:19.5px;line-height:1.7;color:#3a342c;}
   .lsn-foot{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:30px;padding-top:22px;border-top:1px solid var(--line);}
   .lsn-nav{display:inline-flex;align-items:center;gap:8px;font-family:'Jost',sans-serif;font-size:13px;font-weight:600;color:var(--gold-deep);background:var(--paper);border:1px solid var(--line);border-radius:11px;padding:11px 18px;cursor:pointer;transition:all .18s;}
   .lsn-nav:hover:not(:disabled){border-color:var(--gold-lt);background:var(--gold-wash);}
@@ -3590,21 +3607,48 @@ function svOpenSection(i){
   if(i<0||i>=total) return;
   const x=secs[i], body=document.getElementById('stepViewBody');
   // 1) tokeniser les paragraphes (texte, gras/titre, éléments de liste)
+  const titleSplit=(txt)=>{ const m=txt.match(/^([A-Za-z][A-Za-z ,'’\-]{2,44}?)\s+(?=[0-9]|[A-Z])/); if(m && m[1].split(' ').length<=6){ return [m[1].trim(), txt.slice(m[0].length).trim()]; } return ['', txt]; };
   const tokens=[];
   x.paras.forEach(p=>{
     if(/^\*\*[^*]+\*\*$/.test(p)){ tokens.push({t:'bold', v:p.replace(/^\*\*/,'').replace(/\*\*$/,'').trim()}); return; }
+    // "· · ·" = la consigne / les questions d'un cas
+    const taskM=p.match(/^\*\*[·•\s.]+\*\*\s*([\s\S]*)$/);
+    if(taskM){ tokens.push({t:'task', v:taskM[1].trim()}); return; }
+    // "Case I · ..." = un cas -> carte
+    const caseM=p.match(/^Case\s+([IVXLC\d]+)\s*·\s*([\s\S]+)$/i);
+    if(caseM){ const [ti,rest]=titleSplit(caseM[2].trim()); tokens.push({t:'case', label:'Case '+caseM[1].toUpperCase(), title:ti, v:rest}); return; }
+    // "I · ..." (débrief, numéro romain) -> sous-titre
+    const romanM=p.match(/^([IVXLC]{1,5})\s*·\s*([\s\S]+)$/);
+    if(romanM){ const [ti,rest]=titleSplit(romanM[2].trim()); if(ti){ tokens.push({t:'roman', label:romanM[1], title:ti, v:rest}); return; } }
     const en=splitEnum(p);
     if(en){ if(en.lead) tokens.push({t:'p', v:en.lead}); en.list.forEach(it=>tokens.push({t:'li', num:it.num, v:it.text})); return; }
     const single=p.match(/^(\d{1,2})\.\s+([\s\S]+)$/);
     if(single){ tokens.push({t:'li', num:parseInt(single[1],10), v:single[2].trim()}); return; }
     const bul=p.match(/^[-•]\s+([\s\S]+)$/);
     if(bul){ tokens.push({t:'li', bullet:true, v:bul[1].trim()}); return; }
+    // ligne entièrement en italique = chapeau/sous-titre
+    if(/^\*[^*][\s\S]*\*$/.test(p) && !/\*\*/.test(p)){ tokens.push({t:'dek', v:p.replace(/^\*/,'').replace(/\*$/,'').trim()}); return; }
     tokens.push({t:'p', v:p});
   });
   // 2) rendu, en regroupant les éléments de liste consécutifs
   let bodyhtml='', afterLabel=false, dropDone=false, j=0;
   while(j<tokens.length){
     const tk=tokens[j];
+    if(tk.t==='case'){
+      let inner=`<div class="lsn-case-head"><span class="lsn-case-k">${escapeHtml(tk.label)}</span>${tk.title?`<span class="lsn-case-t">${escapeHtml(tk.title)}</span>`:''}</div>`;
+      if(tk.v) inner+=`<div class="lsn-case-scn">${mdInline(tk.v)}</div>`;
+      if(tokens[j+1] && tokens[j+1].t==='task'){ inner+=`<div class="lsn-case-task"><span class="lsn-task-k">Your task</span><div>${mdInline(tokens[j+1].v)}</div></div>`; j++; }
+      bodyhtml+=`<div class="lsn-case">${inner}</div>`; afterLabel=false; j++; continue;
+    }
+    if(tk.t==='task'){
+      bodyhtml+=`<div class="lsn-case lsn-case-solo"><div class="lsn-case-task"><span class="lsn-task-k">Your task</span><div>${mdInline(tk.v)}</div></div></div>`; j++; continue;
+    }
+    if(tk.t==='roman'){
+      bodyhtml+=`<h3 class="lsn-subhead lsn-roman"><span class="lsn-roman-n">${escapeHtml(tk.label)}</span>${escapeHtml(tk.title)}</h3>`;
+      if(tk.v) bodyhtml+=`<p class="lsn-para">${mdInline(tk.v)}</p>`;
+      afterLabel=false; j++; continue;
+    }
+    if(tk.t==='dek'){ bodyhtml+=`<p class="lsn-dek">${mdInline(tk.v)}</p>`; j++; continue; }
     if(tk.t==='li'){
       const bullet=!!tk.bullet, start=tk.num||1;
       let lis='';
