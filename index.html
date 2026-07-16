@@ -197,6 +197,16 @@
   .cert-tx{flex:1;min-width:220px;}
   .cert-tx h3{font-family:'Cormorant',serif;font-weight:500;font-size:24px;color:var(--ink);margin:0 0 4px;}
   .cert-tx p{font-family:'Jost',sans-serif;font-size:13.5px;color:var(--ink-soft);line-height:1.55;margin:0;}
+  .dash-row{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:18px 0 14px;}
+  .dash-card{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:20px 22px;text-align:center;}
+  .dash-n{font-family:'Cormorant',serif;font-weight:500;font-size:38px;color:var(--gold-deep);line-height:1;}
+  .dash-n span{font-family:'Jost',sans-serif;font-size:14px;color:var(--stone);font-weight:500;margin-left:3px;}
+  .dash-l{font-family:'Jost',sans-serif;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--stone);margin-top:8px;}
+  .dash-quote{background:var(--gold-wash);border:1px solid var(--gold-lt);border-radius:16px;padding:20px 26px;margin-bottom:26px;}
+  .dash-q-k{font-family:'Jost',sans-serif;font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:8px;}
+  .dash-quote p{font-family:'Cormorant',serif;font-style:italic;font-weight:400;font-size:20px;line-height:1.5;color:var(--ink);margin:0;}
+  .dash-quote p b{font-style:normal;font-weight:600;color:var(--gold-deep);}
+  @media(max-width:640px){ .dash-row{grid-template-columns:1fr 1fr;} .dash-card:last-child{grid-column:1 / -1;} }
   @media(max-width:820px){ .pr-stats{grid-template-columns:1fr 1fr;gap:18px;} .pr-stat-badges,.pr-stat-bar{grid-column:1 / -1;} }
   /* runner */
   .pr-run{max-width:720px;margin:8px auto 0;}
@@ -1286,6 +1296,8 @@
           </div>
         </div>
       </div>
+      <div class="dash-row" id="dashRow"></div>
+      <div class="dash-quote" id="dashQuote"></div>
       <div class="sec-head"><h3>My program</h3><p>Finish a week to unlock the next. Take your time, this is a journey, not a race.</p></div>
       <div class="weeks" id="weekList"></div>
       <div class="mentor" id="mentor">
@@ -2795,6 +2807,31 @@ function updateResume(){
     document.getElementById('progSub').textContent=done===0?"Welcome, let's begin your first week.":"Keep going, you're on your way in.";
     if(cert) cert.classList.add('hidden');
   }
+  renderDashboard();
+}
+const DASH_QUOTES=[
+  "Discretion is not silence about secrets. It is a permanent vigilance over the information around the person you serve.",
+  "Anticipate the need before it is spoken, arrange it quietly, and take no credit for it.",
+  "The person you serve is a <b>principal</b>, never a client.",
+  "Everything that looks stupid in a house has a history, and the history is almost always a person.",
+  "When you make a mistake, take four minutes, not forty: fact, fix, ownership, and move on.",
+  "The best roles are never advertised. This world hires on trust, on a reference, on a quiet certainty about a person.",
+  "Presence without intrusion is the whole art. Be felt when needed, invisible when not.",
+  "Never name a confidential principal. The discretion is the proof.",
+  "Restraint is itself a code. The quieter your words, the higher the room you are standing in.",
+  "You are not hired for competence. Competence is assumed. You are kept for trust."
+];
+function renderDashboard(){
+  const row=document.getElementById('dashRow'); if(!row) return;
+  const weeksDone=Object.values(state.completed).filter(Boolean).length;
+  const deliv=(typeof SUBMISSIONS==='object'&&SUBMISSIONS)?Object.keys(SUBMISSIONS).length:0;
+  const pts=(typeof prPoints==='function')?prPoints().pts:0;
+  row.innerHTML=`
+    <div class="dash-card"><div class="dash-n">${weeksDone}<span>/ 8</span></div><div class="dash-l">Weeks completed</div></div>
+    <div class="dash-card"><div class="dash-n">${deliv}<span>/ 8</span></div><div class="dash-l">Deliverables sent</div></div>
+    <div class="dash-card"><div class="dash-n">${pts}</div><div class="dash-l">Practice points</div></div>`;
+  const q=document.getElementById('dashQuote');
+  if(q){ const idx=Math.floor(Date.now()/86400000)%DASH_QUOTES.length; q.innerHTML=`<div class="dash-q-k">&#10070; The code of the day</div><p>${DASH_QUOTES[idx]}</p>`; }
 }
 function showCertificate(){
   const name=(PROFILE && PROFILE.full_name) ? PROFILE.full_name : ((typeof USER!=='undefined' && USER && USER.email)? USER.email.split('@')[0] : 'Maison Amarine Mentee');
