@@ -52,7 +52,21 @@
   .nav-item:hover{background:rgba(255,255,255,.06);color:#F6F0E4;}
   .nav-item.active{background:var(--gold);color:#fff;}
   .sb-foot{margin-top:auto;padding:14px 8px 0;}
-  .sb-me{display:flex;align-items:center;gap:11px;padding:10px 6px 14px;border-top:1px solid rgba(255,255,255,.08);margin-bottom:4px;}
+  .sb-me{display:flex;align-items:center;gap:11px;padding:10px 8px 14px;border-top:1px solid rgba(255,255,255,.08);margin-bottom:4px;cursor:pointer;border-radius:11px;transition:background .2s;}
+  .sb-me:hover{background:rgba(255,255,255,.06);}
+  /* founder profile page */
+  .pf-top{display:flex;align-items:center;gap:20px;margin-bottom:22px;}
+  .pf-av{width:88px;height:88px;border-radius:50%;flex:none;background:linear-gradient(135deg,var(--gold),#C9A867);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Cormorant',serif;font-weight:700;font-size:34px;background-size:cover;background-position:center;}
+  .pf-upload{font-family:inherit;font-size:13px;font-weight:600;color:#8a6630;background:#F3EAD8;border:1px solid #C9A867;border-radius:20px;padding:9px 18px;cursor:pointer;transition:background .2s;}
+  .pf-upload:hover{background:#ecdfc6;}
+  .pf-hint{font-size:11.5px;color:var(--stone);margin-top:7px;}
+  .pf-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px 18px;}
+  .pf-wide{grid-column:1/-1;}
+  .pf-grid textarea{font-family:inherit;font-size:14px;color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:10px;padding:11px 13px;outline:none;resize:vertical;width:100%;transition:border-color .2s;}
+  .pf-grid textarea:focus{border-color:#C9A867;}
+  .pf-save{margin-top:18px;font-family:inherit;font-size:14px;font-weight:600;color:#fff;background:var(--gold);border:none;border-radius:11px;padding:12px 26px;cursor:pointer;transition:background .2s;}
+  .pf-save:hover{background:#8a6630;}
+  .pf-status{margin-left:12px;font-size:13px;font-weight:600;color:#8a6630;}
   .sb-me-av{width:38px;height:38px;border-radius:50%;flex-shrink:0;background:linear-gradient(135deg,var(--gold),#C9A867);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Cormorant',serif;font-weight:700;font-size:16px;background-size:cover;background-position:center;}
   .sb-me-tx{min-width:0;}
   .sb-me-n{font-size:13.5px;font-weight:600;color:#F6F0E4;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
@@ -378,7 +392,7 @@
       </div>
     </nav>
     <div class="sb-foot">
-      <div class="sb-me"><div class="sb-me-av" id="admAvatar">M</div><div class="sb-me-tx"><div class="sb-me-n" id="admName">Founder</div><div class="sb-me-e" id="admEmail"></div></div></div>
+      <div class="sb-me" id="sbMe" title="Edit your profile"><div class="sb-me-av" id="admAvatar">M</div><div class="sb-me-tx"><div class="sb-me-n" id="admName">Founder</div><div class="sb-me-e" id="admEmail"></div></div></div>
       <div class="logout" id="logout"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9" stroke-linecap="round" stroke-linejoin="round"/></svg>Sign out</div>
     </div>
   </aside>
@@ -472,6 +486,31 @@
       <div class="note-band">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01" stroke-linecap="round"/></svg>
         <p>IMPORTANT, this access flow is still a design prototype. It lets you visualise and organise your cohort, but it does not create real, secure student logins on its own. Connect it to a real back-end or a course platform BEFORE taking any payment.</p>
+      </div>
+    </section>
+
+    <section class="page hidden" id="page-profile">
+      <div class="page-h"><div><div class="eyebrow">Your profile</div><h1>Your founder profile</h1><p>Your photo and details, exactly as your students see you across the academy.</p></div></div>
+      <div class="set-card">
+        <div class="pf-top">
+          <div class="pf-av" id="pfAv">M</div>
+          <div>
+            <input type="file" id="pfFile" accept="image/*" style="display:none;">
+            <button class="pf-upload" id="pfUploadBtn">Change photo</button>
+            <div class="pf-hint">JPG or PNG. A warm, professional headshot.</div>
+          </div>
+        </div>
+        <div class="pf-grid">
+          <div class="field"><label>First name</label><input id="pf_first" type="text"></div>
+          <div class="field"><label>Last name</label><input id="pf_last" type="text"></div>
+          <div class="field pf-wide"><label>Headline</label><input id="pf_headline" type="text" placeholder="Founder · Maison Amarine"></div>
+          <div class="field"><label>City</label><input id="pf_city" type="text"></div>
+          <div class="field"><label>Country</label><input id="pf_country" type="text"></div>
+          <div class="field pf-wide"><label>Languages</label><input id="pf_languages" type="text" placeholder="French, English"></div>
+          <div class="field pf-wide"><label>About you</label><textarea id="pf_bio" rows="4" placeholder="A few lines your students will read."></textarea></div>
+        </div>
+        <button class="pf-save" id="pfSaveBtn">Save profile</button>
+        <span class="pf-status" id="pfStatus"></span>
       </div>
     </section>
 
@@ -611,20 +650,81 @@ async function enterApp(){
   loadAdminMe();
   await loadStudents(); renderOverview(); loadInbox();
 }
+let ADMIN_ME=null, ADMIN_UID=null;
 async function loadAdminMe(){
   try{
-    const uid = (SESSION && SESSION.user && SESSION.user.id) || null;
-    let q = sb.from('profiles').select('full_name,email,avatar_url');
-    q = uid ? q.eq('id',uid) : q.eq('email',ADMIN_EMAIL);
+    ADMIN_UID = (SESSION && SESSION.user && SESSION.user.id) || null;
+    let q = sb.from('profiles').select('*');
+    q = ADMIN_UID ? q.eq('id',ADMIN_UID) : q.eq('email',ADMIN_EMAIL);
     const {data}=await q.maybeSingle();
-    const name=(data&&data.full_name)||'Émilie';
-    const email=(data&&data.email)||ADMIN_EMAIL;
-    const av=document.getElementById('admAvatar'), nm=document.getElementById('admName'), em=document.getElementById('admEmail');
-    if(nm) nm.textContent=name;
-    if(em) em.textContent=email;
-    if(av){ if(data&&data.avatar_url){ av.style.backgroundImage="url('"+data.avatar_url+"')"; av.textContent=''; } else { av.textContent=initials(name); } }
+    ADMIN_ME = data || {email:ADMIN_EMAIL};
+    if(!ADMIN_UID && data && data.id) ADMIN_UID=data.id;
+    refreshAdminSidebar();
+    fillProfileForm();
   }catch(e){}
 }
+function refreshAdminSidebar(){
+  const d=ADMIN_ME||{};
+  const name=d.full_name||'Émilie';
+  const av=document.getElementById('admAvatar'), nm=document.getElementById('admName'), em=document.getElementById('admEmail');
+  if(nm) nm.textContent=name;
+  if(em) em.textContent=d.email||ADMIN_EMAIL;
+  if(av){ if(d.avatar_url){ av.style.backgroundImage="url('"+d.avatar_url+"')"; av.textContent=''; } else { av.style.backgroundImage=''; av.textContent=initials(name); } }
+}
+function fillProfileForm(){
+  const d=ADMIN_ME||{};
+  const set=(id,v)=>{ const el=document.getElementById(id); if(el) el.value=v||''; };
+  const fn=d.first_name||((d.full_name||'').split(' ')[0]||'');
+  const ln=d.last_name||((d.full_name||'').split(' ').slice(1).join(' ')||'');
+  set('pf_first',fn); set('pf_last',ln); set('pf_headline',d.headline);
+  set('pf_city',d.city); set('pf_country',d.country); set('pf_languages',d.languages); set('pf_bio',d.bio);
+  const av=document.getElementById('pfAv');
+  if(av){ if(d.avatar_url){ av.style.backgroundImage="url('"+d.avatar_url+"')"; av.textContent=''; } else { av.textContent=initials(d.full_name||'Émilie'); } }
+}
+function openAdminProfile(){
+  document.querySelectorAll('.page').forEach(p=>p.classList.add('hidden'));
+  document.getElementById('page-profile').classList.remove('hidden');
+  document.querySelectorAll('.nav-item').forEach(x=>x.classList.remove('active'));
+  fillProfileForm();
+  window.scrollTo(0,0);
+}
+async function saveAdminProfile(){
+  const st=document.getElementById('pfStatus'); if(st) st.textContent='Saving…';
+  const val=id=>{ const el=document.getElementById(id); return el?el.value.trim():''; };
+  const first=val('pf_first'), last=val('pf_last');
+  const full=(first+' '+last).trim()|| (ADMIN_ME&&ADMIN_ME.full_name) || 'Émilie';
+  const upd={ first_name:first, last_name:last, full_name:full, headline:val('pf_headline'),
+    city:val('pf_city'), country:val('pf_country'), languages:val('pf_languages'), bio:val('pf_bio') };
+  try{
+    const {error}=await sb.from('profiles').update(upd).eq('id',ADMIN_UID);
+    if(error) throw error;
+    ADMIN_ME=Object.assign(ADMIN_ME||{},upd);
+    refreshAdminSidebar();
+    if(st) st.textContent='✓ Saved';
+    setTimeout(()=>{ if(st) st.textContent=''; },2500);
+  }catch(e){ console.warn('save profile',e); if(st) st.textContent='Could not save. Try again.'; }
+}
+async function uploadAdminAvatar(file){
+  if(!file) return;
+  const st=document.getElementById('pfStatus'); if(st) st.textContent='Uploading photo…';
+  try{
+    const ext=((file.name||'').split('.').pop()||'jpg').toLowerCase();
+    const path=ADMIN_UID+'/avatar.'+ext;
+    const {error:upErr}=await sb.storage.from('avatars').upload(path,file,{upsert:true,contentType:file.type||'image/jpeg'});
+    if(upErr) throw upErr;
+    const {data:pub}=sb.storage.from('avatars').getPublicUrl(path);
+    const url=pub.publicUrl+'?v='+Date.now();
+    const {error}=await sb.from('profiles').update({avatar_url:url}).eq('id',ADMIN_UID);
+    if(error) throw error;
+    ADMIN_ME=Object.assign(ADMIN_ME||{},{avatar_url:url});
+    fillProfileForm(); refreshAdminSidebar();
+    if(st) st.textContent='✓ Photo updated'; setTimeout(()=>{ if(st) st.textContent=''; },2500);
+  }catch(e){ console.warn('avatar',e); if(st) st.textContent='Photo upload failed. Check the avatars storage bucket.'; }
+}
+document.getElementById('sbMe').addEventListener('click',openAdminProfile);
+document.getElementById('pfSaveBtn').addEventListener('click',saveAdminProfile);
+document.getElementById('pfUploadBtn').addEventListener('click',()=>document.getElementById('pfFile').click());
+document.getElementById('pfFile').addEventListener('change',e=>{ if(e.target.files&&e.target.files[0]) uploadAdminAvatar(e.target.files[0]); });
 document.getElementById('gateBtn').addEventListener('click',tryLogin);
 document.getElementById('gatePass').addEventListener('keydown',e=>{if(e.key==='Enter')tryLogin();});
 document.getElementById('logout').addEventListener('click',async()=>{await sb.auth.signOut();location.reload();});
