@@ -1322,9 +1322,12 @@ async function loadAdminCommunity(){
     const doPost=async()=>{
       const txt=inp.value.trim(); if(!txt)return;
       send.disabled=true;
-      const {error}=await sb.from('community_messages').insert({author_id:SESSION.user.id,author_name:'Émilie',is_admin:true,body:txt});
+      const uid=(SESSION&&SESSION.user&&SESSION.user.id)||null;
+      let {error}=await sb.from('community_messages').insert({author_id:uid,author_name:'Émilie',is_admin:true,body:txt,media_url:null,media_type:null});
+      // si la règle bloque le drapeau admin, on réessaie sans is_admin (le message passe quand même)
+      if(error){ const r2=await sb.from('community_messages').insert({author_id:uid,author_name:'Émilie',body:txt}); error=r2.error; }
       send.disabled=false;
-      if(error){toast('Could not post');return;}
+      if(error){toast('Could not post: '+(error.message||error.code||'unknown'));console.warn('community post error',error);return;}
       inp.value=''; inp.style.height='auto'; loadAdminCommunity();
     };
     send.addEventListener('click',doPost);
