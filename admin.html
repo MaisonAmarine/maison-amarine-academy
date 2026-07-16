@@ -15,7 +15,11 @@
     --sidebar:#211C15;
   }
   *{margin:0;padding:0;box-sizing:border-box;}
-  body{background:var(--ivory);color:var(--ink);font-family:'Jost',sans-serif;font-weight:400;-webkit-font-smoothing:antialiased;line-height:1.55;}
+  body{background:radial-gradient(1200px 520px at 78% -260px, #efe4cf 0%, transparent 62%), var(--ivory);color:var(--ink);font-family:'Jost',sans-serif;font-weight:400;-webkit-font-smoothing:antialiased;line-height:1.55;}
+  .adm-orn{display:flex;align-items:center;gap:12px;margin-top:14px;}
+  .adm-orn.c{justify-content:center;}
+  .adm-orn span{width:40px;height:1px;background:var(--gold-lt);display:block;}
+  .adm-orn b{color:var(--gold);font-size:12px;font-weight:400;line-height:1;}
   ::selection{background:rgba(168,126,61,0.22);}
 
   /* ---------- LOGIN GATE ---------- */
@@ -67,7 +71,7 @@
 
   /* ---------- stats ---------- */
   .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:30px;}
-  .stat{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:22px 24px;position:relative;overflow:hidden;transition:transform .22s,box-shadow .22s,border-color .22s;}
+  .stat{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:24px 26px;position:relative;overflow:hidden;box-shadow:0 16px 36px rgba(33,28,21,.05);transition:transform .22s,box-shadow .22s,border-color .22s;}
   .stat::before{content:"";position:absolute;top:0;left:0;width:100%;height:2px;background:linear-gradient(90deg,var(--gold),var(--gold-lt));opacity:0;transition:opacity .22s;}
   .stat:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(33,28,21,.09);border-color:var(--gold-lt);}
   .stat:hover::before{opacity:1;}
@@ -75,8 +79,8 @@
   .stat .sl{font-size:12px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--stone);margin-top:8px;}
 
   /* ---------- students table ---------- */
-  .panel{background:var(--paper);border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 8px 24px var(--shadow);}
-  .panel-head{display:flex;align-items:center;justify-content:space-between;padding:18px 24px;border-bottom:1px solid var(--line);}
+  .panel{background:var(--paper);border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 20px 44px rgba(33,28,21,.06),0 2px 6px rgba(33,28,21,.03);}
+  .panel-head{display:flex;align-items:center;justify-content:space-between;padding:18px 24px;border-bottom:1px solid var(--line);background:linear-gradient(180deg,#fffdf8,var(--paper));}
   .panel-head h3{font-family:'Cormorant',serif;font-weight:700;font-size:20px;color:var(--ink);}
   .search{display:flex;align-items:center;gap:8px;background:var(--ivory);border:1px solid var(--line);border-radius:10px;padding:8px 12px;}
   .search svg{width:15px;height:15px;color:var(--stone);}
@@ -141,7 +145,7 @@
   .copy-btn:hover{background:#ecdfc6;}
 
   /* settings */
-  .set-card{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:24px 28px;margin-bottom:16px;box-shadow:0 8px 24px var(--shadow);}
+  .set-card{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:26px 30px;margin-bottom:16px;box-shadow:0 20px 44px rgba(33,28,21,.06),0 2px 6px rgba(33,28,21,.03);}
   .set-card h3{font-family:'Cormorant',serif;font-weight:700;font-size:20px;margin-bottom:4px;}
   .set-card p{font-size:13.5px;color:var(--ink-soft);margin-bottom:16px;}
   .note-band{display:flex;gap:12px;align-items:flex-start;background:var(--gold-wash);border-radius:12px;padding:15px 18px;margin-top:20px;}
@@ -326,7 +330,8 @@
     </svg>
     <div class="eyebrow">Maison Amarine</div>
     <h1>Admin access</h1>
-    <p>Sign in to manage your students and their access.</p>
+    <div class="adm-orn c"><span></span><b>&#10070;</b><span></span></div>
+    <p style="margin-top:14px;">Sign in to manage your students and their access.</p>
     <input type="email" id="gateEmail" placeholder="Your admin email" autocomplete="email">
     <input type="password" id="gatePass" placeholder="Your password" autocomplete="current-password">
     <button id="gateBtn">Sign in</button>
@@ -391,7 +396,7 @@
 
     <!-- OVERVIEW -->
     <section class="page hidden" id="page-overview">
-      <div class="page-h"><div><div class="eyebrow">Overview</div><h1>At a glance</h1><p>A quick pulse on your academy.</p></div></div>
+      <div class="page-h"><div><div class="eyebrow">Overview</div><h1>At a glance</h1><p>A quiet pulse on your academy: who is in, how far they have come, and what needs your eye.</p></div></div>
       <div class="stats" id="statsBox"></div>
       <div class="panel">
         <div class="panel-head"><h3>Recent activity</h3></div>
