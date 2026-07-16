@@ -854,6 +854,8 @@
   .crow.mine{flex-direction:row-reverse;align-self:flex-end;}
   .c-av{width:38px;height:38px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-family:'Jost',sans-serif;font-weight:500;font-size:14px;letter-spacing:.02em;box-shadow:0 2px 6px rgba(33,28,21,.1);margin-top:2px;}
   .c-av-admin{background:linear-gradient(135deg,var(--ink),var(--gold-deep));color:var(--gold-lt);}
+  .c-av-photo{background-size:cover;background-position:center;background-repeat:no-repeat;}
+  .cav-photo{background-size:cover;background-position:center;background-repeat:no-repeat;}
   .cbub{position:relative;min-width:0;}
   .cbub .who{font-size:11.5px;font-weight:600;color:var(--gold-deep);margin-bottom:4px;padding-left:2px;}
   .crow.mine .cbub .who{text-align:right;color:var(--stone);}
@@ -2960,8 +2962,25 @@ function avatarColor(name){
   for(let i=0;i<s.length;i++){ h=(h*31 + s.charCodeAt(i))>>>0; }
   return AVATAR_COLORS[h % AVATAR_COLORS.length];
 }
-function avatarHTML(name, isAdmin){
+// Annuaire des photos de profil (partagé) : chaque élève voit celles des autres
+let AVATARS={};
+async function loadAvatarDirectory(){
+  try{
+    const {data}=await sb.from('profiles').select('id,full_name,avatar_url');
+    const map={};
+    (data||[]).forEach(p=>{ if(p.avatar_url){ map['id:'+p.id]=p.avatar_url; if(p.full_name) map['nm:'+p.full_name.trim().toLowerCase()]=p.avatar_url; } });
+    AVATARS=map;
+  }catch(e){}
+}
+function avatarPhoto(name, authorId){
+  if(authorId && AVATARS['id:'+authorId]) return AVATARS['id:'+authorId];
+  if(name && AVATARS['nm:'+name.trim().toLowerCase()]) return AVATARS['nm:'+name.trim().toLowerCase()];
+  return null;
+}
+function avatarHTML(name, isAdmin, authorId){
   const ini=initials(name);
+  const photo=avatarPhoto(name, authorId);
+  if(photo){ return `<div class="c-av c-av-photo" style="background-image:url('${photo}')" aria-label="${escapeHtml(name||'')}"></div>`; }
   if(isAdmin){
     return `<div class="c-av c-av-admin">${ini}</div>`;
   }
@@ -2988,7 +3007,7 @@ async function onSignedIn(user){
   document.getElementById('app').classList.remove('hidden');
   await loadProfile(); await loadProgress(); await loadSubmissions();
   renderWeeks(); renderAgencies(); bootCareerHub(); initCalAdd(); renderMyEvents();
-  loadCourseContent(); loadLessonDefaults();
+  loadCourseContent(); loadLessonDefaults(); loadAvatarDirectory();
   loadMessages(false);
   startRealtime();
 }
@@ -3892,7 +3911,7 @@ function goPage(name, scrollTo){
   document.querySelectorAll('.nav-item').forEach(n=>n.classList.toggle('active', n.dataset.page===name && !n.dataset.scroll));
   document.querySelectorAll('.m-tab').forEach(t=>t.classList.toggle('active', t.dataset.page===name));
   window.scrollTo(0,0);
-  if(name==='messages'){ loadCommunity(); loadMessages(false); updateConvPreviews(); loadDmConversations(); if(window.innerWidth>820){ selectConv(document.getElementById('waApp').dataset.active||'community'); } }
+  if(name==='messages'){ loadAvatarDirectory().then(()=>{ loadCommunity(); loadDmConversations(); }); loadCommunity(); loadMessages(false); updateConvPreviews(); loadDmConversations(); if(window.innerWidth>820){ selectConv(document.getElementById('waApp').dataset.active||'community'); } }
   if(name==='journal'){ bootJournal(); }
   if(name==='register'){ renderRegister(); }
   if(name==='screening'){ renderScreening(); }
@@ -4220,15 +4239,16 @@ async function loadDmConversations(){
     });
     // récupérer les noms
     const ids=convs.map(c=>c.other);
-    const {data:profs}=await sb.from('profiles').select('id,full_name').in('id',ids);
-    const nameOf={}; (profs||[]).forEach(p=>nameOf[p.id]=p.full_name);
+    const {data:profs}=await sb.from('profiles').select('id,full_name,avatar_url').in('id',ids);
+    const nameOf={}, avOf={}; (profs||[]).forEach(p=>{nameOf[p.id]=p.full_name; if(p.avatar_url) avOf[p.id]=p.avatar_url;});
     box.innerHTML='<div class="wa-listlabel">Direct messages</div>';
     convs.forEach(c=>{
       const nm=nameOf[c.other]||'Member';
       const prev=(c.last.sender_id===USER.id?'You: ':'')+(c.last.body||'📎 Attachment');
       const item=document.createElement('div');
       item.className='wa-item'+(activeDmUser&&activeDmUser.id===c.other?' active':'');
-      item.innerHTML=`<div class="cav" style="background:${avatarColor(nm)}">${avatarInitials(nm)}</div><div class="ci-mid"><div class="ci-top"><span class="ci-name">${escapeHtml(nm)}</span><span class="ci-time">${fmtTime(c.last.created_at)}</span></div><div class="ci-prev">${escapeHtml(prev)}</div></div>`;
+      const av = avOf[c.other] ? `<div class="cav cav-photo" style="background-image:url('${avOf[c.other]}')"></div>` : `<div class="cav" style="background:${avatarColor(nm)}">${avatarInitials(nm)}</div>`;
+      item.innerHTML=`${av}<div class="ci-mid"><div class="ci-top"><span class="ci-name">${escapeHtml(nm)}</span><span class="ci-time">${fmtTime(c.last.created_at)}</span></div><div class="ci-prev">${escapeHtml(prev)}</div></div>`;
       item.addEventListener('click',()=>openDm(c.other, nm));
       box.appendChild(item);
     });
@@ -4280,7 +4300,7 @@ async function loadCommunity(){
     const actions = mine ? `<div class="cbub-actions"><button class="cbub-act" data-edit="${m.id}" title="Edit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 20h9M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z" stroke-linecap="round" stroke-linejoin="round"/></svg></button><button class="cbub-act" data-del="${m.id}" title="Delete"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16M9 7V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2M6 7l1 13h10l1-13" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div>` : '';
     const cMedia = m.media_url ? mediaHTML(m.media_url, m.media_type) : '';
     const cBody = m.body ? escapeHtml(m.body) : '';
-    div.innerHTML=`${avatarHTML(m.author_name, m.is_admin)}<div class="cbub">${!mine?`<div class="who">${escapeHtml(who)}</div>`:''}<div class="msg" data-body="${m.id}">${cMedia}${cBody}<span class="when">${fmtTime(m.created_at)}</span></div>${actions}</div>`;
+    div.innerHTML=`${avatarHTML(m.author_name, m.is_admin, m.author_id)}<div class="cbub">${!mine?`<div class="who">${escapeHtml(who)}</div>`:''}<div class="msg" data-body="${m.id}">${cMedia}${cBody}<span class="when">${fmtTime(m.created_at)}</span></div>${actions}</div>`;
     body.appendChild(div);
   });
   // brancher les actions

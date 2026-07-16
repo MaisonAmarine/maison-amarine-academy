@@ -92,6 +92,7 @@
   tbody tr:hover{background:#fdfbf6;}
   .st-name{display:flex;align-items:center;gap:12px;}
   .st-av{width:38px;height:38px;border-radius:50%;background:var(--gold);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:15px;flex-shrink:0;}
+  .st-av-photo{background-size:cover;background-position:center;background-repeat:no-repeat;}
   .st-name .nm{font-weight:600;color:var(--ink);}
   .st-name .em{font-size:12.5px;color:var(--stone);}
   .badge{font-size:11px;font-weight:600;letter-spacing:.03em;text-transform:uppercase;padding:4px 11px;border-radius:20px;display:inline-block;}
@@ -637,6 +638,7 @@ async function loadStudents(){
       id:p.id,
       subs:sub,
       subCount:subCount,
+      avatar:p.avatar_url||'',
       name:p.full_name||(p.email||'').split('@')[0],
       email:p.email||'',
       cohort:p.cohort||'Cohort I',
@@ -657,7 +659,7 @@ function renderStudents(){
   filtered.forEach((s)=>{
     const tr=document.createElement('tr');
     tr.innerHTML=`
-      <td><div class="st-name"><div class="st-av">${initials(s.name)}</div><div><div class="nm">${s.name}</div><div class="em">${s.email}</div></div></div></td>
+      <td><div class="st-name"><div class="st-av${s.avatar?' st-av-photo':''}"${s.avatar?` style="background-image:url('${s.avatar}')"`:''}>${s.avatar?'':initials(s.name)}</div><div><div class="nm">${s.name}</div><div class="em">${s.email}</div></div></div></td>
       <td>${statusBadge(s.status)}</td>
       <td><div class="prog-mini"><div class="track"><div class="fill" style="width:${s.progress}%"></div></div><span class="pct">${s.weeksDone}/8</span></div></td>
       <td><span class="sub-chip ${s.subCount===0?'none':(s.subCount>=8?'all':'some')}">${s.subCount}/8</span></td>
