@@ -1368,10 +1368,39 @@ function admWireComposer(scope){
   if(att && !att.dataset.wired){ att.dataset.wired='1'; att.addEventListener('click',()=>f.click()); f.addEventListener('change',()=>{ if(f.files[0]) admShowPreview(scope,f.files[0],false); f.value=''; }); }
   if(mic && !mic.dataset.wired){ mic.dataset.wired='1'; mic.addEventListener('click',function(){ admToggleRec(scope,this); }); }
 }
+function wireAdminCommunitySend(){
+  const send=document.getElementById('acommSend');
+  const inp=document.getElementById('acommInput');
+  if(!send){ return; }
+  admWireComposer('comm');
+  if(send.dataset.wired) return;
+  send.dataset.wired='1';
+  const doPost=async()=>{
+    const txt=inp.value.trim(); const media=admPending.comm;
+    if(!txt && !media) return;
+    send.disabled=true;
+    const uid=(SESSION&&SESSION.user&&SESSION.user.id)||null;
+    let media_url=null, media_type=null;
+    if(media){ media_url=await admUpload(media.file, media.isVoice); if(!media_url){ send.disabled=false; toast('Could not upload the file'); return; } media_type=admMediaType(media.file, media.isVoice); }
+    let {error}=await sb.from('community_messages').insert({author_id:uid,author_name:'Émilie',is_admin:true,body:txt,media_url,media_type});
+    if(error){ const r2=await sb.from('community_messages').insert({author_id:uid,author_name:'Émilie',body:txt,media_url,media_type}); error=r2.error; }
+    send.disabled=false;
+    if(error){
+      const msg=[error.message,error.details,error.hint,error.code].filter(Boolean).join(' | ')||JSON.stringify(error);
+      try{ alert('COMMUNITY POST ERROR (build C):\n\n'+msg+'\n\n(fais une capture de ce message pour Claude)'); }catch(e){}
+      console.warn('community post error',error); return;
+    }
+    inp.value=''; inp.style.height='auto'; admClearPreview('comm'); loadAdminCommunity();
+  };
+  send.addEventListener('click',doPost);
+  inp.addEventListener('keydown',e=>{if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();doPost();}});
+  inp.addEventListener('input',function(){this.style.height='auto';this.style.height=Math.min(this.scrollHeight,110)+'px';});
+}
 async function loadAdminCommunity(){
+  wireAdminCommunitySend();   // TOUJOURS brancher le bouton, meme si le salon est vide
   const {data,error}=await sb.from('community_messages').select('*').order('created_at',{ascending:true}).limit(200);
-  if(error) return;
   const body=document.getElementById('acommBody'); if(!body) return;
+  if(error){ body.innerHTML='<div class="conv-none">Could not load the salon.</div>'; return; }
   body.innerHTML='';
   if(!data || data.length===0){ body.innerHTML='<div class="conv-none">No community messages yet. Post the first one to set the tone.</div>'; return; }
   data.forEach(m=>{
@@ -1388,38 +1417,6 @@ async function loadAdminCommunity(){
   body.querySelectorAll('[data-adel]').forEach(b=>b.addEventListener('click',()=>adminDeleteComm(b.dataset.adel)));
   body.querySelectorAll('[data-aedit]').forEach(b=>b.addEventListener('click',()=>adminEditComm(b.dataset.aedit)));
   body.scrollTop=body.scrollHeight;
-  // brancher l'envoi (une seule fois)
-  const send=document.getElementById('acommSend');
-  const inp=document.getElementById('acommInput');
-  if(send && !send.dataset.wired){
-    send.dataset.wired='1';
-    const doPost=async()=>{
-      const txt=inp.value.trim(); const media=admPending.comm;
-      if(!txt && !media) return;
-      send.disabled=true;
-      const uid=(SESSION&&SESSION.user&&SESSION.user.id)||null;
-      let media_url=null, media_type=null;
-      if(media){ media_url=await admUpload(media.file, media.isVoice); if(!media_url){ send.disabled=false; toast('Could not upload the file'); return; } media_type=admMediaType(media.file, media.isVoice); }
-      let {error}=await sb.from('community_messages').insert({author_id:uid,author_name:'Émilie',is_admin:true,body:txt,media_url,media_type});
-      // si la règle bloque le drapeau admin, on réessaie sans is_admin (le message passe quand même)
-      if(error){ const r2=await sb.from('community_messages').insert({author_id:uid,author_name:'Émilie',body:txt,media_url,media_type}); error=r2.error; }
-      send.disabled=false;
-      if(error){
-        const msg=[error.message,error.details,error.hint,error.code].filter(Boolean).join(' | ')||JSON.stringify(error);
-        try{ alert('COMMUNITY POST ERROR (build B):\n\n'+msg+'\n\n(fais une capture de ce message pour Claude)'); }catch(e){}
-        const box=document.getElementById('acommPrev');
-        if(box){ box.style.display='flex'; box.style.background='#fdecea'; box.style.borderColor='#e0b4b0';
-          box.innerHTML='<span class="ap-name" style="color:#a3352b;white-space:normal;">Post blocked: '+escapeHtml(msg)+'</span><button class="ap-x">&times;</button>';
-          box.querySelector('.ap-x').addEventListener('click',()=>{box.style.display='none';box.style.background='';box.style.borderColor='';box.innerHTML='';}); }
-        console.warn('community post error',error); return;
-      }
-      inp.value=''; inp.style.height='auto'; admClearPreview('comm'); loadAdminCommunity();
-    };
-    send.addEventListener('click',doPost);
-    inp.addEventListener('keydown',e=>{if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();doPost();}});
-    inp.addEventListener('input',function(){this.style.height='auto';this.style.height=Math.min(this.scrollHeight,110)+'px';});
-    admWireComposer('comm');
-  }
 }
 async function adminDeleteComm(id){
   if(!confirm('Delete this message from the community? This is permanent.')) return;
