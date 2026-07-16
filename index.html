@@ -178,6 +178,20 @@
   .pr-badge{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:600;color:var(--ink-soft);background:var(--gold-wash);border-radius:20px;padding:4px 11px;}
   .pr-card .pr-go{margin-top:14px;font-size:12.5px;font-weight:600;color:var(--gold-deep);display:flex;align-items:center;gap:6px;}
   .pr-card .pr-done{color:var(--green);}
+  .pr-stats{display:grid;grid-template-columns:repeat(2,auto) 1.2fr 1.6fr;gap:26px;align-items:center;background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:22px 26px;margin:22px 0 8px;}
+  .pr-stat-n{font-family:'Cormorant',serif;font-weight:500;font-size:34px;color:var(--gold-deep);line-height:1;}
+  .pr-stat-n span{font-family:'Jost',sans-serif;font-size:13px;color:var(--stone);font-weight:500;margin-left:3px;}
+  .pr-stat-l{font-family:'Jost',sans-serif;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--stone);margin-top:6px;}
+  .pr-badges{display:flex;flex-wrap:wrap;gap:8px;}
+  .pr-badge2{display:inline-flex;align-items:center;gap:7px;background:var(--gold-wash);border:1px solid var(--gold-lt);border-radius:20px;padding:6px 13px;font-family:'Jost',sans-serif;font-size:12px;font-weight:600;color:var(--ink);}
+  .pr-badge2 b{color:var(--gold-deep);font-size:13px;}
+  .pr-badge2-off{background:none;border:1px dashed var(--line);color:var(--stone);font-weight:400;}
+  .pr-cardtop{display:flex;align-items:center;justify-content:space-between;gap:8px;}
+  .pr-best{font-family:'Jost',sans-serif;font-size:11px;font-weight:600;color:var(--green);background:#eef3ea;border-radius:20px;padding:3px 10px;white-space:nowrap;}
+  .pr-card-done{border-color:var(--gold-lt);}
+  .pr-newbest{font-family:'Jost',sans-serif;font-size:14px;font-weight:600;color:var(--gold-deep);background:var(--gold-wash);border-radius:12px;padding:11px 16px;margin:2px auto 18px;max-width:400px;}
+  .pr-bestline{font-family:'Jost',sans-serif;font-size:13px;color:var(--stone);margin:0 0 16px;}
+  @media(max-width:820px){ .pr-stats{grid-template-columns:1fr 1fr;gap:18px;} .pr-stat-badges,.pr-stat-bar{grid-column:1 / -1;} }
   /* runner */
   .pr-run{max-width:720px;margin:8px auto 0;}
   .pr-top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:14px;}
@@ -2236,18 +2250,50 @@ const PRACTICE = [
      {t:"Change the subject abruptly and coldly.", ok:false, fb:"Neutral warmth beats cold. You can decline without a chill."}]}
  ]}
 ];
-const PR_DONE = {};
+function loadPractice(){ try{ return JSON.parse(localStorage.getItem('ma_practice_v1'))||{best:{},done:{}}; }catch(e){ return {best:{},done:{}}; } }
+function savePractice(){ try{ localStorage.setItem('ma_practice_v1', JSON.stringify(PR_STATE)); }catch(e){} }
+let PR_STATE = loadPractice();
 let prState = null;
 function prBadge(t){ return t==='flash' ? 'Flashcards' : t==='quiz' ? 'Quick quiz' : 'Scenario'; }
+function prPoints(){
+  let pts=0,max=0;
+  PRACTICE.forEach(w=>{
+    if(w.type==='flash'){ max+=50; if(PR_STATE.done[w.no]) pts+=50; }
+    else { const t=w.items.length; max+=t*10; const b=PR_STATE.best[w.no]; if(b) pts+=b.score*10; }
+  });
+  return {pts,max};
+}
 function renderPractice(){
   const wrap=document.getElementById('practiceWrap'); if(!wrap) return;
-  wrap.innerHTML='<div class="pr-grid">'+PRACTICE.map(w=>`
-    <button class="pr-card" onclick="startPractice(${w.no})">
-      <div class="pr-wk">Week ${w.no}</div>
+  const totalW=PRACTICE.length;
+  const doneCount=PRACTICE.filter(w=>PR_STATE.done[w.no]).length;
+  const {pts,max}=prPoints();
+  const pct=Math.round(doneCount/totalW*100);
+  const badges=[];
+  if(doneCount>=1) badges.push(['&#10022;','First steps']);
+  if(doneCount>=4) badges.push(['&#9670;','Halfway there']);
+  if(doneCount>=totalW) badges.push(['&#9733;','Scholar of the house']);
+  if(PRACTICE.some(w=>w.type!=='flash' && PR_STATE.best[w.no] && PR_STATE.best[w.no].score===w.items.length)) badges.push(['&#10023;','Perfect round']);
+  const badgeHtml = badges.length ? badges.map(b=>`<span class="pr-badge2"><b>${b[0]}</b>${b[1]}</span>`).join('') : `<span class="pr-badge2 pr-badge2-off">Play an exercise to earn your first badge</span>`;
+  const stats=`<div class="pr-stats">
+    <div class="pr-stat"><div class="pr-stat-n">${pts}<span>/ ${max}</span></div><div class="pr-stat-l">Points earned</div></div>
+    <div class="pr-stat"><div class="pr-stat-n">${doneCount}<span>/ ${totalW}</span></div><div class="pr-stat-l">Exercises done</div></div>
+    <div class="pr-stat pr-stat-bar"><div class="pr-stat-l" style="margin-bottom:8px;">Overall progress</div><div class="pr-prog"><div class="pr-prog-fill" style="width:${pct}%"></div></div></div>
+    <div class="pr-stat pr-stat-badges"><div class="pr-stat-l" style="margin-bottom:8px;">Your badges</div><div class="pr-badges">${badgeHtml}</div></div>
+  </div>`;
+  const cards='<div class="pr-grid">'+PRACTICE.map(w=>{
+    const done=PR_STATE.done[w.no]; const b=PR_STATE.best[w.no];
+    let chip='';
+    if(w.type==='flash'){ if(done) chip='<span class="pr-best">Reviewed &#10003;</span>'; }
+    else if(b){ chip=`<span class="pr-best">Best ${b.score}/${b.total}${b.score===w.items.length?' &#9733;':''}</span>`; }
+    return `<button class="pr-card${done?' pr-card-done':''}" onclick="startPractice(${w.no})">
+      <div class="pr-cardtop"><div class="pr-wk">Week ${w.no}</div>${chip}</div>
       <div class="pr-ti">${escapeHtml(w.title)}</div>
       <span class="pr-badge">${prBadge(w.type)}</span>
-      <div class="pr-go ${PR_DONE[w.no]?'pr-done':''}">${PR_DONE[w.no]?'Completed · play again':'Start'} &rarr;</div>
-    </button>`).join('')+'</div>';
+      <div class="pr-go ${done?'pr-done':''}">${done?'Play again':'Start'} &rarr;</div>
+    </button>`;
+  }).join('')+'</div>';
+  wrap.innerHTML=stats+cards;
 }
 function startPractice(no){
   const w=PRACTICE.find(x=>x.no===no); if(!w) return;
@@ -2294,13 +2340,18 @@ function prAnswer(oi){
 function prNext(){ prState.i++; prState.answered=false; window.scrollTo(0,0); renderQuizRunner(); }
 function renderResult(w){
   const wrap=document.getElementById('practiceWrap'), total=w.items.length, s=prState.score, pct=s/total;
-  PR_DONE[w.no]=true;
+  PR_STATE.done[w.no]=true;
+  const prev=PR_STATE.best[w.no];
+  let isBest=false;
+  if(!prev || s>prev.score){ PR_STATE.best[w.no]={score:s,total:total}; isBest=(s>0 && (!prev || s>prev.score)); }
+  savePractice();
   let title,msg;
   if(pct===1){ title="Flawless."; msg="Every answer right. You have genuinely absorbed this week, and that instinct is exactly what a household feels in the room."; }
   else if(pct>=0.6){ title="Well played."; msg="A strong pass. Read the feedback on the ones you missed, then run it again and watch it click into place."; }
   else { title="Good. Now go again."; msg="This is how the learning happens: play, read why, replay. Give it another round and it will move fast."; }
+  const bestLine = isBest ? `<div class="pr-newbest">&#10022; New best score, saved. That is ${s*10} points.</div>` : (PR_STATE.best[w.no]?`<div class="pr-bestline">Your best for this week: ${PR_STATE.best[w.no].score}/${PR_STATE.best[w.no].total}</div>`:'');
   wrap.innerHTML=`<div class="pr-run"><div class="pr-result">
-    <div class="pr-score">${s}/${total}</div><h2>${title}</h2><p>${msg}</p>
+    <div class="pr-score">${s}/${total}</div><h2>${title}</h2><p>${msg}</p>${bestLine}
     <div class="pr-acts"><button class="pr-btn" onclick="startPractice(${w.no})">Play again</button><button class="pr-btn ghost" onclick="renderPractice()">All exercises</button></div>
   </div></div>`;
 }
@@ -2323,8 +2374,11 @@ function prFlip(){ prState.flipped=!prState.flipped; const el=document.getElemen
 function prFlashNext(){ prState.i++; prState.flipped=false; renderFlashRunner(); }
 function prFlashPrev(){ prState.i=Math.max(0,prState.i-1); prState.flipped=false; renderFlashRunner(); }
 function prFlashDone(){
-  PR_DONE[prState.no]=true;
-  const w=PRACTICE.find(x=>x.no===prState.no), wrap=document.getElementById('practiceWrap');
+  PR_STATE.done[prState.no]=true;
+  const w=PRACTICE.find(x=>x.no===prState.no);
+  PR_STATE.best[prState.no]={score:w.cards.length,total:w.cards.length};
+  savePractice();
+  const wrap=document.getElementById('practiceWrap');
   wrap.innerHTML=`<div class="pr-run"><div class="pr-result"><div class="pr-score">${w.cards.length}</div><h2>Cards reviewed.</h2><p>Come back to these whenever you like. The words become yours by repetition, and fluency in them is what quietly marks the insider.</p><div class="pr-acts"><button class="pr-btn" onclick="startPractice(${w.no})">Review again</button><button class="pr-btn ghost" onclick="renderPractice()">All exercises</button></div></div></div>`;
 }
 
