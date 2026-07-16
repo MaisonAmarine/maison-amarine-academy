@@ -48,11 +48,44 @@
 
   .main{flex:1;min-width:0;}
   .topbar-m{display:none;}
+  /* ---------- desktop top bar : profil / tutoriel / réglages ---------- */
+  .topbar-d{position:sticky;top:0;z-index:140;display:flex;align-items:center;justify-content:flex-end;gap:14px;
+    padding:12px 56px;background:rgba(251,247,239,.86);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);}
+  .tb-left{margin-right:auto;font-family:'Cormorant',serif;font-size:19px;color:var(--ink);font-weight:600;}
+  .tb-left .tb-hi span{color:var(--gold-deep);}
+  .tb-tut{display:inline-flex;align-items:center;gap:8px;font-family:'Jost',sans-serif;font-size:13px;font-weight:600;
+    color:var(--gold-deep);background:var(--gold-wash);border:1px solid rgba(168,126,61,.25);border-radius:22px;
+    padding:8px 16px;cursor:pointer;transition:background .2s,transform .2s;}
+  .tb-tut:hover{background:#ecdcbf;transform:translateY(-1px);} .tb-tut svg{width:16px;height:16px;}
+  .tb-settings{position:relative;}
+  .tb-icon{width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:var(--paper);color:var(--stone);
+    display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .2s;}
+  .tb-icon:hover{color:var(--gold-deep);border-color:var(--gold-lt);} .tb-icon svg{width:19px;height:19px;}
+  .tb-menu{position:absolute;right:0;top:48px;min-width:212px;background:var(--paper);border:1px solid var(--line);
+    border-radius:14px;box-shadow:0 20px 50px rgba(33,28,21,.18);padding:7px;opacity:0;visibility:hidden;transform:translateY(-6px);
+    transition:opacity .18s,transform .18s,visibility .18s;z-index:141;}
+  .tb-menu.open{opacity:1;visibility:visible;transform:none;}
+  .tb-mi{display:flex;align-items:center;gap:11px;width:100%;text-align:left;font-family:'Jost',sans-serif;font-size:13.5px;
+    color:var(--ink);background:none;border:none;border-radius:9px;padding:11px 12px;cursor:pointer;transition:background .16s;}
+  .tb-mi:hover{background:var(--gold-wash);} .tb-mi svg{width:17px;height:17px;color:var(--stone);flex-shrink:0;}
+  .tb-mi.danger{color:#a4442f;} .tb-mi.danger svg{color:#a4442f;}
+  .tb-msep{height:1px;background:var(--line);margin:5px 8px;}
+  .tb-user{display:flex;align-items:center;gap:11px;cursor:pointer;padding:5px 6px 5px 5px;border-radius:24px;border:1px solid transparent;transition:border-color .2s,background .2s;}
+  .tb-user:hover{background:var(--paper);border-color:var(--line);}
+  .tb-user .av{width:38px;height:38px;border-radius:50%;background:var(--gold);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:15px;flex-shrink:0;background-size:cover;background-position:center;}
+  .tb-user .un{font-size:13.5px;font-weight:600;color:var(--ink);line-height:1.2;}
+  .tb-user .ur{font-size:11px;color:var(--stone);}
+  @media(max-width:860px){ .topbar-d{display:none;} }
   .page{max-width:1240px;margin:0 auto;padding:38px 56px 60px;}
   #page-messages{max-width:none;margin:0;padding:18px;}
   .page.hidden{display:none;}
 
   /* ---------- shared bits ---------- */
+  .page-hero{height:150px;border-radius:18px;background-size:cover;background-position:center;margin-bottom:22px;position:relative;overflow:hidden;box-shadow:0 10px 30px rgba(33,28,21,.10);}
+  .page-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(20,16,12,.35),rgba(20,16,12,0) 60%),linear-gradient(0deg,rgba(20,16,12,.22),rgba(20,16,12,0) 55%);}
+  .page-hero .ph-tag{position:absolute;left:24px;bottom:16px;z-index:2;font-family:'Jost',sans-serif;font-size:10.5px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:#fff;text-shadow:0 1px 8px rgba(0,0,0,.5);}
+  @media(max-width:620px){ .page-hero{height:112px;} }
   .page-h{margin-bottom:24px;padding-bottom:20px;border-bottom:1px solid var(--line);position:relative;}
   .page-h::after{content:"";position:absolute;bottom:-1px;left:0;width:64px;height:2px;background:linear-gradient(90deg,var(--gold),var(--gold-lt));}
   .page-h .eyebrow{font-size:11px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;display:flex;align-items:center;gap:10px;}
@@ -1500,14 +1533,6 @@
         Mentorship
       </div>
     </nav>
-    <div class="sb-foot">
-      <div class="sb-user" id="sbUser" onclick="openProfile()" title="View and edit your profile" style="cursor:pointer;">
-        <div class="av" id="sbAv">·</div>
-        <div><div class="un" id="sbName">&nbsp;</div><div class="ur" id="sbRole">Student</div></div>
-        <svg class="sb-user-go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </div>
-      <div class="logout" id="logout"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9" stroke-linecap="round" stroke-linejoin="round"/></svg>Sign out</div>
-    </div>
   </aside>
 
   <!-- mobile topbar + tabs -->
@@ -1527,6 +1552,30 @@
   </div>
 
   <main class="main">
+
+    <!-- ======= DESKTOP TOP BAR : profil / tutoriel / réglages ======= -->
+    <div class="topbar-d">
+      <div class="tb-left"><span class="tb-hi" id="tbHi"></span></div>
+      <button class="tb-tut" onclick="startTour()" title="Replay the guided tour">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.6 2.6 0 1 1 3.3 3.1c-.8.3-1.3.9-1.3 1.6v.3" stroke-linecap="round"/><path d="M12 17.4h.01" stroke-linecap="round"/></svg>
+        Tutorial
+      </button>
+      <div class="tb-settings">
+        <button class="tb-icon" id="tbSettingsBtn" aria-label="Settings" title="Settings">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="tb-menu" id="tbMenu">
+          <button class="tb-mi" onclick="openProfile()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6" stroke-linecap="round"/></svg>My profile</button>
+          <button class="tb-mi" onclick="startTour()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.6 2.6 0 1 1 3.3 3.1c-.8.3-1.3.9-1.3 1.6v.3M12 17.4h.01" stroke-linecap="round"/></svg>Replay the tutorial</button>
+          <div class="tb-msep"></div>
+          <div class="tb-mi danger" id="logout"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9" stroke-linecap="round" stroke-linejoin="round"/></svg>Sign out</div>
+        </div>
+      </div>
+      <div class="tb-user" id="sbUser" onclick="openProfile()" title="View and edit your profile">
+        <div class="av" id="sbAv">·</div>
+        <div><div class="un" id="sbName">&nbsp;</div><div class="ur" id="sbRole">Student</div></div>
+      </div>
+    </div>
 
     <!-- ============ PAGE: PROGRAM ============ -->
     <section class="page" id="page-program">
@@ -1647,6 +1696,7 @@
 
     <!-- ============ PAGE: CAREER HUB ============ -->
     <section class="page hidden" id="page-career">
+      <div class="page-hero" style="background-image:url('images/amb-career.jpg')"><span class="ph-tag">On both sides of the Atlantic</span></div>
       <div class="page-h">
         <div class="eyebrow">Career Hub</div>
         <h1>Where this world hires.</h1>
@@ -1743,6 +1793,7 @@
 
     <!-- ============ PAGE: CODES LIBRARY ============ -->
     <section class="page hidden" id="page-library">
+      <div class="page-hero" style="background-image:url('images/amb-library.jpg')"><span class="ph-tag">Yours to keep</span></div>
       <div class="page-h">
         <div class="eyebrow">Codes Library</div>
         <h1>Your confidential references.</h1>
@@ -3050,7 +3101,8 @@ async function onSignedIn(user){
   loadCourseContent(); loadLessonDefaults(); loadAvatarDirectory();
   loadMessages(false);
   startRealtime();
-  const th=document.getElementById('tourHelp'); if(th) th.style.display='flex';
+  // le tutoriel se relance depuis le bandeau du haut : on garde le bouton flottant masqué
+  const th=document.getElementById('tourHelp'); if(th) th.style.display='none';
   try{ if(!localStorage.getItem('ma_tour_v1')) setTimeout(()=>{ try{ startTour(); }catch(e){} }, 1000); }catch(e){}
 }
 async function loadProfile(){
@@ -3061,6 +3113,7 @@ async function loadProfile(){
   document.getElementById('sbName').textContent=name;
   document.getElementById('sbRole').textContent=(PROFILE.cohort? (PROFILE.cohort+' · Student'):'Student');
   document.getElementById('hiLine').textContent="Hi "+name.split(' ')[0];
+  const tbHi=document.getElementById('tbHi'); if(tbHi) tbHi.innerHTML="Hello, <span>"+escapeHtml(name.split(' ')[0])+"</span>";
   refreshSidebarAvatar();
 }
 // ====== PROFIL ÉLÈVE ======
@@ -4672,6 +4725,14 @@ document.getElementById('forgotLink').addEventListener('click',async()=>{
   document.getElementById('gateErr').textContent = error? "Could not send reset email." : "Check your inbox for a reset link.";
 });
 document.getElementById('logout').addEventListener('click',async()=>{await sb.auth.signOut();location.reload();});
+// ---- menu réglages du bandeau haut ----
+(function(){
+  const btn=document.getElementById('tbSettingsBtn'), menu=document.getElementById('tbMenu');
+  if(!btn||!menu) return;
+  btn.addEventListener('click',e=>{ e.stopPropagation(); menu.classList.toggle('open'); });
+  document.addEventListener('click',e=>{ if(!menu.contains(e.target) && e.target!==btn) menu.classList.remove('open'); });
+  menu.querySelectorAll('.tb-mi').forEach(mi=>mi.addEventListener('click',()=>menu.classList.remove('open')));
+})();
 
 // ====== SET PASSWORD (first arrival via invite / recovery) ======
 let INVITE_MODE = false;
