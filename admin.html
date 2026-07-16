@@ -659,6 +659,10 @@ async function loadAdminMe(){
     const {data}=await q.maybeSingle();
     ADMIN_ME = data || {email:ADMIN_EMAIL};
     if(!ADMIN_UID && data && data.id) ADMIN_UID=data.id;
+    // s'assurer que l'email est bien en base (sinon les élèves ne retrouvent pas ta photo de mentor)
+    if(ADMIN_UID && data && !data.email){
+      try{ await sb.from('profiles').update({email:ADMIN_EMAIL}).eq('id',ADMIN_UID); ADMIN_ME.email=ADMIN_EMAIL; }catch(e){}
+    }
     refreshAdminSidebar();
     fillProfileForm();
   }catch(e){}
@@ -694,7 +698,7 @@ async function saveAdminProfile(){
   const first=val('pf_first'), last=val('pf_last');
   const full=(first+' '+last).trim()|| (ADMIN_ME&&ADMIN_ME.full_name) || 'Émilie';
   const upd={ first_name:first, last_name:last, full_name:full, headline:val('pf_headline'),
-    city:val('pf_city'), country:val('pf_country'), languages:val('pf_languages'), bio:val('pf_bio') };
+    city:val('pf_city'), country:val('pf_country'), languages:val('pf_languages'), bio:val('pf_bio'), email:ADMIN_EMAIL };
   try{
     const {error}=await sb.from('profiles').update(upd).eq('id',ADMIN_UID);
     if(error) throw error;
@@ -714,9 +718,9 @@ async function uploadAdminAvatar(file){
     if(upErr) throw upErr;
     const {data:pub}=sb.storage.from('avatars').getPublicUrl(path);
     const url=pub.publicUrl+'?v='+Date.now();
-    const {error}=await sb.from('profiles').update({avatar_url:url}).eq('id',ADMIN_UID);
+    const {error}=await sb.from('profiles').update({avatar_url:url, email:ADMIN_EMAIL}).eq('id',ADMIN_UID);
     if(error) throw error;
-    ADMIN_ME=Object.assign(ADMIN_ME||{},{avatar_url:url});
+    ADMIN_ME=Object.assign(ADMIN_ME||{},{avatar_url:url, email:ADMIN_EMAIL});
     fillProfileForm(); refreshAdminSidebar();
     if(st) st.textContent='✓ Photo updated'; setTimeout(()=>{ if(st) st.textContent=''; },2500);
   }catch(e){ console.warn('avatar',e); if(st) st.textContent='Photo upload failed. Check the avatars storage bucket.'; }

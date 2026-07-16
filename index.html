@@ -2947,11 +2947,10 @@ async function loadAvatarDirectory(){
     (data||[]).forEach(p=>{ if(p.avatar_url){ map['id:'+p.id]=p.avatar_url; if(p.full_name) map['nm:'+p.full_name.trim().toLowerCase()]=p.avatar_url; } });
     AVATARS=map;
     try{
+      // Uniquement par email exact du compte fondateur (pas de plan B par prénom : il attrapait les élèves nommées Emilie)
       const r1=await sb.from('profiles').select('avatar_url').ilike('email',FOUNDER_EMAIL).limit(1);
       if(r1.data && r1.data[0] && r1.data[0].avatar_url){ MENTOR_AVATAR=r1.data[0].avatar_url; }
-      if(!MENTOR_AVATAR){ const r2=await sb.from('profiles').select('avatar_url').ilike('full_name','%mili%').limit(1); if(r2.data && r2.data[0] && r2.data[0].avatar_url){ MENTOR_AVATAR=r2.data[0].avatar_url; } }
     }catch(e){}
-    if(!MENTOR_AVATAR && (map['nm:émilie']||map['nm:emilie'])) MENTOR_AVATAR=map['nm:émilie']||map['nm:emilie'];
     applyMentorAvatar();
   }catch(e){}
 }
