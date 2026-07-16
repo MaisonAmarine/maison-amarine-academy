@@ -149,6 +149,48 @@
    ]
   },
   {
+   "id": "recruiter",
+   "title": "The Recruiter's View",
+   "icon": "people",
+   "subtitle": "What the people who actually place you look for, and how they decide.",
+   "pdf": "Maison-Amarine-Recruiters-View.pdf",
+   "intro": "<p><em>Everything else in this Vault teaches you the craft. This one shows you the hiring desk: how the best agencies in private service really screen, shortlist and choose. It is drawn from recruiters who place staff in ultra-wealthy households every week, above all the Luxury Staffing podcast by Morgan &amp; Mallet, reworked here in our own words and for you. Read it before you ever apply.</em></p>",
+   "sections": [
+    {
+     "h": "The market now wants the all-rounder",
+     "html": "<p>The single biggest shift the recruiters describe is this: the age of the pure specialist is fading. Families increasingly want one trusted person who can cross lines, cook a little, run the house, hold the diary and the travel, and step in as a personal assistant when needed. In London this accelerated after Brexit thinned the pool of European candidates; elsewhere it is simply what a modern household finds efficient.</p>\n<p>Present yourself, then, not as a single title but as a capable, adaptable pair of hands who can hold several of these at once, without ever letting the standard slip. Versatility, quietly stated, is now one of the most attractive things on a private CV.</p>"
+    },
+    {
+     "h": "You are hired on judgement, not on paper",
+     "html": "<p>Recruiter after recruiter says the same thing: the candidate who looks perfect on paper is often not the one who fits the house. What decides it is harder to print, emotional intelligence, warmth, composure, the ability to read a room and a mood. One recruiter, herself a former private chef, says she hires on the passion she can feel in an interview long before she reaches the polished résumé.</p>\n<p>Your CV opens the door. Who you are in the room is what walks you through it. Prepare the document, then prepare the far more important thing: the person who arrives.</p>"
+    },
+    {
+     "h": "How you are actually vetted",
+     "html": "<p>Understand the machine you are entering. A serious agency will put you through a long, structured interview, often around ninety minutes, before your name ever reaches a family. They build a shortlist of only two or three, run background checks, and call your references in detail. Nothing about it is casual.</p>\n<p>Arrive as if the first conversation is already the interview, because it is. Keep your references warm and current, and make every one of them a call you would be proud to have made on your behalf.</p>"
+    },
+    {
+     "h": "The trial, and the question you did not prepare for",
+     "html": "<p>When you reach a trial or a meeting with the family, the recruiters are clear about what is watched: how you dress, how you carry yourself, and above all how you handle a question you did not see coming. Poise under the unexpected is the whole test.</p>\n<p>You are not being asked to know everything. You are being watched to see whether you stay calm, honest and gracious in the moment when you do not. Practise that composure, because it cannot be improvised on the day.</p>"
+    },
+    {
+     "h": "The map is not one market",
+     "html": "<p>Where you work changes everything. Paris is formal, credential-driven and, by several accounts, bureaucratic, with employer costs that can nearly double a gross salary. Monaco runs on tight, closed networks. Geneva rewards Swiss precision. London prizes the versatile all-rounder. Live-in and live-out, language requirements and legal frameworks all shift by city.</p>\n<p>Know the market you are applying into before you write a single word, and let your application speak its language. The same profile is read very differently in Paris and in London.</p>"
+    },
+    {
+     "h": "Mobility is a qualification",
+     "html": "<p>The recruiters describe how quickly demand moves with the world. In a regional crisis, expatriate families may pause and leave while local families keep hiring, and staff willing to go where others will not can command a premium for the perceived risk. Dubai runs as a hub for a whole region's households.</p>\n<p>The lesson is the one this academy keeps returning to: the willingness and the ability to move is not a footnote on your CV, it is one of its most valuable lines. If you can relocate, say so, and say it early.</p>"
+    },
+    {
+     "h": "AI is now in the room",
+     "html": "<p>Agencies have begun using AI as a tool, to help candidates build résumés and to generate consistent, compliant reference questions, but every recruiter is emphatic that it decides nothing. A human reads the room, and a human makes the match, because character is the one thing a model cannot verify and a candidate cannot convincingly fake.</p>\n<p>Use these tools to prepare, never to pretend. What cannot be automated, your judgement, your warmth, your discretion, is exactly what you are being hired for.</p>"
+    },
+    {
+     "h": "What this means for you",
+     "html": "<p>Be an adaptable all-rounder, not a single title. Let your character carry the interview, not your paper. Prepare for a long, serious vetting, and references that shine. Stay composed under the question you did not expect. Learn the market before you apply. Say yes to mobility. And treat every tool as preparation, never as disguise.</p>"
+    }
+   ]
+  },
+  {
    "id": "dictionary",
    "title": "The Dictionary of Luxury",
    "icon": "book",
