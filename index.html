@@ -477,6 +477,50 @@
   .cw-ev.mentor-ev{background:var(--gold-wash);color:var(--gold-deep);border-color:transparent;font-weight:600;}
   .cw-ev svg{width:13px;height:13px;}
 
+  /* rhythm planner */
+  .cal-planner{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:22px 26px;margin:6px 0 22px;box-shadow:0 8px 24px var(--shadow);}
+  .cal-planner .cp-k{font-family:'Jost',sans-serif;font-size:10px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-deep);}
+  .cal-planner .cp-sub{font-size:13.5px;color:var(--ink-soft);margin:7px 0 17px;max-width:660px;line-height:1.6;}
+  .cp-row{display:flex;gap:14px;align-items:flex-end;flex-wrap:wrap;}
+  .cp-field{display:flex;flex-direction:column;gap:6px;}
+  .cp-field label{font-family:'Jost',sans-serif;font-size:10.5px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:var(--stone);}
+  .cp-field input,.cp-field select{font-family:'Jost',sans-serif;font-size:14px;color:var(--ink);background:var(--ivory);border:1px solid var(--line);border-radius:11px;padding:11px 14px;outline:none;transition:border-color .2s;}
+  .cp-field input:focus,.cp-field select:focus{border-color:var(--gold-lt);}
+  .cp-btn{font-family:'Jost',sans-serif;font-size:14px;font-weight:600;color:#fff;background:var(--gold);border:none;border-radius:24px;padding:12px 24px;cursor:pointer;transition:background .2s;}
+  .cp-btn:hover{background:var(--gold-deep);}
+  .cp-clear{font-family:'Jost',sans-serif;font-size:13px;font-weight:600;color:var(--ink-soft);background:none;border:1px solid var(--line);border-radius:24px;padding:11px 18px;cursor:pointer;transition:border-color .2s,color .2s;}
+  .cp-clear:hover{border-color:var(--gold-lt);color:var(--gold-deep);}
+
+  /* month calendar */
+  .cal-cal{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:22px 24px;box-shadow:0 8px 24px var(--shadow);}
+  .cc-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;}
+  .cc-title{font-family:'Cormorant',serif;font-weight:600;font-size:25px;color:var(--ink);}
+  .cc-nav{width:36px;height:36px;border-radius:50%;border:1px solid var(--line);background:var(--ivory);color:var(--ink);font-size:20px;line-height:1;cursor:pointer;transition:border-color .2s,color .2s;}
+  .cc-nav:hover{border-color:var(--gold-lt);color:var(--gold-deep);}
+  .cc-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:7px;}
+  .cc-wd{text-align:center;font-family:'Jost',sans-serif;font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--stone);padding:2px 0 8px;}
+  .cc-cell{min-height:66px;border:1px solid var(--line);border-radius:10px;padding:6px 7px;position:relative;cursor:pointer;transition:border-color .15s,background .15s;display:flex;flex-direction:column;gap:4px;}
+  .cc-cell:hover{border-color:var(--gold-lt);background:#fffdf8;}
+  .cc-empty{border:none;background:none;cursor:default;}
+  .cc-empty:hover{background:none;}
+  .cc-d{font-family:'Jost',sans-serif;font-size:12.5px;font-weight:600;color:var(--ink-soft);}
+  .cc-today{background:var(--gold-wash);border-color:var(--gold-lt);}
+  .cc-today .cc-d{color:var(--gold-deep);}
+  .cc-wk{align-self:flex-start;font-family:'Jost',sans-serif;font-size:9.5px;font-weight:600;color:#fff;background:var(--gold);border-radius:20px;padding:2px 8px;letter-spacing:.02em;}
+  .cc-dots{display:flex;gap:4px;margin-top:auto;}
+  .cc-dot{width:7px;height:7px;border-radius:50%;}
+  .cc-dot-m{background:var(--gold-deep);}
+  .cc-dot-y{background:#5f7d52;}
+  .cc-legend{display:flex;gap:18px;flex-wrap:wrap;margin-top:16px;font-family:'Jost',sans-serif;font-size:11.5px;color:var(--stone);}
+  .cc-legend .lg{display:inline-flex;align-items:center;gap:7px;}
+  .cc-legend .lg::before{content:"";width:11px;height:11px;border-radius:3px;display:inline-block;}
+  .lg-wk::before{background:var(--gold);}
+  .lg-mentor::before{background:var(--gold-deep);border-radius:50%;}
+  .lg-you::before{background:#5f7d52;border-radius:50%;}
+  .lg-today::before{background:var(--gold-wash);border:1px solid var(--gold-lt);}
+  .cw-date{font-family:'Jost',sans-serif;font-size:11.5px;font-weight:600;color:var(--gold-deep);margin-left:6px;letter-spacing:.02em;}
+  @media(max-width:620px){ .cc-cell{min-height:52px;padding:4px 5px;} .cc-wk{font-size:8.5px;padding:1px 6px;} .cc-grid{gap:4px;} }
+
   .my-cal{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:24px 26px;margin-top:20px;box-shadow:0 8px 24px var(--shadow);}
   .my-cal h3{font-family:'Cormorant',serif;font-weight:700;font-size:21px;color:var(--ink);margin-bottom:4px;}
   .my-cal p{font-size:13.5px;color:var(--ink-soft);margin-bottom:16px;}
@@ -1679,13 +1723,39 @@
         <p>The rhythm of your eight weeks, your mentorship sessions, and the milestones ahead. Add your own dates below to keep everything in one place.</p>
       </div>
 
-      <div class="block-title">The program rhythm</div>
-      <div class="block-sub">One week at a time. Each week ends with a personal mentorship session.</div>
+      <div class="cal-planner">
+        <div class="cp-k">Build your rhythm</div>
+        <p class="cp-sub">Choose when you start and how fast you want to move. Your eight weeks place themselves on the calendar, and you can change it any time. There is no wrong pace, only yours.</p>
+        <div class="cp-row">
+          <div class="cp-field"><label>Start date</label><input type="date" id="planStart"></div>
+          <div class="cp-field"><label>Your pace</label><select id="planPace">
+            <option value="7">One module each week</option>
+            <option value="14">Relaxed · two weeks per module</option>
+            <option value="10">Steady · every ten days</option>
+            <option value="4">Intensive · every four days</option>
+          </select></div>
+          <button class="cp-btn" onclick="setPlan()">Set my rhythm</button>
+          <button class="cp-clear" id="planClear" style="display:none;" onclick="clearPlan()">Clear</button>
+        </div>
+      </div>
+
+      <div class="cal-cal">
+        <div class="cc-top">
+          <button class="cc-nav" onclick="calNav(-1)" aria-label="Previous month">&lsaquo;</button>
+          <div class="cc-title" id="calTitleM"></div>
+          <button class="cc-nav" onclick="calNav(1)" aria-label="Next month">&rsaquo;</button>
+        </div>
+        <div class="cc-grid" id="calGrid"></div>
+        <div class="cc-legend"><span class="lg lg-wk">Week begins</span><span class="lg lg-mentor">Mentorship</span><span class="lg lg-you">Your date</span><span class="lg lg-today">Today</span></div>
+      </div>
+
+      <div class="block-title" style="margin-top:34px;">Your schedule</div>
+      <div class="block-sub" id="calScheduleSub">Set your rhythm above to see your eight weeks laid out on real dates.</div>
       <div class="cal-phases" id="calPhases"></div>
 
       <div class="my-cal">
         <h3>My dates</h3>
-        <p>Booked a mentorship call, an interview, or set yourself a deadline? Add it here.</p>
+        <p>Booked a mentorship call, an interview, or set yourself a deadline? Add it here, and it appears on the calendar above. Tap a day to fill the date.</p>
         <div class="cal-add">
           <input type="date" id="calDate" aria-label="Date">
           <input type="text" id="calTitle" placeholder="e.g. Mentorship call with Émilie" aria-label="Event title">
@@ -3154,49 +3224,105 @@ function initJobTabs(){
   renderJobBoards();
 }
 
+// ====== CALENDRIER : planificateur de rythme + vue mois ======
+function loadPlan(){ try{ return JSON.parse(localStorage.getItem('ma_plan_v1'))||null; }catch(e){ return null; } }
+function savePlanObj(p){ try{ localStorage.setItem('ma_plan_v1', JSON.stringify(p)); }catch(e){} }
+function loadEvents(){ try{ return JSON.parse(localStorage.getItem('ma_events_v1'))||[]; }catch(e){ return []; } }
+function saveEvents(){ try{ localStorage.setItem('ma_events_v1', JSON.stringify(myEvents)); }catch(e){} }
+let CAL_PLAN=loadPlan(); let calYM=null;
+function calParse(s){ const p=(s||'').split('-'); return new Date(+p[0], (+p[1])-1, +p[2]); }
+function calYmd(d){ return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0'); }
+function weekDate(n){ if(!CAL_PLAN) return null; const d=calParse(CAL_PLAN.start); d.setDate(d.getDate()+(n-1)*CAL_PLAN.interval); return d; }
+function mentorDate(n){ if(!CAL_PLAN) return null; const d=calParse(CAL_PLAN.start); d.setDate(d.getDate()+(n*CAL_PLAN.interval)-1); return d; }
 function renderCalendar(){
-  const box=document.getElementById('calPhases');box.innerHTML="";
+  const ps=document.getElementById('planStart'), pp=document.getElementById('planPace');
+  if(ps && CAL_PLAN) ps.value=CAL_PLAN.start;
+  if(pp && CAL_PLAN) pp.value=String(CAL_PLAN.interval);
+  const clr=document.getElementById('planClear'); if(clr) clr.style.display=CAL_PLAN?'inline-flex':'none';
+  if(!calYM){ const base=CAL_PLAN?calParse(CAL_PLAN.start):new Date(); calYM={y:base.getFullYear(),m:base.getMonth()}; }
+  renderCalMonth(); renderScheduleList();
+}
+function setPlan(){
+  const s=document.getElementById('planStart').value; const iv=parseInt(document.getElementById('planPace').value,10)||7;
+  if(!s){ if(typeof toast==='function') toast('Choose a start date first', true); return; }
+  CAL_PLAN={start:s, interval:iv}; savePlanObj(CAL_PLAN);
+  const d=calParse(s); calYM={y:d.getFullYear(),m:d.getMonth()};
+  renderCalendar(); if(typeof toast==='function') toast('Your rhythm is set');
+}
+function clearPlan(){ CAL_PLAN=null; try{localStorage.removeItem('ma_plan_v1');}catch(e){} calYM=null; renderCalendar(); }
+function calNav(delta){ if(!calYM) calYM={y:new Date().getFullYear(),m:new Date().getMonth()}; let m=calYM.m+delta,y=calYM.y; if(m<0){m=11;y--;} if(m>11){m=0;y++;} calYM={y,m}; renderCalMonth(); }
+function calPickDay(key){ const el=document.getElementById('calDate'); if(el){ el.value=key; el.focus(); } }
+function renderCalMonth(){
+  const grid=document.getElementById('calGrid'); if(!grid||!calYM) return;
+  const {y,m}=calYM;
+  const tt=document.getElementById('calTitleM'); if(tt) tt.textContent=new Date(y,m,1).toLocaleDateString('en-US',{month:'long',year:'numeric'});
+  const marks={};
+  if(CAL_PLAN){ for(let n=1;n<=8;n++){ const wd=weekDate(n); marks[calYmd(wd)]=Object.assign(marks[calYmd(wd)]||{},{wk:n}); const md=mentorDate(n); const k=calYmd(md); marks[k]=Object.assign(marks[k]||{},{mentor:true}); } }
+  myEvents.forEach(ev=>{ const cur=marks[ev.date]||{}; cur.you=(cur.you||[]).concat([ev.title]); marks[ev.date]=cur; });
+  const todayKey=calYmd(new Date());
+  let html='<div class="cc-wd">Mon</div><div class="cc-wd">Tue</div><div class="cc-wd">Wed</div><div class="cc-wd">Thu</div><div class="cc-wd">Fri</div><div class="cc-wd">Sat</div><div class="cc-wd">Sun</div>';
+  const startDow=(new Date(y,m,1).getDay()+6)%7;
+  const dim=new Date(y,m+1,0).getDate();
+  for(let i=0;i<startDow;i++) html+='<div class="cc-cell cc-empty"></div>';
+  for(let d=1;d<=dim;d++){
+    const key=calYmd(new Date(y,m,d)); const mk=marks[key]||{};
+    let inner=`<span class="cc-d">${d}</span>`;
+    if(mk.wk) inner+=`<span class="cc-wk">Wk ${mk.wk}</span>`;
+    let dots='';
+    if(mk.mentor) dots+='<span class="cc-dot cc-dot-m" title="Mentorship session"></span>';
+    if(mk.you) dots+='<span class="cc-dot cc-dot-y" title="'+escapeHtml(mk.you.join(', '))+'"></span>';
+    if(dots) inner+=`<span class="cc-dots">${dots}</span>`;
+    html+=`<div class="cc-cell${key===todayKey?' cc-today':''}" onclick="calPickDay('${key}')">${inner}</div>`;
+  }
+  grid.innerHTML=html;
+}
+function renderScheduleList(){
+  const box=document.getElementById('calPhases'); if(!box) return; box.innerHTML='';
+  const sub=document.getElementById('calScheduleSub');
+  if(sub) sub.textContent=CAL_PLAN?'One module at a time, each ending with a personal mentorship session. Change your rhythm any time above.':'Set your rhythm above to see your eight weeks laid out on real dates.';
   WEEKS.forEach(w=>{
-    const done = state.completed[w.no];
-    const el=document.createElement('div');
-    el.className="cal-week"+(done?" done-cal":"");
+    const done=state.completed[w.no];
+    const wd=weekDate(w.no);
+    const dateLabel=wd?wd.toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric'}):'';
+    const el=document.createElement('div'); el.className='cal-week'+(done?' done-cal':'');
     el.innerHTML=`
       <div class="cal-marker"><div class="cm-dot">${w.no}</div></div>
       <div class="cal-body">
-        <div class="cw-title">Week ${w.no} · ${w.title}</div>
-        <div class="cw-sub">${w.sub}</div>
+        <div class="cw-title">Week ${w.no} · ${escapeHtml(w.title)}${dateLabel?` <span class="cw-date">Begins ${dateLabel}</span>`:''}</div>
+        <div class="cw-sub">${escapeHtml(w.sub)}</div>
         <div class="cw-events">
-          <span class="cw-ev">${ICONS.videoMini||''} Lessons & practice</span>
+          <span class="cw-ev">Lessons &amp; practice</span>
           <span class="cw-ev mentor-ev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6" stroke-linecap="round"/></svg> Mentorship session</span>
         </div>
       </div>`;
     box.appendChild(el);
   });
 }
-
-let myEvents=[];
+let myEvents=loadEvents();
 function renderMyEvents(){
-  const box=document.getElementById('myEvents');box.innerHTML="";
+  const box=document.getElementById('myEvents'); if(!box) return; box.innerHTML="";
   if(myEvents.length===0){box.innerHTML='<div class="my-empty">No dates yet. Add your first one above.</div>';return;}
   myEvents.sort((a,b)=>a.date.localeCompare(b.date));
   myEvents.forEach((ev,i)=>{
     const d=new Date(ev.date+"T00:00");
     const label=isNaN(d)?ev.date:d.toLocaleDateString('en-US',{month:'short',day:'numeric'});
     const row=document.createElement('div');row.className="my-event";
-    row.innerHTML=`<div class="me-date">${label}</div><div class="me-title">${ev.title}</div><button class="me-del" data-i="${i}" aria-label="Remove">&times;</button>`;
-    row.querySelector('.me-del').addEventListener('click',()=>{myEvents.splice(i,1);renderMyEvents();});
+    row.innerHTML=`<div class="me-date">${label}</div><div class="me-title">${escapeHtml(ev.title)}</div><button class="me-del" data-i="${i}" aria-label="Remove">&times;</button>`;
+    row.querySelector('.me-del').addEventListener('click',()=>{myEvents.splice(i,1);saveEvents();renderMyEvents();renderCalMonth();});
     box.appendChild(row);
   });
 }
 function initCalAdd(){
-  document.getElementById('calAddBtn').addEventListener('click',()=>{
+  const btn=document.getElementById('calAddBtn'); if(!btn) return;
+  btn.addEventListener('click',()=>{
     const d=document.getElementById('calDate').value;
     const t=document.getElementById('calTitle').value.trim();
     if(!d||!t){return;}
-    myEvents.push({date:d,title:t});
+    myEvents.push({date:d,title:t}); saveEvents();
     document.getElementById('calDate').value="";document.getElementById('calTitle').value="";
-    renderMyEvents();
+    renderMyEvents(); renderCalMonth();
   });
+  renderMyEvents();
 }
 
 // ====== REFERENCE LIBRARY (Vault, lecture in-app) ======
