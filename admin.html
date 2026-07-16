@@ -52,6 +52,11 @@
   .nav-item:hover{background:rgba(255,255,255,.06);color:#F6F0E4;}
   .nav-item.active{background:var(--gold);color:#fff;}
   .sb-foot{margin-top:auto;padding:14px 8px 0;}
+  .sb-me{display:flex;align-items:center;gap:11px;padding:10px 6px 14px;border-top:1px solid rgba(255,255,255,.08);margin-bottom:4px;}
+  .sb-me-av{width:38px;height:38px;border-radius:50%;flex-shrink:0;background:linear-gradient(135deg,var(--gold),#C9A867);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Cormorant',serif;font-weight:700;font-size:16px;background-size:cover;background-position:center;}
+  .sb-me-tx{min-width:0;}
+  .sb-me-n{font-size:13.5px;font-weight:600;color:#F6F0E4;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+  .sb-me-e{font-size:11px;color:#9a9184;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
   .logout{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:500;color:#9a9184;cursor:pointer;padding:10px 6px;transition:color .2s;}
   .logout:hover{color:#F6F0E4;}
   .logout svg{width:17px;height:17px;}
@@ -372,7 +377,10 @@
         <span>Settings</span>
       </div>
     </nav>
-    <div class="sb-foot"><div class="logout" id="logout"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9" stroke-linecap="round" stroke-linejoin="round"/></svg>Sign out</div></div>
+    <div class="sb-foot">
+      <div class="sb-me"><div class="sb-me-av" id="admAvatar">M</div><div class="sb-me-tx"><div class="sb-me-n" id="admName">Founder</div><div class="sb-me-e" id="admEmail"></div></div></div>
+      <div class="logout" id="logout"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9" stroke-linecap="round" stroke-linejoin="round"/></svg>Sign out</div>
+    </div>
   </aside>
 
   <main class="main">
@@ -600,7 +608,22 @@ async function tryLogin(){
 async function enterApp(){
   document.getElementById('gate').classList.add('hidden');
   document.getElementById('app').style.display='flex';
+  loadAdminMe();
   await loadStudents(); renderOverview(); loadInbox();
+}
+async function loadAdminMe(){
+  try{
+    const uid = (SESSION && SESSION.user && SESSION.user.id) || null;
+    let q = sb.from('profiles').select('full_name,email,avatar_url');
+    q = uid ? q.eq('id',uid) : q.eq('email',ADMIN_EMAIL);
+    const {data}=await q.maybeSingle();
+    const name=(data&&data.full_name)||'Émilie';
+    const email=(data&&data.email)||ADMIN_EMAIL;
+    const av=document.getElementById('admAvatar'), nm=document.getElementById('admName'), em=document.getElementById('admEmail');
+    if(nm) nm.textContent=name;
+    if(em) em.textContent=email;
+    if(av){ if(data&&data.avatar_url){ av.style.backgroundImage="url('"+data.avatar_url+"')"; av.textContent=''; } else { av.textContent=initials(name); } }
+  }catch(e){}
 }
 document.getElementById('gateBtn').addEventListener('click',tryLogin);
 document.getElementById('gatePass').addEventListener('keydown',e=>{if(e.key==='Enter')tryLogin();});
