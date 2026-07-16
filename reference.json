@@ -1,6 +1,260 @@
 {
  "books": [
   {
+   "id": "cv",
+   "title": "The Private Concierge CV",
+   "icon": "cv",
+   "subtitle": "A one-page structure, the discipline behind it, and a finished example.",
+   "pdf": "Maison-Amarine-CV-Complete.pdf",
+   "intro": "<p>How to build a private-service CV, read here, with a finished example. Download the full document, instructions and example, from the button above.</p>",
+   "sections": [
+    {
+     "h": "The forty-second test",
+     "html": "<p>The person who reads your CV is not a recruiter in the ordinary sense. It is a principal, a family office, or a consultant who has read four hundred of these. They will give yours somewhere between forty and ninety seconds, and in that time they are answering one question: can this person be trusted with a life?</p>\n<p>A private CV is therefore not a career history. It is a demonstration of judgement, and the first thing it demonstrates is what you chose to leave out. Restraint is the very first quality this world looks for, and your CV is the first place it will find it, or fail to. One page. Never two.</p>"
+    },
+    {
+     "h": "The photograph, honestly",
+     "html": "<p>There are two schools, and you should know both. In private household service, especially through European agencies and for live-in or family-facing roles, a discreet, professional headshot is common and often expected. It reassures, it personalises, and its absence can read as a small omission. This is why the example here includes one.</p>\n<p>In other contexts, chiefly direct applications in the United States, a photo is discouraged and occasionally a liability, because of anti-discrimination norms in hiring. The rule, then, is not \"always\" or \"never\", it is \"read the destination\". Include the photo when you apply through an agency or to a European household. Consider omitting it for a direct US application, or keep a second, photo-free version ready.</p>\n<p>When you do include one: a real professional headshot, shoulders up, plain background, warm but composed, dressed as you would for the interview. No holiday crop, no filter, no selfie. The photo should say discretion and standard, exactly as the rest of the page does.</p>"
+    },
+    {
+     "h": "The golden rule: never a name",
+     "html": "<p>Never write the name of a family, a principal, a residence, a yacht or a company you served privately. A CV that names a former private employer will be discarded by anyone serious, and rightly so, because it tells them precisely how yours will be handled next.</p>\n<p>Instead, describe the <em>shape</em> of the role. \"A UHNW family (private), principal residences in London and Gstaad.\" \"A single-family office, residences in Monaco and Los Angeles.\" \"A private luxury villa, seasonal, on the Cote d'Azur.\" This protects the family, and it proves the discretion you are claiming, in the same line.</p>"
+    },
+    {
+     "h": "Scope, not tasks",
+     "html": "<p>Amateurs list tasks. Professionals state scope, and let numbers do the only boasting that is permitted here.</p>\n<p>Not \"managed calendars and travel\". Instead: \"ran the personal affairs of a family across three residences, coordinating twenty vendors and a household budget of 1.2M.\" Numbers, staff led, residences run, budget held, guests hosted, savings found, are the quiet proof of the size of the world you can hold. Use them, and use nothing louder.</p>"
+    },
+    {
+     "h": "The structure, section by section",
+     "html": "<p><strong>Header.</strong> Your name, then one line beneath it: the role you are <em>for</em>, not only the role you <em>had</em>. \"Private House and Estate Manager.\" Then a compact strip of essentials: location, mobility, languages, right to work, licences.</p>\n<p><strong>The line (tagline).</strong> One sentence, in italics, directly under the header. It is the only place you are permitted to speak of yourself in the round. Keep it to a breath: years of service, the kind of houses, and the discretion they required.</p>\n<p><strong>Profile.</strong> Three or four sentences. Who you are in a house, what you are known for, and the reassurance a principal is looking for. Calm, anticipatory, exact.</p>\n<p><strong>Experience.</strong> Reverse chronological. For each role: the kind of household (never the name), your title, the dates, then two to four lines. Each line starts with a verb and ends with a consequence.</p>\n<p><strong>Core competencies.</strong> A short, scannable block: household and estate operations, staff leadership, budgets and vendors, private travel and aviation, entertaining, security liaison, inventory, discretion. Only what you could defend, calmly, in an interview.</p>\n<p><strong>Languages and mobility.</strong> Stated plainly, with honest levels. In this world, mobility is not a detail, it is a qualification. If you will relocate, say so.</p>\n<p><strong>Education and training.</strong> Your certifications, your academy, first aid, food hygiene, driving. Relevant, not exhaustive.</p>\n<p><strong>References.</strong> One line: \"Available on request, subject to the consent of the household.\" That sentence alone tells them you understand the whole profession.</p>"
+    },
+    {
+     "h": "What to leave out",
+     "html": "<p>No home address, no date of birth, no marital status, no photograph of anything but your face, no salary history, no reference to a named principal, and no design that draws attention to itself. Leave out every adjective you cannot prove and every word a serious person would find loud: \"iconic\", \"passionate\", \"world-class\". The confidence is in the restraint.</p>"
+    },
+    {
+     "h": "Tone and typography",
+     "html": "<p>Cream or white, ink, one accent used sparingly, one clean serif and one clean sans. Generous margins. Nothing decorative. The document should feel like a calling card left on a silver tray, not a portfolio. If a choice makes it look more designed, it is the wrong choice.</p>"
+    },
+    {
+     "h": "The worked example, and why it works",
+     "html": "<p>The downloadable example belongs to Camille Laurent, an imagined Private House and Estate Manager with twelve years behind her. Read it against everything above and you will see the discipline in action: every private employer is described by shape, never by name; every role leads with scope and closes on a number; the photograph is discreet and professional; the competencies are all defensible; and the references line does the quiet, knowing work it is meant to.</p>\n<p>It is not a real person, and that is the point. It is the standard, cleaned of any single life, so that you can build your own to meet it.</p>"
+    },
+    {
+     "h": "Your checklist before you send",
+     "html": "<p>One page, and it breathes. No name of any private employer, anywhere. Every experience line begins with a verb and ends with a consequence. At least one honest number in each senior role. Photograph chosen for the destination, and professional if included. Languages and mobility stated. References line present. Read aloud once, slowly, for the single typo that undoes all of it. Then, and only then, send.</p>"
+    }
+   ]
+  },
+  {
+   "id": "cover",
+   "title": "The Cover Letter",
+   "icon": "mail",
+   "subtitle": "Your introduction, composed with restraint. Short, warm, impeccably discreet.",
+   "pdf": "Maison-Amarine-Cover-Letter.pdf",
+   "intro": "",
+   "sections": [
+    {
+     "h": "The four movements",
+     "html": "<p>I. Why this house, this family, this role. One sentence, and it must be specific. A letter that could have been sent to anyone is read as such. II. What you have carried. One or two proofs, drawn from experience, with a number if you have one. III. What you understand about the role that a stranger would not. This is where you are chosen. IV. A close without insistence. Offer yourself for a conversation, and stop.</p>"
+    },
+    {
+     "h": "The model",
+     "html": "<p>For a private concierge position, through an agency, with a discreet reference to what the role truly asks.</p><p>Dear Ms Lawrence,</p><p>You are seeking a private concierge for a family who move often between two residences and who value, above all, that nothing about their life should require their attention twice. That is the work I know, and the work I care for.</p><p>For the past three years I have run the personal affairs of a family across four residences: their vendors, their budgets, their journeys, and the two large house projects that would have disrupted their year had they been managed less closely. They were not disrupted. I hold a household budget cleanly, I report before I am asked, and I have never once been the reason a plan had to be repeated.</p><p>What I have learned in that time is that the difficulty is rarely the request. It is being the person to whom the request can be entrusted, and remaining that person on the day everything moves at once.</p><p>I would be glad to meet the family, or to speak with you first, at whatever moment suits them. References are available with the consent of the household.</p><p>With my sincere regards,</p>"
+    },
+    {
+     "h": "Claire Duval",
+     "html": ""
+    },
+    {
+     "h": "What to remove before you send",
+     "html": "<p>· “I am writing to apply for the position of…”, they know. Begin at the second sentence. · “I believe I would be a great fit.”, belief is not evidence. Give them the evidence and let them believe. · Any adjective about yourself. Let the facts do it, or let it go. · The name of any former principal. Even here. Especially here. · An exclamation mark. There is no place for one in this world.</p>"
+    },
+    {
+     "h": "A note on the medium",
+     "html": "<p>If you write by email, the letter is the email. Never attach it. An attachment asks the reader to work, and the first thing you are demonstrating is that with you, nothing is ever work.</p>"
+    }
+   ]
+  },
+  {
+   "id": "interview",
+   "title": "The Interview Guide",
+   "icon": "scenario",
+   "subtitle": "The questions you will be asked, and the spirit in which to meet them.",
+   "pdf": "Maison-Amarine-Interview-Guide.pdf",
+   "intro": "",
+   "sections": [
+    {
+     "h": "What is actually being tested",
+     "html": "<p>You will be asked ordinary questions. Almost none of them are about the answer. A family, or the consultant who protects them, is testing three things, and only three: can you be trusted with what you will inevitably come to know, will you remain calm when the day collapses, and will you be pleasant to have in the house for years.</p><p>Competence is assumed by the time you are in the room. If they doubted it, you would not be there. So do not spend the hour proving it. Spend the hour being the person they are hoping to find.</p>"
+    },
+    {
+     "h": "The posture",
+     "html": "<p>Arrive early and wait outside. Dress a level below the family, never above. Speak slightly less than you wish to. Do not fill silences: in this world, the person who is comfortable in a silence is the person in control of it. And never, at any point, be interesting at the expense of being safe.</p>"
+    },
+    {
+     "h": "The questions, and what they are really asking",
+     "html": "<p>“Tell me about yourself.” They are testing restraint. Ninety seconds, no more: where you have served, what you were trusted with, and why this role. Then stop. The candidate who speaks for six minutes has already answered a different question, and badly.</p><p>“Why do you want to work for a private family?” They are listening for the word “I”. The wrong answer is about your journey, your growth, your dream. The right answer is about them: the pleasure of a life that runs without friction, the craft of making that true.</p><p>“Tell me about a difficult client or principal.” This is the discretion test, and it is the one most candidates fail. They are not asking for the story. They are watching to see whether you will tell it. Give the shape, never the detail, and never the person: “There was a situation that required a great deal of care. It was handled, and it stays with me.”</p><p>“What would you do if you saw something you were not meant to see?” The answer is short. Nothing. You would see nothing, say nothing, and it would leave no trace in you. If you are tempted to add a nuance here, do not.</p><p>“How do you handle a change of plan at eleven at night?” They are asking whether the disruption reaches your face. Describe your method calmly: the alternatives you keep ready, the suppliers who answer, the way you inform without alarming. Method reassures. Enthusiasm does not.</p><p>“What are your weaknesses?” Answer honestly and briefly, with something real and unthreatening, and say what you do about it. A polished non-answer here is more damaging than the weakness itself.</p><p>“What are your salary expectations?” Give a range, calmly, and only if asked. Then let it sit. Do not justify it, do not soften it, do not immediately offer flexibility. The person who apologises for their number invites it to be lowered.</p>"
+    },
+    {
+     "h": "The questions you should ask",
+     "html": "<p>You will be invited to ask. What you ask is itself an answer.</p><p>· “How is the household organised today, and who would I be working alongside?”, you are showing that you think in teams, and that you will not tread on a colleague’s station. · “What would make you say, in six months, that this was the right decision?”, the most valuable question you can ask anyone. · “How does the family prefer to be communicated with, and how often?”, it demonstrates that you understand the role is theirs, not yours. · “Is there anything in the way the house runs that you would like to see change?”, this is where they tell you the truth about the job.</p><p>Never ask, at a first meeting: holidays, time off, whether the role can be done remotely, or anything that begins with “would I have to…”.</p>"
+    },
+    {
+     "h": "The background check",
+     "html": "<p>Expect it, and never be surprised by it. Identity, history, references, sometimes finances and social media. It is not suspicion, it is standard, and it is the price of being admitted anywhere near a family of this kind. Prepare your history so that it is coherent, verifiable and calmly explained, including any gap. A gap that is explained without discomfort is not a problem. A gap that is defended becomes one.</p>"
+    },
+    {
+     "h": "The last five minutes",
+     "html": "<p>Thank them once, simply. Do not oversell at the door, do not send a long letter that evening. A short, warm note the next morning, three lines, no more, is the correct gesture, and it is remembered precisely because it asks for nothing.</p>"
+    }
+   ]
+  },
+  {
+   "id": "agency",
+   "title": "Approaching an Agency",
+   "icon": "send",
+   "subtitle": "The first email, and the principles behind opening a door quietly.",
+   "pdf": "Maison-Amarine-Agency-Outreach.pdf",
+   "intro": "",
+   "sections": [
+    {
+     "h": "How this world actually hires",
+     "html": "<p>Households of this standing rarely advertise. They ask a consultant they already trust, or they ask someone the family already knows. Which means the specialist agencies are not a formality to be endured: for most careers, they are the door. A consultant who believes in you will put your name forward for years, to people you will never be able to reach yourself.</p><p>So you are not applying to an agency. You are beginning a professional relationship with someone whose entire business is their judgement of people. Behave accordingly, and behave that way for a long time.</p>"
+    },
+    {
+     "h": "Four principles",
+     "html": "<p>Register with several, and treat none of them casually. Five or six serious agencies, chosen for the regions and the roles you actually want. Be findable, and be consistent. Your CV, your letter and your public presence must tell the same story. A consultant will look, and a contradiction is a rejection. Never chase. One follow-up, ten days later, courteous and brief. Then leave them in peace and let your name work. Pressure reads as need, and need is the one thing this world will not hire. Answer instantly, always. When a consultant finally writes, the speed and grace of your reply is the audition. Most candidates lose the role here, before anyone has met them.</p>"
+    },
+    {
+     "h": "The first email",
+     "html": "<p>Short. Specific. Free of need. It should read as though you are already someone, quietly looking for the right house.</p><p>Subject: Private Concierge / Lifestyle Manager, Geneva, fully mobile (Claire Duval)</p><p>Dear Ms Lawrence,</p><p>I am a private concierge, based in Geneva and fully mobile, and I would like to register with you.</p><p>For the past three years I have run the personal affairs of a UHNW family across four residences: their vendors, their household budgets, their journeys, and two major house projects delivered without disruption to the family. Before that, three seasons in guest relations for private chalets and villas, and two years as a concierge in a Paris palace hotel.</p><p>I am seeking a private household, in Europe or further, where discretion and anticipation are truly valued rather than merely mentioned. My CV is attached. References are available with the consent of the household.</p><p>I would be glad to speak whenever it suits you, and I am happy to wait for the right house.</p><p>With kind regards,</p>"
+    },
+    {
+     "h": "Claire Duval",
+     "html": "<p>+41 00 000 00 00 · claire.duval@email.com · Geneva, CH</p><p>Note the last line. “I am happy to wait for the right house” does more work than any adjective in the email. It says you are not desperate, that you have standards, and that you understand this takes time. Consultants remember the candidates who are not in a hurry.</p>"
+    },
+    {
+     "h": "The follow-up, and then silence",
+     "html": "<p>Ten days later, once, and never again.</p><p>Dear Ms Lawrence,</p><p>A brief note, simply to remain visible to you. My situation is unchanged: available, fully mobile, and seeking the right private household rather than the next one.</p><p>I would be glad to be considered whenever something suitable comes to you, and I remain at your disposal.</p><p>With kind regards, Claire Duval</p>"
+    },
+    {
+     "h": "What loses you a consultant, permanently",
+     "html": "<p>· Naming a former principal or family, at any point, in any medium. · Applying to the same role through two different agencies. It will be discovered, and it ends both relationships. · Chasing. Three emails in a fortnight tells them exactly how you will behave in a household. · Declining an interview at short notice, or arriving unprepared. Their reputation is on the table, not yours. · Negotiating a salary aggressively at the first stage. There is a moment for the number. It is not the beginning. · A public social media presence that shows the life of a client, however innocently. This is the end of a career in this field.</p>"
+    },
+    {
+     "h": "The long game",
+     "html": "<p>The first role you are offered may not be the one you dreamed of. Take it if it is a good house, and be impeccable in it for two years. In private service, the second role is given by reputation, and the third is offered before you have asked. That is how this world truly works, and there is no way to skip it.</p>"
+    }
+   ]
+  },
+  {
+   "id": "dictionary",
+   "title": "The Dictionary of Luxury",
+   "icon": "book",
+   "subtitle": "The vocabulary of the world you are entering, defined plainly.",
+   "pdf": "Maison-Amarine-Dictionary-of-Luxury.pdf",
+   "intro": "",
+   "sections": [
+    {
+     "h": "How to use this dictionary",
+     "html": "<p>The Dictionary of Luxury A reference of the words, codes and gestures of the private world How to use this dictionary The private world has a language of its own. The words you choose, and the ones you avoid, signal instantly whether you belong. This dictionary is your reference for that language. Each entry gives the term, its domain, a clear definition, and, where useful, a note on how a professional actually uses it. Read it through once to build your ear. Then return to it whenever a word, a code or a gesture is unfamiliar. Over time this vocabulary will stop being something you consult, and become simply how you think and speak. This is a living reference. It will grow with new editions, and with the terms you meet in your own work. Keep it close.</p><p><b>One discipline above all.</b> Never bluff a reference. If a name, a house or a vintage is unfamiliar to you, ask, or stay silent and verify later. A confident error is detected instantly in this world, and it is remembered far longer than an honest question.</p>"
+    },
+    {
+     "h": "À",
+     "html": "<p><b>À la carte</b> <i>Dining</i>. Ordering individual dishes chosen separately from a menu, each priced on its own, rather than a fixed multi course menu. The opposite of a set menu. The mark of a confident host is knowing when a curated tasting menu honours the chef more than an à la carte selection.</p><p><b>Amuse-bouche</b> <i>Gastronomy</i>. A single, bite sized morsel served before the meal, chosen by the chef rather than the guest. Literally amuses the mouth. A gesture of welcome, never charged for. Never call it a starter. The amuse-bouche is the chef's handshake, and acknowledging it graciously flatters the kitchen.</p><p><b>Aperitif</b> <i>Art De Vivre</i>. A drink taken before a meal to open the appetite, traditionally light and dry: Champagne, a dry sherry, a light vermouth, or a Kir. From the Latin for to open. Offer the aperitif the moment a guest is seated, before menus. It signals the evening has begun and buys the kitchen time.</p><p><b>Atelier</b> <i>Fashion & Craft</i>. A workshop or studio where a couturier, jeweller, or artisan creates by hand. In fashion, it distinguishes true made to measure craft from ready to wear production. To say a piece came from the atelier is to say it was made by hand, for one person. It is the language of the bespoke.</p>"
+    },
+    {
+     "h": "B",
+     "html": "<p><b>Background check</b> <i>Service</i>. The verification of a candidate's identity, history, references and, often, finances before entry into a private household. Standard, thorough, and never negotiable. Expect it, prepare for it, and never be surprised by it. A clean, coherent history is itself a qualification in this world.</p><p><b>Bespoke</b> <i>Fashion & Service</i>. Made entirely to individual specification, from scratch, for one client. Originally from tailoring, where cloth was spoken for. Stronger than made to measure, which adjusts an existing pattern. Reserve the word for what is truly built from nothing. Misusing bespoke for merely personalised marks the speaker as an outsider.</p><p><b>Black book</b> <i>Service</i>. The private register of trusted contacts a professional builds over years: the florist who answers at midnight, the villa agent, the chauffeur, the doctor. Personal, confidential, and never lent. Your black book is built one favour at a time, and it is the quiet reason a principal keeps you. Guard it as you would a confidence.</p><p><b>Black tie</b> <i>Dress Codes</i>. An evening dress code requiring a dinner jacket (tuxedo) with a black bow tie for men, and a formal gown or elegant cocktail dress for women. Less formal than white tie. If an invitation says black tie, a business suit is a quiet failure. Knowing the codes lets you guide a principal without ever correcting them.</p><p><b>Bottle service</b> <i>Hospitality</i>. In a private club or high end venue, the purchase of a full bottle of spirits or Champagne served at a reserved table with dedicated staff, mixers, and presentation.</p><p><b>Boutique hotel</b> <i>Hospitality</i>. A small, intimate, design led hotel, typically under a hundred rooms, prized for individuality and personal service over the uniformity of large chains. For a principal who values privacy and character, a well chosen boutique hotel often pleases more than the grandest palace property.</p><p><b>Butler</b> <i>Service</i>. The senior male servant of a household, traditionally responsible for the dining room, the wine cellar, the pantry, and often the supervision of other staff. Today, a symbol of the highest personal service. The finest butlers are defined by anticipation and discretion, not formality. Presence without intrusion is the whole art.</p>"
+    },
+    {
+     "h": "C",
+     "html": "<p><b>Cabana</b> <i>Hospitality</i>. A private, shaded structure beside a pool or beach at a luxury resort, reserved for the day, offering seclusion, dedicated service, and comfort away from the crowd.</p><p><b>Cellar (wine)</b> <i>Gastronomy</i>. A collection of wines held and aged under controlled conditions, and the room itself. A serious cellar signals both means and genuine connoisseurship. Knowing how to speak of a cellar, its depth, its balance, its readiness, lets you converse credibly with a principal who collects.</p><p><b>Chauffeur</b> <i>Service</i>. A professional private driver, distinguished from a taxi driver by discretion, presentation, knowledge of the principal's preferences, and seamless anticipation of the day's movements. A great chauffeur manages far more than the car: timing, privacy, the door held at the precise moment, the route chosen to avoid delay and attention.</p><p><b>Chief of staff (private)</b> <i>Service</i>. The most senior figure in a large private household or family office: strategy, staff, properties, budgets, and the principal's entire operation. The summit of a private-service career. This is a destination, not an entry point. It is reached through years of proven trust, and never through a certificate.</p><p><b>Concierge</b> <i>Service</i>. The professional who arranges, obtains, and solves on behalf of a guest or principal: reservations, access, logistics, the impossible request. From the French, once the keeper of a household. The concierge's true currency is the network and the reputation that opens doors. What cannot be bought can often still be arranged.</p><p><b>Concours d'élégance</b> <i>Art De Vivre</i>. A prestigious event judging the beauty, rarity, and condition of classic and collector automobiles. A fixture of the collector and connoisseur calendar.</p><p><b>Couture</b> <i>Fashion</i>. Short for haute couture, the creation of exclusive, made to order garments by hand, to the highest standard. In France, a legally protected term with strict criteria. Not every expensive dress is couture. The word denotes hand craft and exclusivity, not merely a high price.</p><p><b>Cru</b> <i>Gastronomy</i>. In wine, a vineyard or estate of recognised quality, and the wine from it. Grand cru and premier cru denote the highest official classifications in regions such as Burgundy and Bordeaux. To recognise a grand cru on a list, and to know when it is drinking well, is to speak the language of the serious collector.</p><p><b>Crudité</b> <i>Gastronomy</i>. Raw vegetables served as an appetiser, often with a dip. In fine dining, an exercise in freshness and precision rather than simplicity.</p>"
+    },
+    {
+     "h": "D",
+     "html": "<p><b>Decanting</b> <i>Gastronomy</i>. Pouring wine from its bottle into a decanter, to separate it from sediment and let it breathe. Older reds especially benefit. A ritual of both function and elegance. Offer to decant a mature red without being asked. The gesture shows care and knowledge, and improves the wine the principal is about to enjoy.</p><p><b>Degustation</b> <i>Gastronomy</i>. A tasting menu: a sequence of small, chef chosen courses designed to showcase range and progression. From the French for tasting. A degustation is an act of trust in the chef. Guiding a hesitant principal toward it, gently, is a quiet service.</p><p><b>Demi-bouteille</b> <i>Gastronomy</i>. A half bottle of wine, 375 millilitres. Useful for a single diner, or to pair different wines across courses without excess. Suggesting half bottles lets a principal enjoy variety across a meal without waste, a considerate and refined touch.</p><p><b>Discretion</b> <i>Service</i>. The disciplined art of holding what one knows: knowing what never needs to be mentioned, recorded, or repeated. The defining and most tested virtue of private service. Discretion is not merely silence about secrets. It is a permanent vigilance over the flow of information around the person you serve.</p>"
+    },
+    {
+     "h": "E",
+     "html": "<p><b>Egyptian cotton</b> <i>Art De Vivre</i>. Long staple cotton prized for softness and durability, used in the finest bed linens and shirting. Higher thread counts are not always finer; quality of fibre matters more. Beware the myth that a higher thread count always means better linen. Fibre quality and weave matter more than the number alone.</p><p><b>Empty leg</b> <i>Travel</i>. A private jet repositioning flight, flown with no passengers, offered at a fraction of the charter price. Timing is fixed and rarely flexible. Knowing the empty-leg market lets you offer a principal real value without ever compromising on privacy or standard.</p><p><b>En primeur</b> <i>Gastronomy</i>. Buying wine as a future, while still in the barrel, before bottling and release. Common in Bordeaux. A way to secure sought after vintages, often at a lower price.</p><p><b>Entremetier</b> <i>Gastronomy</i>. In a classic professional kitchen brigade, the cook responsible for vegetables, soups, and starches. Part of the brigade de cuisine system codified by Escoffier.</p><p><b>Escoffier</b> <i>Gastronomy</i>. Auguste Escoffier, the chef who modernised and codified French haute cuisine and the professional kitchen brigade. His name is shorthand for classical culinary rigour. To reference Escoffier correctly signals genuine culinary literacy, the foundation on which modern fine dining still rests.</p><p><b>Estate</b> <i>Art De Vivre</i>. A large property with land, often a principal country residence. In wine, the domaine where grapes are grown and wine is made, as in estate bottled.</p><p><b>Estate manager</b> <i>Service</i>. The professional who runs one or several private residences: staff, vendors, budgets, maintenance, standards, and the guest experience. Often the head of a household team. Where a concierge arranges, an estate manager governs. Learn the difference in vocabulary before you use either title.</p><p><b>Etiquette</b> <i>Codes</i>. The system of accepted conduct in polite and formal society: how to greet, dine, address, seat, and behave. In service, the invisible grammar that signals belonging. Etiquette is not stiffness. Its purpose is to put everyone at ease by removing all doubt about what is correct.</p>"
+    },
+    {
+     "h": "F",
+     "html": "<p><b>Family office</b> <i>Service</i>. The private structure that manages an ultra-wealthy family's wealth, investments, legal affairs, philanthropy and often its household staff. A single-family office serves one family; a multi-family office serves several. Know who signs, who decides, and who merely relays. In many houses, the family office, not the family, is who truly hires you.</p><p><b>Fine dining brigade</b> <i>Gastronomy</i>. The organised hierarchy of a professional kitchen, from the chef de cuisine down through the sous chef and the chefs de partie, each with a defined station. Codified by Escoffier. Understanding the brigade lets you speak correctly with a kitchen and know who to address for what. Precision of address signals respect and knowledge.</p><p><b>Flute</b> <i>Gastronomy</i>. A tall, narrow glass for Champagne and sparkling wine, designed to preserve the bubbles. Increasingly, connoisseurs prefer a white wine glass to reveal aroma. Know that serious Champagne is now often served in a tulip or white wine glass, not a flute, to release its full aroma. A quiet mark of expertise.</p><p><b>Foie gras</b> <i>Gastronomy</i>. The rich, delicate liver of a specially fattened duck or goose, a classic of French haute cuisine, served seared or as a terrine. Legally restricted in some regions. Be aware that foie gras is controversial and banned or restricted in some places. Read the table and the setting before assuming it is welcome.</p>"
+    },
+    {
+     "h": "G",
+     "html": "<p><b>Gala</b> <i>Hospitality</i>. A grand, formal social event, often for charity, typically black or white tie, with dinner, entertainment, and a programme. A key fixture of the philanthropic season.</p><p><b>Garde manger</b> <i>Gastronomy</i>. The kitchen station and cook responsible for cold dishes: charcuterie, salads, terrines, and the pantry. From the French, to keep to eat.</p><p><b>Grand cru</b> <i>Gastronomy</i>. The highest official vineyard classification in regions such as Burgundy, Alsace, and Champagne, denoting exceptional and consistent quality of terroir.</p><p><b>Gratuity</b> <i>Service</i>. A tip, given for good service. In the private world, norms vary widely by country and setting; in some, a discreet fixed arrangement replaces individual tipping entirely. Learn the tipping norms of each country you operate in. Getting it wrong, high or low, quietly signals unfamiliarity with the setting.</p>"
+    },
+    {
+     "h": "H",
+     "html": "<p><b>Haute couture</b> <i>Fashion</i>. The pinnacle of fashion: exclusive, hand made, made to order garments meeting strict standards. In France, a label legally restricted to approved houses by the Chambre Syndicale. Only a small number of houses may legally use haute couture in France. It is a protected designation, not a loose compliment.</p><p><b>Haute horlogerie</b> <i>Horlogerie</i>. The highest level of watchmaking: complex movements, hand finishing, and rare complications, made in small numbers by the most prestigious houses. In haute horlogerie, value lies in the movement and finishing, the craft unseen on the wrist, not merely the name on the dial.</p><p><b>Hospitality</b> <i>Service</i>. The art and business of welcoming and caring for guests. At the highest level, the seamless anticipation of needs so that a guest feels effortlessly at home.</p><p><b>Household budget</b> <i>Service</i>. The annual and monthly budget of a private residence: staff, vendors, maintenance, provisions, travel. Managed with precision, reported without being asked. Handling a household budget cleanly is the fastest way to become indispensable, and mishandling it the fastest way to leave.</p><p><b>Household staff</b> <i>Service</i>. The team serving a private residence: house manager, butler, housekeeper, chef, nanny, chauffeur, gardener, security. Each with a defined place, and a hierarchy to be respected. Know who does what, and never step across a colleague's station without being asked. Harmony among staff is itself a service to the principal.</p>"
+    },
+    {
+     "h": "I",
+     "html": "<p><b>Iconic</b> <i>Codes</i>. Widely overused, and therefore powerful when withheld. Truly iconic denotes an object or design so recognisable it defines its category. Use sparingly, or lose its force. Restraint with superlatives is itself a code. The professional who calls few things iconic is believed when they finally do.</p><p><b>In-villa dining</b> <i>Hospitality</i>. A private meal prepared and served within a guest's villa or suite by dedicated staff, offering total privacy and a bespoke menu away from the restaurant. For a principal guarding privacy, in-villa dining is often preferred to the finest restaurant. Anticipate and offer it before it is requested.</p>"
+    },
+    {
+     "h": "J",
+     "html": "<p><b>Jeroboam</b> <i>Gastronomy</i>. A large format wine bottle, equivalent to three or four standard bottles depending on region. Large formats age more gracefully and make an occasion of a table.</p><p><b>Jet lag protocol</b> <i>Service</i>. The anticipatory management of a principal's arrival across time zones: adjusted meals, light, rest, and schedule to ease the body's adjustment. A hallmark of thoughtful private travel. Anticipating jet lag, quietly adjusting the first day's plans and meals, protects the principal's peace before they have felt the strain.</p>"
+    },
+    {
+     "h": "K",
+     "html": "<p><b>Kir</b> <i>Gastronomy</i>. A classic French aperitif of white wine with a touch of crème de cassis (blackcurrant liqueur). Kir Royale uses Champagne in place of still wine.</p>"
+    },
+    {
+     "h": "L",
+     "html": "<p><b>Livery</b> <i>Service</i>. The distinctive uniform worn by household staff or a chauffeur, historically in a family's colours. A mark of a formal, traditional household.</p>"
+    },
+    {
+     "h": "M",
+     "html": "<p><b>Made to measure</b> <i>Fashion</i>. A garment made by adjusting an existing base pattern to a client's measurements. More personal than ready to wear, but distinct from bespoke, which is built from scratch. Know the ladder: ready to wear, then made to measure, then bespoke. Using the terms precisely marks genuine familiarity.</p><p><b>Magnum</b> <i>Gastronomy</i>. A wine bottle holding 1.5 litres, the equivalent of two standard bottles. Prized because wine ages more slowly and elegantly in the larger format. Suggesting a magnum for a table of several guests is both practical and festive, and signals an eye for the occasion.</p><p><b>Maître d'hôtel</b> <i>Hospitality</i>. The head of the dining room, responsible for reservations, seating, service, and the guest experience. Often shortened to maître d'. The public face of a fine restaurant. A relationship with a great maître d' is worth more than any booking system. Cultivate it with courtesy and it opens tables others cannot reach.</p><p><b>Michelin star</b> <i>Gastronomy</i>. A distinction awarded by the Michelin Guide for culinary excellence, from one star (very good) to three (worth a special journey). The most recognised mark in fine dining. Know that one star is a genuine achievement and three is exceptionally rare. Speak of stars accurately, not loosely.</p><p><b>Mise en place</b> <i>Gastronomy</i>. Everything in its place: the disciplined preparation and arrangement of all ingredients and tools before service begins. A principle of readiness that extends well beyond the kitchen. Mise en place is a philosophy for all service: everything anticipated and ready, so the moment itself unfolds without friction.</p><p><b>Monogram</b> <i>Art De Vivre</i>. A personal emblem of initials, applied to linens, luggage, stationery, or shirts. A discreet, traditional mark of ownership and refinement, best kept subtle. The elegance of a monogram lies in its subtlety. Tone on tone, small, and well placed says more than something large and loud.</p>"
+    },
+    {
+     "h": "N",
+     "html": "<p><b>NDA</b> <i>Service</i>. A non-disclosure agreement, signed before or upon entering a private household. It binds you to silence about everything you see, hear and learn, often permanently. An NDA is not a formality, it is the floor. The professionals worth hiring behave as though one existed even where none was signed.</p>"
+    },
+    {
+     "h": "O",
+     "html": "<p><b>Omakase</b> <i>Gastronomy</i>. A Japanese dining style meaning I leave it to you: the chef selects and serves a personalised sequence, often at the counter. An act of trust in the chef's judgement. Omakase rewards a guest who surrenders control to the chef. Encouraging a principal to relax into it is a gentle, knowing service.</p><p><b>Orangerie</b> <i>Art De Vivre</i>. A grand glasshouse or garden room, historically for wintering citrus trees, now often an elegant space for events and dining on a great estate.</p>"
+    },
+    {
+     "h": "P",
+     "html": "<p><b>Palace hotel</b> <i>Hospitality</i>. In France, an official distinction above five stars, awarded to a small number of exceptional hotels. More broadly, a grand hotel of the highest standing and history. In France, palace is an official rank above five stars, not a loose term. Knowing this distinguishes the informed from the impressed.</p><p><b>Patina</b> <i>Art De Vivre</i>. The soft sheen and character that age gives to fine leather, wood, silver, or a watch. Prized as evidence of quality and history, never to be polished away. Old money treasures patina; it is proof of quality that has endured. To over restore an heirloom is to erase its story.</p><p><b>Pied-à-terre</b> <i>Art De Vivre</i>. A small secondary residence kept in a city for occasional use. From the French, foot on the ground. A convenience of the mobile and the well established.</p><p><b>Principal</b> <i>Service</i>. The person one serves, in a household or private capacity. The preferred, respectful term over boss, employer, or client, conveying the seriousness and dignity of the relationship. Principal is the correct register in the private household. Using it naturally signals that you understand the world you work in.</p><p><b>Private aviation</b> <i>Travel</i>. Travel by private jet or chartered aircraft, offering privacy, flexibility, and time. Terms such as fractional ownership, charter, and empty leg denote different ways of access. Learn the vocabulary of private aviation: charter, fractional, empty leg. Fluency lets you manage a principal's travel with quiet confidence.</p><p><b>Provenance</b> <i>Art & Collecting</i>. The documented history of ownership of an artwork, antique, or fine object. Strong provenance authenticates, adds value, and reassures. A gap in provenance raises questions. In art and collecting, provenance is everything: it proves authenticity and protects value. Always ask for it before advising a purchase.</p>"
+    },
+    {
+     "h": "R",
+     "html": "<p><b>Ready-to-wear</b> <i>Fashion</i>. Prêt-à-porter: garments made in standard sizes for immediate purchase, as opposed to made to measure or bespoke. The foundation of most luxury fashion houses' business.</p><p><b>Reserve</b> <i>Gastronomy</i>. On a wine or spirit label, a term suggesting higher quality or longer ageing. In some regions strictly regulated, in others merely marketing. Know which is which. Reserve means something precise in Rioja and little in other places. Do not assume the word alone guarantees quality.</p><p><b>Ritz-Carlton</b> <i>Hospitality</i>. A byword for a standard of gracious, anticipatory hospitality. Its founding philosophy, ladies and gentlemen serving ladies and gentlemen, shaped modern luxury service. The Ritz-Carlton credo, that service is dignified on both sides, is a useful model: you serve from a place of professional pride, never servility.</p><p><b>Rota</b> <i>Service</i>. The staff schedule of a private household: who is on duty, when, and where, including rotations, cover, and time off. Often complex across several residences. A well-kept rota is invisible and a badly kept one is felt by everyone. Learn to read one before you presume to build one.</p>"
+    },
+    {
+     "h": "S",
+     "html": "<p><b>Savoir-faire</b> <i>Codes</i>. Literally, knowing how to do: expertise, skill, and the quiet competence to handle any situation gracefully. A prized and untranslatable quality in luxury craft and service. Savoir-faire is competence made to look effortless. It is shown, never announced.</p><p><b>Savoir-vivre</b> <i>Codes</i>. Literally, knowing how to live: the grace, manners, and ease of someone at home in refined society. The social counterpart to savoir-faire. Savoir-vivre is the art of putting others at ease. Your own composure and courtesy quietly grant it to everyone around you.</p><p><b>Security detail</b> <i>Service</i>. The close protection team around a principal and their family. Movements, routes, guests and schedules are coordinated with them, always. Never plan a movement without the detail. A beautiful itinerary that ignores security is not a service, it is a risk.</p><p><b>Silver service</b> <i>Service</i>. A formal serving technique in which the server transfers food from a platter to the guest's plate using a spoon and fork held in one hand. A mark of trained, traditional service. Silver service is a genuine skill that takes practice. Where it is expected, competence is assumed and clumsiness is instantly visible.</p><p><b>Sommelier</b> <i>Gastronomy</i>. The wine specialist of a fine restaurant, responsible for the list, pairings, and guidance. A great sommelier reads the guest as carefully as the cellar. Trust and cultivate the sommelier. Asking their guidance, rather than performing knowledge, often yields the finest and best judged pairing.</p><p><b>Staff meal</b> <i>Service</i>. The meal taken by household staff, distinct from the family's table. Its quality and timing say a great deal about how a house treats those who serve it. Notice it in any house you enter. It will tell you more about the family than any interview ever will.</p><p><b>Suite</b> <i>Hospitality</i>. A hotel accommodation of multiple connected rooms, from a junior suite to a presidential or royal suite. The tier and naming signal a property's finest offering. Know a property's suite hierarchy before booking. Placing a principal in the right suite, for the right occasion, is a considered act.</p>"
+    },
+    {
+     "h": "T",
+     "html": "<p><b>Terroir</b> <i>Gastronomy</i>. The complete natural environment, soil, climate, slope, that gives a wine or produce its distinctive character. A concept at the heart of French ideas of quality and place. To speak of terroir is to understand that the finest things are of a place. It signals depth beyond brand names.</p><p><b>Thread count</b> <i>Art De Vivre</i>. The number of threads per square inch in a fabric, often cited for bed linen. A useful but overrated measure; fibre quality and weave matter more than a high number alone. Do not be seduced by a high thread count. A finer fibre at a moderate count often makes the superior sheet.</p><p><b>Tourbillon</b> <i>Horlogerie</i>. A watch complication, a rotating cage for the escapement, invented to counter the effect of gravity on accuracy. Today, chiefly a demonstration of watchmaking mastery. The tourbillon is prized as a feat of craft more than for practical gain. Admire it as artistry, and say so accurately.</p><p><b>Trousseau</b> <i>Art De Vivre</i>. Traditionally, the fine linens, clothing, and household goods a bride brought to a marriage. Now, more broadly, a curated collection of the finest personal or household items.</p><p><b>Truffle</b> <i>Gastronomy</i>. A rare, intensely aromatic subterranean fungus, white (Alba) or black (Périgord), among the most prized and costly ingredients in gastronomy. Shaved fresh, never cooked hard. White Alba truffle is seasonal and extraordinary. Knowing the season and handling, shaved fresh at the table, marks true familiarity.</p><p><b>Turndown service</b> <i>Hospitality</i>. The evening preparation of a hotel room for sleep: bed opened, curtains drawn, lights softened, a small touch left. A quiet ritual of anticipatory care. Turndown is anticipation made visible: the room readied for rest before the guest thinks to want it. Study its logic; apply it everywhere.</p>"
+    },
+    {
+     "h": "V",
+     "html": "<p><b>Valet</b> <i>Service</i>. A personal male attendant responsible for a gentleman's wardrobe, dressing, and personal effects. Also, the service of parking a guest's car. Context distinguishes the two.</p><p><b>Vintage</b> <i>Gastronomy</i>. The year a wine's grapes were harvested, and, more broadly, wine from a single specified year. A great vintage denotes a year of exceptional growing conditions. Knowing the strong and weak vintages of the major regions lets you guide a wine choice with genuine, quiet authority.</p>"
+    },
+    {
+     "h": "W",
+     "html": "<p><b>White glove</b> <i>Service</i>. Denoting service of the highest care and attention to detail, from the gloves once worn to handle fine objects. Now shorthand for premium, meticulous, personal handling. White glove is a promise of meticulous care. Use the phrase only where you can truly deliver the standard it implies.</p><p><b>White tie</b> <i>Dress Codes</i>. The most formal evening dress code: for men, a black tailcoat, white waistcoat, and white bow tie; for women, a full length formal gown. Above black tie in formality. White tie is rare and exacting. Recognising it on an invitation, and preparing a principal correctly, prevents a conspicuous and memorable error.</p>"
+    },
+    {
+     "h": "Y",
+     "html": "<p><b>Yacht (charter vs ownership)</b> <i>Travel</i>. A luxury vessel, accessed by ownership or by charter (hire, usually by the week, with crew). Terms such as tender, flag, and charter broker denote the specialised world around it. Learn the difference between owning and chartering, and the role of the broker and captain. It lets you manage a principal's time on the water with confidence.</p>"
+    },
+    {
+     "h": "Z",
+     "html": "<p><b>Zero proof</b> <i>Gastronomy</i>. The contemporary term for sophisticated non alcoholic drinks, crafted with the same care as cocktails. Offering an elegant zero proof option is now a mark of thoughtful hospitality. Always have a considered zero proof option ready. Offering it, unprompted and without fuss, quietly respects every guest's choice.</p>"
+    }
+   ]
+  },
+  {
    "id": "toolkit",
    "title": "The Household Operations Toolkit",
    "subtitle": "The real working documents of the private-service profession, ready to use, ready to carry into your first house.",
