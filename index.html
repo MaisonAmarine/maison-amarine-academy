@@ -65,7 +65,7 @@
   .btn-primary svg{width:17px;height:17px;}
 
   /* ================= PROGRAM PAGE ================= */
-  .resume{margin:26px 0 10px;background:linear-gradient(135deg,var(--ink),#2e2820);border:none;border-radius:18px;overflow:hidden;box-shadow:0 14px 36px rgba(33,28,21,.18);position:relative;}
+  .resume{margin:26px 0 10px;background:linear-gradient(115deg,rgba(28,23,17,.93) 42%,rgba(33,28,21,.72) 78%,rgba(33,28,21,.55)),url('images/dash.jpg') center/cover;border:none;border-radius:18px;overflow:hidden;box-shadow:0 14px 36px rgba(33,28,21,.18);position:relative;}
   .resume::after{content:"";position:absolute;right:-90px;top:-90px;width:360px;height:360px;border:1px solid rgba(201,168,103,.16);border-radius:50%;pointer-events:none;}
   .resume::before{content:"";position:absolute;right:-45px;top:-45px;width:270px;height:270px;border:1px solid rgba(201,168,103,.10);border-radius:50%;pointer-events:none;}
   .resume-inner{display:flex;align-items:stretch;flex-wrap:wrap;position:relative;z-index:1;}
@@ -117,6 +117,12 @@
   .wcard-state.done{background:var(--gold-wash);color:var(--gold-deep);}
   .wcard-state.current{background:var(--ink);color:var(--gold-lt);}
   .wcard-state.locked{background:#efe9dc;color:var(--stone);}
+  /* bandeau image d'ambiance en tête de chaque module */
+  .wcard-img{margin:-26px -26px 18px;height:134px;background-size:cover;background-position:center;position:relative;flex-shrink:0;}
+  .wcard-img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,16,12,.22),rgba(20,16,12,0) 55%),linear-gradient(0deg,rgba(255,255,255,.9),rgba(255,255,255,0) 40%);}
+  .wcard:not(.locked):hover .wcard-img{filter:saturate(1.05);}
+  .wcard.locked .wcard-img{filter:grayscale(.85) brightness(.96);opacity:.55;}
+  .wcard.done .wcard-img::after{background:linear-gradient(180deg,rgba(138,102,48,.28),rgba(20,16,12,0) 55%),linear-gradient(0deg,rgba(255,255,255,.9),rgba(255,255,255,0) 40%);}
   @media(max-width:820px){.pillar-grid{grid-template-columns:1fr;}}
   .week{display:flex;align-items:center;gap:20px;width:100%;background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:20px 24px;cursor:pointer;text-align:left;font-family:inherit;transition:transform .2s,box-shadow .2s,border-color .2s;}
   .week:hover{transform:translateY(-2px);box-shadow:0 12px 28px var(--shadow);border-color:var(--gold-lt);}
@@ -547,7 +553,11 @@
   .modal{background:var(--ivory);border-radius:20px;max-width:900px;width:100%;box-shadow:0 40px 100px rgba(33,28,21,.4);animation:rise .4s cubic-bezier(.22,.61,.36,1);overflow:hidden;transition:max-width .32s cubic-bezier(.22,.61,.36,1);}
   .modal.step-open{max-width:1180px;}
   @keyframes rise{from{opacity:0;transform:translateY(22px);}to{opacity:1;transform:none;}}
-  .modal-head{padding:28px 32px 24px;background:var(--paper);border-bottom:1px solid var(--line);position:relative;}
+  .modal-hero{height:190px;background-size:cover;background-position:center;position:relative;}
+  .modal-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,16,12,.15),rgba(20,16,12,.05) 55%,var(--paper));}
+  .modal-hero .mh-eyebrow{position:absolute;left:32px;bottom:14px;z-index:2;font-family:'Jost',sans-serif;font-size:10.5px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:#fff;text-shadow:0 1px 8px rgba(0,0,0,.5);}
+  @media(max-width:620px){ .modal-hero{height:150px;} .modal-hero .mh-eyebrow{left:22px;} }
+  .modal-head{padding:22px 32px 24px;background:var(--paper);border-bottom:1px solid var(--line);position:relative;}
   .modal-head .row{display:flex;align-items:center;gap:12px;margin-bottom:12px;}
   .modal-head .m-badge{width:46px;height:46px;border-radius:12px;background:var(--gold-wash);color:var(--gold-deep);display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:'Cormorant',serif;font-weight:700;flex-shrink:0;}
   .modal-head .m-badge .wk{font-size:8px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);font-family:'Jost',sans-serif;}
@@ -1967,6 +1977,7 @@
 <!-- MODAL (week detail) -->
 <div class="overlay" id="overlay">
   <div class="modal" role="dialog" aria-modal="true">
+    <div class="modal-hero" id="modalHero"><span class="mh-eyebrow" id="modalHeroLabel"></span></div>
     <div class="modal-head">
       <div class="row"><div class="m-badge"><span class="wk">Week</span><span class="n" id="mBadgeN">1</span></div><span class="m-pill" id="mPill">Savoir</span></div>
       <h2 id="modalTitle"></h2>
@@ -3161,6 +3172,7 @@ function renderWeeks(){
       else if(st==="current"){const lp=lessonProgress(w.no);stateHTML=`<span class="wcard-state current">${lp>0?lp+'% done':'Start now'}</span>`;}
       else stateHTML=`<span class="wcard-state locked"><span class="ic">${ICONS.lock}</span>Locked</span>`;
       card.innerHTML=`
+        <div class="wcard-img" style="background-image:url('images/w${w.no}.jpg')"></div>
         <div class="wcard-top">
           <div class="wcard-badge"><span class="wk">Week</span><span class="n">${w.no}</span></div>
           ${st==="locked"?`<span class="wcard-go locked">${ICONS.lock}</span>`:`<span class="wcard-go">&rarr;</span>`}
@@ -3534,6 +3546,8 @@ let activeWeek=null;
 function openWeek(no){
   if(weekStatus(no)==="locked")return;
   activeWeek=no;const w=WEEKS[no-1];
+  const mHero=document.getElementById('modalHero');
+  if(mHero){ mHero.style.backgroundImage="url('images/w"+w.no+".jpg')"; const mhl=document.getElementById('modalHeroLabel'); if(mhl) mhl.textContent="Week "+w.no+" · "+w.pillar; }
   document.getElementById('mBadgeN').textContent=w.no;
   document.getElementById('mPill').textContent=w.pillar;
   document.getElementById('modalTitle').textContent=w.title;
