@@ -207,6 +207,30 @@
   .dash-quote p{font-family:'Cormorant',serif;font-style:italic;font-weight:400;font-size:20px;line-height:1.5;color:var(--ink);margin:0;}
   .dash-quote p b{font-style:normal;font-weight:600;color:var(--gold-deep);}
   @media(max-width:640px){ .dash-row{grid-template-columns:1fr 1fr;} .dash-card:last-child{grid-column:1 / -1;} }
+  .sb-user-go{width:15px;height:15px;color:#9a9184;margin-left:auto;flex:none;}
+  .pf-wrap{max-width:820px;}
+  .pf-top{display:flex;align-items:center;gap:24px;background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:26px 28px;margin-bottom:18px;flex-wrap:wrap;box-shadow:0 16px 36px rgba(33,28,21,.05);}
+  .pf-avwrap{display:flex;flex-direction:column;align-items:center;gap:10px;}
+  .pf-av{width:96px;height:96px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--gold-lt));color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Cormorant',serif;font-weight:600;font-size:38px;background-size:cover;background-position:center;box-shadow:0 8px 20px rgba(33,28,21,.15);}
+  .pf-avbtn{display:inline-flex;align-items:center;gap:6px;font-family:'Jost',sans-serif;font-size:11.5px;font-weight:600;color:var(--gold-deep);cursor:pointer;background:var(--gold-wash);border:1px solid var(--gold-lt);border-radius:20px;padding:6px 12px;}
+  .pf-avbtn:hover{background:#ecdfc6;}
+  .pf-idn{flex:1;min-width:200px;}
+  .pf-nameh{font-family:'Cormorant',serif;font-weight:500;font-size:28px;color:var(--ink);line-height:1.1;}
+  .pf-emailh{font-family:'Jost',sans-serif;font-size:13px;color:var(--stone);margin-top:3px;}
+  .pf-hint{font-family:'Jost',sans-serif;font-size:12px;color:var(--stone);margin-top:10px;line-height:1.5;}
+  .pf-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:26px 28px;box-shadow:0 16px 36px rgba(33,28,21,.05);}
+  .pf-col2{grid-column:1 / -1;}
+  .pf-field label{display:block;font-family:'Jost',sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--stone);margin-bottom:6px;}
+  .pf-field input,.pf-field select,.pf-field textarea{width:100%;font-family:'Jost',sans-serif;font-size:14px;color:var(--ink);background:var(--ivory);border:1px solid var(--line);border-radius:12px;padding:12px 14px;outline:none;transition:border-color .18s,background .18s;}
+  .pf-field input:focus,.pf-field select:focus,.pf-field textarea:focus{border-color:var(--gold-lt);background:#fff;}
+  .pf-field input:disabled{color:var(--stone);}
+  .pf-field textarea{resize:vertical;line-height:1.55;}
+  .pf-actions{display:flex;align-items:center;gap:14px;margin-top:18px;flex-wrap:wrap;}
+  .pf-save{font-family:'Jost',sans-serif;font-size:14px;font-weight:600;color:#fff;background:var(--gold);border:none;border-radius:24px;padding:13px 30px;cursor:pointer;transition:background .18s;}
+  .pf-save:hover{background:var(--gold-deep);}
+  .pf-back{font-family:'Jost',sans-serif;font-size:13.5px;font-weight:600;color:var(--ink-soft);background:none;border:1px solid var(--line);border-radius:24px;padding:12px 22px;cursor:pointer;}
+  .pf-status{font-family:'Jost',sans-serif;font-size:13px;color:var(--gold-deep);}
+  @media(max-width:640px){ .pf-grid{grid-template-columns:1fr;} }
   @media(max-width:820px){ .pr-stats{grid-template-columns:1fr 1fr;gap:18px;} .pr-stat-badges,.pr-stat-bar{grid-column:1 / -1;} }
   /* runner */
   .pr-run{max-width:720px;margin:8px auto 0;}
@@ -1250,9 +1274,10 @@
       </div>
     </nav>
     <div class="sb-foot">
-      <div class="sb-user">
+      <div class="sb-user" id="sbUser" onclick="openProfile()" title="View and edit your profile" style="cursor:pointer;">
         <div class="av" id="sbAv">·</div>
         <div><div class="un" id="sbName">&nbsp;</div><div class="ur" id="sbRole">Student</div></div>
+        <svg class="sb-user-go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </div>
       <div class="logout" id="logout"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9" stroke-linecap="round" stroke-linejoin="round"/></svg>Sign out</div>
     </div>
@@ -1308,6 +1333,47 @@
         <div class="cert-seal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="10" r="6"/><path d="M8.5 15.5L7 22l5-2.5L17 22l-1.5-6.5" stroke-linejoin="round"/><path d="M9.5 10l1.6 1.6L14.5 8.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
         <div class="cert-tx"><h3>You have completed all eight weeks.</h3><p>Your certificate of completion is ready, in your name. Download it, keep it, and carry it with pride.</p></div>
         <button class="btn-gold" onclick="showCertificate()" style="border:none;cursor:pointer;">Download my certificate</button>
+      </div>
+    </section>
+
+    <!-- ============ PAGE: PROFILE ============ -->
+    <section class="page hidden" id="page-profile">
+      <div class="page-h">
+        <div class="eyebrow">My profile</div>
+        <h1>Your profile</h1>
+        <p>This is you, inside Maison Amarine. Keep it complete and polished, it is part of learning to present yourself in this world.</p>
+      </div>
+      <div class="pf-wrap">
+        <div class="pf-top">
+          <div class="pf-avwrap">
+            <div class="pf-av" id="pfAv"></div>
+            <label class="pf-avbtn"><input type="file" id="pfAvFile" accept="image/*" style="display:none;" onchange="uploadAvatar(this.files[0]); this.value='';"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M4 7h3l1.5-2h7L17 7h3v12H4z" stroke-linejoin="round"/><circle cx="12" cy="12.5" r="3.5"/></svg> Change photo</label>
+          </div>
+          <div class="pf-idn">
+            <div class="pf-nameh" id="pfNameH">Your name</div>
+            <div class="pf-emailh" id="pfEmailH"></div>
+            <div class="pf-hint">A soft, professional photo is best. It is only visible inside your account.</div>
+          </div>
+        </div>
+        <div class="pf-grid">
+          <div class="pf-field"><label>First name</label><input id="pf_first" type="text" placeholder="First name"></div>
+          <div class="pf-field"><label>Last name</label><input id="pf_last" type="text" placeholder="Last name"></div>
+          <div class="pf-field pf-col2"><label>Headline</label><input id="pf_headline" type="text" placeholder="e.g. Aspiring private concierge · London"></div>
+          <div class="pf-field"><label>City</label><input id="pf_city" type="text" placeholder="City"></div>
+          <div class="pf-field"><label>Country</label><input id="pf_country" type="text" placeholder="Country"></div>
+          <div class="pf-field"><label>Phone</label><input id="pf_phone" type="tel" placeholder="+.."></div>
+          <div class="pf-field"><label>Languages</label><input id="pf_languages" type="text" placeholder="English, French…"></div>
+          <div class="pf-field"><label>Where are you today?</label><select id="pf_situation"><option value="">Select…</option><option>Discovering the profession</option><option>Serious about a career change</option><option>Already in private service</option></select></div>
+          <div class="pf-field"><label>Experience</label><input id="pf_experience" type="text" placeholder="e.g. 2 years, or none yet"></div>
+          <div class="pf-field pf-col2"><label>LinkedIn</label><input id="pf_linkedin" type="url" placeholder="https://linkedin.com/in/…"></div>
+          <div class="pf-field pf-col2"><label>About you</label><textarea id="pf_bio" rows="4" placeholder="A few lines about who you are and what draws you to this world."></textarea></div>
+          <div class="pf-field pf-col2"><label>Email (used to sign in)</label><input id="pf_email" type="email" disabled></div>
+        </div>
+        <div class="pf-actions">
+          <button class="pf-save" onclick="saveProfile()">Save my profile</button>
+          <button class="pf-back" onclick="goPage('program')">Back</button>
+          <span class="pf-status" id="pfStatus"></span>
+        </div>
       </div>
     </section>
 
@@ -2727,6 +2793,71 @@ async function loadProfile(){
   document.getElementById('sbName').textContent=name;
   document.getElementById('sbRole').textContent=(PROFILE.cohort? (PROFILE.cohort+' · Student'):'Student');
   document.getElementById('hiLine').textContent="Hi "+name.split(' ')[0];
+  refreshSidebarAvatar();
+}
+// ====== PROFIL ÉLÈVE ======
+function openProfile(){ goPage('profile'); }
+function pfSet(id,v){ const e=document.getElementById(id); if(e) e.value=v||''; }
+function pfVal(id){ const e=document.getElementById(id); return e? e.value.trim():''; }
+function refreshSidebarAvatar(){
+  const el=document.getElementById('sbAv'); if(!el) return;
+  if(PROFILE && PROFILE.avatar_url){ el.style.backgroundImage='url("'+PROFILE.avatar_url+'")'; el.style.backgroundSize='cover'; el.style.backgroundPosition='center'; el.textContent=''; }
+  else { el.style.backgroundImage=''; el.textContent=initials((PROFILE&&PROFILE.full_name)||(USER&&USER.email)||'?'); }
+}
+function renderPfAvatar(){
+  const el=document.getElementById('pfAv'); if(!el) return;
+  if(PROFILE && PROFILE.avatar_url){ el.style.backgroundImage='url("'+PROFILE.avatar_url+'")'; el.textContent=''; }
+  else { el.style.backgroundImage=''; el.textContent=initials((PROFILE&&PROFILE.full_name)||(USER&&USER.email)||'?'); }
+}
+function renderProfile(){
+  if(!PROFILE) return;
+  const fn=PROFILE.first_name || (PROFILE.full_name||'').split(' ')[0] || '';
+  const ln=PROFILE.last_name || (PROFILE.full_name||'').split(' ').slice(1).join(' ') || '';
+  pfSet('pf_first',fn); pfSet('pf_last',ln); pfSet('pf_headline',PROFILE.headline);
+  pfSet('pf_city',PROFILE.city); pfSet('pf_country',PROFILE.country); pfSet('pf_phone',PROFILE.phone);
+  pfSet('pf_languages',PROFILE.languages); pfSet('pf_experience',PROFILE.experience);
+  pfSet('pf_linkedin',PROFILE.linkedin); pfSet('pf_bio',PROFILE.bio);
+  const sit=document.getElementById('pf_situation'); if(sit) sit.value=PROFILE.situation||'';
+  const email=(PROFILE.email||(USER&&USER.email)||'');
+  pfSet('pf_email',email);
+  const eh=document.getElementById('pfEmailH'); if(eh) eh.textContent=email;
+  const nh=document.getElementById('pfNameH'); if(nh) nh.textContent=((fn+' '+ln).trim())||'Your name';
+  renderPfAvatar();
+}
+async function saveProfile(){
+  const st=document.getElementById('pfStatus'); if(st) st.textContent='Saving…';
+  const first=pfVal('pf_first'), last=pfVal('pf_last');
+  const full=(first+' '+last).trim() || (PROFILE.full_name||'');
+  const upd={ first_name:first, last_name:last, full_name:full, headline:pfVal('pf_headline'),
+    city:pfVal('pf_city'), country:pfVal('pf_country'), phone:pfVal('pf_phone'),
+    languages:pfVal('pf_languages'), situation:pfVal('pf_situation'), experience:pfVal('pf_experience'),
+    linkedin:pfVal('pf_linkedin'), bio:pfVal('pf_bio') };
+  try{
+    const {error}=await sb.from('profiles').update(upd).eq('id',USER.id);
+    if(error) throw error;
+    Object.assign(PROFILE,upd);
+    if(st) st.textContent='✓ Saved';
+    const sn=document.getElementById('sbName'); if(sn) sn.textContent=full;
+    const hl=document.getElementById('hiLine'); if(hl) hl.textContent='Hi '+((first||full||'there').split(' ')[0]);
+    const nh=document.getElementById('pfNameH'); if(nh) nh.textContent=full||'Your name';
+    setTimeout(()=>{ if(st) st.textContent=''; },2500);
+  }catch(e){ console.warn('save profile',e); if(st) st.textContent='Could not save. Please try again.'; }
+}
+async function uploadAvatar(file){
+  if(!file) return;
+  const st=document.getElementById('pfStatus'); if(st) st.textContent='Uploading photo…';
+  try{
+    const ext=((file.name||'').split('.').pop()||'jpg').toLowerCase();
+    const path=USER.id+'/avatar.'+ext;
+    const {error:upErr}=await sb.storage.from('avatars').upload(path,file,{upsert:true,contentType:file.type||'image/jpeg'});
+    if(upErr) throw upErr;
+    const {data:pub}=sb.storage.from('avatars').getPublicUrl(path);
+    const url=pub.publicUrl+'?v='+Date.now();
+    const {error}=await sb.from('profiles').update({avatar_url:url}).eq('id',USER.id);
+    if(error) throw error;
+    PROFILE.avatar_url=url; renderPfAvatar(); refreshSidebarAvatar();
+    if(st) st.textContent='✓ Photo updated'; setTimeout(()=>{ if(st) st.textContent=''; },2500);
+  }catch(e){ console.warn('avatar upload',e); if(st) st.textContent='Photo upload failed. Make sure the avatars storage bucket exists.'; }
 }
 async function loadProgress(){
   state={completed:{},lessons:{}};
@@ -3261,6 +3392,7 @@ function goPage(name, scrollTo){
   if(name==='register'){ renderRegister(); }
   if(name==='screening'){ renderScreening(); }
   if(name==='practice'){ renderPractice(); }
+  if(name==='profile'){ renderProfile(); }
   if(scrollTo){setTimeout(()=>{const el=document.getElementById(scrollTo);if(el)el.scrollIntoView({behavior:'smooth'});},60);}
 }
 document.querySelectorAll('.nav-item').forEach(n=>n.addEventListener('click',()=>goPage(n.dataset.page, n.dataset.scroll)));
