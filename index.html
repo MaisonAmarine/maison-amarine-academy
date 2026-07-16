@@ -2947,14 +2947,15 @@ async function loadAvatarDirectory(){
     (data||[]).forEach(p=>{ if(p.avatar_url){ map['id:'+p.id]=p.avatar_url; if(p.full_name) map['nm:'+p.full_name.trim().toLowerCase()]=p.avatar_url; } });
     AVATARS=map;
     try{
-      // 1) le plus fiable : un message admin dans la communauté porte le VRAI identifiant de la fondatrice
-      const am=await sb.from('community_messages').select('author_id').eq('is_admin',true).order('created_at',{ascending:false}).limit(1);
-      if(am.data && am.data[0] && am.data[0].author_id){
-        const uid=am.data[0].author_id;
-        if(map['id:'+uid]) MENTOR_AVATAR=map['id:'+uid];
-        else { try{ const p=await sb.from('profiles').select('avatar_url').eq('id',uid).maybeSingle(); if(p.data&&p.data.avatar_url) MENTOR_AVATAR=p.data.avatar_url; }catch(e){} }
+      // 1) le plus fiable : le profil dont le headline contient "Founder" (seule la fondatrice l'a)
+      const rf=await sb.from('profiles').select('avatar_url,headline').ilike('headline','%founder%').limit(1);
+      if(rf.data && rf.data[0] && rf.data[0].avatar_url) MENTOR_AVATAR=rf.data[0].avatar_url;
+      // 2) sinon, par un message admin en communauté (vrai identifiant)
+      if(!MENTOR_AVATAR){
+        const am=await sb.from('community_messages').select('author_id').eq('is_admin',true).order('created_at',{ascending:false}).limit(1);
+        if(am.data && am.data[0] && am.data[0].author_id && map['id:'+am.data[0].author_id]) MENTOR_AVATAR=map['id:'+am.data[0].author_id];
       }
-      // 2) sinon, par email exact du compte fondateur
+      // 3) sinon, par email exact du compte fondateur
       if(!MENTOR_AVATAR){ const r1=await sb.from('profiles').select('avatar_url').ilike('email',FOUNDER_EMAIL).limit(1); if(r1.data && r1.data[0] && r1.data[0].avatar_url) MENTOR_AVATAR=r1.data[0].avatar_url; }
     }catch(e){}
     applyMentorAvatar();
