@@ -225,6 +225,17 @@
   .conv-send{flex-shrink:0;background:linear-gradient(135deg,var(--gold),var(--gold-deep));color:#fff;border:none;border-radius:22px;padding:0 22px;height:44px;font-family:'Jost',sans-serif;font-size:13.5px;font-weight:600;cursor:pointer;transition:transform .2s,box-shadow .2s;box-shadow:0 4px 12px rgba(168,126,61,.32);}
   .conv-send:hover{transform:translateY(-1px);box-shadow:0 6px 16px rgba(168,126,61,.42);} .conv-send:disabled{opacity:.5;transform:none;}
   @media(max-width:760px){.msg-layout{flex-direction:column;height:auto;}.msg-listwrap{width:100%;}.msg-list{height:200px;}.msg-conv{height:440px;}}
+  .conv-icon{flex:none;width:38px;height:38px;border-radius:10px;border:1px solid var(--line);background:#fff;color:var(--stone);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .18s;}
+  .conv-icon svg{width:19px;height:19px;}
+  .conv-icon:hover{border-color:var(--gold-lt,#C9A867);color:var(--gold-deep,#8a6630);}
+  .conv-icon.recording{background:#c0392b;border-color:#c0392b;color:#fff;animation:apulse 1.1s infinite;}
+  @keyframes apulse{0%,100%{opacity:1}50%{opacity:.55}}
+  .conv-prev{display:flex;align-items:center;gap:10px;background:var(--gold-wash,#F3EAD8);border:1px solid var(--gold-lt,#C9A867);border-radius:10px;padding:8px 12px;margin:0 0 8px;}
+  .conv-prev .ap-name{flex:1;font-size:12.5px;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+  .conv-prev .ap-x{background:none;border:none;font-size:20px;line-height:1;color:var(--stone);cursor:pointer;padding:0 4px;}
+  .msg-media-img img{max-width:220px;max-height:240px;border-radius:10px;display:block;margin-bottom:6px;}
+  .msg-media-audio{display:block;max-width:240px;margin-bottom:6px;}
+  .msg-media-file{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:600;color:var(--gold-deep,#8a6630);text-decoration:none;margin-bottom:6px;}
   .amsg-tabs{display:flex;gap:8px;border-bottom:1px solid var(--line);margin-top:6px;}
   .amsg-tab{background:none;border:none;font-family:'Jost',sans-serif;font-size:14px;font-weight:600;color:var(--stone);padding:11px 16px;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1px;transition:color .2s,border-color .2s;}
   .amsg-tab:hover{color:var(--ink);}
@@ -535,7 +546,14 @@
         <div class="msg-conv" style="max-width:820px;height:min(66vh,600px);">
           <div class="conv-head"><h3>The Community</h3><p>The shared salon, every member sees this. Post to welcome, motivate, or set the tone.</p></div>
           <div class="conv-body" id="acommBody"></div>
-          <div class="conv-input"><textarea id="acommInput" rows="1" placeholder="Write to the whole community…"></textarea><button class="conv-send" id="acommSend">Post</button></div>
+          <div class="conv-prev" id="acommPrev" style="display:none;"></div>
+          <div class="conv-input">
+            <input type="file" id="acommFile" accept="image/*,.pdf,.doc,.docx" style="display:none;">
+            <button class="conv-icon" id="acommAttach" title="Attach a file"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 11.5l-8.5 8.5a5 5 0 0 1-7-7l8.5-8.5a3.3 3.3 0 0 1 4.7 4.7L10 17.5a1.7 1.7 0 0 1-2.3-2.3l7.8-7.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+            <button class="conv-icon" id="acommMic" title="Record a voice message"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M6 11a6 6 0 0 0 12 0M12 17v4M8 21h8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+            <textarea id="acommInput" rows="1" placeholder="Write to the whole community…"></textarea>
+            <button class="conv-send" id="acommSend">Post</button>
+          </div>
         </div>
       </div>
     </section>
@@ -1257,26 +1275,37 @@ function renderConversation(sid){
   conv.innerHTML=`
     <div class="conv-head"><h3>${s?s.name:'Student'}</h3><p>${s?s.email:''}</p></div>
     <div class="conv-body" id="convBody"></div>
-    <div class="conv-input"><textarea id="convInput" rows="1" placeholder="Write your reply…"></textarea><button class="conv-send" id="convSend">Send</button></div>`;
+    <div class="conv-prev" id="convPrev" style="display:none;"></div>
+    <div class="conv-input">
+      <input type="file" id="convFile" accept="image/*,.pdf,.doc,.docx" style="display:none;">
+      <button class="conv-icon" id="convAttach" title="Attach a file"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 11.5l-8.5 8.5a5 5 0 0 1-7-7l8.5-8.5a3.3 3.3 0 0 1 4.7 4.7L10 17.5a1.7 1.7 0 0 1-2.3-2.3l7.8-7.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <button class="conv-icon" id="convMic" title="Record a voice message"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M6 11a6 6 0 0 0 12 0M12 17v4M8 21h8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <textarea id="convInput" rows="1" placeholder="Write your reply…"></textarea><button class="conv-send" id="convSend">Send</button>
+    </div>`;
   const body=conv.querySelector('#convBody');
   if(msgs.length===0){ body.innerHTML='<div class="conv-none">No messages yet with this student.</div>'; }
   else{
     msgs.forEach(m=>{
       const div=document.createElement('div');
       div.className='cbubble '+(m.sender==='admin'?'me':'them');
-      div.innerHTML=`${escapeHtml(m.body)}<span class="when">${m.sender==='admin'?'You':(s?s.name.split(' ')[0]:'Student')} · ${fmtTime(m.created_at)}</span>`;
+      div.innerHTML=`${admMediaHTML(m.media_url,m.media_type)}${escapeHtml(m.body||'')}<span class="when">${m.sender==='admin'?'You':(s?s.name.split(' ')[0]:'Student')} · ${fmtTime(m.created_at)}</span>`;
       body.appendChild(div);
     });
     body.scrollTop=body.scrollHeight;
   }
+  admWireComposer('priv');
   const send=conv.querySelector('#convSend');
   const inp=conv.querySelector('#convInput');
   const doSend=async()=>{
-    const txt=inp.value.trim(); if(!txt)return;
+    const txt=inp.value.trim(); const media=admPending.priv;
+    if(!txt && !media) return;
     send.disabled=true;
-    const {error}=await sb.from('messages').insert({student_id:sid,sender:'admin',body:txt});
+    let media_url=null, media_type=null;
+    if(media){ media_url=await admUpload(media.file, media.isVoice); if(!media_url){ send.disabled=false; toast('Could not upload the file'); return; } media_type=admMediaType(media.file, media.isVoice); }
+    const {error}=await sb.from('messages').insert({student_id:sid,sender:'admin',body:txt,media_url,media_type});
     send.disabled=false;
-    if(error){toast('Could not send');return;}
+    if(error){toast('Could not send: '+(error.message||''));return;}
+    admClearPreview('priv');
     inp.value=''; inp.style.height='auto';
     await loadInbox();
   };
@@ -1294,6 +1323,51 @@ document.querySelectorAll('.amsg-tab').forEach(t=>t.addEventListener('click',()=
   document.getElementById('atab-community').style.display = tab==='community'?'block':'none';
   try{ if(tab==='community') loadAdminCommunity(); }catch(e){}
 }));
+// ===== Média (pièce jointe + vocal) pour la messagerie admin =====
+const admPending={priv:null, comm:null};
+const admRec={};
+async function admUpload(file, isVoice){
+  const uid=(SESSION&&SESSION.user&&SESSION.user.id)||'admin';
+  const ext=isVoice?'webm':((file.name||'').split('.').pop()||'bin');
+  const path=uid+'/'+Date.now()+'-'+Math.random().toString(36).slice(2,8)+'.'+ext;
+  const {error}=await sb.storage.from('chat-media').upload(path,file,{upsert:false,contentType:file.type||'application/octet-stream'});
+  if(error){ console.warn('upload media',error); return null; }
+  const {data}=sb.storage.from('chat-media').getPublicUrl(path);
+  return data?data.publicUrl:null;
+}
+function admMediaType(file,isVoice){ if(isVoice) return 'voice'; if(file.type&&file.type.startsWith('image/')) return 'image'; return 'file'; }
+function admMediaHTML(url,type){
+  if(!url) return '';
+  if(type==='image') return `<a href="${url}" target="_blank" rel="noopener" class="msg-media-img"><img src="${url}" loading="lazy"></a>`;
+  if(type==='voice') return `<audio class="msg-media-audio" controls src="${url}"></audio>`;
+  return `<a href="${url}" target="_blank" rel="noopener" class="msg-media-file"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg> Attachment</a>`;
+}
+function admIds(scope){ return scope==='comm' ? {file:'acommFile',att:'acommAttach',mic:'acommMic',prev:'acommPrev'} : {file:'convFile',att:'convAttach',mic:'convMic',prev:'convPrev'}; }
+function admShowPreview(scope,file,isVoice){
+  admPending[scope]={file,isVoice};
+  const ids=admIds(scope); const box=document.getElementById(ids.prev); if(!box) return;
+  const label=isVoice?'Voice message ready':(file.name||'File');
+  box.style.display='flex'; box.innerHTML='<span class="ap-name">'+escapeHtml(label)+'</span><button class="ap-x" title="Remove">&times;</button>';
+  box.querySelector('.ap-x').addEventListener('click',()=>admClearPreview(scope));
+}
+function admClearPreview(scope){
+  admPending[scope]=null; const ids=admIds(scope); const box=document.getElementById(ids.prev); if(box){ box.style.display='none'; box.innerHTML=''; }
+}
+async function admToggleRec(scope,btn){
+  if(admRec[scope]){ admRec[scope].stop(); return; }
+  if(!navigator.mediaDevices||!navigator.mediaDevices.getUserMedia){ toast('Voice recording is not supported here'); return; }
+  let stream; try{ stream=await navigator.mediaDevices.getUserMedia({audio:true}); }catch(e){ toast('Microphone access was declined'); return; }
+  const rec=new MediaRecorder(stream); const chunks=[];
+  rec.ondataavailable=e=>{ if(e.data.size>0) chunks.push(e.data); };
+  rec.onstop=()=>{ stream.getTracks().forEach(t=>t.stop()); btn.classList.remove('recording'); admRec[scope]=null; const blob=new Blob(chunks,{type:'audio/webm'}); if(blob.size>0){ admShowPreview(scope,new File([blob],'voice-'+Date.now()+'.webm',{type:'audio/webm'}),true); } };
+  admRec[scope]=rec; btn.classList.add('recording'); rec.start();
+}
+function admWireComposer(scope){
+  const ids=admIds(scope);
+  const f=document.getElementById(ids.file), att=document.getElementById(ids.att), mic=document.getElementById(ids.mic);
+  if(att && !att.dataset.wired){ att.dataset.wired='1'; att.addEventListener('click',()=>f.click()); f.addEventListener('change',()=>{ if(f.files[0]) admShowPreview(scope,f.files[0],false); f.value=''; }); }
+  if(mic && !mic.dataset.wired){ mic.dataset.wired='1'; mic.addEventListener('click',function(){ admToggleRec(scope,this); }); }
+}
 async function loadAdminCommunity(){
   const {data,error}=await sb.from('community_messages').select('*').order('created_at',{ascending:true}).limit(200);
   if(error) return;
@@ -1308,7 +1382,7 @@ async function loadAdminCommunity(){
     // l'admin peut supprimer tout, et éditer ses propres messages
     const editBtn = mine ? `<button class="acbub-act" data-aedit="${m.id}" title="Edit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 20h9M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z" stroke-linecap="round" stroke-linejoin="round"/></svg></button>` : '';
     const actions = `<div class="acbub-actions">${editBtn}<button class="acbub-act" data-adel="${m.id}" title="Delete"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16M9 7V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2M6 7l1 13h10l1-13" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div>`;
-    div.innerHTML=`<div class="who">${escapeHtml(who)}</div><div class="msg" data-abody="${m.id}">${escapeHtml(m.body)}<span class="when">${fmtTime(m.created_at)}</span></div>${actions}`;
+    div.innerHTML=`<div class="who">${escapeHtml(who)}</div><div class="msg" data-abody="${m.id}">${admMediaHTML(m.media_url,m.media_type)}${escapeHtml(m.body||'')}<span class="when">${fmtTime(m.created_at)}</span></div>${actions}`;
     body.appendChild(div);
   });
   body.querySelectorAll('[data-adel]').forEach(b=>b.addEventListener('click',()=>adminDeleteComm(b.dataset.adel)));
@@ -1320,19 +1394,23 @@ async function loadAdminCommunity(){
   if(send && !send.dataset.wired){
     send.dataset.wired='1';
     const doPost=async()=>{
-      const txt=inp.value.trim(); if(!txt)return;
+      const txt=inp.value.trim(); const media=admPending.comm;
+      if(!txt && !media) return;
       send.disabled=true;
       const uid=(SESSION&&SESSION.user&&SESSION.user.id)||null;
-      let {error}=await sb.from('community_messages').insert({author_id:uid,author_name:'Émilie',is_admin:true,body:txt,media_url:null,media_type:null});
+      let media_url=null, media_type=null;
+      if(media){ media_url=await admUpload(media.file, media.isVoice); if(!media_url){ send.disabled=false; toast('Could not upload the file'); return; } media_type=admMediaType(media.file, media.isVoice); }
+      let {error}=await sb.from('community_messages').insert({author_id:uid,author_name:'Émilie',is_admin:true,body:txt,media_url,media_type});
       // si la règle bloque le drapeau admin, on réessaie sans is_admin (le message passe quand même)
-      if(error){ const r2=await sb.from('community_messages').insert({author_id:uid,author_name:'Émilie',body:txt}); error=r2.error; }
+      if(error){ const r2=await sb.from('community_messages').insert({author_id:uid,author_name:'Émilie',body:txt,media_url,media_type}); error=r2.error; }
       send.disabled=false;
       if(error){toast('Could not post: '+(error.message||error.code||'unknown'));console.warn('community post error',error);return;}
-      inp.value=''; inp.style.height='auto'; loadAdminCommunity();
+      inp.value=''; inp.style.height='auto'; admClearPreview('comm'); loadAdminCommunity();
     };
     send.addEventListener('click',doPost);
     inp.addEventListener('keydown',e=>{if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();doPost();}});
     inp.addEventListener('input',function(){this.style.height='auto';this.style.height=Math.min(this.scrollHeight,110)+'px';});
+    admWireComposer('comm');
   }
 }
 async function adminDeleteComm(id){
