@@ -628,6 +628,14 @@
   .lsn-callout-k + .lsn-callout-body{margin-top:8px;}
   .lsn-callout-body{background:var(--gold-wash);border-left:3px solid var(--gold-lt);border-radius:0 12px 12px 0;padding:16px 22px;font-family:'Cormorant',serif;font-weight:500;font-size:20px;line-height:1.7;color:#3a342c;margin:0 0 20px;}
   .lsn-callout-body strong{font-weight:700;color:var(--gold-deep);background:none;}
+  /* listes numérotées / à puces */
+  .lsn-reading ol.lsn-list{margin:8px 0 22px;padding-left:0;list-style:none;}
+  .lsn-reading ol.lsn-list li{position:relative;padding-left:48px;margin:0 0 15px;font-family:'Cormorant',Georgia,serif;font-size:21px;line-height:1.7;color:#332E28;counter-increment:lsncount;}
+  .lsn-reading ol.lsn-list li::before{content:counter(lsncount);position:absolute;left:0;top:1px;width:31px;height:31px;border-radius:50%;background:var(--gold-wash);border:1px solid var(--gold-lt);color:var(--gold-deep);font-family:'Jost',sans-serif;font-size:13.5px;font-weight:600;display:flex;align-items:center;justify-content:center;}
+  .lsn-reading ul.lsn-list{margin:8px 0 22px;padding-left:2px;list-style:none;}
+  .lsn-reading ul.lsn-list li{position:relative;padding-left:26px;margin:0 0 13px;font-family:'Cormorant',Georgia,serif;font-size:21px;line-height:1.7;color:#332E28;}
+  .lsn-reading ul.lsn-list li::before{content:"";position:absolute;left:3px;top:15px;width:8px;height:8px;border-radius:50%;background:var(--gold);}
+  .lsn-reading ol.lsn-list li strong,.lsn-reading ul.lsn-list li strong{font-weight:600;color:var(--ink);background:linear-gradient(transparent 60%, var(--gold-wash) 0);}
   .lsn-foot{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:30px;padding-top:22px;border-top:1px solid var(--line);}
   .lsn-nav{display:inline-flex;align-items:center;gap:8px;font-family:'Jost',sans-serif;font-size:13px;font-weight:600;color:var(--gold-deep);background:var(--paper);border:1px solid var(--line);border-radius:11px;padding:11px 18px;cursor:pointer;transition:all .18s;}
   .lsn-nav:hover:not(:disabled){border-color:var(--gold-lt);background:var(--gold-wash);}
@@ -3520,6 +3528,16 @@ function mdInline(t){
   h=h.replace(/(^|[^*])\*([^*\n]+)\*(?!\*)/g,'$1<em>$2</em>');
   return h.replace(/\n/g,'<br>');
 }
+// Détecte une énumération "1. ... 2. ... 3. ..." à l'intérieur d'un paragraphe
+function splitEnum(p){
+  const re=/(^|\s)(\d{1,2})\.\s+/g; let m, marks=[];
+  while((m=re.exec(p))){ marks.push({at:m.index+m[1].length, num:parseInt(m[2],10), textStart:re.lastIndex}); }
+  if(marks.length<2) return null;
+  for(let i=1;i<marks.length;i++){ if(marks[i].num!==marks[i-1].num+1) return null; }
+  const lead=p.slice(0,marks[0].at).trim();
+  const list=marks.map((mk,i)=>{ const end=(i+1<marks.length)?marks[i+1].at:p.length; return {num:mk.num, text:p.slice(mk.textStart,end).trim()}; });
+  return {lead:lead, list:list};
+}
 function lessonSections(text){
   const out=[];
   if(!text||!text.trim()) return out;
@@ -3571,21 +3589,42 @@ function svOpenSection(i){
   const {secs}=svCur, total=secs.length;
   if(i<0||i>=total) return;
   const x=secs[i], body=document.getElementById('stepViewBody');
-  let bodyhtml='', afterLabel=false, dropDone=false;
+  // 1) tokeniser les paragraphes (texte, gras/titre, éléments de liste)
+  const tokens=[];
   x.paras.forEach(p=>{
-    const isFullBold=/^\*\*[^*]+\*\*$/.test(p);
-    const bare=p.replace(/^\*\*/,'').replace(/\*\*$/,'').trim();
-    if(isFullBold){
-      const isAllCaps = bare===bare.toUpperCase() && /[A-Z]/.test(bare);
-      if(isAllCaps){ bodyhtml+=`<div class="lsn-callout-k">${escapeHtml(bare)}</div>`; afterLabel=true; }
-      else { bodyhtml+=`<h3 class="lsn-subhead">${mdInline(bare)}</h3>`; afterLabel=false; }
-      return;
+    if(/^\*\*[^*]+\*\*$/.test(p)){ tokens.push({t:'bold', v:p.replace(/^\*\*/,'').replace(/\*\*$/,'').trim()}); return; }
+    const en=splitEnum(p);
+    if(en){ if(en.lead) tokens.push({t:'p', v:en.lead}); en.list.forEach(it=>tokens.push({t:'li', num:it.num, v:it.text})); return; }
+    const single=p.match(/^(\d{1,2})\.\s+([\s\S]+)$/);
+    if(single){ tokens.push({t:'li', num:parseInt(single[1],10), v:single[2].trim()}); return; }
+    const bul=p.match(/^[-•]\s+([\s\S]+)$/);
+    if(bul){ tokens.push({t:'li', bullet:true, v:bul[1].trim()}); return; }
+    tokens.push({t:'p', v:p});
+  });
+  // 2) rendu, en regroupant les éléments de liste consécutifs
+  let bodyhtml='', afterLabel=false, dropDone=false, j=0;
+  while(j<tokens.length){
+    const tk=tokens[j];
+    if(tk.t==='li'){
+      const bullet=!!tk.bullet, start=tk.num||1;
+      let lis='';
+      while(j<tokens.length && tokens[j].t==='li' && !!tokens[j].bullet===bullet){ lis+=`<li>${mdInline(tokens[j].v)}</li>`; j++; }
+      if(bullet){ bodyhtml+=`<ul class="lsn-list">${lis}</ul>`; }
+      else { bodyhtml+=`<ol class="lsn-list" style="counter-reset:lsncount ${start-1};">${lis}</ol>`; }
+      afterLabel=false; continue;
+    }
+    if(tk.t==='bold'){
+      const isAllCaps = tk.v===tk.v.toUpperCase() && /[A-Z]/.test(tk.v);
+      if(isAllCaps){ bodyhtml+=`<div class="lsn-callout-k">${escapeHtml(tk.v)}</div>`; afterLabel=true; }
+      else { bodyhtml+=`<h3 class="lsn-subhead">${mdInline(tk.v)}</h3>`; afterLabel=false; }
+      j++; continue;
     }
     let cls='lsn-para';
     if(!dropDone && !afterLabel){ cls+=' lsn-drop'; dropDone=true; }
     if(afterLabel){ cls+=' lsn-callout-body'; afterLabel=false; }
-    bodyhtml+=`<p class="${cls}">${mdInline(p)}</p>`;
-  });
+    bodyhtml+=`<p class="${cls}">${mdInline(tk.v)}</p>`;
+    j++;
+  }
   let html=`<div class="lsn-vault lsn-reading">
     <button class="lsn-toc-back" onclick="svShowToc()">${ICO_ARL} Contents</button>
     <div class="lsn-chapmark">Chapter ${i+1} of ${total}</div>
