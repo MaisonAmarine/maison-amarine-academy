@@ -620,6 +620,8 @@
   .lsn-reading .lsn-def + .lsn-def{border-top:1px solid var(--line);}
   .lsn-reading .lsn-def-t{padding:16px 20px;background:var(--gold-wash);font-family:'Cormorant',serif;font-weight:600;font-size:19px;line-height:1.32;color:var(--gold-deep);border-right:1px solid var(--gold-lt);}
   .lsn-reading .lsn-def-d{padding:16px 22px;font-family:'Cormorant',serif;font-weight:400;font-size:19px;line-height:1.62;color:#3a342c;}
+  .lsn-reading .lsn-def-head .lsn-def-t,.lsn-reading .lsn-def-head .lsn-def-d{font-family:'Jost',sans-serif;font-size:10.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-deep);padding-top:13px;padding-bottom:13px;}
+  .lsn-reading .lsn-def-head .lsn-def-d{background:var(--gold-wash);}
   @media(max-width:680px){ .lsn-reading .lsn-def{grid-template-columns:1fr;} .lsn-reading .lsn-def-t{border-right:none;border-bottom:1px solid var(--gold-lt);} }
   .lsn-toc-back{display:inline-flex;align-items:center;gap:8px;background:none;border:none;cursor:pointer;font-family:'Jost',sans-serif;font-size:12.5px;font-weight:600;letter-spacing:.02em;color:var(--gold-deep);padding:6px 10px 6px 0;margin-bottom:14px;transition:transform .18s;}
   .lsn-toc-back:hover{transform:translateX(-3px);}
@@ -3685,7 +3687,13 @@ function svOpenSection(i){
       const group=[]; while(j<tokens.length && tokens[j].t==='def'){ group.push(tokens[j]); j++; }
       const asTable = group.length>=2 && group.every(g=>g.term.length<=42);
       if(asTable){
-        const rows=group.map(g=>`<div class="lsn-def"><div class="lsn-def-t">${mdInline(g.term)}</div><div class="lsn-def-d">${mdInline(g.v)}</div></div>`).join('');
+        // dédoublonner les en-têtes répétés (tableaux à cheval sur 2 pages du PDF)
+        const seen=new Set(), uniq=[];
+        group.forEach(g=>{ const k=(g.term+'|'+g.v).toLowerCase(); if(!seen.has(k)){ seen.add(k); uniq.push(g); } });
+        const rows=uniq.map((g,idx)=>{
+          const head = idx===0 && g.v.length<=24 && g.term.length<=24;
+          return `<div class="lsn-def${head?' lsn-def-head':''}"><div class="lsn-def-t">${mdInline(g.term)}</div><div class="lsn-def-d">${mdInline(g.v)}</div></div>`;
+        }).join('');
         bodyhtml+=`<div class="lsn-defs">${rows}</div>`;
       } else {
         group.forEach(g=>{ bodyhtml+=`<p class="lsn-para"><strong class="lsn-lead">${mdInline(g.term)}.</strong> ${mdInline(g.v)}</p>`; });
