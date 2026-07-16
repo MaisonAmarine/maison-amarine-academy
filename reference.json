@@ -1,52 +1,6 @@
 {
  "books": [
   {
-   "id": "cv",
-   "title": "The Curriculum Vitae",
-   "subtitle": "A complete, worked example of a private-service CV, and the discipline behind every line of it.",
-   "icon": "cv",
-   "pdf": "Maison-Amarine-CV-Complete.pdf",
-   "intro": "<p>Everything for your CV is in one document. It opens with the discipline behind a private-service CV, one page, never a name, scope rather than tasks, and closes with a finished example to aim for. Use the button above to download the complete PDF.</p>",
-   "sections": [
-    {
-     "h": "The forty-second test",
-     "html": "<p>The person who reads your CV is not a recruiter in the ordinary sense. It is a principal, a family office, or a consultant who has read four hundred of these. They will give yours somewhere between forty and ninety seconds, and in that time they are answering one question: can this person be trusted with a life?</p>\n<p>A private CV is therefore not a career history. It is a demonstration of judgement, and the first thing it demonstrates is what you chose to leave out. Restraint is the very first quality this world looks for, and your CV is the first place it will find it, or fail to. One page. Never two.</p>"
-    },
-    {
-     "h": "The photograph, honestly",
-     "html": "<p>There are two schools, and you should know both. In private household service, especially through European agencies and for live-in or family-facing roles, a discreet, professional headshot is common and often expected. It reassures, it personalises, and its absence can read as a small omission. This is why the example here includes one.</p>\n<p>In other contexts, chiefly direct applications in the United States, a photo is discouraged and occasionally a liability, because of anti-discrimination norms in hiring. The rule, then, is not \"always\" or \"never\", it is \"read the destination\". Include the photo when you apply through an agency or to a European household. Consider omitting it for a direct US application, or keep a second, photo-free version ready.</p>\n<p>When you do include one: a real professional headshot, shoulders up, plain background, warm but composed, dressed as you would for the interview. No holiday crop, no filter, no selfie. The photo should say discretion and standard, exactly as the rest of the page does.</p>"
-    },
-    {
-     "h": "The golden rule: never a name",
-     "html": "<p>Never write the name of a family, a principal, a residence, a yacht or a company you served privately. A CV that names a former private employer will be discarded by anyone serious, and rightly so, because it tells them precisely how yours will be handled next.</p>\n<p>Instead, describe the <em>shape</em> of the role. \"A UHNW family (private), principal residences in London and Gstaad.\" \"A single-family office, residences in Monaco and Los Angeles.\" \"A private luxury villa, seasonal, on the Cote d'Azur.\" This protects the family, and it proves the discretion you are claiming, in the same line.</p>"
-    },
-    {
-     "h": "Scope, not tasks",
-     "html": "<p>Amateurs list tasks. Professionals state scope, and let numbers do the only boasting that is permitted here.</p>\n<p>Not \"managed calendars and travel\". Instead: \"ran the personal affairs of a family across three residences, coordinating twenty vendors and a household budget of 1.2M.\" Numbers, staff led, residences run, budget held, guests hosted, savings found, are the quiet proof of the size of the world you can hold. Use them, and use nothing louder.</p>"
-    },
-    {
-     "h": "The structure, section by section",
-     "html": "<p><strong>Header.</strong> Your name, then one line beneath it: the role you are <em>for</em>, not only the role you <em>had</em>. \"Private House and Estate Manager.\" Then a compact strip of essentials: location, mobility, languages, right to work, licences.</p>\n<p><strong>The line (tagline).</strong> One sentence, in italics, directly under the header. It is the only place you are permitted to speak of yourself in the round. Keep it to a breath: years of service, the kind of houses, and the discretion they required.</p>\n<p><strong>Profile.</strong> Three or four sentences. Who you are in a house, what you are known for, and the reassurance a principal is looking for. Calm, anticipatory, exact.</p>\n<p><strong>Experience.</strong> Reverse chronological. For each role: the kind of household (never the name), your title, the dates, then two to four lines. Each line starts with a verb and ends with a consequence.</p>\n<p><strong>Core competencies.</strong> A short, scannable block: household and estate operations, staff leadership, budgets and vendors, private travel and aviation, entertaining, security liaison, inventory, discretion. Only what you could defend, calmly, in an interview.</p>\n<p><strong>Languages and mobility.</strong> Stated plainly, with honest levels. In this world, mobility is not a detail, it is a qualification. If you will relocate, say so.</p>\n<p><strong>Education and training.</strong> Your certifications, your academy, first aid, food hygiene, driving. Relevant, not exhaustive.</p>\n<p><strong>References.</strong> One line: \"Available on request, subject to the consent of the household.\" That sentence alone tells them you understand the whole profession.</p>"
-    },
-    {
-     "h": "What to leave out",
-     "html": "<p>No home address, no date of birth, no marital status, no photograph of anything but your face, no salary history, no reference to a named principal, and no design that draws attention to itself. Leave out every adjective you cannot prove and every word a serious person would find loud: \"iconic\", \"passionate\", \"world-class\". The confidence is in the restraint.</p>"
-    },
-    {
-     "h": "Tone and typography",
-     "html": "<p>Cream or white, ink, one accent used sparingly, one clean serif and one clean sans. Generous margins. Nothing decorative. The document should feel like a calling card left on a silver tray, not a portfolio. If a choice makes it look more designed, it is the wrong choice.</p>"
-    },
-    {
-     "h": "The worked example, and why it works",
-     "html": "<p>The downloadable example belongs to Camille Laurent, an imagined Private House and Estate Manager with twelve years behind her. Read it against everything above and you will see the discipline in action: every private employer is described by shape, never by name; every role leads with scope and closes on a number; the photograph is discreet and professional; the competencies are all defensible; and the references line does the quiet, knowing work it is meant to.</p>\n<p>It is not a real person, and that is the point. It is the standard, cleaned of any single life, so that you can build your own to meet it.</p>"
-    },
-    {
-     "h": "Your checklist before you send",
-     "html": "<p>One page, and it breathes. No name of any private employer, anywhere. Every experience line begins with a verb and ends with a consequence. At least one honest number in each senior role. Photograph chosen for the destination, and professional if included. Languages and mobility stated. References line present. Read aloud once, slowly, for the single typo that undoes all of it. Then, and only then, send.</p>"
-    }
-   ]
-  },
-  {
    "id": "toolkit",
    "title": "The Household Operations Toolkit",
    "subtitle": "The real working documents of the private-service profession, ready to use, ready to carry into your first house.",
