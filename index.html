@@ -192,6 +192,9 @@
   .pr-newbest{font-family:'Jost',sans-serif;font-size:14px;font-weight:600;color:var(--gold-deep);background:var(--gold-wash);border-radius:12px;padding:11px 16px;margin:2px auto 18px;max-width:400px;}
   .pr-bestline{font-family:'Jost',sans-serif;font-size:13px;color:var(--stone);margin:0 0 16px;}
   .cert-banner{display:flex;align-items:center;gap:20px;margin-top:22px;background:linear-gradient(135deg,#faf4e8,#f2e7cf);border:1px solid var(--gold-lt);border-radius:18px;padding:24px 28px;flex-wrap:wrap;}
+  .cert-banner.locked{background:linear-gradient(135deg,#f6f2ea,#efe9dc);border-color:var(--line);}
+  .cert-banner.locked .cert-seal{color:var(--stone);opacity:.7;}
+  .cert-banner.locked .btn-gold{background:var(--ink-soft);}
   .cert-seal{width:46px;height:46px;color:var(--gold-deep);flex:none;}
   .cert-seal svg{width:46px;height:46px;}
   .cert-tx{flex:1;min-width:220px;}
@@ -1433,8 +1436,8 @@
       </div>
       <div class="cert-banner hidden" id="certBanner">
         <div class="cert-seal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="10" r="6"/><path d="M8.5 15.5L7 22l5-2.5L17 22l-1.5-6.5" stroke-linejoin="round"/><path d="M9.5 10l1.6 1.6L14.5 8.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <div class="cert-tx"><h3>You have completed all eight weeks.</h3><p>Your certificate of completion is ready, in your name. Download it, keep it, and carry it with pride.</p></div>
-        <button class="btn-gold" onclick="showCertificate()" style="border:none;cursor:pointer;">Download my certificate</button>
+        <div class="cert-tx"><h3 id="certH">You have completed all eight weeks.</h3><p id="certP">Your certificate of completion is ready, in your name. Download it, keep it, and carry it with pride.</p></div>
+        <button class="btn-gold" id="certBtn" onclick="showCertificate()" style="border:none;cursor:pointer;">Download my certificate</button>
       </div>
     </section>
 
@@ -2570,6 +2573,7 @@ function renderResult(w){
   let isBest=false;
   if(!prev || s>prev.score){ PR_STATE.best[w.no]={score:s,total:total}; isBest=(s>0 && (!prev || s>prev.score)); }
   savePractice();
+  if(typeof updateResume==='function') updateResume();
   let title,msg;
   if(pct===1){ title="Flawless."; msg="Every answer right. You have genuinely absorbed this week, and that instinct is exactly what a household feels in the room."; }
   else if(pct>=0.6){ title="Well played."; msg="A strong pass. Read the feedback on the ones you missed, then run it again and watch it click into place."; }
@@ -2603,6 +2607,7 @@ function prFlashDone(){
   const w=PRACTICE.find(x=>x.no===prState.no);
   PR_STATE.best[prState.no]={score:w.cards.length,total:w.cards.length};
   savePractice();
+  if(typeof updateResume==='function') updateResume();
   const wrap=document.getElementById('practiceWrap');
   wrap.innerHTML=`<div class="pr-run"><div class="pr-result"><div class="pr-score">${w.cards.length}</div><h2>Cards reviewed.</h2><p>Come back to these whenever you like. The words become yours by repetition, and fluency in them is what quietly marks the insider.</p><div class="pr-acts"><button class="pr-btn" onclick="startPractice(${w.no})">Review again</button><button class="pr-btn ghost" onclick="renderPractice()">All exercises</button></div></div></div>`;
 }
@@ -3061,12 +3066,29 @@ function updateResume(){
   document.getElementById('barFill').style.width=pct+"%";
   const cur=highestUnlocked();const w=WEEKS[cur-1];
   const cert=document.getElementById('certBanner');
+  const totalP=(typeof PRACTICE!=='undefined'&&PRACTICE)?PRACTICE.length:8;
+  const doneP=(typeof PRACTICE!=='undefined'&&PRACTICE)?PRACTICE.filter(w=>PR_STATE.done[w.no]).length:0;
   if(done>=8){
     document.getElementById('resumeTitle').textContent="You've completed the program";
     document.getElementById('resumeDesc').textContent="Every week is done. The door is open, step through.";
     document.getElementById('resumeBtnLabel').textContent="Review my program";
     document.getElementById('progSub').textContent="Congratulations, you made it inside.";
-    if(cert) cert.classList.remove('hidden');
+    const certH=document.getElementById('certH'), certP=document.getElementById('certP'), certBtn=document.getElementById('certBtn');
+    if(cert){
+      cert.classList.remove('hidden');
+      if(doneP>=totalP){
+        cert.classList.remove('locked');
+        if(certH) certH.textContent="You have completed all eight weeks and every exercise.";
+        if(certP) certP.textContent="Your certificate of completion is ready, in your name. Download it, keep it, and carry it with pride.";
+        if(certBtn){ certBtn.textContent="Download my certificate"; certBtn.setAttribute('onclick','showCertificate()'); }
+      } else {
+        cert.classList.add('locked');
+        const left=totalP-doneP;
+        if(certH) certH.textContent="One last step before your certificate.";
+        if(certP) certP.textContent="All eight modules are done. Complete your Practice exercises to unlock your certificate. "+left+" week"+(left>1?"s":"")+" of practice still to go.";
+        if(certBtn){ certBtn.textContent="Go to my exercises"; certBtn.setAttribute('onclick',"goPage('practice')"); }
+      }
+    }
   } else {
     document.getElementById('resumeTitle').textContent=(lessonProgress(cur)>0?"Continue Week "+cur:"Start Week "+cur);
     document.getElementById('resumeDesc').textContent=w.title+" · "+w.sub;
@@ -3111,6 +3133,10 @@ function renderDashboard(){
   if(q){ const idx=Math.floor(Date.now()/86400000)%DASH_QUOTES.length; q.innerHTML=`<div class="dash-q-k">&#10070; The code of the day</div><p>${DASH_QUOTES[idx]}</p>`; }
 }
 function showCertificate(){
+  const doneW=Object.values(state.completed).filter(Boolean).length;
+  const totalP=(typeof PRACTICE!=='undefined'&&PRACTICE)?PRACTICE.length:8;
+  const doneP=(typeof PRACTICE!=='undefined'&&PRACTICE)?PRACTICE.filter(w=>PR_STATE.done[w.no]).length:0;
+  if(doneW<8 || doneP<totalP){ if(typeof toast==='function') toast('Finish all eight modules and every exercise first', true); return; }
   const name=(PROFILE && PROFILE.full_name) ? PROFILE.full_name : ((typeof USER!=='undefined' && USER && USER.email)? USER.email.split('@')[0] : 'Maison Amarine Mentee');
   const today=new Date().toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'});
   const safe=s=>String(s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
