@@ -2947,10 +2947,11 @@ async function loadAvatarDirectory(){
     (data||[]).forEach(p=>{ if(p.avatar_url){ map['id:'+p.id]=p.avatar_url; if(p.full_name) map['nm:'+p.full_name.trim().toLowerCase()]=p.avatar_url; } });
     AVATARS=map;
     try{
-      const {data:f}=await sb.from('profiles').select('avatar_url').eq('email',FOUNDER_EMAIL).maybeSingle();
-      if(f && f.avatar_url) MENTOR_AVATAR=f.avatar_url;
+      const r1=await sb.from('profiles').select('avatar_url').ilike('email',FOUNDER_EMAIL).limit(1);
+      if(r1.data && r1.data[0] && r1.data[0].avatar_url){ MENTOR_AVATAR=r1.data[0].avatar_url; }
+      if(!MENTOR_AVATAR){ const r2=await sb.from('profiles').select('avatar_url').ilike('full_name','%mili%').limit(1); if(r2.data && r2.data[0] && r2.data[0].avatar_url){ MENTOR_AVATAR=r2.data[0].avatar_url; } }
     }catch(e){}
-    if(!MENTOR_AVATAR && map['nm:émilie']) MENTOR_AVATAR=map['nm:émilie'];
+    if(!MENTOR_AVATAR && (map['nm:émilie']||map['nm:emilie'])) MENTOR_AVATAR=map['nm:émilie']||map['nm:emilie'];
     applyMentorAvatar();
   }catch(e){}
 }
@@ -3333,11 +3334,17 @@ function calParse(s){ const p=(s||'').split('-'); return new Date(+p[0], (+p[1])
 function calYmd(d){ return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0'); }
 function weekDate(n){ if(!CAL_PLAN) return null; const d=calParse(CAL_PLAN.start); d.setDate(d.getDate()+(n-1)*CAL_PLAN.interval); return d; }
 function mentorDate(n){ if(!CAL_PLAN) return null; const d=calParse(CAL_PLAN.start); d.setDate(d.getDate()+(n*CAL_PLAN.interval)-1); return d; }
+// Plan par défaut : la semaine 1 démarre à la date d'inscription de l'élève.
+function enrollmentPlan(){
+  try{ if(PROFILE && PROFILE.created_at){ return {start: calYmd(new Date(PROFILE.created_at)), interval:7, _default:true}; } }catch(e){}
+  return null;
+}
 function renderCalendar(){
+  if(!CAL_PLAN){ CAL_PLAN=enrollmentPlan(); }   // pré-rempli si l'élève n'a pas encore personnalisé
   const ps=document.getElementById('planStart'), pp=document.getElementById('planPace');
   if(ps && CAL_PLAN) ps.value=CAL_PLAN.start;
   if(pp && CAL_PLAN) pp.value=String(CAL_PLAN.interval);
-  const clr=document.getElementById('planClear'); if(clr) clr.style.display=CAL_PLAN?'inline-flex':'none';
+  const clr=document.getElementById('planClear'); if(clr) clr.style.display=(CAL_PLAN && !CAL_PLAN._default)?'inline-flex':'none';
   if(!calYM){ const base=CAL_PLAN?calParse(CAL_PLAN.start):new Date(); calYM={y:base.getFullYear(),m:base.getMonth()}; }
   renderCalMonth(); renderScheduleList();
 }
@@ -3378,7 +3385,7 @@ function renderCalMonth(){
 function renderScheduleList(){
   const box=document.getElementById('calPhases'); if(!box) return; box.innerHTML='';
   const sub=document.getElementById('calScheduleSub');
-  if(sub) sub.textContent=CAL_PLAN?'One module at a time, each ending with a personal mentorship session. Change your rhythm any time above.':'Set your rhythm above to see your eight weeks laid out on real dates.';
+  if(sub) sub.textContent=(CAL_PLAN&&CAL_PLAN._default)?'Your program is mapped out from the week you joined, one module at a time. This is just a guide, set your own start date and pace above whenever you like.':(CAL_PLAN?'One module at a time, each ending with a personal mentorship session. Change your rhythm any time above.':'Set your rhythm above to see your eight weeks laid out on real dates.');
   WEEKS.forEach(w=>{
     const done=state.completed[w.no];
     const wd=weekDate(w.no);
