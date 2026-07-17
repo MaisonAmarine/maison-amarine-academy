@@ -49,9 +49,9 @@
   .main{flex:1;min-width:0;}
   .topbar-m{display:none;}
   /* ---------- desktop top bar : profil / tutoriel / réglages ---------- */
-  .topbar-d{position:sticky;top:0;z-index:140;display:flex;align-items:center;justify-content:flex-end;gap:14px;
-    padding:12px 56px;background:rgba(251,247,239,.86);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
-    border-bottom:1px solid var(--line);}
+  .topbar-d{position:sticky;top:14px;z-index:140;display:flex;align-items:center;justify-content:flex-end;gap:14px;
+    margin:14px 24px 4px;padding:11px 24px;background:rgba(251,247,239,.9);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
+    border:1px solid var(--line);border-radius:20px;box-shadow:0 8px 26px rgba(33,28,21,.08);}
   .tb-left{margin-right:auto;font-family:'Cormorant',serif;font-size:19px;color:var(--ink);font-weight:600;}
   .tb-left .tb-hi span{color:var(--gold-deep);}
   .tb-tut{display:inline-flex;align-items:center;gap:8px;font-family:'Jost',sans-serif;font-size:13px;font-weight:600;
@@ -642,6 +642,13 @@
   /* ---- Lecture d'un cours façon Vault (dans la fenêtre module) ---- */
   .step-view-body{padding:30px 44px 46px;}
   .lsn-vault{max-width:1220px;margin:0 auto;}
+  /* bandeau image en tête du lecteur de module */
+  .lsn-hero{height:210px;border-radius:16px;background-size:cover;background-position:center;margin:0 0 26px;position:relative;overflow:hidden;box-shadow:0 12px 32px rgba(33,28,21,.14);}
+  .lsn-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,16,12,.12),rgba(20,16,12,0) 55%,rgba(20,16,12,.14));}
+  /* image éditoriale intercalée dans le texte d'un chapitre */
+  .lsn-fig{margin:30px 0 32px;border-radius:14px;overflow:hidden;box-shadow:0 12px 30px rgba(33,28,21,.13);}
+  .lsn-fig img{display:block;width:100%;height:auto;}
+  @media(max-width:620px){ .lsn-hero{height:150px;} }
   .lsn-vault .rf-head{margin-bottom:24px;}
   .lsn-vault .rf-sec:last-of-type{border-bottom:none;}
   .lsn-vault button.rf-dl{border:none;cursor:pointer;font-family:'Jost',sans-serif;}
@@ -3699,6 +3706,19 @@ function lessonSections(text){
   if(cur.heading!==null || cur.paras.length) out.push(cur);
   return out;
 }
+// banque d'images éditoriales intercalées dans les chapitres (aère la lecture)
+const LSN_POOL=['images/lsn-1.jpg','images/lsn-2.jpg','images/lsn-3.jpg','images/lsn-4.jpg','images/lsn-5.jpg','images/lsn-6.jpg','images/lsn-7.jpg','images/lsn-8.jpg'];
+function lsnPick(weekNo,i){ const n=(Math.abs((weekNo||1))*3 + (i||0)) % LSN_POOL.length; return LSN_POOL[n]; }
+function lsnFigureHTML(weekNo,i){ return `<figure class="lsn-fig"><img src="${lsnPick(weekNo,i)}" alt="" loading="lazy"></figure>`; }
+// insère la figure après le 2e bloc de texte (paragraphe / liste) du chapitre
+function lsnInjectFigure(bodyhtml, figHTML){
+  const re=/<\/(p|ul|ol)>/g; let m,count=0,pos=-1,target=2,leafTotal=0;
+  const scan=/<\/(p|ul|ol)>/g; while(scan.exec(bodyhtml)) leafTotal++;
+  if(leafTotal<4) return bodyhtml;               // chapitre trop court : on n'ajoute rien
+  while((m=re.exec(bodyhtml))){ count++; if(count===target){ pos=m.index+m[0].length; break; } }
+  if(pos<0) return bodyhtml;
+  return bodyhtml.slice(0,pos)+figHTML+bodyhtml.slice(pos);
+}
 function openStepView(s, weekNo, stepIdx){
   const secsData=lessonSections(s.text||'');
   svCur={s:s, weekNo:weekNo, stepIdx:stepIdx, secs:secsData};
@@ -3718,7 +3738,9 @@ function svShowToc(){
   const {s,secs,stepIdx,weekNo}=svCur;
   const body=document.getElementById('stepViewBody');
   const toc=secs.map((x,i)=>`<button class="lsn-ch" onclick="svOpenSection(${i})"><span class="lsn-ch-n">${String(i+1).padStart(2,'0')}</span><span class="lsn-ch-t">${escapeHtml(x.heading||'Introduction')}</span><span class="lsn-ch-go">${ICO_ARR}</span></button>`).join('');
+  const heroImg = weekNo ? ('images/w'+weekNo+'.jpg') : 'images/dash.jpg';
   let html=`<div class="lsn-vault">
+    <div class="lsn-hero" style="background-image:url('${heroImg}')"></div>
     <header class="rf-head"><div class="rf-k">${escapeHtml(s.subtitle||'Lesson')}</div><h1>${escapeHtml(s.title)}</h1></header>
     ${lsnDownloadBtn()}
     ${secs.length?`<div class="lsn-toc-k">Contents</div><div class="lsn-chapters">${toc}</div>`:'<p class="sv-empty" style="text-align:center;">This module opens directly below.</p>'}`;
@@ -3817,6 +3839,8 @@ function svOpenSection(i){
     bodyhtml+=`<p class="${cls}">${mdInline(tk.v)}</p>`;
     j++;
   }
+  // aérer la lecture : une image éditoriale intercalée dans le corps du chapitre
+  bodyhtml = lsnInjectFigure(bodyhtml, lsnFigureHTML(svCur.weekNo, i));
   let html=`<div class="lsn-vault lsn-reading">
     <button class="lsn-toc-back" onclick="svShowToc()">${ICO_ARL} Contents</button>
     <div class="lsn-chapmark">Chapter ${i+1} of ${total}</div>
