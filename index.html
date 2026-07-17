@@ -3708,27 +3708,40 @@ function lessonSections(text){
 }
 // banque d'images éditoriales intercalées dans les chapitres (aère la lecture)
 const LSN_POOL=['images/lsn-1.jpg','images/lsn-2.jpg','images/lsn-3.jpg','images/lsn-4.jpg','images/lsn-5.jpg','images/lsn-6.jpg','images/lsn-7.jpg','images/lsn-8.jpg','images/lsn-9.jpg','images/lsn-10.jpg','images/lsn-11.jpg','images/lsn-12.jpg','images/lsn-13.jpg','images/lsn-14.jpg','images/lsn-15.jpg','images/lsn-16.jpg','images/lsn-17.jpg','images/lsn-18.jpg','images/lsn-19.jpg','images/lsn-20.jpg','images/lsn-21.jpg','images/lsn-22.jpg'];
-function lsnFigureHTML(seed){ const n=((Math.abs(seed||0))%LSN_POOL.length); return `<figure class="lsn-fig"><img src="${LSN_POOL[n]}" alt="" loading="lazy"></figure>`; }
+// images choisies pour coller au thème de chaque semaine
+//  service/table : 1,2,11,12,18,19 · voitures/chauffeur : 7,8,9,13,15,16,21,22 · aviation : 10,14,17,20 · lieux/monde : 3,4,5,6,9
+const LSN_BY_WEEK={
+  1:['images/lsn-3.jpg','images/lsn-5.jpg','images/lsn-6.jpg','images/lsn-9.jpg','images/lsn-4.jpg','images/lsn-10.jpg'], // le monde des UHNW
+  2:['images/lsn-1.jpg','images/lsn-2.jpg','images/lsn-12.jpg','images/lsn-11.jpg','images/lsn-18.jpg'],                 // codes & art de la table
+  3:['images/lsn-13.jpg','images/lsn-16.jpg','images/lsn-15.jpg','images/lsn-19.jpg','images/lsn-11.jpg'],              // discrétion, chauffeur, service discret
+  4:['images/lsn-12.jpg','images/lsn-19.jpg','images/lsn-18.jpg','images/lsn-11.jpg','images/lsn-2.jpg'],               // anticipation & service
+  5:['images/lsn-10.jpg','images/lsn-14.jpg','images/lsn-20.jpg','images/lsn-13.jpg','images/lsn-21.jpg'],              // logistique, transport, jets
+  6:['images/lsn-14.jpg','images/lsn-17.jpg','images/lsn-10.jpg','images/lsn-4.jpg','images/lsn-9.jpg'],                // réseau & mobilité
+  7:['images/lsn-13.jpg','images/lsn-16.jpg','images/lsn-22.jpg','images/lsn-3.jpg','images/lsn-6.jpg'],                // candidature, élégance
+  8:['images/lsn-9.jpg','images/lsn-5.jpg','images/lsn-2.jpg','images/lsn-15.jpg','images/lsn-6.jpg'],                  // entrer dans une maison
+};
+function lsnList(weekNo){ return LSN_BY_WEEK[Math.abs(weekNo||1)] || LSN_POOL; }
+function lsnFigureHTML(weekNo,seed){ const L=lsnList(weekNo); const n=Math.abs(seed||0)%L.length; return `<figure class="lsn-fig"><img src="${L[n]}" alt="" loading="lazy"></figure>`; }
 // positions (offsets) de fin de chaque bloc de texte de tête (paragraphe / liste)
 function lsnLeafPositions(bodyhtml){ const re=/<\/(p|ul|ol)>/g; let m,pos=[]; while((m=re.exec(bodyhtml))) pos.push(m.index+m[0].length); return pos; }
-// intercale 1 (ou 2 pour les longs chapitres) image(s), en variant la position : haut / milieu / fin
+// intercale 1 (ou 2 pour les longs chapitres) image(s) du thème de la semaine, en variant la position : haut / milieu / fin
 function lsnInjectFigures(bodyhtml, weekNo, i){
   const pos=lsnLeafPositions(bodyhtml), L=pos.length;
   if(L<3) return bodyhtml;                       // chapitre trop court : aucune image
   const wk=Math.abs(weekNo||1), ch=Math.abs(i||0);
   const inserts=[];
   if(L>=8){
-    // long chapitre : une image tôt, une image vers la fin
-    inserts.push({at:pos[1],   seed:wk*7+ch*3+1});
-    inserts.push({at:pos[L-2], seed:wk*7+ch*3+11});
+    // long chapitre : une image tôt, une autre vers la fin (deux images distinctes du thème)
+    inserts.push({at:pos[1],   seed:ch*2});
+    inserts.push({at:pos[L-2], seed:ch*2+2});
   } else {
     const bucket=(wk+ch)%3;                       // 0 haut · 1 milieu · 2 fin
     let idx = bucket===0 ? 1 : (bucket===1 ? Math.max(1,Math.floor(L/2)) : L-1);
-    inserts.push({at:pos[idx], seed:wk*5+ch*3});
+    inserts.push({at:pos[idx], seed:ch});
   }
   inserts.sort((a,b)=>b.at-a.at);                 // insérer de la fin vers le début
   let out=bodyhtml;
-  inserts.forEach(ins=>{ out=out.slice(0,ins.at)+lsnFigureHTML(ins.seed)+out.slice(ins.at); });
+  inserts.forEach(ins=>{ out=out.slice(0,ins.at)+lsnFigureHTML(wk,ins.seed)+out.slice(ins.at); });
   return out;
 }
 function openStepView(s, weekNo, stepIdx){
