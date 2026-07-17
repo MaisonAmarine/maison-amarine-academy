@@ -3964,7 +3964,7 @@ function svOpenSection(i){
     if(tk.t==='dek'){ bodyhtml+=`<p class="lsn-dek">${mdInline(tk.v)}</p>`; j++; continue; }
     if(tk.t==='def'){
       const group=[]; while(j<tokens.length && tokens[j].t==='def'){ group.push(tokens[j]); j++; }
-      const asTable = group.length>=2 && group.every(g=>g.term.length<=42);
+      const asTable = group.length>=2 && group.every(g=>g.term.length<=64);
       if(asTable){
         // dédoublonner les en-têtes répétés (tableaux à cheval sur 2 pages du PDF)
         const seen=new Set(), uniq=[];
