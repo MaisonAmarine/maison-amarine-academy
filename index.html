@@ -3707,17 +3707,29 @@ function lessonSections(text){
   return out;
 }
 // banque d'images éditoriales intercalées dans les chapitres (aère la lecture)
-const LSN_POOL=['images/lsn-1.jpg','images/lsn-2.jpg','images/lsn-3.jpg','images/lsn-4.jpg','images/lsn-5.jpg','images/lsn-6.jpg','images/lsn-7.jpg','images/lsn-8.jpg'];
-function lsnPick(weekNo,i){ const n=(Math.abs((weekNo||1))*3 + (i||0)) % LSN_POOL.length; return LSN_POOL[n]; }
-function lsnFigureHTML(weekNo,i){ return `<figure class="lsn-fig"><img src="${lsnPick(weekNo,i)}" alt="" loading="lazy"></figure>`; }
-// insère la figure après le 2e bloc de texte (paragraphe / liste) du chapitre
-function lsnInjectFigure(bodyhtml, figHTML){
-  const re=/<\/(p|ul|ol)>/g; let m,count=0,pos=-1,target=2,leafTotal=0;
-  const scan=/<\/(p|ul|ol)>/g; while(scan.exec(bodyhtml)) leafTotal++;
-  if(leafTotal<4) return bodyhtml;               // chapitre trop court : on n'ajoute rien
-  while((m=re.exec(bodyhtml))){ count++; if(count===target){ pos=m.index+m[0].length; break; } }
-  if(pos<0) return bodyhtml;
-  return bodyhtml.slice(0,pos)+figHTML+bodyhtml.slice(pos);
+const LSN_POOL=['images/lsn-1.jpg','images/lsn-2.jpg','images/lsn-3.jpg','images/lsn-4.jpg','images/lsn-5.jpg','images/lsn-6.jpg','images/lsn-7.jpg','images/lsn-8.jpg','images/lsn-9.jpg','images/lsn-10.jpg','images/lsn-11.jpg','images/lsn-12.jpg','images/lsn-13.jpg','images/lsn-14.jpg','images/lsn-15.jpg','images/lsn-16.jpg','images/lsn-17.jpg','images/lsn-18.jpg','images/lsn-19.jpg','images/lsn-20.jpg','images/lsn-21.jpg','images/lsn-22.jpg'];
+function lsnFigureHTML(seed){ const n=((Math.abs(seed||0))%LSN_POOL.length); return `<figure class="lsn-fig"><img src="${LSN_POOL[n]}" alt="" loading="lazy"></figure>`; }
+// positions (offsets) de fin de chaque bloc de texte de tête (paragraphe / liste)
+function lsnLeafPositions(bodyhtml){ const re=/<\/(p|ul|ol)>/g; let m,pos=[]; while((m=re.exec(bodyhtml))) pos.push(m.index+m[0].length); return pos; }
+// intercale 1 (ou 2 pour les longs chapitres) image(s), en variant la position : haut / milieu / fin
+function lsnInjectFigures(bodyhtml, weekNo, i){
+  const pos=lsnLeafPositions(bodyhtml), L=pos.length;
+  if(L<3) return bodyhtml;                       // chapitre trop court : aucune image
+  const wk=Math.abs(weekNo||1), ch=Math.abs(i||0);
+  const inserts=[];
+  if(L>=8){
+    // long chapitre : une image tôt, une image vers la fin
+    inserts.push({at:pos[1],   seed:wk*7+ch*3+1});
+    inserts.push({at:pos[L-2], seed:wk*7+ch*3+11});
+  } else {
+    const bucket=(wk+ch)%3;                       // 0 haut · 1 milieu · 2 fin
+    let idx = bucket===0 ? 1 : (bucket===1 ? Math.max(1,Math.floor(L/2)) : L-1);
+    inserts.push({at:pos[idx], seed:wk*5+ch*3});
+  }
+  inserts.sort((a,b)=>b.at-a.at);                 // insérer de la fin vers le début
+  let out=bodyhtml;
+  inserts.forEach(ins=>{ out=out.slice(0,ins.at)+lsnFigureHTML(ins.seed)+out.slice(ins.at); });
+  return out;
 }
 function openStepView(s, weekNo, stepIdx){
   const secsData=lessonSections(s.text||'');
@@ -3839,8 +3851,8 @@ function svOpenSection(i){
     bodyhtml+=`<p class="${cls}">${mdInline(tk.v)}</p>`;
     j++;
   }
-  // aérer la lecture : une image éditoriale intercalée dans le corps du chapitre
-  bodyhtml = lsnInjectFigure(bodyhtml, lsnFigureHTML(svCur.weekNo, i));
+  // aérer la lecture : image(s) éditoriale(s) intercalée(s), en variant la position
+  bodyhtml = lsnInjectFigures(bodyhtml, svCur.weekNo, i);
   let html=`<div class="lsn-vault lsn-reading">
     <button class="lsn-toc-back" onclick="svShowToc()">${ICO_ARL} Contents</button>
     <div class="lsn-chapmark">Chapter ${i+1} of ${total}</div>
