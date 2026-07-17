@@ -710,6 +710,14 @@
   .lsn-case-t{font-family:'Cormorant',serif;font-weight:600;font-size:27px;line-height:1.1;color:var(--ink);}
   .lsn-case-scn{font-family:'Cormorant',Georgia,serif;font-size:20.5px;line-height:1.78;color:#332E28;}
   .lsn-case-scn strong{font-weight:600;color:var(--ink);background:linear-gradient(transparent 60%, var(--gold-wash) 0);}
+  .lsn-dbf-btn{display:inline-flex;align-items:center;gap:8px;margin-top:18px;font-family:'Jost',sans-serif;font-size:12.5px;font-weight:600;letter-spacing:.04em;color:var(--gold-deep);background:var(--gold-wash);border:1px solid rgba(168,126,61,.3);border-radius:22px;padding:9px 17px;cursor:pointer;transition:background .2s;}
+  .lsn-dbf-btn:hover{background:#ecdcbf;}
+  .lsn-dbf-btn svg{width:14px;height:14px;transition:transform .25s;}
+  .lsn-dbf-btn.open svg{transform:rotate(180deg);}
+  .lsn-dbf{margin-top:14px;border-left:3px solid var(--gold);background:#fbf7ee;border-radius:0 12px 12px 0;padding:15px 22px 5px;}
+  .lsn-dbf[hidden]{display:none;}
+  .lsn-dbf-k{font-family:'Jost',sans-serif;font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:8px;}
+  .lsn-dbf .lsn-para{font-size:18px;line-height:1.62;margin:0 0 10px;}
   .lsn-case-task{margin-top:18px;background:var(--gold-wash);border-radius:12px;padding:16px 20px;}
   .lsn-case-solo{padding:0;border:none;box-shadow:none;background:none;}
   .lsn-case-solo .lsn-case-task{margin-top:6px;}
@@ -3833,9 +3841,35 @@ function lsnInjectFigures(bodyhtml, weekNo, i){
   inserts.forEach(ins=>{ out=out.slice(0,ins.at)+lsnFigureHTML(wk,ins.seed)+out.slice(ins.at); });
   return out;
 }
+// ---- Débrief par case : on relie chaque "Case I" à son débrief "I · ..." ----
+function svTitleSplit(txt){ const m=txt.match(/^([A-Za-z][A-Za-z ,'’\-]{2,44}?)\s+(?=[0-9]|[A-Z])/); if(m && m[1].split(' ').length<=6){ return [m[1].trim(), txt.slice(m[0].length).trim()]; } return ['', txt]; }
+function buildDebriefMap(secs){
+  const map={}, idx=new Set();
+  (secs||[]).forEach((sec,si)=>{
+    if(!/debrief/i.test(sec.heading||'')) return;
+    let cur=null, found=0;
+    (sec.paras||[]).forEach(p=>{
+      const m=p.match(/^([IVXLC]{1,5})\s*·\s*([\s\S]+)$/);
+      if(m){ found++; const parts=svTitleSplit(m[2].trim()); cur={paras:[]}; map[m[1].toUpperCase()]={title:parts[0], paras:cur.paras}; if(parts[1]) cur.paras.push(parts[1]); }
+      else if(cur){ cur.paras.push(p); }
+    });
+    if(found>0) idx.add(si);
+  });
+  return {map, idx};
+}
+function debriefHTML(entry){ return !entry?'':(entry.paras||[]).map(p=>`<p class="lsn-para">${mdInline(p)}</p>`).join(''); }
+function toggleDebrief(id, btn){
+  const el=document.getElementById(id); if(!el) return;
+  const l=btn.querySelector('.dbf-lbl');
+  if(el.hasAttribute('hidden')){ el.removeAttribute('hidden'); btn.classList.add('open'); if(l)l.textContent='Hide the debrief'; }
+  else { el.setAttribute('hidden',''); btn.classList.remove('open'); if(l)l.textContent='Reveal the debrief'; }
+}
+const DBF_CHEV='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 function openStepView(s, weekNo, stepIdx){
   const secsData=lessonSections(s.text||'');
-  svCur={s:s, weekNo:weekNo, stepIdx:stepIdx, secs:secsData, ci:-1};
+  const _db=buildDebriefMap(secsData);
+  const _vis=secsData.map((_,k)=>k).filter(k=>!_db.idx.has(k));
+  svCur={s:s, weekNo:weekNo, stepIdx:stepIdx, secs:secsData, ci:-1, debrief:_db.map, debriefIdx:_db.idx, visible:_vis};
   svShowToc();
   document.getElementById('stepView').classList.add('open');
   document.body.classList.add('reading-lock');
@@ -3853,7 +3887,8 @@ function svSectionTitle(i){ const x=svCur.secs[i]; return x&&x.heading ? x.headi
 function svShowToc(){
   const {s,secs,stepIdx,weekNo}=svCur;
   const body=document.getElementById('stepViewBody');
-  const toc=secs.map((x,i)=>`<button class="lsn-ch" onclick="svOpenSection(${i})"><span class="lsn-ch-n">${String(i+1).padStart(2,'0')}</span><span class="lsn-ch-t">${escapeHtml(x.heading||'Introduction')}</span><span class="lsn-ch-go">${ICO_ARR}</span></button>`).join('');
+  const _vis=svCur.visible||secs.map((_,k)=>k);
+  const toc=_vis.map((idx,n)=>`<button class="lsn-ch" onclick="svOpenSection(${idx})"><span class="lsn-ch-n">${String(n+1).padStart(2,'0')}</span><span class="lsn-ch-t">${escapeHtml((secs[idx]||{}).heading||'Introduction')}</span><span class="lsn-ch-go">${ICO_ARR}</span></button>`).join('');
   const heroImg = weekNo ? ('images/w'+weekNo+'.jpg') : 'images/dash.jpg';
   let html=`<div class="lsn-vault">
     <div class="lsn-hero" style="background-image:url('${heroImg}')"></div>
@@ -3869,8 +3904,12 @@ function svShowToc(){
   body.scrollTop=0;
 }
 function svOpenSection(i){
-  const {secs}=svCur, total=secs.length;
-  if(i<0||i>=total) return;
+  const {secs}=svCur;
+  const vis=svCur.visible||secs.map((_,k)=>k);
+  if(svCur.debriefIdx && svCur.debriefIdx.has(i)){ i=(vis.length?vis[0]:0); }
+  if(i<0||i>=secs.length) return;
+  const posV=Math.max(0, vis.indexOf(i)), total=vis.length;
+  const prevIdx=posV>0?vis[posV-1]:-1, nextIdx=posV<total-1?vis[posV+1]:-1;
   svCur.ci=i;
   try{ const r=getResume()||{}; setResume({wk:svCur.weekNo, step:svCur.stepIdx, ci:i, title:(svCur.s&&svCur.s.title)||r.title||'', sub:(svCur.s&&svCur.s.subtitle)||'', chapter:(secs[i]&&(secs[i].heading||'Introduction'))||'', ts:Date.now()}); updateResumeChip(); }catch(e){}
   const x=secs[i], body=document.getElementById('stepViewBody');
@@ -3909,6 +3948,7 @@ function svOpenSection(i){
       let inner=`<div class="lsn-case-head"><span class="lsn-case-k">${escapeHtml(tk.label)}</span>${tk.title?`<span class="lsn-case-t">${escapeHtml(tk.title)}</span>`:''}</div>`;
       if(tk.v) inner+=`<div class="lsn-case-scn">${mdInline(tk.v)}</div>`;
       if(tokens[j+1] && tokens[j+1].t==='task'){ inner+=`<div class="lsn-case-task"><span class="lsn-task-k">Your task</span><div>${mdInline(tokens[j+1].v)}</div></div>`; j++; }
+      { const _n=(tk.label.match(/Case\s+([IVXLC\d]+)/i)||[])[1]; const _k=_n?_n.toUpperCase():''; const _e=svCur.debrief&&svCur.debrief[_k]; if(_e){ const _id='dbf_'+i+'_'+_k; inner+=`<button class="lsn-dbf-btn" onclick="toggleDebrief('${_id}',this)"><span class="dbf-lbl">Reveal the debrief</span>${DBF_CHEV}</button><div class="lsn-dbf" id="${_id}" hidden><div class="lsn-dbf-k">Debrief</div>${debriefHTML(_e)}</div>`; } }
       bodyhtml+=`<div class="lsn-case">${inner}</div>`; afterLabel=false; j++; continue;
     }
     if(tk.t==='task'){
@@ -3917,6 +3957,7 @@ function svOpenSection(i){
     if(tk.t==='roman'){
       bodyhtml+=`<h3 class="lsn-subhead lsn-roman"><span class="lsn-roman-n">${escapeHtml(tk.label)}</span>${escapeHtml(tk.title)}</h3>`;
       if(tk.v) bodyhtml+=`<p class="lsn-para">${mdInline(tk.v)}</p>`;
+      { const _k=(tk.label||'').toUpperCase(); const _e=svCur.debrief&&svCur.debrief[_k]; if(_e){ const _id='dbf_'+i+'_r'+_k; bodyhtml+=`<button class="lsn-dbf-btn" onclick="toggleDebrief('${_id}',this)"><span class="dbf-lbl">Reveal the debrief</span>${DBF_CHEV}</button><div class="lsn-dbf" id="${_id}" hidden><div class="lsn-dbf-k">Debrief</div>${debriefHTML(_e)}</div>`; } }
       afterLabel=false; j++; continue;
     }
     if(tk.t==='dek'){ bodyhtml+=`<p class="lsn-dek">${mdInline(tk.v)}</p>`; j++; continue; }
@@ -3961,12 +4002,12 @@ function svOpenSection(i){
   bodyhtml = lsnInjectFigures(bodyhtml, svCur.weekNo, i);
   let html=`<div class="lsn-vault lsn-reading">
     <button class="lsn-toc-back" onclick="svShowToc()">${ICO_ARL} Contents</button>
-    <div class="lsn-chapmark">Chapter ${i+1} of ${total}</div>
+    <div class="lsn-chapmark">Chapter ${posV+1} of ${total}</div>
     <article class="rf-sec"><h2 class="lsn-chtitle">${escapeHtml(x.heading||'Introduction')}</h2><div class="rf-body">${bodyhtml}</div></article>
     <div class="lsn-foot">
-      <button class="lsn-nav" onclick="svOpenSection(${i-1})" ${i===0?'disabled':''}>${ICO_ARL} Previous</button>
+      <button class="lsn-nav" onclick="svOpenSection(${prevIdx})" ${prevIdx<0?'disabled':''}>${ICO_ARL} Previous</button>
       <button class="lsn-nav lsn-nav-mid" onclick="svShowToc()">All chapters</button>
-      <button class="lsn-nav" onclick="svOpenSection(${i+1})" ${i>=total-1?'disabled':''}>Next ${ICO_ARR}</button>
+      <button class="lsn-nav" onclick="svOpenSection(${nextIdx})" ${nextIdx<0?'disabled':''}>Next ${ICO_ARR}</button>
     </div>
   </div>`;
   body.innerHTML=html;
