@@ -352,6 +352,11 @@
   .ref-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:18px 0 30px;}
   .ref-card{display:flex;align-items:center;gap:16px;text-align:left;background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:22px 24px;cursor:pointer;font-family:'Jost',sans-serif;box-shadow:0 14px 32px rgba(33,28,21,.05);transition:transform .18s,box-shadow .18s,border-color .18s;}
   .ref-card:hover{transform:translateY(-2px);border-color:var(--gold-lt);box-shadow:0 22px 46px rgba(33,28,21,.09);}
+  .ref-fam{grid-column:1/-1;margin:26px 0 2px;}
+  .ref-fam:first-child{margin-top:4px;}
+  .ref-fam-k{display:flex;align-items:center;gap:14px;font-family:'Jost',sans-serif;font-size:10.5px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-deep);}
+  .ref-fam-k::after{content:"";flex:1;height:1px;background:var(--line);}
+  .ref-fam-s{font-family:'Cormorant',serif;font-style:italic;font-size:16px;color:var(--stone);margin-top:7px;}
   .ref-ic{width:44px;height:44px;flex:none;border-radius:12px;background:var(--gold-wash);color:var(--gold-deep);display:flex;align-items:center;justify-content:center;}
   .ref-ic svg{width:23px;height:23px;}
   .ref-tx{flex:1;min-width:0;display:flex;flex-direction:column;gap:3px;}
@@ -3974,9 +3979,33 @@ async function loadReference(){
   if(!REFDATA){ try{ REFDATA=await fetchLive('reference.json'); }catch(e){ REFDATA={books:[]}; } }
   renderRefCards();
 }
+// The Vault, rangé en familles pour que l'élève s'y retrouve
+const VAULT_FAMILIES=[
+  {k:'The craft', s:'How the work is actually done, day after day.', ids:['toolkit','masterclasses','casebook']},
+  {k:'The codes', s:'The language and the manners that say you belong here.', ids:['dictionary','cultural']},
+  {k:'Your candidacy', s:'Everything you need to present yourself, and to be chosen.', ids:['cv','cover','interview','agency','recruiter']}
+];
+function refCardHTML(b){
+  return `<button class="ref-card" onclick="openRefBook('${b.id}')"><span class="ref-ic">${refIcon(b.icon)}</span><span class="ref-tx"><span class="ref-t">${escapeHtml(b.title)}</span><span class="ref-s">${escapeHtml(b.subtitle||'')}</span></span><span class="ref-go">Read ${ICO_ARR}</span></button>`;
+}
 function renderRefCards(){
   const g=document.getElementById('refGrid'); if(!g) return;
-  g.innerHTML=((REFDATA&&REFDATA.books)||[]).map(b=>`<button class="ref-card" onclick="openRefBook('${b.id}')"><span class="ref-ic">${refIcon(b.icon)}</span><span class="ref-tx"><span class="ref-t">${escapeHtml(b.title)}</span><span class="ref-s">${escapeHtml(b.subtitle||'')}</span></span><span class="ref-go">Read ${ICO_ARR}</span></button>`).join('');
+  const books=((REFDATA&&REFDATA.books)||[]);
+  const byId={}; books.forEach(b=>byId[b.id]=b);
+  const placed=new Set(); let html='';
+  VAULT_FAMILIES.forEach(f=>{
+    const list=f.ids.map(id=>byId[id]).filter(Boolean);
+    if(!list.length) return;
+    list.forEach(b=>placed.add(b.id));
+    html+=`<div class="ref-fam"><div class="ref-fam-k">${escapeHtml(f.k)}</div><div class="ref-fam-s">${escapeHtml(f.s)}</div></div>`;
+    html+=list.map(refCardHTML).join('');
+  });
+  const rest=books.filter(b=>!placed.has(b.id));   // tout nouveau document reste visible
+  if(rest.length){
+    html+=`<div class="ref-fam"><div class="ref-fam-k">Also in the vault</div><div class="ref-fam-s">Recent additions to your library.</div></div>`;
+    html+=rest.map(refCardHTML).join('');
+  }
+  g.innerHTML=html;
 }
 function openRefBook(id){
   const b=((REFDATA&&REFDATA.books)||[]).find(x=>x.id===id); if(!b) return;
