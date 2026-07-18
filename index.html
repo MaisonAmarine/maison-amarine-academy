@@ -57,6 +57,11 @@
   .mtr-cta svg{width:16px;height:16px;}
   .mentor-ev{cursor:pointer;transition:background .18s,color .18s;}
   .mentor-ev:hover{background:var(--gold);color:#fff;}
+  .mentor-ev.booked{background:var(--ink);color:var(--gold-lt);border-color:var(--ink);}
+  .mentor-ev.booked:hover{background:#2e2820;color:var(--gold-lt);}
+  .mtr-manage{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:14px;font-family:'Jost',sans-serif;font-size:12.5px;color:var(--stone);}
+  .mtr-manage a{color:var(--gold-deep);text-decoration:none;font-weight:600;}
+  .mtr-manage a:hover{text-decoration:underline;}
   /* ===== dashboard élève ===== */
   .dsh-hero{background:linear-gradient(115deg,rgba(28,23,17,.93) 42%,rgba(33,28,21,.72) 78%,rgba(33,28,21,.55)),url('images/dash.jpg') center/cover;border-radius:20px;padding:34px 38px;color:#F6F0E4;margin-bottom:20px;position:relative;overflow:hidden;}
   .dsh-hi{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-lt);font-family:'Jost',sans-serif;font-weight:500;}
@@ -2194,14 +2199,19 @@
     <button class="mtr-x" onclick="closeMentor()" aria-label="Close">&times;</button>
     <div class="mtr-k">Mentorship session</div>
     <h3 id="mtrTitle"></h3>
-    <div class="mtr-row"><b>Planned</b><span id="mtrDate"></span></div>
+    <div class="mtr-row"><b id="mtrDateK">Planned</b><span id="mtrDate"></span></div>
     <div class="mtr-row"><b>Format</b><span id="mtrDur"></span></div>
     <div class="mtr-row"><b>With</b><span>Émilie, one to one, by video</span></div>
     <p class="mtr-p" id="mtrNote"></p>
     <a class="mtr-cta" id="mtrLink" target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4" stroke-linecap="round"/></svg>
-      Book my time slot
+      <span id="mtrLinkLabel">Book my time slot</span>
     </a>
+    <div class="mtr-manage" id="mtrManage" style="display:none;">
+      <a id="mtrResched" target="_blank" rel="noopener">Reschedule</a>
+      <span>·</span>
+      <a id="mtrCancel" target="_blank" rel="noopener">Cancel</a>
+    </div>
   </div>
 </div>
 
@@ -3285,6 +3295,7 @@ async function onSignedIn(user){
   try{ loadJournalData().then(()=>{ try{ updateJournalBadge(); }catch(e){} }); }catch(e){}
   try{ updateResumeChip(); }catch(e){}
   try{ renderStudentDash(); }catch(e){}
+  try{ loadSessions(); }catch(e){}
   // le tutoriel se relance depuis le bandeau du haut : on garde le bouton flottant masqué
   const th=document.getElementById('tourHelp'); if(th) th.style.display='none';
   try{ if(!localStorage.getItem('ma_tour_v1')) setTimeout(()=>{ try{ startTour(); }catch(e){} }, 1000); }catch(e){}
@@ -3516,7 +3527,10 @@ function renderStudentDash(){
   const pts=(typeof prPoints==='function')?prPoints().pts:0;
   const deliv=(typeof SUBMISSIONS==='object'&&SUBMISSIONS)?Object.keys(SUBMISSIONS).length:0;
   let mentor=null; try{ mentor=(typeof mentorDate==='function')?mentorDate(cur):null; }catch(e){}
-  const mtxt=mentor?mentor.toLocaleDateString('en-GB',{weekday:'long',day:'numeric',month:'long'}):'Set your calendar to see it';
+  let msess=null; try{ msess=sessionForWeek(cur); }catch(e){}
+  const mtxt=msess?sessionTimeLabel(msess):(mentor?mentor.toLocaleDateString('en-GB',{weekday:'long',day:'numeric',month:'long'}):'Set your calendar to see it');
+  const msub=msess?'Confirmed. Join the video call from here.':('Your one to one with Émilie for week '+cur+'.');
+  const mpill=msess?'Join the call &rarr;':'Book my time slot &rarr;';
   const certReady=done8 && doneP>=totalP;
   grid.innerHTML=`
     <div class="dsh-card clic" onclick="openWeek(${cur})">
@@ -3534,8 +3548,8 @@ function renderStudentDash(){
     <div class="dsh-card clic" onclick="openMentor(${cur})">
       <div class="dsh-k">Your mentor session</div>
       <div class="dsh-t">${escapeHtml(mtxt)}</div>
-      <div class="dsh-s">Your one to one with Émilie for week ${cur}.</div>
-      <span class="dsh-pill">Book my time slot &rarr;</span>
+      <div class="dsh-s">${escapeHtml(msub)}</div>
+      <span class="dsh-pill">${mpill}</span>
     </div>
     <div class="dsh-card clic" onclick="openWeek(${cur})">
       <div class="dsh-k">Deliverables</div>
@@ -3757,16 +3771,67 @@ function mentorBookingUrl(no){
   const q='name='+encodeURIComponent(nm)+'&email='+encodeURIComponent(em)+'&a1='+encodeURIComponent('Week '+no+' · '+(w.title||''));
   return MENTOR_CALENDLY+(MENTOR_CALENDLY.indexOf('?')>=0?'&':'?')+q;
 }
+// --- sessions réellement réservées (remplies par Calendly via la table `sessions`) ---
+let MY_SESSIONS=[];
+async function loadSessions(){
+  try{
+    if(!USER) return;
+    const {data,error}=await sb.from('sessions').select('*').eq('user_id',USER.id).order('start_time',{ascending:true});
+    MY_SESSIONS = (!error && Array.isArray(data)) ? data.filter(s=>(s.status||'active')!=='canceled') : [];
+  }catch(e){ MY_SESSIONS=[]; }
+  try{ renderScheduleList(); renderCalMonth(); renderStudentDash(); }catch(e){}
+}
+function sessionForWeek(no){
+  if(!MY_SESSIONS.length) return null;
+  const byWeek=MY_SESSIONS.find(s=>Number(s.week_number)===Number(no));
+  if(byWeek) return byWeek;
+  let target=null; try{ target=mentorDate(no); }catch(e){}
+  if(!target) return null;
+  let best=null,bestGap=Infinity;
+  MY_SESSIONS.forEach(s=>{
+    if(s.week_number) return;                       // déjà rattachée à une autre semaine
+    const d=new Date(s.start_time); if(isNaN(d)) return;
+    const gap=Math.abs(d-target);
+    if(gap<bestGap && gap<=4*86400000){ best=s; bestGap=gap; }
+  });
+  return best;
+}
+function sessionTimeLabel(s){
+  const d=new Date(s.start_time); if(isNaN(d)) return '';
+  return d.toLocaleDateString('en-GB',{weekday:'long',day:'numeric',month:'long'})+', '+d.toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'});
+}
 function openMentor(no){
   const w=WEEKS[no-1]; if(!w) return;
+  const s=sessionForWeek(no);
   let d=null; try{ d=mentorDate(no); }catch(e){}
   const t=document.getElementById('mtrTitle'); if(t) t.textContent='Week '+no+' · '+w.title;
-  const dd=document.getElementById('mtrDate');
-  if(dd) dd.textContent = d ? d.toLocaleDateString('en-GB',{weekday:'long',day:'numeric',month:'long',year:'numeric'}) : 'Set your start date in the calendar above';
-  const du=document.getElementById('mtrDur'); if(du) du.textContent=MENTOR_DURATION+', at the end of this module';
-  const nt=document.getElementById('mtrNote');
-  if(nt) nt.textContent='Pick the exact time that suits you. You will receive a confirmation and a calendar invitation immediately, with the video link inside.';
-  const lk=document.getElementById('mtrLink'); if(lk) lk.href=mentorBookingUrl(no);
+  const kk=document.getElementById('mtrDateK'), dd=document.getElementById('mtrDate');
+  const du=document.getElementById('mtrDur'), nt=document.getElementById('mtrNote');
+  const lk=document.getElementById('mtrLink'), lb=document.getElementById('mtrLinkLabel');
+  const mg=document.getElementById('mtrManage');
+  if(s){
+    // --- session réservée : on montre l'heure réelle et le lien visio ---
+    if(kk) kk.textContent='Booked';
+    if(dd) dd.textContent=sessionTimeLabel(s);
+    if(du) du.textContent=(s.event_name||('Mentorship, '+MENTOR_DURATION));
+    if(nt) nt.textContent='Your session is confirmed. Join from the button below at the time above, the link is also in your confirmation email.';
+    if(lk){ lk.href=s.join_url||mentorBookingUrl(no); }
+    if(lb) lb.textContent=s.join_url?'Join the video call':'Open my booking';
+    if(mg){
+      const r=document.getElementById('mtrResched'), c=document.getElementById('mtrCancel');
+      if(r) r.href=s.reschedule_url||'#'; if(c) c.href=s.cancel_url||'#';
+      mg.style.display=(s.reschedule_url||s.cancel_url)?'flex':'none';
+    }
+  } else {
+    // --- pas encore réservée ---
+    if(kk) kk.textContent='Planned';
+    if(dd) dd.textContent = d ? d.toLocaleDateString('en-GB',{weekday:'long',day:'numeric',month:'long',year:'numeric'}) : 'Set your start date in the calendar above';
+    if(du) du.textContent=MENTOR_DURATION+', at the end of this module';
+    if(nt) nt.textContent='Pick the exact time that suits you. Once booked, this session appears here with its time and video link.';
+    if(lk) lk.href=mentorBookingUrl(no);
+    if(lb) lb.textContent='Book my time slot';
+    if(mg) mg.style.display='none';
+  }
   const mask=document.getElementById('mtrMask'); if(mask) mask.classList.add('open');
 }
 function closeMentor(){ const m=document.getElementById('mtrMask'); if(m) m.classList.remove('open'); }
@@ -3791,7 +3856,19 @@ function renderScheduleList(){
         <div class="cw-sub">${escapeHtml(w.sub)}</div>
         <div class="cw-events">
           <span class="cw-ev">Lessons &amp; practice</span>
-          <span class="cw-ev mentor-ev" onclick="openMentor(${w.no})" title="See the details and book your time slot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6" stroke-linecap="round"/></svg> Mentorship session${(function(){var m=null;try{m=mentorDate(w.no);}catch(e){} return m?' · '+m.toLocaleDateString('en-US',{month:'short',day:'numeric'}):'';})()}</span>
+          ${(function(){
+            var s=null; try{ s=sessionForWeek(w.no); }catch(e){}
+            var lbl, cls='';
+            if(s){
+              var d=new Date(s.start_time);
+              lbl='Booked · '+(isNaN(d)?'':d.toLocaleDateString('en-US',{month:'short',day:'numeric'})+', '+d.toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'}));
+              cls=' booked';
+            } else {
+              var m=null; try{ m=mentorDate(w.no); }catch(e){}
+              lbl='Mentorship session'+(m?' · '+m.toLocaleDateString('en-US',{month:'short',day:'numeric'}):'');
+            }
+            return '<span class="cw-ev mentor-ev'+cls+'" onclick="openMentor('+w.no+')" title="See the details and book your time slot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6" stroke-linecap="round"/></svg> '+lbl+'</span>';
+          })()}
         </div>
       </div>`;
     box.appendChild(el);
