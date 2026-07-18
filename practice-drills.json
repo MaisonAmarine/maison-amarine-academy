@@ -1,0 +1,2623 @@
+{
+ "1": [
+  {
+   "type": "order",
+   "title": "First moves",
+   "sub": "The order in which a professional actually takes the steps.",
+   "items": [
+    {
+     "scene": "The offer arrives",
+     "stem": "You have been offered a position in a private household. Put these in the order you would take them.",
+     "steps": [
+      "Read the whole offer, including the confidentiality clause, before replying to anything",
+      "Write down every question you have, then ask them all in one message",
+      "Confirm in writing what the role covers and what it does not",
+      "Accept in writing, restating the start date and the reporting line",
+      "Ask what you should read or prepare before day one"
+     ],
+     "why": "You read before you react, because a clause you sign is a clause you live with. Questions go in one batch, since a drip of separate messages reads as anxious. Scope is confirmed in writing before acceptance, never after. Only then do you accept, and only then do you ask how to prepare, which is the first thing that makes you look like a professional rather than a hire."
+    },
+    {
+     "scene": "Overheard",
+     "stem": "On day three you accidentally overhear a private conversation between the principal and their lawyer. Order your response.",
+     "steps": [
+      "Move out of earshot immediately and without drawing attention",
+      "Say nothing about it, then or ever, to anyone inside or outside the house",
+      "Continue as though the conversation did not happen",
+      "If the principal later refers to it, respond only to what they choose to tell you"
+     ],
+     "why": "Leaving is first and it is physical, not mental. Silence is not merely refraining from gossip, it is refraining from acknowledgement. Behaving normally is the proof, since a person who suddenly becomes careful around you has told you they heard something. And if the principal raises it, you know only what they have just said, nothing more."
+    },
+    {
+     "scene": "The reference request",
+     "stem": "A consultant asks for a reference from a confidential household. Order your handling.",
+     "steps": [
+      "Confirm with the consultant what exactly they need to verify",
+      "Contact the family office, not the principal, and ask permission",
+      "Offer the family office as the point of contact, naming no principal",
+      "Tell the consultant the reference is available through the office",
+      "Follow up once, in writing, to confirm the reference was given"
+     ],
+     "why": "You establish what is actually needed before you disturb anyone, because most verifications need dates and scope, not a name. Permission comes from the office because that is the channel built for it. You never name a principal to win a role. And the single follow up is what separates the organised from the hopeful."
+    },
+    {
+     "scene": "The first week",
+     "stem": "You are new in a house with existing staff. Order your first week.",
+     "steps": [
+      "Learn every name, and how long each person has been in the house",
+      "Ask each person to show you how they currently do their work",
+      "Write down what you observe, and change nothing yet",
+      "Identify the one thing that is visibly failing and fix only that",
+      "Propose anything larger only after the first month"
+     ],
+     "why": "Names first, because the staff decide whether you survive long before the family does. You ask to be shown, which makes them the authority and you the student. You write and wait, because early changes are read as judgement. One visible fix earns the right to propose more. Everything structural waits."
+    },
+    {
+     "scene": "The unfamiliar request",
+     "stem": "The principal asks you for something you have never done and do not understand. Order your response.",
+     "steps": [
+      "Say yes, and ask only the one question you cannot proceed without",
+      "Find out how it is properly done, from someone who knows",
+      "Do it, and build the record so it can be repeated",
+      "Report it done, briefly, without narrating the difficulty",
+      "Add it to your own reference file for next time"
+     ],
+     "why": "You accept first, because hesitation is what they remember. One question, not five, because each question is a small tax on their attention. You learn from a professional rather than improvising. You report the outcome, never the struggle. And you capture the method, so the second time costs you nothing."
+    }
+   ]
+  },
+  {
+   "type": "sort",
+   "title": "Read the register",
+   "sub": "Which register does each line belong to?",
+   "buckets": [
+    "Serves you",
+    "Serves them",
+    "Fatal"
+   ],
+   "items": [
+    {
+     "t": "I love the travel and the houses this world gives me access to",
+     "b": 2,
+     "fb": "It announces that the role is a means to your own experience. In this market that is disqualifying, not merely weak."
+    },
+    {
+     "t": "I find satisfaction in a life that runs without anyone noticing how",
+     "b": 1,
+     "fb": "Service framed as craft. This is the register a principal is listening for."
+    },
+    {
+     "t": "I am very organised and I learn quickly",
+     "b": 0,
+     "fb": "True perhaps, and entirely generic. It describes you without telling them anything about whether you understand this world."
+    },
+    {
+     "t": "Reference available through the family office",
+     "b": 1,
+     "fb": "You prove the role was real while protecting a confidence. The unnamed house becomes your strongest line."
+    },
+    {
+     "t": "My last principal was a well known name, I can tell you privately",
+     "b": 2,
+     "fb": "Naming a confidential principal to win a role is the clearest possible signal that you will name this one too."
+    },
+    {
+     "t": "I have run a household of nine staff across two residences",
+     "b": 1,
+     "fb": "Scope, verifiable, no names. This is how you make experience concrete without breaching anything."
+    },
+    {
+     "t": "I would be so grateful for the opportunity",
+     "b": 0,
+     "fb": "Gratitude is fine, but it positions you as a supplicant rather than a professional. It weakens the room."
+    },
+    {
+     "t": "I keep a household manual so the house runs whether or not I am in it",
+     "b": 1,
+     "fb": "It says you build systems rather than make yourself indispensable. Principals hear the difference immediately."
+    },
+    {
+     "t": "I am happy to be on call at any hour, always",
+     "b": 0,
+     "fb": "Well meant, and it quietly promises something no person sustains. Reliability beats limitless availability."
+    },
+    {
+     "t": "I posted a photo of the villa, with no faces and no location",
+     "b": 2,
+     "fb": "There is no acceptable version of this. Photographing a principal's home ends careers, faces or no faces."
+    },
+    {
+     "t": "I would want to understand the household's standards before proposing anything",
+     "b": 1,
+     "fb": "It signals patience and respect for what exists. This is the anti pattern to the new hire who reorganises in week one."
+    },
+    {
+     "t": "I have always dreamed of working with a family like yours",
+     "b": 0,
+     "fb": "It is about your dream. Warm, harmless, and it tells them nothing they can use."
+    }
+   ]
+  },
+  {
+   "type": "spot",
+   "title": "The first day",
+   "sub": "Read each scene and mark every line that is a mistake.",
+   "items": [
+    {
+     "scene": "Arrival",
+     "stem": "A new house manager's first morning. Mark the mistakes.",
+     "lines": [
+      {
+       "t": "Arrives twenty minutes early and waits in the car until five minutes before the hour",
+       "bad": false,
+       "fb": "Early enough to be safe, discreet enough not to impose. Correct."
+      },
+      {
+       "t": "Greets the housekeeper by asking how long the last person lasted",
+       "bad": true,
+       "fb": "It invites gossip on day one and tells the staff you are already looking for grievances."
+      },
+      {
+       "t": "Asks where the main water shut off is before the end of the first day",
+       "bad": false,
+       "fb": "An excellent first question, and one most new hires do not think to ask for months."
+      },
+      {
+       "t": "Takes a photograph of the entrance hall to remember the layout",
+       "bad": true,
+       "fb": "You do not photograph a principal's home. Ever, for any reason, on any device."
+      },
+      {
+       "t": "Writes down every name and role in a notebook that stays in the house",
+       "bad": false,
+       "fb": "Structured observation, recorded, and kept where it belongs. Correct."
+      },
+      {
+       "t": "Tells the chef about the standards at the previous household",
+       "bad": true,
+       "fb": "Two errors at once: it discloses another house, and it announces that you intend to change this one."
+      }
+     ]
+    },
+    {
+     "scene": "The introduction",
+     "stem": "Meeting the principal for the first time. Mark the mistakes.",
+     "lines": [
+      {
+       "t": "Waits to be addressed rather than opening the conversation",
+       "bad": false,
+       "fb": "You let them set the register. Correct."
+      },
+      {
+       "t": "Mentions having recognised them from an article",
+       "bad": true,
+       "fb": "It tells them you have been reading about them, and that their public life is present in your mind. Deeply unsettling."
+      },
+      {
+       "t": "Answers a question in three sentences rather than ten",
+       "bad": false,
+       "fb": "Brevity reassures. Length reads as anxiety."
+      },
+      {
+       "t": "Asks whether the family prefers to be greeted in the morning or left alone",
+       "bad": false,
+       "fb": "A precise, useful preference question. Exactly the right kind."
+      },
+      {
+       "t": "Offers an opinion on the art in the room",
+       "bad": true,
+       "fb": "Unasked commentary on their possessions places you as a guest rather than as staff."
+      },
+      {
+       "t": "Says they will confirm the week's schedule in writing by the evening",
+       "bad": false,
+       "fb": "A small promise, immediately kept, is the fastest way to begin."
+      }
+     ]
+    },
+    {
+     "scene": "Outside the house",
+     "stem": "A friend asks about the new job over dinner. Mark the mistakes.",
+     "lines": [
+      {
+       "t": "Says only that they work in private service for a family",
+       "bad": false,
+       "fb": "Enough to answer, nothing to trace. Correct."
+      },
+      {
+       "t": "Names the neighbourhood the residence is in",
+       "bad": true,
+       "fb": "Location is movement information. Combined with anything else, it identifies the family."
+      },
+      {
+       "t": "Describes the work as running a household and leaves it there",
+       "bad": false,
+       "fb": "Accurate and unremarkable, which is the point."
+      },
+      {
+       "t": "Mentions that the family travels a great deal in August",
+       "bad": true,
+       "fb": "You have just told a room when a residence stands empty. This is the leak that has consequences."
+      },
+      {
+       "t": "Changes the subject when pressed for detail",
+       "bad": false,
+       "fb": "The most useful social skill in this profession."
+      },
+      {
+       "t": "Says the principal is difficult but they are managing",
+       "bad": true,
+       "fb": "A judgement about the principal, offered outside the house. It travels, and it always travels back."
+      }
+     ]
+    },
+    {
+     "scene": "The end of week one",
+     "stem": "Reporting to the family office. Mark the mistakes.",
+     "lines": [
+      {
+       "t": "Sends one written summary rather than five messages across the week",
+       "bad": false,
+       "fb": "One channel, one rhythm. It makes you easy to work with."
+      },
+      {
+       "t": "Lists what was completed, what is pending, and what needs a decision",
+       "bad": false,
+       "fb": "The three column shape of every good report."
+      },
+      {
+       "t": "Includes a complaint about a colleague's attitude",
+       "bad": true,
+       "fb": "A first week report is not the place, and written complaints outlive the irritation that produced them."
+      },
+      {
+       "t": "Flags that a vendor is due on site next week and has no certificate on file",
+       "bad": false,
+       "fb": "Precisely the kind of thing the office needs to hear early."
+      },
+      {
+       "t": "Copies the principal on the operational detail",
+       "bad": true,
+       "fb": "The office exists so the principal does not read this. Copying them undoes the point of the channel."
+      },
+      {
+       "t": "Keeps the whole summary to one page",
+       "bad": false,
+       "fb": "Length is not proof of work. One page is read, three are skimmed."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "type": "write",
+   "title": "Say it properly",
+   "sub": "Draft your own, then read a model.",
+   "items": [
+    {
+     "scene": "The reference",
+     "stem": "A consultant has asked for a reference from a confidential household. Write your reply.",
+     "hint": "Three or four sentences. Warm, unhesitating, and naming no one.",
+     "model": "Thank you, I can certainly provide that. The household was a private family office placement, and references are handled through their office rather than by the principal directly. If you send me what you need to verify, dates, scope of the role and reporting line, I will have the office confirm it with you this week. I am not able to share the family's name, and I would say the same about yours to anyone else.",
+     "note": "It says yes before it says no, which keeps the door open. It routes the request to the proper channel rather than refusing. The closing line turns your discretion into a selling point rather than an obstacle, and it is the sentence consultants remember."
+    },
+    {
+     "scene": "The withheld answer",
+     "stem": "At a dinner outside the house, a guest asks who you work for. Write what you actually say.",
+     "hint": "Two or three sentences. Easy, unbothered, and closing the subject without rudeness.",
+     "model": "I look after a private household, which mostly means I make sure a busy family's life runs on time. I am afraid I keep the rest of it to myself, it is rather the point of the job. What about you, what do you do?",
+     "note": "It answers, which is what stops the questioning. It names the constraint lightly rather than solemnly, so nobody feels rebuked. And it hands the conversation back, which is the move that actually closes the subject. The classic error is a stiff refusal, which makes the family sound far more interesting than it is."
+    },
+    {
+     "scene": "The first day questions",
+     "stem": "Write the message you send to the family office before your first day, asking what you need to know.",
+     "hint": "One short message, every question in one batch, no more than five.",
+     "model": "Good afternoon. Looking forward to Monday. Five things I would like to have straight before I arrive, so I am not asking on the day. What time should I be at the house, and where should I park. Who will introduce me to the staff. Is there a household manual or standards document I should read first. What is the reporting line for day to day matters, and what should go straight to you. And is there anything the family particularly dislikes being asked in the first weeks. Thank you.",
+     "note": "Everything in one message, which is the whole discipline. Each question is operational rather than personal. The last one is the professional's question, and it is the one that tells the office you have done this before. Sending five separate messages across the weekend would undo all of it."
+    },
+    {
+     "scene": "The small promise",
+     "stem": "You told the principal you would confirm the week's schedule by evening. Write that message.",
+     "hint": "Short. Confirmed facts, one flagged decision, no narration.",
+     "model": "Good evening. The week is confirmed as follows. Tuesday, the car is at the house at seven fifteen for the eight o'clock. Wednesday and Thursday are clear at present. Friday, the dinner is at eight, six guests, and the florist comes at four. One thing needs you: the Saturday tennis court is held but not paid, and they release it Thursday noon. A yes or a no is all I need. Everything else is handled.",
+     "note": "Facts first, decision second, and the decision is isolated so it cannot be missed. Everything else is handled is the sentence that buys you trust, and you can only write it if it is true. Note what is absent: no explanation of how hard the florist was to reach."
+    }
+   ]
+  }
+ ],
+ "2": [
+  {
+   "type": "order",
+   "title": "Entering a room",
+   "sub": "The order the codes are actually read in.",
+   "items": [
+    {
+     "scene": "A formal dinner",
+     "stem": "You are asked to be present at a formal dinner in the house. Order your preparation.",
+     "steps": [
+      "Ask who is attending and whether anyone has been seated together deliberately",
+      "Confirm dietary restrictions and allergies in writing with the chef",
+      "Walk the room and check the table against the seating plan yourself",
+      "Confirm the timing of each course with the kitchen and the service staff",
+      "Position yourself where you can see the principal without being in the sightline"
+     ],
+     "why": "You start with the guests, because the entire evening is a social arrangement before it is a meal. Allergies go in writing because a verbal confirmation is the one that fails. You verify the table yourself, since the plan and the room are frequently different. Timing binds the kitchen to the room. And placing yourself last is what makes the whole thing look effortless."
+    },
+    {
+     "scene": "Reading a new house",
+     "stem": "You have joined a household and are learning its codes. Order your approach.",
+     "steps": [
+      "Observe what is done, without asking why yet",
+      "Notice what is never done, which is where the real rules live",
+      "Ask a long serving member of staff about one specific practice",
+      "Test your understanding on something small and reversible",
+      "Write the standard down so a newcomer would not have to guess"
+     ],
+     "why": "Watching precedes asking, because early questions get you the official answer rather than the true one. Absences carry more information than actions in a coded environment. You ask a peer, not the principal. You test small, because being wrong on something reversible costs nothing. And writing it down is what turns a code into a standard."
+    },
+    {
+     "scene": "The wrong word",
+     "stem": "You used a term that visibly landed badly with the principal. Order your recovery.",
+     "steps": [
+      "Notice the reaction and do not comment on it",
+      "Complete the sentence normally and move on",
+      "Find out later, quietly, what the correct term is",
+      "Use the correct term the next time, without reference to the first",
+      "Never mention the original error to anyone"
+     ],
+     "why": "Acknowledging the flinch magnifies it. Finishing normally keeps the moment small. You correct yourself in private, then demonstrate the correction silently. Apologising for a word choice makes the word the subject of the conversation, which is exactly what you are trying to avoid."
+    },
+    {
+     "scene": "A gift arrives",
+     "stem": "An unexpected valuable gift arrives at the house for the principal. Order your handling.",
+     "steps": [
+      "Record what arrived, from whom, at what time, and by what carrier",
+      "Do not open it, and do not allow anyone else to",
+      "Check it against any known security instruction for unexpected deliveries",
+      "Inform the principal or the office, in writing, with the record attached",
+      "Store it as instructed, and note where it was placed"
+     ],
+     "why": "The record is created before anything is touched, because a record made later is a record nobody trusts. You do not open what is not addressed to you. Security screening precedes delivery in houses that have it. Written notification creates the audit trail. And noting the location is what stops the search three weeks later."
+    },
+    {
+     "scene": "The staff conflict",
+     "stem": "Two members of staff have had a public disagreement in front of a guest. Order your response.",
+     "steps": [
+      "Interrupt with a neutral instruction that separates them physically",
+      "Restore the guest's experience first, and say nothing about what happened",
+      "Speak to each person alone, later, and listen before deciding anything",
+      "Decide the outcome yourself rather than asking them to resolve it",
+      "Record what was decided, briefly, in case it recurs"
+     ],
+     "why": "Separation is immediate and it is done with an instruction, not a rebuke. The guest is the priority, and the incident is never explained to them. Private conversations happen later and separately, since a joint meeting becomes a performance. You decide, because asking them to work it out is what created the standoff. The record protects everyone if it happens again."
+    }
+   ]
+  },
+  {
+   "type": "sort",
+   "title": "Old money, new money",
+   "sub": "Which world does each signal belong to?",
+   "buckets": [
+    "Established wealth",
+    "Newer wealth",
+    "Neither, it is a myth"
+   ],
+   "items": [
+    {
+     "t": "The price of a piece is mentioned unprompted",
+     "b": 1,
+     "fb": "Announcing cost is rarely the language of the oldest money. Restraint signals more than the number does."
+    },
+    {
+     "t": "Furniture that is visibly worn and has clearly not been replaced",
+     "b": 0,
+     "fb": "Continuity is the point. Replacing a good thing because it is old is read as not understanding what you have."
+    },
+    {
+     "t": "Logos are large and visible on clothing and accessories",
+     "b": 1,
+     "fb": "Visible branding is a way of being read quickly by strangers. Established wealth prefers not to be read at all."
+    },
+    {
+     "t": "Everyone in this world is discreet and understated",
+     "b": 2,
+     "fb": "A comforting generalisation and often false. Plenty of old families are loud, and plenty of new fortunes are invisible. Read the person, not the category."
+    },
+    {
+     "t": "Staff are addressed by first name and known for years",
+     "b": 0,
+     "fb": "Long tenure is itself the signal. Households with turnover every eighteen months tell you something else."
+    },
+    {
+     "t": "The house is newly and completely decorated in one style",
+     "b": 1,
+     "fb": "A single coherent scheme executed at once usually means a decorator and a recent purchase, rather than accumulation."
+    },
+    {
+     "t": "Objects are referred to by where they came from rather than what they cost",
+     "b": 0,
+     "fb": "Provenance as the natural vocabulary. The story is the value, and price is not the story."
+    },
+    {
+     "t": "You can always tell the difference within five minutes",
+     "b": 2,
+     "fb": "You often cannot, and acting on a wrong reading is worse than not reading at all. Suspend the judgement."
+    },
+    {
+     "t": "An interest in being seen at the newest restaurant",
+     "b": 1,
+     "fb": "Visibility as pleasure. Established preference tends towards the place that has been the same for forty years."
+    },
+    {
+     "t": "Repairing rather than replacing, as a reflex",
+     "b": 0,
+     "fb": "The conservator, the cobbler and the upholsterer are on the vendor list. That list is itself a signal."
+    },
+    {
+     "t": "Privacy treated as an operating requirement rather than a preference",
+     "b": 0,
+     "fb": "Where wealth is generational, exposure has usually already cost the family something, and the discipline is inherited."
+    },
+    {
+     "t": "Wealth always makes people demanding and difficult",
+     "b": 2,
+     "fb": "A prejudice, and it will show in your face within a week. Most principals are simply busy and want to be left in peace."
+    }
+   ]
+  },
+  {
+   "type": "spot",
+   "title": "The vocabulary trap",
+   "sub": "Mark the lines that would mark you as an outsider.",
+   "items": [
+    {
+     "scene": "On the telephone",
+     "stem": "Speaking to a caller at the residence. Mark the mistakes.",
+     "lines": [
+      {
+       "t": "Answers with the household's agreed greeting and nothing more",
+       "bad": false,
+       "fb": "Neutral and unidentifying. Correct."
+      },
+      {
+       "t": "Says the family is away until the fifteenth",
+       "bad": true,
+       "fb": "Movement information, given freely to an unverified caller. This is how a residence is targeted."
+      },
+      {
+       "t": "Offers to take a message and confirm receipt",
+       "bad": false,
+       "fb": "Helpful without disclosing anything."
+      },
+      {
+       "t": "Confirms that yes, this is the Whitfield residence",
+       "bad": true,
+       "fb": "You have confirmed an address to a stranger. The household greeting exists precisely so you never do this."
+      },
+      {
+       "t": "Asks for a name and a number before promising anything",
+       "bad": false,
+       "fb": "Basic verification, politely done."
+      },
+      {
+       "t": "Says the principal is in a meeting and can call back at four",
+       "bad": true,
+       "fb": "You have given a location, a status and a time. Any one of these is more than a caller needs."
+      }
+     ]
+    },
+    {
+     "scene": "At the table",
+     "stem": "Serving a lunch for the principal and two guests. Mark the mistakes.",
+     "lines": [
+      {
+       "t": "Serves from the correct side and clears only when everyone has finished",
+       "bad": false,
+       "fb": "Standard, and noticed only when it is done wrong."
+      },
+      {
+       "t": "Asks the guests, brightly, whether everything is enjoyable",
+       "bad": true,
+       "fb": "It interrupts, and it asks them to reassure you. Service does not seek confirmation."
+      },
+      {
+       "t": "Refills water without being asked and without comment",
+       "bad": false,
+       "fb": "Anticipatory, silent. This is the level."
+      },
+      {
+       "t": "Joins the laughter at a guest's joke",
+       "bad": true,
+       "fb": "You are not at the table. Reacting to the conversation announces that you have been listening to it."
+      },
+      {
+       "t": "Notices a guest has not touched the fish and quietly informs the kitchen",
+       "bad": false,
+       "fb": "Observation, recorded, acted on without ceremony."
+      },
+      {
+       "t": "Announces each dish with a full description of its preparation",
+       "bad": true,
+       "fb": "In a private house this is restaurant theatre. Unless the household does it, it reads as imported from somewhere else."
+      }
+     ]
+    },
+    {
+     "scene": "Written communication",
+     "stem": "A message to the principal about a change of plan. Mark the mistakes.",
+     "lines": [
+      {
+       "t": "Leads with the change itself, in the first line",
+       "bad": false,
+       "fb": "They read the first line. Everything important belongs there."
+      },
+      {
+       "t": "Explains at length why the original arrangement failed",
+       "bad": true,
+       "fb": "They did not ask. Narrating the difficulty makes your work visible, which is the opposite of the job."
+      },
+      {
+       "t": "States what has been done and what, if anything, they need to decide",
+       "bad": false,
+       "fb": "The correct shape: resolved, or one clear decision."
+      },
+      {
+       "t": "Uses three exclamation marks and an emoji to soften the news",
+       "bad": true,
+       "fb": "Register. The written voice of the house is calm and unadorned."
+      },
+      {
+       "t": "Ends without asking for reassurance or a reply",
+       "bad": false,
+       "fb": "A message that needs no answer is a gift to a busy person."
+      },
+      {
+       "t": "Apologises twice for the inconvenience",
+       "bad": true,
+       "fb": "One apology is professional, two is anxious, and anxiety asks the reader to manage your feelings."
+      }
+     ]
+    },
+    {
+     "scene": "The guest wing",
+     "stem": "Preparing for a weekend guest. Mark the mistakes.",
+     "lines": [
+      {
+       "t": "Checks the room against the written standard rather than from memory",
+       "bad": false,
+       "fb": "The standard exists so that the room is identical whoever prepared it."
+      },
+      {
+       "t": "Asks the principal what the guest is like, out of curiosity",
+       "bad": true,
+       "fb": "Curiosity about guests is the instinct to suppress. You ask about requirements, never about people."
+      },
+      {
+       "t": "Confirms dietary restrictions with the guest's assistant in advance",
+       "bad": false,
+       "fb": "The right channel, and early enough for the kitchen to act."
+      },
+      {
+       "t": "Leaves a note in the room signed with their own first name",
+       "bad": true,
+       "fb": "The house welcomes the guest, not you. Personal notes place you in a relationship you do not have."
+      },
+      {
+       "t": "Tests the shower, the lamps and the wifi before the guest arrives",
+       "bad": false,
+       "fb": "The failures that embarrass a house are always this ordinary."
+      },
+      {
+       "t": "Mentions to the guest that the principal has been unwell",
+       "bad": true,
+       "fb": "Personal class information, disclosed to an outsider. It does not leave you, ever."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "type": "write",
+   "title": "The written voice",
+   "sub": "Draft it, then compare.",
+   "items": [
+    {
+     "scene": "The change of plan",
+     "stem": "The eight o'clock car cannot come, you have arranged another. Write the message to the principal.",
+     "hint": "Under sixty words. The change first, no narration, nothing to decide.",
+     "model": "Good morning. The car for eight is now a different vehicle and driver, Marcus, silver saloon, and he will be at the house at seven fifteen as usual. Everything else this morning is unchanged. Nothing needed from you.",
+     "note": "The change is in the first line, with the detail they will actually use at the door. Nothing needed from you is the phrase that closes the loop and protects their attention. The classic failure is three sentences about why the original car fell through, which they neither asked for nor want."
+    },
+    {
+     "scene": "The caller",
+     "stem": "An unknown caller asks whether this is the principal's residence and when they will be back. Write exactly what you say.",
+     "hint": "Two or three sentences. Warm, entirely uninformative, and it ends the call.",
+     "model": "Good morning, you have reached a private line. I am not able to discuss the household, but I am happy to take a name and a number and pass a message to the right person. May I ask who is calling, and what it concerns?",
+     "note": "It neither confirms nor denies the address, which is the whole discipline. It offers a real service so the refusal does not sound hostile. And the question at the end takes control of the call, which is what stops the follow up questions."
+    },
+    {
+     "scene": "The correction",
+     "stem": "A member of staff has repeatedly left the service door unlocked. Write what you say to them.",
+     "hint": "Spoken, in private. Short, specific, no shame, and it names the consequence.",
+     "model": "Yves, one thing. The service door was unlocked again last night, third time this month. I am not interested in why, and I am not going to raise it with anyone else. I need it locked every time, without exception, including when you are coming straight back. It is the one thing in this house that has no acceptable margin. Can I count on that from tonight?",
+     "note": "Specific and countable, so it cannot be argued with. I am not going to raise it with anyone else is what makes compliance possible without humiliation. The consequence is stated as a standard rather than a threat, and it closes with a question that requires an answer."
+    },
+    {
+     "scene": "The weekly note",
+     "stem": "Write the standing Friday note to the family office summarising the household week.",
+     "hint": "One short structured note. Done, pending, needs a decision. No commentary.",
+     "model": "Week to 14 March. Completed: annual boiler service, both units passed. Guest wing restocked and checked. Two new suppliers added to the book, certificates on file. Pending: the roof survey is booked for the 21st, the surveyor will need roughly three hours and roof access. The car is due its service and I am holding until the family travel. Needs a decision: the gardener has asked to move his day from Tuesday to Thursday from April. It makes no operational difference to us. Yes or no when convenient.",
+     "note": "Three fixed headings, used every week, so the office learns where to look. Facts carry their own detail, three hours and roof access, so nobody has to ask. The decision is isolated, framed as low stakes, and given a deadline of when convenient, which is how you get an answer without pressing."
+    }
+   ]
+  }
+ ],
+ "3": [
+  {
+   "type": "order",
+   "title": "When something leaks",
+   "sub": "The order that limits the damage.",
+   "items": [
+    {
+     "scene": "A photograph appears",
+     "stem": "A photograph of the family's residence has appeared on a member of staff's social account. Order your response.",
+     "steps": [
+      "Screenshot the post, with the account name, date and time",
+      "Ask the person to remove it immediately, without discussion",
+      "Inform the family office in writing with the record attached",
+      "Establish what else that account has published historically",
+      "Review the household's written policy and have everyone reconfirm it"
+     ],
+     "why": "You record before you act, because the post will be gone in ten minutes and the record is what the office needs. Removal is a instruction, not a negotiation. The office learns from you rather than from someone else. The history matters more than the single post, since one is rarely one. And the policy review is what stops the next person."
+    },
+    {
+     "scene": "The journalist",
+     "stem": "A journalist telephones asking to confirm a detail about the family. Order your handling.",
+     "steps": [
+      "Confirm nothing, deny nothing, and take their name and outlet",
+      "End the call politely without agreeing to anything",
+      "Write down the exact questions asked, word for word",
+      "Notify the family office immediately, before anyone else",
+      "Tell the rest of the staff only that all press calls come to you"
+     ],
+     "why": "Confirming and denying are both answers, and both are usable. The exact wording of the questions tells the office what the journalist already believes they know, which is the actual intelligence. Speed matters because the office may have hours rather than days. And the staff instruction is deliberately uninformative, since telling them why creates the gossip you are preventing."
+    },
+    {
+     "scene": "The colleague who already knows",
+     "stem": "A colleague refers to something private about the family and invites you to discuss it. Order your response.",
+     "steps": [
+      "Neither confirm nor add anything, even by expression",
+      "Change the subject to something operational",
+      "Do not report the colleague unless the family is at risk",
+      "Note privately that this person discusses the family",
+      "Route nothing sensitive through that person in future"
+     ],
+     "why": "They already know is how every leak in history has begun, so the fact that they know changes nothing about what you say. You redirect rather than rebuke, because a rebuke makes an enemy and does not stop the behaviour. You do not escalate a first instance. And the lasting response is structural: you quietly reroute information rather than trying to reform a person."
+    },
+    {
+     "scene": "The device",
+     "stem": "You realise the household calendar is synced to a personal phone you use for everything. Order the fix.",
+     "steps": [
+      "Stop using that device for household matters immediately",
+      "List every household account and service currently on it",
+      "Move household matters to a separate device or a separate profile",
+      "Remove the household data from the personal device and confirm removal",
+      "Tell the office what happened and what you have done about it"
+     ],
+     "why": "You stop the exposure before you audit it. The inventory is necessary because it is never only the calendar. Separation is the actual fix, not stronger passwords. Removal is confirmed rather than assumed. And telling the office yourself is what turns a mistake into a demonstration of reliability, since they will find out eventually and the person who reported it is treated very differently from the person who did not."
+    },
+    {
+     "scene": "After the breach",
+     "stem": "Something private did travel, and it came from you. Order what you do.",
+     "steps": [
+      "Establish exactly what was said, to whom, and when",
+      "Report it yourself, in writing, to the family office, the same day",
+      "State plainly what happened without minimising or explaining",
+      "Say what you have already done to contain it",
+      "Accept the consequence without negotiating it"
+     ],
+     "why": "Facts first, because a vague confession is worse than none. Same day, and from you, since the timing is the only part of this you still control. Minimising is what destroys the last of the credibility. Containment shows judgement survived the error. And negotiating the consequence undoes everything the confession earned."
+    }
+   ]
+  },
+  {
+   "type": "sort",
+   "title": "Five classes",
+   "sub": "Which class does each piece of information belong to?",
+   "buckets": [
+    "Public",
+    "Household",
+    "Movement",
+    "Personal",
+    "Legal or incident"
+   ],
+   "items": [
+    {
+     "t": "The principal gave an interview to a business magazine last year",
+     "b": 0,
+     "fb": "Made public by the family themselves. Even so you do not comment, confirm, amplify or correct it."
+    },
+    {
+     "t": "The house uses a particular florist every Thursday",
+     "b": 1,
+     "fb": "A routine and a supplier. Shared inside the house on a need to know basis, and never outside it."
+    },
+    {
+     "t": "The family flies to Aspen on the 22nd and the house will be empty",
+     "b": 2,
+     "fb": "Where the family is, and when a residence stands empty. This travels only in designated channels."
+    },
+    {
+     "t": "The eldest child is being assessed for a learning difficulty",
+     "b": 3,
+     "fb": "Health and children. It does not leave you, it does not enter a message, and it is not discussed with colleagues who already know."
+    },
+    {
+     "t": "A contractor was injured on the property this morning",
+     "b": 4,
+     "fb": "Anything that may become a matter for lawyers, insurers or police goes to the office immediately, in writing."
+    },
+    {
+     "t": "The alarm code was changed on Tuesday",
+     "b": 2,
+     "fb": "Security information about the residence. Treat it as movement class, in designated channels only."
+    },
+    {
+     "t": "The chef's contract ends in June",
+     "b": 1,
+     "fb": "Staffing. Inside the house, need to know, and not a topic for the other staff."
+    },
+    {
+     "t": "The principal appeared on a published list of donors",
+     "b": 0,
+     "fb": "Public because they made it so. Your posture remains silence."
+    },
+    {
+     "t": "There is tension between the principal and their sibling",
+     "b": 3,
+     "fb": "A family conflict. Personal class, and it is the category where careers most often end."
+    },
+    {
+     "t": "The bedroom curtains are drawn by six in winter",
+     "b": 1,
+     "fb": "A household standard. Unremarkable inside, and outside it is a detail about occupancy."
+    },
+    {
+     "t": "A journalist has been asking questions at the gate",
+     "b": 4,
+     "fb": "Potential press matter. It goes to the office the same hour, not the same week."
+    },
+    {
+     "t": "The family will be at the London flat rather than the country house",
+     "b": 2,
+     "fb": "Location and duration. This is the class that gets people hurt, and it is never answered in reply to a friendly question."
+    }
+   ]
+  },
+  {
+   "type": "spot",
+   "title": "Discretion under pressure",
+   "sub": "Mark every line that is a mistake.",
+   "items": [
+    {
+     "scene": "The dinner party question",
+     "stem": "A guest at your own friend's dinner presses you about your work. Mark the mistakes.",
+     "lines": [
+      {
+       "t": "Says the family is lovely and very down to earth",
+       "bad": true,
+       "fb": "A characterisation of the principal, offered outside the house. Harmless sounding, and it confirms you talk about them."
+      },
+      {
+       "t": "Says only that they run a private household",
+       "bad": false,
+       "fb": "Complete, true and untraceable."
+      },
+      {
+       "t": "Mentions the family has a place in the Hamptons",
+       "bad": true,
+       "fb": "Property location. Combined with anything else in the room, it identifies them."
+      },
+      {
+       "t": "Deflects with a question about the other person's work",
+       "bad": false,
+       "fb": "The reliable exit, and it flatters."
+      },
+      {
+       "t": "Laughs and says they have signed things they cannot talk about",
+       "bad": true,
+       "fb": "It advertises that there is something to know, which invites the exact pressure you are trying to end."
+      },
+      {
+       "t": "Says the work is mostly logistics and standards, which bores most people",
+       "bad": false,
+       "fb": "True, deliberately dull, and it closes the subject."
+      }
+     ]
+    },
+    {
+     "scene": "The staff kitchen",
+     "stem": "Two colleagues are discussing the principal's marriage. Mark the mistakes.",
+     "lines": [
+      {
+       "t": "Listens without contributing, then leaves the room",
+       "bad": false,
+       "fb": "Neither participating nor performing disapproval. Correct."
+      },
+      {
+       "t": "Corrects a factual detail they have wrong",
+       "bad": true,
+       "fb": "A correction is a confirmation. You have just told them you know, and that you are willing to say so."
+      },
+      {
+       "t": "Says they would rather not discuss the family and changes the subject",
+       "bad": false,
+       "fb": "Clear, unpreachy, and it models the standard without a lecture."
+      },
+      {
+       "t": "Asks where they heard it",
+       "bad": true,
+       "fb": "It reads as interest, and it invites them to tell you more."
+      },
+      {
+       "t": "Later reroutes sensitive scheduling away from those two",
+       "bad": false,
+       "fb": "The structural response, which is the only one that actually works."
+      },
+      {
+       "t": "Tells them the principal would be upset if they heard this",
+       "bad": true,
+       "fb": "It implies you would report it, and it confirms the subject matters. You have made an enemy and taught them nothing."
+      }
+     ]
+    },
+    {
+     "scene": "The gate",
+     "stem": "A man at the gate says he is a delivery driver and asks when the family returns. Mark the mistakes.",
+     "lines": [
+      {
+       "t": "Asks for the delivery reference and the company name",
+       "bad": false,
+       "fb": "Verification before anything else."
+      },
+      {
+       "t": "Says the family is back on Sunday so he should come then",
+       "bad": true,
+       "fb": "Movement information given to an unverified stranger at the perimeter. This is the textbook approach and it works often."
+      },
+      {
+       "t": "Says deliveries are received at any time and takes it himself",
+       "bad": false,
+       "fb": "It removes the reason for the question entirely."
+      },
+      {
+       "t": "Notes the vehicle, the time and the description afterwards",
+       "bad": false,
+       "fb": "If it turns out to matter, this record is the only useful thing anyone will have."
+      },
+      {
+       "t": "Lets him wait inside the gate while checking with the office",
+       "bad": true,
+       "fb": "You have granted perimeter access to an unverified person. He waits outside, always."
+      },
+      {
+       "t": "Mentions it to the office the same day even though nothing happened",
+       "bad": false,
+       "fb": "Nothing happened is a pattern only visible if each nothing is reported."
+      }
+     ]
+    },
+    {
+     "scene": "The written record",
+     "stem": "Documenting an incident involving a member of staff. Mark the mistakes.",
+     "lines": [
+      {
+       "t": "Records the date, time, location and what was observed",
+       "bad": false,
+       "fb": "Observable facts, which is what a record is for."
+      },
+      {
+       "t": "Includes the writer's opinion of the person's character",
+       "bad": true,
+       "fb": "Character judgements in a written record are a liability, to the household and to you."
+      },
+      {
+       "t": "Quotes what was actually said, in quotation marks",
+       "bad": false,
+       "fb": "Verbatim where possible, paraphrase clearly marked as paraphrase."
+      },
+      {
+       "t": "Speculates about what the person probably intended",
+       "bad": true,
+       "fb": "Speculation recorded as fact is how a document becomes evidence against the person who wrote it."
+      },
+      {
+       "t": "Sends it to the office and keeps no personal copy at home",
+       "bad": false,
+       "fb": "The record lives in the household's system, not in your private files."
+      },
+      {
+       "t": "Shares the record with two other staff for their view",
+       "bad": true,
+       "fb": "Circulating an incident record turns a contained matter into a household rumour."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "type": "write",
+   "title": "Under pressure",
+   "sub": "Write it, then compare against a model.",
+   "items": [
+    {
+     "scene": "The press call",
+     "stem": "A journalist has called asking you to confirm a detail about the family. Write the note you send the family office immediately after.",
+     "hint": "Facts only, in order, sent within the hour. No speculation.",
+     "model": "Press call, today 11:42, landline at the residence. Caller gave the name Dana Whitmore, said she writes for a business weekly, did not give a number. Her exact questions were: is this the residence of the family, is it correct that the property was purchased last year, and can I confirm who is living there now. I confirmed nothing and denied nothing, said I could not discuss the household, and ended the call. She did not ask to be called back. I have told the staff that all press calls come to me and given them no reason. Nothing further from me unless you would like it.",
+     "note": "Time stamped, verbatim questions, and an explicit record of what you did not say. The exact wording is the real intelligence, since it tells the office what the journalist already believes. Note the absence of any theory about who she is or what she wants, which is not your job and would only mislead."
+    },
+    {
+     "scene": "Reporting yourself",
+     "stem": "You mentioned the family's travel dates to a friend. Nothing has happened. Write the message to the family office.",
+     "hint": "Same day. Plain, unminimised, no excuses, and it says what you have done.",
+     "model": "I need to report something from this evening. At a private dinner I mentioned that the family would be away for the last two weeks of August. I did not name the family or the property, but the people present know where I work, so I regard it as a disclosure of movement information. I have said nothing further and I have asked no one to keep it quiet, since that would only draw attention to it. Three people were present, all known to me personally. I am available to discuss it whenever suits you, and I will accept whatever you decide.",
+     "note": "It names the class of the breach, movement information, which shows you understand the framework rather than merely feeling bad. It resists the urge to explain the circumstances. Asking no one to keep it quiet is a genuinely expert judgement. And accepting the decision in advance is what preserves the last of your credibility."
+    },
+    {
+     "scene": "The colleague",
+     "stem": "A colleague has just told you something private about the principal and is waiting for your reaction. Write what you say.",
+     "hint": "Two sentences, spoken. No rebuke, no engagement, and it moves on.",
+     "model": "I would rather not know that, and I am going to forget I do. Are you covering Thursday, because I need to fix the rota before I leave tonight.",
+     "note": "It declines without moralising, which is the difference between setting a standard and delivering a sermon. Forgetting is offered rather than confidentiality, so nothing is dignified as a secret. The immediate operational question gives them somewhere to go, which is what actually ends the conversation."
+    },
+    {
+     "scene": "The friend who keeps asking",
+     "stem": "A close friend has asked about your work three times now and is starting to feel shut out. Write what you say to them.",
+     "hint": "Warm and personal, not procedural. It protects the friendship and the line at once.",
+     "model": "I know it must seem strange, and I do not want you to think I am shutting you out. The truth is the job only works if the family never has to wonder what I say about them, and I cannot keep a version of that for people I love and a different one for everyone else. It is not about trusting you. Ask me anything about how I am. Just not about them, and I promise it is the least interesting part.",
+     "note": "It addresses the hurt first rather than restating the rule. One standard for everyone is the argument that actually persuades, because it removes the personal insult. And redirecting to how I am gives the friendship somewhere real to go, which is what stops the asking."
+    }
+   ]
+  }
+ ],
+ "4": [
+  {
+   "type": "order",
+   "title": "From signal to system",
+   "sub": "How anticipation is actually built.",
+   "items": [
+    {
+     "scene": "The method",
+     "stem": "You have noticed the principal seems tense before Thursday meetings. Order the steps that turn this into anticipation.",
+     "steps": [
+      "Record the observation with its date, in the pattern category",
+      "Watch for three more instances before concluding anything",
+      "Identify what specifically precedes the tension",
+      "Change one thing quietly and see whether it helps",
+      "Make the change standard, and write it into the household record"
+     ],
+     "why": "One observation is an anecdote. Three is a pattern, and patterns are where anticipation comes from. You look for the antecedent rather than treating the mood. The intervention is small and silent, so nothing has to be discussed. And writing it down is what makes it survive your holiday."
+    },
+    {
+     "scene": "The morning",
+     "stem": "The principal has an unusually early departure tomorrow. Order tonight's preparation.",
+     "steps": [
+      "Confirm the departure time and the actual door time, which are different",
+      "Check what they will need in the car and place it there tonight",
+      "Brief anyone who will be in the house before dawn",
+      "Set the house so nothing needs to be decided in the morning",
+      "Leave a single written line confirming the timing, where they will see it"
+     ],
+     "why": "Door time is the real number and almost nobody asks for it. Loading the night before removes the last minute search. Briefing prevents a well meaning person from making noise at five. Setting the house means no decisions before coffee. And the single written line is what stops them asking you at half past four."
+    },
+    {
+     "scene": "The observation record",
+     "stem": "You have collected a week of observations. Order what you do with them.",
+     "steps": [
+      "Sort each one into preference, pattern, threshold, aversion, rhythm or anomaly",
+      "Pull out the anomalies and look at them first",
+      "Turn the confirmed preferences into entries in the principal's book",
+      "Turn the confirmed patterns into standing arrangements",
+      "Discard the observations you cannot categorise"
+     ],
+     "why": "Sorting comes before analysis, because uncategorised notes are just noise. Anomalies come first since an anomaly is either a problem forming or a preference changing, and both are urgent. Preferences become records, patterns become systems. And discarding matters as much as keeping, because a file that holds everything is a file nobody reads."
+    },
+    {
+     "scene": "The line you do not cross",
+     "stem": "You have anticipated that the principal will want to accept a certain invitation. Order what you do.",
+     "steps": [
+      "Hold the date provisionally so the option stays open",
+      "Prepare everything as though the answer will be yes",
+      "Ask, because acceptance on their behalf is a matter of consent",
+      "Confirm or release the hold the same day",
+      "Record the decision so the pattern is clearer next time"
+     ],
+     "why": "You protect the option without spending anything, which is the whole trick. Preparation happens invisibly. Then you ask, because anticipation never applies to consent, to money above your threshold, to the children or to anything irreversible. Same day release keeps your name good with the other side. And recording it is what makes the next one easier."
+    },
+    {
+     "scene": "The failed anticipation",
+     "stem": "You anticipated wrongly and the principal noticed. Order your response.",
+     "steps": [
+      "Correct the situation immediately, before saying anything about it",
+      "Acknowledge it in one sentence, without explanation",
+      "Ask the single question that would have prevented it",
+      "Record the corrected preference the same day",
+      "Do not mention it again"
+     ],
+     "why": "Fixing precedes discussing. One sentence, because a long apology asks them to console you. The question is the valuable part, since a wrong anticipation is a preference you had recorded incorrectly. Same day, or it will not be recorded at all. And returning to it later reopens something they had already closed."
+    }
+   ]
+  },
+  {
+   "type": "sort",
+   "title": "Three levels",
+   "sub": "Reactive, proactive or anticipatory?",
+   "buckets": [
+    "Reactive",
+    "Proactive",
+    "Anticipatory"
+   ],
+   "items": [
+    {
+     "t": "They ask for a car, you book it well and quickly",
+     "b": 0,
+     "fb": "The floor. Correct, replaceable, and paid as such."
+    },
+    {
+     "t": "You ask whether they would like a car arranged for the evening",
+     "b": 1,
+     "fb": "You have seen the need and handed them a decision. Better, and still a small tax on their attention."
+    },
+    {
+     "t": "The car is downstairs, the bag is in it, nothing was discussed",
+     "b": 2,
+     "fb": "No question, no decision, nothing to notice. This is what the profession actually pays for."
+    },
+    {
+     "t": "The dry cleaning is collected because it is Tuesday and it always is",
+     "b": 2,
+     "fb": "A pattern converted into a standing arrangement. It runs without anyone thinking about it."
+    },
+    {
+     "t": "You ask which of two hotels they would prefer for the trip",
+     "b": 1,
+     "fb": "Reasonable, and it is still a decision you have created for them."
+    },
+    {
+     "t": "They mention being cold, you fetch a blanket",
+     "b": 0,
+     "fb": "Prompt and correct, and it happened only because they spoke."
+    },
+    {
+     "t": "The room is already at the temperature they prefer in October",
+     "b": 2,
+     "fb": "A recorded preference, applied seasonally, invisible."
+    },
+    {
+     "t": "You notice the passport expires in four months and flag it",
+     "b": 1,
+     "fb": "Genuinely useful, and it is still an offer rather than a resolution."
+    },
+    {
+     "t": "The passport was renewed in the quiet week you had identified",
+     "b": 2,
+     "fb": "Anticipated, scheduled into a gap you found, and closed before it existed as a problem."
+    },
+    {
+     "t": "You ask whether to use the usual florist",
+     "b": 1,
+     "fb": "If they have a usual florist, this question should not exist. It is proactive where anticipatory was available."
+    },
+    {
+     "t": "They ask you to find out why the wifi is slow",
+     "b": 0,
+     "fb": "Reactive by definition, since the failure reached them before it reached you."
+    },
+    {
+     "t": "Seeking approval before committing spend above your threshold",
+     "b": 1,
+     "fb": "Deliberately proactive, and correctly so. Anticipation never applies to money above your threshold, to consent or to anything irreversible."
+    }
+   ]
+  },
+  {
+   "type": "spot",
+   "title": "Reading the house",
+   "sub": "Mark the lines that are mistakes.",
+   "items": [
+    {
+     "scene": "The departure",
+     "stem": "The principal leaves for a three day trip. Mark the mistakes.",
+     "lines": [
+      {
+       "t": "Confirms the door time rather than the departure time",
+       "bad": false,
+       "fb": "The number that actually governs the morning."
+      },
+      {
+       "t": "Asks at seven fifteen which coat they would like",
+       "bad": true,
+       "fb": "A question at the door is a failure of preparation. The coat is a recorded preference, or it is laid out and the choice is silent."
+      },
+      {
+       "t": "Has placed the travel documents in the same pocket of the same bag as always",
+       "bad": false,
+       "fb": "Consistency removes the search. Same place, every time."
+      },
+      {
+       "t": "Texts twice during the journey to check everything is going well",
+       "bad": true,
+       "fb": "It asks for reassurance and interrupts. Silence during travel is the service."
+      },
+      {
+       "t": "Has the house restocked and reset before the return",
+       "bad": false,
+       "fb": "Returning to a house that is ready is the whole point of the role."
+      },
+      {
+       "t": "Leaves a note listing everything handled in their absence",
+       "bad": true,
+       "fb": "Making the work visible is the instinct to kill. The evidence is that nothing needed them."
+      }
+     ]
+    },
+    {
+     "scene": "The observation notebook",
+     "stem": "A house manager's method of recording. Mark the mistakes.",
+     "lines": [
+      {
+       "t": "Writes observations down within the hour rather than at the end of the week",
+       "bad": false,
+       "fb": "If it is not written down it did not happen, because you will not remember it in March."
+      },
+      {
+       "t": "Records the principal's moods with commentary on their character",
+       "bad": true,
+       "fb": "Rhythm is a category, character assessment is not. A notebook of judgements is a liability."
+      },
+      {
+       "t": "Sorts each note into one of the six categories",
+       "bad": false,
+       "fb": "Categorised observation, which is the difference from noticing."
+      },
+      {
+       "t": "Keeps the notebook at home for convenience",
+       "bad": true,
+       "fb": "A record of the family's patterns and preferences does not leave the house. Ever."
+      },
+      {
+       "t": "Flags anomalies for attention within twenty four hours",
+       "bad": false,
+       "fb": "An anomaly is a problem forming or a preference changing. Both are urgent."
+      },
+      {
+       "t": "Notes a guest's private remark overheard at dinner",
+       "bad": true,
+       "fb": "You are recording a guest's confidence. That is not observation, it is collection, and it is the wrong instinct entirely."
+      }
+     ]
+    },
+    {
+     "scene": "The thresholds",
+     "stem": "Judging what needs approval. Mark the mistakes.",
+     "lines": [
+      {
+       "t": "Books the usual florist for the usual weekly order without asking",
+       "bad": false,
+       "fb": "Recurring, within threshold, previously approved. Asking would be proactive where anticipatory was available."
+      },
+      {
+       "t": "Accepts a dinner invitation on the principal's behalf to save them a decision",
+       "bad": true,
+       "fb": "Consent. Anticipation never applies here, whatever you are certain they would want."
+      },
+      {
+       "t": "Commits to a four thousand dollar repair without approval because it is urgent",
+       "bad": true,
+       "fb": "Above threshold is above threshold. Urgency changes the speed of the request, never the need for it."
+      },
+      {
+       "t": "Arranges an emergency plumber at midnight for an active leak",
+       "bad": false,
+       "fb": "Safety and irreversible damage. You act, then report immediately."
+      },
+      {
+       "t": "Signs a two year service contract as it was cheaper than the annual",
+       "bad": true,
+       "fb": "A long commitment is irreversible in the sense that matters. Savings do not confer authority."
+      },
+      {
+       "t": "Replaces a broken lamp with the identical model already on the inventory",
+       "bad": false,
+       "fb": "Like for like, on record, within threshold. Exactly the sort of thing you are trusted to do silently."
+      }
+     ]
+    },
+    {
+     "scene": "When you were wrong",
+     "stem": "An anticipation missed and the principal noticed. Mark the mistakes.",
+     "lines": [
+      {
+       "t": "Fixes the situation before mentioning it at all",
+       "bad": false,
+       "fb": "Correction first. Discussion is a distant second."
+      },
+      {
+       "t": "Explains that the previous instruction had been different",
+       "bad": true,
+       "fb": "It is a defence, and it makes them the source of the error. Never worth the point you win."
+      },
+      {
+       "t": "Says it once, briefly, and does not repeat the apology",
+       "bad": false,
+       "fb": "One sentence. Longer asks them to manage your feelings."
+      },
+      {
+       "t": "Asks the single question that would have prevented it",
+       "bad": false,
+       "fb": "The valuable part, since a wrong anticipation is a preference recorded wrongly."
+      },
+      {
+       "t": "Raises it again the following week to check they are not still annoyed",
+       "bad": true,
+       "fb": "They had closed it. You have reopened it, and now the subject is your anxiety."
+      },
+      {
+       "t": "Tells a colleague about it so they can commiserate",
+       "bad": true,
+       "fb": "You have turned a private correction into household knowledge, and told a colleague you discuss the principal."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "type": "write",
+   "title": "Invisible work",
+   "sub": "Write it, then read the model.",
+   "items": [
+    {
+     "scene": "The return",
+     "stem": "The principal returns tonight from ten days away. Write the only message you will send them.",
+     "hint": "Under fifty words. Nothing needed from them, nothing about what you did.",
+     "model": "Welcome back. The car will be at the terminal at nine forty, Marcus driving. The house is ready and the dog is home. Nothing needs you tonight.",
+     "note": "Four facts, each one something they would otherwise wonder about, and the dog is in there because it is the thing they will actually be thinking about. Nothing needs you tonight is the whole product. Ten days of work is deliberately invisible, and the temptation to list it is the instinct this week exists to kill."
+    },
+    {
+     "scene": "The threshold request",
+     "stem": "An urgent repair will cost above your approval threshold. Write the message asking for approval.",
+     "hint": "Short. What, why now, what it costs, what happens if you wait, and the decision you need.",
+     "model": "The boiler has failed and cannot be repaired, only replaced. Quote is four thousand two hundred, fitted, from the firm we have used for three years. Their certificate is current and on file. Without it there is no hot water and no heating from tomorrow, with the family arriving Friday. I can have it in on Wednesday if I confirm today. I need a yes or a no, and I have a second quote if you would prefer to compare.",
+     "note": "Every element the approver needs in six lines, and nothing else. The deadline is real and stated. Offering the second quote pre empts the obvious question and shows you were not steering them. The classic failure is burying the number in the third paragraph."
+    },
+    {
+     "scene": "The pattern",
+     "stem": "You have identified a recurring Thursday problem and solved it. Write the entry for the household record.",
+     "hint": "Written for a stranger who replaces you. Observation, cause, standard.",
+     "model": "Thursday mornings. Observed over four consecutive weeks: the principal leaves later and more hurriedly than on other days, and asks for documents at the door. Cause: the Thursday board pack arrives by courier on Wednesday evening and is not opened until Thursday morning. Standard from 3 April: the pack is collected from reception on Wednesday, placed on the study desk before six, and the study lamp is left on. Since adopted, no document requests at the door. Review if the board meeting day changes.",
+     "note": "Observation, cause, standard, evidence, review trigger. It is written so that a person who has never met the principal could keep the arrangement alive, which is the actual test of a household record. Dates make it auditable, and the review trigger stops it outliving its usefulness."
+    },
+    {
+     "scene": "The correction",
+     "stem": "You laid out the wrong coat and they noticed. Write what you say, and the note you make afterwards.",
+     "hint": "One spoken sentence, then the record entry. No explanation in either.",
+     "model": "Spoken: My mistake, I will change it now, and may I ask which you prefer when it is below freezing. Record: Outerwear preference corrected 12 January. Below freezing, the navy overcoat rather than the grey. Grey is for dry cold above freezing only. Previous entry was wrong, not incomplete. Applied from today.",
+     "note": "The apology and the question are one sentence, so the moment stays small and yields something useful. In the record, previous entry was wrong, not incomplete is the honest distinction that stops the same error recurring. Neither the sentence nor the entry contains any explanation of how the mistake happened."
+    }
+   ]
+  }
+ ],
+ "5": [
+  {
+   "type": "order",
+   "title": "Running the house",
+   "sub": "The order that protects the property and the people in it.",
+   "items": [
+    {
+     "scene": "Water where it should not be",
+     "stem": "You find water spreading across the floor of an unoccupied wing. Order your actions.",
+     "steps": [
+      "Shut off the water at the main valve",
+      "Cut power to the affected area at the board if water is near any circuit",
+      "Photograph everything before moving anything",
+      "Call the emergency plumber and the insurer's claims line",
+      "Notify the family office in writing with the photographs attached"
+     ],
+     "why": "Stopping the source precedes everything, which is why every member of staff must be able to find that valve in the dark. Electricity and water together is the part that injures people. Photographs taken before the clean up are what the insurer will actually pay on. Then the trades, then the written notification, in that order."
+    },
+    {
+     "scene": "The contractor at the gate",
+     "stem": "A tree surgeon arrives to begin work. Order your checks.",
+     "steps": [
+      "Check the certificate of insurance is on file and still in date",
+      "Confirm general liability and workers compensation both appear on it",
+      "Confirm the written scope of work matches what they are about to do",
+      "Log every person on site by name, with arrival time",
+      "Brief them on access limits, and escort them to the work area"
+     ],
+     "why": "No certificate, no entry, and the date is the part people forget to check. Workers compensation is the line that decides who pays if someone falls out of a tree on the property. Scope is confirmed at the gate because verbal additions become invoices. Names and times matter if anything is later missing. And access limits are set before they are inside, never after."
+    },
+    {
+     "scene": "Closing the house",
+     "stem": "The family is leaving the country residence for the season. Order the closing.",
+     "steps": [
+      "Confirm with the insurer what the policy requires of an unoccupied property",
+      "Shut off the water at the main and drain the vulnerable runs",
+      "Set the heating to the minimum that prevents freezing rather than switching it off",
+      "Arrange a documented physical check on a fixed schedule",
+      "Leave the alarm, the leak sensors and the contact list confirmed in writing"
+     ],
+     "why": "The insurer's vacancy clause governs everything else, and breaching it quietly voids the cover. Water off is the single measure that prevents the disaster that closes houses. Heat stays on low, because a frozen pipe does the damage a dry system cannot. The scheduled check is what turns an empty house into a monitored one, and documented is the operative word."
+    },
+    {
+     "scene": "The staff dispute",
+     "stem": "The housekeeper and the chef are no longer speaking and the work is suffering. Order your handling.",
+     "steps": [
+      "Speak to each of them alone, and listen before deciding anything",
+      "Establish what is operational and what is personal",
+      "Decide the operational boundary yourself and state it plainly",
+      "Put the decision in writing to both, identically",
+      "Review it in two weeks rather than leaving it open"
+     ],
+     "why": "Separate conversations first, because a joint meeting becomes a performance for your benefit. Most of these are a boundary dispute wearing an emotional costume. You decide rather than mediate, since asking them to resolve it is what produced the standoff. Identical written notes prevent two versions. And the review date is what stops it reopening in a month."
+    },
+    {
+     "scene": "The month end",
+     "stem": "Closing the household accounts for the month. Order the sequence.",
+     "steps": [
+      "Gather every receipt and match it to a transaction",
+      "Reconcile the household card and the petty cash float separately",
+      "Compare actual spend against budget and identify the variances",
+      "Write the one page report with the variances explained",
+      "Lock the month and send the report to the family office"
+     ],
+     "why": "Receipts before reconciliation, because a missing receipt found later reopens everything. The card and the float are separate systems and mixing them is how they both become untraceable. Variance is the analysis, not the arithmetic. And locking the period is what makes the audit trail worth having, since a month that can be edited afterwards proves nothing."
+    }
+   ]
+  },
+  {
+   "type": "sort",
+   "title": "Whose decision",
+   "sub": "Who does this belong to?",
+   "buckets": [
+    "Yours, act now",
+    "Yours, report after",
+    "Approval first",
+    "Escalate immediately"
+   ],
+   "items": [
+    {
+     "t": "An active water leak at midnight",
+     "b": 0,
+     "fb": "Safety and irreversible damage. You act, and you report as soon as it is contained."
+    },
+    {
+     "t": "Replacing a broken lamp with the identical model already on the inventory",
+     "b": 0,
+     "fb": "Like for like, within threshold, on record. Silently done."
+    },
+    {
+     "t": "A vendor arrives with no certificate of insurance on file",
+     "b": 1,
+     "fb": "You refuse entry on the spot, that part is not a decision. The office learns afterwards."
+    },
+    {
+     "t": "A repair quoted well above your spending threshold",
+     "b": 2,
+     "fb": "Above threshold is above threshold. Urgency changes the speed of the request, never the need for it."
+    },
+    {
+     "t": "A contractor injured on the property",
+     "b": 3,
+     "fb": "Legal and incident class. Office and insurer the same hour, in writing."
+    },
+    {
+     "t": "Accepting a dinner invitation on the principal's behalf",
+     "b": 2,
+     "fb": "Consent. Anticipation never extends here, however certain you are of the answer."
+    },
+    {
+     "t": "A journalist at the gate asking questions",
+     "b": 3,
+     "fb": "Potential press matter. It goes up immediately and you say nothing in the meantime."
+    },
+    {
+     "t": "Moving the gardener's day at his request, no operational impact",
+     "b": 2,
+     "fb": "Small, and it changes a standing arrangement that others rely on. A one line approval costs nothing."
+    },
+    {
+     "t": "Restocking the guest wing to the written standard",
+     "b": 0,
+     "fb": "That is what the standard is for. Asking would be proactive where anticipatory was available."
+    },
+    {
+     "t": "Signing a two year service contract because it is cheaper",
+     "b": 2,
+     "fb": "Long commitments are irreversible in the sense that matters. Savings do not confer authority."
+    },
+    {
+     "t": "A member of staff found asleep on a night shift",
+     "b": 1,
+     "fb": "You handle the shift now. The office hears about it, because a written record protects everyone if it recurs."
+    },
+    {
+     "t": "Discovering a piece from the inventory is missing",
+     "b": 3,
+     "fb": "Potentially a matter for insurers or police. It goes up the same hour, and you touch nothing."
+    }
+   ]
+  },
+  {
+   "type": "spot",
+   "title": "Six domains",
+   "sub": "Mark the lines that are mistakes.",
+   "items": [
+    {
+     "scene": "The vendor visit",
+     "stem": "A pool contractor arrives for scheduled work. Mark the mistakes.",
+     "lines": [
+      {
+       "t": "Checks the certificate of insurance expiry date, not just its presence",
+       "bad": false,
+       "fb": "An expired certificate is the same as no certificate, and it is the check people skip."
+      },
+      {
+       "t": "Lets the crew in because they came last year and are known",
+       "bad": true,
+       "fb": "Familiarity is not verification. The certificate may have lapsed and the crew may not be the same people."
+      },
+      {
+       "t": "Confirms the work matches the written scope before they start",
+       "bad": false,
+       "fb": "It prevents the addition that arrives as an invoice."
+      },
+      {
+       "t": "Agrees to an extra job verbally while they are on site",
+       "bad": true,
+       "fb": "Change orders are never accepted verbally. It becomes a billing dispute you cannot win."
+      },
+      {
+       "t": "Logs each person on site by name with arrival and departure times",
+       "bad": false,
+       "fb": "If anything is later missing, this log is the only useful record anyone will have."
+      },
+      {
+       "t": "Gives them the alarm code so they can let themselves out",
+       "bad": true,
+       "fb": "Codes are not shared with contractors, ever. Someone escorts them out."
+      }
+     ]
+    },
+    {
+     "scene": "Preventive maintenance",
+     "stem": "The maintenance calendar for the quarter. Mark the mistakes.",
+     "lines": [
+      {
+       "t": "Tests the generator monthly under load rather than just starting it",
+       "bad": false,
+       "fb": "A generator that starts and a generator that carries the house are different facts."
+      },
+      {
+       "t": "Assumes the alarm covers water because it covers intrusion",
+       "bad": true,
+       "fb": "Leak detection is a separate system. Most water damage in private houses happens in a house with a working alarm."
+      },
+      {
+       "t": "Ensures every member of staff can find the main water shut off",
+       "bad": false,
+       "fb": "In the dark, without instruction. This is the single most valuable five minutes of any induction."
+      },
+      {
+       "t": "Schedules gutter clearing once a year in spring",
+       "bad": true,
+       "fb": "Once a year misses the autumn fall, which is the load that causes the overflow and the damp."
+      },
+      {
+       "t": "Photographs the electrical board and labels every circuit",
+       "bad": false,
+       "fb": "At two in the morning nobody is reading faded handwriting."
+      },
+      {
+       "t": "Defers the roof survey because there is no visible problem",
+       "bad": true,
+       "fb": "Roofs are surveyed on a cadence precisely because the visible problem arrives after the expensive one."
+      }
+     ]
+    },
+    {
+     "scene": "The petty cash",
+     "stem": "Handling the household float. Mark the mistakes.",
+     "lines": [
+      {
+       "t": "Runs an imprest float, replenished to a fixed amount against receipts",
+       "bad": false,
+       "fb": "The only method that stays traceable. The float always equals cash plus receipts."
+      },
+      {
+       "t": "Covers a personal expense from the float, intending to repay it Friday",
+       "bad": true,
+       "fb": "There is no acceptable version of this. It is the confusion that ends employment for cause."
+      },
+      {
+       "t": "Records every disbursement at the moment it happens",
+       "bad": false,
+       "fb": "Reconstructed later is the same as not recorded."
+      },
+      {
+       "t": "Keeps the float in the same drawer as the household card",
+       "bad": true,
+       "fb": "Two systems, two controls. Mixing them makes both untraceable and puts you in the middle."
+      },
+      {
+       "t": "Has a second person witness the monthly count",
+       "bad": false,
+       "fb": "The witness protects you far more than it protects the household."
+      },
+      {
+       "t": "Accepts a supplier's offer of a personal discount for future work",
+       "bad": true,
+       "fb": "A benefit flowing to you from a household supplier compromises every decision you make about that supplier."
+      }
+     ]
+    },
+    {
+     "scene": "The staffing week",
+     "stem": "Managing the rota and the team. Mark the mistakes.",
+     "lines": [
+      {
+       "t": "Publishes the rota two weeks ahead and holds to it",
+       "bad": false,
+       "fb": "Predictability is most of what makes household work sustainable."
+      },
+      {
+       "t": "Fills a gap by asking the most agreeable person again",
+       "bad": true,
+       "fb": "The willing get exploited and then they leave. Coverage is a structure, not a favour."
+      },
+      {
+       "t": "Records hours worked, including the ones nobody asked for",
+       "bad": false,
+       "fb": "Unrecorded hours become a dispute later, and the record protects both sides."
+      },
+      {
+       "t": "Discusses one staff member's performance with another",
+       "bad": true,
+       "fb": "It destroys your standing with both and guarantees the conversation is repeated."
+      },
+      {
+       "t": "Holds a short handover at every shift change",
+       "bad": false,
+       "fb": "Most household failures happen in the gap between two people who did not speak."
+      },
+      {
+       "t": "Lets a resignation go unrecorded because it was amicable",
+       "bad": true,
+       "fb": "Departures are documented regardless of tone. The friendly ones are the ones that get disputed."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "type": "write",
+   "title": "The house speaks",
+   "sub": "Write it, then read the model.",
+   "items": [
+    {
+     "scene": "The incident",
+     "stem": "A contractor slipped on a wet step this morning. He is shaken but says he is fine. Write the incident note.",
+     "hint": "Observable facts, timed, no speculation and no opinion. Sent the same hour.",
+     "model": "Incident, today 09:20, rear service steps. Daniel Osei of Kingsley Grounds slipped on the third step from the top while carrying equipment. He landed seated and did not strike his head. He declined medical attention and said he was fine. I offered to call for assistance twice and he declined both times. The steps were wet from overnight rain, no other visible cause. Photographs of the steps attached, taken at 09:35 before anyone used them again. His company has been informed by telephone at 09:40. Certificate of insurance for Kingsley Grounds is on file and current to 30 November. No work has continued today.",
+     "note": "Timed to the minute, observable only, and it records the declined assistance twice because that detail matters later. Photographs before the scene changes. The certificate reference is included because it is the first thing anyone will ask. Note the total absence of he was probably rushing, which is speculation and would be read as the household assigning blame."
+    },
+    {
+     "scene": "The monthly report",
+     "stem": "Write the one page month end report to the family office.",
+     "hint": "Budget against actual, variances explained, one decision. Nothing narrative.",
+     "model": "Household, March. Total spend 41,880 against budget 39,500, variance plus 2,380 or six per cent. Three lines drive it. Maintenance is plus 4,200, the boiler replacement approved on the 6th, which is the whole of the overspend. Utilities are minus 900, a mild month. Provisions are minus 920, the family were away eleven nights. Everything else is within two per cent. Petty cash reconciled and witnessed on the 31st, float restored to 1,000. All supplier certificates current except Harding Electrical, which expires 12 April, and I have requested the renewal. One decision needed: the annual grounds contract renews on 1 May at a four per cent increase. I recommend accepting, they have been reliable for three years. Yes or no before the 20th.",
+     "note": "The variance is explained in three lines and one of them accounts for all of it, which is what a good report does. The certificate expiry is flagged before it becomes a problem. The decision is isolated, carries a recommendation and a reason, and has a deadline. An office that reads this twice knows it never has to check your work."
+    },
+    {
+     "scene": "The refusal at the gate",
+     "stem": "A crew has arrived to start work and their insurance certificate expired last week. Write what you say.",
+     "hint": "Spoken, at the gate. Firm, unembarrassed, and it offers the way forward.",
+     "model": "I am sorry, I cannot let you start today. Your certificate expired on the eleventh and I have nothing current on file. It is not personal and it is not about your work, it is a rule I hold for everyone including people who have been here for years. If your office can send the renewal through in the next hour I will have you working this morning. If not, we will rebook and you will not lose the slot.",
+     "note": "The refusal comes first and it is not negotiable, but it is immediately followed by two routes forward, which is what stops it becoming an argument. Naming that the rule applies to everyone removes the insult. Protecting their slot means they will get you the certificate rather than resenting you, and you will need them again."
+    },
+    {
+     "scene": "The boundary",
+     "stem": "Two staff members are in conflict. Write the identical note you send to each after deciding.",
+     "hint": "Same words to both. The decision, the boundary, the review date. No blame.",
+     "model": "Following our conversations this week, here is how the kitchen and the housekeeping schedule will work from Monday. The kitchen has the room from six to nine and from twelve to two, and housekeeping does not enter during those hours except in an emergency. Outside those windows the room is housekeeping's and the kitchen works around it. Deliveries are received by whoever is in the room at the time, with no exceptions. This is my decision rather than an agreement between you, so neither of you needs to defend it. I will review it with each of you on the 30th and change it if it is not working.",
+     "note": "Identical wording to both, so there cannot be two versions in circulation. It is entirely operational, with no reference to the conflict or to conduct. This is my decision rather than an agreement between you is the sentence that lets both of them comply without losing face. And the review date turns a ruling into something provisional, which is what makes it acceptable."
+    }
+   ]
+  }
+ ],
+ "6": [
+  {
+   "type": "order",
+   "title": "Working the market",
+   "sub": "The order that actually produces conversations.",
+   "items": [
+    {
+     "scene": "Approaching an agency",
+     "stem": "You want to be registered with a specialist agency. Order your approach.",
+     "steps": [
+      "Research which households and roles that agency actually places",
+      "Prepare the documents before making contact, not after",
+      "Make one clear approach with your material attached",
+      "Answer their questions fully and quickly, the same day",
+      "Follow up once, at a sensible interval, and then wait"
+     ],
+     "why": "Agencies place particular kinds of role, and approaching the wrong one costs you a first impression you cannot repeat. Documents ready means their first look at you is a complete picture. One approach, not three. Speed of reply is the trait they are actually testing. And a single follow up reads as professional where three read as desperate."
+    },
+    {
+     "scene": "The eight seconds",
+     "stem": "Order what a consultant looks at when your material arrives.",
+     "steps": [
+      "Whether the layout looks like this world or like a corporate application",
+      "Length of service in each role, before anything else",
+      "Whether the scope described matches the roles they are filling",
+      "Whether confidentiality has been respected in how you describe past houses",
+      "The detail of what you actually ran, once you have survived the first four"
+     ],
+     "why": "Presentation registers before content, fairly or not. Tenure is the single strongest signal in this market, because turnover is the problem they are paid to solve. Scope matching decides which file you go into. Any breach of confidentiality ends the read instantly. Only then does anyone care about the detail, which is why the detail belongs on the second page."
+    },
+    {
+     "scene": "After the first conversation",
+     "stem": "You have had a good exploratory call with a consultant. Order what you do next.",
+     "steps": [
+      "Send a short written thank you the same day",
+      "Supply anything they asked for within twenty four hours",
+      "Confirm your availability and any constraints in writing",
+      "Wait without contacting them again for at least two weeks",
+      "Check in once, briefly, with something useful rather than a request"
+     ],
+     "why": "Same day, because the memory of you is warmest then. Twenty four hours on the material is the test most candidates fail. Constraints go in writing early, since a constraint discovered late looks like concealment. Then silence, which is the hardest part. And the check in carries information rather than a question, which is the difference between staying present and becoming a nuisance."
+    },
+    {
+     "scene": "A role appears",
+     "stem": "You have heard about a suitable position through a personal contact. Order your handling.",
+     "steps": [
+      "Ask your contact whether they are comfortable being named",
+      "Establish who is actually running the process",
+      "Approach the process directly rather than through the household",
+      "Tell your contact what you have done, so they are not surprised",
+      "Keep your contact informed once, at the outcome, whatever it is"
+     ],
+     "why": "Permission first, because using a name without asking costs you the contact. Knowing who runs the process prevents the fatal error of approaching the family directly. You go through the process, always. Your contact hears from you before they hear from anyone else. And closing the loop at the end is why people refer you a second time."
+    },
+    {
+     "scene": "Being asked to interview elsewhere",
+     "stem": "You are employed and a consultant proposes a role you want to explore. Order your conduct.",
+     "steps": [
+      "Say nothing to anyone inside your current household",
+      "Keep every conversation outside your working hours",
+      "Use no household resource, device or address for any of it",
+      "Decide before the final stage whether you would truly leave",
+      "Resign properly and with notice, only once an offer is signed"
+     ],
+     "why": "Discretion applies to your own affairs as much as to theirs. Time and equipment belong to the house while you are in it. Deciding before the final stage prevents the reputational damage of withdrawing at the end. And nothing is said until an offer exists in writing, because a resignation offered against a verbal promise is how people end up with neither."
+    }
+   ]
+  },
+  {
+   "type": "sort",
+   "title": "Where roles come from",
+   "sub": "How is each position most likely to be filled?",
+   "buckets": [
+    "Specialist agency",
+    "Word of mouth",
+    "Never advertised",
+    "Public job board"
+   ],
+   "items": [
+    {
+     "t": "An estate manager for a family with four residences",
+     "b": 2,
+     "fb": "At this level the search is private and by referral. It will not appear anywhere you can apply to."
+    },
+    {
+     "t": "A house manager for a single family, first time hiring staff",
+     "b": 0,
+     "fb": "A family new to staffing almost always goes to an agency, because they do not know how else to do it."
+    },
+    {
+     "t": "A replacement for a departing PA in a household you already serve",
+     "b": 1,
+     "fb": "The incumbent's recommendation carries most of the weight. This is why leaving well matters."
+    },
+    {
+     "t": "A seasonal position on a private yacht",
+     "b": 0,
+     "fb": "Crew agencies dominate this, and the certification requirements make an agency route practical."
+    },
+    {
+     "t": "A chief of staff for a principal with a family office",
+     "b": 2,
+     "fb": "The most senior roles are filled through a very small number of private conversations."
+    },
+    {
+     "t": "A live in housekeeper for a busy urban household",
+     "b": 3,
+     "fb": "This is one of the few genuinely advertised roles, and it is also the most competitive by volume."
+    },
+    {
+     "t": "A private chef recommended by another household's chef",
+     "b": 1,
+     "fb": "Trades talk to trades. A large share of this market moves entirely inside those networks."
+    },
+    {
+     "t": "A nanny for a family who value formal vetting",
+     "b": 0,
+     "fb": "Agencies exist largely because families want background checks done by someone else."
+    },
+    {
+     "t": "An estate manager leaving after eleven years, replacement needed",
+     "b": 2,
+     "fb": "A long tenured departure is planned quietly, often with the departing person consulted on the successor."
+    },
+    {
+     "t": "A junior household assistant in a large staffed residence",
+     "b": 3,
+     "fb": "Entry level and volume based, so it does surface publicly. It is also the realistic first door for many."
+    },
+    {
+     "t": "A rota position filled after a consultant called three people directly",
+     "b": 1,
+     "fb": "Consultants keep a short list in their head. Being on it is worth more than any application."
+    },
+    {
+     "t": "A position created because a principal met someone and liked them",
+     "b": 2,
+     "fb": "Roles are frequently invented around a person. This is why how you conduct yourself everywhere matters."
+    }
+   ]
+  },
+  {
+   "type": "spot",
+   "title": "The approach",
+   "sub": "Mark the lines that are mistakes.",
+   "items": [
+    {
+     "scene": "The application",
+     "stem": "Material sent to a specialist consultant. Mark the mistakes.",
+     "lines": [
+      {
+       "t": "Describes past households by type and scope, naming none",
+       "bad": false,
+       "fb": "Scope proves the experience, and anonymity proves the discretion. Both at once."
+      },
+      {
+       "t": "Includes a photograph of the previous principal's property as evidence",
+       "bad": true,
+       "fb": "It disqualifies you instantly and the consultant will remember why."
+      },
+      {
+       "t": "Lists exact dates of service including months",
+       "bad": false,
+       "fb": "Tenure is the first thing read. Vague years invite the assumption you are hiding a gap."
+      },
+      {
+       "t": "Runs to five pages to cover everything",
+       "bad": true,
+       "fb": "Nobody reads five pages. Two, and the second one is already generous."
+      },
+      {
+       "t": "States availability and any geographic constraint clearly",
+       "bad": false,
+       "fb": "Constraints declared early save everyone's time and read as honesty."
+      },
+      {
+       "t": "Uses a personal email address with a nickname in it",
+       "bad": true,
+       "fb": "It is a small thing that is read as a large one at this level."
+      }
+     ]
+    },
+    {
+     "scene": "The exploratory call",
+     "stem": "A first conversation with a consultant. Mark the mistakes.",
+     "lines": [
+      {
+       "t": "Asks what the household actually needs before describing themselves",
+       "bad": false,
+       "fb": "It shows you think about fit rather than about being chosen."
+      },
+      {
+       "t": "Mentions a previous principal by name to establish credibility",
+       "bad": true,
+       "fb": "You have shown the consultant exactly what you would say about their client."
+      },
+      {
+       "t": "Says openly they are not looking to move for at least six months",
+       "bad": false,
+       "fb": "Consultants keep long horizons. Honesty here builds the relationship rather than ending it."
+      },
+      {
+       "t": "Asks about compensation in the first two minutes",
+       "bad": true,
+       "fb": "It is a fair question in the wrong place. It arrives once fit has been established."
+      },
+      {
+       "t": "Explains why they left each previous role, briefly and without blame",
+       "bad": false,
+       "fb": "Brief and blameless is the only version that works. Length signals grievance."
+      },
+      {
+       "t": "Criticises a former principal's disorganisation to explain a short tenure",
+       "bad": true,
+       "fb": "The consultant hears how you will describe their client, and a short tenure is now the smaller problem."
+      }
+     ]
+    },
+    {
+     "scene": "Following up",
+     "stem": "Two weeks after a promising conversation. Mark the mistakes.",
+     "lines": [
+      {
+       "t": "Sends one short note with a genuine update on availability",
+       "bad": false,
+       "fb": "Carries information, asks for nothing. That is what keeps you present."
+      },
+      {
+       "t": "Sends a third message asking whether there is any news",
+       "bad": true,
+       "fb": "Repeated asking transfers your anxiety to them and it lowers your value."
+      },
+      {
+       "t": "Connects with the consultant's colleagues to increase visibility",
+       "bad": true,
+       "fb": "It reads as working around them, and consultants talk to each other within the hour."
+      },
+      {
+       "t": "Passes on a suitable candidate for a role they mentioned",
+       "bad": false,
+       "fb": "Being useful is the fastest way onto the short mental list that actually fills roles."
+      },
+      {
+       "t": "Replies to their questions within a few hours, consistently",
+       "bad": false,
+       "fb": "Responsiveness is the trait they are quietly measuring throughout."
+      },
+      {
+       "t": "Contacts the household directly having worked out who it is",
+       "bad": true,
+       "fb": "It ends the relationship with the consultant permanently, and the household will be told."
+      }
+     ]
+    },
+    {
+     "scene": "While still employed",
+     "stem": "Exploring a move while in post. Mark the mistakes.",
+     "lines": [
+      {
+       "t": "Takes calls outside working hours and away from the residence",
+       "bad": false,
+       "fb": "Time and place belong to the house while you are in it."
+      },
+      {
+       "t": "Uses the household email address for correspondence",
+       "bad": true,
+       "fb": "It is the household's system, the household's record, and it will be read eventually."
+      },
+      {
+       "t": "Mentions to a trusted colleague that they are looking",
+       "bad": true,
+       "fb": "There is no version of this that stays where you put it, and you will lose control of the timing."
+      },
+      {
+       "t": "Declines to interview during a period when the family is travelling and needs cover",
+       "bad": false,
+       "fb": "Leaving well begins before you leave. This is also the behaviour that produces your best reference."
+      },
+      {
+       "t": "Decides before the final stage whether they would genuinely accept",
+       "bad": false,
+       "fb": "Withdrawing at the end damages you with the consultant far more than declining early."
+      },
+      {
+       "t": "Resigns on the strength of a verbal offer",
+       "bad": true,
+       "fb": "Verbal offers evaporate. You resign when it is signed, and not a day before."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "type": "write",
+   "title": "Approaching well",
+   "sub": "Write it, then read the model.",
+   "items": [
+    {
+     "scene": "The first approach",
+     "stem": "Write your opening message to a specialist consultant you have never met.",
+     "hint": "Short. Who you are, scope, what you are looking for, availability. No pleading.",
+     "model": "Good morning. I am a house manager currently in my fourth year with a single family in Connecticut, running a principal residence of eleven thousand square feet with four staff reporting to me, plus a seasonal property. Before that, three years as a private PA in a London household. I am beginning to look at estate manager roles for a family with multiple residences, ideally on the East Coast, and I am not in a hurry. My CV is attached and references are available through both family offices. If it would be useful to have a conversation at any point, I would welcome it.",
+     "note": "Scope in numbers, tenure in years, and no names anywhere. I am not in a hurry is the line that changes the register entirely, because unhurried candidates are the ones consultants take seriously. References through the office signals you understand how this works. It asks for a conversation rather than for consideration."
+    },
+    {
+     "scene": "Why you left",
+     "stem": "A consultant asks why you left a role after fourteen months. Write your answer.",
+     "hint": "Three or four sentences. Honest, brief, no blame, and it closes.",
+     "model": "The family relocated permanently to Singapore and the role went with them. I was offered it and I thought seriously about it, but my mother had become unwell and I was not willing to be that far away. We parted on good terms and the family office will confirm all of that. It is the shortest tenure on my record and I would rather explain it early than have you wonder.",
+     "note": "A real reason, stated once, with a verifiable source. Nobody is criticised. I would rather explain it early than have you wonder is the sentence that converts a weakness into evidence of judgement. The failure mode is a long account of what went wrong, which makes fourteen months sound like the least of it."
+    },
+    {
+     "scene": "The useful follow up",
+     "stem": "Two weeks after a good call with a consultant, write your single follow up.",
+     "hint": "Under sixty words. It carries information and asks for nothing.",
+     "model": "Following up briefly. My situation has firmed up: I can now be available from the first of September rather than October, and I am open to a role with a travel component, which I was uncertain about when we spoke. Nothing needed from you, I just did not want you working from old information.",
+     "note": "Every line is new information, and the change is a genuine one rather than manufactured. Nothing needed from you removes the obligation to reply, which paradoxically makes a reply more likely. It keeps you present in their mind without a single word about your hopes."
+    },
+    {
+     "scene": "The referral request",
+     "stem": "A friend has told you about a role in a household they know. Write what you send your friend.",
+     "hint": "Ask permission, do not ask for the introduction. Make it easy to say no.",
+     "model": "Thank you for thinking of me, that was kind. Before I do anything, would you be comfortable with me mentioning your name if I approach whoever is running the search, or would you rather I did not. Either answer is completely fine and I would rather ask than assume. And if you would prefer to stay out of it altogether, just say so, it will not change anything between us.",
+     "note": "It asks permission rather than requesting an introduction, which is a much smaller thing to grant. Either answer is completely fine is what makes the no genuinely available, and that is what protects the friendship. The person who asks this way is the person who gets recommended next time."
+    }
+   ]
+  }
+ ],
+ "7": [
+  {
+   "type": "order",
+   "title": "The interview",
+   "sub": "The order a candidacy is actually built and run.",
+   "items": [
+    {
+     "scene": "Building the file",
+     "stem": "Order the assembly of your candidacy.",
+     "steps": [
+      "Write down the scope of every role you have held, in numbers",
+      "Build the CV around tenure and scope rather than duties",
+      "Write the covering letter to the specific household, not in general",
+      "Prepare your references and confirm each person is willing",
+      "Rehearse the three answers you know you will be asked"
+     ],
+     "why": "Numbers first, because scope is what you are actually selling and most people have never counted it. The CV is built from that material rather than from a list of tasks. The letter is written to one reader. References are confirmed before they are offered, since an unwarned referee is a risk. And rehearsal is last, because you cannot rehearse a story you have not yet assembled."
+    },
+    {
+     "scene": "The day itself",
+     "stem": "Order how you handle an interview at the residence.",
+     "steps": [
+      "Arrive early and wait out of sight until a few minutes before",
+      "Greet whoever opens the door with exactly the same courtesy as the principal",
+      "Let them lead the conversation before you present anything",
+      "Ask your questions about the household, not about the terms",
+      "Leave without asking what happens next, and write the same day"
+     ],
+     "why": "Early and unseen, because arriving flustered or arriving too visibly early both cost you. How you treat the person who opens the door is frequently reported back and is sometimes the whole test. You follow their structure. Your questions reveal what you care about. And leaving without pressing, then writing promptly, is the calm that this market reads as competence."
+    },
+    {
+     "scene": "The trial day",
+     "stem": "You have been invited for a paid trial in the household. Order your conduct.",
+     "steps": [
+      "Confirm in advance what you should wear and what time to arrive",
+      "Ask at the start what would make the day useful for them",
+      "Work to the household's existing methods, not your own",
+      "Write down what you observe and propose nothing",
+      "Thank the staff by name, not only the principal"
+     ],
+     "why": "Confirming beforehand removes the first two ways to start badly. Asking what would be useful reframes the day as service rather than performance. You use their methods, because a trial is not the moment to demonstrate improvements. You observe silently. And thanking the staff by name is the detail that gets reported upstairs, favourably, more often than any answer you gave."
+    },
+    {
+     "scene": "The offer",
+     "stem": "An offer has been made verbally. Order your response.",
+     "steps": [
+      "Thank them warmly and express clear interest",
+      "Ask for the terms in writing before responding substantively",
+      "Read everything, including the confidentiality and notice provisions",
+      "Ask your questions in one batch rather than several",
+      "Accept in writing, and only then resign from your current role"
+     ],
+     "why": "Warmth first, so enthusiasm is never in question. Then paper, because a verbal offer is a hope. You read the clauses that govern the years, not the number that governs the month. Questions in one batch. And resignation follows written acceptance, never precedes it, which is the mistake that leaves people with nothing."
+    },
+    {
+     "scene": "The reference call",
+     "stem": "A prospective household wants to speak to a former employer. Order your handling.",
+     "steps": [
+      "Ask the household exactly what they want to verify",
+      "Contact your referee before giving out their details",
+      "Tell your referee what the role is and what will be asked",
+      "Provide the contact through the family office where one exists",
+      "Thank your referee afterwards regardless of the outcome"
+     ],
+     "why": "Knowing what is being verified lets you route it to the right person. Nobody's details are given out without warning. A briefed referee gives a better and more accurate reference. The office channel protects the principal's privacy. And the thank you is what keeps that reference available to you for the next ten years."
+    }
+   ]
+  },
+  {
+   "type": "sort",
+   "title": "What are they measuring",
+   "sub": "What is the question actually testing?",
+   "buckets": [
+    "Discretion",
+    "Judgement",
+    "Tenure and stability",
+    "Fit with the household"
+   ],
+   "items": [
+    {
+     "t": "Tell me about your last principal",
+     "b": 0,
+     "fb": "Not a request for information. They are watching how much you are willing to say about someone who trusted you."
+    },
+    {
+     "t": "What would you do if you found something that worried you",
+     "b": 1,
+     "fb": "They want to see your escalation instinct, and whether you distinguish an emergency from an irritation."
+    },
+    {
+     "t": "Why did you leave after fourteen months",
+     "b": 2,
+     "fb": "Turnover is the problem they are paying to solve. They need the short tenure to have a reason."
+    },
+    {
+     "t": "We eat together in the kitchen here, how do you feel about that",
+     "b": 3,
+     "fb": "A test of fit with how this particular house lives, and there is no universally correct answer."
+    },
+    {
+     "t": "Have you ever had to let someone go",
+     "b": 1,
+     "fb": "Whether you can make an unpopular decision and describe it without either relish or evasion."
+    },
+    {
+     "t": "What is the most difficult situation you have handled",
+     "b": 0,
+     "fb": "Almost everyone answers this by disclosing a household's private crisis. The answer is in how you tell it, not what happened."
+    },
+    {
+     "t": "Where do you see yourself in five years",
+     "b": 2,
+     "fb": "They are asking whether you intend to still be here. Ambition described as movement reads badly."
+    },
+    {
+     "t": "The family are quite informal, is that a problem for you",
+     "b": 3,
+     "fb": "Fit. They are describing their house and asking whether you can live in it."
+    },
+    {
+     "t": "A guest asks you where the family will be next week, what do you say",
+     "b": 0,
+     "fb": "Movement class information. A direct test with a single correct instinct."
+    },
+    {
+     "t": "How would you spend your first month here",
+     "b": 1,
+     "fb": "Whether you observe before changing. Candidates who describe reorganising in week one do not get called back."
+    },
+    {
+     "t": "You have moved four times in six years, tell me about that",
+     "b": 2,
+     "fb": "The pattern is the question, not any individual move."
+    },
+    {
+     "t": "We have three dogs and a very busy house, how does that sound",
+     "b": 3,
+     "fb": "An honest description, and an invitation to be honest back. Enthusiasm you cannot sustain is not kindness."
+    }
+   ]
+  },
+  {
+   "type": "spot",
+   "title": "In the room",
+   "sub": "Mark the lines that are mistakes.",
+   "items": [
+    {
+     "scene": "The interview at the residence",
+     "stem": "A first meeting with the principal. Mark the mistakes.",
+     "lines": [
+      {
+       "t": "Greets the housekeeper who opens the door with full courtesy",
+       "bad": false,
+       "fb": "Frequently the actual test, and it is always reported back."
+      },
+      {
+       "t": "Comments admiringly on a painting in the hall",
+       "bad": true,
+       "fb": "Unasked commentary on their possessions places you as a guest. Notice everything, remark on nothing."
+      },
+      {
+       "t": "Answers a question about a past role without naming the family",
+       "bad": false,
+       "fb": "They are watching for exactly this, and they will notice that you did it."
+      },
+      {
+       "t": "Describes a previous principal's difficult behaviour to illustrate resilience",
+       "bad": true,
+       "fb": "You have answered the real question, which was whether you would talk about them."
+      },
+      {
+       "t": "Asks how the household prefers to communicate day to day",
+       "bad": false,
+       "fb": "An operational question that shows you are thinking about the work."
+      },
+      {
+       "t": "Asks about salary before fit has been discussed",
+       "bad": true,
+       "fb": "A fair question, badly placed. It arrives once they want you."
+      }
+     ]
+    },
+    {
+     "scene": "The trial day",
+     "stem": "A paid trial in the household. Mark the mistakes.",
+     "lines": [
+      {
+       "t": "Asks at the start what would make the day most useful to them",
+       "bad": false,
+       "fb": "It reframes the day as service rather than as an audition."
+      },
+      {
+       "t": "Reorganises the linen cupboard to demonstrate initiative",
+       "bad": true,
+       "fb": "Changing their systems on day one is read as judgement, and it is remembered."
+      },
+      {
+       "t": "Uses the household's existing method even though a better one exists",
+       "bad": false,
+       "fb": "Correct for a trial. The better method is proposed in month two, if at all."
+      },
+      {
+       "t": "Photographs the pantry to remember the layout",
+       "bad": true,
+       "fb": "You are not yet employed, and you would not do it if you were."
+      },
+      {
+       "t": "Thanks each member of staff by name at the end of the day",
+       "bad": false,
+       "fb": "This gets reported upstairs more often, and more favourably, than anything you said."
+      },
+      {
+       "t": "Mentions to the chef what the last house paid for produce",
+       "bad": true,
+       "fb": "Financial information about another household, disclosed casually. It is a breach, and it is heard as one."
+      }
+     ]
+    },
+    {
+     "scene": "The offer conversation",
+     "stem": "Terms are being discussed. Mark the mistakes.",
+     "lines": [
+      {
+       "t": "Asks for the terms in writing before responding in detail",
+       "bad": false,
+       "fb": "Entirely normal, and it signals that you have done this properly before."
+      },
+      {
+       "t": "Accepts immediately to demonstrate enthusiasm",
+       "bad": true,
+       "fb": "Enthusiasm is shown in the warmth, not the speed. Instant acceptance also means the clauses went unread."
+      },
+      {
+       "t": "Reads the confidentiality and notice provisions carefully",
+       "bad": false,
+       "fb": "These govern years of your life. The number governs a month."
+      },
+      {
+       "t": "Resigns the same afternoon on the strength of the conversation",
+       "bad": true,
+       "fb": "Verbal offers evaporate. You resign after written acceptance, not before."
+      },
+      {
+       "t": "Raises all remaining questions in one message",
+       "bad": false,
+       "fb": "One batch. A drip of questions across three days reads as anxious."
+      },
+      {
+       "t": "Asks to renegotiate a term already agreed in the previous meeting",
+       "bad": true,
+       "fb": "Reopening a settled point damages trust more than the term is worth."
+      }
+     ]
+    },
+    {
+     "scene": "The references",
+     "stem": "Handling a reference request. Mark the mistakes.",
+     "lines": [
+      {
+       "t": "Warns the referee before giving out their details",
+       "bad": false,
+       "fb": "An ambushed referee gives a worse reference, however fond of you they are."
+      },
+      {
+       "t": "Gives the principal's mobile number directly",
+       "bad": true,
+       "fb": "Where an office exists, the office is the channel. You do not hand out a principal's personal contact."
+      },
+      {
+       "t": "Tells the referee what the role is and what will likely be asked",
+       "bad": false,
+       "fb": "A briefed referee is accurate rather than coached."
+      },
+      {
+       "t": "Asks the referee to emphasise a strength and omit a difficulty",
+       "bad": true,
+       "fb": "You have asked someone to mislead on your behalf, and you have shown them who you are."
+      },
+      {
+       "t": "Thanks the referee afterwards regardless of the outcome",
+       "bad": false,
+       "fb": "It is why that reference is still available to you in ten years."
+      },
+      {
+       "t": "Lists a referee they have not spoken to in four years without checking",
+       "bad": true,
+       "fb": "People move, memories fade, and an out of date referee can sink a candidacy without meaning to."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "type": "write",
+   "title": "Your candidacy",
+   "sub": "Write it, then read the model.",
+   "items": [
+    {
+     "scene": "The difficult question",
+     "stem": "An interviewer asks: tell me about the most difficult situation you handled in your last household. Write your answer.",
+     "hint": "Spoken. Demonstrate judgement while disclosing nothing about the family.",
+     "model": "I will describe it without the details, if you do not mind, because it involved the family directly. There was a situation that developed quickly, out of hours, that had legal implications and could have reached the press. What I did was contain it physically first, then inform the family office within the hour in writing rather than by telephone, so there was a record. I did not tell any of the other staff anything at all, including the ones who could see something was happening. It resolved, and it never became public. The part I would do differently is that I should have had a written press protocol in place beforehand, and I wrote one afterwards.",
+     "note": "The refusal to give details is stated at the start and framed as protecting them, which is itself the answer to the real question. The method is fully visible without the story being told. Ending on what you would do differently, with a concrete artefact you produced, converts a discretion answer into a judgement answer."
+    },
+    {
+     "scene": "The covering letter",
+     "stem": "Write the covering letter for an estate manager role with a family of four residences.",
+     "hint": "Under two hundred words. Specific to them. Scope, tenure, one reason you fit.",
+     "model": "Dear Ms Hartley, I am writing about the estate manager position you are handling for a family with residences on the East Coast and in Europe. I have spent the last four years as house manager to a single family in Connecticut, running an eleven thousand square foot principal residence with four staff reporting to me and a seasonal property in Maine, including its closing and opening each year. Before that I was a private PA in a London household for three years. The part of this role I am drawn to is the multiple property element. Running a house that stands empty for months taught me that the discipline is preventive rather than responsive, and I built the maintenance and closing protocols that the Maine property still runs on. I am available from September and able to travel without restriction. References are available through both family offices. I would welcome a conversation. With kind regards,",
+     "note": "It names the specific element of the role and then proves competence in exactly that element with something built rather than something felt. Scope is in numbers, tenure in years, and no household is named. The whole letter is one page and answers the only question a consultant has: why this person for this role."
+    },
+    {
+     "scene": "The gap",
+     "stem": "You have an eight month gap in your record. Write how you address it on the CV and in person.",
+     "hint": "One line for the CV, three or four sentences spoken. Factual, unapologetic.",
+     "model": "On the CV: 2023, career break, family care, eight months. Spoken: My father was ill and I took eight months to look after him. It was a decision rather than a redundancy, and I would make it again. I kept in touch with the household throughout and they would have had me back if the timing had worked. It is on the CV rather than hidden in the dates because I would rather you heard it from me.",
+     "note": "On paper it is one line, dated, and named, which stops it reading as concealment. Spoken, it is a decision rather than a misfortune, which changes how it lands entirely. The detail that the household would have had you back is the verifiable part that does the real work."
+    },
+    {
+     "scene": "After the meeting",
+     "stem": "Write the note you send the same day after an interview at the residence.",
+     "hint": "Under eighty words. Warm, specific, and it asks for nothing.",
+     "model": "Thank you for this morning, and please pass my thanks to Marta who looked after me before you came down. I came away with a clear picture of how the household runs, and the multiple property element is exactly the work I want to be doing. I am happy to answer anything further at any point. I will leave the timing entirely with you.",
+     "note": "Thanking the person who opened the door is the line that gets read aloud. One specific thing you took from the conversation proves you were listening. And leaving the timing with them is the calm that this market consistently mistakes for seniority, correctly."
+    }
+   ]
+  }
+ ],
+ "8": [
+  {
+   "type": "order",
+   "title": "The first ninety days",
+   "sub": "The order that establishes you.",
+   "items": [
+    {
+     "scene": "Week one",
+     "stem": "Order your first week in a new household.",
+     "steps": [
+      "Learn every name, role and length of service in the house",
+      "Find the water shut off, the electrical board and the alarm panel",
+      "Ask each person to show you how their work is currently done",
+      "Record everything and change nothing",
+      "Confirm your reporting line and thresholds in writing"
+     ],
+     "why": "Names first, because the staff decide your survival before the family does. The three physical locations are the ones that matter at two in the morning, and almost nobody asks in week one. You ask to be shown, which makes them the authority. You record and wait. And getting your thresholds in writing early is what protects you for the whole tenure."
+    },
+    {
+     "scene": "The first correction",
+     "stem": "In month one you find a practice that is genuinely unsafe. Order your handling.",
+     "steps": [
+      "Stop the unsafe practice immediately, without discussion",
+      "Explain the specific risk rather than criticising the person",
+      "Inform the family office the same day, in writing",
+      "Put the correct standard in writing and circulate it",
+      "Check it again in two weeks"
+     ],
+     "why": "Safety is the one thing that does not wait for your observation period. You attack the practice, not the person, or it will not stick. The office hears it from you first. Writing turns a correction into a standard that survives you. And the check in two weeks is what determines whether anything actually changed."
+    },
+    {
+     "scene": "The crash",
+     "stem": "Around week six you feel you have made a mistake taking the role. Order what you do.",
+     "steps": [
+      "Recognise that this arrives for almost everyone at roughly this point",
+      "Change nothing structural and make no decisions for two weeks",
+      "Fix your sleep, your food and your days off first",
+      "Talk to someone outside the household, disclosing nothing about the family",
+      "Reassess only once you are rested"
+     ],
+     "why": "Knowing it is a stage rather than a verdict is most of the treatment. Decisions made in week six are almost always wrong and almost always regretted. The physical causes are addressed before the emotional interpretation, because exhaustion feels exactly like a wrong decision. You talk to someone, without breaching anything. And you judge the role only when rested."
+    },
+    {
+     "scene": "Day ninety",
+     "stem": "Order the close of your first ninety days.",
+     "steps": [
+      "Review what you recorded in week one against what you now know",
+      "Write the household manual or update the one you inherited",
+      "Propose the changes you have been holding, all at once",
+      "Ask for a short review conversation with the office",
+      "Agree what the next ninety days should produce"
+     ],
+     "why": "Comparing your first impressions to your current knowledge is the single most useful hour of the whole period. The manual is the artefact that proves the ninety days. Proposals arrive together, as a considered plan rather than a stream of complaints. You ask for the review rather than waiting for one. And agreeing the next objective is what turns a probation into a career."
+    },
+    {
+     "scene": "Leaving well",
+     "stem": "Years later, you are leaving the household. Order your departure.",
+     "steps": [
+      "Resign in writing, with proper notice, to the correct person",
+      "Say nothing to the other staff until the office has told them",
+      "Write or update the manual so your successor can function",
+      "Hand over in person, including the things that are not written down",
+      "Confirm afterwards that you remain bound by everything you signed"
+     ],
+     "why": "Proper channel, proper notice. The staff hear it from the household, not from you. The manual is your last professional act and it is the one that gets remembered. The unwritten handover is the generous part. And the closing confirmation matters because trust in this world has no end date, and saying so is what makes them refer you for the rest of your life."
+    }
+   ]
+  },
+  {
+   "type": "sort",
+   "title": "Ninety day judgement",
+   "sub": "When does each action belong?",
+   "buckets": [
+    "Week one",
+    "First month",
+    "After ninety days",
+    "Never"
+   ],
+   "items": [
+    {
+     "t": "Learning where the main water shut off is",
+     "b": 0,
+     "fb": "Day one or day two. It is the question that separates the professional from the newcomer."
+    },
+    {
+     "t": "Reorganising the household filing system",
+     "b": 2,
+     "fb": "Structural change waits until you understand why it is the way it is."
+    },
+    {
+     "t": "Stopping a practice that is genuinely unsafe",
+     "b": 1,
+     "fb": "Safety does not wait for your observation period. It is the one exception."
+    },
+    {
+     "t": "Telling the staff how the previous household did things",
+     "b": 3,
+     "fb": "It discloses another house and announces that you intend to change this one."
+    },
+    {
+     "t": "Asking each staff member to show you how they work",
+     "b": 0,
+     "fb": "It makes them the authority and you the student, which is the correct order."
+    },
+    {
+     "t": "Proposing a set of changes as a considered plan",
+     "b": 2,
+     "fb": "All at once, after ninety days, reads as a plan. Delivered piecemeal it reads as complaints."
+    },
+    {
+     "t": "Confirming your spending thresholds in writing",
+     "b": 0,
+     "fb": "Before you need them. Establishing this after a dispute is far harder."
+    },
+    {
+     "t": "Deciding to resign because week six feels unbearable",
+     "b": 3,
+     "fb": "The crash arrives for almost everyone at roughly that point. No decision is made in that state."
+    },
+    {
+     "t": "Writing or updating the household manual",
+     "b": 2,
+     "fb": "It is the artefact that proves the ninety days, and it cannot be written before you understand the house."
+    },
+    {
+     "t": "Fixing the one thing that is visibly and obviously failing",
+     "b": 1,
+     "fb": "One visible fix earns the right to propose more. Two or three at once does not."
+    },
+    {
+     "t": "Discussing your salary with another member of staff",
+     "b": 3,
+     "fb": "It damages you with everyone, including the people it appears to help."
+    },
+    {
+     "t": "Asking the office for a short review conversation",
+     "b": 2,
+     "fb": "You ask rather than wait. It is what turns a probation into an agreed objective."
+    }
+   ]
+  },
+  {
+   "type": "spot",
+   "title": "Arriving and leaving",
+   "sub": "Mark the lines that are mistakes.",
+   "items": [
+    {
+     "scene": "The first fortnight",
+     "stem": "A new estate manager settling in. Mark the mistakes.",
+     "lines": [
+      {
+       "t": "Learns the names and tenure of every member of staff in the first days",
+       "bad": false,
+       "fb": "The staff decide whether you survive long before the family does."
+      },
+      {
+       "t": "Announces a new reporting structure in the first week",
+       "bad": true,
+       "fb": "Structural change before understanding is read as judgement, and the house closes against you."
+      },
+      {
+       "t": "Asks where the water shut off and the electrical board are",
+       "bad": false,
+       "fb": "The questions that matter at two in the morning, asked before they are needed."
+      },
+      {
+       "t": "Says the previous household did the linens differently and better",
+       "bad": true,
+       "fb": "Two errors at once, disclosing another house and criticising this one."
+      },
+      {
+       "t": "Fixes the one obviously broken thing and leaves everything else",
+       "bad": false,
+       "fb": "One visible fix earns the right to propose more."
+      },
+      {
+       "t": "Asks the housekeeper what the principal is really like",
+       "bad": true,
+       "fb": "It invites gossip and it tells the house that you gather information about the family."
+      }
+     ]
+    },
+    {
+     "scene": "Week six",
+     "stem": "The crash has arrived. Mark the mistakes.",
+     "lines": [
+      {
+       "t": "Recognises that this arrives for almost everyone at this point",
+       "bad": false,
+       "fb": "Knowing it is a stage rather than a verdict is most of the treatment."
+      },
+      {
+       "t": "Drafts a resignation letter that evening",
+       "bad": true,
+       "fb": "Decisions made in week six are almost always wrong, and almost always regretted within a month."
+      },
+      {
+       "t": "Takes the days off that were skipped in the first month",
+       "bad": false,
+       "fb": "Exhaustion feels exactly like a wrong decision. Address the physical cause first."
+      },
+      {
+       "t": "Confides in a colleague that the role may have been a mistake",
+       "bad": true,
+       "fb": "It travels, it reaches the office, and it defines you before you have recovered."
+      },
+      {
+       "t": "Speaks to someone outside the household without disclosing anything about the family",
+       "bad": false,
+       "fb": "Entirely possible, and it is the pressure valve this profession requires."
+      },
+      {
+       "t": "Reassesses the role once rested, two weeks later",
+       "bad": false,
+       "fb": "The judgement is valid then. It was not valid before."
+      }
+     ]
+    },
+    {
+     "scene": "The handover",
+     "stem": "Leaving after several years. Mark the mistakes.",
+     "lines": [
+      {
+       "t": "Resigns in writing to the correct person, with proper notice",
+       "bad": false,
+       "fb": "Channel and notice. Both are remembered."
+      },
+      {
+       "t": "Tells two close colleagues before the office announces it",
+       "bad": true,
+       "fb": "The household announces departures. Pre announcing it destabilises the house and undermines the office."
+      },
+      {
+       "t": "Updates the household manual so the successor can function",
+       "bad": false,
+       "fb": "Your last professional act, and the one that is talked about afterwards."
+      },
+      {
+       "t": "Takes a copy of the principal's book as a professional sample",
+       "bad": true,
+       "fb": "It is the household's document containing the family's private information. Taking it is a breach that follows you."
+      },
+      {
+       "t": "Hands over in person, including the unwritten knowledge",
+       "bad": false,
+       "fb": "The generous part, and it costs you nothing you will miss."
+      },
+      {
+       "t": "Tells the successor which staff members are difficult",
+       "bad": true,
+       "fb": "You have prejudiced their working relationships before they began, and it will be repeated back."
+      }
+     ]
+    },
+    {
+     "scene": "Afterwards",
+     "stem": "A year after leaving. Mark the mistakes.",
+     "lines": [
+      {
+       "t": "Continues to say nothing about the household, to anyone",
+       "bad": false,
+       "fb": "Trust has no end date. Not the end of the contract, not the end of any agreement you signed."
+      },
+      {
+       "t": "Uses the family's name in confidence to secure a new role",
+       "bad": true,
+       "fb": "It ends the reference, and the consultant learns exactly what you would say about their client."
+      },
+      {
+       "t": "Refers a good candidate to the household when they need someone",
+       "bad": false,
+       "fb": "Still useful, still discreet. This is how people are hired for the rest of their careers."
+      },
+      {
+       "t": "Posts a general reflection about working in private service",
+       "bad": false,
+       "fb": "General and unattributable is fine, and it is how a professional reputation is built publicly."
+      },
+      {
+       "t": "Answers a journalist's question because they no longer work there",
+       "bad": true,
+       "fb": "Leaving changes nothing. This is the breach that ends a career permanently."
+      },
+      {
+       "t": "Stays in touch with the family office once a year",
+       "bad": false,
+       "fb": "Quiet, appropriate, and it keeps a reference alive for a decade."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "type": "write",
+   "title": "Beginning and ending",
+   "sub": "Write it, then read the model.",
+   "items": [
+    {
+     "scene": "Day one questions",
+     "stem": "Write the message you send the family office at the end of your first day.",
+     "hint": "Under a hundred words. What you did, what you need, nothing about how it felt.",
+     "model": "End of day one. I have met all five staff, noted names, roles and length of service, and asked each of them to walk me through their work this week. I have located the main water shut off, the electrical board and the alarm panel. Two things I need from you when convenient: my spending threshold and what sits above it, and confirmation of what comes to you rather than to the principal. Nothing is urgent. I am not proposing any changes for the first month.",
+     "note": "It reports observable actions rather than impressions. The two requests are the two that protect you for the entire tenure, asked on day one when they are easy to ask. And the closing sentence tells the office exactly what they most want to hear from a new senior hire, which is that you are not about to start rearranging things."
+    },
+    {
+     "scene": "The ninety day proposal",
+     "stem": "Write the opening of your ninety day review note, proposing your changes.",
+     "hint": "Frame it as a plan. Observation, proposal, and what it costs. No complaints.",
+     "model": "Ninety day review. Three proposals, all of which can wait if the timing is wrong. First, the maintenance schedule currently exists in three places and none of them agree. I would consolidate it into one calendar with named owners, which costs nothing and takes me a weekend. Second, four of our eleven suppliers have insurance certificates expiring within six months and there is no reminder system. I would add expiry tracking with a sixty day alert. Third, the guest wing standard is not written down, so it varies by whoever prepares it. I would document it, one page, with photographs. None of these change how the house runs. They make it survive whoever is running it.",
+     "note": "Three, not nine, and each one is observation then proposal then cost. All of which can wait if the timing is wrong removes any pressure and makes agreement easy. The closing line is the argument that senior households respond to, because continuity is the thing they are actually buying."
+    },
+    {
+     "scene": "The resignation",
+     "stem": "Write your resignation letter after four years in a household.",
+     "hint": "Short. Notice, gratitude, handover offer. No reasons unless they are simple.",
+     "model": "Dear Mr Aldridge, I am writing to give notice of my resignation, with my last day being the thirtieth of June, which gives the eight weeks my contract requires. I have been offered a role with a larger portfolio of properties and it is a step I want to take. It is not a decision about this household, which I have been glad to serve for four years. I will have the household manual fully updated before I go, and I would like to hand over to my successor in person if the timing allows. I remain bound by my confidentiality obligations, which I understand do not end with my employment, and I would want you to know that I regard them as permanent. Thank you for four good years.",
+     "note": "Notice period stated by date and by contract, so nothing has to be calculated. One simple reason, and the explicit statement that it is not about them. The confidentiality paragraph is the one most people omit, and it is the paragraph that gets you referred for the next decade."
+    },
+    {
+     "scene": "The handover note",
+     "stem": "Write the opening of the handover note you leave for your successor.",
+     "hint": "Generous and practical. The things that are not in the manual.",
+     "model": "Everything operational is in the manual, which is current to this week. This note is the part that is not written down anywhere. The principal reads messages first thing and rarely after eight in the evening, so anything needing a decision should land before seven. Thursdays are heavier than they look, the board pack arrives Wednesday evening and the study needs to be ready by six. Marta has been here eleven years and knows more about this house than the manual does, ask her before you change anything. The heating in the east wing takes four hours to respond, not one. And the family office prefers one written summary on Friday to messages across the week. Good luck. It is a good house.",
+     "note": "It gives the successor rhythm, thresholds and people, which is exactly what a manual cannot hold. Naming Marta and directing them to her is generous and also protects the house. It is a good house is the last line, and leaving that behind rather than a warning is what people remember about you years later."
+    }
+   ]
+  }
+ ]
+}

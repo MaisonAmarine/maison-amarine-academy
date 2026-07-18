@@ -450,6 +450,86 @@
   .pr-btn{font-family:'Jost',sans-serif;font-size:14px;font-weight:600;color:#fff;background:var(--gold);border:none;border-radius:24px;padding:11px 26px;cursor:pointer;transition:background .18s;}
   .pr-btn:hover{background:var(--gold-deep);}
   .pr-btn.ghost{background:none;color:var(--gold-deep);border:1.5px solid var(--gold-lt);}
+  .pr-btn:disabled{opacity:.4;cursor:default;}
+  .pr-btn:disabled:hover{background:var(--gold);}
+  .pr-btn.ghost:disabled:hover{background:none;}
+
+  /* ===== ateliers : sequencing, classify, spot the error, write it ===== */
+  .dr-head{max-width:760px;margin:4px auto 22px;}
+  .dr-head .pr-back{margin-bottom:16px;}
+  .dr-wk{font-family:'Jost',sans-serif;font-size:11px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;}
+  .dr-head h2{font-family:'Cormorant Garamond',serif;font-size:33px;font-weight:500;color:var(--ink);margin:0 0 10px;line-height:1.2;}
+  .dr-head p{font-size:15.5px;line-height:1.65;color:var(--stone);margin:0;max-width:60ch;}
+  .dr-grid{max-width:760px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px;}
+  .dr-card{text-align:left;background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:20px 20px 16px;cursor:pointer;
+    display:flex;flex-direction:column;gap:7px;transition:border-color .2s,box-shadow .2s,transform .2s;font:inherit;}
+  .dr-card:hover{border-color:var(--gold-lt);box-shadow:0 8px 22px rgba(33,28,21,.07);transform:translateY(-2px);}
+  .dr-kind{font-family:'Jost',sans-serif;font-size:10.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);}
+  .dr-ti{font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:500;color:var(--ink);line-height:1.25;}
+  .dr-sub{font-size:13.5px;line-height:1.55;color:var(--stone);flex:1;}
+  .dr-foot{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:8px;padding-top:12px;border-top:1px solid var(--line);}
+  .dr-chip{font-family:'Jost',sans-serif;font-size:11.5px;font-weight:600;color:var(--stone);}
+  .dr-chip.done{color:var(--gold-deep);}
+  .dr-go{font-family:'Jost',sans-serif;font-size:12.5px;font-weight:600;color:var(--gold-deep);}
+  .dr-empty{grid-column:1/-1;padding:22px;border:1px dashed var(--line);border-radius:14px;color:var(--stone);font-size:14px;text-align:center;}
+
+  /* sequencing */
+  .or-list{display:flex;flex-direction:column;gap:9px;margin:4px 0 16px;}
+  .or-hint{padding:18px;border:1px dashed var(--line);border-radius:12px;color:var(--stone);font-size:14px;text-align:center;}
+  .or-slot{display:flex;align-items:flex-start;gap:12px;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:13px 15px;font-size:15px;line-height:1.5;color:var(--ink);}
+  .or-slot.ok{border-color:var(--gold-lt);background:var(--gold-wash);}
+  .or-slot.no{border-color:#D8B4A0;background:#FBF1EC;}
+  .or-n{flex-shrink:0;width:23px;height:23px;border-radius:50%;background:var(--gold);color:#fff;font-family:'Jost',sans-serif;font-size:12px;font-weight:600;display:flex;align-items:center;justify-content:center;}
+  .or-slot.no .or-n{background:#B5714E;}
+  .or-was{margin-left:auto;flex-shrink:0;font-family:'Jost',sans-serif;font-size:11.5px;font-weight:600;color:#A05A38;white-space:nowrap;}
+  .or-pool{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:18px;}
+  .or-chip{font:inherit;font-size:14.5px;line-height:1.45;text-align:left;color:var(--ink);background:var(--ivory);border:1px solid var(--line);border-radius:11px;padding:11px 15px;cursor:pointer;transition:border-color .18s,background .18s;}
+  .or-chip:hover{border-color:var(--gold-lt);background:var(--gold-wash);}
+  .or-acts{display:flex;gap:12px;align-items:center;}
+  .or-why{margin:2px 0 18px;border-radius:12px;padding:15px 17px;background:var(--gold-wash);border:1px solid var(--gold-lt);font-size:14.5px;line-height:1.6;color:var(--ink-soft);}
+  .or-why b{color:var(--ink);}
+
+  /* classify */
+  .so-cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:11px;margin:4px 0 4px;}
+  .so-col{font:inherit;font-family:'Jost',sans-serif;font-size:14px;font-weight:600;color:var(--ink);background:var(--paper);border:1.5px solid var(--line);border-radius:13px;padding:20px 14px;cursor:pointer;transition:border-color .18s,background .18s,transform .18s;}
+  .so-col:hover{border-color:var(--gold-lt);background:var(--gold-wash);transform:translateY(-2px);}
+  .so-col.ok{border-color:var(--gold);background:var(--gold-wash);color:var(--gold-deep);}
+  .so-col.no{border-color:#D8B4A0;background:#FBF1EC;color:#A05A38;}
+  .pr-fb.good{background:var(--gold-wash);border-color:var(--gold-lt);}
+  .pr-fb.bad{background:#FBF1EC;border-color:#D8B4A0;}
+  .pr-fb-k{font-family:'Jost',sans-serif;font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:7px;}
+  .pr-fb.bad .pr-fb-k{color:#A05A38;}
+  .pr-fb p{margin:0;}
+
+  /* spot the error */
+  .sp-note{font-family:'Jost',sans-serif;font-size:12.5px;color:var(--stone);margin:2px 0 14px;}
+  .sp-list{display:flex;flex-direction:column;gap:9px;margin-bottom:18px;}
+  .sp-line{display:flex;align-items:flex-start;gap:12px;text-align:left;font:inherit;font-size:15px;line-height:1.55;color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:13px 15px;cursor:pointer;transition:border-color .18s,background .18s;}
+  .sp-line:hover{border-color:var(--gold-lt);}
+  .sp-line.marked{border-color:var(--gold);background:var(--gold-wash);}
+  .sp-line.ok{border-color:var(--gold);background:var(--gold-wash);}
+  .sp-line.missed{border-color:#D8B4A0;background:#FBF1EC;}
+  .sp-line.no{border-color:#D8B4A0;background:#FBF1EC;}
+  .sp-line.fine{opacity:.72;}
+  .sp-box{flex-shrink:0;width:20px;height:20px;border-radius:6px;border:1.5px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:12px;color:var(--gold-deep);margin-top:1px;}
+  .sp-line.marked .sp-box,.sp-line.ok .sp-box,.sp-line.missed .sp-box{border-color:var(--gold);background:#fff;}
+  .sp-t{flex:1;}
+  .sp-tag{display:inline-block;margin-left:9px;font-family:'Jost',sans-serif;font-size:10px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-deep);vertical-align:middle;}
+  .sp-tag.bad{color:#A05A38;}
+  .sp-fb{display:block;margin-top:7px;font-size:13.5px;line-height:1.55;color:var(--stone);}
+
+  /* write it */
+  .wr-ta{width:100%;box-sizing:border-box;min-height:170px;resize:vertical;font-family:'Jost',sans-serif;font-size:15px;line-height:1.65;color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:13px;padding:15px 17px;outline:none;transition:border-color .18s;}
+  .wr-ta:focus{border-color:var(--gold-lt);}
+  .wr-hint{font-family:'Jost',sans-serif;font-size:13px;color:var(--stone);margin:10px 0 18px;line-height:1.55;}
+  .wr-mine,.wr-model{border-radius:13px;padding:16px 18px;margin-bottom:14px;font-size:15px;line-height:1.68;}
+  .wr-mine{background:var(--ivory);border:1px solid var(--line);color:var(--ink-soft);}
+  .wr-model{background:var(--gold-wash);border:1px solid var(--gold-lt);color:var(--ink);}
+  .wr-mine p,.wr-model p{margin:0;white-space:pre-wrap;}
+  .wr-k{font-family:'Jost',sans-serif;font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:9px;}
+  .wr-mine .wr-k{color:var(--stone);}
+  .wr-note{border-left:2px solid var(--gold);padding:2px 0 2px 16px;margin:4px 0 20px;font-size:14.5px;line-height:1.65;color:var(--ink-soft);}
+  .wr-note b{color:var(--ink);}
   /* flashcards */
   .pr-flash{perspective:1400px;margin-top:6px;}
   .pr-flip{position:relative;width:100%;min-height:280px;transform-style:preserve-3d;transition:transform .55s cubic-bezier(.2,.7,.2,1);cursor:pointer;}
@@ -1901,6 +1981,7 @@
         Settings
       </div>
     
+
 </nav>
   </aside>
 
@@ -2528,6 +2609,7 @@
       </div>
     </section>
   
+
 </main>
 </div>
 
@@ -3200,11 +3282,14 @@ function renderPractice(){
     let chip='';
     if(w.type==='flash'){ if(done) chip='<span class="pr-best">Reviewed &#10003;</span>'; }
     else if(b){ chip=`<span class="pr-best">Best ${b.score}/${b.total}${b.score===w.items.length?' &#9733;':''}</span>`; }
-    return `<button class="pr-card${done?' pr-card-done':''}" onclick="startPractice(${w.no})">
+    const nx=drillsFor(w.no).length;
+    const nDone=drillsFor(w.no).filter((x,k)=>drillDone(w.no,k)).length + (done?1:0);
+    const all=weekAllDone(w.no);
+    return `<button class="pr-card${all?' pr-card-done':''}" onclick="openWeekPractice(${w.no})">
       <div class="pr-cardtop"><div class="pr-wk">Week ${w.no}</div>${chip}</div>
       <div class="pr-ti">${escapeHtml(w.title)}</div>
-      <span class="pr-badge">${prBadge(w.type)}</span>
-      <div class="pr-go ${done?'pr-done':''}">${done?'Play again':'Start'} &rarr;</div>
+      <span class="pr-badge">${nx?(nx+1)+' exercises':prBadge(w.type)}</span>
+      <div class="pr-go ${all?'pr-done':''}">${nx?nDone+' of '+(nx+1)+' done':(done?'Play again':'Start')} &rarr;</div>
     </button>`;
   }).join('')+'</div>';
   wrap.innerHTML=stats+cards;
@@ -3339,6 +3424,249 @@ function prFlashDone(){
   if(typeof updateResume==='function') updateResume();
   const wrap=document.getElementById('practiceWrap');
   wrap.innerHTML=`<div class="pr-run"><div class="pr-result"><div class="pr-score">${w.cards.length}</div><h2>Cards reviewed.</h2><p>Come back to these whenever you like. The words become yours by repetition, and fluency in them is what quietly marks the insider.</p><div class="pr-acts"><button class="pr-btn" onclick="startPractice(${w.no})">Review again</button><button class="pr-btn ghost" onclick="renderPractice()">All exercises</button></div></div></div>`;
+}
+
+/* ============================================================
+   ATELIERS : quatre types d'exercices en plus par semaine
+   order (remettre dans l'ordre), sort (classer), spot (repérer
+   les fautes), write (rédiger puis comparer au modèle).
+   Les données vivent dans practice-drills.json, chargé à chaud.
+   ============================================================ */
+let PR_DRILLS = {};
+async function loadDrills(){
+  try{ const d = await fetchLive('practice-drills.json'); if(d && typeof d==='object') PR_DRILLS=d; }
+  catch(e){ PR_DRILLS={}; }
+}
+function drillKey(no,k){ return no+':'+k; }
+function drillsFor(no){ return (PR_DRILLS[String(no)]||[]); }
+const DRILL_META={
+  order:{label:'Sequencing', d:'Put the steps in the order a professional would actually take them.'},
+  sort:{label:'Classify',    d:'Place each item in the right column, one at a time.'},
+  spot:{label:'Spot the error', d:'Read the scene and mark every line that is a mistake.'},
+  write:{label:'Write it',   d:'Draft your own answer, then compare it against a model.'}
+};
+function drillDone(no,k){ return !!PR_STATE.done[drillKey(no,k)]; }
+function weekAllDone(no){
+  const ds=drillsFor(no);
+  if(!PR_STATE.done[no]) return false;
+  for(let k=0;k<ds.length;k++){ if(!drillDone(no,k)) return false; }
+  return true;
+}
+
+/* ---- l'écran qui liste les exercices d'une semaine ---- */
+function openWeekPractice(no){
+  const w=PRACTICE.find(x=>x.no===no); if(!w) return;
+  const wrap=document.getElementById('practiceWrap'); if(!wrap) return;
+  window.scrollTo(0,0);
+  const b=PR_STATE.best[no];
+  let mainChip = PR_STATE.done[no]
+    ? (w.type==='flash' ? '<span class="dr-chip done">Reviewed</span>' : `<span class="dr-chip done">Best ${b?b.score:0} of ${b?b.total:0}</span>`)
+    : '<span class="dr-chip">Not started</span>';
+  const mainCard=`<button class="dr-card" onclick="startPractice(${no})">
+      <div class="dr-kind">${prBadge(w.type)}</div>
+      <div class="dr-ti">${escapeHtml(w.title)}</div>
+      <div class="dr-sub">${w.type==='flash'?'Learn the vocabulary of the house by repetition.':'Work through the situations one by one and read every debrief.'}</div>
+      <div class="dr-foot">${mainChip}<span class="dr-go">${PR_STATE.done[no]?'Play again':'Start'} &rarr;</span></div>
+    </button>`;
+  const ds=drillsFor(no);
+  const more = ds.length ? ds.map((d,k)=>{
+    const m=DRILL_META[d.type]||{label:'Exercise',d:''};
+    const st=PR_STATE.best[drillKey(no,k)];
+    const chip = drillDone(no,k)
+      ? (st && st.total ? `<span class="dr-chip done">Best ${st.score} of ${st.total}</span>` : '<span class="dr-chip done">Completed</span>')
+      : '<span class="dr-chip">Not started</span>';
+    return `<button class="dr-card" onclick="startDrill(${no},${k})">
+      <div class="dr-kind">${m.label}</div>
+      <div class="dr-ti">${escapeHtml(d.title||m.label)}</div>
+      <div class="dr-sub">${escapeHtml(d.sub||m.d)}</div>
+      <div class="dr-foot">${chip}<span class="dr-go">${drillDone(no,k)?'Play again':'Start'} &rarr;</span></div>
+    </button>`;
+  }).join('') : `<div class="dr-empty">The extra workshops for this week are loading. Refresh in a moment if they do not appear.</div>`;
+  wrap.innerHTML=`<div class="dr-head">
+      <button class="pr-back" onclick="renderPractice()">&larr; All weeks</button>
+      <div class="dr-wk">Week ${no}</div>
+      <h2>${escapeHtml(w.title)}</h2>
+      <p>Five ways to work the same week. The situations test your judgement, the workshops test whether you can actually do it under your own hand.</p>
+    </div><div class="dr-grid">${mainCard}${more}</div>`;
+}
+function startDrill(no,k){
+  const d=drillsFor(no)[k]; if(!d) return;
+  window.scrollTo(0,0);
+  if(d.type==='order'){ prState={no:no,k:k,type:'order',i:0,score:0,answered:false,deck:prShuffle((d.items||[]).slice()),picked:[],pool:[]}; prOrderPrep(); renderOrderRunner(); }
+  else if(d.type==='sort'){ prState={no:no,k:k,type:'sort',i:0,score:0,answered:false,chosen:-1,deck:prShuffle((d.items||[]).slice())}; renderSortRunner(); }
+  else if(d.type==='spot'){ prState={no:no,k:k,type:'spot',i:0,score:0,answered:false,marks:{},deck:prShuffle((d.items||[]).slice())}; renderSpotRunner(); }
+  else if(d.type==='write'){ prState={no:no,k:k,type:'write',i:0,revealed:false,deck:(d.items||[]).slice()}; renderWriteRunner(); }
+}
+function drillDef(){ return drillsFor(prState.no)[prState.k]; }
+function drillHeader(){
+  const total=prState.deck.length;
+  return `<div class="pr-top">
+      <button class="pr-back" onclick="openWeekPractice(${prState.no})">&larr; Week ${prState.no}</button>
+      <div class="pr-prog"><div class="pr-prog-fill" style="width:${Math.round(prState.i/total*100)}%"></div></div>
+      <div class="pr-count">${Math.min(prState.i+1,total)} / ${total}</div>
+    </div>`;
+}
+function drillNext(){
+  prState.i++; prState.answered=false; prState.chosen=-1; prState.marks={}; prState.revealed=false;
+  window.scrollTo(0,0);
+  const t=prState.type;
+  if(prState.i>=prState.deck.length) return drillResult();
+  if(t==='order'){ prOrderPrep(); renderOrderRunner(); }
+  else if(t==='sort') renderSortRunner();
+  else if(t==='spot') renderSpotRunner();
+  else renderWriteRunner();
+}
+function drillResult(){
+  const d=drillDef(), total=prState.deck.length, s=prState.score;
+  const scored = prState.type!=='write';
+  PR_STATE.done[drillKey(prState.no,prState.k)]=true;
+  if(scored){
+    const prev=PR_STATE.best[drillKey(prState.no,prState.k)];
+    if(!prev || s>prev.score) PR_STATE.best[drillKey(prState.no,prState.k)]={score:s,total:total};
+  }
+  savePractice();
+  if(typeof updateResume==='function') updateResume();
+  const pct= scored ? s/total : 1;
+  const head = !scored ? 'Workshop complete.'
+    : pct===1 ? 'Faultless.' : pct>=.7 ? 'Solid work.' : 'Worth another pass.';
+  const body = !scored
+    ? 'Comparing your own words to a model is the fastest way to find the gap. Come back to this one before your mentorship session.'
+    : pct===1 ? 'Every one correct. This is the level the work is done at.'
+    : pct>=.7 ? 'You have the shape of it. Read the debriefs on the ones you missed, then run it again.'
+    : 'Go back to the module before you play again. The exercise is only useful once the reading is done.';
+  const wrap=document.getElementById('practiceWrap');
+  wrap.innerHTML=`<div class="pr-run"><div class="pr-result">
+      <div class="pr-score">${scored?s+'<span style="font-size:.42em;color:var(--stone)"> / '+total+'</span>':'&#10003;'}</div>
+      <h2>${head}</h2><p>${body}</p>
+      <div class="pr-acts">
+        <button class="pr-btn" onclick="startDrill(${prState.no},${prState.k})">Play again</button>
+        <button class="pr-btn ghost" onclick="openWeekPractice(${prState.no})">Back to Week ${prState.no}</button>
+      </div></div></div>`;
+}
+
+/* ---- 1. remettre dans l'ordre ---- */
+function prOrderPrep(){
+  const it=prState.deck[prState.i];
+  prState.picked=[];
+  prState.pool=prShuffle(it.steps.map((t,idx)=>({t:t,idx:idx})));
+}
+function prOrderPick(pi){
+  if(prState.answered) return;
+  const item=prState.pool.splice(pi,1)[0];
+  prState.picked.push(item); renderOrderRunner();
+}
+function prOrderUndo(){
+  if(prState.answered || !prState.picked.length) return;
+  prState.pool.push(prState.picked.pop()); renderOrderRunner();
+}
+function prOrderCheck(){
+  if(prState.answered) return;
+  prState.answered=true;
+  const ok=prState.picked.every((p,i)=>p.idx===i);
+  if(ok) prState.score++;
+  renderOrderRunner();
+}
+function renderOrderRunner(){
+  const d=drillDef(), it=prState.deck[prState.i], wrap=document.getElementById('practiceWrap');
+  const done=prState.answered;
+  const picked=prState.picked.map((p,i)=>{
+    const cls=done ? (p.idx===i?'ok':'no') : '';
+    return `<div class="or-slot ${cls}"><span class="or-n">${i+1}</span><span>${escapeHtml(p.t)}</span>${done&&p.idx!==i?`<span class="or-was">belongs at ${p.idx+1}</span>`:''}</div>`;
+  }).join('') || '<div class="or-hint">Tap the steps below, in the order you would take them.</div>';
+  const pool=prState.pool.map((p,i)=>`<button class="or-chip" onclick="prOrderPick(${i})">${escapeHtml(p.t)}</button>`).join('');
+  const full=prState.picked.length===it.steps.length;
+  const acts = done
+    ? `<div class="or-why"><b>Why this order.</b> ${escapeHtml(it.why||'')}</div>
+       <button class="pr-btn" onclick="drillNext()">${prState.i>=prState.deck.length-1?'See my result':'Next situation'} &rarr;</button>`
+    : `<div class="or-acts">
+         <button class="pr-btn ghost" onclick="prOrderUndo()" ${prState.picked.length?'':'disabled'}>Undo</button>
+         <button class="pr-btn" onclick="prOrderCheck()" ${full?'':'disabled'}>Check my order</button>
+       </div>`;
+  wrap.innerHTML=`<div class="pr-run">${drillHeader()}
+    <div class="pr-q"><div class="pr-scene">${escapeHtml(it.scene||'')}</div><h2>${escapeHtml(it.stem||'')}</h2></div>
+    <div class="or-list">${picked}</div>
+    ${done?'':`<div class="or-pool">${pool}</div>`}
+    ${acts}</div>`;
+}
+
+/* ---- 2. classer dans des colonnes ---- */
+function prSortPick(bi){
+  if(prState.answered) return;
+  prState.answered=true; prState.chosen=bi;
+  if(bi===prState.deck[prState.i].b) prState.score++;
+  renderSortRunner();
+}
+function renderSortRunner(){
+  const d=drillDef(), it=prState.deck[prState.i], wrap=document.getElementById('practiceWrap');
+  const done=prState.answered;
+  const cols=(d.buckets||[]).map((b,bi)=>{
+    let cls='';
+    if(done){ if(bi===it.b) cls='ok'; else if(bi===prState.chosen) cls='no'; }
+    return `<button class="so-col ${cls}" onclick="prSortPick(${bi})">${escapeHtml(b)}</button>`;
+  }).join('');
+  const fb = done ? `<div class="pr-fb ${prState.chosen===it.b?'good':'bad'}">
+      <div class="pr-fb-k">${prState.chosen===it.b?'Correct':'Not this one'}</div>
+      <p>${escapeHtml(it.fb||'')}</p></div>
+      <button class="pr-btn" onclick="drillNext()">${prState.i>=prState.deck.length-1?'See my result':'Next item'} &rarr;</button>` : '';
+  wrap.innerHTML=`<div class="pr-run">${drillHeader()}
+    <div class="pr-q"><div class="pr-scene">${escapeHtml(d.sub||'')}</div><h2>${escapeHtml(it.t||'')}</h2></div>
+    <div class="so-cols">${cols}</div>${fb}</div>`;
+}
+
+/* ---- 3. repérer les fautes ---- */
+function prSpotToggle(li){
+  if(prState.answered) return;
+  prState.marks[li]=!prState.marks[li]; renderSpotRunner();
+}
+function prSpotCheck(){
+  if(prState.answered) return;
+  prState.answered=true;
+  const it=prState.deck[prState.i];
+  const ok=it.lines.every((l,i)=>!!l.bad===!!prState.marks[i]);
+  if(ok) prState.score++;
+  renderSpotRunner();
+}
+function renderSpotRunner(){
+  const it=prState.deck[prState.i], wrap=document.getElementById('practiceWrap');
+  const done=prState.answered;
+  const lines=it.lines.map((l,i)=>{
+    const marked=!!prState.marks[i];
+    let cls=marked?'marked':'';
+    if(done){ cls = l.bad ? (marked?'ok':'missed') : (marked?'no':'fine'); }
+    const tag = done ? (l.bad?'<span class="sp-tag bad">Mistake</span>':'<span class="sp-tag">Correct</span>') : '';
+    return `<button class="sp-line ${cls}" onclick="prSpotToggle(${i})">
+        <span class="sp-box">${marked||(done&&l.bad)?'&#10003;':''}</span>
+        <span class="sp-t">${escapeHtml(l.t)}${tag}${done?`<span class="sp-fb">${escapeHtml(l.fb||'')}</span>`:''}</span>
+      </button>`;
+  }).join('');
+  const acts = done
+    ? `<button class="pr-btn" onclick="drillNext()">${prState.i>=prState.deck.length-1?'See my result':'Next scene'} &rarr;</button>`
+    : `<button class="pr-btn" onclick="prSpotCheck()">Check my answer</button>`;
+  wrap.innerHTML=`<div class="pr-run">${drillHeader()}
+    <div class="pr-q"><div class="pr-scene">${escapeHtml(it.scene||'')}</div><h2>${escapeHtml(it.stem||'')}</h2></div>
+    <div class="sp-note">Mark every line that is a mistake. Leave the correct ones untouched.</div>
+    <div class="sp-list">${lines}</div>${acts}</div>`;
+}
+
+/* ---- 4. rédiger puis comparer au modèle ---- */
+function prWriteReveal(){
+  const ta=document.getElementById('wrTa');
+  prState.draft = ta ? ta.value : '';
+  prState.revealed=true; renderWriteRunner();
+}
+function renderWriteRunner(){
+  const it=prState.deck[prState.i], wrap=document.getElementById('practiceWrap');
+  const body = prState.revealed
+    ? `<div class="wr-mine"><div class="wr-k">What you wrote</div><p>${escapeHtml(prState.draft||'You left this one blank. Try it before you read on next time.')}</p></div>
+       <div class="wr-model"><div class="wr-k">A model answer</div><p>${escapeHtml(it.model||'')}</p></div>
+       <div class="wr-note"><b>What makes it work.</b> ${escapeHtml(it.note||'')}</div>
+       <button class="pr-btn" onclick="drillNext()">${prState.i>=prState.deck.length-1?'Finish the workshop':'Next brief'} &rarr;</button>`
+    : `<textarea id="wrTa" class="wr-ta" placeholder="Write your answer here."></textarea>
+       <div class="wr-hint">${escapeHtml(it.hint||'')}</div>
+       <button class="pr-btn" onclick="prWriteReveal()">Show me the model answer</button>`;
+  wrap.innerHTML=`<div class="pr-run">${drillHeader()}
+    <div class="pr-q"><div class="pr-scene">${escapeHtml(it.scene||'')}</div><h2>${escapeHtml(it.stem||'')}</h2></div>
+    ${body}</div>`;
 }
 
 // ====== THE SCREENING ROOM DATA ======
@@ -3697,6 +4025,7 @@ async function onSignedIn(user){
   try{ updateResumeChip(); }catch(e){}
   try{ renderStudentDash(); }catch(e){}
   try{ loadSessions(); }catch(e){}
+  try{ loadDrills(); }catch(e){}
   // le tutoriel se relance depuis le bandeau du haut : on garde le bouton flottant masqué
   const th=document.getElementById('tourHelp'); if(th) th.style.display='none';
   try{ if(!localStorage.getItem('ma_tour_v1')) setTimeout(()=>{ try{ startTour(); }catch(e){} }, 1000); }catch(e){}
@@ -5188,7 +5517,7 @@ function goPage(name, scrollTo){
   if(name==='journal'){ bootJournal(); }
   if(name==='register'){ renderRegister(); }
   if(name==='screening'){ renderScreening(); }
-  if(name==='practice'){ renderPractice(); }
+  if(name==='practice'){ renderPractice(); if(!Object.keys(PR_DRILLS).length){ loadDrills().then(()=>{ try{ renderPractice(); }catch(e){} }); } }
   if(name==='profile'){ renderProfile(); }
   if(name==='vault'){ loadReference(); }
   if(name==='dashboard'){ renderStudentDash(); }
@@ -6629,6 +6958,7 @@ const ADM_PAGES=['admdash','admstudents','admcourses','admsubs','admsettings'];
   tick();
 })();
 </script>
+
 
 </body>
 </html>
