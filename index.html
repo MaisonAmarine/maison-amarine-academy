@@ -372,6 +372,23 @@
   .rf-check{border:1px solid var(--gold-lt);background:#fffdf6;border-radius:14px;padding:18px 22px;margin:26px 0 6px;}
   .rf-check-k{display:block;font-family:'Jost',sans-serif;font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:7px;}
   .rf-check p{font-family:'Cormorant',serif;font-size:19px;line-height:1.68;color:#3a342c;margin:0;}
+  /* le dictionnaire : page unique et recherche */
+  .dic-bar{position:sticky;top:76px;z-index:20;background:var(--ivory);padding:14px 0 12px;margin:0 0 10px;border-bottom:1px solid var(--line);}
+  .dic-field{display:flex;align-items:center;gap:11px;background:var(--paper);border:1px solid var(--line);border-radius:26px;padding:12px 18px;transition:border-color .18s,box-shadow .18s;}
+  .dic-field:focus-within{border-color:var(--gold-lt);box-shadow:0 4px 16px rgba(168,126,61,.12);}
+  .dic-field svg{color:var(--gold);flex-shrink:0;}
+  .dic-field input{flex:1;border:none;outline:none;background:none;font-family:'Jost',sans-serif;font-size:15px;color:var(--ink);}
+  .dic-field input::placeholder{color:var(--stone);}
+  .dic-clear{border:none;background:none;font-family:'Jost',sans-serif;font-size:12.5px;font-weight:600;color:var(--gold-deep);cursor:pointer;padding:0;}
+  .dic-count{font-family:'Jost',sans-serif;font-size:12px;letter-spacing:.06em;color:var(--stone);margin:10px 2px 0;}
+  .dic-az{display:flex;flex-wrap:wrap;gap:5px;margin-top:11px;}
+  .dic-l{font-family:'Jost',sans-serif;font-size:12.5px;font-weight:600;color:var(--gold-deep);background:none;border:1px solid var(--line);border-radius:8px;min-width:29px;padding:5px 7px;cursor:pointer;transition:border-color .16s,background .16s;}
+  .dic-l:hover{border-color:var(--gold-lt);background:var(--gold-wash);}
+  .dic-sec{margin-bottom:8px;}
+  .dic-h{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:500;color:var(--gold-deep);border-bottom:1px solid var(--line);padding-bottom:8px;margin:26px 0 14px;}
+  .dic-e{margin:0 0 15px;font-size:16.5px;line-height:1.72;color:var(--ink-soft);}
+  .dic-e b{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;color:var(--ink);}
+  .dic-e i{font-family:'Jost',sans-serif;font-style:normal;font-size:10.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-left:7px;}
   /* lecture du Vault en onglets */
   .rf-tabs{display:flex;gap:8px;flex-wrap:nowrap;overflow-x:auto;padding:0 2px 10px;margin:20px 0 26px;border-bottom:1px solid var(--line);-webkit-overflow-scrolling:touch;scrollbar-width:none;}
   .rf-tabs::-webkit-scrollbar{display:none;}
@@ -4416,20 +4433,78 @@ function openRefBook(id){
   const b=((REFDATA&&REFDATA.books)||[]).find(x=>x.id===id); if(!b) return;
   const rd=document.getElementById('refReader');
   REF_OPEN=b;
-  const multi=(b.sections||[]).length>1;
+  const isDic = (id==='dictionary');
+  const multi=(b.sections||[]).length>1 && !isDic;
   const toc=multi?(b.sections||[]).map((s,i)=>`<button class="rf-tab${i===0?' on':''}" data-i="${i}" onclick="refTab(${i})">${escapeHtml(s.h)}</button>`).join(''):'';
-  const secs=(b.sections||[]).map((s,i)=>`<article class="rf-sec${multi&&i>0?' hidden':''}" id="rfs${i}"><h2>${escapeHtml(s.h)}</h2><div class="rf-body">${refDecorate(s.html)}</div>${multi?refPager(i,b.sections.length):''}</article>`).join('');
+  const secs = isDic
+    ? (b.sections||[]).map((s,i)=>`<article class="rf-sec dic-sec" id="rfs${i}"><h2 class="dic-h">${escapeHtml(s.h)}</h2><div class="rf-body">${dicDecorate(s.html)}</div></article>`).join('')
+    : (b.sections||[]).map((s,i)=>`<article class="rf-sec${multi&&i>0?' hidden':''}" id="rfs${i}"><h2>${escapeHtml(s.h)}</h2><div class="rf-body">${refDecorate(s.html)}</div>${multi?refPager(i,b.sections.length):''}</article>`).join('');
+  const dicBar = isDic ? `<div class="dic-bar">
+      <div class="dic-field">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5" stroke-linecap="round"/></svg>
+        <input id="dicQ" type="text" placeholder="Search a word, a domain, a definition" autocomplete="off" spellcheck="false" oninput="dicFilter()">
+        <button class="dic-clear" id="dicClear" onclick="dicReset()" style="display:none">Clear</button>
+      </div>
+      <div class="dic-count" id="dicCount"></div>
+      <nav class="dic-az" id="dicAz"></nav>
+    </div>` : '';
   const dl=b.pdf?`<div style="text-align:center;margin-bottom:24px;"><a class="rf-dl" href="${b.pdf}" target="_blank" rel="noopener">Download as PDF <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12M7 11l5 5 5-5M5 21h14" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>`:'';
   rd.innerHTML=`
     <button class="rf-back" onclick="closeRefBook()">${ICO_ARL} All references</button>
     <header class="rf-head"><div class="rf-k">Reference</div><h1>${escapeHtml(b.title)}</h1><div class="rf-sub">${escapeHtml(b.subtitle||'')}</div></header>
     ${dl}
     ${b.intro?`<div class="rf-intro rf-body">${b.intro}</div>`:''}
+    ${dicBar}
     ${toc?`<nav class="rf-tabs" id="rfTabs">${toc}</nav>`:''}
     ${secs}
     <button class="rf-back" onclick="closeRefBook()">${ICO_ARL} All references</button>`;
   const v=document.getElementById('page-vault'); if(v) v.classList.add('reading');
+  if(isDic) dicInit();
   window.scrollTo(0,0);
+}
+/* ---- le dictionnaire : une seule page, une recherche instantanée ---- */
+function dicDecorate(html){
+  return String(html||'').replace(/<p>/g,'<p class="dic-e">');
+}
+function dicInit(){
+  const az=document.getElementById('dicAz');
+  if(az){
+    const letters=[];
+    document.querySelectorAll('.dic-sec').forEach((s,i)=>{
+      const h=s.querySelector('.dic-h'); if(!h) return;
+      const t=(h.textContent||'').trim();
+      if(t.length<=2) letters.push(`<button class="dic-l" onclick="dicJump(${i})">${escapeHtml(t)}</button>`);
+    });
+    az.innerHTML=letters.join('');
+  }
+  dicFilter();
+}
+function dicJump(i){
+  const el=document.getElementById('rfs'+i);
+  if(el) el.scrollIntoView({behavior:'smooth',block:'start'});
+}
+function dicReset(){
+  const q=document.getElementById('dicQ'); if(q){ q.value=''; q.focus(); }
+  dicFilter();
+}
+function dicFilter(){
+  const inp=document.getElementById('dicQ');
+  const q=(inp?inp.value:'').trim().toLowerCase();
+  const clr=document.getElementById('dicClear'); if(clr) clr.style.display=q?'':'none';
+  let shown=0, total=0;
+  document.querySelectorAll('.dic-sec').forEach(sec=>{
+    let vis=0;
+    sec.querySelectorAll('.dic-e').forEach(p=>{
+      total++;
+      const hit = !q || (p.textContent||'').toLowerCase().indexOf(q)>=0;
+      p.style.display = hit ? '' : 'none';
+      if(hit){ vis++; shown++; }
+    });
+    sec.style.display = vis ? '' : 'none';
+  });
+  const c=document.getElementById('dicCount');
+  if(c) c.textContent = q ? (shown ? shown+' of '+total+' entries' : 'No entry matches that word') : total+' entries';
+  const az=document.getElementById('dicAz'); if(az) az.style.display = q ? 'none' : '';
 }
 function closeRefBook(){ const v=document.getElementById('page-vault'); if(v) v.classList.remove('reading'); window.scrollTo(0,0); }
 function renderLibrary(){
