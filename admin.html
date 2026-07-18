@@ -352,6 +352,26 @@
   .ref-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:18px 0 30px;}
   .ref-card{display:flex;align-items:center;gap:16px;text-align:left;background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:22px 24px;cursor:pointer;font-family:'Jost',sans-serif;box-shadow:0 14px 32px rgba(33,28,21,.05);transition:transform .18s,box-shadow .18s,border-color .18s;}
   .ref-card:hover{transform:translateY(-2px);border-color:var(--gold-lt);box-shadow:0 22px 46px rgba(33,28,21,.09);}
+  /* relief du texte dans le Vault */
+  .rf-dek{font-family:'Cormorant',serif;font-style:italic;font-size:21px;line-height:1.6;color:#4a443b;border-left:3px solid var(--gold);padding:2px 0 2px 20px;margin:0 0 26px;}
+  .rf-lead{font-family:'Cormorant',serif;font-weight:600;font-size:24px;line-height:1.25;color:var(--ink);margin:30px 0 10px;display:flex;align-items:baseline;gap:11px;}
+  .rf-lead::before{content:"";flex:none;width:22px;height:2px;background:var(--gold);transform:translateY(-6px);}
+  .rf-p{font-family:'Cormorant',serif;font-size:19.5px;line-height:1.72;color:#332E28;margin:0 0 13px;}
+  .rf-p em{font-style:italic;color:var(--gold-deep);font-weight:500;}
+  .rf-p strong{font-weight:600;color:var(--ink);background:linear-gradient(180deg,transparent 62%,var(--gold-wash) 62%);padding:0 2px;}
+  .rf-case{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:22px 24px;margin:24px 0;box-shadow:0 12px 30px rgba(33,28,21,.06);}
+  .rf-case-h{display:flex;align-items:center;gap:12px;margin-bottom:12px;}
+  .rf-case-k{flex:none;background:var(--gold-deep);color:#fff;font-family:'Jost',sans-serif;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;border-radius:20px;padding:5px 13px;}
+  .rf-case-t{font-family:'Cormorant',serif;font-weight:600;font-size:22px;color:var(--ink);line-height:1.2;}
+  .rf-case-b{font-family:'Cormorant',serif;font-size:19px;line-height:1.65;color:#332E28;}
+  .rf-case-d{margin-top:16px;background:var(--gold-wash);border-radius:12px;padding:15px 18px;font-family:'Cormorant',serif;font-size:18.5px;line-height:1.62;color:#3a342c;}
+  .rf-d-k{display:block;font-family:'Jost',sans-serif;font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:6px;}
+  .rf-warn{border-left:3px solid #a4442f;background:#fdf6f3;border-radius:0 12px 12px 0;padding:16px 20px;margin:26px 0;}
+  .rf-warn-k{display:block;font-family:'Jost',sans-serif;font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#a4442f;margin-bottom:7px;}
+  .rf-warn p{font-family:'Cormorant',serif;font-size:19px;line-height:1.68;color:#3a342c;margin:0;}
+  .rf-check{border:1px solid var(--gold-lt);background:#fffdf6;border-radius:14px;padding:18px 22px;margin:26px 0 6px;}
+  .rf-check-k{display:block;font-family:'Jost',sans-serif;font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:7px;}
+  .rf-check p{font-family:'Cormorant',serif;font-size:19px;line-height:1.68;color:#3a342c;margin:0;}
   /* lecture du Vault en onglets */
   .rf-tabs{display:flex;gap:8px;flex-wrap:nowrap;overflow-x:auto;padding:0 2px 10px;margin:20px 0 26px;border-bottom:1px solid var(--line);-webkit-overflow-scrolling:touch;scrollbar-width:none;}
   .rf-tabs::-webkit-scrollbar{display:none;}
@@ -4330,6 +4350,38 @@ function renderRefCards(){
   }
   g.innerHTML=html;
 }
+// --- relief : on transforme les paragraphes en sous-titres, cartes de cas et encadrés ---
+function refDecorate(html){
+  const paras=String(html||'').match(/<p>[\s\S]*?<\/p>/g);
+  if(!paras) return html;
+  let out='', i=0, dekDone=false;
+  const lead=p=>{ const m=p.match(/^<p><strong>([\s\S]{1,120}?)<\/strong>\s*([\s\S]*)<\/p>$/); return m?{t:m[1].replace(/\.\s*$/,''),body:m[2]}:null; };
+  while(i<paras.length){
+    const p=paras[i];
+    // chapeau d'introduction, tout en italique
+    const onlyEm=p.match(/^<p><em>([\s\S]*)<\/em><\/p>$/);
+    if(onlyEm && !dekDone){ out+=`<p class="rf-dek">${onlyEm[1]}</p>`; dekDone=true; i++; continue; }
+    const L=lead(p);
+    if(L){
+      const t=L.t.replace(/<[^>]+>/g,'');
+      // carte de cas, avec son débrief s'il suit
+      const cm=t.match(/^Case\s+([IVXLC\d]+)\.?\s*([\s\S]*)$/i);
+      if(cm){
+        let inner=`<div class="rf-case-h"><span class="rf-case-k">Case ${cm[1].toUpperCase()}</span>${cm[2]?`<span class="rf-case-t">${cm[2].replace(/\.\s*$/,'')}</span>`:''}</div><div class="rf-case-b">${L.body}</div>`;
+        const nxt=paras[i+1]||'';
+        const dm=nxt.match(/^<p><em>The debrief\.?<\/em>\s*([\s\S]*)<\/p>$/i);
+        if(dm){ inner+=`<div class="rf-case-d"><span class="rf-d-k">The debrief</span>${dm[1]}</div>`; i++; }
+        out+=`<div class="rf-case">${inner}</div>`; i++; continue;
+      }
+      if(/^How it fails/i.test(t)){ out+=`<div class="rf-warn"><span class="rf-warn-k">How it fails</span><p>${L.body}</p></div>`; i++; continue; }
+      if(/^Your checklist/i.test(t)){ out+=`<div class="rf-check"><span class="rf-check-k">${t}</span><p>${L.body}</p></div>`; i++; continue; }
+      // sous-titre + corps
+      out+=`<h3 class="rf-lead">${L.t}</h3><p class="rf-p">${L.body}</p>`; i++; continue;
+    }
+    out+=`<p class="rf-p">${p.replace(/^<p>/,'').replace(/<\/p>$/,'')}</p>`; i++;
+  }
+  return out;
+}
 // --- lecture du Vault en onglets, comme le Journal ---
 let REF_OPEN=null;
 function refPager(i,total){
@@ -4351,7 +4403,7 @@ function openRefBook(id){
   REF_OPEN=b;
   const multi=(b.sections||[]).length>1;
   const toc=multi?(b.sections||[]).map((s,i)=>`<button class="rf-tab${i===0?' on':''}" data-i="${i}" onclick="refTab(${i})">${escapeHtml(s.h)}</button>`).join(''):'';
-  const secs=(b.sections||[]).map((s,i)=>`<article class="rf-sec${multi&&i>0?' hidden':''}" id="rfs${i}"><h2>${escapeHtml(s.h)}</h2><div class="rf-body">${s.html}</div>${multi?refPager(i,b.sections.length):''}</article>`).join('');
+  const secs=(b.sections||[]).map((s,i)=>`<article class="rf-sec${multi&&i>0?' hidden':''}" id="rfs${i}"><h2>${escapeHtml(s.h)}</h2><div class="rf-body">${refDecorate(s.html)}</div>${multi?refPager(i,b.sections.length):''}</article>`).join('');
   const dl=b.pdf?`<div style="text-align:center;margin-bottom:24px;"><a class="rf-dl" href="${b.pdf}" target="_blank" rel="noopener">Download as PDF <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12M7 11l5 5 5-5M5 21h14" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>`:'';
   rd.innerHTML=`
     <button class="rf-back" onclick="closeRefBook()">${ICO_ARL} All references</button>
