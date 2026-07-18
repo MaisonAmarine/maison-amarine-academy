@@ -42,6 +42,33 @@
   .nav-item:hover{background:rgba(255,255,255,.06);color:#F6F0E4;}
   .nav-item.active{background:var(--gold);color:#fff;}
   .nav-sep{height:1px;background:rgba(255,255,255,.09);margin:16px 8px;}
+  /* ===== dashboard élève ===== */
+  .dsh-hero{background:linear-gradient(115deg,rgba(28,23,17,.93) 42%,rgba(33,28,21,.72) 78%,rgba(33,28,21,.55)),url('images/dash.jpg') center/cover;border-radius:20px;padding:34px 38px;color:#F6F0E4;margin-bottom:20px;position:relative;overflow:hidden;}
+  .dsh-hi{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-lt);font-family:'Jost',sans-serif;font-weight:500;}
+  .dsh-hero h1{font-family:'Cormorant',serif;font-weight:300;font-size:40px;line-height:1.08;margin:10px 0 6px;letter-spacing:-.5px;}
+  .dsh-hero p{font-size:14.5px;color:#c9c0ae;max-width:480px;line-height:1.6;}
+  .dsh-bar{height:7px;background:rgba(255,255,255,.14);border-radius:6px;overflow:hidden;margin-top:20px;max-width:420px;}
+  .dsh-bar i{display:block;height:100%;background:linear-gradient(90deg,var(--gold),var(--gold-lt));border-radius:6px;}
+  .dsh-barl{font-family:'Jost',sans-serif;font-size:12px;color:#c9c0ae;margin-top:9px;}
+  .dsh-cta{display:inline-flex;align-items:center;gap:9px;margin-top:20px;background:var(--gold);color:#fff;border:none;border-radius:26px;padding:13px 24px;font-family:'Jost',sans-serif;font-size:14px;font-weight:600;cursor:pointer;transition:transform .2s,box-shadow .2s;}
+  .dsh-cta:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(168,126,61,.36);}
+  .dsh-cta svg{width:15px;height:15px;}
+  .dsh-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin-bottom:20px;}
+  .dsh-card{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:22px 24px;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s,border-color .2s;}
+  .dsh-card.clic{cursor:pointer;}
+  .dsh-card.clic:hover{transform:translateY(-3px);box-shadow:0 16px 36px rgba(33,28,21,.10);border-color:var(--gold-lt);}
+  .dsh-k{font-family:'Jost',sans-serif;font-size:10px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:12px;}
+  .dsh-big{font-family:'Cormorant',serif;font-weight:700;font-size:34px;color:var(--ink);line-height:1;}
+  .dsh-big small{font-size:17px;color:var(--stone);font-weight:500;margin-left:5px;}
+  .dsh-t{font-family:'Cormorant',serif;font-weight:600;font-size:21px;color:var(--ink);line-height:1.2;}
+  .dsh-s{font-size:13.5px;color:var(--ink-soft);margin-top:6px;line-height:1.5;}
+  .dsh-steps{display:flex;flex-direction:column;gap:7px;margin-top:14px;}
+  .dsh-step{display:flex;align-items:center;gap:9px;font-size:13.5px;color:var(--ink-soft);}
+  .dsh-dot{width:16px;height:16px;border-radius:50%;border:1.5px solid var(--line);flex-shrink:0;display:flex;align-items:center;justify-content:center;}
+  .dsh-step.ok .dsh-dot{background:var(--gold);border-color:var(--gold);}
+  .dsh-step.ok .dsh-dot svg{width:9px;height:9px;color:#fff;}
+  .dsh-step.ok{color:var(--ink);}
+  .dsh-pill{display:inline-block;margin-top:auto;padding-top:14px;font-family:'Jost',sans-serif;font-size:12.5px;font-weight:600;color:var(--gold-deep);}
   .nav-group{font-family:'Jost',sans-serif;font-size:9px;font-weight:600;letter-spacing:.26em;text-transform:uppercase;color:#7d7469;padding:0 15px;margin:14px 0 5px;}
   .nav-group:first-child{margin-top:0;}
   .sb-foot{margin-top:auto;padding:14px 10px 0;}
@@ -1547,8 +1574,12 @@
       <div><div class="name">Maison <span>Amarine</span></div><div class="tag">The Academy</div></div>
     </div>
     <nav class="nav" id="nav">
+      <div class="nav-item active" data-page="dashboard">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="8" height="8" rx="1.6"/><rect x="13" y="3" width="8" height="5" rx="1.6"/><rect x="13" y="11" width="8" height="10" rx="1.6"/><rect x="3" y="14" width="8" height="7" rx="1.6"/></svg>
+        Dashboard
+      </div>
       <div class="nav-group">Learn</div>
-      <div class="nav-item active" data-page="program">
+      <div class="nav-item" data-page="program">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 6h16M4 12h16M4 18h10" stroke-linecap="round"/></svg>
         My Program
       </div>
@@ -1612,7 +1643,8 @@
   <!-- mobile topbar + tabs -->
   <div class="topbar-m"><div class="name">Maison <span>Amarine</span></div><div class="av" style="width:32px;height:32px;border-radius:50%;background:#A87E3D;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:13px;">A</div></div>
   <div class="m-tabs" id="mTabs">
-    <div class="m-tab active" data-page="program">Program</div>
+    <div class="m-tab active" data-page="dashboard">Dashboard</div>
+    <div class="m-tab" data-page="program">Program</div>
     <div class="m-tab" data-page="practice">Practice</div>
     <div class="m-tab" data-page="career">Career Hub</div>
     <div class="m-tab" data-page="cv">CV Review</div>
@@ -1656,8 +1688,15 @@
       </div>
     </div>
 
+    <!-- ============ PAGE: DASHBOARD (accueil) ============ -->
+    <section class="page" id="page-dashboard">
+      <div id="dshHero"></div>
+      <div class="dsh-grid" id="dshGrid"></div>
+      <div class="dash-quote" id="dshQuote"></div>
+    </section>
+
     <!-- ============ PAGE: PROGRAM ============ -->
-    <section class="page" id="page-program">
+    <section class="page hidden" id="page-program">
       <div class="resume">
         <div class="resume-inner">
           <div class="resume-left">
@@ -3213,6 +3252,7 @@ async function onSignedIn(user){
   // Journal : charger l'édition courante pour le badge "nouveau"
   try{ loadJournalData().then(()=>{ try{ updateJournalBadge(); }catch(e){} }); }catch(e){}
   try{ updateResumeChip(); }catch(e){}
+  try{ renderStudentDash(); }catch(e){}
   // le tutoriel se relance depuis le bandeau du haut : on garde le bouton flottant masqué
   const th=document.getElementById('tourHelp'); if(th) th.style.display='none';
   try{ if(!localStorage.getItem('ma_tour_v1')) setTimeout(()=>{ try{ startTour(); }catch(e){} }, 1000); }catch(e){}
@@ -3391,6 +3431,7 @@ function updateResume(){
   }
   try{ updateResumeChip(); }catch(e){}
   renderDashboard();
+  try{ renderStudentDash(); }catch(e){}
 }
 const DASH_QUOTES=[
   "Discretion is not silence about secrets. It is a permanent vigilance over the information around the person you serve.",
@@ -3412,6 +3453,78 @@ function animateCounts(){
     const start=performance.now(), dur=750;
     (function step(t){ const p=Math.min(1,(t-start)/dur); el.textContent=Math.round(to*p); if(p<1) requestAnimationFrame(step); else el.textContent=to; })(start);
   });
+}
+// ===== Dashboard élève, page d'accueil =====
+function renderStudentDash(){
+  const hero=document.getElementById('dshHero'), grid=document.getElementById('dshGrid');
+  if(!hero||!grid) return;
+  const CHK='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12.5l4.5 4.5L19 7.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  const PLAY='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 3l14 9-14 9z" fill="currentColor" stroke="none"/></svg>';
+  const first=((PROFILE&&PROFILE.full_name)||(USER&&USER.email)||'there').split(' ')[0].split('@')[0];
+  const weeksDone=Object.values(state.completed).filter(Boolean).length;
+  const pct=Math.round(weeksDone/8*100);
+  const cur=highestUnlocked(), w=WEEKS[cur-1];
+  const done8=weeksDone>=8;
+  // ---- bandeau ----
+  hero.innerHTML=`<div class="dsh-hero">
+    <div class="dsh-hi">Welcome back</div>
+    <h1>${done8?'You have completed the program.':escapeHtml(first)+', your place is waiting.'}</h1>
+    <p>${done8?'Every week is done. Collect your certificate, and keep the craft close.':'Week '+cur+' · '+escapeHtml(w.title)+'. '+escapeHtml(w.sub)}</p>
+    <div class="dsh-bar"><i style="width:${pct}%"></i></div>
+    <div class="dsh-barl">${weeksDone} of 8 weeks complete · ${pct}%</div>
+    <button class="dsh-cta" onclick="${done8?'goPage(\'program\')':'resumeContinue()'}">${PLAY}${done8?'Review my program':(weeksDone>0||lessonProgress(cur)>0?'Continue where I left off':'Begin week '+cur)}</button>
+  </div>`;
+  // ---- cartes ----
+  const steps=(w.lessons||[]).map((ls,i)=>{
+    const ok=(state.lessons[cur]||[])[i];
+    return `<div class="dsh-step${ok?' ok':''}"><span class="dsh-dot">${ok?CHK:''}</span>${escapeHtml(ls[0])}</div>`;
+  }).join('');
+  const totalP=(typeof PRACTICE!=='undefined'&&PRACTICE)?PRACTICE.length:8;
+  const doneP=(typeof PRACTICE!=='undefined'&&PRACTICE)?PRACTICE.filter(x=>PR_STATE.done[x.no]).length:0;
+  const pts=(typeof prPoints==='function')?prPoints().pts:0;
+  const deliv=(typeof SUBMISSIONS==='object'&&SUBMISSIONS)?Object.keys(SUBMISSIONS).length:0;
+  let mentor=null; try{ mentor=(typeof mentorDate==='function')?mentorDate(cur):null; }catch(e){}
+  const mtxt=mentor?mentor.toLocaleDateString('en-GB',{weekday:'long',day:'numeric',month:'long'}):'Set your calendar to see it';
+  const certReady=done8 && doneP>=totalP;
+  grid.innerHTML=`
+    <div class="dsh-card clic" onclick="openWeek(${cur})">
+      <div class="dsh-k">This week</div>
+      <div class="dsh-t">Week ${cur} · ${escapeHtml(w.title)}</div>
+      <div class="dsh-steps">${steps}</div>
+      <span class="dsh-pill">Open this week &rarr;</span>
+    </div>
+    <div class="dsh-card clic" onclick="goPage('practice')">
+      <div class="dsh-k">Practice</div>
+      <div class="dsh-big">${doneP}<small>/ ${totalP}</small></div>
+      <div class="dsh-s">Exercises completed, ${pts} points earned so far.</div>
+      <span class="dsh-pill">Train now &rarr;</span>
+    </div>
+    <div class="dsh-card clic" onclick="goPage('calendar')">
+      <div class="dsh-k">Your mentor session</div>
+      <div class="dsh-t">${escapeHtml(mtxt)}</div>
+      <div class="dsh-s">Your weekly one to one with Émilie for week ${cur}.</div>
+      <span class="dsh-pill">See my calendar &rarr;</span>
+    </div>
+    <div class="dsh-card clic" onclick="openWeek(${cur})">
+      <div class="dsh-k">Deliverables</div>
+      <div class="dsh-big">${deliv}<small>/ 8</small></div>
+      <div class="dsh-s">Sent to your mentor for review.</div>
+      <span class="dsh-pill">Submit this week &rarr;</span>
+    </div>
+    <div class="dsh-card clic" onclick="goPage('journal')">
+      <div class="dsh-k">The Journal</div>
+      <div class="dsh-t">${escapeHtml((typeof JOURNAL_NO!=='undefined'&&JOURNAL_NO)||"Today's edition")}</div>
+      <div class="dsh-s">A fresh dispatch from the world you are entering.</div>
+      <span class="dsh-pill">Read today &rarr;</span>
+    </div>
+    <div class="dsh-card${certReady?' clic':''}" ${certReady?'onclick="showCertificate()"':''}>
+      <div class="dsh-k">Your certificate</div>
+      <div class="dsh-t">${certReady?'Ready in your name':'Locked for now'}</div>
+      <div class="dsh-s">${certReady?'Every module and every exercise is done.':'Finish the eight weeks and every exercise to unlock it.'}</div>
+      <span class="dsh-pill">${certReady?'Download it &rarr;':(8-weeksDone)+' week'+((8-weeksDone)>1?'s':'')+' to go'}</span>
+    </div>`;
+  const q=document.getElementById('dshQuote');
+  if(q && typeof DASH_QUOTES!=='undefined'){ const i=Math.floor(Date.now()/86400000)%DASH_QUOTES.length; q.innerHTML=`<div class="dash-q-k">&#10070; The code of the day</div><p>${DASH_QUOTES[i]}</p>`; }
 }
 function renderDashboard(){
   const row=document.getElementById('dashRow'); if(!row) return;
@@ -4466,6 +4579,7 @@ function goPage(name, scrollTo){
   if(name==='practice'){ renderPractice(); }
   if(name==='profile'){ renderProfile(); }
   if(name==='vault'){ loadReference(); }
+  if(name==='dashboard'){ renderStudentDash(); }
   if(name==='notes'){ renderNotes(); }
   if(name==='journal'){ markJournalSeen(); }
   if(scrollTo){setTimeout(()=>{const el=document.getElementById(scrollTo);if(el)el.scrollIntoView({behavior:'smooth'});},60);}
