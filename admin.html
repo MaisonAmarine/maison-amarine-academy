@@ -42,6 +42,64 @@
   .nav-item:hover{background:rgba(255,255,255,.06);color:#F6F0E4;}
   .nav-item.active{background:var(--gold);color:#fff;}
   .nav-sep{height:1px;background:rgba(255,255,255,.09);margin:16px 8px;}
+  /* ===== practice : série + débrief ===== */
+  .pr-streak{display:inline-block;margin-left:10px;font-family:'Jost',sans-serif;font-size:11.5px;font-weight:600;letter-spacing:.06em;color:var(--gold-deep);background:var(--gold-wash);border-radius:14px;padding:3px 10px;vertical-align:middle;}
+  .pr-review{margin-top:26px;text-align:left;border-top:1px solid var(--line);padding-top:22px;}
+  .pr-review-k{font-family:'Jost',sans-serif;font-size:10px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:14px;}
+  .pr-rev{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin-bottom:12px;}
+  .pr-rev-sc{font-family:'Jost',sans-serif;font-size:10.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--stone);margin-bottom:6px;}
+  .pr-rev-q{font-family:'Cormorant',serif;font-size:19px;font-weight:600;color:var(--ink);line-height:1.3;margin-bottom:10px;}
+  .pr-rev-l{font-size:13.5px;color:var(--ink-soft);margin-bottom:4px;}
+  .pr-rev-l b{font-family:'Jost',sans-serif;font-size:10.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--stone);margin-right:7px;}
+  .pr-rev-l.ok{color:var(--ink);} .pr-rev-l.ok b{color:var(--gold-deep);}
+  .pr-rev-w{font-size:13.5px;color:#4a443b;line-height:1.6;margin-top:9px;padding-top:9px;border-top:1px solid var(--line);}
+  /* ===== session mentor (Calendly) ===== */
+  .mtr-mask{position:fixed;inset:0;z-index:330;background:rgba(20,16,12,.55);-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);display:none;align-items:center;justify-content:center;padding:22px;}
+  .mtr-mask.open{display:flex;}
+  .mtr-box{position:relative;width:100%;max-width:470px;background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:32px 34px 30px;box-shadow:0 40px 90px rgba(33,28,21,.34);}
+  .mtr-x{position:absolute;top:14px;right:16px;border:none;background:none;font-size:26px;line-height:1;color:var(--stone);cursor:pointer;}
+  .mtr-k{font-family:'Jost',sans-serif;font-size:10px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-deep);}
+  .mtr-box h3{font-family:'Cormorant',serif;font-weight:600;font-size:27px;color:var(--ink);line-height:1.18;margin:10px 0 18px;}
+  .mtr-row{display:flex;gap:11px;align-items:flex-start;font-size:14.5px;color:#3f3930;padding:11px 0;border-top:1px solid var(--line);}
+  .mtr-row b{font-family:'Jost',sans-serif;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--stone);min-width:92px;padding-top:2px;}
+  .mtr-p{font-size:13.5px;color:var(--ink-soft);line-height:1.6;margin:16px 0 20px;}
+  .mtr-cta{display:flex;align-items:center;justify-content:center;gap:9px;background:var(--gold);color:#fff;border-radius:26px;padding:14px 22px;font-family:'Jost',sans-serif;font-size:14px;font-weight:600;text-decoration:none;transition:transform .2s,box-shadow .2s;}
+  .mtr-cta:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(168,126,61,.36);}
+  .mtr-cta svg{width:16px;height:16px;}
+  .mentor-ev{cursor:pointer;transition:background .18s,color .18s;}
+  .mentor-ev:hover{background:var(--gold);color:#fff;}
+  .mentor-ev.booked{background:var(--ink);color:var(--gold-lt);border-color:var(--ink);}
+  .mentor-ev.booked:hover{background:#2e2820;color:var(--gold-lt);}
+  .mtr-manage{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:14px;font-family:'Jost',sans-serif;font-size:12.5px;color:var(--stone);}
+  .mtr-manage a{color:var(--gold-deep);text-decoration:none;font-weight:600;}
+  .mtr-manage a:hover{text-decoration:underline;}
+  /* ===== dashboard élève ===== */
+  .dsh-hero{background:linear-gradient(115deg,rgba(28,23,17,.93) 42%,rgba(33,28,21,.72) 78%,rgba(33,28,21,.55)),url('images/dash.jpg') center/cover;border-radius:20px;padding:34px 38px;color:#F6F0E4;margin-bottom:20px;position:relative;overflow:hidden;}
+  .dsh-hi{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-lt);font-family:'Jost',sans-serif;font-weight:500;}
+  .dsh-hero h1{font-family:'Cormorant',serif;font-weight:300;font-size:40px;line-height:1.08;margin:10px 0 6px;letter-spacing:-.5px;}
+  .dsh-hero p{font-size:14.5px;color:#c9c0ae;max-width:480px;line-height:1.6;}
+  .dsh-bar{height:7px;background:rgba(255,255,255,.14);border-radius:6px;overflow:hidden;margin-top:20px;max-width:420px;}
+  .dsh-bar i{display:block;height:100%;background:linear-gradient(90deg,var(--gold),var(--gold-lt));border-radius:6px;}
+  .dsh-barl{font-family:'Jost',sans-serif;font-size:12px;color:#c9c0ae;margin-top:9px;}
+  .dsh-cta{display:inline-flex;align-items:center;gap:9px;margin-top:20px;background:var(--gold);color:#fff;border:none;border-radius:26px;padding:13px 24px;font-family:'Jost',sans-serif;font-size:14px;font-weight:600;cursor:pointer;transition:transform .2s,box-shadow .2s;}
+  .dsh-cta:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(168,126,61,.36);}
+  .dsh-cta svg{width:15px;height:15px;}
+  .dsh-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin-bottom:20px;}
+  .dsh-card{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:22px 24px;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s,border-color .2s;}
+  .dsh-card.clic{cursor:pointer;}
+  .dsh-card.clic:hover{transform:translateY(-3px);box-shadow:0 16px 36px rgba(33,28,21,.10);border-color:var(--gold-lt);}
+  .dsh-k{font-family:'Jost',sans-serif;font-size:10px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:12px;}
+  .dsh-big{font-family:'Cormorant',serif;font-weight:700;font-size:34px;color:var(--ink);line-height:1;}
+  .dsh-big small{font-size:17px;color:var(--stone);font-weight:500;margin-left:5px;}
+  .dsh-t{font-family:'Cormorant',serif;font-weight:600;font-size:21px;color:var(--ink);line-height:1.2;}
+  .dsh-s{font-size:13.5px;color:var(--ink-soft);margin-top:6px;line-height:1.5;}
+  .dsh-steps{display:flex;flex-direction:column;gap:7px;margin-top:14px;}
+  .dsh-step{display:flex;align-items:center;gap:9px;font-size:13.5px;color:var(--ink-soft);}
+  .dsh-dot{width:16px;height:16px;border-radius:50%;border:1.5px solid var(--line);flex-shrink:0;display:flex;align-items:center;justify-content:center;}
+  .dsh-step.ok .dsh-dot{background:var(--gold);border-color:var(--gold);}
+  .dsh-step.ok .dsh-dot svg{width:9px;height:9px;color:#fff;}
+  .dsh-step.ok{color:var(--ink);}
+  .dsh-pill{display:inline-block;margin-top:auto;padding-top:14px;font-family:'Jost',sans-serif;font-size:12.5px;font-weight:600;color:var(--gold-deep);}
   .nav-group{font-family:'Jost',sans-serif;font-size:9px;font-weight:600;letter-spacing:.26em;text-transform:uppercase;color:#7d7469;padding:0 15px;margin:14px 0 5px;}
   .nav-group:first-child{margin-top:0;}
   .sb-foot{margin-top:auto;padding:14px 10px 0;}
@@ -294,6 +352,22 @@
   .ref-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:18px 0 30px;}
   .ref-card{display:flex;align-items:center;gap:16px;text-align:left;background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:22px 24px;cursor:pointer;font-family:'Jost',sans-serif;box-shadow:0 14px 32px rgba(33,28,21,.05);transition:transform .18s,box-shadow .18s,border-color .18s;}
   .ref-card:hover{transform:translateY(-2px);border-color:var(--gold-lt);box-shadow:0 22px 46px rgba(33,28,21,.09);}
+  /* lecture du Vault en onglets */
+  .rf-tabs{display:flex;gap:8px;flex-wrap:nowrap;overflow-x:auto;padding:0 2px 10px;margin:20px 0 26px;border-bottom:1px solid var(--line);-webkit-overflow-scrolling:touch;scrollbar-width:none;}
+  .rf-tabs::-webkit-scrollbar{display:none;}
+  .rf-tab{flex:none;background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:9px 17px;cursor:pointer;font-family:'Jost',sans-serif;font-size:12.5px;font-weight:500;color:var(--ink-soft);white-space:nowrap;transition:all .16s;}
+  .rf-tab:hover{border-color:var(--gold-lt);color:var(--ink);}
+  .rf-tab.on{background:var(--ink);border-color:var(--ink);color:var(--gold-lt);font-weight:600;}
+  .rf-sec.hidden{display:none;}
+  .rf-pager{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-top:34px;padding-top:20px;border-top:1px solid var(--line);}
+  .rf-nav{background:none;border:1px solid var(--line);border-radius:22px;padding:10px 18px;cursor:pointer;font-family:'Jost',sans-serif;font-size:12.5px;font-weight:600;color:var(--gold-deep);transition:all .18s;}
+  .rf-nav:hover{background:var(--gold-wash);border-color:var(--gold-lt);}
+  .rf-pos{font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--stone);}
+  .ref-fam{grid-column:1/-1;margin:26px 0 2px;}
+  .ref-fam:first-child{margin-top:4px;}
+  .ref-fam-k{display:flex;align-items:center;gap:14px;font-family:'Jost',sans-serif;font-size:10.5px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-deep);}
+  .ref-fam-k::after{content:"";flex:1;height:1px;background:var(--line);}
+  .ref-fam-s{font-family:'Cormorant',serif;font-style:italic;font-size:16px;color:var(--stone);margin-top:7px;}
   .ref-ic{width:44px;height:44px;flex:none;border-radius:12px;background:var(--gold-wash);color:var(--gold-deep);display:flex;align-items:center;justify-content:center;}
   .ref-ic svg{width:23px;height:23px;}
   .ref-tx{flex:1;min-width:0;display:flex;flex-direction:column;gap:3px;}
@@ -1722,8 +1796,12 @@
       <div><div class="name">Maison <span>Amarine</span></div><div class="tag">The Academy</div></div>
     </div>
     <nav class="nav" id="nav">
+      <div class="nav-item active" data-page="dashboard">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="8" height="8" rx="1.6"/><rect x="13" y="3" width="8" height="5" rx="1.6"/><rect x="13" y="11" width="8" height="10" rx="1.6"/><rect x="3" y="14" width="8" height="7" rx="1.6"/></svg>
+        Dashboard
+      </div>
       <div class="nav-group">Learn</div>
-      <div class="nav-item active" data-page="program">
+      <div class="nav-item" data-page="program">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 6h16M4 12h16M4 18h10" stroke-linecap="round"/></svg>
         My Program
       </div>
@@ -1781,7 +1859,7 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6" stroke-linecap="round"/></svg>
         Mentorship
       </div>
-      <div class="nav-group adm-nav" id="admNavGroup" style="display:none;">Admin</div>
+    <div class="nav-group adm-nav" id="admNavGroup" style="display:none;">Admin</div>
       <div class="nav-item adm-nav" data-page="admdash" style="display:none;">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="8" height="8" rx="1.5"/><rect x="13" y="3" width="8" height="5" rx="1.5"/><rect x="13" y="11" width="8" height="10" rx="1.5"/><rect x="3" y="14" width="8" height="7" rx="1.5"/></svg>
         Dashboard
@@ -1802,13 +1880,15 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M5 19l2-2M17 7l2-2" stroke-linecap="round"/></svg>
         Settings
       </div>
-    </nav>
+    
+</nav>
   </aside>
 
   <!-- mobile topbar + tabs -->
   <div class="topbar-m"><div class="name">Maison <span>Amarine</span></div><div class="av" style="width:32px;height:32px;border-radius:50%;background:#A87E3D;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:13px;">A</div></div>
   <div class="m-tabs" id="mTabs">
-    <div class="m-tab active" data-page="program">Program</div>
+    <div class="m-tab active" data-page="dashboard">Dashboard</div>
+    <div class="m-tab" data-page="program">Program</div>
     <div class="m-tab" data-page="practice">Practice</div>
     <div class="m-tab" data-page="career">Career Hub</div>
     <div class="m-tab" data-page="cv">CV Review</div>
@@ -1852,8 +1932,15 @@
       </div>
     </div>
 
+    <!-- ============ PAGE: DASHBOARD (accueil) ============ -->
+    <section class="page" id="page-dashboard">
+      <div id="dshHero"></div>
+      <div class="dsh-grid" id="dshGrid"></div>
+      <div class="dash-quote" id="dshQuote"></div>
+    </section>
+
     <!-- ============ PAGE: PROGRAM ============ -->
-    <section class="page" id="page-program">
+    <section class="page hidden" id="page-program">
       <div class="resume">
         <div class="resume-inner">
           <div class="resume-left">
@@ -2307,8 +2394,7 @@
       <div id="notesList"></div>
     </section>
 
-    <!-- ============ ADMIN: DASHBOARD ============ -->
-    <section class="page hidden" id="page-admdash">
+  <section class="page hidden" id="page-admdash">
       <div class="page-h"><div><div class="eyebrow">Admin</div><h1>Your academy at a glance</h1><p>Who is in, how far they have come, and where they slow down. Everything here is computed from your live data.</p></div></div>
       <div class="adm-stats" id="admKpis"></div>
       <div class="adm-2col">
@@ -2421,7 +2507,8 @@
         <p>Student accounts created here are real Supabase accounts. Always confirm payment before you create an access, and never share a student's invitation link with anyone else.</p>
       </div>
     </section>
-  </main>
+  
+</main>
 </div>
 
 <!-- Recherche globale -->
@@ -2442,6 +2529,28 @@
   <div class="np-q" id="npQuote"></div>
   <textarea id="npComment" placeholder="Add a thought (optional)"></textarea>
   <div class="np-row"><button onclick="noteCancel()">Cancel</button><button class="np-save" onclick="noteSave()">Save</button></div>
+</div>
+
+<!-- Session mentor : détail + réservation Calendly -->
+<div class="mtr-mask" id="mtrMask">
+  <div class="mtr-box" role="dialog" aria-modal="true">
+    <button class="mtr-x" onclick="closeMentor()" aria-label="Close">&times;</button>
+    <div class="mtr-k">Mentorship session</div>
+    <h3 id="mtrTitle"></h3>
+    <div class="mtr-row"><b id="mtrDateK">Planned</b><span id="mtrDate"></span></div>
+    <div class="mtr-row"><b>Format</b><span id="mtrDur"></span></div>
+    <div class="mtr-row"><b>With</b><span>Émilie, one to one, by video</span></div>
+    <p class="mtr-p" id="mtrNote"></p>
+    <a class="mtr-cta" id="mtrLink" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4" stroke-linecap="round"/></svg>
+      <span id="mtrLinkLabel">Book my time slot</span>
+    </a>
+    <div class="mtr-manage" id="mtrManage" style="display:none;">
+      <a id="mtrResched" target="_blank" rel="noopener">Reschedule</a>
+      <span>·</span>
+      <a id="mtrCancel" target="_blank" rel="noopener">Cancel</a>
+    </div>
+  </div>
 </div>
 
 <!-- MODAL (week detail) -->
@@ -3083,8 +3192,19 @@ function renderPractice(){
 function startPractice(no){
   const w=PRACTICE.find(x=>x.no===no); if(!w) return;
   window.scrollTo(0,0);
-  if(w.type==='flash'){ prState={no:no,i:0,flipped:false}; renderFlashRunner(); }
-  else { prState={no:no,i:0,score:0,answered:false}; renderQuizRunner(); }
+  if(w.type==='flash'){ prState={no:no,i:0,flipped:false,deck:prShuffle((w.cards||[]).slice())}; renderFlashRunner(); }
+  else { prState={no:no,i:0,score:0,answered:false,deck:prBuildDeck(w.items),missed:[],streak:0,bestStreak:0,isRetry:false}; renderQuizRunner(); }
+}
+// --- mélange : l'ordre des questions ET la position des réponses changent à chaque partie ---
+function prShuffle(a){ for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; }
+function prBuildDeck(items){
+  return prShuffle((items||[]).slice()).map(it=>Object.assign({},it,{options:prShuffle((it.options||[]).slice())}));
+}
+function prRetryMissed(){
+  if(!prState || !prState.missed || !prState.missed.length) return;
+  const again=prState.missed.map(m=>m.item);
+  prState={no:prState.no,i:0,score:0,answered:false,deck:prBuildDeck(again),missed:[],streak:0,bestStreak:0,isRetry:true};
+  window.scrollTo(0,0); renderQuizRunner();
 }
 function prHeader(w,i,total){
   return `<div class="pr-top">
@@ -3096,9 +3216,10 @@ function prHeader(w,i,total){
 function renderQuizRunner(){
   const w=PRACTICE.find(x=>x.no===prState.no);
   const wrap=document.getElementById('practiceWrap');
-  const total=w.items.length, i=prState.i;
+  const deck=prState.deck||w.items;
+  const total=deck.length, i=prState.i;
   if(i>=total) return renderResult(w);
-  const it=w.items[i], keys=['A','B','C','D'];
+  const it=deck[i], keys=['A','B','C','D'];
   const opts=it.options.map((o,oi)=>`<button class="pr-opt" data-i="${oi}" onclick="prAnswer(${oi})"><span class="pr-key">${keys[oi]}</span><span>${escapeHtml(o.t)}</span></button>`).join('');
   wrap.innerHTML=`<div class="pr-run">${prHeader(w,i,total)}
     <div class="pr-q">
@@ -3110,25 +3231,37 @@ function renderQuizRunner(){
 }
 function prAnswer(oi){
   if(!prState || prState.answered) return; prState.answered=true;
-  const w=PRACTICE.find(x=>x.no===prState.no), it=w.items[prState.i], chosen=it.options[oi];
-  if(chosen.ok) prState.score++;
+  const w=PRACTICE.find(x=>x.no===prState.no);
+  const deck=prState.deck||w.items, it=deck[prState.i], chosen=it.options[oi];
+  if(chosen.ok){ prState.score++; prState.streak=(prState.streak||0)+1; prState.bestStreak=Math.max(prState.bestStreak||0,prState.streak); }
+  else {
+    prState.streak=0;
+    const right=(it.options||[]).find(o=>o.ok)||{};
+    (prState.missed=prState.missed||[]).push({item:it, stem:it.stem, scene:it.scene||'', chosen:chosen.t, right:right.t||'', why:right.fb||chosen.fb||''});
+  }
   document.querySelectorAll('#prOpts .pr-opt').forEach((b,bi)=>{
     b.setAttribute('disabled','');
     if(it.options[bi].ok) b.classList.add('correct');
     else if(bi===oi) b.classList.add('wrong');
     else b.classList.add('dim');
   });
-  const last = prState.i>=w.items.length-1;
+  const last = prState.i>=deck.length-1;
+  const streakTag=(prState.streak>=3)?`<span class="pr-streak">&#10022; ${prState.streak} in a row</span>`:'';
   const fb = (chosen.ok?'<b>Exactly right.</b> ':'<b>Not quite.</b> ')+escapeHtml(chosen.fb);
-  document.getElementById('prFbSlot').innerHTML=`<div class="pr-fb">${fb}</div><div class="pr-next"><button class="pr-btn" onclick="prNext()">${last?'See my result':'Next'} &rarr;</button></div>`;
+  document.getElementById('prFbSlot').innerHTML=`<div class="pr-fb">${fb}${streakTag}</div><div class="pr-next"><button class="pr-btn" onclick="prNext()">${last?'See my result':'Next'} &rarr;</button></div>`;
 }
 function prNext(){ prState.i++; prState.answered=false; window.scrollTo(0,0); renderQuizRunner(); }
 function renderResult(w){
-  const wrap=document.getElementById('practiceWrap'), total=w.items.length, s=prState.score, pct=s/total;
-  PR_STATE.done[w.no]=true;
-  const prev=PR_STATE.best[w.no];
+  const wrap=document.getElementById('practiceWrap');
+  const deck=prState.deck||w.items, total=deck.length, s=prState.score, pct=s/total;
+  const fullRun=(total===w.items.length);          // un rejeu des erreurs ne remplace pas le meilleur score
   let isBest=false;
-  if(!prev || s>prev.score){ PR_STATE.best[w.no]={score:s,total:total}; isBest=(s>0 && (!prev || s>prev.score)); }
+  if(fullRun){
+    PR_STATE.done[w.no]=true;
+    const prev=PR_STATE.best[w.no];
+    if(!prev || s>prev.score){ PR_STATE.best[w.no]={score:s,total:total}; isBest=(s>0 && (!prev || s>prev.score)); }
+  }
+  const prev=PR_STATE.best[w.no];
   savePractice();
   if(typeof updateResume==='function') updateResume();
   let title,msg;
@@ -3136,14 +3269,33 @@ function renderResult(w){
   else if(pct>=0.6){ title="Well played."; msg="A strong pass. Read the feedback on the ones you missed, then run it again and watch it click into place."; }
   else { title="Good. Now go again."; msg="This is how the learning happens: play, read why, replay. Give it another round and it will move fast."; }
   const bestLine = isBest ? `<div class="pr-newbest">&#10022; New best score, saved. That is ${s*10} points.</div>` : (PR_STATE.best[w.no]?`<div class="pr-bestline">Your best for this week: ${PR_STATE.best[w.no].score}/${PR_STATE.best[w.no].total}</div>`:'');
+  const missed=prState.missed||[];
+  const streakLine=(prState.bestStreak>=3)?`<div class="pr-bestline">Best run: ${prState.bestStreak} correct in a row.</div>`:'';
+  const review = missed.length ? `
+    <div class="pr-review">
+      <div class="pr-review-k">What to take away</div>
+      ${missed.map(m=>`
+        <div class="pr-rev">
+          ${m.scene?`<div class="pr-rev-sc">${escapeHtml(m.scene)}</div>`:''}
+          <div class="pr-rev-q">${escapeHtml(m.stem)}</div>
+          <div class="pr-rev-l"><b>You chose</b> ${escapeHtml(m.chosen)}</div>
+          <div class="pr-rev-l ok"><b>The answer</b> ${escapeHtml(m.right)}</div>
+          <div class="pr-rev-w">${escapeHtml(m.why)}</div>
+        </div>`).join('')}
+    </div>` : `<div class="pr-review"><div class="pr-review-k">Nothing to review</div><p class="pr-rev-w" style="margin:0;">You did not miss a single one. Replay it in a few days to make it permanent.</p></div>`;
   wrap.innerHTML=`<div class="pr-run"><div class="pr-result">
-    <div class="pr-score">${s}/${total}</div><h2>${title}</h2><p>${msg}</p>${bestLine}
-    <div class="pr-acts"><button class="pr-btn" onclick="startPractice(${w.no})">Play again</button><button class="pr-btn ghost" onclick="renderPractice()">All exercises</button></div>
+    <div class="pr-score">${s}/${total}</div><h2>${title}</h2><p>${msg}</p>${bestLine}${streakLine}
+    <div class="pr-acts">
+      ${missed.length?`<button class="pr-btn" onclick="prRetryMissed()">Retry the ${missed.length} I missed</button>`:''}
+      <button class="pr-btn${missed.length?' ghost':''}" onclick="startPractice(${w.no})">Play again</button>
+      <button class="pr-btn ghost" onclick="renderPractice()">All exercises</button>
+    </div>
+    ${review}
   </div></div>`;
 }
 function renderFlashRunner(){
   const w=PRACTICE.find(x=>x.no===prState.no), wrap=document.getElementById('practiceWrap');
-  const total=w.cards.length, i=prState.i, c=w.cards[i];
+  const cards=prState.deck||w.cards; const total=cards.length, i=prState.i, c=cards[i];
   wrap.innerHTML=`<div class="pr-run">${prHeader(w,i,total)}
     <div class="pr-flash">
       <div class="pr-flip ${prState.flipped?'flipped':''}" id="prFlip" onclick="prFlip()">
@@ -3523,6 +3675,8 @@ async function onSignedIn(user){
   // Journal : charger l'édition courante pour le badge "nouveau"
   try{ loadJournalData().then(()=>{ try{ updateJournalBadge(); }catch(e){} }); }catch(e){}
   try{ updateResumeChip(); }catch(e){}
+  try{ renderStudentDash(); }catch(e){}
+  try{ loadSessions(); }catch(e){}
   // le tutoriel se relance depuis le bandeau du haut : on garde le bouton flottant masqué
   const th=document.getElementById('tourHelp'); if(th) th.style.display='none';
   try{ if(!localStorage.getItem('ma_tour_v1')) setTimeout(()=>{ try{ startTour(); }catch(e){} }, 1000); }catch(e){}
@@ -3702,6 +3856,7 @@ function updateResume(){
   }
   try{ updateResumeChip(); }catch(e){}
   renderDashboard();
+  try{ renderStudentDash(); }catch(e){}
 }
 const DASH_QUOTES=[
   "Discretion is not silence about secrets. It is a permanent vigilance over the information around the person you serve.",
@@ -3723,6 +3878,81 @@ function animateCounts(){
     const start=performance.now(), dur=750;
     (function step(t){ const p=Math.min(1,(t-start)/dur); el.textContent=Math.round(to*p); if(p<1) requestAnimationFrame(step); else el.textContent=to; })(start);
   });
+}
+// ===== Dashboard élève, page d'accueil =====
+function renderStudentDash(){
+  const hero=document.getElementById('dshHero'), grid=document.getElementById('dshGrid');
+  if(!hero||!grid) return;
+  const CHK='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12.5l4.5 4.5L19 7.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  const PLAY='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 3l14 9-14 9z" fill="currentColor" stroke="none"/></svg>';
+  const first=((PROFILE&&PROFILE.full_name)||(USER&&USER.email)||'there').split(' ')[0].split('@')[0];
+  const weeksDone=Object.values(state.completed).filter(Boolean).length;
+  const pct=Math.round(weeksDone/8*100);
+  const cur=highestUnlocked(), w=WEEKS[cur-1];
+  const done8=weeksDone>=8;
+  // ---- bandeau ----
+  hero.innerHTML=`<div class="dsh-hero">
+    <div class="dsh-hi">Welcome back</div>
+    <h1>${done8?'You have completed the program.':escapeHtml(first)+', your place is waiting.'}</h1>
+    <p>${done8?'Every week is done. Collect your certificate, and keep the craft close.':'Week '+cur+' · '+escapeHtml(w.title)+'. '+escapeHtml(w.sub)}</p>
+    <div class="dsh-bar"><i style="width:${pct}%"></i></div>
+    <div class="dsh-barl">${weeksDone} of 8 weeks complete · ${pct}%</div>
+    <button class="dsh-cta" onclick="${done8?'goPage(\'program\')':'resumeContinue()'}">${PLAY}${done8?'Review my program':(weeksDone>0||lessonProgress(cur)>0?'Continue where I left off':'Begin week '+cur)}</button>
+  </div>`;
+  // ---- cartes ----
+  const steps=(w.lessons||[]).map((ls,i)=>{
+    const ok=(state.lessons[cur]||[])[i];
+    return `<div class="dsh-step${ok?' ok':''}"><span class="dsh-dot">${ok?CHK:''}</span>${escapeHtml(ls[0])}</div>`;
+  }).join('');
+  const totalP=(typeof PRACTICE!=='undefined'&&PRACTICE)?PRACTICE.length:8;
+  const doneP=(typeof PRACTICE!=='undefined'&&PRACTICE)?PRACTICE.filter(x=>PR_STATE.done[x.no]).length:0;
+  const pts=(typeof prPoints==='function')?prPoints().pts:0;
+  const deliv=(typeof SUBMISSIONS==='object'&&SUBMISSIONS)?Object.keys(SUBMISSIONS).length:0;
+  let mentor=null; try{ mentor=(typeof mentorDate==='function')?mentorDate(cur):null; }catch(e){}
+  let msess=null; try{ msess=sessionForWeek(cur); }catch(e){}
+  const mtxt=msess?sessionTimeLabel(msess):(mentor?mentor.toLocaleDateString('en-GB',{weekday:'long',day:'numeric',month:'long'}):'Set your calendar to see it');
+  const msub=msess?'Confirmed. Join the video call from here.':('Your one to one with Émilie for week '+cur+'.');
+  const mpill=msess?'Join the call &rarr;':'Book my time slot &rarr;';
+  const certReady=done8 && doneP>=totalP;
+  grid.innerHTML=`
+    <div class="dsh-card clic" onclick="openWeek(${cur})">
+      <div class="dsh-k">This week</div>
+      <div class="dsh-t">Week ${cur} · ${escapeHtml(w.title)}</div>
+      <div class="dsh-steps">${steps}</div>
+      <span class="dsh-pill">Open this week &rarr;</span>
+    </div>
+    <div class="dsh-card clic" onclick="goPage('practice')">
+      <div class="dsh-k">Practice</div>
+      <div class="dsh-big">${doneP}<small>/ ${totalP}</small></div>
+      <div class="dsh-s">Exercises completed, ${pts} points earned so far.</div>
+      <span class="dsh-pill">Train now &rarr;</span>
+    </div>
+    <div class="dsh-card clic" onclick="openMentor(${cur})">
+      <div class="dsh-k">Your mentor session</div>
+      <div class="dsh-t">${escapeHtml(mtxt)}</div>
+      <div class="dsh-s">${escapeHtml(msub)}</div>
+      <span class="dsh-pill">${mpill}</span>
+    </div>
+    <div class="dsh-card clic" onclick="openWeek(${cur})">
+      <div class="dsh-k">Deliverables</div>
+      <div class="dsh-big">${deliv}<small>/ 8</small></div>
+      <div class="dsh-s">Sent to your mentor for review.</div>
+      <span class="dsh-pill">Submit this week &rarr;</span>
+    </div>
+    <div class="dsh-card clic" onclick="goPage('journal')">
+      <div class="dsh-k">The Journal</div>
+      <div class="dsh-t">${escapeHtml((typeof JOURNAL_NO!=='undefined'&&JOURNAL_NO)||"Today's edition")}</div>
+      <div class="dsh-s">A fresh dispatch from the world you are entering.</div>
+      <span class="dsh-pill">Read today &rarr;</span>
+    </div>
+    <div class="dsh-card${certReady?' clic':''}" ${certReady?'onclick="showCertificate()"':''}>
+      <div class="dsh-k">Your certificate</div>
+      <div class="dsh-t">${certReady?'Ready in your name':'Locked for now'}</div>
+      <div class="dsh-s">${certReady?'Every module and every exercise is done.':'Finish the eight weeks and every exercise to unlock it.'}</div>
+      <span class="dsh-pill">${certReady?'Download it &rarr;':(8-weeksDone)+' week'+((8-weeksDone)>1?'s':'')+' to go'}</span>
+    </div>`;
+  const q=document.getElementById('dshQuote');
+  if(q && typeof DASH_QUOTES!=='undefined'){ const i=Math.floor(Date.now()/86400000)%DASH_QUOTES.length; q.innerHTML=`<div class="dash-q-k">&#10070; The code of the day</div><p>${DASH_QUOTES[i]}</p>`; }
 }
 function renderDashboard(){
   const row=document.getElementById('dashRow'); if(!row) return;
@@ -3913,6 +4143,85 @@ function renderCalMonth(){
   }
   grid.innerHTML=html;
 }
+// ===== Sessions mentor : lien Calendly + détail =====
+const MENTOR_CALENDLY = "https://calendly.com/YOUR-LINK/mentorship";   // <-- remplacer par le vrai lien Calendly
+const MENTOR_DURATION = "45 minutes";
+function mentorBookingUrl(no){
+  const w=WEEKS[no-1]||{};
+  const nm=(PROFILE&&PROFILE.full_name)||'';
+  const em=(PROFILE&&PROFILE.email)||((typeof USER!=='undefined'&&USER&&USER.email)||'');
+  const q='name='+encodeURIComponent(nm)+'&email='+encodeURIComponent(em)+'&a1='+encodeURIComponent('Week '+no+' · '+(w.title||''));
+  return MENTOR_CALENDLY+(MENTOR_CALENDLY.indexOf('?')>=0?'&':'?')+q;
+}
+// --- sessions réellement réservées (remplies par Calendly via la table `sessions`) ---
+let MY_SESSIONS=[];
+async function loadSessions(){
+  try{
+    if(!USER) return;
+    const {data,error}=await sb.from('sessions').select('*').eq('user_id',USER.id).order('start_time',{ascending:true});
+    MY_SESSIONS = (!error && Array.isArray(data)) ? data.filter(s=>(s.status||'active')!=='canceled') : [];
+  }catch(e){ MY_SESSIONS=[]; }
+  try{ renderScheduleList(); renderCalMonth(); renderStudentDash(); }catch(e){}
+}
+function sessionForWeek(no){
+  if(!MY_SESSIONS.length) return null;
+  const byWeek=MY_SESSIONS.find(s=>Number(s.week_number)===Number(no));
+  if(byWeek) return byWeek;
+  let target=null; try{ target=mentorDate(no); }catch(e){}
+  if(!target) return null;
+  let best=null,bestGap=Infinity;
+  MY_SESSIONS.forEach(s=>{
+    if(s.week_number) return;                       // déjà rattachée à une autre semaine
+    const d=new Date(s.start_time); if(isNaN(d)) return;
+    const gap=Math.abs(d-target);
+    if(gap<bestGap && gap<=4*86400000){ best=s; bestGap=gap; }
+  });
+  return best;
+}
+function sessionTimeLabel(s){
+  const d=new Date(s.start_time); if(isNaN(d)) return '';
+  return d.toLocaleDateString('en-GB',{weekday:'long',day:'numeric',month:'long'})+', '+d.toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'});
+}
+function openMentor(no){
+  const w=WEEKS[no-1]; if(!w) return;
+  const s=sessionForWeek(no);
+  let d=null; try{ d=mentorDate(no); }catch(e){}
+  const t=document.getElementById('mtrTitle'); if(t) t.textContent='Week '+no+' · '+w.title;
+  const kk=document.getElementById('mtrDateK'), dd=document.getElementById('mtrDate');
+  const du=document.getElementById('mtrDur'), nt=document.getElementById('mtrNote');
+  const lk=document.getElementById('mtrLink'), lb=document.getElementById('mtrLinkLabel');
+  const mg=document.getElementById('mtrManage');
+  if(s){
+    // --- session réservée : on montre l'heure réelle et le lien visio ---
+    if(kk) kk.textContent='Booked';
+    if(dd) dd.textContent=sessionTimeLabel(s);
+    if(du) du.textContent=(s.event_name||('Mentorship, '+MENTOR_DURATION));
+    if(nt) nt.textContent='Your session is confirmed. Join from the button below at the time above, the link is also in your confirmation email.';
+    if(lk){ lk.href=s.join_url||mentorBookingUrl(no); }
+    if(lb) lb.textContent=s.join_url?'Join the video call':'Open my booking';
+    if(mg){
+      const r=document.getElementById('mtrResched'), c=document.getElementById('mtrCancel');
+      if(r) r.href=s.reschedule_url||'#'; if(c) c.href=s.cancel_url||'#';
+      mg.style.display=(s.reschedule_url||s.cancel_url)?'flex':'none';
+    }
+  } else {
+    // --- pas encore réservée ---
+    if(kk) kk.textContent='Planned';
+    if(dd) dd.textContent = d ? d.toLocaleDateString('en-GB',{weekday:'long',day:'numeric',month:'long',year:'numeric'}) : 'Set your start date in the calendar above';
+    if(du) du.textContent=MENTOR_DURATION+', at the end of this module';
+    if(nt) nt.textContent='Pick the exact time that suits you. Once booked, this session appears here with its time and video link.';
+    if(lk) lk.href=mentorBookingUrl(no);
+    if(lb) lb.textContent='Book my time slot';
+    if(mg) mg.style.display='none';
+  }
+  const mask=document.getElementById('mtrMask'); if(mask) mask.classList.add('open');
+}
+function closeMentor(){ const m=document.getElementById('mtrMask'); if(m) m.classList.remove('open'); }
+(function wireMentorModal(){
+  const m=document.getElementById('mtrMask'); if(!m) return;
+  m.addEventListener('click',e=>{ if(e.target===m) closeMentor(); });
+  document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeMentor(); });
+})();
 function renderScheduleList(){
   const box=document.getElementById('calPhases'); if(!box) return; box.innerHTML='';
   const sub=document.getElementById('calScheduleSub');
@@ -3929,7 +4238,19 @@ function renderScheduleList(){
         <div class="cw-sub">${escapeHtml(w.sub)}</div>
         <div class="cw-events">
           <span class="cw-ev">Lessons &amp; practice</span>
-          <span class="cw-ev mentor-ev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6" stroke-linecap="round"/></svg> Mentorship session</span>
+          ${(function(){
+            var s=null; try{ s=sessionForWeek(w.no); }catch(e){}
+            var lbl, cls='';
+            if(s){
+              var d=new Date(s.start_time);
+              lbl='Booked · '+(isNaN(d)?'':d.toLocaleDateString('en-US',{month:'short',day:'numeric'})+', '+d.toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'}));
+              cls=' booked';
+            } else {
+              var m=null; try{ m=mentorDate(w.no); }catch(e){}
+              lbl='Mentorship session'+(m?' · '+m.toLocaleDateString('en-US',{month:'short',day:'numeric'}):'');
+            }
+            return '<span class="cw-ev mentor-ev'+cls+'" onclick="openMentor('+w.no+')" title="See the details and book your time slot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6" stroke-linecap="round"/></svg> '+lbl+'</span>';
+          })()}
         </div>
       </div>`;
     box.appendChild(el);
@@ -3981,22 +4302,63 @@ async function loadReference(){
   if(!REFDATA){ try{ REFDATA=await fetchLive('reference.json'); }catch(e){ REFDATA={books:[]}; } }
   renderRefCards();
 }
+// The Vault, rangé en familles pour que l'élève s'y retrouve
+const VAULT_FAMILIES=[
+  {k:'The craft', s:'How the work is actually done, day after day.', ids:['toolkit','masterclasses','casebook']},
+  {k:'The codes', s:'The language and the manners that say you belong here.', ids:['dictionary','cultural']},
+  {k:'Your candidacy', s:'Everything you need to present yourself, and to be chosen.', ids:['cv','cover','interview','agency','recruiter']}
+];
+function refCardHTML(b){
+  return `<button class="ref-card" onclick="openRefBook('${b.id}')"><span class="ref-ic">${refIcon(b.icon)}</span><span class="ref-tx"><span class="ref-t">${escapeHtml(b.title)}</span><span class="ref-s">${escapeHtml(b.subtitle||'')}</span></span><span class="ref-go">Read ${ICO_ARR}</span></button>`;
+}
 function renderRefCards(){
   const g=document.getElementById('refGrid'); if(!g) return;
-  g.innerHTML=((REFDATA&&REFDATA.books)||[]).map(b=>`<button class="ref-card" onclick="openRefBook('${b.id}')"><span class="ref-ic">${refIcon(b.icon)}</span><span class="ref-tx"><span class="ref-t">${escapeHtml(b.title)}</span><span class="ref-s">${escapeHtml(b.subtitle||'')}</span></span><span class="ref-go">Read ${ICO_ARR}</span></button>`).join('');
+  const books=((REFDATA&&REFDATA.books)||[]);
+  const byId={}; books.forEach(b=>byId[b.id]=b);
+  const placed=new Set(); let html='';
+  VAULT_FAMILIES.forEach(f=>{
+    const list=f.ids.map(id=>byId[id]).filter(Boolean);
+    if(!list.length) return;
+    list.forEach(b=>placed.add(b.id));
+    html+=`<div class="ref-fam"><div class="ref-fam-k">${escapeHtml(f.k)}</div><div class="ref-fam-s">${escapeHtml(f.s)}</div></div>`;
+    html+=list.map(refCardHTML).join('');
+  });
+  const rest=books.filter(b=>!placed.has(b.id));   // tout nouveau document reste visible
+  if(rest.length){
+    html+=`<div class="ref-fam"><div class="ref-fam-k">Also in the vault</div><div class="ref-fam-s">Recent additions to your library.</div></div>`;
+    html+=rest.map(refCardHTML).join('');
+  }
+  g.innerHTML=html;
+}
+// --- lecture du Vault en onglets, comme le Journal ---
+let REF_OPEN=null;
+function refPager(i,total){
+  const prev=i>0?`<button class="rf-nav" onclick="refTab(${i-1})">${ICO_ARL} Previous</button>`:'<span></span>';
+  const next=i<total-1?`<button class="rf-nav" onclick="refTab(${i+1})">Next ${ICO_ARR}</button>`:'<span></span>';
+  return `<div class="rf-pager">${prev}<span class="rf-pos">${i+1} of ${total}</span>${next}</div>`;
+}
+function refTab(i){
+  const secs=document.querySelectorAll('#refReader .rf-sec');
+  secs.forEach((el,k)=>el.classList.toggle('hidden',k!==i));
+  document.querySelectorAll('#rfTabs .rf-tab').forEach((t,k)=>t.classList.toggle('on',k===i));
+  const active=document.querySelector('#rfTabs .rf-tab.on'); if(active&&active.scrollIntoView) active.scrollIntoView({block:'nearest',inline:'center',behavior:'smooth'});
+  const tabs=document.getElementById('rfTabs');
+  if(tabs) tabs.scrollIntoView({behavior:'smooth',block:'start'}); else window.scrollTo(0,0);
 }
 function openRefBook(id){
   const b=((REFDATA&&REFDATA.books)||[]).find(x=>x.id===id); if(!b) return;
   const rd=document.getElementById('refReader');
-  const toc=(b.sections||[]).map((s,i)=>`<a class="rf-toc" onclick="var e=document.getElementById('rfs${i}');if(e)e.scrollIntoView({behavior:'smooth',block:'start'});">${escapeHtml(s.h)}</a>`).join('');
-  const secs=(b.sections||[]).map((s,i)=>`<article class="rf-sec" id="rfs${i}"><h2>${escapeHtml(s.h)}</h2><div class="rf-body">${s.html}</div></article>`).join('');
+  REF_OPEN=b;
+  const multi=(b.sections||[]).length>1;
+  const toc=multi?(b.sections||[]).map((s,i)=>`<button class="rf-tab${i===0?' on':''}" data-i="${i}" onclick="refTab(${i})">${escapeHtml(s.h)}</button>`).join(''):'';
+  const secs=(b.sections||[]).map((s,i)=>`<article class="rf-sec${multi&&i>0?' hidden':''}" id="rfs${i}"><h2>${escapeHtml(s.h)}</h2><div class="rf-body">${s.html}</div>${multi?refPager(i,b.sections.length):''}</article>`).join('');
   const dl=b.pdf?`<div style="text-align:center;margin-bottom:24px;"><a class="rf-dl" href="${b.pdf}" target="_blank" rel="noopener">Download as PDF <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12M7 11l5 5 5-5M5 21h14" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>`:'';
   rd.innerHTML=`
     <button class="rf-back" onclick="closeRefBook()">${ICO_ARL} All references</button>
     <header class="rf-head"><div class="rf-k">Reference</div><h1>${escapeHtml(b.title)}</h1><div class="rf-sub">${escapeHtml(b.subtitle||'')}</div></header>
     ${dl}
     ${b.intro?`<div class="rf-intro rf-body">${b.intro}</div>`:''}
-    ${toc?`<div class="rf-tocwrap"><div class="rf-toc-k">Contents</div>${toc}</div>`:''}
+    ${toc?`<nav class="rf-tabs" id="rfTabs">${toc}</nav>`:''}
     ${secs}
     <button class="rf-back" onclick="closeRefBook()">${ICO_ARL} All references</button>`;
   const v=document.getElementById('page-vault'); if(v) v.classList.add('reading');
@@ -4777,6 +5139,7 @@ function goPage(name, scrollTo){
   if(name==='practice'){ renderPractice(); }
   if(name==='profile'){ renderProfile(); }
   if(name==='vault'){ loadReference(); }
+  if(name==='dashboard'){ renderStudentDash(); }
   if(name==='notes'){ renderNotes(); }
   if(name==='journal'){ markJournalSeen(); }
   if(scrollTo){setTimeout(()=>{const el=document.getElementById(scrollTo);if(el)el.scrollIntoView({behavior:'smooth'});},60);}
@@ -6214,5 +6577,6 @@ const ADM_PAGES=['admdash','admstudents','admcourses','admsubs','admsettings'];
   tick();
 })();
 </script>
+
 </body>
 </html>
