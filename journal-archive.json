@@ -1,5 +1,104 @@
 [
   {
+    "no": "No. 3",
+    "date": "Friday, 17 July 2026",
+    "strap": "A daily dispatch from the world you are entering",
+    "lead": {
+      "cat": "The Market",
+      "place": "London, United Kingdom",
+      "tag": "The rebound",
+      "title": "The saleroom comes back, and the collection returns to the centre of the household",
+      "standfirst": "The first half of 2026 was the strongest for the auction houses since 2022, and the money moved through private hands.",
+      "body": "The numbers arrived in mid July and they were unambiguous. Combined auction sales at Christie's, Sotheby's and Phillips reached 6.8 billion dollars including fees in the first half of 2026, up roughly 70 percent on the same period last year, the best first half performance since 2022. After two lean years of repricing and caution, the top of the art market has turned.\n\nThe two majors told parallel stories. Christie's posted 4.5 billion dollars in total revenue, with public auction sales up 71 percent at 3.5 billion and a sell-through rate of 91 percent by lot. Sotheby's public sales reached 3.4 billion, up 59 percent, and its total turnover of 4.4 billion, lifted by a record 826 million dollars in private sales, was an all-time high for the house.\n\nWhat drove the recovery matters more than the totals. The season was built on single-owner collections of trophy material, the estates of publishing magnate S.I. Newhouse, philanthropist Agnes Gund and dealer Marian Goodman among them. When a great collection comes to market it comes as a whole, assembled over decades, catalogued, insured, stored and eventually dispersed. Twentieth and twenty-first century art still led the field, at 2.3 billion dollars for Christie's and 1.9 billion for Sotheby's.\n\nThe rise in private sales, quieter transactions arranged away from the rostrum, is the detail to watch. It signals that principals increasingly want to buy and sell without the theatre of a public evening sale, through relationships rather than paddles. That is the register in which a well-run private household operates.",
+      "why": "A collection is an asset class that lives inside the house. Whoever runs the estate coordinates the advisors, the conservators, the transport, the insurance and the loans, and record private sales mean more of that activity now runs through discreet, in-house channels.",
+      "src": "The Art Newspaper",
+      "url": "https://www.theartnewspaper.com/2026/07/15/trophy-lots-and-luxury-goods-fuel-rebound-for-christies-and-sothebys-2026-half-year-results"
+    },
+    "articles": [
+      {
+        "cat": "The Craft",
+        "place": "London · New York",
+        "tag": "The pay band",
+        "section": "The Craft",
+        "title": "What the house now pays, and how long it waits to find the right person",
+        "body": "The 2026 salary guides put concrete figures on a market that has been tightening for four years. Estate managers now command from 160,000 to more than 425,000 dollars a year, accommodation and bonus included, depending on the scale of the property and the reporting line. In the United States a chief of staff reaches around 300,000 dollars and an estate manager 250,000. Formal butlers sit from 110,000 to 190,000 dollars at a principal residence, while a London formal butler earns from 60,000 to 90,000 pounds.\n\nThe movement over time is the real story. Estate manager pay is up 20 to 30 percent since 2022, and London butler salaries up 20 to 25 percent over the same span. Compensation for senior household roles now looks closer to senior corporate pay than to traditional service wages, a repricing that follows the scarcity of people who can actually do the work.\n\nScarcity is now measured. Recruiters rate butler availability at 7.5 out of 10 on their scarcity scale, and a formal butler search now takes around 21 weeks to fill. Demand for the role is growing about 9 percent year on year, while the supply of trained candidates is not keeping pace. The advice to principals has changed accordingly, plan a search four to six months ahead rather than the two to three that once sufficed.\n\nHow the roles get filled has shifted too. Estate manager placements now split roughly 34 percent referral and 31 percent agency, a reminder that at the senior end reputation and network still move faster than any listing. The candidate who is trusted by one principal is quietly recommended to the next.",
+        "why": "These are the numbers a future estate manager will negotiate against and the timelines a principal will live with. Knowing the band and the search length is knowing your own market value and the leverage that scarcity confers.",
+        "src": "Spear's · Morgan & Mallet",
+        "url": "https://spearswms.com/luxury/household-staff-morgan-mallet/"
+      },
+      {
+        "cat": "At Sea & In the Air",
+        "place": "Phoenix, United States",
+        "tag": "Record decade",
+        "section": "At Sea & In the Air",
+        "title": "The jet order book reaches a record, and North America keeps most of the aircraft",
+        "body": "Honeywell's annual Global Business Aviation Outlook, the industry's most watched forecast, projects 8,500 new business jet deliveries worth 283 billion dollars over the next decade, the highest figure in the report's 34-year history, at an average annual growth rate of 3 percent. Deliveries in 2026 alone are expected to run about 5 percent ahead of 2025.\n\nDemand is broad and it is confident. Of the operators surveyed, 91 percent expect to fly as much or more in 2026 than they did last year, and 20 percent now hold at least one aircraft on firm order, up from 17 percent a year earlier. The combination of economic growth, a steady pipeline of new large-cabin models and rising appetite for fractional ownership has produced record demand.\n\nGeography concentrates the fleet. North America remains the strongest market by far, expected to take roughly 70 percent of all new jet deliveries over the next three years. The appetite for larger cabins, aircraft that cross oceans without stopping, tracks the way wealthy families now live across several countries at once.\n\nFor the private household, the aircraft is rarely a standalone possession. It sits inside a travel operation that also touches the yacht, the villa and the ground transport, increasingly booked and coordinated as one moving system rather than separate reservations.",
+        "why": "Private aviation is the concierge's logistical spine. A growing, longer-range fleet means more complex movement to plan, more crew and handlers to coordinate, and a heavier premium on the person who keeps the whole itinerary seamless.",
+        "src": "Honeywell Aerospace",
+        "url": "https://aerospace.honeywell.com/us/en/about-us/press-release/2025/10/business-jet-demand-forecast"
+      },
+      {
+        "cat": "The Private World",
+        "place": "Zurich, Switzerland",
+        "tag": "Sovereign portfolios",
+        "section": "The Private World",
+        "title": "American families join the search for a second base, and buy optionality",
+        "body": "The Henley Private Wealth Migration Report 2026, published in June, projects that 165,000 high-net-worth individuals will relocate internationally this year, a 16 percent rise on the record 142,000 moves of 2025 and the most intense wave in fifteen years. The headline of the new edition is not a single destination but a change in behaviour, and the United States is at its centre.\n\nAs the world's largest private wealth market, America is now generating record demand for residence and citizenship optionality, with affluent families seeking international diversification in numbers not seen before. The instinct that once belonged mostly to families in unstable jurisdictions has crossed into the American mainstream.\n\nThe report frames the new logic as the building of <i>sovereign portfolios</i>. Rather than a simple one-country move, mobile families now assemble a spread of residence rights, citizenships, investments, business interests, education options and family access across several jurisdictions at once. The passport becomes one holding among many.\n\nThe pattern is visible at the edges too. In the Gulf, ongoing regional conflict is testing the resilience of hubs such as the UAE, the leading destination of the past two years, and prompting a new phase of contingency planning among its most mobile residents.",
+        "why": "A family with three bases needs someone to run three households, or to run the system that connects them. The move toward multi-jurisdiction living is precisely what turns a single house manager into an estate director coordinating properties and staff across borders.",
+        "src": "Henley & Partners",
+        "url": "https://www.henleyglobal.com/newsroom/press-releases/henley-private-wealth-migration-report-2026"
+      },
+      {
+        "cat": "Objects & Culture",
+        "place": "London, United Kingdom",
+        "tag": "The bottom bump",
+        "section": "Objects & Culture",
+        "title": "Fine wine stops falling, and the first growths lead the floor",
+        "body": "After a long correction, the fine wine market has spent 2026 finding its floor. The major Liv-ex indices were broadly flat in the four months to 30 April, and the Fine Wine 50, which tracks the Bordeaux first growths, performed best of the group with a rise of 0.7 percent. Stability, rather than growth, is the news.\n\nBordeaux has led the recovery in liquidity. It produced more top-performing wines over the past year than any other region, helped by the depth of its secondary market, with names such as Mouton Rothschild 2015 trading back toward earlier highs. Burgundy, which fell hardest in the downturn, is showing early signs of steadying at the very top, though its broad index remained down over the year.\n\nThe trade's own read is candid. Liv-ex expects the market to <i>bump along the bottom</i> through 2026 and describes that as an opportunity rather than a warning, the sort of language that tends to precede quiet accumulation by patient buyers.\n\nFor the private cellar, a flat market is a working market. It is the moment when provenance, storage conditions and accurate valuation matter most, because the difference between wines is no longer masked by a rising tide.",
+        "why": "The cellar is one of the few household assets that can be actively managed for value. A stabilising market rewards the estate that keeps clean records, correct storage and current valuations, and it is the household, not the merchant, that holds those keys.",
+        "src": "Decanter",
+        "url": "https://www.decanter.com/wine/wine-investment-fine-wine-market-stabilising/"
+      },
+      {
+        "cat": "Hotels & Escapes",
+        "place": "Somerset, Bermuda",
+        "tag": "The whole house",
+        "section": "Hotels & Escapes",
+        "title": "On a Bermudian peninsula, a resort hands over the keys to a whole house",
+        "body": "On Bermuda's west end, Cambridge Beaches Resort & Spa has opened King's Point, a private villa let as a complete home rather than a suite, with bookings running from 1 July. The distinction is the point, the family takes the house, not a room in someone else's.\n\nThe residence sits on a 4.5-acre peninsula once linked to the Bermudian ocean explorer Teddy Tucker, a restored 4,000-square-foot, five-bedroom waterfront home with a private dock, hot tub, full kitchen and indoor and outdoor entertaining space. It is a resort address that behaves like a private estate, staffed and serviced but self-contained.\n\nThe format reflects where the top of the travel market is heading, away from the visible prestige of a grand lobby and toward privacy, space and the feeling of a home that is briefly yours. Access and seclusion, rather than a famous name over the door, are the luxury being sold.",
+        "why": "The whole-house rental blurs the line between hotel and private residence, and it is the traveling family's own staff who bridge it, arriving to run a borrowed house to the same standard as the ones back home.",
+        "src": "Travel Noire",
+        "url": "https://travelnoire.com/new-hotels-july-2026"
+      }
+    ],
+    "briefs": [
+      {
+        "t": "The order book shrinks in number and grows in size",
+        "b": "The 2026 Global Order Book lists 1,093 yachts of 24 metres and above in build or on order, down from 1,138, a second straight annual decline by unit. Yet the average length on order has risen to a record 40.8 metres, and Italy now accounts for 568 units, some 52 percent of the world total.",
+        "src": "BOAT International",
+        "url": "https://www.boatinternational.com/boat-pro/global-order-book/global-order-book-2026-report"
+      },
+      {
+        "t": "Where the money is moving, and where it is leaving",
+        "b": "Singapore, Italy, Switzerland, Greece, Hong Kong and New Zealand rank among the most attractive destinations for mobile wealth in 2026, while the United Kingdom, Germany, France, Norway and South Korea face growing pressure to retain it. The map of where great households take root is being redrawn.",
+        "src": "Henley & Partners",
+        "url": "https://www.henleyglobal.com/publications/henley-private-wealth-migration-report-2026"
+      },
+      {
+        "t": "Family offices brace, and rewrite their allocations",
+        "b": "The UBS Global Family Office Report 2026 surveyed 307 families whose offices manage an average of 1.3 billion dollars each. Sixty percent intend to make strategic asset allocation changes this year, up sharply from 35 percent in 2025, a pivot toward resilience amid geopolitical uncertainty.",
+        "src": "UBS",
+        "url": "https://www.ubs.com/global/en/media/display-page-ndp/en-20260528-global-family-office-report-2026.html"
+      },
+      {
+        "t": "A record for the quiet sales",
+        "b": "Beyond the evening rooms, Sotheby's booked 826 million dollars in private sales in the first half of 2026, an all-time high, lifting total turnover to a record 4.4 billion. The growth of off-rostrum dealing shows principals increasingly buying and selling through relationships rather than the public paddle.",
+        "src": "ARTnews",
+        "url": "https://www.artnews.com/art-news/news/sothebys-record-first-half-2026-analysis-1234792047/"
+      }
+    ]
+  },
+  {
     "no": "No. 2",
     "date": "Thursday, 16 July 2026",
     "strap": "A weekly dispatch from the world you are entering",
