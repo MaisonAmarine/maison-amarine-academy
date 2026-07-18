@@ -352,6 +352,17 @@
   .ref-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:18px 0 30px;}
   .ref-card{display:flex;align-items:center;gap:16px;text-align:left;background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:22px 24px;cursor:pointer;font-family:'Jost',sans-serif;box-shadow:0 14px 32px rgba(33,28,21,.05);transition:transform .18s,box-shadow .18s,border-color .18s;}
   .ref-card:hover{transform:translateY(-2px);border-color:var(--gold-lt);box-shadow:0 22px 46px rgba(33,28,21,.09);}
+  /* lecture du Vault en onglets */
+  .rf-tabs{display:flex;gap:8px;flex-wrap:nowrap;overflow-x:auto;padding:0 2px 10px;margin:20px 0 26px;border-bottom:1px solid var(--line);-webkit-overflow-scrolling:touch;scrollbar-width:none;}
+  .rf-tabs::-webkit-scrollbar{display:none;}
+  .rf-tab{flex:none;background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:9px 17px;cursor:pointer;font-family:'Jost',sans-serif;font-size:12.5px;font-weight:500;color:var(--ink-soft);white-space:nowrap;transition:all .16s;}
+  .rf-tab:hover{border-color:var(--gold-lt);color:var(--ink);}
+  .rf-tab.on{background:var(--ink);border-color:var(--ink);color:var(--gold-lt);font-weight:600;}
+  .rf-sec.hidden{display:none;}
+  .rf-pager{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-top:34px;padding-top:20px;border-top:1px solid var(--line);}
+  .rf-nav{background:none;border:1px solid var(--line);border-radius:22px;padding:10px 18px;cursor:pointer;font-family:'Jost',sans-serif;font-size:12.5px;font-weight:600;color:var(--gold-deep);transition:all .18s;}
+  .rf-nav:hover{background:var(--gold-wash);border-color:var(--gold-lt);}
+  .rf-pos{font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--stone);}
   .ref-fam{grid-column:1/-1;margin:26px 0 2px;}
   .ref-fam:first-child{margin-top:4px;}
   .ref-fam-k{display:flex;align-items:center;gap:14px;font-family:'Jost',sans-serif;font-size:10.5px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-deep);}
@@ -4007,18 +4018,35 @@ function renderRefCards(){
   }
   g.innerHTML=html;
 }
+// --- lecture du Vault en onglets, comme le Journal ---
+let REF_OPEN=null;
+function refPager(i,total){
+  const prev=i>0?`<button class="rf-nav" onclick="refTab(${i-1})">${ICO_ARL} Previous</button>`:'<span></span>';
+  const next=i<total-1?`<button class="rf-nav" onclick="refTab(${i+1})">Next ${ICO_ARR}</button>`:'<span></span>';
+  return `<div class="rf-pager">${prev}<span class="rf-pos">${i+1} of ${total}</span>${next}</div>`;
+}
+function refTab(i){
+  const secs=document.querySelectorAll('#refReader .rf-sec');
+  secs.forEach((el,k)=>el.classList.toggle('hidden',k!==i));
+  document.querySelectorAll('#rfTabs .rf-tab').forEach((t,k)=>t.classList.toggle('on',k===i));
+  const active=document.querySelector('#rfTabs .rf-tab.on'); if(active&&active.scrollIntoView) active.scrollIntoView({block:'nearest',inline:'center',behavior:'smooth'});
+  const tabs=document.getElementById('rfTabs');
+  if(tabs) tabs.scrollIntoView({behavior:'smooth',block:'start'}); else window.scrollTo(0,0);
+}
 function openRefBook(id){
   const b=((REFDATA&&REFDATA.books)||[]).find(x=>x.id===id); if(!b) return;
   const rd=document.getElementById('refReader');
-  const toc=(b.sections||[]).map((s,i)=>`<a class="rf-toc" onclick="var e=document.getElementById('rfs${i}');if(e)e.scrollIntoView({behavior:'smooth',block:'start'});">${escapeHtml(s.h)}</a>`).join('');
-  const secs=(b.sections||[]).map((s,i)=>`<article class="rf-sec" id="rfs${i}"><h2>${escapeHtml(s.h)}</h2><div class="rf-body">${s.html}</div></article>`).join('');
+  REF_OPEN=b;
+  const multi=(b.sections||[]).length>1;
+  const toc=multi?(b.sections||[]).map((s,i)=>`<button class="rf-tab${i===0?' on':''}" data-i="${i}" onclick="refTab(${i})">${escapeHtml(s.h)}</button>`).join(''):'';
+  const secs=(b.sections||[]).map((s,i)=>`<article class="rf-sec${multi&&i>0?' hidden':''}" id="rfs${i}"><h2>${escapeHtml(s.h)}</h2><div class="rf-body">${s.html}</div>${multi?refPager(i,b.sections.length):''}</article>`).join('');
   const dl=b.pdf?`<div style="text-align:center;margin-bottom:24px;"><a class="rf-dl" href="${b.pdf}" target="_blank" rel="noopener">Download as PDF <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12M7 11l5 5 5-5M5 21h14" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>`:'';
   rd.innerHTML=`
     <button class="rf-back" onclick="closeRefBook()">${ICO_ARL} All references</button>
     <header class="rf-head"><div class="rf-k">Reference</div><h1>${escapeHtml(b.title)}</h1><div class="rf-sub">${escapeHtml(b.subtitle||'')}</div></header>
     ${dl}
     ${b.intro?`<div class="rf-intro rf-body">${b.intro}</div>`:''}
-    ${toc?`<div class="rf-tocwrap"><div class="rf-toc-k">Contents</div>${toc}</div>`:''}
+    ${toc?`<nav class="rf-tabs" id="rfTabs">${toc}</nav>`:''}
     ${secs}
     <button class="rf-back" onclick="closeRefBook()">${ICO_ARL} All references</button>`;
   const v=document.getElementById('page-vault'); if(v) v.classList.add('reading');
