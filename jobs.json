@@ -1,108 +1,257 @@
 {
-  "updated": "Live roles + boards · updated 18 July 2026",
+  "updated": "Live roles + boards · updated 19 July 2026",
   "boards": [
-    ["Morgan & Mallet", "Household, estate & family office · US offices NY, LA, Miami", "https://www.householdstaff.agency/jobs/"],
-    ["Colonial Agency", "Domestic & estate staffing since 1963 · nationwide US", "https://colonialdomestics.com/job-openings/"],
-    ["Rose's Agency", "California private-staff job board · house & estate managers", "https://rosesagency.com/job-board"],
-    ["MyStaffHq", "UHNW household job board · estate manager & private roles", "https://www.mystaffhq.com/jobs/estate-manager"],
-    ["Silver Swan Recruitment", "Private household staff · New York, Miami, LA, SF", "https://silverswanrecruitment.com/house-manager-jobs/"],
-    ["EstateJobs.com", "Estate & private-service roles across the US", "https://www.estatejobs.com/"],
-    ["LinkedIn Jobs", "Live search: estate & house manager, private PA (US)", "https://www.linkedin.com/jobs/search/?keywords=estate%20manager%20private%20household&location=United%20States"],
-    ["Indeed", "Live search: private estate manager (US)", "https://www.indeed.com/jobs?q=private+estate+manager&l=United+States"],
-    ["ZipRecruiter", "Live search: UHNW estate manager (US)", "https://www.ziprecruiter.com/Jobs/Uhnw-Estate-Manager"]
+    [
+      "Morgan & Mallet",
+      "Household, estate & family office · US offices NY, LA, Miami",
+      "https://www.householdstaff.agency/jobs/"
+    ],
+    [
+      "Colonial Agency",
+      "Domestic & estate staffing since 1963 · nationwide US",
+      "https://colonialdomestics.com/job-openings/"
+    ],
+    [
+      "Rose's Agency",
+      "California private-staff job board · house & estate managers",
+      "https://rosesagency.com/job-board"
+    ],
+    [
+      "MyStaffHq",
+      "UHNW household job board · estate manager & private roles",
+      "https://www.mystaffhq.com/jobs/estate-manager"
+    ],
+    [
+      "Silver Swan Recruitment",
+      "Private household staff · New York, Miami, LA, SF",
+      "https://silverswanrecruitment.com/house-manager-jobs/"
+    ],
+    [
+      "EstateJobs.com",
+      "Estate & private-service roles across the US",
+      "https://www.estatejobs.com/"
+    ],
+    [
+      "LinkedIn Jobs",
+      "Live search: estate & house manager, private PA (US)",
+      "https://www.linkedin.com/jobs/search/?keywords=estate%20manager%20private%20household&location=United%20States"
+    ],
+    [
+      "Indeed",
+      "Live search: private estate manager (US)",
+      "https://www.indeed.com/jobs?q=private+estate+manager&l=United+States"
+    ],
+    [
+      "ZipRecruiter",
+      "Live search: UHNW estate manager (US)",
+      "https://www.ziprecruiter.com/Jobs/Uhnw-Estate-Manager"
+    ]
   ],
   "jobs": {
     "americas": [
       {
         "flag": "🇺🇸",
         "city": "Palm Beach",
-        "country": "Florida, USA",
+        "country": "United States",
         "title": "Director of Residences · UHNW family",
         "agency": "Colonial Agency",
-        "type": "Permanent · Full time",
-        "tags": ["Senior", "UHNW", "Multi-property"],
-        "salary": "$300k",
-        "posted": "Live role",
+        "type": "Full-time",
+        "tags": [
+          "Estate leadership",
+          "Multi-staff",
+          "UHNW"
+        ],
+        "salary": "From $300K/yr + full benefits",
+        "posted": "Live on board",
         "url": "https://colonialdomestics.com/jobs/job-111891/",
-        "blurb": "Year-round operational oversight of a UHNW family's residences: standards, SOPs, inspections, readiness and staff training across the portfolio, with regular travel between properties. Starting salary around $300k plus full benefits."
+        "blurb": "Le poste le mieux payé du board : direction complète des résidences d'une famille UHNW en Floride, encadrement d'équipe et budgets."
+      },
+      {
+        "flag": "🇺🇸",
+        "city": "Bellevue",
+        "country": "United States",
+        "title": "House Supervisor · Two private residences",
+        "agency": "Colonial Agency",
+        "type": "Full-time, live-out",
+        "tags": [
+          "Two residences",
+          "Housekeeping lead",
+          "Vendors"
+        ],
+        "salary": "$60/hr + full benefits",
+        "posted": "Nouveau cette semaine",
+        "url": "https://colonialdomestics.com/jobs/job-112278/",
+        "blurb": "Rôle passerelle idéal : on supervise deux gouvernantes et deux maisons, en rendant compte à l'Estate Manager. Bonne entrée vers l'estate management."
       },
       {
         "flag": "🇺🇸",
         "city": "Clearwater",
-        "country": "Florida, USA",
+        "country": "United States",
         "title": "Houseman / Junior House Manager · Executive",
         "agency": "Colonial Agency",
-        "type": "Permanent · Full time",
-        "tags": ["Jr House Manager", "Hands-on", "Entry-friendly"],
-        "salary": "$120k",
-        "posted": "Updated 9 Jul 2026",
+        "type": "Full-time",
+        "tags": [
+          "Junior",
+          "Executive household",
+          "Entrée de carrière"
+        ],
+        "salary": "$120K/yr + full benefits",
+        "posted": "Live on board",
         "url": "https://colonialdomestics.com/jobs/job-112279/",
-        "blurb": "A high-profile executive in Clearwater seeks a hands-on houseman / junior house manager to keep the estate running: light indoor and outdoor upkeep, minor repairs, smart-home systems and vendor supervision. Two years' estate experience required. $120k plus full benefits."
+        "blurb": "Un des rares postes juniors à six chiffres. Pensé pour quelqu'un qui monte en compétence auprès d'un dirigeant."
       },
       {
         "flag": "🇺🇸",
-        "city": "Los Angeles",
-        "country": "California, USA",
-        "title": "Estate Manager · Brentwood & beach residence",
-        "agency": "Morgan & Mallet",
-        "type": "Permanent · Full time",
-        "tags": ["Estate Manager", "UHNW", "Smart home"],
-        "salary": "On application",
-        "posted": "Live role",
-        "url": "https://www.householdstaff.agency/jobs/estate-manager-job-los-angeles/",
-        "blurb": "A discreet UHNW family returning from Europe seeks a live-out Estate Manager to run their Brentwood primary home and a secondary beach property. Staff and vendor management, event coordination and strong home-automation skills. Six-day week; competitive salary plus benefits."
-      },
-      {
-        "flag": "🇺🇸",
-        "city": "St. James & East Quogue",
-        "country": "New York, USA",
-        "title": "House Manager · Two residences",
-        "agency": "Morgan & Mallet",
-        "type": "Permanent · Full time",
-        "tags": ["House Manager", "Two properties", "Newly created role"],
-        "salary": "On application",
-        "posted": "16 Jul 2026",
-        "url": "https://www.householdstaff.agency/jobs/house-manager-job-st-james-new-york-east-quote-new-york-usa/",
-        "blurb": "A newly created role supporting two primary residences roughly an hour apart: a ~6,000 sq ft main home in St. James and a ~5,000 sq ft summer residence in East Quogue. Flexible, trustworthy candidate comfortable setting up new routines. No childcare required."
-      },
-      {
-        "flag": "🇺🇸",
-        "city": "Venice & San Francisco",
-        "country": "California, USA",
-        "title": "Estate Manager · Three properties",
+        "city": "Menlo Park",
+        "country": "United States",
+        "title": "House Manager / Personal Assistant",
         "agency": "Rose's Agency",
-        "type": "Permanent · Full time",
-        "tags": ["Estate Manager", "Multi-property", "Renovations"],
+        "type": "Full-time",
+        "tags": [
+          "Tech / AI principals",
+          "20 vendors",
+          "Voyages"
+        ],
+        "salary": "Competitive + benefits, DOE",
+        "posted": "Publié 9 juin 2026",
+        "url": "https://rosesagency.com/job-board/full-time-house-managerpa-menlo-park",
+        "blurb": "Maison de 7 000 sq ft, ~20 prestataires, 10 voyages/an à organiser. Principaux : dirigeants de la tech dans l'IA, premier enfant."
+      },
+      {
+        "flag": "🇺🇸",
+        "city": "Atherton",
+        "country": "United States",
+        "title": "House Manager / PA · Part-time",
+        "agency": "Rose's Agency",
+        "type": "Part-time",
+        "tags": [
+          "Temps partiel",
+          "Silicon Valley",
+          "Famille privée"
+        ],
         "salary": "DOE",
-        "posted": "8 Apr 2026",
-        "url": "https://rosesagency.com/job-board/estate-manager-in-venice-amp-san-francisco",
-        "blurb": "Manage three properties for a Venice-based family (Venice, San Francisco and Ojai), spearheading a multi-year San Francisco renovation. Suited to a logical thinker and strong problem-solver with proven multi-property experience and long tenures."
+        "posted": "Publié 9 juin 2026",
+        "url": "https://rosesagency.com/job-board/part-time-house-managerpa-atherton",
+        "blurb": "Format temps partiel rare à ce niveau : opérations du domaine + support personnel pour deux professionnels et leur famille."
       },
       {
         "flag": "🇺🇸",
         "city": "Western Malibu",
-        "country": "California, USA",
+        "country": "United States",
         "title": "Estate Manager · Malibu, Beverly Hills & Miami",
         "agency": "Rose's Agency",
-        "type": "Permanent · Full time",
-        "tags": ["Estate Manager", "Three residences", "Smart home"],
-        "salary": "On application",
-        "posted": "Live role",
+        "type": "Full-time",
+        "tags": [
+          "Trois résidences",
+          "Bord de mer",
+          "UHNW entrepreneur"
+        ],
+        "salary": "DOE",
+        "posted": "Live on board",
         "url": "https://rosesagency.com/job-board/full-time-estate-manager-in-western-malibu",
-        "blurb": "Oversee three modern luxury residences for a UHNW entrepreneur: a Western Malibu beachfront home plus properties in Beverly Hills and Miami (managed remotely). Autonomous, tech-savvy professional with 5–7 years of high-end estate experience. Competitive salary plus benefits."
+        "blurb": "Trois maisons de luxe modernes pour un entrepreneur UHNW : 5 000 sq ft en front de mer plus deux 8 000 sq ft."
       },
       {
         "flag": "🇺🇸",
-        "city": "Los Angeles, SF & Ojai",
-        "country": "California, USA",
-        "title": "Estate Manager · UHNW household",
-        "agency": "British American Household Staffing",
-        "type": "Permanent · Full time",
-        "tags": ["Estate Manager", "Multi-property", "UHNW"],
-        "salary": "On application",
-        "posted": "Live role",
-        "url": "https://www.mystaffhq.com/jobs/356807192-kp781-full-time-estate-manager-los-angeles-san-francisco-ojai-ca",
-        "blurb": "A UHNW household seeks a full-time Estate Manager to oversee operations across residences in Los Angeles, San Francisco and Ojai. Property, staff and vendor oversight to five-star standards, coordinating security and household systems across the portfolio."
+        "city": "Lakeside, Montana",
+        "country": "United States",
+        "title": "Estate Manager · Live-in / relocation",
+        "agency": "Rose's Agency",
+        "type": "Full-time, live-in",
+        "tags": [
+          "Relocation payée",
+          "24k sq ft",
+          "Hospitalité"
+        ],
+        "salary": "DOE",
+        "posted": "Live on board",
+        "url": "https://rosesagency.com/job-board/full-time-estate-manager-in-lakeside-montana-live-inrelocation",
+        "blurb": "9 acres, 24 000 sq ft, court de tennis, trois pontons. Profil recherché : hôtellerie haut de gamme + estate management UHNW."
+      },
+      {
+        "flag": "🇺🇸",
+        "city": "Los Angeles",
+        "country": "United States",
+        "title": "Estate Manager · Brentwood & beach residence",
+        "agency": "Morgan & Mallet",
+        "type": "Full-time, live-out",
+        "tags": [
+          "Domotique",
+          "Deux propriétés",
+          "Événements"
+        ],
+        "salary": "Competitive, DOE",
+        "posted": "Live on board",
+        "url": "https://www.householdstaff.agency/jobs/estate-manager-job-los-angeles/",
+        "blurb": "Famille UHNW très discrète. Compétence clé exigée : maîtrise de la domotique (son, piscine, éclairage). Semaine de six jours."
+      },
+      {
+        "flag": "🇺🇸",
+        "city": "St. James & East Quogue",
+        "country": "United States",
+        "title": "House Manager · Two residences",
+        "agency": "Morgan & Mallet",
+        "type": "Permanent, full-time",
+        "tags": [
+          "Poste créé",
+          "Long Island",
+          "Pas de garde d'enfants"
+        ],
+        "salary": "To be discussed",
+        "posted": "Publié 16 juillet 2026",
+        "url": "https://www.householdstaff.agency/jobs/house-manager-job-st-james-new-york-east-quote-new-york-usa/",
+        "blurb": "Poste nouvellement créé : c'est vous qui écrivez les procédures. Résidence principale de 6 000 sq ft + maison d'été de 5 000 sq ft."
+      },
+      {
+        "flag": "🇺🇸",
+        "city": "Dallas",
+        "country": "United States",
+        "title": "Senior Personal Assistant to Principal",
+        "agency": "Morgan & Mallet",
+        "type": "Permanent, full-time",
+        "tags": [
+          "Rythme soutenu",
+          "Logistique",
+          "Texas"
+        ],
+        "salary": "To be discussed",
+        "posted": "Live on board",
+        "url": "https://www.householdstaff.agency/jobs/senior-personal-assistant-job-dallas-texas-usa/",
+        "blurb": "Agenda, déplacements, courses, valises : exécution sans faille exigée, avec astreinte ponctuelle soirs et week-ends."
+      },
+      {
+        "flag": "🇺🇸",
+        "city": "Miami Beach",
+        "country": "United States",
+        "title": "Personal Assistant · Construction & household",
+        "agency": "Morgan & Mallet",
+        "type": "Permanent, full-time",
+        "tags": [
+          "Chantiers",
+          "Prestataires",
+          "Autonomie"
+        ],
+        "salary": "To be discussed",
+        "posted": "Live on board",
+        "url": "https://www.householdstaff.agency/jobs/personal-assistant-job-miami-beach-florida-usa/",
+        "blurb": "Profil hybride recherché : suivi de travaux résidentiels + opérations de la maison + assistance personnelle aux principaux."
+      },
+      {
+        "flag": "🇺🇸",
+        "city": "Brooklyn Heights",
+        "country": "United States",
+        "title": "Assistant to the Chief of Staff · Private family",
+        "agency": "DM Estate Staffing (EstateJobs.com)",
+        "type": "Full-time, live-out",
+        "tags": [
+          "Chief of Staff",
+          "Mentorat",
+          "3-5 ans d'expérience"
+        ],
+        "salary": "$125,000+ + full benefits",
+        "posted": "Publié 9 juillet 2026",
+        "url": "https://www.estatejobs.com/job/mv8suf/assistant-to-chief-of-staff/brooklyn/ny",
+        "blurb": "Ils veulent explicitement 3-5 ans d'expérience, pas 15. Le Chief of Staff s'engage à former la personne. Rare et à saisir."
       }
     ],
     "europe": [
@@ -112,25 +261,16 @@
         "country": "United Kingdom",
         "title": "Personal Assistant to a renowned music artist",
         "agency": "Morgan & Mallet",
-        "type": "Consultancy · Part time",
-        "tags": ["Entertainment", "International travel", "Flexible"],
-        "salary": "On application",
-        "posted": "1 Jul 2026",
+        "type": "Part-time, consultancy",
+        "tags": [
+          "Industrie musicale",
+          "Voyages internationaux",
+          "Flexible"
+        ],
+        "salary": "To be discussed",
+        "posted": "Publié 1 juillet 2026",
         "url": "https://www.householdstaff.agency/jobs/personal-assistant-job-london-united-kingdom/",
-        "blurb": "A renowned artist travelling regularly internationally seeks an exceptional PA to join a small, dedicated team. Part-time consultancy agreement with significant flexibility expected in days and hours."
-      },
-      {
-        "flag": "🇬🇧",
-        "city": "London",
-        "country": "United Kingdom",
-        "title": "Travelling Personal Assistant / Butler",
-        "agency": "Morgan & Mallet",
-        "type": "Permanent · Full time",
-        "tags": ["PA / Butler", "International", "Multi-residence"],
-        "salary": "On application",
-        "posted": "25 Jun 2026",
-        "url": "https://www.householdstaff.agency/jobs/travelling-personal-assistant-butler-job-london-united-kingdom/",
-        "blurb": "A well-travelled principal with homes across Europe, the UAE and the UK seeks a travelling PA / Butler to become a long-term member of the household team. Diary and travel coordination, residence preparation and meal service, with complete autonomy and discretion."
+        "blurb": "Petite équipe dédiée autour d'un artiste qui tourne à l'international. Contrat de consultant, jours et horaires très flexibles."
       },
       {
         "flag": "🇲🇨",
@@ -138,12 +278,16 @@
         "country": "Monaco",
         "title": "Butler · Prestigious residence",
         "agency": "Morgan & Mallet",
-        "type": "Permanent · Full time",
-        "tags": ["Butler", "Formal service", "Household team"],
-        "salary": "On application",
-        "posted": "16 Jul 2026",
+        "type": "Permanent, full-time",
+        "tags": [
+          "Service formel",
+          "Équipe en place",
+          "Discrétion"
+        ],
+        "salary": "To be discussed",
+        "posted": "Publié 16 juillet 2026",
         "url": "https://www.householdstaff.agency/jobs/butler-job-in-monaco/",
-        "blurb": "A prestigious Monaco residence seeks an experienced butler for a dedicated household team committed to the highest standards. Suited to a seasoned hospitality professional where discretion, precision and anticipation are essential day to day."
+        "blurb": "Pour un professionnel de l'hôtellerie aguerri : maison à haut niveau d'exigence où l'anticipation fait tout le métier."
       },
       {
         "flag": "🇸🇪",
@@ -151,12 +295,16 @@
         "country": "Sweden",
         "title": "Chief of Staff · UHNW household",
         "agency": "Rose's Agency",
-        "type": "Permanent · Full time",
-        "tags": ["Chief of Staff", "UHNW", "Build the team"],
-        "salary": "On application",
-        "posted": "Live role",
+        "type": "Full-time",
+        "tags": [
+          "Poste le plus senior",
+          "SOP",
+          "Recrutement"
+        ],
+        "salary": "DOE",
+        "posted": "Live on board",
         "url": "https://rosesagency.com/job-board/full-time-chief-of-staff-stockholm",
-        "blurb": "Strategic and operational right hand to the principals, integrating household staffing, estate management, family logistics and lifestyle support across all properties. Early focus on building the organisation: vendors, SOPs and recruiting without interrupting service levels."
+        "blurb": "Le sommet de la filière : bras droit stratégique des principaux, on construit l'organisation, les SOP et l'équipe de zéro."
       }
     ],
     "mideast": [
@@ -166,38 +314,50 @@
         "country": "United Arab Emirates",
         "title": "International HR Manager · Family office group",
         "agency": "Morgan & Mallet",
-        "type": "Permanent · Full time",
-        "tags": ["Family office", "HR", "Senior"],
-        "salary": "On application",
-        "posted": "17 Jul 2026",
+        "type": "Permanent, full-time",
+        "tags": [
+          "Multi-juridictions",
+          "Contrats",
+          "Family office"
+        ],
+        "salary": "To be discussed",
+        "posted": "Publié 17 juillet 2026",
         "url": "https://www.householdstaff.agency/jobs/international-human-resources-manager-m-f-in-dubai-uae/",
-        "blurb": "Based in the Dubai office, manage HR operations across the group and the employment lifecycle of household staff placed with clients through EOR and payroll services. Spans the UAE, France, the UK and the US; rigorous with contracts and cross-border compliance."
+        "blurb": "Côté coulisses du métier : cycle de vie contractuel du personnel de maison sur les Émirats, la France, le UK et les US."
       },
       {
         "flag": "🇦🇪",
         "city": "Dubai",
         "country": "United Arab Emirates",
-        "title": "Household Manager / Senior Housekeeper",
+        "title": "HR & Executive Assistant · Holding company",
         "agency": "Morgan & Mallet",
-        "type": "Permanent · Full time",
-        "tags": ["House Manager", "Hands-on", "Formal household"],
-        "salary": "On application",
-        "posted": "Live role",
-        "url": "https://www.householdstaff.agency/jobs/household-manager-senior-housekeeper-job-dubai-uae/",
-        "blurb": "A formal private household in Dubai seeks a discreet, highly organised Household Manager / Senior Housekeeper to oversee the smooth running of the home. A hands-on blend of household management, senior housekeeping and occasional childcare or pet support."
+        "type": "Permanent, full-time",
+        "tags": [
+          "Senior",
+          "Trois partners",
+          "Voyages Europe"
+        ],
+        "salary": "To be discussed",
+        "posted": "Publié 10 juillet 2026",
+        "url": "https://www.householdstaff.agency/jobs/human-resources-executive-assistant-job-dubai-uae/",
+        "blurb": "Poste senior auprès de trois associés : RH, contrats, administratif. Résidence aux Émirats requise. Pas un poste d'entrée."
       },
       {
         "flag": "🇦🇪",
         "city": "Dubai",
         "country": "United Arab Emirates",
-        "title": "Butler / Household Manager · Emirati family",
+        "title": "Senior Personal Assistant to Principal",
         "agency": "Morgan & Mallet",
-        "type": "Permanent · Full time",
-        "tags": ["Butler", "House Manager", "Private villa"],
-        "salary": "15,000 AED / month",
-        "posted": "Live role",
-        "url": "https://www.householdstaff.agency/jobs/butler-household-manager-job-dubai-uae/",
-        "blurb": "An Emirati family seeks a live-out Butler / Household Manager to run their private villa in Al Khawaneej, Dubai. Managing household operations, supervising a team of drivers, housemaids and security, and maintaining high standards of presentation and service."
+        "type": "Permanent, full-time, live-out",
+        "tags": [
+          "Long terme",
+          "Live-out",
+          "Salaire non imposé"
+        ],
+        "salary": "To be discussed",
+        "posted": "Live on board",
+        "url": "https://www.householdstaff.agency/jobs/senior-personal-assistant-job-dubai-uae/",
+        "blurb": "Support administratif et organisationnel complet auprès du principal. Marché émirati : rémunération nette d'impôt, logement souvent inclus."
       }
     ]
   }
