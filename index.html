@@ -1616,6 +1616,71 @@
   .nav-new{display:inline-block;margin-left:auto;background:var(--gold);color:#fff;font-family:'Jost',sans-serif;font-size:8.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;border-radius:10px;padding:2px 7px;}
   .resume-chip{display:inline-flex;align-items:center;gap:7px;background:rgba(201,168,103,.16);border:1px solid rgba(201,168,103,.3);color:var(--gold-lt);border-radius:20px;padding:5px 12px;font-family:'Jost',sans-serif;font-size:11.5px;font-weight:500;margin-bottom:14px;}
   .resume-chip svg{width:13px;height:13px;}
+/* ====== THE INTERVIEW ROOM ====== */
+.iv-wrap{max-width:880px;}
+.iv-picker{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 4px;}
+.iv-chip{background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:8px 15px;font-family:'Jost',sans-serif;font-size:12.5px;color:var(--ink-soft);cursor:pointer;transition:all .2s;text-align:left;}
+.iv-chip:hover{border-color:var(--gold-lt);color:var(--ink);}
+.iv-chip.on{background:var(--ink);border-color:var(--ink);color:var(--ivory);}
+.iv-chip.done{border-color:var(--green);color:#456138;}
+.iv-chip.done.on{background:var(--ink);color:var(--ivory);border-color:var(--ink);}
+.iv-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:16px 0 10px;}
+.iv-prog{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--stone);font-weight:500;}
+.iv-prog b{color:var(--gold-deep);font-weight:600;}
+.iv-reset{background:none;border:none;color:var(--stone);font-family:'Jost',sans-serif;font-size:12px;cursor:pointer;text-decoration:underline;}
+.iv-reset:hover{color:var(--ink);}
+.iv-q{background:var(--ink);color:var(--ivory);border-radius:14px;padding:26px 30px;margin:8px 0 0;}
+.iv-q .iv-qk{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-lt);font-weight:500;margin-bottom:10px;}
+.iv-q .iv-qt{font-family:'Cormorant',serif;font-size:30px;font-weight:600;line-height:1.25;}
+.iv-q .iv-qh{font-size:13px;color:#b8afa0;margin-top:12px;line-height:1.6;}
+.iv-in{width:100%;font-family:'Jost',sans-serif;font-size:15px;line-height:1.65;color:var(--ink);background:var(--paper);border:1px solid var(--line);border-top:none;border-radius:0 0 14px 14px;padding:20px 24px;min-height:170px;resize:vertical;outline:none;transition:border-color .2s;}
+.iv-in:focus{border-color:var(--gold);}
+.iv-foot{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-top:14px;}
+.iv-btn{background:var(--ink);color:var(--ivory);border:none;border-radius:9px;padding:13px 26px;font-family:'Jost',sans-serif;font-size:13.5px;font-weight:500;letter-spacing:.03em;cursor:pointer;transition:background .2s;}
+.iv-btn:hover{background:var(--gold-deep);}
+.iv-btn.ghost{background:none;color:var(--ink);border:1px solid var(--line);}
+.iv-btn.ghost:hover{background:var(--gold-wash);border-color:var(--gold);color:var(--gold-deep);}
+.iv-count{font-size:12px;color:var(--stone);}
+.iv-count b{color:var(--ink-soft);font-weight:600;}
+.iv-count .over{color:#a8443d;font-weight:600;}
+.iv-res{margin-top:22px;background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:26px 28px;}
+.iv-top{display:flex;align-items:center;gap:22px;flex-wrap:wrap;padding-bottom:20px;border-bottom:1px solid var(--line);}
+.iv-ring{width:96px;height:96px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.iv-ring .in{width:78px;height:78px;border-radius:50%;background:var(--paper);display:flex;flex-direction:column;align-items:center;justify-content:center;}
+.iv-num{font-family:'Cormorant',serif;font-size:31px;font-weight:600;color:var(--ink);line-height:1;}
+.iv-band{font-family:'Cormorant',serif;font-size:24px;font-weight:600;color:var(--ink);}
+.iv-sub{font-size:13.5px;color:var(--ink-soft);margin-top:4px;line-height:1.55;max-width:520px;}
+.iv-g{margin-top:20px;}
+.iv-g h3{font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;margin-bottom:11px;}
+.iv-g.good h3{color:#456138;} .iv-g.fix h3{color:#a8443d;} .iv-g.note h3{color:var(--gold-deep);}
+.iv-it{background:var(--ivory);border-radius:9px;padding:13px 16px;margin-bottom:8px;font-size:13.5px;color:var(--ink-soft);line-height:1.6;}
+.iv-it b{color:var(--ink);font-weight:600;}
+.iv-g.good .iv-it{border-left:2px solid var(--green);}
+.iv-g.fix .iv-it{border-left:2px solid #c07a6f;}
+.iv-model{margin-top:20px;border-top:1px solid var(--line);padding-top:18px;}
+.iv-mt{display:flex;align-items:center;gap:8px;font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--gold-deep);cursor:pointer;background:none;border:none;padding:0;}
+.iv-mt svg{width:13px;height:13px;transition:transform .2s;}
+.iv-mt.open svg{transform:rotate(90deg);}
+.iv-mb{display:none;margin-top:13px;}
+.iv-mb.open{display:block;}
+.iv-quote{font-family:'Cormorant',serif;font-size:19px;line-height:1.6;color:var(--ink);background:var(--gold-wash);border-left:3px solid var(--gold);border-radius:0 10px 10px 0;padding:18px 22px;}
+.iv-why{font-size:13px;color:var(--ink-soft);line-height:1.65;margin-top:12px;}
+.iv-why b{color:var(--ink);font-weight:600;}
+.iv-next{display:flex;gap:10px;margin-top:22px;flex-wrap:wrap;}
+.iv-debrief{margin-top:22px;background:var(--ink);color:var(--ivory);border-radius:14px;padding:28px 30px;}
+.iv-debrief .dk{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-lt);margin-bottom:9px;}
+.iv-debrief h3{font-family:'Cormorant',serif;font-size:27px;font-weight:600;margin-bottom:10px;}
+.iv-debrief p{font-size:14px;color:#c5bcae;line-height:1.65;}
+.iv-ask{margin-top:30px;background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:24px 28px;}
+.iv-ask h3{font-family:'Cormorant',serif;font-size:23px;font-weight:600;margin-bottom:5px;}
+.iv-ask .as{font-size:13px;color:var(--stone);margin-bottom:15px;}
+.iv-ask ul{list-style:none;}
+.iv-ask li{font-size:13.5px;color:var(--ink-soft);line-height:1.6;padding:10px 0 10px 20px;border-bottom:1px solid var(--line);position:relative;}
+.iv-ask li:last-child{border-bottom:none;}
+.iv-ask li:before{content:"·";position:absolute;left:4px;color:var(--gold);font-weight:700;font-size:18px;line-height:1.3;}
+.iv-ask li b{color:var(--ink);font-weight:600;}
+.iv-never{margin-top:14px;background:var(--ivory);border-radius:9px;padding:13px 16px;font-size:13px;color:var(--ink-soft);line-height:1.6;}
+@media(max-width:640px){.iv-q{padding:20px 20px;}.iv-q .iv-qt{font-size:24px;}.iv-in{padding:16px 18px;}.iv-res{padding:20px 18px;}}
 /* ====== APPLICATION TRACKER ====== */
 .trk-head{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;margin:14px 0 4px;}
 .trk-stats{display:flex;gap:8px;flex-wrap:wrap;}
@@ -1851,6 +1916,10 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 3h7l5 5v13H7z" stroke-linejoin="round"/><path d="M14 3v5h5M9.5 13l2 2 3.5-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
         CV Review
       </div>
+      <div class="nav-item" data-page="interview">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 12a8 8 0 1 1-3.2-6.4" stroke-linecap="round"/><path d="M9 10.5a3 3 0 1 1 3.6 2.9v1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M12.6 17.6h.01" stroke-linecap="round"/></svg>
+        Interview Room
+      </div>
 
       <div class="nav-group">Connect</div>
       <div class="nav-item" data-page="messages">
@@ -1872,6 +1941,7 @@
     <div class="m-tab" data-page="practice">Practice</div>
     <div class="m-tab" data-page="career">Career Hub</div>
     <div class="m-tab" data-page="cv">CV Review</div>
+  <div class="m-tab" data-page="interview">Interview Room</div>
     <div class="m-tab" data-page="register">Register</div>
     <div class="m-tab" data-page="journal">Journal</div>
     <div class="m-tab" data-page="screening">Screening Room</div>
@@ -2033,6 +2103,64 @@
           <span class="cv-priv"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg> Private · read in your browser, never uploaded or stored</span>
         </div>
         <div id="cvResult"></div>
+      </div>
+    </section>
+
+    <!-- ============ PAGE: THE INTERVIEW ROOM ============ -->
+    <section class="page hidden" id="page-interview">
+      <div class="page-h">
+        <div class="eyebrow">The Interview Room</div>
+        <h1>Sit the interview before you sit the interview.</h1>
+        <p>The real questions this world asks, taken from your Interview Guide. Answer one as you would out loud, and get read the way a family, or the consultant who protects them, would read you. Nothing you type leaves your browser.</p>
+      </div>
+
+      <div class="note-band">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01" stroke-linecap="round"/></svg>
+        <p><b style="font-weight:600;">What is actually being tested.</b> Almost none of these questions are about the answer. Three things are being tested, and only three: can you be trusted with what you will come to know, will you stay calm when the day collapses, and will you be pleasant to have in the house for years. Competence is assumed by the time you are in the room.</p>
+      </div>
+
+      <div class="iv-wrap">
+        <div class="block-title">Choose your question</div>
+        <div class="block-sub">Seven questions, each one a different test. Work through them in any order.</div>
+        <div class="iv-picker" id="ivPicker"></div>
+
+        <div class="iv-bar">
+          <div class="iv-prog" id="ivProg"></div>
+          <button class="iv-reset" id="ivResetBtn">Start over</button>
+        </div>
+
+        <div class="iv-q" id="ivQ">
+          <div class="iv-qk" id="ivQK"></div>
+          <div class="iv-qt" id="ivQT"></div>
+          <div class="iv-qh" id="ivQH"></div>
+        </div>
+        <textarea id="ivInput" class="iv-in" placeholder="Answer as you would say it out loud, not as you would write it."></textarea>
+        <div class="iv-foot">
+          <div>
+            <button class="iv-btn" id="ivGoBtn">Read my answer</button>
+            <button class="iv-btn ghost" id="ivRandBtn" style="margin-left:8px;">Another question</button>
+          </div>
+          <span class="iv-count" id="ivCount"></span>
+        </div>
+
+        <div id="ivResult"></div>
+
+        <div class="iv-ask">
+          <h3>The questions you should ask</h3>
+          <div class="as">You will be invited to ask. What you ask is itself an answer.</div>
+          <ul>
+            <li><b>“How is the household organised today, and who would I be working alongside?”</b> You are showing that you think in teams, and that you will not tread on a colleague's station.</li>
+            <li><b>“What would make you say, in six months, that this was the right decision?”</b> The most valuable question you can ask anyone.</li>
+            <li><b>“How does the family prefer to be communicated with, and how often?”</b> It demonstrates that you understand the role is theirs, not yours.</li>
+            <li><b>“Is there anything in the way the house runs that you would like to see change?”</b> This is where they tell you the truth about the job.</li>
+          </ul>
+          <div class="iv-never"><b>Never ask, at a first meeting:</b> holidays, time off, whether the role can be done remotely, or anything that begins with “would I have to…”.</div>
+        </div>
+
+        <div class="note-band" style="margin-top:20px;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l2.5 6.5L21 9l-5 4.5L17.5 21 12 17l-5.5 4L8 13.5 3 9l6.5-.5z" stroke-linejoin="round"/></svg>
+          <p><b style="font-weight:600;">The last five minutes.</b> Thank them once, simply. Do not oversell at the door, and do not send a long letter that evening. A short, warm note the next morning, three lines and no more, is the correct gesture, and it is remembered precisely because it asks for nothing.</p>
+        </div>
       </div>
     </section>
 
@@ -3698,6 +3826,283 @@ async function bootCareerHub(){
   initJobTabs();
   initTracker();
   loadApplications();
+}
+
+
+// ══════════════════════════════════════════════════════════════
+// THE INTERVIEW ROOM · 7 questions réelles + lecture heuristique
+// Tout se passe dans le navigateur, rien n'est stocké.
+// ══════════════════════════════════════════════════════════════
+const IV_WPM = 145;
+const IV_FLUFF = ["passionate","dynamic","dedicated","hardworking","hard-working","detail-oriented","motivated","enthusiastic","team player","go-getter","results-driven","proactive","self-starter","meticulous"];
+const IV_HEDGE = ["i think maybe","i guess","sort of","kind of","hopefully","i would probably","i'm not sure but","i suppose"];
+
+function ivWords(t){ return (t.match(/\S+/g)||[]).length; }
+function ivHas(low, arr){ return arr.filter(w=>low.includes(w)); }
+
+const IV_Q = [
+{
+  id:'about', k:'The opening', q:'Tell me about yourself.',
+  hint:'They are testing restraint. Ninety seconds, no more.',
+  ideal:[60,200],
+  why:'<b>What they are really asking.</b> Where you have served, what you were trusted with, and why this role. Then stop. The candidate who speaks for six minutes has already answered a different question, and badly.',
+  model:'I have spent six years in private households, most recently as house manager for a family of five across two residences. I was trusted with the household budget, the staff rota and the family’s travel. I am here because the role you are describing is the one I do best, at a level I want to keep growing into. That is the short version, and I am happy to go wherever you would like from there.',
+  fn(t,low,w){
+    const good=[],fix=[]; let d=0;
+    if(w>215){ d-=26; fix.push({t:'You are well past ninety seconds',b:'At roughly '+w+' words this runs to about '+Math.round(w/IV_WPM*60)+' seconds spoken. The answer is ninety seconds, and the discipline of stopping is the thing being measured. Cut to where you served, what you were trusted with, and why this role.'}); }
+    else if(w>185){ d-=12; fix.push({t:'A little long',b:'Roughly '+Math.round(w/IV_WPM*60)+' seconds. Trim one sentence and you are inside the ninety.'}); }
+    else if(w<45){ d-=12; fix.push({t:'Too thin to be reassuring',b:'This is under thirty seconds. Give them the three things they need: where you have served, what you were trusted with, and why this role.'}); }
+    else good.push('<b>The length is right.</b> Roughly '+Math.round(w/IV_WPM*60)+' seconds spoken, which is exactly the register this question wants.');
+    if(/\b(grew up|childhood|since I was|as a (child|little|young)|always (loved|wanted|dreamed)|my (mother|father|parents)|born in)\b/i.test(t)){
+      d-=20; fix.push({t:'You started too early in the story',b:'This answer begins at your last posts, not at your upbringing. Personal history is warmth you offer later, if at all, and never in the first ninety seconds.'});
+    }
+    const chain=(t.match(/\b(and then|then I|after that|next I)\b/gi)||[]).length;
+    if(chain>=3){ d-=14; fix.push({t:'It walks through your whole history',b:'“'+chain+'” linking phrases turn this into a chronology. They do not want the path, they want the last two posts and the reason you are sitting here.'}); }
+    if((t.match(/\d/g)||[]).length>=2) good.push('<b>There is real scope in here.</b> Numbers, residences, household size: a fact can be checked, and checkable scope is what earns the next question.');
+    else { d-=8; fix.push({t:'No scope to hold on to',b:'Say how many residences, how large a household, how many years. Without a figure they have nothing to picture, and nothing to verify.'}); }
+    if(/\bI was trusted with|\bentrusted|\bresponsible to the (family|principal)/i.test(t)) good.push('<b>“Trusted with” is the right frame.</b> It tells them what was placed in your hands, not what was on your task list.');
+    return {d,good,fix};
+  }
+},
+{
+  id:'why', k:'The motive', q:'Why do you want to work for a private family?',
+  hint:'They are listening for the word “I”.',
+  ideal:[35,140],
+  why:'<b>What they are really asking.</b> The wrong answer is about your journey, your growth, your dream. The right answer is about them: the pleasure of a life that runs without friction, and the craft of making that true.',
+  model:'Because a house that runs without friction is a real craft, and it is the one I want to practise at the highest level. In a private household the standard is set by one family rather than by a brand, and the work is to learn that standard exactly and then hold it, every day, without being asked twice.',
+  fn(t,low,w){
+    const good=[],fix=[]; let d=0;
+    const me=(low.match(/\b(i|my|me|myself)\b/g)||[]).length;
+    const rate= w? me/w : 0;
+    if(rate>0.11){ d-=22; fix.push({t:'This answer is about you',b:'“I”, “my” and “me” appear '+me+' times in '+w+' words. That is the exact trap in this question. Turn each one around: not what the role gives you, but what the family gets from you being in it.'}); }
+    else if(rate>0.075){ d-=9; fix.push({t:'Still leaning towards you',b:'The first person appears '+me+' times. Swap one or two for the household and it lands on the right side.'}); }
+    else good.push('<b>You kept yourself out of it.</b> The first person barely appears, and this question is largely a test of that.');
+    const self=ivHas(low,["my dream","my journey","my growth","my career","opportunity for me","always wanted","passionate about","fulfil","fulfill","find myself","challenge myself","develop myself","next step for me"]);
+    if(self.length){ d-=16; fix.push({t:'Ambition language',b:'Found: '+self.map(x=>'“'+escapeHtml(x)+'”').join(', ')+'. A family is not hiring your trajectory, they are hiring a life that runs without friction. Cut every phrase about your own arc.'}); }
+    const them=ivHas(low,["family","household","house","friction","standard","discreet","discretion","runs","smoothly","craft","service","their"]);
+    if(them.length>=3) good.push('<b>It is written from their side.</b> You talk about the household and the standard rather than your own path.');
+    else { d-=10; fix.push({t:'Name what you are actually serving',b:'The words that belong here are the family, the household, the standard, the friction you remove. Without them the answer could be about any employer.'}); }
+    if(w>170){ d-=8; fix.push({t:'It runs long',b:'This is a short answer by nature. Two or three sentences said calmly beat a paragraph.'}); }
+    return {d,good,fix};
+  }
+},
+{
+  id:'difficult', k:'The discretion test', q:'Tell me about a difficult client or principal.',
+  hint:'The one most candidates fail. They are not asking for the story.',
+  ideal:[12,70],
+  why:'<b>What they are really asking.</b> They are watching to see whether you will tell it. Give the shape, never the detail, and never the person. Every word of narrative you offer here is evidence of what you would one day say about them.',
+  model:'There was a situation that required a great deal of care. It was handled, and it stays with me.',
+  fn(t,low,w){
+    const good=[],fix=[]; let d=0;
+    const tell=ivHas(low,["he said","she said","they said","shouted","screamed","yelled","drunk","affair","divorce","argument","cheated","fired","stole","police","lawsuit","addict","mistress","furious","tantrum"]);
+    if(tell.length){ d-=34; fix.push({t:'You told the story',b:'Found: '+tell.map(x=>'“'+escapeHtml(x)+'”').join(', ')+'. This is the failure the question is designed to catch. Anything you are willing to say about a former principal, they will assume you would one day say about them.'}); }
+    if(/\b(Mr|Mrs|Ms|Dr|Sir|Lady)\.?\s+[A-Z][a-z]+/.test(t)){ d-=32; fix.push({t:'You named a person',b:'A name, even a courtesy title with a surname, ends the interview quietly. Say “a principal”, “the family”, “a household I served”.'}); }
+    if(w>110){ d-=20; fix.push({t:'Far too much of it',b:'At '+w+' words this is a narrative. The correct answer is one or two sentences: the shape, the fact that it was handled, and nothing else.'}); }
+    else if(w>70){ d-=8; fix.push({t:'A little more than they need',b:'Shorten it. Every sentence you add here is a sentence of detail you have chosen to give away.'}); }
+    else if(w>=10) good.push('<b>You kept it short.</b> Brevity is itself the answer to this question.');
+    if(w<8){ d-=10; fix.push({t:'Not quite an answer',b:'Silence reads as evasion. Give the shape calmly: that there was a situation, that it required care, and that it was handled.'}); }
+    const right=ivHas(low,["a situation","required care","required a great deal of care","it was handled","stays with me","discreet","discretion","confidential","would not be right","rather not","not mine to"]);
+    if(right.length) good.push('<b>The register is correct.</b> You gave the shape without the substance, which is exactly what is wanted.');
+    return {d,good,fix};
+  }
+},
+{
+  id:'saw', k:'The hardest one', q:'What would you do if you saw something you were not meant to see?',
+  hint:'The answer is short.',
+  ideal:[2,30],
+  why:'<b>What they are really asking.</b> Nothing. You would see nothing, say nothing, and it would leave no trace in you. If you are tempted to add a nuance here, do not. <i>This concerns the private life of a family, which is yours to protect. It has never covered anything unlawful, and no household expects it to.</i>',
+  model:'Nothing. I would see nothing, say nothing, and it would leave no trace.',
+  fn(t,low,w){
+    const good=[],fix=[]; let d=0;
+    if(w>60){ d-=28; fix.push({t:'Far too much',b:'At '+w+' words you have explained. The strength of this answer is that it needs none. One sentence, said evenly, and then let the silence sit.'}); }
+    else if(w>30){ d-=13; fix.push({t:'Longer than it needs to be',b:'Every extra clause reads as a condition. Cut to the single sentence.'}); }
+    else if(w>=2) good.push('<b>Short, which is the whole answer.</b> The person who is comfortable in a silence is the person in control of it.');
+    if(/\bnothing\b/i.test(t)) good.push('<b>“Nothing.”</b> That is the word they are listening for.');
+    else { d-=16; fix.push({t:'The word is missing',b:'The answer begins with “nothing”. Anything else, however well meant, reads as a door left open.'}); }
+    const hedge=ivHas(low,["it depends","depends on","unless it","but if","however","although","i might","i would probably","on the other hand","case by case"]);
+    if(hedge.length){ d-=18; fix.push({t:'You added a nuance',b:'Found: '+hedge.map(x=>'“'+escapeHtml(x)+'”').join(', ')+'. A condition here sounds like a circumstance in which you would talk. Say the short thing and stop.'}); }
+    if(/\b(tell|told|mention|report|share|discuss)\b.{0,24}\b(friend|family|anyone|someone|colleague|staff)\b/i.test(t)){ d-=20; fix.push({t:'You described telling someone',b:'Even framed as an exception, this is the answer they are screening for. The private life of a household does not travel, in any direction.'}); }
+    return {d,good,fix};
+  }
+},
+{
+  id:'eleven', k:'Composure', q:'How do you handle a change of plan at eleven at night?',
+  hint:'They are asking whether the disruption reaches your face.',
+  ideal:[40,170],
+  why:'<b>What they are really asking.</b> Describe your method calmly: the alternatives you keep ready, the suppliers who answer, the way you inform without alarming. Method reassures. Enthusiasm does not.',
+  model:'Calmly, and mostly in advance. For anything that matters there is a second option already identified, and the suppliers I keep are the ones who answer at that hour. I confirm the change, I make the calls, and I tell the family once, briefly, when it is already solved rather than while it is still a problem.',
+  fn(t,low,w){
+    const good=[],fix=[]; let d=0;
+    const method=ivHas(low,["alternative","second option","supplier","vendor","contact","backup","back-up","plan b","confirm","inform","notify","rebook","standby","on call","list","already","in advance","options"]);
+    if(method.length>=3) good.push('<b>You described a method, not a mood.</b> Alternatives, contacts, confirmation: this is what reassures a family at eleven at night.');
+    else { d-=20; fix.push({t:'No method in the answer',b:'Say what you actually do: the second option already identified, the suppliers who answer late, the order in which you make the calls. Method is the only thing that reassures here.'}); }
+    const thrill=ivHas(low,["love","thrive","excited","adrenaline","thrill","energised","energized","challenge","exciting","fun","buzz"]);
+    if(thrill.length){ d-=18; fix.push({t:'Enthusiasm, where composure was wanted',b:'Found: '+thrill.map(x=>'“'+escapeHtml(x)+'”').join(', ')+'. A family in the middle of a collapsed evening does not want someone who enjoys it. They want someone for whom it is unremarkable.'}); }
+    if((t.match(/!/g)||[]).length){ d-=8; fix.push({t:'Exclamation marks',b:'Remove them. The whole answer is a demonstration that this does not raise your voice.'}); }
+    if(/\b(tell|inform|let) (the )?(family|principal|them)\b/i.test(t)) good.push('<b>You said how you would inform them.</b> Telling the family once, briefly, and after it is solved is the correct sequence.');
+    if(w>220){ d-=10; fix.push({t:'It runs long',b:'Three sentences of method beat a paragraph of reassurance.'}); }
+    if(w<25){ d-=12; fix.push({t:'Too short to show a method',b:'“I stay calm” is a claim. Give them the two or three concrete moves that make it true.'}); }
+    return {d,good,fix};
+  }
+},
+{
+  id:'weak', k:'Honesty', q:'What are your weaknesses?',
+  hint:'A polished non-answer is more damaging than the weakness.',
+  ideal:[25,130],
+  why:'<b>What they are really asking.</b> Answer honestly and briefly, with something real and unthreatening, and say what you do about it. The remedy is the part they are actually listening for.',
+  model:'I used to take on too much myself rather than hand it over, because it felt faster. At any scale it is not. I now give a task with a written standard and one check-in, and the house runs better for it.',
+  fn(t,low,w){
+    const good=[],fix=[]; let d=0;
+    const fake=ivHas(low,["perfectionist","perfectionism","work too hard","care too much","too honest","too passionate","high standards","too detail","i work too much","take on too much because i care"]);
+    if(fake.length){ d-=26; fix.push({t:'A polished non-answer',b:'Found: '+fake.map(x=>'“'+escapeHtml(x)+'”').join(', ')+'. These are strengths in costume and every interviewer knows it. The dodge costs you more than the real weakness ever would.'}); }
+    else good.push('<b>You avoided the costume answers.</b> No perfectionism, no caring too much, which already puts you ahead of most of the room.');
+    if(/\b(so I|which is why|I now|I have (since )?learned|I keep|I set|to manage this|these days I|I have learned to)\b/i.test(t)) good.push('<b>There is a remedy.</b> Naming what you changed turns a weakness into evidence of self-management.');
+    else { d-=20; fix.push({t:'No remedy',b:'The weakness is only half the answer. Say what you now do about it, in one clause, and it stops being a risk.'}); }
+    if(w>170){ d-=12; fix.push({t:'You dwelt on it',b:'At '+w+' words this becomes a confession. Name it, say what you do, and move on.'}); }
+    else if(w<18){ d-=10; fix.push({t:'Too brief to be honest',b:'A single word sounds rehearsed. Give the weakness, one line of context, and the remedy.'}); }
+    if(/\b(fired|sacked|dismissed|conflict with|fell out|reported me)\b/i.test(t)){ d-=14; fix.push({t:'Too heavy for this question',b:'Real and unthreatening is the brief. Something that cost you an employer is neither, and it invites questions you cannot control.'}); }
+    return {d,good,fix};
+  }
+},
+{
+  id:'salary', k:'The number', q:'What are your salary expectations?',
+  hint:'Give a range, calmly, and only if asked. Then let it sit.',
+  ideal:[8,60],
+  why:'<b>What they are really asking.</b> Do not justify it, do not soften it, and do not immediately offer flexibility. The person who apologises for their number invites it to be lowered.',
+  model:'I am looking in the range of one hundred and forty to one hundred and sixty thousand, depending on the scope and the travel.',
+  fn(t,low,w){
+    const good=[],fix=[]; let d=0;
+    const nums=(t.match(/\d[\d,.]*\s*(k\b)?/gi)||[]).filter(x=>/\d/.test(x));
+    const tens=(t.match(/\b(twenty|thirty|forty|fifty|sixty|seventy|eighty|ninety)\b/gi)||[]).length;
+    const written=tens>0 || /\b(hundred|thousand)\b/i.test(t);
+    const joiner=/\b(to|through)\b|–|(?<=\d)\s*-\s*(?=\d)/i.test(t);
+    const range=joiner && (nums.length>=2 || tens>=2);
+    if(range) good.push('<b>You gave a range.</b> A range is the correct instrument here: it answers the question without closing the conversation.');
+    else if(nums.length||written){ d-=12; fix.push({t:'A single figure, not a range',b:'One number is a position to be argued with. A range of two, spoken calmly, is an answer.'}); }
+    else { d-=24; fix.push({t:'No number at all',b:'“Whatever is fair” hands them the pen. If you are asked, you answer, with a range and nothing else.'}); }
+    const soft=ivHas(low,["flexible","negotiable","whatever you think","up to you","open to","of course i","willing to consider","but i am","but i'm","happy with anything","not too fussed","that said"]);
+    if(soft.length){ d-=24; fix.push({t:'You softened it',b:'Found: '+soft.map(x=>'“'+escapeHtml(x)+'”').join(', ')+'. This is the single most expensive habit in the interview. The person who apologises for their number invites it to be lowered.'}); }
+    else if(nums.length||written) good.push('<b>You did not apologise for it.</b> No flexibility offered before it was asked for, which is exactly right.');
+    if(w>75){ d-=16; fix.push({t:'You justified it',b:'At '+w+' words you are explaining your number, and explanation reads as doubt. Say the range, then stop talking. The silence is not yours to fill.'}); }
+    else if(w<=35 && (nums.length||written)) good.push('<b>You let it sit.</b> Short, then silence, is the whole technique.');
+    return {d,good,fix};
+  }
+}
+];
+
+let IV_CUR = 0;
+let IV_SCORES = {};
+
+function ivRenderPicker(){
+  const box=document.getElementById('ivPicker'); if(!box) return;
+  box.innerHTML = IV_Q.map((q,i)=>
+    `<button class="iv-chip${i===IV_CUR?' on':''}${IV_SCORES[q.id]!==undefined?' done':''}" data-i="${i}">${escapeHtml(q.k)}${IV_SCORES[q.id]!==undefined?' · '+IV_SCORES[q.id]:''}</button>`).join('');
+  box.querySelectorAll('.iv-chip').forEach(b=>b.addEventListener('click',()=>ivGo(+b.dataset.i)));
+  const done=Object.keys(IV_SCORES).length;
+  const prog=document.getElementById('ivProg');
+  if(prog){
+    if(!done) prog.innerHTML='Seven questions · none answered yet';
+    else{
+      const avg=Math.round(Object.values(IV_SCORES).reduce((a,b)=>a+b,0)/done);
+      prog.innerHTML='<b>'+done+' of 7</b> answered · average <b>'+avg+'</b>/100';
+    }
+  }
+}
+function ivGo(i){
+  IV_CUR=i; const q=IV_Q[i];
+  document.getElementById('ivQK').textContent=q.k;
+  document.getElementById('ivQT').textContent='“'+q.q+'”';
+  document.getElementById('ivQH').textContent=q.hint;
+  document.getElementById('ivInput').value='';
+  document.getElementById('ivResult').innerHTML='';
+  ivCount(); ivRenderPicker();
+  document.getElementById('ivQ').scrollIntoView({behavior:'smooth',block:'start'});
+}
+function ivCount(){
+  const t=document.getElementById('ivInput').value||'';
+  const w=ivWords(t), sec=Math.round(w/IV_WPM*60);
+  const q=IV_Q[IV_CUR];
+  const over = w>q.ideal[1];
+  document.getElementById('ivCount').innerHTML = w? `<b>${w}</b> words · <span class="${over?'over':''}">about ${sec}s spoken</span>` : 'Answer as you would say it, not as you would write it';
+}
+function ivAnalyse(){
+  const t=(document.getElementById('ivInput').value||'').trim();
+  const box=document.getElementById('ivResult');
+  const q=IV_Q[IV_CUR];
+  if(ivWords(t)<3){ box.innerHTML='<div class="iv-it">Write your answer above first, in your own words, then press <b>Read my answer</b>.</div>'; return; }
+  const low=t.toLowerCase(), w=ivWords(t);
+  const r=q.fn(t,low,w);
+  const good=[...r.good], fix=[...r.fix]; let score=100+r.d;
+
+  const ff=ivHas(low,IV_FLUFF);
+  if(ff.length){ score-=Math.min(ff.length*5,14); fix.push({t:'Empty self-adjectives',b:'Found: '+ff.map(x=>'“'+escapeHtml(x)+'”').join(', ')+'. Every candidate says these and none can be checked. Replace each with the fact that proves it, or cut it.'}); }
+  const hh=ivHas(low,IV_HEDGE);
+  if(hh.length){ score-=Math.min(hh.length*5,12); fix.push({t:'Hedging',b:'Found: '+hh.map(x=>'“'+escapeHtml(x)+'”').join(', ')+'. Said out loud these read as uncertainty. State the thing plainly, or leave it out.'}); }
+  if(/\b(sorry|apologi[sz]e)\b/i.test(t)){ score-=8; fix.push({t:'You apologised',b:'Nothing in this answer calls for an apology. Remove it, and the same sentence carries twice the authority.'}); }
+
+  score=Math.max(4,Math.min(100,Math.round(score)));
+  IV_SCORES[q.id]=score;
+
+  const band = score>=85?['They would keep listening','This is the answer this question wants. Read it aloud once more and it is ready for the room.']
+    : score>=65?['Nearly right','The instinct is sound. The points below are the difference between an acceptable answer and one they remember.']
+    : ['This one would cost you','There is a specific trap in this question and the answer walked into it. Work through the points below, then answer it again from scratch.'];
+
+  const goodHtml = good.length? `<div class="iv-g good"><h3>What works</h3>${good.map(g=>`<div class="iv-it">${g}</div>`).join('')}</div>`:'';
+  const fixHtml = fix.length? `<div class="iv-g fix"><h3>What to change</h3>${fix.map(f=>`<div class="iv-it"><b>${escapeHtml(f.t)}.</b> ${f.b}</div>`).join('')}</div>`
+    : `<div class="iv-g good"><h3>What to change</h3><div class="iv-it">Nothing. That is a clean answer.</div></div>`;
+
+  const done=Object.keys(IV_SCORES).length;
+  const debrief = done===7 ? (()=>{ const avg=Math.round(Object.values(IV_SCORES).reduce((a,b)=>a+b,0)/7);
+    return `<div class="iv-debrief"><div class="dk">All seven answered</div><h3>${avg}/100 across the room.</h3><p>${
+      avg>=85?'You would be a calm, safe presence in that hour, and that is nearly the whole test. Go back to your weakest question once more, then leave it alone. Over-rehearsed is its own tell.'
+      : avg>=65?'The shape is right and the instincts are mostly sound. Return to your two lowest scores, rewrite them from scratch rather than editing, and the average will move quickly.'
+      : 'Worth working through properly before you sit in front of anyone. Take the lowest score first, read the model answer, close it, and write your own version from memory.'}</p></div>`;})() : '';
+
+  box.innerHTML = `<div class="iv-res">
+    <div class="iv-top">
+      <div class="iv-ring" style="background:conic-gradient(var(--gold) ${score*3.6}deg, var(--line) 0deg);">
+        <div class="in"><span class="iv-num">${score}</span><span style="font-family:'Jost',sans-serif;font-size:10px;color:var(--stone);margin-top:-3px;">/ 100</span></div>
+      </div>
+      <div><div class="iv-band">${band[0]}</div><div class="iv-sub">${band[1]}</div></div>
+    </div>
+    ${goodHtml}${fixHtml}
+    <div class="iv-model">
+      <button class="iv-mt" id="ivModelBtn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg> See a model answer</button>
+      <div class="iv-mb" id="ivModelBox">
+        <div class="iv-quote">${escapeHtml(q.model)}</div>
+        <div class="iv-why">${q.why}</div>
+      </div>
+    </div>
+    <div class="iv-next">
+      <button class="iv-btn ghost" id="ivAgainBtn">Answer this one again</button>
+      <button class="iv-btn" id="ivNextBtn">Next question</button>
+    </div>
+  </div>${debrief}`;
+
+  const mb=document.getElementById('ivModelBtn');
+  mb.addEventListener('click',()=>{ mb.classList.toggle('open'); document.getElementById('ivModelBox').classList.toggle('open'); });
+  document.getElementById('ivAgainBtn').addEventListener('click',()=>{
+    document.getElementById('ivResult').innerHTML='';
+    document.getElementById('ivInput').focus();
+  });
+  document.getElementById('ivNextBtn').addEventListener('click',()=>{
+    const un=IV_Q.map((q,i)=>i).filter(i=>IV_SCORES[IV_Q[i].id]===undefined);
+    ivGo(un.length? un[0] : (IV_CUR+1)%IV_Q.length);
+  });
+  ivRenderPicker();
+  box.scrollIntoView({behavior:'smooth',block:'start'});
+}
+function initInterview(){
+  if(document.getElementById('ivPicker').dataset.on) return;
+  document.getElementById('ivPicker').dataset.on='1';
+  document.getElementById('ivGoBtn').addEventListener('click',ivAnalyse);
+  document.getElementById('ivInput').addEventListener('input',ivCount);
+  document.getElementById('ivRandBtn').addEventListener('click',()=>{
+    const un=IV_Q.map((q,i)=>i).filter(i=>i!==IV_CUR);
+    ivGo(un[Math.floor(Math.random()*un.length)]);
+  });
+  document.getElementById('ivResetBtn').addEventListener('click',()=>{ IV_SCORES={}; ivGo(0); });
+  ivGo(0);
 }
 
 // ══════════════════════════════════════════════════════════════
@@ -5540,6 +5945,7 @@ function goPage(name, scrollTo){
   if(name==='messages'){ loadAvatarDirectory().then(()=>{ loadCommunity(); loadDmConversations(); }); loadCommunity(); loadMessages(false); updateConvPreviews(); loadDmConversations(); if(window.innerWidth>820){ selectConv(document.getElementById('waApp').dataset.active||'community'); } }
   if(name==='journal'){ bootJournal(); }
   if(name==='career'){ initTracker(); loadApplications(); }
+  if(name==='interview'){ initInterview(); }
   if(name==='register'){ renderRegister(); }
   if(name==='screening'){ renderScreening(); }
   if(name==='practice'){ renderPractice(); if(!Object.keys(PR_DRILLS).length){ loadDrills().then(()=>{ try{ renderPractice(); }catch(e){} }); } }
@@ -6286,6 +6692,7 @@ const TOUR_STEPS=[
   {page:'practice', sel:'.nav-item[data-page="practice"]', k:'Practice', title:'Practice', body:'Short, playful exercises to make each week stick, with points, badges and best scores. Replay them as often as you like.'},
   {page:'career', sel:'.nav-item[data-page="career"]', k:'Career Hub', title:'Career Hub', body:'Real, live roles from the agencies of this world, plus the boards to search yourself. Your own starting points for outreach.'},
   {page:'cv', sel:'.nav-item[data-page="cv"]', k:'CV Review', title:'CV Review', body:'Upload your CV and get an instant, honest read on what to fix before you send it anywhere.'},
+  {page:'interview', sel:'.nav-item[data-page="interview"]', k:'Interview Room', title:'Interview Room', body:'The real questions this world asks. Answer them here, and get read the way a family would read you, before it counts.'},
   {page:'vault', sel:'.nav-item[data-page="vault"]', k:'The Vault', title:'The Vault', body:'Your reference library: the toolkit, the casebook, cultural fluency, the CV and more. Read them here, or download them.'},
   {page:'library', sel:'.nav-item[data-page="library"]', k:'Codes Library', title:'Codes Library', body:'The vocabulary and codes of the private world, defined plainly, so you always know how to speak.'},
   {page:'register', sel:'.nav-item[data-page="register"]', k:'The Register', title:'The Register', body:'The houses and agencies that set the standard of this world. Know them the way an insider does.'},
