@@ -1616,6 +1616,61 @@
   .nav-new{display:inline-block;margin-left:auto;background:var(--gold);color:#fff;font-family:'Jost',sans-serif;font-size:8.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;border-radius:10px;padding:2px 7px;}
   .resume-chip{display:inline-flex;align-items:center;gap:7px;background:rgba(201,168,103,.16);border:1px solid rgba(201,168,103,.3);color:var(--gold-lt);border-radius:20px;padding:5px 12px;font-family:'Jost',sans-serif;font-size:11.5px;font-weight:500;margin-bottom:14px;}
   .resume-chip svg{width:13px;height:13px;}
+/* ====== APPLICATION TRACKER ====== */
+.trk-head{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;margin:14px 0 4px;}
+.trk-stats{display:flex;gap:8px;flex-wrap:wrap;}
+.trk-st{display:flex;align-items:baseline;gap:6px;background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:8px 13px;}
+.trk-st .n{font-family:'Cormorant',serif;font-size:22px;font-weight:600;color:var(--ink);line-height:1;}
+.trk-st .l{font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--stone);font-weight:500;}
+.trk-st.on{border-color:var(--gold);background:var(--gold-wash);}
+.trk-add{background:var(--ink);color:var(--ivory);border:none;border-radius:9px;padding:11px 18px;font-family:'Jost',sans-serif;font-size:13px;font-weight:500;letter-spacing:.03em;cursor:pointer;transition:background .2s;}
+.trk-add:hover{background:var(--gold-deep);}
+.trk-due{display:flex;align-items:center;gap:10px;background:var(--gold-wash);border:1px solid var(--gold-lt);border-left:3px solid var(--gold);border-radius:10px;padding:12px 16px;margin:12px 0;font-size:13.5px;color:var(--ink-soft);}
+.trk-due b{font-weight:600;color:var(--ink);}
+.trk-form{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:20px;margin:12px 0 18px;}
+.trk-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:13px;}
+.trk-f{display:flex;flex-direction:column;gap:5px;}
+.trk-f label{font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--stone);font-weight:500;}
+.trk-f input,.trk-f select,.trk-f textarea{font-family:'Jost',sans-serif;font-size:14px;color:var(--ink);background:var(--ivory);border:1px solid var(--line);border-radius:8px;padding:10px 12px;outline:none;transition:border-color .2s;}
+.trk-f input:focus,.trk-f select:focus,.trk-f textarea:focus{border-color:var(--gold);}
+.trk-f.wide{grid-column:1/-1;}
+.trk-f textarea{resize:vertical;min-height:64px;line-height:1.5;}
+.trk-acts{display:flex;gap:9px;margin-top:15px;align-items:center;}
+.trk-save{background:var(--gold-deep);color:#fff;border:none;border-radius:8px;padding:10px 20px;font-family:'Jost',sans-serif;font-size:13px;font-weight:500;cursor:pointer;}
+.trk-save:hover{background:var(--ink);}
+.trk-cancel{background:none;border:none;color:var(--stone);font-family:'Jost',sans-serif;font-size:13px;cursor:pointer;padding:10px 6px;}
+.trk-cancel:hover{color:var(--ink);}
+.trk-err{color:#a8443d;font-size:12.5px;margin-left:6px;}
+.trk-list{display:flex;flex-direction:column;gap:10px;margin-top:6px;}
+.trk-card{display:grid;grid-template-columns:1fr auto;gap:14px;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:16px 18px;transition:border-color .2s,box-shadow .2s;}
+.trk-card:hover{border-color:var(--gold-lt);box-shadow:0 3px 14px var(--shadow);}
+.trk-card.due{border-left:3px solid var(--gold);}
+.trk-r{font-family:'Cormorant',serif;font-size:20px;font-weight:600;color:var(--ink);line-height:1.25;}
+.trk-m{font-size:12.5px;color:var(--stone);margin-top:3px;}
+.trk-m b{font-weight:600;color:var(--ink-soft);}
+.trk-n{font-size:13px;color:var(--ink-soft);margin-top:8px;line-height:1.5;white-space:pre-wrap;}
+.trk-meta{display:flex;gap:14px;flex-wrap:wrap;margin-top:9px;font-size:11.5px;color:var(--stone);}
+.trk-meta .fu{color:var(--gold-deep);font-weight:600;}
+.trk-side{display:flex;flex-direction:column;align-items:flex-end;gap:8px;}
+.trk-sel{font-family:'Jost',sans-serif;font-size:12px;font-weight:500;border:1px solid var(--line);border-radius:20px;padding:6px 12px;background:var(--ivory);color:var(--ink);cursor:pointer;outline:none;}
+.trk-sel[data-s="applied"]{background:var(--gold-wash);border-color:var(--gold-lt);color:var(--gold-deep);}
+.trk-sel[data-s="interview"]{background:#EFE6D3;border-color:var(--gold);color:var(--gold-deep);}
+.trk-sel[data-s="offer"]{background:#E8EFE3;border-color:var(--green);color:#456138;}
+.trk-sel[data-s="closed"]{background:#F1EEE9;border-color:var(--line);color:var(--stone);}
+.trk-lnk{font-size:11.5px;color:var(--gold-deep);text-decoration:none;font-weight:500;}
+.trk-lnk:hover{text-decoration:underline;}
+.trk-del{background:none;border:none;color:var(--stone);font-size:11.5px;cursor:pointer;padding:2px;font-family:'Jost',sans-serif;}
+.trk-del:hover{color:#a8443d;}
+.trk-empty{text-align:center;padding:34px 20px;color:var(--stone);font-size:13.5px;background:var(--paper);border:1px dashed var(--line);border-radius:12px;}
+.trk-setup{background:var(--paper);border:1px solid var(--gold-lt);border-radius:12px;padding:18px 20px;margin:12px 0;}
+.trk-setup h4{font-family:'Cormorant',serif;font-size:19px;font-weight:600;margin-bottom:6px;}
+.trk-setup p{font-size:13px;color:var(--ink-soft);line-height:1.55;}
+.trk-setup pre{background:var(--ink);color:#d8cfbd;font-size:11px;line-height:1.55;padding:14px;border-radius:8px;overflow-x:auto;margin-top:10px;font-family:ui-monospace,Menlo,monospace;}
+.jtrack{margin-top:7px;background:none;border:1px solid var(--line);border-radius:20px;color:var(--stone);font-family:'Jost',sans-serif;font-size:11.5px;font-weight:500;padding:5px 12px;cursor:pointer;transition:all .2s;}
+.jtrack:hover{border-color:var(--gold);color:var(--gold-deep);background:var(--gold-wash);}
+.jtrack.done{border-color:var(--green);color:#456138;background:#E8EFE3;}
+@media(max-width:640px){.trk-card{grid-template-columns:1fr;}.trk-side{flex-direction:row;align-items:center;justify-content:space-between;width:100%;}}
+
 </style>
 </head>
 <body>
@@ -2009,6 +2064,41 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01" stroke-linecap="round"/></svg>
         <p><b style="font-weight:600;">How to use this page.</b> Every role above is a real, published vacancy and every link takes you to the agency's own application page. Maison Amarine is not the employer, does not submit your application, and receives nothing if you are hired. Roles at this level close quickly: if a link has expired, use the live boards below, which are always current.</p>
       </div>
+
+      <div class="block-title" style="margin-top:34px;" id="tracker">Your applications</div>
+      <div class="block-sub">Every role you are chasing, in one place, with the date you said you would follow up. Visible only to you. Add a role from the list above with <b>Track</b>, or enter one by hand.</div>
+
+      <div class="trk-setup hidden" id="trkSetup"></div>
+      <div class="trk-due hidden" id="trkDue"></div>
+
+      <div class="trk-head">
+        <div class="trk-stats" id="trkStats"></div>
+        <button class="trk-add" id="trkAddBtn">Add a role</button>
+      </div>
+
+      <div class="trk-form hidden" id="trkForm">
+        <div class="trk-grid">
+          <div class="trk-f wide"><label>Role</label><input id="trkRole" placeholder="House Manager"></div>
+          <div class="trk-f"><label>Agency or family</label><input id="trkAgency" placeholder="Morgan &amp; Mallet"></div>
+          <div class="trk-f"><label>Location</label><input id="trkLoc" placeholder="Palm Beach, FL"></div>
+          <div class="trk-f"><label>Salary</label><input id="trkSalary" placeholder="From $150K/yr"></div>
+          <div class="trk-f"><label>Status</label><select id="trkStatus">
+            <option value="saved">Saved</option><option value="applied">Applied</option>
+            <option value="interview">Interview</option><option value="offer">Offer</option>
+            <option value="closed">Closed</option></select></div>
+          <div class="trk-f"><label>Applied on</label><input type="date" id="trkApplied"></div>
+          <div class="trk-f"><label>Follow up on</label><input type="date" id="trkFollow"></div>
+          <div class="trk-f wide"><label>Link</label><input id="trkUrl" placeholder="https://"></div>
+          <div class="trk-f wide"><label>Notes</label><textarea id="trkNotes" placeholder="Who you spoke to, what they asked, what you promised to send."></textarea></div>
+        </div>
+        <div class="trk-acts">
+          <button class="trk-save" id="trkSaveBtn">Save</button>
+          <button class="trk-cancel" id="trkCancelBtn">Cancel</button>
+          <span class="trk-err" id="trkErr"></span>
+        </div>
+      </div>
+
+      <div class="trk-list" id="trkList"></div>
 
       <div class="block-title" style="margin-top:34px;">Every source, in one place</div>
       <div class="block-sub">The specialist agencies that place private staff across the US, plus live searches on LinkedIn, Indeed and ZipRecruiter. Bookmark them: they are updated every day and never go stale.</div>
@@ -3606,7 +3696,169 @@ async function bootCareerHub(){
   if(upd)  upd.textContent = 'Refreshing live roles…';
   await loadCareerData();
   initJobTabs();
+  initTracker();
+  loadApplications();
 }
+
+// ══════════════════════════════════════════════════════════════
+// APPLICATION TRACKER · pipeline de candidatures (table Supabase "applications")
+// ══════════════════════════════════════════════════════════════
+let APPS = [];
+let TRK_EDIT = null;
+const TRK_LABELS = {saved:'Saved', applied:'Applied', interview:'Interview', offer:'Offer', closed:'Closed'};
+const TRK_ORDER  = ['interview','offer','applied','saved','closed'];
+const TRK_SQL = `create table if not exists public.applications (
+  id uuid primary key default gen_random_uuid(),
+  user_id uuid not null references auth.users(id) on delete cascade,
+  role text not null,
+  agency text, location text, url text, salary text,
+  status text not null default 'saved',
+  applied_on date, follow_up_on date, notes text,
+  created_at timestamptz default now(),
+  updated_at timestamptz default now()
+);
+alter table public.applications enable row level security;
+create policy "own applications" on public.applications
+  for all using (auth.uid() = user_id) with check (auth.uid() = user_id);
+create index if not exists applications_user_idx on public.applications(user_id);`;
+
+function trkToday(){ return new Date().toISOString().slice(0,10); }
+function trkDate(d){
+  if(!d) return '';
+  const dt=new Date(d+'T00:00:00');
+  if(isNaN(dt)) return '';
+  return dt.toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'});
+}
+function trkIsDue(a){
+  return a.follow_up_on && a.follow_up_on <= trkToday() && a.status!=='offer' && a.status!=='closed';
+}
+function trkShowSetup(){
+  const box=document.getElementById('trkSetup'); if(!box) return;
+  box.classList.remove('hidden');
+  box.innerHTML='<h4>One-time setup</h4><p>The tracker needs its table in Supabase. Open your Supabase project, go to the SQL Editor, paste this, and run it once. Then refresh this page.</p><pre>'+escapeHtml(TRK_SQL)+'</pre>';
+  const list=document.getElementById('trkList'); if(list) list.innerHTML='';
+  const head=document.querySelector('.trk-head'); if(head) head.style.display='none';
+}
+async function loadApplications(){
+  if(typeof USER==='undefined' || !USER) return;
+  try{
+    const {data,error} = await sb.from('applications').select('*').eq('user_id',USER.id).order('created_at',{ascending:false});
+    if(error){
+      if((error.code==='42P01') || /does not exist|schema cache/i.test(error.message||'')){ trkShowSetup(); return; }
+      throw error;
+    }
+    APPS = data||[];
+    renderTracker();
+  }catch(e){ console.warn('tracker indisponible', e); }
+}
+function renderTracker(){
+  const list=document.getElementById('trkList'); if(!list) return;
+  const stats=document.getElementById('trkStats');
+  const counts={saved:0,applied:0,interview:0,offer:0,closed:0};
+  APPS.forEach(a=>{ if(counts[a.status]!==undefined) counts[a.status]++; });
+  if(stats){
+    stats.innerHTML = ['applied','interview','offer','saved'].map(k=>
+      `<div class="trk-st${counts[k]?' on':''}"><span class="n">${counts[k]}</span><span class="l">${TRK_LABELS[k]}</span></div>`).join('');
+  }
+  const due = APPS.filter(trkIsDue);
+  const dueBox=document.getElementById('trkDue');
+  if(dueBox){
+    if(due.length){
+      dueBox.classList.remove('hidden');
+      dueBox.innerHTML = `<b>${due.length} follow-up${due.length>1?'s':''} due.</b> ${escapeHtml(due.map(a=>a.role+(a.agency?' at '+a.agency:'')).slice(0,3).join(' · '))}${due.length>3?' and more':''}`;
+    } else dueBox.classList.add('hidden');
+  }
+  if(!APPS.length){
+    list.innerHTML='<div class="trk-empty">Nothing tracked yet. Use <b>Track</b> on any role above, or add one by hand. A role you applied to and never followed up on is a role you did not really apply to.</div>';
+    return;
+  }
+  const sorted=[...APPS].sort((a,b)=>{
+    const d=(trkIsDue(b)?1:0)-(trkIsDue(a)?1:0); if(d) return d;
+    const o=TRK_ORDER.indexOf(a.status)-TRK_ORDER.indexOf(b.status); if(o) return o;
+    return (b.created_at||'').localeCompare(a.created_at||'');
+  });
+  list.innerHTML = sorted.map(a=>{
+    const meta=[a.agency?'<b>'+escapeHtml(a.agency)+'</b>':'', escapeHtml(a.location||''), escapeHtml(a.salary||'')].filter(Boolean).join(' · ');
+    const bits=[];
+    if(a.applied_on)   bits.push('Applied '+trkDate(a.applied_on));
+    if(a.follow_up_on) bits.push(`<span class="${trkIsDue(a)?'fu':''}">Follow up ${trkDate(a.follow_up_on)}</span>`);
+    return `<div class="trk-card${trkIsDue(a)?' due':''}">
+      <div>
+        <div class="trk-r">${escapeHtml(a.role)}</div>
+        ${meta?`<div class="trk-m">${meta}</div>`:''}
+        ${a.notes?`<div class="trk-n">${escapeHtml(a.notes)}</div>`:''}
+        ${bits.length?`<div class="trk-meta">${bits.join('')}</div>`:''}
+      </div>
+      <div class="trk-side">
+        <select class="trk-sel" data-s="${a.status}" data-id="${a.id}">
+          ${Object.keys(TRK_LABELS).map(k=>`<option value="${k}"${k===a.status?' selected':''}>${TRK_LABELS[k]}</option>`).join('')}
+        </select>
+        ${a.url?`<a class="trk-lnk" href="${escapeHtml(a.url)}" target="_blank" rel="noopener">Open listing</a>`:''}
+        <button class="trk-del" data-del="${a.id}">Remove</button>
+      </div>
+    </div>`;
+  }).join('');
+  list.querySelectorAll('.trk-sel').forEach(sel=>sel.addEventListener('change',()=>trkSetStatus(sel.dataset.id, sel.value)));
+  list.querySelectorAll('.trk-del').forEach(b=>b.addEventListener('click',()=>trkDelete(b.dataset.del)));
+}
+async function trkSetStatus(id,status){
+  const a=APPS.find(x=>x.id===id); if(!a) return;
+  a.status=status;
+  if(status==='applied' && !a.applied_on){
+    a.applied_on=trkToday();
+    if(!a.follow_up_on){ const d=new Date(); d.setDate(d.getDate()+7); a.follow_up_on=d.toISOString().slice(0,10); }
+  }
+  renderTracker();
+  await sb.from('applications').update({status:a.status,applied_on:a.applied_on,follow_up_on:a.follow_up_on,updated_at:new Date().toISOString()}).eq('id',id);
+}
+async function trkDelete(id){
+  APPS=APPS.filter(x=>x.id!==id); renderTracker();
+  await sb.from('applications').delete().eq('id',id);
+  document.querySelectorAll('.jtrack.done').forEach(b=>{ b.classList.remove('done'); b.textContent='Track'; });
+}
+function trkOpenForm(pref){
+  const f=document.getElementById('trkForm'); if(!f) return;
+  f.classList.remove('hidden');
+  document.getElementById('trkErr').textContent='';
+  const v=(id,val)=>{ document.getElementById(id).value = val||''; };
+  v('trkRole',pref&&pref.role); v('trkAgency',pref&&pref.agency); v('trkLoc',pref&&pref.location);
+  v('trkSalary',pref&&pref.salary); v('trkUrl',pref&&pref.url); v('trkNotes','');
+  v('trkApplied',''); v('trkFollow','');
+  document.getElementById('trkStatus').value=(pref&&pref.status)||'saved';
+  f.scrollIntoView({behavior:'smooth',block:'center'});
+  if(!pref) document.getElementById('trkRole').focus();
+}
+async function trkSave(){
+  const g=id=>document.getElementById(id).value.trim();
+  const err=document.getElementById('trkErr');
+  if(!g('trkRole')){ err.textContent='A role name is needed.'; return; }
+  if(!USER){ err.textContent='Sign in first.'; return; }
+  const row={ user_id:USER.id, role:g('trkRole'), agency:g('trkAgency')||null, location:g('trkLoc')||null,
+    salary:g('trkSalary')||null, url:g('trkUrl')||null, status:document.getElementById('trkStatus').value,
+    applied_on:g('trkApplied')||null, follow_up_on:g('trkFollow')||null, notes:g('trkNotes')||null };
+  if(row.status==='applied' && !row.applied_on) row.applied_on=trkToday();
+  const {data,error}=await sb.from('applications').insert(row).select().single();
+  if(error){
+    if((error.code==='42P01')||/does not exist|schema cache/i.test(error.message||'')){ trkShowSetup(); return; }
+    err.textContent=error.message; return;
+  }
+  APPS.unshift(data);
+  document.getElementById('trkForm').classList.add('hidden');
+  renderTracker();
+}
+function trkFromJob(region,i){
+  const j=(JOBS[region]||[])[i]; if(!j) return null;
+  return { role:j.title, agency:j.agency, location:[j.city,j.country].filter(Boolean).join(', '), salary:j.salary, url:j.url, status:'saved' };
+}
+function initTracker(){
+  const add=document.getElementById('trkAddBtn');
+  if(add && !add.dataset.on){ add.dataset.on='1'; add.addEventListener('click',()=>trkOpenForm(null)); }
+  const sv=document.getElementById('trkSaveBtn');
+  if(sv && !sv.dataset.on){ sv.dataset.on='1'; sv.addEventListener('click',trkSave); }
+  const cx=document.getElementById('trkCancelBtn');
+  if(cx && !cx.dataset.on){ cx.dataset.on='1'; cx.addEventListener('click',()=>document.getElementById('trkForm').classList.add('hidden')); }
+}
+
 // Boot du Journal : écran de chargement -> données live -> rendu
 async function bootJournal(){
   const box=document.getElementById('journalList');
@@ -4096,7 +4348,7 @@ function renderJobs(region){
   const list=document.getElementById('jobList');list.innerHTML="";
   const arr = JOBS[region]||[];
   document.getElementById('jobCount').textContent = arr.length + (arr.length===1?' live role':' live roles');
-  arr.forEach(j=>{
+  arr.forEach((j,idx)=>{
     const el=document.createElement('a');
     el.className="job";
     el.href=j.url; el.target="_blank"; el.rel="noopener";
@@ -4111,11 +4363,17 @@ function renderJobs(region){
       </div>
       <div class="job-sal">
         <div class="amt">${escapeHtml(j.salary)}</div>
-        <div class="per">Posted ${escapeHtml(j.posted)}</div>
+        <div class="per">${escapeHtml(j.posted)}</div>
         <span class="japply">View &amp; apply ${ICO_EXT}</span>
+        <button class="jtrack" data-region="${region}" data-i="${idx}">Track</button>
       </div>`;
     list.appendChild(el);
   });
+  list.querySelectorAll('.jtrack').forEach(b=>b.addEventListener('click',e=>{
+    e.preventDefault(); e.stopPropagation();
+    const pref=trkFromJob(b.dataset.region, +b.dataset.i);
+    if(pref){ trkOpenForm(pref); b.classList.add('done'); b.textContent='Added below'; }
+  }));
 }
 
 function renderJobBoards(){
@@ -5281,6 +5539,7 @@ function goPage(name, scrollTo){
   window.scrollTo(0,0);
   if(name==='messages'){ loadAvatarDirectory().then(()=>{ loadCommunity(); loadDmConversations(); }); loadCommunity(); loadMessages(false); updateConvPreviews(); loadDmConversations(); if(window.innerWidth>820){ selectConv(document.getElementById('waApp').dataset.active||'community'); } }
   if(name==='journal'){ bootJournal(); }
+  if(name==='career'){ initTracker(); loadApplications(); }
   if(name==='register'){ renderRegister(); }
   if(name==='screening'){ renderScreening(); }
   if(name==='practice'){ renderPractice(); if(!Object.keys(PR_DRILLS).length){ loadDrills().then(()=>{ try{ renderPractice(); }catch(e){} }); } }
