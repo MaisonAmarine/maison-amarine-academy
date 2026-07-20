@@ -4,11 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Maison Amarine, The Academy</title>
-<link rel="icon" type="image/svg+xml" href="favicon.svg">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
-<meta name="theme-color" content="#211C15">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@500;600;700&family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -1998,6 +1993,10 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke-linejoin="round"/><path d="M14 2v6h6"/><path d="M9 15l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
         Deliverables
       </div>
+      <div class="nav-item adm-nav" data-page="admapps" style="display:none;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" stroke-linecap="round"/><circle cx="9" cy="7" r="4"/><path d="M17 8l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Applications
+      </div>
       <div class="nav-item adm-nav" data-page="admsettings" style="display:none;">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M5 19l2-2M17 7l2-2" stroke-linecap="round"/></svg>
         Settings
@@ -2608,6 +2607,31 @@
         <table>
           <thead><tr><th>Student</th><th>Week</th><th>File</th><th>Sent</th><th></th></tr></thead>
           <tbody id="admSubRows"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ============ ADMIN: APPLICATIONS ============ -->
+    <section class="page hidden" id="page-admapps">
+      <div class="page-h"><div><div class="eyebrow">Admin</div><h1>Applications</h1><p>Every person who filled in the selection questionnaire, qualified or not, newest first. Open one to read all of their answers before the call.</p></div></div>
+      <div class="adm-stats" id="admAppStats"></div>
+      <div class="adm-panel">
+        <div class="adm-panel-head">
+          <h3>All applications</h3>
+          <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
+            <div class="apx-filters">
+              <button class="apx-f on" data-f="all" onclick="admAppFilter('all')">All</button>
+              <button class="apx-f" data-f="yes" onclick="admAppFilter('yes')">Qualified</button>
+              <button class="apx-f" data-f="no" onclick="admAppFilter('no')">Not selected</button>
+            </div>
+            <div class="adm-search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4" stroke-linecap="round"/></svg><input type="text" id="admAppSearch" placeholder="Name, email, country..." oninput="admRenderApps()"></div>
+            <button class="adm-btn ghost" onclick="admAppsCsv()">Export CSV</button>
+            <button class="adm-btn ghost" onclick="admLoadApps(true)">Refresh</button>
+          </div>
+        </div>
+        <table>
+          <thead><tr><th>Name</th><th>Contact</th><th>Location</th><th>Outcome</th><th>Received</th><th></th></tr></thead>
+          <tbody id="admAppRows"></tbody>
         </table>
       </div>
     </section>
@@ -6420,6 +6444,141 @@ sb.auth.onAuthStateChange((event, session)=>{
 })();
 </script>
 <div id="toast"></div>
+<style>
+  /* ============ ADMIN: APPLICATIONS ============ */
+  .apx-filters{display:flex;gap:5px;background:var(--ivory);border:1px solid var(--line);border-radius:22px;padding:4px;}
+  .apx-f{font-family:'Jost',sans-serif;font-size:12.5px;font-weight:600;color:var(--stone);background:none;border:none;border-radius:18px;padding:7px 15px;cursor:pointer;transition:background .18s,color .18s;}
+  .apx-f.on{background:var(--gold);color:#fff;}
+  .apx-tag{display:inline-block;font-family:'Jost',sans-serif;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;border-radius:20px;padding:5px 12px;}
+  .apx-tag.yes{background:var(--gold-wash);color:var(--gold-deep);border:1px solid var(--gold-lt);}
+  .apx-tag.no{background:#F6F2EA;color:var(--stone);border:1px solid var(--line);}
+  .apx-mask{position:fixed;inset:0;z-index:400;background:rgba(20,16,12,.55);-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);display:none;align-items:flex-start;justify-content:center;padding:34px 20px;overflow-y:auto;}
+  .apx-mask.on{display:flex;}
+  .apx-card{background:var(--paper);border-radius:20px;max-width:720px;width:100%;padding:34px 36px 30px;box-shadow:0 24px 60px rgba(20,16,12,.28);}
+  .apx-x{float:right;background:none;border:none;font-size:26px;line-height:1;color:var(--stone);cursor:pointer;}
+  .apx-k{font-family:'Jost',sans-serif;font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;}
+  .apx-card h2{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:500;color:var(--ink);margin:0 0 6px;}
+  .apx-meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:20px 0 24px;padding:18px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .apx-m-k{font-family:'Jost',sans-serif;font-size:10.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--stone);margin-bottom:5px;}
+  .apx-m-v{font-size:15px;color:var(--ink);word-break:break-word;}
+  .apx-m-v a{color:var(--gold-deep);text-decoration:none;}
+  .apx-q{padding:14px 0;border-bottom:1px solid var(--line);}
+  .apx-q:last-child{border-bottom:none;}
+  .apx-q-q{font-size:14px;color:var(--stone);line-height:1.5;margin-bottom:5px;}
+  .apx-q-a{font-family:'Cormorant Garamond',serif;font-size:19px;color:var(--ink);line-height:1.4;}
+  .apx-empty{padding:34px;text-align:center;color:var(--stone);font-size:14.5px;}
+</style>
+
+<div class="apx-mask" id="apxMask" onclick="if(event.target===this) admAppClose()">
+  <div class="apx-card" id="apxCard"></div>
+</div>
+
+<script>
+/* ============ ADMIN: les candidatures du questionnaire ============ */
+let ADM_APPS = [];
+let ADM_APP_F = 'all';
+async function admLoadApps(force){
+  const rows=document.getElementById('admAppRows'); if(!rows) return;
+  if(ADM_APPS.length && !force) return admRenderApps();
+  rows.innerHTML='<tr><td colspan="6" class="apx-empty">Loading applications...</td></tr>';
+  const {data,error}=await sb.from('applications').select('*').order('created_at',{ascending:false});
+  if(error){
+    rows.innerHTML='<tr><td colspan="6" class="apx-empty">The applications table is not set up yet. Run the SQL from the setup note in Supabase, and this fills in on its own.</td></tr>';
+    return;
+  }
+  ADM_APPS = data||[];
+  admRenderApps();
+}
+function admAppFilter(f){
+  ADM_APP_F=f;
+  document.querySelectorAll('.apx-f').forEach(b=>b.classList.toggle('on', b.dataset.f===f));
+  admRenderApps();
+}
+function admAppList(){
+  const q=(document.getElementById('admAppSearch')||{}).value||'';
+  const s=q.trim().toLowerCase();
+  return ADM_APPS.filter(a=>{
+    if(ADM_APP_F==='yes' && !a.qualified) return false;
+    if(ADM_APP_F==='no' && a.qualified) return false;
+    if(!s) return true;
+    return [a.first_name,a.last_name,a.email,a.city,a.country,a.phone].join(' ').toLowerCase().indexOf(s)>=0;
+  });
+}
+function admAppDate(t){
+  if(!t) return '';
+  try{ return new Date(t).toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'})+', '+new Date(t).toLocaleTimeString('en-GB',{hour:'2-digit',minute:'2-digit'}); }
+  catch(e){ return String(t).slice(0,16); }
+}
+function admRenderApps(){
+  const rows=document.getElementById('admAppRows'); if(!rows) return;
+  const st=document.getElementById('admAppStats');
+  if(st){
+    const tot=ADM_APPS.length, yes=ADM_APPS.filter(a=>a.qualified).length;
+    const rate = tot ? Math.round(yes/tot*100) : 0;
+    st.innerHTML=`<div class="adm-stat"><div class="adm-stat-n">${tot}</div><div class="adm-stat-l">Applications received</div></div>
+      <div class="adm-stat"><div class="adm-stat-n">${yes}</div><div class="adm-stat-l">Qualified</div></div>
+      <div class="adm-stat"><div class="adm-stat-n">${tot-yes}</div><div class="adm-stat-l">Not selected</div></div>
+      <div class="adm-stat"><div class="adm-stat-n">${rate}<span>%</span></div><div class="adm-stat-l">Qualification rate</div></div>`;
+  }
+  const list=admAppList();
+  if(!list.length){ rows.innerHTML='<tr><td colspan="6" class="apx-empty">No application matches this view yet.</td></tr>'; return; }
+  rows.innerHTML=list.map(a=>{
+    const name=((a.first_name||'')+' '+(a.last_name||'')).trim()||'Unnamed';
+    const loc=[a.city,a.country].filter(Boolean).join(', ');
+    return `<tr>
+      <td><b>${escapeHtml(name)}</b></td>
+      <td>${escapeHtml(a.email||'')}<br><span style="color:var(--stone);font-size:13px;">${escapeHtml(a.phone||'')}</span></td>
+      <td>${escapeHtml(loc)}</td>
+      <td><span class="apx-tag ${a.qualified?'yes':'no'}">${a.qualified?'Qualified':'Not selected'}</span></td>
+      <td style="color:var(--stone);font-size:13.5px;">${escapeHtml(admAppDate(a.created_at))}</td>
+      <td><button class="adm-btn ghost" onclick="admAppOpen('${a.id}')">Read answers</button></td>
+    </tr>`;
+  }).join('');
+}
+function admAppOpen(id){
+  const a=ADM_APPS.find(x=>String(x.id)===String(id)); if(!a) return;
+  const name=((a.first_name||'')+' '+(a.last_name||'')).trim()||'Unnamed';
+  let ans=a.answers;
+  if(typeof ans==='string'){ try{ ans=JSON.parse(ans); }catch(e){ ans=[]; } }
+  if(!Array.isArray(ans)) ans=[];
+  const qs = ans.length
+    ? ans.map(x=>`<div class="apx-q"><div class="apx-q-q">${escapeHtml(x.question||('Question '+x.step))}</div><div class="apx-q-a">${escapeHtml(x.answer||'')}</div></div>`).join('')
+    : '<div class="apx-empty">No answers were recorded for this application.</div>';
+  document.getElementById('apxCard').innerHTML=`
+    <button class="apx-x" onclick="admAppClose()">&times;</button>
+    <div class="apx-k">${a.qualified?'Qualified':'Not selected'}</div>
+    <h2>${escapeHtml(name)}</h2>
+    <div class="apx-meta">
+      <div><div class="apx-m-k">Email</div><div class="apx-m-v"><a href="mailto:${escapeHtml(a.email||'')}">${escapeHtml(a.email||'')}</a></div></div>
+      <div><div class="apx-m-k">Phone</div><div class="apx-m-v">${escapeHtml(a.phone||'')}</div></div>
+      <div><div class="apx-m-k">Location</div><div class="apx-m-v">${escapeHtml([a.city,a.country].filter(Boolean).join(', '))}</div></div>
+      <div><div class="apx-m-k">Received</div><div class="apx-m-v">${escapeHtml(admAppDate(a.created_at))}</div></div>
+    </div>
+    ${qs}`;
+  document.getElementById('apxMask').classList.add('on');
+}
+function admAppClose(){ document.getElementById('apxMask').classList.remove('on'); }
+function admAppsCsv(){
+  const list=admAppList();
+  const head=['First name','Last name','Email','Phone','City','Country','Outcome','Received'];
+  const maxQ=list.reduce((m,a)=>{ let n=a.answers; if(typeof n==='string'){ try{ n=JSON.parse(n); }catch(e){ n=[]; } } return Math.max(m,(n||[]).length); },0);
+  for(let i=1;i<=maxQ;i++) head.push('Q'+i);
+  const esc=v=>'"'+String(v==null?'':v).replace(/"/g,'""')+'"';
+  const lines=[head.map(esc).join(',')];
+  list.forEach(a=>{
+    let ans=a.answers; if(typeof ans==='string'){ try{ ans=JSON.parse(ans); }catch(e){ ans=[]; } }
+    const row=[a.first_name,a.last_name,a.email,a.phone,a.city,a.country,a.qualified?'Qualified':'Not selected',admAppDate(a.created_at)];
+    for(let i=0;i<maxQ;i++){ const x=(ans||[])[i]; row.push(x?((x.question||'')+' -> '+(x.answer||'')):''); }
+    lines.push(row.map(esc).join(','));
+  });
+  const blob=new Blob(['﻿'+lines.join('\r\n')],{type:'text/csv;charset=utf-8;'});
+  const url=URL.createObjectURL(blob), link=document.createElement('a');
+  link.href=url; link.download='maison-amarine-applications.csv';
+  document.body.appendChild(link); link.click(); document.body.removeChild(link);
+  setTimeout(()=>URL.revokeObjectURL(url),1000);
+}
+</script>
+
 <!-- ============ ADMIN MODALS ============ -->
 <div class="adm-overlay" id="admOverlay">
   <div class="adm-modal">
@@ -7018,6 +7177,7 @@ const ADM_PAGES=['admdash','admstudents','admcourses','admsubs','admsettings'];
       admLoadStudents(false).then(()=>{
         admRenderStudents();
         if(name==='admdash') admRenderDash();
+        if(name==='admapps') admLoadApps();
         if(name==='admsubs') admRenderSubs();
       });
       if(name==='admcourses') admLoadCourses(false);
