@@ -2005,6 +2005,7 @@
 
 
 
+
 </nav>
   </aside>
 
@@ -2657,6 +2658,7 @@
       </div>
     </section>
   
+
 
 
 
@@ -4997,6 +4999,8 @@ function lsnFigureHTML(weekNo,seed){ const L=lsnList(weekNo); const n=Math.abs(s
 function lsnLeafPositions(bodyhtml){ const re=/<\/(p|ul|ol)>/g; let m,pos=[]; while((m=re.exec(bodyhtml))) pos.push(m.index+m[0].length); return pos; }
 // intercale 1 (ou 2 pour les longs chapitres) image(s) du thème de la semaine, en variant la position : haut / milieu / fin
 function lsnInjectFigures(bodyhtml, weekNo, i){
+  // pas de photo dans le module d'introduction (ouvert avec stepIdx -1)
+  if(typeof svCur!=='undefined' && svCur && svCur.stepIdx===-1) return bodyhtml;
   if(bodyhtml.indexOf('class="lsn-case"')>=0) return bodyhtml;  // pas de photo dans les chapitres à cases
   const pos=lsnLeafPositions(bodyhtml), L=pos.length;
   if(L<3) return bodyhtml;                       // chapitre trop court : aucune image
@@ -7202,6 +7206,7 @@ const ADM_PAGES=['admdash','admstudents','admcourses','admsubs','admsettings'];
   tick();
 })();
 </script>
+
 
 
 
