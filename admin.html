@@ -913,6 +913,8 @@
   .lsn-dbf[hidden]{display:none;}
   .lsn-dbf-k{font-family:'Jost',sans-serif;font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:8px;}
   .lsn-dbf .lsn-para{font-size:18px;line-height:1.62;margin:0 0 10px;}
+  .lsn-case-task ul{margin:6px 0 0;padding-left:18px;}
+  .lsn-case-task li{margin-bottom:6px;line-height:1.55;}
   .lsn-case-task{margin-top:18px;background:var(--gold-wash);border-radius:12px;padding:16px 20px;}
   .lsn-case-solo{padding:0;border:none;box-shadow:none;background:none;}
   .lsn-case-solo .lsn-case-task{margin-top:6px;}
@@ -2006,6 +2008,7 @@
 
 
 
+
 </nav>
   </aside>
 
@@ -2658,6 +2661,7 @@
       </div>
     </section>
   
+
 
 
 
@@ -5028,7 +5032,8 @@ function buildDebriefMap(secs){
     if(!/debrief/i.test(sec.heading||'')) return;
     let cur=null, found=0;
     (sec.paras||[]).forEach(p=>{
-      const m=p.match(/^([IVXLC]{1,5})\s*·\s*([\s\S]+)$/);
+      // l'entrée peut s'écrire "I · Titre", "**I · Titre**" ou "**I · Titre.** suite"
+      const m=p.replace(/\*\*/g,'').trim().match(/^([IVXLC]{1,5}|\d{1,3})\s*·\s*([\s\S]+)$/);
       if(m){ found++; const parts=svTitleSplit(m[2].trim()); cur={paras:[]}; map[m[1].toUpperCase()]={title:parts[0], paras:cur.paras}; if(parts[1]) cur.paras.push(parts[1]); }
       else if(cur){ cur.paras.push(p); }
     });
@@ -5100,11 +5105,13 @@ function svOpenSection(i){
     // "· · ·" = la consigne / les questions d'un cas
     const taskM=p.match(/^\*\*[·•\s.]+\*\*\s*([\s\S]*)$/);
     if(taskM){ tokens.push({t:'task', v:taskM[1].trim()}); return; }
+    // le titre peut s'écrire "Case I · Titre", "**Case I · Titre**" ou "**Case I · Titre.** suite"
+    const pU = /^\*\*\s*(?:Case|Scenario)?\s*[IVXLC\d]{1,5}\s*·/i.test(p) ? p.replace(/\*\*/g,'').trim() : p;
     // "Case I · ..." = un cas -> carte
-    const caseM=p.match(/^Case\s+([IVXLC\d]+)\s*·\s*([\s\S]+)$/i);
+    const caseM=pU.match(/^(?:Case|Scenario)\s+([IVXLC\d]+)\s*·\s*([\s\S]+)$/i);
     if(caseM){ const [ti,rest]=titleSplit(caseM[2].trim()); tokens.push({t:'case', label:'Case '+caseM[1].toUpperCase(), title:ti, v:rest}); return; }
-    // "I · ..." (débrief, numéro romain) -> sous-titre
-    const romanM=p.match(/^([IVXLC]{1,5})\s*·\s*([\s\S]+)$/);
+    // "I · ..." (débrief, numéro romain ou arabe) -> sous-titre
+    const romanM=pU.match(/^([IVXLC]{1,5}|\d{1,3})\s*·\s*([\s\S]+)$/);
     if(romanM){ const [ti,rest]=titleSplit(romanM[2].trim()); if(ti){ tokens.push({t:'roman', label:romanM[1], title:ti, v:rest}); return; } }
     const en=splitEnum(p);
     if(en){ if(en.lead) tokens.push({t:'p', v:en.lead}); en.list.forEach(it=>tokens.push({t:'li', num:it.num, v:it.text})); return; }
@@ -5125,9 +5132,17 @@ function svOpenSection(i){
     const tk=tokens[j];
     if(tk.t==='case'){
       let inner=`<div class="lsn-case-head"><span class="lsn-case-k">${escapeHtml(tk.label)}</span>${tk.title?`<span class="lsn-case-t">${escapeHtml(tk.title)}</span>`:''}</div>`;
-      if(tk.v) inner+=`<div class="lsn-case-scn">${mdInline(tk.v)}</div>`;
+      // le scénario peut suivre le titre dans des paragraphes séparés
+      const scn=[]; if(tk.v) scn.push(tk.v);
+      while(tokens[j+1] && tokens[j+1].t==='p'){ scn.push(tokens[j+1].v); j++; }
+      if(scn.length) inner+=`<div class="lsn-case-scn">${scn.map(x=>`<p>${mdInline(x)}</p>`).join('')}</div>`;
       if(tokens[j+1] && tokens[j+1].t==='task'){ inner+=`<div class="lsn-case-task"><span class="lsn-task-k">Your task</span><div>${mdInline(tokens[j+1].v)}</div></div>`; j++; }
-      { const _n=(tk.label.match(/Case\s+([IVXLC\d]+)/i)||[])[1]; const _k=_n?_n.toUpperCase():''; const _e=svCur.debrief&&svCur.debrief[_k]; if(_e){ const _id='dbf_'+i+'_'+_k; inner+=`<button class="lsn-dbf-btn" onclick="toggleDebrief('${_id}',this)"><span class="dbf-lbl">Reveal the debrief</span>${DBF_CHEV}</button><div class="lsn-dbf" id="${_id}" hidden><div class="lsn-dbf-k">Debrief</div>${debriefHTML(_e)}</div>`; } }
+      else if(tokens[j+1] && tokens[j+1].t==='li'){
+        // les questions du cas peuvent être écrites en puces : on les remet dans l'encadré
+        const q=[]; while(tokens[j+1] && tokens[j+1].t==='li'){ q.push(tokens[j+1].v); j++; }
+        inner+=`<div class="lsn-case-task"><span class="lsn-task-k">Your task</span><ul>${q.map(x=>`<li>${mdInline(x)}</li>`).join('')}</ul></div>`;
+      }
+      { const _n=(tk.label.match(/(?:Case|Scenario)\s+([IVXLC\d]+)/i)||[])[1]; const _k=_n?_n.toUpperCase():''; const _e=svCur.debrief&&svCur.debrief[_k]; if(_e){ const _id='dbf_'+i+'_'+_k; inner+=`<button class="lsn-dbf-btn" onclick="toggleDebrief('${_id}',this)"><span class="dbf-lbl">Reveal the debrief</span>${DBF_CHEV}</button><div class="lsn-dbf" id="${_id}" hidden><div class="lsn-dbf-k">Debrief</div>${debriefHTML(_e)}</div>`; } }
       bodyhtml+=`<div class="lsn-case">${inner}</div>`; afterLabel=false; j++; continue;
     }
     if(tk.t==='task'){
@@ -5136,7 +5151,7 @@ function svOpenSection(i){
     if(tk.t==='roman'){
       bodyhtml+=`<h3 class="lsn-subhead lsn-roman"><span class="lsn-roman-n">${escapeHtml(tk.label)}</span>${escapeHtml(tk.title)}</h3>`;
       if(tk.v) bodyhtml+=`<p class="lsn-para">${mdInline(tk.v)}</p>`;
-      { const _k=(tk.label||'').toUpperCase(); const _e=svCur.debrief&&svCur.debrief[_k]; if(_e){ const _id='dbf_'+i+'_r'+_k; bodyhtml+=`<button class="lsn-dbf-btn" onclick="toggleDebrief('${_id}',this)"><span class="dbf-lbl">Reveal the debrief</span>${DBF_CHEV}</button><div class="lsn-dbf" id="${_id}" hidden><div class="lsn-dbf-k">Debrief</div>${debriefHTML(_e)}</div>`; } }
+      { const _k=null; const _e=null; if(_e){ const _id='dbf_'+i+'_r'+_k; bodyhtml+=`<button class="lsn-dbf-btn" onclick="toggleDebrief('${_id}',this)"><span class="dbf-lbl">Reveal the debrief</span>${DBF_CHEV}</button><div class="lsn-dbf" id="${_id}" hidden><div class="lsn-dbf-k">Debrief</div>${debriefHTML(_e)}</div>`; } }
       afterLabel=false; j++; continue;
     }
     if(tk.t==='dek'){ bodyhtml+=`<p class="lsn-dek">${mdInline(tk.v)}</p>`; j++; continue; }
@@ -7206,6 +7221,7 @@ const ADM_PAGES=['admdash','admstudents','admcourses','admsubs','admsettings'];
   tick();
 })();
 </script>
+
 
 
 
