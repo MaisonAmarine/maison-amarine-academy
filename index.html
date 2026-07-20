@@ -4679,7 +4679,7 @@ function buildDebriefMap(secs){
     if(!/debrief/i.test(sec.heading||'')) return;
     let cur=null, found=0;
     (sec.paras||[]).forEach(p=>{
-      const m=p.match(/^([IVXLC]{1,5})\s*·\s*([\s\S]+)$/);
+      const m=p.match(/^([IVXLC]{1,5}|\d{1,3})\s*·\s*([\s\S]+)$/);
       if(m){ found++; const parts=svTitleSplit(m[2].trim()); cur={paras:[]}; map[m[1].toUpperCase()]={title:parts[0], paras:cur.paras}; if(parts[1]) cur.paras.push(parts[1]); }
       else if(cur){ cur.paras.push(p); }
     });
@@ -4752,10 +4752,10 @@ function svOpenSection(i){
     const taskM=p.match(/^\*\*[·•\s.]+\*\*\s*([\s\S]*)$/);
     if(taskM){ tokens.push({t:'task', v:taskM[1].trim()}); return; }
     // "Case I · ..." = un cas -> carte
-    const caseM=p.match(/^Case\s+([IVXLC\d]+)\s*·\s*([\s\S]+)$/i);
+    const caseM=p.match(/^(?:Case|Scenario)\s+([IVXLC\d]+)\s*·\s*([\s\S]+)$/i);
     if(caseM){ const [ti,rest]=titleSplit(caseM[2].trim()); tokens.push({t:'case', label:'Case '+caseM[1].toUpperCase(), title:ti, v:rest}); return; }
     // "I · ..." (débrief, numéro romain) -> sous-titre
-    const romanM=p.match(/^([IVXLC]{1,5})\s*·\s*([\s\S]+)$/);
+    const romanM=p.match(/^([IVXLC]{1,5}|\d{1,3})\s*·\s*([\s\S]+)$/);
     if(romanM){ const [ti,rest]=titleSplit(romanM[2].trim()); if(ti){ tokens.push({t:'roman', label:romanM[1], title:ti, v:rest}); return; } }
     const en=splitEnum(p);
     if(en){ if(en.lead) tokens.push({t:'p', v:en.lead}); en.list.forEach(it=>tokens.push({t:'li', num:it.num, v:it.text})); return; }
@@ -4778,7 +4778,7 @@ function svOpenSection(i){
       let inner=`<div class="lsn-case-head"><span class="lsn-case-k">${escapeHtml(tk.label)}</span>${tk.title?`<span class="lsn-case-t">${escapeHtml(tk.title)}</span>`:''}</div>`;
       if(tk.v) inner+=`<div class="lsn-case-scn">${mdInline(tk.v)}</div>`;
       if(tokens[j+1] && tokens[j+1].t==='task'){ inner+=`<div class="lsn-case-task"><span class="lsn-task-k">Your task</span><div>${mdInline(tokens[j+1].v)}</div></div>`; j++; }
-      { const _n=(tk.label.match(/Case\s+([IVXLC\d]+)/i)||[])[1]; const _k=_n?_n.toUpperCase():''; const _e=svCur.debrief&&svCur.debrief[_k]; if(_e){ const _id='dbf_'+i+'_'+_k; inner+=`<button class="lsn-dbf-btn" onclick="toggleDebrief('${_id}',this)"><span class="dbf-lbl">Reveal the debrief</span>${DBF_CHEV}</button><div class="lsn-dbf" id="${_id}" hidden><div class="lsn-dbf-k">Debrief</div>${debriefHTML(_e)}</div>`; } }
+      { const _n=(tk.label.match(/(?:Case|Scenario)\s+([IVXLC\d]+)/i)||[])[1]; const _k=_n?_n.toUpperCase():''; const _e=svCur.debrief&&svCur.debrief[_k]; if(_e){ const _id='dbf_'+i+'_'+_k; inner+=`<button class="lsn-dbf-btn" onclick="toggleDebrief('${_id}',this)"><span class="dbf-lbl">Reveal the debrief</span>${DBF_CHEV}</button><div class="lsn-dbf" id="${_id}" hidden><div class="lsn-dbf-k">Debrief</div>${debriefHTML(_e)}</div>`; } }
       bodyhtml+=`<div class="lsn-case">${inner}</div>`; afterLabel=false; j++; continue;
     }
     if(tk.t==='task'){
