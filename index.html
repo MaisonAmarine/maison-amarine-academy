@@ -4751,9 +4751,11 @@ function svOpenSection(i){
   const tokens=[];
   x.paras.forEach(p=>{
     if(/^\*\*[^*]+\*\*$/.test(p)){ tokens.push({t:'bold', v:p.replace(/^\*\*/,'').replace(/\*\*$/,'').trim()}); return; }
-    // "· · ·" = la consigne / les questions d'un cas
-    const taskM=p.match(/^\*\*[·•\s.]+\*\*\s*([\s\S]*)$/);
-    if(taskM){ tokens.push({t:'task', v:taskM[1].trim()}); return; }
+    // "**· · ·.**" (plusieurs puces) = la consigne d'un cas ; "**·.**" (une seule) = une puce de liste
+    const taskM=p.match(/^\*\*([·•]\s*){2,}\.?\*\*\s*([\s\S]*)$/);
+    if(taskM){ tokens.push({t:'task', v:taskM[2].trim()}); return; }
+    const bulM=p.match(/^\*\*[·•]\s*\.?\*\*\s*([\s\S]+)$/);
+    if(bulM){ tokens.push({t:'li', bullet:true, v:bulM[1].trim()}); return; }
     // le titre peut s'écrire "Case I · Titre", "**Case I · Titre**" ou "**Case I · Titre.** suite"
     const pU = /^\*\*\s*(?:Case|Scenario)?\s*[IVXLC\d]{1,5}\s*·/i.test(p) ? p.replace(/\*\*/g,'').trim() : p;
     // "Case I · ..." = un cas -> carte
@@ -4767,7 +4769,8 @@ function svOpenSection(i){
     const single=p.match(/^(\d{1,2})\.\s+([\s\S]+)$/);
     if(single){ tokens.push({t:'li', num:parseInt(single[1],10), v:single[2].trim()}); return; }
     const bul=p.match(/^[-•]\s+([\s\S]+)$/);
-    if(bul){ tokens.push({t:'li', bullet:true, v:bul[1].trim()}); return; }
+    if(bul){ // un bloc de plusieurs puces "- a\n- b\n- c" devient plusieurs éléments
+      p.split(/\n\s*[-•]\s+/).map((x,k)=>k===0?x.replace(/^[-•]\s+/,''):x).forEach(function(v){ if(v.trim()) tokens.push({t:'li', bullet:true, v:v.trim()}); }); return; }
     // ligne entièrement en italique = chapeau/sous-titre
     if(/^\*[^*][\s\S]*\*$/.test(p) && !/\*\*/.test(p)){ tokens.push({t:'dek', v:p.replace(/^\*/,'').replace(/\*$/,'').trim()}); return; }
     // "**Terme.** description" = ligne d'un tableau terme / définition
