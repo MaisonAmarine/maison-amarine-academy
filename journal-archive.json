@@ -1,5 +1,104 @@
 [
   {
+    "no": "No. 8",
+    "date": "Wednesday, 22 July 2026",
+    "strap": "A daily dispatch from the world you are entering",
+    "lead": {
+      "cat": "The Private World",
+      "place": "New York, United States",
+      "tag": "The health brief",
+      "title": "Health moves into the household, and the person who runs the house is asked to run the longevity plan",
+      "standfirst": "As the very wealthy put longevity at the centre of their planning, the coordination of doctors, clinics and recovery is quietly becoming a task for the estate, not just the family office.",
+      "body": "Bank of America's 2025 Study of Wealthy Americans found that longer lives and an accelerating transfer of wealth are together making family finances more complex, with more members, more decades and more moving parts to hold in view at once. The headline is financial, but the consequence lands squarely inside the house. When a principal expects to live and work well into a tenth decade, the calendar fills not only with meetings and travel but with scans, specialists, recovery windows and the discreet logistics of keeping a body in working order.\n\nA parallel shift is visible in the market for private medicine. Longevity clinics, offering full-body imaging, hormonal and metabolic panels, sleep optimisation and preventative screening, have moved from the fringe to the centre of how many ultra-high-net-worth individuals now think about their time. Health has become a status good in its own right, and the appointments are as jealously guarded as any board seat. What used to be an annual physical is now a standing programme, with data, protocols and a small roster of practitioners attached to it.\n\nNone of this coordinates itself. Increasingly it is the house manager, the private personal assistant or the family concierge who books the imaging slot in one city and the consultant in another, who moves the recovery week around the travel schedule, who briefs a new private nurse and who keeps the medical file as carefully as the wine cellar log. The work sits at the intersection of the most sensitive information in the household and the most unforgiving logistics, and it rewards absolute discretion.\n\nThe same theme is reshaping the clubs the wealthy join. Wellness suites, longevity programmes and resident medical experts are now central to what a modern private membership is expected to deliver, a sign of where attention and spending are moving. For anyone entering private service, the message is plain. Fluency in the language of health, from the vocabulary of a longevity protocol to the etiquette of handling a medical record, is fast becoming part of the core skill set, not a specialism at the edge of it.",
+      "why": "The house is being asked to manage the principal's health as carefully as the estate. Comfort with medical logistics and absolute discretion around health data are becoming central to senior private roles.",
+      "src": "Bank of America Private Bank; InsideHook",
+      "url": "https://www.prnewswire.com/news-releases/bofa-study-finds-longevity-and-accelerating-wealth-transfer-are-making-family-finances-more-complex-302802713.html"
+    },
+    "articles": [
+      {
+        "cat": "The Craft",
+        "place": "Dubai, United Arab Emirates",
+        "tag": "The talent drain",
+        "section": "The Craft",
+        "title": "The Gulf starts hiring the people who run London and New York houses, and pay follows them east",
+        "body": "The Morgan & Mallet Household Staff Industry Report 2026 places housekeepers, private chefs, nannies and estate managers at the top of demand across the United States, with the number of qualified candidates growing far more slowly than the number of houses that need them. That gap alone would push pay upward. What is new is where the competition now comes from.\n\nThe report singles out Dubai and other low-tax jurisdictions as active buyers of English-speaking senior staff, drawing experienced house managers and estate managers away from established markets in London and the United States. For a principal in the Gulf, the appeal is obvious. Tax-free packages, a fast-growing base of resident wealth and a preference for staff who can move seamlessly between cultures make a seasoned London-trained house manager a prize worth paying for.\n\nThe effect on wages is straightforward. A senior estate or house manager running multiple properties now commonly commands a six-figure salary, and employers are offering increases above the general market simply to keep the people they already have. The counter-offer, once unusual, has become a standard feature of any resignation conversation at the top of the profession.\n\nTraining sits underneath all of it. The most sought-after profile remains the hybrid, a former butler who has grown into house management, or a house manager with formal service training behind them, often from a name such as The Savoy or Claridge's. As demand spreads geographically, that formal grounding becomes the credential that travels, the thing that lets a candidate command a Gulf package as readily as a London one.\n\nFor those entering the field, the map has widened. The best households are no longer only in a handful of Western cities, and the career now runs across jurisdictions, currencies and climates. Mobility, cultural range and a portable qualification are becoming as valuable as the length of a reference.",
+        "why": "The competition for senior staff has gone global, and the Gulf is now bidding directly for London and New York talent. Formal training and willingness to relocate are becoming the levers that set a career apart.",
+        "src": "Morgan & Mallet Household Staff Industry Report 2026",
+        "url": "https://www.householdstaff.agency/"
+      },
+      {
+        "cat": "The Market",
+        "place": "London, United Kingdom",
+        "tag": "Tokyo runs away",
+        "section": "The Market",
+        "title": "Prime property rises again across the world, and the surprise of the year is Tokyo",
+        "body": "Knight Frank's Prime International Residential Index, the firm's measure of luxury home values across 100 of the world's leading markets, rose by 3.2 per cent on average through 2025, a shade below the 3.6 per cent recorded the year before but still comfortably positive. Of the 100 markets tracked, 73 rose in value and 24 fell, a spread that points to a market climbing steadily rather than surging.\n\nThe standout was Tokyo, where prime values jumped by 58.5 per cent. A weak yen turned Japanese trophy homes into an obvious value play for buyers holding dollars, and demand for new-build luxury in the capital followed the currency. It is a reminder that in prime property the exchange rate can matter as much as the address, and that a shift in currency can redraw the map of where the wealthy choose to buy.\n\nDubai extended its run with a 25.1 per cent rise, keeping its place as the most active super-prime hub in the world and reinforcing the pull that is also drawing staff and capital to the Gulf. The Middle East was the strongest region overall, up 9.4 per cent, as buyers continued to concentrate on a small number of gateway cities where liquidity and lifestyle meet.\n\nFor the household, index movements are never abstract. They signal where principals are buying, and therefore where new houses will need to be opened, staffed and run. A surge in a given city tends to be followed, a season or two later, by a wave of hiring, refurbishment and the quiet work of standing up a fully functioning residence from an empty shell.",
+        "why": "The wealth map is redrawn by prime-property flows, and staff follow the houses. A city that spikes on the index today is often a city hiring house managers and opening residences tomorrow.",
+        "src": "Knight Frank, The Wealth Report 2026",
+        "url": "https://www.knightfrank.com/research/article/2026/4/piri-100-ultimate-prime-residential-property-index"
+      },
+      {
+        "cat": "At Sea & In the Air",
+        "place": "Savannah, United States",
+        "tag": "The delivery ramp",
+        "section": "At Sea & In the Air",
+        "title": "The order books are full and the factories accelerate, as a tax rule pulls buyers forward",
+        "body": "The private aviation cycle has turned firmly towards production. Gulfstream handed over 158 aircraft in 2025, 136 of them large-cabin, while Bombardier delivered 157, including 86 large jets. Behind those numbers sit order books that remain deep by any historical measure, with Bombardier reporting a backlog of 17.5 billion dollars and Gulfstream 15.5 billion dollars, the latter with a book-to-bill ratio of 1.2, meaning new orders are still arriving faster than aircraft leave the line.\n\nAcross the industry the picture is the same. Manufacturer backlogs were estimated at more than 55 billion dollars in the second quarter of 2025, up 8.4 per cent on the year before. The flagship models tell the story of the ramp. The Gulfstream G700 recorded 64 deliveries in 2025 and is expected to exceed 80 in 2026, while Bombardier's Global 8000 enters full production this year and Gulfstream's new G400 begins reaching customers.\n\nOne policy lever is pulling demand forward. In the United States, the return of 100 per cent bonus depreciation lets qualifying buyers write off much of an aircraft's cost against tax in the year of purchase, a powerful incentive to commit now rather than later. Combined with a growing base of ultra-wealthy owners, it keeps the pressure on delivery slots and lengthens the wait for the most sought-after cabins.\n\nFor the concierge and the estate that manages a principal's movement, the consequence is practical. New aircraft mean new crews, new maintenance relationships and, often, a rethink of how a household charters versus owns. A tighter delivery pipeline also means that access, not price, is frequently the binding constraint, and the households that plan their flying furthest ahead are the ones that keep their options open.",
+        "why": "Aircraft are the concierge's logistical backbone, and a full order book changes the calculus of owning versus chartering. Long waits for new jets put a premium on planning a principal's movement well in advance.",
+        "src": "AeroTime; GAMA",
+        "url": "https://www.aerotime.aero/articles/business-jet-growth-ga-billings-gama-q3-2025"
+      },
+      {
+        "cat": "Objects & Culture",
+        "place": "New York, United States",
+        "tag": "Blue leads the room",
+        "section": "Objects & Culture",
+        "title": "Coloured diamonds carry the salerooms, and the rarest stones sell whatever the mood",
+        "body": "The high jewellery auctions have delivered a run of firm results, and the pattern within them is clear. Rare coloured diamonds, and blue stones above all, are setting the pace. At Christie's Magnificent Jewels in New York, the sale reached 49.7 million dollars with every lot sold. The Azure Blue, a 31.62-carat pear-shaped fancy blue diamond of VVS1 clarity, led at 8.4 million dollars, closely followed by a 5.04-carat marquise-shaped fancy vivid blue at 8.2 million dollars.\n\nSotheby's told a similar story. A 10.02-carat fancy intense blue diamond of VS2 clarity sold for 8.7 million dollars, heading a 43.4 million dollar sale with a 98 per cent sell-through rate. A separate high jewellery auction in New York took 31.4 million dollars with 95 per cent of lots sold, described as the house's strongest sell-through for a various-owner jewellery sale in the city. When 95 to 100 per cent of a room finds a buyer, the market is not merely holding, it is confident.\n\nThe appetite is concentrated at the top. Bidders are paying up for size, saturation of colour and impeccable provenance, and they are largely unmoved by wider economic noise when a stone is genuinely rare. The middle of the market is quieter, but the exceptional lot behaves as if there were no cycle at all.\n\nFor those who serve collectors, the saleroom is part of the world they must read fluently. A principal who buys at this level expects the people around them to understand what a coloured diamond is, why provenance moves a price and how a jewel is stored, insured, transported and worn. Cultural literacy of this kind, the ability to speak the language of the collection, is quietly part of the modern brief.",
+        "why": "Serving a collector demands fluency in what they buy and why. Knowing how a jewel is valued, insured and moved is part of the cultural range expected of senior household and concierge staff.",
+        "src": "National Jeweler",
+        "url": "https://nationaljeweler.com/articles/14437-300-colored-diamonds-up-for-auction-at-christie-s"
+      },
+      {
+        "cat": "Hotels & Escapes",
+        "place": "Bandol, France",
+        "tag": "A private island",
+        "section": "Hotels & Escapes",
+        "title": "Off the Riviera, a whole island is turned into one discreet village",
+        "body": "Among the year's more unusual openings, Zannier is transforming the Ile de Bendor, a small private island off the coast of Bandol on the French Riviera, into a single low-key retreat. Rather than a conventional resort, the project is arranged as roughly 93 villas and suites laid out to resemble a secluded Provencal village, with the intent of privacy and discretion rather than spectacle.\n\nThe appeal for a well-served guest is the combination of seclusion and proximity. The island sits within easy reach of the mainland and the wider Riviera, yet its separateness delivers the quiet and control that a principal increasingly values, a place where movement can be managed and interruption designed out.\n\nFor the private world, formats like this matter because they mirror how the wealthy prefer to travel. The direction of luxury hospitality is towards villas rather than rooms, towards space that can be taken over rather than shared, and towards a level of privacy that behaves more like a borrowed estate than a hotel. Understanding that shift, and knowing which properties can genuinely deliver it, is part of the concierge's working knowledge.",
+        "why": "A single, well-chosen private-island retreat shows where discerning travel is heading, towards villas and takeover privacy rather than conventional rooms. Knowing which properties truly deliver seclusion is core concierge knowledge.",
+        "src": "The Luxury Travel Expert",
+        "url": "https://theluxurytravelexpert.com/most-anticipated-luxury-hotel-openings-2026/"
+      }
+    ],
+    "briefs": [
+      {
+        "t": "Crew pay keeps climbing at sea",
+        "b": "Superyacht crew salaries have risen by roughly 8 to 12 per cent since 2023, driven by persistent shortages and inflation, according to 2026 crew salary guides. Chief engineers and professional chefs remain the hardest berths to fill, with demand for qualified people still outrunning supply.",
+        "src": "Lighthouse Careers; Morgan & Mallet",
+        "url": "https://www.lighthouse-careers.com/salary-guide/"
+      },
+      {
+        "t": "Clubs rebuild around longevity",
+        "b": "A younger generation of billionaires and founders is reshaping the private members club, pushing wellness suites, longevity programmes and resident medical experts to the centre of the membership. The shift signals where attention and spending among the very wealthy are moving.",
+        "src": "Impact Wealth",
+        "url": "https://impactwealth.org/why-younger-billionaires-are-redefining-private-club-culture/"
+      },
+      {
+        "t": "Business jet backlogs top USD 55bn",
+        "b": "Manufacturer order backlogs across business aviation were estimated at more than 55 billion dollars in the second quarter of 2025, up 8.4 per cent year on year. The depth of the books points to full factories and long waits for the most in-demand cabins well into 2026.",
+        "src": "AeroTime; GAMA",
+        "url": "https://www.aerotime.aero/articles/jetnet-forecasts-big-jump-in-business-jet-deliveries-over-next-decade"
+      },
+      {
+        "t": "A Mellon blue heads to the block",
+        "b": "Christie's is set to offer the Mellon Blue, a 9.51-carat blue diamond once owned by the American horticulturalist and philanthropist Bunny Mellon, with an estimate of 20 to 30 million dollars. Provenance of this order tends to draw the deepest bidding, whatever the wider market is doing.",
+        "src": "National Jeweler",
+        "url": "https://nationaljeweler.com/articles/14014-colored-gemstones-signed-jewels-shine-in-sotheby-s-high-jewelry-sale"
+      }
+    ]
+  },
+  {
     "no": "No. 7",
     "date": "Tuesday, 21 July 2026",
     "strap": "A daily dispatch from the world you are entering",
