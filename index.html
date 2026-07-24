@@ -212,6 +212,9 @@
   .wcard-state.done{background:var(--gold-wash);color:var(--gold-deep);}
   .wcard-state.current{background:var(--ink);color:var(--gold-lt);}
   .wcard-state.locked{background:#efe9dc;color:var(--stone);}
+.wcard-bar{width:100%;height:6px;border-radius:99px;background:rgba(30,25,18,.09);overflow:hidden;margin-top:12px;}
+.wcard-bar-fill{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,#2f9e5b,#38b56b);transition:width .5s ease;}
+.wcard.locked .wcard-bar{opacity:.55;}
   /* bandeau image d'ambiance en tête de chaque module */
   .wcard-img{margin:-26px -26px 18px;height:134px;background-size:cover;background-position:center;position:relative;flex-shrink:0;}
   .wcard-img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,16,12,.22),rgba(20,16,12,0) 55%),linear-gradient(0deg,rgba(255,255,255,.9),rgba(255,255,255,0) 40%);}
@@ -3868,8 +3871,9 @@ function renderWeeks(){
       const card=document.createElement(st==="locked"?'div':'button');
       card.className="wcard "+st;
       let stateHTML;
-      if(st==="done")stateHTML=`<span class="wcard-state done"><span class="ic">${ICONS.checkSmall}</span>Done</span>`;
-      else if(st==="current"){const lp=lessonProgress(w.no);stateHTML=`<span class="wcard-state current">${lp>0?lp+'% done':'Start now'}</span>`;}
+      var progVal=0;
+      if(st==="done"){progVal=100;stateHTML=`<span class="wcard-state done"><span class="ic">${ICONS.checkSmall}</span>Done</span>`;}
+      else if(st==="current"){const lp=lessonProgress(w.no);progVal=lp;stateHTML=`<span class="wcard-state current">${lp>0?lp+'% done':'Start now'}</span>`;}
       else stateHTML=`<span class="wcard-state locked"><span class="ic">${ICONS.lock}</span>Locked</span>`;
       card.innerHTML=`
         <div class="wcard-img" style="background-image:url('images/w${w.no}.jpg')"></div>
@@ -3879,7 +3883,8 @@ function renderWeeks(){
         </div>
         <h4 class="wcard-title">${w.title}</h4>
         <p class="wcard-sub">${w.sub}</p>
-        <div class="wcard-foot">${stateHTML}</div>`;
+        <div class="wcard-foot">${stateHTML}</div>
+        <div class="wcard-bar"><span class="wcard-bar-fill" style="width:${progVal}%"></span></div>`;
       if(st!=="locked")card.addEventListener('click',()=>openWeek(w.no));
       grid.appendChild(card);
     });
