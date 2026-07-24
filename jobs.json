@@ -1,16 +1,56 @@
 {
   "updated": "Live roles + boards · updated 24 July 2026",
   "boards": [
-    ["Morgan & Mallet", "Household, estate & family office - US offices NY, LA, Miami", "https://www.householdstaff.agency/jobs/"],
-    ["Colonial Agency", "Domestic & estate staffing since 1963 - nationwide US", "https://colonialdomestics.com/job-openings/"],
-    ["Rose's Agency", "California private-staff job board - house & estate managers", "https://rosesagency.com/job-board"],
-    ["MyStaffHq", "UHNW household job board - estate manager & private roles", "https://www.mystaffhq.com/jobs/estate-manager"],
-    ["Silver Swan Recruitment", "Private household staff - New York, Miami, LA, SF", "https://silverswanrecruitment.com/house-manager-jobs/"],
-    ["EstateJobs.com", "Estate & private-service roles across the US", "https://www.estatejobs.com/search"],
-    ["Polo & Tweed", "London-based luxury staffing - house & estate manager roles", "https://jobs.poloandtweed.com/vacancies.aspx"],
-    ["LinkedIn Jobs", "Live search: estate & house manager, private PA (US)", "https://www.linkedin.com/jobs/search/?keywords=estate%20manager%20private%20household&location=United%20States"],
-    ["Indeed", "Live search: private estate manager (US)", "https://www.indeed.com/jobs?q=private+estate+manager&l=United+States"],
-    ["ZipRecruiter", "Live search: UHNW estate manager (US)", "https://www.ziprecruiter.com/Jobs/Uhnw-Estate-Manager"]
+    [
+      "Morgan & Mallet",
+      "Household, estate & family office - US offices NY, LA, Miami",
+      "https://www.householdstaff.agency/jobs/"
+    ],
+    [
+      "Colonial Agency",
+      "Domestic & estate staffing since 1963 - nationwide US",
+      "https://colonialdomestics.com/job-openings/"
+    ],
+    [
+      "Rose's Agency",
+      "California private-staff job board - house & estate managers",
+      "https://rosesagency.com/job-board"
+    ],
+    [
+      "MyStaffHq",
+      "UHNW household job board - estate manager & private roles",
+      "https://www.mystaffhq.com/jobs/estate-manager"
+    ],
+    [
+      "Silver Swan Recruitment",
+      "Private household staff - New York, Miami, LA, SF",
+      "https://silverswanrecruitment.com/house-manager-jobs/"
+    ],
+    [
+      "EstateJobs.com",
+      "Estate & private-service roles across the US",
+      "https://www.estatejobs.com/search"
+    ],
+    [
+      "Polo & Tweed",
+      "London-based luxury staffing - house & estate manager roles",
+      "https://jobs.poloandtweed.com/vacancies.aspx"
+    ],
+    [
+      "LinkedIn Jobs",
+      "Live search: estate & house manager, private PA (US)",
+      "https://www.linkedin.com/jobs/search/?keywords=estate%20manager%20private%20household&location=United%20States"
+    ],
+    [
+      "Indeed",
+      "Live search: private estate manager (US)",
+      "https://www.indeed.com/jobs?q=private+estate+manager&l=United+States"
+    ],
+    [
+      "ZipRecruiter",
+      "Live search: UHNW estate manager (US)",
+      "https://www.ziprecruiter.com/Jobs/Uhnw-Estate-Manager"
+    ]
   ],
   "jobs": {
     "americas": [
@@ -18,40 +58,18 @@
         "flag": "🇺🇸",
         "city": "New York, NY",
         "country": "United States",
-        "title": "Personal Assistant / Travel & Events Manager",
-        "agency": "Louer",
-        "type": "Full time",
-        "tags": ["Personal Assistant", "Luxury travel", "Events"],
-        "salary": "$200,000+ / year + benefits",
-        "posted": "Posted 5 June 2026",
-        "url": "https://www.estatejobs.com/job/qduvtu/full-time-personal-assistant-travel-and-events-manager-in-nyc-200k-and-benefits/new-york/ny/united-states",
-        "blurb": "A private principal seeks a right hand for luxury travel, event planning and lifestyle management. One of the highest published PA salaries on the board right now."
-      },
-      {
-        "flag": "🇺🇸",
-        "city": "New York, NY",
-        "country": "United States",
         "title": "Personal Assistant - Upper West Side",
         "agency": "Louer",
         "type": "Full time",
-        "tags": ["Personal Assistant", "Household", "Discretion"],
+        "tags": [
+          "Personal Assistant",
+          "Household",
+          "Discretion"
+        ],
         "salary": "$150,000+ / year + benefits",
         "posted": "Posted 5 June 2026",
         "url": "https://www.estatejobs.com/job/gvdqbj/full-time-personal-assistant-in-upper-west-side-of-nyc-150k-and-benefits/new-york/ny/united-states",
         "blurb": "A principal on the Upper West Side needs a discreet, highly organised PA to run administrative support, event planning and staff coordination day to day."
-      },
-      {
-        "flag": "🇺🇸",
-        "city": "New York, NY & Hamptons",
-        "country": "United States",
-        "title": "Estate Manager - NYC + Hamptons",
-        "agency": "Career Group Companies",
-        "type": "Full time",
-        "tags": ["Estate Manager", "Multi-property", "Events"],
-        "salary": "DOE",
-        "posted": "Posted 4 June 2026",
-        "url": "https://www.estatejobs.com/job/qw8bcq/estate-manager-|-nyc-hamptons/new-york/ny/united-states",
-        "blurb": "Oversee daily operations of residences in NYC and the Hamptons: manage staff and vendors, hold service and maintenance standards, and coordinate events with precision."
       },
       {
         "flag": "🇺🇸",
@@ -60,7 +78,11 @@
         "title": "Senior Personal Assistant - Family Office",
         "agency": "Concierge New York",
         "type": "Full time",
-        "tags": ["Personal Assistant", "Family office", "White-glove"],
+        "tags": [
+          "Personal Assistant",
+          "Family office",
+          "White-glove"
+        ],
         "salary": "DOE",
         "posted": "Posted 5 June 2026",
         "url": "https://www.estatejobs.com/job/9szdgc/full-time-senior-personal-assistant-family-office-administrative-support-lead/new-york/ny/united-states",
@@ -73,7 +95,11 @@
         "title": "Personal Assistant / Estate Manager",
         "agency": "Make It Happen Services",
         "type": "Full time",
-        "tags": ["Estate Manager", "Personal Assistant", "Multi-residence"],
+        "tags": [
+          "Estate Manager",
+          "Personal Assistant",
+          "Multi-residence"
+        ],
         "salary": "DOE",
         "posted": "Posted 18 May 2026",
         "url": "https://www.estatejobs.com/job/qy5rkd/personal-assitant-estate-manager/new-york/ny/united-states",
@@ -86,7 +112,11 @@
         "title": "Family Assistant / House Manager",
         "agency": "Greycoat Lumleys",
         "type": "Full time",
-        "tags": ["House Manager", "Family Assistant", "Logistics"],
+        "tags": [
+          "House Manager",
+          "Family Assistant",
+          "Logistics"
+        ],
         "salary": "DOE",
         "posted": "Posted 11 May 2026",
         "url": "https://www.estatejobs.com/job/jb743d/family-assistant-house-manager-opportunity/new-york/ny/united-states",
@@ -99,7 +129,11 @@
         "title": "Estate Manager - UHNW household",
         "agency": "British American Household Staffing",
         "type": "Full time",
-        "tags": ["Estate Manager", "Multi-property", "UHNW"],
+        "tags": [
+          "Estate Manager",
+          "Multi-property",
+          "UHNW"
+        ],
         "salary": "DOE",
         "posted": "Live on board",
         "url": "https://www.mystaffhq.com/jobs/356807192-kp781-full-time-estate-manager-los-angeles-san-francisco-ojai-ca",
@@ -112,7 +146,11 @@
         "title": "Estate Manager - Private residence",
         "agency": "British American Household Staffing",
         "type": "Full time",
-        "tags": ["Estate Manager", "Household systems", "UHNW"],
+        "tags": [
+          "Estate Manager",
+          "Household systems",
+          "UHNW"
+        ],
         "salary": "DOE",
         "posted": "Live on board",
         "url": "https://www.mystaffhq.com/jobs/157257724-kp727-full-time-estate-manager-san-francisco-ca",
@@ -125,7 +163,11 @@
         "title": "House Manager / Personal Assistant",
         "agency": "Rose's Agency",
         "type": "Full time",
-        "tags": ["House Manager", "Personal Assistant", "Tech principals"],
+        "tags": [
+          "House Manager",
+          "Personal Assistant",
+          "Tech principals"
+        ],
         "salary": "DOE",
         "posted": "Posted 9 June 2026",
         "url": "https://rosesagency.com/job-board/full-time-house-managerpa-menlo-park",
@@ -138,7 +180,11 @@
         "title": "Estate Manager - Three properties",
         "agency": "Rose's Agency",
         "type": "Full time",
-        "tags": ["Estate Manager", "Multi-property", "Grounds"],
+        "tags": [
+          "Estate Manager",
+          "Multi-property",
+          "Grounds"
+        ],
         "salary": "DOE",
         "posted": "Posted 8 April 2026",
         "url": "https://rosesagency.com/job-board/estate-manager-in-venice-amp-san-francisco",
@@ -153,7 +199,11 @@
         "title": "House Manager - Private residence",
         "agency": "Morgan & Mallet",
         "type": "Permanent · Full time",
-        "tags": ["House Manager", "Private household", "Discretion"],
+        "tags": [
+          "House Manager",
+          "Private household",
+          "Discretion"
+        ],
         "salary": "To be discussed",
         "posted": "Posted 22 July 2026",
         "url": "https://www.householdstaff.agency/jobs/house-manager-job-cannes-france/",
@@ -166,7 +216,11 @@
         "title": "House Manager - Private household",
         "agency": "Silver & Bow",
         "type": "Full time",
-        "tags": ["House Manager", "Relocation", "Private household"],
+        "tags": [
+          "House Manager",
+          "Relocation",
+          "Private household"
+        ],
         "salary": "EUR 75,000 - 85,000 / year",
         "posted": "Live on board",
         "url": "https://www.mystaffhq.com/jobs/508867948-house-manager",
@@ -181,7 +235,11 @@
         "title": "International Human Resources Manager - Family office group",
         "agency": "Morgan & Mallet",
         "type": "Permanent · Full time",
-        "tags": ["Family office", "HR", "Multi-jurisdiction"],
+        "tags": [
+          "Family office",
+          "HR",
+          "Multi-jurisdiction"
+        ],
         "salary": "To be discussed",
         "posted": "Posted 17 July 2026",
         "url": "https://www.householdstaff.agency/jobs/international-human-resources-manager-m-f-in-dubai-uae/",
@@ -194,7 +252,11 @@
         "title": "Human Resources & Executive Assistant - Holding company",
         "agency": "Morgan & Mallet",
         "type": "Permanent · Full time",
-        "tags": ["Executive Assistant", "HR", "Client facing"],
+        "tags": [
+          "Executive Assistant",
+          "HR",
+          "Client facing"
+        ],
         "salary": "To be discussed",
         "posted": "Posted 10 July 2026",
         "url": "https://www.householdstaff.agency/jobs/human-resources-executive-assistant-job-dubai-uae/",
