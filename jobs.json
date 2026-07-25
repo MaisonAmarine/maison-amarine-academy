@@ -1,5 +1,5 @@
 {
-  "updated": "Live roles + boards · updated 24 July 2026",
+  "updated": "Live roles + boards · updated 25 July 2026",
   "boards": [
     [
       "Morgan & Mallet",
@@ -56,6 +56,40 @@
     "americas": [
       {
         "flag": "🇺🇸",
+        "city": "St. James & East Quogue, NY",
+        "country": "United States",
+        "title": "House Manager - Two private residences",
+        "agency": "Morgan & Mallet",
+        "type": "Permanent · Full time",
+        "tags": [
+          "House Manager",
+          "Multi-property",
+          "Wardrobe & laundry"
+        ],
+        "salary": "$100,000 - $130,000 / year",
+        "posted": "Posted 16 July 2026",
+        "url": "https://www.householdstaff.agency/jobs/house-manager-job-st-james-new-york-east-quote-new-york-usa/",
+        "blurb": "Newly created role running a ~6,000 sq ft main home in St. James and a ~5,000 sq ft summer residence in East Quogue, with wardrobe care and oversight of a three-person cleaning team."
+      },
+      {
+        "flag": "🇺🇸",
+        "city": "Dallas / Austin / Aspen",
+        "country": "United States",
+        "title": "House Manager / Personal Assistant - Three residences",
+        "agency": "Morgan & Mallet",
+        "type": "Permanent · Full time",
+        "tags": [
+          "House Manager",
+          "Personal Assistant",
+          "Five-star service"
+        ],
+        "salary": "To be discussed",
+        "posted": "Posted 17 March 2026",
+        "url": "https://www.householdstaff.agency/jobs/household-manager-job-dallas-texas-usa/",
+        "blurb": "Polished house manager / PA overseeing three luxury residences in Dallas, Austin and Aspen for a high-profile principal, elevating each home to a five-star hotel standard."
+      },
+      {
+        "flag": "🇺🇸",
         "city": "Los Angeles / San Francisco / Ojai, CA",
         "country": "United States",
         "title": "Estate Manager - UHNW household",
@@ -107,20 +141,71 @@
       },
       {
         "flag": "🇺🇸",
-        "city": "Venice / San Francisco / Ojai, CA",
+        "city": "Atherton, CA",
         "country": "United States",
-        "title": "Estate Manager - Three properties",
+        "title": "House Manager / Personal Assistant - Part time",
+        "agency": "Rose's Agency",
+        "type": "Part time",
+        "tags": [
+          "House Manager",
+          "Personal Assistant",
+          "Private family"
+        ],
+        "salary": "DOE",
+        "posted": "Posted 9 June 2026",
+        "url": "https://rosesagency.com/job-board/part-time-house-managerpa-atherton",
+        "blurb": "Oversee daily estate operations and provide comprehensive personal support to two professionals and their family in Atherton."
+      },
+      {
+        "flag": "🇺🇸",
+        "city": "Austin, TX",
+        "country": "United States",
+        "title": "Personal / Family Assistant",
         "agency": "Rose's Agency",
         "type": "Full time",
         "tags": [
-          "Estate Manager",
-          "Multi-property",
-          "Grounds"
+          "Personal Assistant",
+          "Family Assistant",
+          "Discretion"
         ],
         "salary": "DOE",
-        "posted": "Posted 8 April 2026",
-        "url": "https://rosesagency.com/job-board/estate-manager-in-venice-amp-san-francisco",
-        "blurb": "Manage three residences for a private family - a Venice home, a 9k sq ft San Francisco house and a 5k sq ft Ojai property set on 10 acres."
+        "posted": "Posted 18 May 2026",
+        "url": "https://rosesagency.com/job-board/full-time-personalfamily-assistant-in-austin-tx",
+        "blurb": "High-level support to a female principal splitting her time between London and the US, managing private and professional affairs with discretion, in a flexible in-person and remote role."
+      },
+      {
+        "flag": "🇺🇸",
+        "city": "La Cañada, CA",
+        "country": "United States",
+        "title": "House Manager / Personal Assistant - Part time",
+        "agency": "Rose's Agency",
+        "type": "Part time",
+        "tags": [
+          "House Manager",
+          "Personal Assistant",
+          "Older principals"
+        ],
+        "salary": "DOE",
+        "posted": "Posted 27 May 2026",
+        "url": "https://rosesagency.com/job-board/part-time-house-managerpersonal-assistant-in-la-caada",
+        "blurb": "Smart, reliable part-time house manager / PA for two older principals in La Cañada, roughly 20-30 hours per week."
+      },
+      {
+        "flag": "🇺🇸",
+        "city": "Miami Beach, FL",
+        "country": "United States",
+        "title": "Personal Assistant - Household & projects",
+        "agency": "Morgan & Mallet",
+        "type": "Permanent · Full time",
+        "tags": [
+          "Personal Assistant",
+          "Household operations",
+          "Vendor management"
+        ],
+        "salary": "To be discussed",
+        "posted": "Posted 13 February 2026",
+        "url": "https://www.householdstaff.agency/jobs/personal-assistant-job-miami-beach-florida-usa/",
+        "blurb": "Proactive PA overseeing residential construction projects, household operations and vendors for the principals, operating independently with minimal direction."
       }
     ],
     "europe": [
@@ -140,6 +225,40 @@
         "posted": "Posted 22 July 2026",
         "url": "https://www.householdstaff.agency/jobs/house-manager-job-cannes-france/",
         "blurb": "Oversee the overall running of a high-end private residence in Cannes, including household upkeep and on-site staff, with discretion and total reliability."
+      },
+      {
+        "flag": "🇫🇷",
+        "city": "Neuilly-sur-Seine",
+        "country": "France",
+        "title": "Versatile House Manager - Family home",
+        "agency": "Morgan & Mallet",
+        "type": "Permanent · Full time",
+        "tags": [
+          "House Manager",
+          "Family home",
+          "Versatile"
+        ],
+        "salary": "To be discussed",
+        "posted": "Posted 12 June 2026",
+        "url": "https://www.householdstaff.agency/jobs/house-manager-job-neuilly-sur-seine-france/",
+        "blurb": "Versatile house manager for a family home in Neuilly-sur-Seine, responsible for general upkeep, family meal preparation and after-school care of a nine-year-old."
+      },
+      {
+        "flag": "🇬🇧",
+        "city": "London",
+        "country": "United Kingdom",
+        "title": "Personal Assistant - Private client",
+        "agency": "Morgan & Mallet",
+        "type": "Permanent · Part time",
+        "tags": [
+          "Personal Assistant",
+          "International travel",
+          "Flexibility"
+        ],
+        "salary": "To be discussed",
+        "posted": "Posted 1 July 2026",
+        "url": "https://www.householdstaff.agency/jobs/personal-assistant-job-london-united-kingdom/",
+        "blurb": "Exceptional PA to a London-based, internationally travelling music artist, joining a small dedicated team on a flexible consultancy agreement."
       },
       {
         "flag": "🇬🇮",
@@ -164,35 +283,35 @@
         "flag": "🇦🇪",
         "city": "Dubai",
         "country": "United Arab Emirates",
-        "title": "International Human Resources Manager - Family office group",
+        "title": "Senior Personal Assistant - Private principal",
         "agency": "Morgan & Mallet",
         "type": "Permanent · Full time",
         "tags": [
-          "Family office",
-          "HR",
-          "Multi-jurisdiction"
+          "Personal Assistant",
+          "Live-out",
+          "Discretion"
         ],
         "salary": "To be discussed",
-        "posted": "Posted 17 July 2026",
-        "url": "https://www.householdstaff.agency/jobs/international-human-resources-manager-m-f-in-dubai-uae/",
-        "blurb": "Manage the employment lifecycle of household staff across the UAE, France, the UK and the US for an international staffing group."
+        "posted": "Posted 5 February 2026",
+        "url": "https://www.householdstaff.agency/jobs/senior-personal-assistant-job-dubai-uae/",
+        "blurb": "Experienced PA providing comprehensive administrative and organisational support to a private principal in Dubai, in a full-time, live-out, long-term role."
       },
       {
-        "flag": "🇦🇪",
-        "city": "Dubai",
-        "country": "United Arab Emirates",
-        "title": "Human Resources & Executive Assistant - Holding company",
+        "flag": "🇰🇼",
+        "city": "Kuwait City",
+        "country": "Kuwait",
+        "title": "House Manager - Fully staffed residence",
         "agency": "Morgan & Mallet",
         "type": "Permanent · Full time",
         "tags": [
-          "Executive Assistant",
-          "HR",
-          "Client facing"
+          "House Manager",
+          "Staff supervision",
+          "Family office"
         ],
         "salary": "To be discussed",
-        "posted": "Posted 10 July 2026",
-        "url": "https://www.householdstaff.agency/jobs/human-resources-executive-assistant-job-dubai-uae/",
-        "blurb": "Support three partners of a Dubai holding company directly across HR, administrative, contractual and operational matters in a demanding international environment."
+        "posted": "Posted 5 February 2026",
+        "url": "https://www.householdstaff.agency/jobs/house-manager-job-kuwait-city-kuwait/",
+        "blurb": "Discreet house manager overseeing a fully staffed six-bedroom residence in Kuwait City and a team of twelve, reporting to the principal or family office."
       }
     ]
   }
