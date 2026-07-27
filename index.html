@@ -151,11 +151,13 @@
   .page-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(20,16,12,.35),rgba(20,16,12,0) 60%),linear-gradient(0deg,rgba(20,16,12,.22),rgba(20,16,12,0) 55%);}
   .page-hero .ph-tag{position:absolute;left:24px;bottom:16px;z-index:2;font-family:'Jost',sans-serif;font-size:10.5px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:#fff;text-shadow:0 1px 8px rgba(0,0,0,.5);}
   @media(max-width:620px){ .page-hero{height:112px;} }
-  .page-h{margin-bottom:24px;padding-bottom:20px;border-bottom:1px solid var(--line);position:relative;}
-  .page-h::after{content:"";position:absolute;bottom:-1px;left:0;width:64px;height:2px;background:linear-gradient(90deg,var(--gold),var(--gold-lt));}
+  .page-h{margin-bottom:24px;padding-bottom:22px;border-bottom:1px solid var(--line);position:relative;animation:phIn .6s cubic-bezier(.2,.7,.2,1) both;}
+  @keyframes phIn{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:none;}}
+  .page-h::after{content:"";position:absolute;bottom:-1px;left:0;width:72px;height:3px;border-radius:3px;background:linear-gradient(90deg,var(--gold),var(--gold-lt));box-shadow:0 1px 6px rgba(168,126,61,.3);}
   .page-h .eyebrow{font-size:11px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;display:flex;align-items:center;gap:10px;}
   .page-h .eyebrow::before{content:"";width:22px;height:1px;background:var(--gold-lt);display:inline-block;}
-  .page-h h1{font-family:'Cormorant',serif;font-weight:300;font-size:40px;line-height:1.08;color:var(--ink);letter-spacing:-.5px;}
+  .page-h h1{font-family:'Cormorant',serif;font-weight:300;font-size:40px;line-height:1.08;letter-spacing:-.5px;background:linear-gradient(92deg,var(--ink) 42%,var(--gold-deep) 55%,var(--ink) 68%);background-size:200% auto;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:goldSheen 7s linear infinite;}
+  @media(prefers-reduced-motion:reduce){.page-h{animation:none;} .page-h h1{animation:none;}}
   .page-h p{font-size:15px;color:var(--ink-soft);margin-top:10px;max-width:640px;line-height:1.65;}
 
   .btn-primary{display:inline-flex;align-items:center;gap:10px;font-size:15px;font-weight:600;color:#fff;background:var(--gold);border:none;border-radius:12px;padding:15px 26px;cursor:pointer;transition:background .2s,transform .2s,box-shadow .2s;box-shadow:0 6px 16px rgba(168,126,61,0.28);}
