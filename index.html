@@ -23,7 +23,8 @@
   /* ---------- layout: sidebar + main ---------- */
   .app{display:flex;min-height:100vh;}
   .sidebar{
-    width:248px;flex-shrink:0;background:var(--sidebar);color:#EDE6D8;
+    width:248px;flex-shrink:0;background:linear-gradient(180deg,#251f17,var(--sidebar));color:#EDE6D8;
+    border-right:1px solid rgba(201,168,103,.13);
     display:flex;flex-direction:column;position:sticky;top:0;height:100vh;padding:26px 18px;
     overflow-y:auto;scrollbar-width:none;
   }
@@ -40,7 +41,7 @@
   }
   .nav-item svg{width:19px;height:19px;flex-shrink:0;}
   .nav-item:hover{background:rgba(255,255,255,.06);color:#F6F0E4;}
-  .nav-item.active{background:var(--gold);color:#fff;}
+  .nav-item.active{background:linear-gradient(180deg,var(--gold-lt),var(--gold));color:#fff;box-shadow:0 6px 16px rgba(168,126,61,.32);}
   .nav-sep{height:1px;background:rgba(255,255,255,.09);margin:16px 8px;}
   /* ===== practice : série + débrief ===== */
   .pr-streak{display:inline-block;margin-left:10px;font-family:'Jost',sans-serif;font-size:11.5px;font-weight:600;letter-spacing:.06em;color:var(--gold-deep);background:var(--gold-wash);border-radius:14px;padding:3px 10px;vertical-align:middle;}
