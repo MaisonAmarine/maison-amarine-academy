@@ -746,6 +746,10 @@
   .cc-empty:hover{background:none;}
   .cc-d{font-family:'Jost',sans-serif;font-size:12.5px;font-weight:600;color:var(--ink-soft);}
   .cc-today{background:var(--gold-wash);border-color:var(--gold-lt);}
+  .cc-session{border-color:var(--gold);background:linear-gradient(180deg,#fffdf8,var(--gold-wash));box-shadow:0 2px 10px rgba(168,126,61,.16);}
+  .cc-session:hover{border-color:var(--gold-deep);background:var(--gold-wash);}
+  .cc-sess-tag{position:absolute;top:5px;right:5px;font-family:'Jost',sans-serif;font-size:8px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#fff;background:linear-gradient(180deg,var(--gold-lt),var(--gold));border-radius:6px;padding:1px 5px;line-height:1.4;}
+  @media(max-width:620px){ .cc-sess-tag{font-size:7px;padding:0 4px;} }
   .cc-today .cc-d{color:var(--gold-deep);}
   .cc-wk{align-self:flex-start;font-family:'Jost',sans-serif;font-size:9.5px;font-weight:600;color:#fff;background:var(--gold);border-radius:20px;padding:2px 8px;letter-spacing:.02em;}
   .cc-dots{display:flex;gap:4px;margin-top:auto;}
@@ -4211,6 +4215,10 @@ function renderCalMonth(){
   const marks={};
   if(CAL_PLAN){ for(let n=1;n<=8;n++){ const wd=weekDate(n); marks[calYmd(wd)]=Object.assign(marks[calYmd(wd)]||{},{wk:n}); const md=mentorDate(n); const k=calYmd(md); marks[k]=Object.assign(marks[k]||{},{mentor:true}); } }
   myEvents.forEach(ev=>{ const cur=marks[ev.date]||{}; cur.you=(cur.you||[]).concat([ev.title]); marks[ev.date]=cur; });
+  // real booked mentorship sessions (from the `sessions` table) — mark their actual day + make it clickable
+  if(typeof MY_SESSIONS!=='undefined' && MY_SESSIONS.length){
+    MY_SESSIONS.forEach(s=>{ const d=new Date(s.start_time); if(isNaN(d)) return; const k=calYmd(d); const cur=marks[k]||{}; cur.mentor=true; cur.session=true; marks[k]=cur; });
+  }
   const todayKey=calYmd(new Date());
   let html='<div class="cc-wd">Mon</div><div class="cc-wd">Tue</div><div class="cc-wd">Wed</div><div class="cc-wd">Thu</div><div class="cc-wd">Fri</div><div class="cc-wd">Sat</div><div class="cc-wd">Sun</div>';
   const startDow=(new Date(y,m,1).getDay()+6)%7;
@@ -4224,9 +4232,22 @@ function renderCalMonth(){
     if(mk.mentor) dots+='<span class="cc-dot cc-dot-m" title="Mentorship session"></span>';
     if(mk.you) dots+='<span class="cc-dot cc-dot-y" title="'+escapeHtml(mk.you.join(', '))+'"></span>';
     if(dots) inner+=`<span class="cc-dots">${dots}</span>`;
-    html+=`<div class="cc-cell${key===todayKey?' cc-today':''}" onclick="calPickDay('${key}')">${inner}</div>`;
+    if(mk.session) inner+='<span class="cc-sess-tag">Mentor</span>';
+    const clickFn = mk.session ? `openMentorForDay('${key}')` : `calPickDay('${key}')`;
+    html+=`<div class="cc-cell${key===todayKey?' cc-today':''}${mk.session?' cc-session':''}" onclick="${clickFn}">${inner}</div>`;
   }
   grid.innerHTML=html;
+}
+// ouvre le détail (heure, lien visio, reprogrammer/annuler) de la session réservée d'un jour donné
+function openMentorForDay(key){
+  try{
+    if(typeof MY_SESSIONS==='undefined' || !MY_SESSIONS.length){ if(typeof calPickDay==='function') calPickDay(key); return; }
+    const s=MY_SESSIONS.find(x=>{ const d=new Date(x.start_time); return !isNaN(d) && calYmd(d)===key; });
+    if(!s){ if(typeof calPickDay==='function') calPickDay(key); return; }
+    let wk=Number(s.week_number)||0;
+    if(!wk){ let bg=Infinity; for(let n=1;n<=8;n++){ try{ const md=mentorDate(n); const g=Math.abs(new Date(s.start_time)-md); if(g<bg){bg=g;wk=n;} }catch(e){} } if(!wk) wk=1; }
+    if(typeof openMentor==='function') openMentor(wk);
+  }catch(e){ if(typeof calPickDay==='function') calPickDay(key); }
 }
 // ===== Sessions mentor : lien Calendly + détail =====
 const MENTOR_CALENDLY = "https://calendly.com/YOUR-LINK/mentorship";   // <-- remplacer par le vrai lien Calendly
