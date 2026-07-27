@@ -310,8 +310,11 @@
   .cert-tx h3{font-family:'Cormorant',serif;font-weight:500;font-size:24px;color:var(--ink);margin:0 0 4px;}
   .cert-tx p{font-family:'Jost',sans-serif;font-size:13.5px;color:var(--ink-soft);line-height:1.55;margin:0;}
   .dash-row{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:18px 0 14px;}
-  .dash-card{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:20px 22px;text-align:center;}
-  .dash-n{font-family:'Cormorant',serif;font-weight:500;font-size:38px;color:var(--gold-deep);line-height:1;}
+  .dash-card{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:22px 22px 18px;text-align:center;transition:transform .2s,box-shadow .2s,border-color .2s;}
+  .dash-card:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(33,28,21,.08);border-color:var(--gold-lt);}
+  .dash-ic{width:40px;height:40px;margin:0 auto 12px;border-radius:50%;background:radial-gradient(circle at 50% 35%,var(--gold-wash),#f1e7d2);display:flex;align-items:center;justify-content:center;}
+  .dash-ic svg{width:19px;height:19px;stroke:var(--gold-deep);fill:none;stroke-width:1.7;}
+  .dash-n{font-family:'Cormorant',serif;font-weight:500;font-size:40px;color:var(--gold-deep);line-height:1;font-variant-numeric:tabular-nums;}
   .dash-n span{font-family:'Jost',sans-serif;font-size:14px;color:var(--stone);font-weight:500;margin-left:3px;}
   .dash-l{font-family:'Jost',sans-serif;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--stone);margin-top:8px;}
   .dash-quote{background:var(--gold-wash);border:1px solid var(--gold-lt);border-radius:16px;padding:20px 26px;margin-bottom:26px;}
@@ -4053,9 +4056,9 @@ function renderDashboard(){
   const deliv=(typeof SUBMISSIONS==='object'&&SUBMISSIONS)?Object.keys(SUBMISSIONS).length:0;
   const pts=(typeof prPoints==='function')?prPoints().pts:0;
   row.innerHTML=`
-    <div class="dash-card"><div class="dash-n"><span class="dcount" data-to="${weeksDone}">0</span><span>/ 8</span></div><div class="dash-l">Weeks completed</div></div>
-    <div class="dash-card"><div class="dash-n"><span class="dcount" data-to="${deliv}">0</span><span>/ 8</span></div><div class="dash-l">Deliverables sent</div></div>
-    <div class="dash-card"><div class="dash-n"><span class="dcount" data-to="${pts}">0</span></div><div class="dash-l">Practice points</div></div>`;
+    <div class="dash-card"><div class="dash-ic"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></div><div class="dash-n"><span class="dcount" data-to="${weeksDone}">0</span><span>/ 8</span></div><div class="dash-l">Weeks completed</div></div>
+    <div class="dash-card"><div class="dash-ic"><svg viewBox="0 0 24 24"><path d="M12 19V5"/><path d="M5 12l7-7 7 7"/></svg></div><div class="dash-n"><span class="dcount" data-to="${deliv}">0</span><span>/ 8</span></div><div class="dash-l">Deliverables sent</div></div>
+    <div class="dash-card"><div class="dash-ic"><svg viewBox="0 0 24 24"><path d="M12 2.7l2.6 6.3 6.8.5-5.2 4.4 1.6 6.6L12 17.6 6.2 21l1.6-6.6L2.6 9.9l6.8-.5z" stroke-linejoin="round"/></svg></div><div class="dash-n"><span class="dcount" data-to="${pts}">0</span></div><div class="dash-l">Practice points</div></div>`;
   animateCounts();
   const q=document.getElementById('dashQuote');
   if(q){ const idx=Math.floor(Date.now()/86400000)%DASH_QUOTES.length; q.innerHTML=`<div class="dash-q-k">&#10070; The code of the day</div><p>${DASH_QUOTES[idx]}</p>`; }
