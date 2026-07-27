@@ -1,5 +1,5 @@
 {
-  "updated": "Live roles + boards · updated 26 July 2026",
+  "updated": "Live roles + boards · updated 27 July 2026",
   "boards": [
     [
       "Morgan & Mallet",
@@ -61,173 +61,139 @@
     "americas": [
       {
         "flag": "🇺🇸",
-        "city": "New York, NY",
-        "country": "United States",
-        "title": "Estate Manager - Multiple residences",
-        "agency": "Career Group Companies",
-        "type": "Full time",
-        "tags": [
-          "Estate Manager",
-          "Multi-property",
-          "Smart-home automation"
-        ],
-        "salary": "DOE",
-        "posted": "Posted 30 June 2026",
-        "url": "https://www.estatejobs.com/job/rgtrdx/estate-manager-|-nyc/new-york/ny/united-states",
-        "blurb": "Top-tier Estate Manager to oversee multiple NYC residences, lead household staff, build budgets and coordinate projects while planning for travel and events."
-      },
-      {
-        "flag": "🇺🇸",
-        "city": "New York, NY",
-        "country": "United States",
-        "title": "Estate Manager - Luxury properties",
-        "agency": "The Pocketbook Agency",
-        "type": "Full time",
-        "tags": [
-          "Estate Manager",
-          "Event coordination",
-          "Renovations"
-        ],
-        "salary": "DOE",
-        "posted": "Posted 17 July 2026",
-        "url": "https://www.estatejobs.com/job/d7uxtm/estate-manager/new-york/ny/united-states",
-        "blurb": "Experienced Estate Manager to run daily operations of luxury properties, manage staff, coordinate events and oversee renovations while holding hospitality standards high."
-      },
-      {
-        "flag": "🇺🇸",
-        "city": "New York, NY",
-        "country": "United States",
-        "title": "Estate Manager - Two private residences",
-        "agency": "Mahler Private Staffing",
-        "type": "Full time",
-        "tags": [
-          "Estate Manager",
-          "Two residences",
-          "Vendor management"
-        ],
-        "salary": "DOE",
-        "posted": "Posted 13 July 2026",
-        "url": "https://www.estatejobs.com/job/puwq8p/estate-manager/new-york/ny/united-states",
-        "blurb": "An executive couple seeks a seasoned Estate Manager to oversee two private residences, keeping operations smooth and service standards polished across both homes."
-      },
-      {
-        "flag": "🇺🇸",
-        "city": "Upper East Side, New York, NY",
+        "city": "Menlo Park, CA",
         "country": "United States",
         "title": "House Manager / Personal Assistant",
-        "agency": "Nanny & Butler",
-        "type": "Permanent · Full time · Live-out",
+        "agency": "Rose's Agency",
+        "type": "Full time · Live-out",
         "tags": [
           "House Manager",
           "Personal Assistant",
-          "Two homes"
+          "Vendor management"
         ],
-        "salary": "DOE",
-        "posted": "Posted 14 July 2026",
-        "url": "https://www.estatejobs.com/job/q9l5as/full-time-live-out-house-manager-personal-assistant-ues-new-york-city/new-york-city/ny/united-states",
-        "blurb": "A busy family seeks a House Manager / Personal Assistant to oversee operations across two homes, manage staff and handle personal duties with discretion."
+        "salary": "DOE + benefits",
+        "posted": "Posted 9 June 2026",
+        "url": "https://rosesagency.com/job-board/full-time-house-managerpa-menlo-park",
+        "blurb": "A tech-executive family in Menlo Park seeks a House Manager / PA to run a 7,000 sq ft residence, coordinate roughly 20 vendors, oversee projects and handle travel and family-office logistics."
       },
       {
         "flag": "🇺🇸",
-        "city": "New York, NY",
+        "city": "Palm Beach, FL",
         "country": "United States",
-        "title": "Personal Assistant / Travel & Events Manager",
-        "agency": "Louer",
-        "type": "Full time",
-        "tags": [
-          "Personal Assistant",
-          "Luxury travel",
-          "Event planning"
-        ],
-        "salary": "$250,000+ / year",
-        "posted": "Posted 14 July 2026",
-        "url": "https://www.estatejobs.com/job/d2xmge/full-time-personal-assistant-travel-and-events-manager-in-nyc-250k-and-benefits/new-york/ny/united-states",
-        "blurb": "A private executive seeks a Personal Assistant / Travel & Events Manager to handle luxury travel, event planning and lifestyle management with discretion and poise."
-      },
-      {
-        "flag": "🇺🇸",
-        "city": "Miami Beach, FL",
-        "country": "United States",
-        "title": "Household Manager / Personal Concierge",
-        "agency": "Walsh Signature Staffing",
-        "type": "Full time",
-        "tags": [
-          "Household Manager",
-          "Private concierge",
-          "Staff & vendors"
-        ],
-        "salary": "DOE",
-        "posted": "Posted 6 July 2026",
-        "url": "https://www.estatejobs.com/job/hr7uvm/household-manager-personal-concierge-miami-fl/miami/fl/united-states",
-        "blurb": "A high-net-worth couple seeks a polished Household Manager to run their Miami Beach residence, managing staff, vendors and household needs with excellent discretion."
-      },
-      {
-        "flag": "🇺🇸",
-        "city": "Emerald Coast, FL",
-        "country": "United States",
-        "title": "Director of Estate Operations",
-        "agency": "Curtis Renewable Recruiting",
-        "type": "Full time",
-        "tags": [
-          "Director of Operations",
-          "Team leadership",
-          "Multi-property"
-        ],
-        "salary": "DOE",
-        "posted": "Posted 21 July 2026",
-        "url": "https://www.estatejobs.com/job/jp9hxw/director-of-estate-operations/-/fl/united-states",
-        "blurb": "Build and lead a sophisticated residential operation on Florida's Emerald Coast, focused on team development, operational excellence and seamless service across properties."
-      },
-      {
-        "flag": "🇺🇸",
-        "city": "New York, NY",
-        "country": "United States",
-        "title": "Senior Personal Assistant - Family office",
-        "agency": "Concierge New York",
-        "type": "Full time",
-        "tags": [
-          "Personal Assistant",
-          "Family office",
-          "Discretion"
-        ],
-        "salary": "DOE",
-        "posted": "Posted 21 July 2026",
-        "url": "https://www.estatejobs.com/job/8j46qf/full-time-senior-personal-assistant-family-office-administrative-support-lead/new-york/ny/united-states",
-        "blurb": "A family office seeks a Senior Personal Assistant to provide personal and administrative support to the principal, requiring flexibility, sharp organisation and responsiveness."
-      },
-      {
-        "flag": "🇺🇸",
-        "city": "Los Angeles, CA",
-        "country": "United States",
-        "title": "Estate Manager - Brentwood & beach residence",
-        "agency": "Morgan & Mallet",
-        "type": "Permanent · Full time · Live-out",
-        "tags": [
-          "Estate Manager",
-          "Multi-property",
-          "Home technology"
-        ],
-        "salary": "To be discussed",
-        "posted": "Live on board",
-        "url": "https://www.householdstaff.agency/jobs/estate-manager-job-los-angeles/",
-        "blurb": "A discreet UHNW family seeks an Estate Manager to run their Brentwood home and a secondary beach residence, leading staff and mastering home automation and systems."
-      },
-      {
-        "flag": "🌴",
-        "city": "Private island estate",
-        "country": "Caribbean",
-        "title": "Estate Manager - Ultra-luxury private estate",
-        "agency": "Yacht Crew Recruitment & Training",
+        "title": "Estate Manager",
+        "agency": "Silver Swan Recruitment",
         "type": "Permanent · Full time",
         "tags": [
           "Estate Manager",
-          "Five-star hospitality",
-          "Guest experience"
+          "UHNW",
+          "Multi-property"
         ],
-        "salary": "$90,000 - $100,000 / year (tax-free)",
-        "posted": "Posted 19 June 2026",
-        "url": "https://www.yotspot.com/job-profile/4050400.html",
-        "blurb": "Take full operational ownership of an ultra-luxury Caribbean estate, delivering a five-star residential experience across service, team leadership and guest journey; salary tax-free with accommodation."
+        "salary": "$120,000 - $140,000 / year",
+        "posted": "Live on board",
+        "url": "https://silverswanrecruitment.com/job/estate-manager-palm-beach-florida-4260/",
+        "blurb": "An UHNW family in Palm Beach is looking for an experienced Estate Manager to lead household staff, manage vendors and budgets, and keep every detail of the residence running to a five-star standard."
+      },
+      {
+        "flag": "🇺🇸",
+        "city": "Delray Beach, FL",
+        "country": "United States",
+        "title": "House Manager",
+        "agency": "Silver Swan Recruitment",
+        "type": "Permanent · Full time",
+        "tags": [
+          "House Manager",
+          "Bilingual",
+          "Private residence"
+        ],
+        "salary": "$100,000 - $120,000 / year",
+        "posted": "Live on board",
+        "url": "https://silverswanrecruitment.com/job/house-manager-delray-beach-florida-4270/",
+        "blurb": "A private household in Delray Beach seeks an experienced, bilingual House Manager to oversee daily operations, coordinate staff and vendors, and maintain the home to exacting standards."
+      },
+      {
+        "flag": "🇺🇸",
+        "city": "Houston, TX",
+        "country": "United States",
+        "title": "Estate Manager",
+        "agency": "Morgan & Mallet",
+        "type": "Full time",
+        "tags": [
+          "Estate Manager",
+          "UHNW",
+          "Team leadership"
+        ],
+        "salary": "$140,000 - $170,000 / year",
+        "posted": "Live on board",
+        "url": "https://www.householdstaff.agency/jobs/estate-manager-job-houston-texas-us/",
+        "blurb": "A Houston-based principal seeks a seasoned Estate Manager to oversee the private residence, lead household staff and vendors, and manage budgets, projects and day-to-day operations."
+      },
+      {
+        "flag": "🇺🇸",
+        "city": "Dallas, TX",
+        "country": "United States",
+        "title": "Household Manager",
+        "agency": "Morgan & Mallet",
+        "type": "Full time",
+        "tags": [
+          "Household Manager",
+          "Multi-property",
+          "Travel"
+        ],
+        "salary": "Competitive / DOE",
+        "posted": "Live on board",
+        "url": "https://www.householdstaff.agency/jobs/household-manager-job-dallas-texas-usa/",
+        "blurb": "A private family seeks a polished Household Manager to run homes in Dallas, Austin and Aspen, coordinating staff, service and logistics across all three residences."
+      },
+      {
+        "flag": "🇺🇸",
+        "city": "Greenwich, CT",
+        "country": "United States",
+        "title": "House Manager",
+        "agency": "British American Household Staffing",
+        "type": "Full time",
+        "tags": [
+          "House Manager",
+          "Household manuals",
+          "Budgets"
+        ],
+        "salary": "DOE",
+        "posted": "Live on board",
+        "url": "https://www.mystaffhq.com/jobs/98714431-sa063-house-manager-greenwich-ct",
+        "blurb": "A busy family in Greenwich seeks an exceptional House Manager to oversee household operations, build household manuals, organise supplies and manage budgets and expenses."
+      },
+      {
+        "flag": "🇺🇸",
+        "city": "Lake Tahoe",
+        "country": "United States",
+        "title": "House Manager",
+        "agency": "Rooster Recruitment",
+        "type": "Full time",
+        "tags": [
+          "House Manager",
+          "Owner liaison",
+          "Housing provided"
+        ],
+        "salary": "$160,000+ / year",
+        "posted": "Posted 16 July 2026",
+        "url": "https://www.yotspot.com/job-profile/4071106.html",
+        "blurb": "A Lake Tahoe household seeks a hard-working, friendly House Manager to act as owner liaison and keep the home running smoothly year-round. Medical, dental and 401k with shared housing provided; US citizens or Green Card holders."
+      },
+      {
+        "flag": "🇺🇸",
+        "city": "Atherton, CA",
+        "country": "United States",
+        "title": "House Manager / Personal Assistant",
+        "agency": "Rose's Agency",
+        "type": "Part time",
+        "tags": [
+          "House Manager",
+          "Personal Assistant",
+          "Estate"
+        ],
+        "salary": "DOE",
+        "posted": "Posted 9 June 2026",
+        "url": "https://rosesagency.com/job-board/part-time-house-managerpa-atherton",
+        "blurb": "A private family in Atherton seeks a part-time House Manager / PA to oversee daily operations of their estate and provide comprehensive personal support to two professionals and their family."
       }
     ],
     "europe": [
@@ -235,35 +201,52 @@
         "flag": "🇬🇧",
         "city": "Home Counties",
         "country": "United Kingdom",
-        "title": "Estate Manager / House Manager - UHNW family",
+        "title": "Estate Manager / House Manager",
         "agency": "CPS Private Staffing",
         "type": "Permanent · Full time",
         "tags": [
           "Estate Manager",
-          "House Manager",
-          "UHNW"
+          "UHNW",
+          "Leadership"
         ],
         "salary": "£100,000+ / year",
         "posted": "Posted 13 July 2026",
         "url": "https://www.yotspot.com/job-profile/4077787.html",
-        "blurb": "A long-term Estate Manager / House Manager role with a UHNW family in the Home Counties, suited to an experienced private-household professional; a Chief Stewardess background is highly desirable."
+        "blurb": "Two exceptional long-term Estate Manager / House Manager roles with UHNW families in the Home Counties. Proven private-household leadership and operations experience essential; a Chief Stewardess background is highly desirable."
       },
       {
         "flag": "🇨🇭",
-        "city": "Private residence",
+        "city": "Switzerland",
         "country": "Switzerland",
-        "title": "House Manager (Couple) - Private residence",
+        "title": "House Manager (Couple)",
         "agency": "Lighthouse Careers",
         "type": "Permanent · Couple",
         "tags": [
           "House Manager",
-          "Couple role",
+          "Couple",
           "EU passport"
         ],
         "salary": "DOE",
         "posted": "Posted 18 June 2026",
         "url": "https://www.yotspot.com/job-profile/4048908.html",
-        "blurb": "An experienced couple is wanted for a private Swiss residence, with one partner as House Manager / cook and the other as driver / handyman; some travel to a second property and an EU passport required."
+        "blurb": "An experienced couple is sought for a private residence in Switzerland, with some travel to a second property. One partner as House Manager / cook, the other as driver / handyman. EU passport required."
+      },
+      {
+        "flag": "🇬🇧",
+        "city": "United Kingdom",
+        "country": "United Kingdom",
+        "title": "Household / Estate Manager (Couple)",
+        "agency": "Yotspot",
+        "type": "Permanent · Couple",
+        "tags": [
+          "Estate Manager",
+          "Couple",
+          "Private residence"
+        ],
+        "salary": "£90,000 / year",
+        "posted": "New this week",
+        "url": "https://www.yotspot.com/job-profile/4051171.html",
+        "blurb": "An experienced household couple is sought to run a private UK residence, combining house management, service and estate support for a private family."
       }
     ],
     "mideast": [
@@ -271,52 +254,52 @@
         "flag": "🇦🇪",
         "city": "Dubai",
         "country": "United Arab Emirates",
-        "title": "Family & Household Manager - UHNW family",
+        "title": "Family & Household Manager",
         "agency": "Silver Swan Recruitment",
-        "type": "Permanent · Full time · Live-out",
+        "type": "Permanent · Live-out",
         "tags": [
           "Household Manager",
-          "Family office",
-          "Staff leadership"
+          "UHNW",
+          "Family office"
         ],
         "salary": "AED 30,000 - 35,000 net / month",
         "posted": "Posted 16 July 2026",
         "url": "https://www.yotspot.com/job-profile/4081672.html",
-        "blurb": "A returning UHNW Italian family in Dubai seeks a Family & Household Manager to lead household staff alongside the family PA, split between the family office and residence; Italian and English fluency essential."
+        "blurb": "A returning UHNW Italian family in Dubai seeks a Family & Household Manager to lead household staff and oversee the residence and family life, working closely with the family PA. Fluent Italian and English essential."
       },
       {
         "flag": "🇦🇪",
         "city": "Dubai",
         "country": "United Arab Emirates",
-        "title": "House Manager - UHNW private villa",
+        "title": "House Manager",
         "agency": "CPS Private Staffing",
-        "type": "Permanent · Full time · Live-out",
+        "type": "Permanent · Live-out",
         "tags": [
           "House Manager",
-          "Luxury interiors",
-          "Housekeeping team"
+          "UHNW villa",
+          "Team leadership"
         ],
         "salary": "AED 25,000 - 30,000 / month",
         "posted": "Posted 20 July 2026",
         "url": "https://www.yotspot.com/job-profile/4084900.html",
-        "blurb": "A warm UHNW family in Dubai seeks a hands-on House Manager to run a prestigious villa, lead the housekeeping team, coordinate contractors and care for fine interiors and finishes."
+        "blurb": "A warm UHNW family in Dubai seeks a hands-on House Manager to run a prestigious private villa, lead the housekeeping team, coordinate contractors and care for luxury interiors."
       },
       {
         "flag": "🇦🇪",
         "city": "United Arab Emirates",
         "country": "United Arab Emirates",
-        "title": "House Manager - New UHNW residence",
-        "agency": "Rooster",
-        "type": "Rotational 2:2",
+        "title": "House Manager",
+        "agency": "Rooster Recruitment",
+        "type": "Rotational (2:2)",
         "tags": [
           "House Manager",
-          "New residence",
-          "Rotational"
+          "UHNW residence",
+          "Rotation"
         ],
-        "salary": "Up to $8,000 / month (DOE)",
+        "salary": "DOE - up to $8,000 / month",
         "posted": "Posted 18 June 2026",
         "url": "https://www.yotspot.com/job-profile/4049366.html",
-        "blurb": "Manage a newly opened residence for a large yacht owner, overseeing household staff, liaising with contractors and supporting daily operations on a two-months-on, two-months-off rotation; would suit a Chief Stew or former house manager."
+        "blurb": "A large yacht owner seeks a House Manager to run a new UHNW residence on a 2:2 rotation, overseeing staff, liaising with contractors and supporting daily operations. Would suit a Chief Stew or former house manager."
       }
     ]
   }
