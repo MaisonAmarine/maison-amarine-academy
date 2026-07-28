@@ -3029,7 +3029,44 @@ const PRACTICE = [
  ]}
 ];
 function loadPractice(){ try{ return JSON.parse(localStorage.getItem('ma_practice_v1'))||{best:{},done:{}}; }catch(e){ return {best:{},done:{}}; } }
-function savePractice(){ try{ localStorage.setItem('ma_practice_v1', JSON.stringify(PR_STATE)); }catch(e){} try{ if(typeof renderWeeks==='function') renderWeeks(); }catch(e){} }
+/* Fusionne deux états de practice : "fait" = union, "meilleur score" = le plus haut.
+   Ainsi, passer d'un appareil à l'autre ne perd jamais un déblocage. */
+function mergePractice(a,b){
+  a=a||{best:{},done:{}}; b=b||{best:{},done:{}};
+  const out={best:Object.assign({},a.best||{}), done:Object.assign({},a.done||{})};
+  const bd=b.done||{}; for(const k in bd){ if(bd[k]) out.done[k]=true; }
+  const bb=b.best||{}; for(const k in bb){ const cur=out.best[k], nb=bb[k];
+    if(nb && (!cur || (nb.score||0)>(cur.score||0))) out.best[k]=nb; }
+  return out;
+}
+/* Pousse l'état vers Supabase (colonne profiles.practice_state, jsonb). Silencieux si la
+   colonne n'existe pas encore : le localStorage reste le filet, l'app ne casse jamais. */
+function pushPracticeToServer(){
+  try{
+    if(typeof sb!=='undefined' && typeof USER!=='undefined' && USER && USER.id){
+      sb.from('profiles').update({practice_state: PR_STATE}).eq('id', USER.id).then(function(){}, function(){});
+    }
+  }catch(e){}
+}
+function savePractice(){
+  try{ localStorage.setItem('ma_practice_v1', JSON.stringify(PR_STATE)); }catch(e){}
+  try{ if(typeof renderWeeks==='function') renderWeeks(); }catch(e){}
+  pushPracticeToServer();
+}
+/* Au login : fusionne l'état serveur (multi-appareils) avec le local, puis renvoie l'union au serveur. */
+function syncPracticeFromProfile(){
+  try{
+    if(typeof PROFILE==='object' && PROFILE && PROFILE.practice_state){
+      let sv=PROFILE.practice_state;
+      if(typeof sv==='string'){ try{ sv=JSON.parse(sv); }catch(e){ sv=null; } }
+      if(sv && (sv.done||sv.best)){
+        PR_STATE=mergePractice(PR_STATE, sv);
+        try{ localStorage.setItem('ma_practice_v1', JSON.stringify(PR_STATE)); }catch(e){}
+        pushPracticeToServer();
+      }
+    }
+  }catch(e){}
+}
 let PR_STATE = loadPractice();
 let prState = null;
 function prBadge(t){ return t==='flash' ? 'Flashcards' : t==='quiz' ? 'Quick quiz' : 'Scenario'; }
@@ -3797,7 +3834,7 @@ async function onSignedIn(user){
   USER=user;
   document.getElementById('gate').classList.add('hidden');
   document.getElementById('app').classList.remove('hidden');
-  await loadProfile(); await loadProgress(); await loadSubmissions();
+  await loadProfile(); try{ syncPracticeFromProfile(); }catch(e){} await loadProgress(); await loadSubmissions();
   renderWeeks(); renderAgencies(); bootCareerHub(); initCalAdd(); renderMyEvents();
   loadCourseContent(); loadLessonDefaults(); loadAvatarDirectory();
   loadMessages(false);
