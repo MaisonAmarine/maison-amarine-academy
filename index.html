@@ -1325,6 +1325,83 @@
   .wc-step.done .wc-step-check svg{width:14px;height:14px;}
   .wc-step.done .wc-step-ic{background:var(--gold);}
   .wc-step.done .wc-step-ic svg{stroke:#fff;}
+
+  /* ============================================================
+     ULTRA-PREMIUM PASS — module & reading experience
+     Appended last: refines the base styles through the cascade,
+     nothing removed, easy to review or revert.
+     ============================================================ */
+  @keyframes maRise{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:none;}}
+  @keyframes maFade{from{opacity:0;}to{opacity:1;}}
+
+  /* ---- Week modal: deeper, warmer, more considered ---- */
+  .modal{box-shadow:0 50px 130px rgba(33,28,21,.34), 0 14px 34px rgba(33,28,21,.16);}
+  .modal-hero{height:216px;}
+  .modal-hero::before{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;z-index:3;background:linear-gradient(90deg,transparent,var(--gold-lt) 28%,var(--gold-lt) 72%,transparent);opacity:.6;}
+  .modal-hero .mh-eyebrow{left:34px;bottom:18px;padding-left:24px;}
+  .modal-hero .mh-eyebrow::before{content:"";position:absolute;left:0;top:50%;width:16px;height:1px;background:var(--gold-lt);box-shadow:0 0 6px rgba(0,0,0,.35);}
+  .modal-head .m-badge{background:linear-gradient(158deg,var(--gold-lt),var(--gold));color:#fff;box-shadow:0 6px 16px rgba(168,126,61,.30), inset 0 1px 0 rgba(255,255,255,.45);}
+  .modal-head .m-badge .wk{color:rgba(255,255,255,.9);}
+  .modal-head h2{font-size:29px;letter-spacing:-.01em;}
+  /* the objective becomes a titled "aim" card */
+  .m-obj{position:relative;padding:15px 20px 16px 22px;border-left:3px solid var(--gold);background:linear-gradient(90deg,var(--gold-wash),#fbf6ec 82%);}
+  .m-obj::before{content:"The aim of this week";display:block;font-family:'Jost',sans-serif;font-size:10px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:7px;}
+  .m-steps-label{display:flex;align-items:center;gap:12px;}
+  .m-steps-label::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,rgba(201,168,103,.35),transparent);}
+
+  /* ---- Lesson rows: tactile, with lift and a gold-lit icon ---- */
+  .lesson{box-shadow:0 1px 2px rgba(33,28,21,.03);transition:border-color .2s,background .2s,box-shadow .25s,transform .25s;}
+  .lesson.has-content:hover{transform:translateY(-2px);box-shadow:0 16px 34px rgba(33,28,21,.10);border-color:var(--gold-lt);}
+  .lesson-ic{background:linear-gradient(160deg,var(--gold-wash),#e9dcc0);box-shadow:inset 0 1px 0 rgba(255,255,255,.7);transition:background .25s,color .25s;}
+  .lesson.has-content:hover .lesson-ic{background:linear-gradient(160deg,var(--gold-lt),var(--gold));color:#fff;}
+  .lesson-txt .lt{font-size:15.5px;letter-spacing:-.005em;}
+  .lesson-caret{transition:transform .2s;}
+  .lesson.has-content:hover .lesson-caret{transform:translateX(3px);}
+
+  /* ---- Reading canvas: warm off-white, not stark ---- */
+  .step-view{background:#FCF9F2;}
+
+  /* ---- Fullscreen lesson hero: taller, framed, richer ---- */
+  .lsn-hero{height:232px;box-shadow:0 20px 48px rgba(33,28,21,.16);}
+  .lsn-hero::after{background:linear-gradient(180deg,rgba(20,16,12,.10),rgba(20,16,12,0) 46%,rgba(20,16,12,.22));}
+  .lsn-hero::before{content:"";position:absolute;inset:0;z-index:2;border-radius:16px;box-shadow:inset 0 0 0 1px rgba(201,168,103,.28);pointer-events:none;}
+
+  /* ---- Contents header: an elegant gold rule instead of a hard bar ---- */
+  .lsn-vault .rf-head{border-bottom:none;position:relative;padding-bottom:20px;}
+  .lsn-vault .rf-head::after{content:"";position:absolute;left:50%;bottom:0;transform:translateX(-50%);width:56px;height:2px;border-radius:2px;background:linear-gradient(90deg,var(--gold-lt),var(--gold));}
+  .lsn-toc-k{display:flex;align-items:center;justify-content:center;gap:13px;}
+  .lsn-toc-k::before,.lsn-toc-k::after{content:"";height:1px;width:32px;background:rgba(201,168,103,.5);}
+
+  /* ---- The chapters: each a considered card with a numbered medallion ---- */
+  .lsn-ch{padding:18px 22px;border-radius:16px;box-shadow:0 1px 2px rgba(33,28,21,.03);animation:maRise .5s cubic-bezier(.22,.61,.36,1) both;}
+  .lsn-ch:hover{box-shadow:0 14px 32px rgba(33,28,21,.09);border-color:var(--gold-lt);}
+  .lsn-ch-n{display:flex;align-items:center;justify-content:center;min-width:46px;width:46px;height:46px;border-radius:50%;border:1px solid var(--gold-lt);background:var(--gold-wash);color:var(--gold-deep);font-size:19px;box-shadow:inset 0 1px 0 rgba(255,255,255,.6);transition:background .2s,color .2s,border-color .2s;}
+  .lsn-ch:hover .lsn-ch-n{background:linear-gradient(158deg,var(--gold-lt),var(--gold));color:#fff;border-color:var(--gold);}
+  .lsn-ch:hover .lsn-ch-go{opacity:1;transform:translateX(4px);}
+  .lsn-chapters .lsn-ch:nth-child(1){animation-delay:.02s;}
+  .lsn-chapters .lsn-ch:nth-child(2){animation-delay:.07s;}
+  .lsn-chapters .lsn-ch:nth-child(3){animation-delay:.12s;}
+  .lsn-chapters .lsn-ch:nth-child(4){animation-delay:.17s;}
+  .lsn-chapters .lsn-ch:nth-child(5){animation-delay:.22s;}
+  .lsn-chapters .lsn-ch:nth-child(6){animation-delay:.27s;}
+  .lsn-chapters .lsn-ch:nth-child(7){animation-delay:.32s;}
+  .lsn-chapters .lsn-ch:nth-child(n+8){animation-delay:.36s;}
+
+  /* ---- Chapter reading: a soft entrance and a gold-kissed title rule ---- */
+  .lsn-reading .rf-sec{animation:maRise .55s cubic-bezier(.22,.61,.36,1) both;border-bottom:none;}
+  .lsn-chtitle{border-bottom-color:var(--gold-lt);}
+  .lsn-chapmark{display:inline-flex;align-items:center;gap:9px;}
+  .lsn-chapmark::before{content:"";width:20px;height:1px;background:var(--gold);}
+
+  /* ---- Download & nav: subtle depth and motion ---- */
+  .rf-dl{box-shadow:0 8px 22px rgba(168,126,61,.24);transition:transform .18s,box-shadow .18s,background .18s;}
+  .rf-dl:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(168,126,61,.34);}
+  .lsn-nav{transition:all .18s;}
+  .lsn-nav:hover:not(:disabled){transform:translateY(-1px);box-shadow:0 8px 20px rgba(33,28,21,.07);}
+
+  @media(prefers-reduced-motion:reduce){
+    .lsn-chapters .lsn-ch,.lsn-reading .rf-sec{animation:none!important;}
+  }
 </style>
 
 <style>
