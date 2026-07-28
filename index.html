@@ -4,6 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Maison Amarine, The Academy</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@500;600;700&family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -156,11 +160,6 @@
   .tb-user .av{width:38px;height:38px;border-radius:50%;background:var(--gold);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:15px;flex-shrink:0;background-size:cover;background-position:center;}
   .tb-user .un{font-size:13.5px;font-weight:600;color:var(--ink);line-height:1.2;}
   .tb-user .ur{font-size:11px;color:var(--stone);}
-  .tb-brand{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:flex;align-items:center;gap:9px;pointer-events:none;user-select:none;}
-  .tb-brand svg{width:22px;height:22px;flex-shrink:0;}
-  .tb-brand span{font-family:'Cormorant',serif;font-weight:700;font-size:20px;line-height:1;color:var(--ink);letter-spacing:.005em;}
-  .tb-brand span b{color:var(--gold-deep);font-weight:700;}
-  @media(max-width:1180px){ .tb-brand{display:none;} }
   @media(max-width:860px){ .topbar-d{display:none;} }
   .page{max-width:1240px;margin:0 auto;padding:38px 56px 60px;}
   #page-messages{max-width:none;margin:0;padding:18px;}
@@ -1986,14 +1985,6 @@
 
     <!-- ======= DESKTOP TOP BAR : profil / tutoriel / réglages ======= -->
     <div class="topbar-d">
-      <div class="tb-brand" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="8" cy="8" r="5" stroke="#C9A867" stroke-width="1.5"/>
-          <circle cx="8" cy="8" r="1.7" fill="#C9A867"/>
-          <path d="M11.5 11.5L20 20M17 17l2.2-2.2M15 15l1.6-1.6" stroke="#C9A867" stroke-width="1.5" stroke-linecap="round"/>
-        </svg>
-        <span>Maison <b>Amarine</b></span>
-      </div>
       <div class="tb-left"><span class="tb-hi" id="tbHi"></span></div>
       <div class="tb-search" onclick="openSearch()" title="Search everything">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3" stroke-linecap="round"/></svg>
@@ -4931,28 +4922,23 @@ function lsnList(weekNo){ return LSN_BY_WEEK[Math.abs(weekNo||1)] || LSN_POOL; }
 function lsnFigureHTML(weekNo,seed){ const L=lsnList(weekNo); const n=Math.abs(seed||0)%L.length; return `<figure class="lsn-fig"><img src="${L[n]}" alt="" loading="lazy"></figure>`; }
 // positions (offsets) de fin de chaque bloc de texte de tête (paragraphe / liste)
 function lsnLeafPositions(bodyhtml){ const re=/<\/(p|ul|ol)>/g; let m,pos=[]; while((m=re.exec(bodyhtml))) pos.push(m.index+m[0].length); return pos; }
-// intercale 1 (ou 2 pour les longs chapitres) image(s) du thème de la semaine, en variant la position : haut / milieu / fin
-function lsnInjectFigures(bodyhtml, weekNo, i){
+// Intercale AU PLUS 1 image par chapitre, choisie par la position visible du chapitre.
+// Règle : jamais deux fois la même photo dans une leçon ; au-delà du stock d'images
+// de la semaine, on ne met pas de photo (plutôt que d'en répéter une).
+function lsnInjectFigures(bodyhtml, weekNo, posV){
   // pas de photo dans le module d'introduction (ouvert avec stepIdx -1)
   if(typeof svCur!=='undefined' && svCur && svCur.stepIdx===-1) return bodyhtml;
   if(bodyhtml.indexOf('class="lsn-case"')>=0) return bodyhtml;  // pas de photo dans les chapitres à cases
   const pos=lsnLeafPositions(bodyhtml), L=pos.length;
   if(L<3) return bodyhtml;                       // chapitre trop court : aucune image
-  const wk=Math.abs(weekNo||1), ch=Math.abs(i||0);
-  const inserts=[];
-  if(L>=8){
-    // long chapitre : une image tôt, une autre vers la fin (deux images distinctes du thème)
-    inserts.push({at:pos[1],   seed:ch*2});
-    inserts.push({at:pos[L-2], seed:ch*2+2});
-  } else {
-    const bucket=(wk+ch)%3;                       // 0 haut · 1 milieu · 2 fin
-    let idx = bucket===0 ? 1 : (bucket===1 ? Math.max(1,Math.floor(L/2)) : L-1);
-    inserts.push({at:pos[idx], seed:ch});
-  }
-  inserts.sort((a,b)=>b.at-a.at);                 // insérer de la fin vers le début
-  let out=bodyhtml;
-  inserts.forEach(ins=>{ out=out.slice(0,ins.at)+lsnFigureHTML(wk,ins.seed)+out.slice(ins.at); });
-  return out;
+  const pool=lsnList(weekNo);
+  const gi=Math.abs(posV||0);
+  if(gi>=pool.length) return bodyhtml;           // stock épuisé : pas de photo, pas de doublon
+  const img=pool[gi];
+  const bucket=gi%3;                             // 0 haut · 1 milieu · 2 fin
+  const idx = bucket===0 ? 1 : (bucket===1 ? Math.max(1,Math.floor(L/2)) : L-1);
+  const fig=`<figure class="lsn-fig"><img src="${img}" alt="" loading="lazy"></figure>`;
+  return bodyhtml.slice(0,pos[idx])+fig+bodyhtml.slice(pos[idx]);
 }
 // ---- Débrief par case : on relie chaque "Case I" à son débrief "I · ..." ----
 function svTitleSplit(txt){ const m=txt.match(/^([A-Za-z][A-Za-z ,'’\-]{2,44}?)\s+(?=[0-9]|[A-Z])/); if(m && m[1].split(' ').length<=6){ return [m[1].trim(), txt.slice(m[0].length).trim()]; } return ['', txt]; }
@@ -5126,7 +5112,7 @@ function svOpenSection(i){
     j++;
   }
   // aérer la lecture : image(s) éditoriale(s) intercalée(s), en variant la position
-  bodyhtml = lsnInjectFigures(bodyhtml, svCur.weekNo, i);
+  bodyhtml = lsnInjectFigures(bodyhtml, svCur.weekNo, posV);
   let html=`<div class="lsn-vault lsn-reading">
     <button class="lsn-toc-back" onclick="svShowToc()">${ICO_ARL} Contents</button>
     <div class="lsn-chapmark">Chapter ${posV+1} of ${total}</div>
