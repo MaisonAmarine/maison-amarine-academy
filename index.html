@@ -995,6 +995,17 @@
     .m-tabs{display:flex;gap:6px;background:var(--sidebar);padding:0 12px 12px;position:sticky;top:48px;z-index:149;overflow-x:auto;}
     .m-tab{white-space:nowrap;font-size:13px;font-weight:600;color:#c7bfae;padding:9px 15px;border-radius:20px;cursor:pointer;}
     .m-tab.active{background:var(--gold);color:#fff;}
+    .m-more-btn{color:var(--gold-lt);}
+    .m-more-btn.active{background:var(--gold);color:#fff;}
+    .m-more-backdrop{display:none;position:fixed;inset:0;background:rgba(20,16,11,.5);z-index:199;}
+    .m-more-backdrop.on{display:block;}
+    .m-more-menu{position:fixed;left:0;right:0;bottom:0;z-index:200;background:linear-gradient(180deg,#251f17,var(--sidebar));border-top-left-radius:20px;border-top-right-radius:20px;padding:16px 16px calc(18px + env(safe-area-inset-bottom));box-shadow:0 -12px 40px rgba(0,0,0,.45);transform:translateY(112%);transition:transform .34s cubic-bezier(.2,.7,.2,1);}
+    .m-more-menu.on{transform:none;}
+    .m-more-head{display:flex;align-items:center;justify-content:space-between;color:#EDE6D8;font-family:'Cormorant',serif;font-size:19px;font-weight:600;padding:2px 4px 12px;}
+    .m-more-head .m-more-x{font-size:16px;color:#c7bfae;padding:6px 8px;cursor:pointer;}
+    .m-more-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+    .m-more-link{color:#EDE6D8;background:rgba(255,255,255,.05);border:1px solid rgba(201,168,103,.14);border-radius:12px;padding:14px;font-size:14.5px;font-weight:500;cursor:pointer;transition:background .15s;}
+    .m-more-link:active{background:var(--gold);color:#fff;}
     .page{padding:24px 18px 50px;}
     .roles,.platforms,.lib-grid{grid-template-columns:1fr;}
     .resume-inner{flex-direction:column;} .resume-right{width:100%;border-left:none;border-top:1px solid var(--line);}
@@ -1855,16 +1866,23 @@
     <div class="m-tab active" data-page="dashboard">Dashboard</div>
     <div class="m-tab" data-page="program">Program</div>
     <div class="m-tab" data-page="practice">Practice</div>
-    <div class="m-tab" data-page="career">Career Hub</div>
-    <div class="m-tab" data-page="cv">CV Review</div>
-    <div class="m-tab" data-page="register">Register</div>
-    <div class="m-tab" data-page="journal">Journal</div>
-    <div class="m-tab" data-page="screening">Screening Room</div>
-    <div class="m-tab" data-page="vault">Vault</div>
-    <div class="m-tab" data-page="library">Library</div>
-    <div class="m-tab" data-page="notes">My Notes</div>
     <div class="m-tab" data-page="calendar">Calendar</div>
     <div class="m-tab" data-page="messages">Messages</div>
+    <div class="m-tab m-more-btn" id="mMore">More ▾</div>
+  </div>
+  <div class="m-more-backdrop" id="mMoreBackdrop"></div>
+  <div class="m-more-menu" id="mMoreMenu">
+    <div class="m-more-head">Everything else<span class="m-more-x" id="mMoreClose">✕</span></div>
+    <div class="m-more-grid">
+      <div class="m-more-link" data-page="career">Career Hub</div>
+      <div class="m-more-link" data-page="cv">CV Review</div>
+      <div class="m-more-link" data-page="vault">The Vault</div>
+      <div class="m-more-link" data-page="library">Codes Library</div>
+      <div class="m-more-link" data-page="register">The Register</div>
+      <div class="m-more-link" data-page="journal">The Journal</div>
+      <div class="m-more-link" data-page="screening">Screening Room</div>
+      <div class="m-more-link" data-page="notes">My Notes</div>
+    </div>
   </div>
 
   <main class="main">
@@ -5353,6 +5371,7 @@ function goPage(name, scrollTo){
   _pg.classList.remove('pg-anim'); void _pg.offsetWidth; _pg.classList.add('pg-anim');
   document.querySelectorAll('.nav-item').forEach(n=>n.classList.toggle('active', n.dataset.page===name && !n.dataset.scroll));
   document.querySelectorAll('.m-tab').forEach(t=>t.classList.toggle('active', t.dataset.page===name));
+  var _more=document.getElementById('mMore'); if(_more){ var _sec=['career','cv','register','journal','screening','vault','library','notes']; _more.classList.toggle('active', _sec.indexOf(name)>=0); }
   window.scrollTo(0,0);
   if(name==='messages'){ loadAvatarDirectory().then(()=>{ loadCommunity(); loadDmConversations(); }); loadCommunity(); loadMessages(false); updateConvPreviews(); loadDmConversations(); if(window.innerWidth>820){ selectConv(document.getElementById('waApp').dataset.active||'community'); } }
   if(name==='journal'){ bootJournal(); }
@@ -5368,6 +5387,17 @@ function goPage(name, scrollTo){
 }
 document.querySelectorAll('.nav-item').forEach(n=>n.addEventListener('click',()=>goPage(n.dataset.page, n.dataset.scroll)));
 document.querySelectorAll('.m-tab').forEach(t=>t.addEventListener('click',()=>goPage(t.dataset.page)));
+/* ----- Mobile "More" sheet ----- */
+(function(){
+  var more=document.getElementById('mMore'), menu=document.getElementById('mMoreMenu'), bd=document.getElementById('mMoreBackdrop'), x=document.getElementById('mMoreClose');
+  if(!more||!menu) return;
+  function open(){ menu.classList.add('on'); if(bd) bd.classList.add('on'); }
+  function close(){ menu.classList.remove('on'); if(bd) bd.classList.remove('on'); }
+  more.addEventListener('click', function(e){ e.stopPropagation(); (menu.classList.contains('on')?close:open)(); });
+  if(x) x.addEventListener('click', close);
+  if(bd) bd.addEventListener('click', close);
+  document.querySelectorAll('.m-more-link').forEach(function(l){ l.addEventListener('click', function(){ goPage(l.dataset.page); close(); }); });
+})();
 
 // ====== THE JOURNAL ======
 // ====== THE AMARINE JOURNAL · lecture paginée (1 page / article) + archives ======
