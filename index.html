@@ -3911,9 +3911,9 @@ function weekPracticeRatio(no){
     return total>0 ? done/total : 0;
   }catch(e){ return 0; }
 }
-/* La semaine suivante se débloque quand ≥50% du practice de la semaine précédente est fait
-   (ou si la semaine précédente est déjà marquée terminée — sécurité pour les élèves en cours). */
-function weekUnlockMet(no){ return weekPracticeRatio(no) >= 0.5 || !!(state.completed && state.completed[no]); }
+/* STRICT : la semaine suivante se débloque UNIQUEMENT quand ≥50% du practice de la
+   semaine précédente est fait. Marquer la semaine "terminée" ne débloque plus rien. */
+function weekUnlockMet(no){ return weekPracticeRatio(no) >= 0.5; }
 function highestUnlocked(){
   let u=1;
   for(let i=1;i<=7;i++){ if(weekUnlockMet(i)) u=i+1; else break; }
