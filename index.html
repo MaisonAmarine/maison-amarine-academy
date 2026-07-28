@@ -103,7 +103,10 @@
   .dsh-step.ok .dsh-dot svg{width:9px;height:9px;color:#fff;}
   .dsh-step.ok{color:var(--ink);}
   .dsh-pill{display:inline-block;margin-top:auto;padding-top:14px;font-family:'Jost',sans-serif;font-size:12.5px;font-weight:600;color:var(--gold-deep);}
-  .nav-group{font-family:'Jost',sans-serif;font-size:9px;font-weight:600;letter-spacing:.26em;text-transform:uppercase;color:#7d7469;padding:0 15px;margin:14px 0 5px;}
+  .nav-group{font-family:'Jost',sans-serif;font-size:9.5px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:#8f8676;padding:0 15px;margin:16px 0 6px;display:flex;align-items:center;gap:8px;}
+  .nav-group::after{content:"";flex:1;height:1px;background:rgba(201,168,103,.10);}
+  .nav .nav-group:first-of-type{color:var(--gold-lt);}
+  .nav .nav-group:first-of-type::after{background:rgba(201,168,103,.28);}
   .nav-group:first-child{margin-top:0;}
   .sb-foot{margin-top:auto;padding:14px 10px 0;}
   .sb-user{display:flex;align-items:center;gap:11px;}
@@ -1014,7 +1017,7 @@
     .modal-head,.modal-body,.modal-foot{padding-left:22px;padding-right:22px;}
     .page-h h1{font-size:28px;}
   }
-  @media(min-width:861px){.m-tabs,.topbar-m{display:none;}}
+  @media(min-width:861px){.m-tabs,.topbar-m,.m-more-menu,.m-more-backdrop,.m-more-btn{display:none!important;}}
   @media(prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;transition-duration:.12s!important;}html{scroll-behavior:auto;}}
 
   /* LOGIN GATE — premium ceremony */
