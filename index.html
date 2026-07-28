@@ -103,6 +103,18 @@
   .dsh-step.ok .dsh-dot svg{width:9px;height:9px;color:#fff;}
   .dsh-step.ok{color:var(--ink);}
   .dsh-pill{display:inline-block;margin-top:auto;padding-top:14px;font-family:'Jost',sans-serif;font-size:12.5px;font-weight:600;color:var(--gold-deep);}
+  /* Focus panel : « ta semaine, cette action » — l'unique prochaine étape, mise en avant */
+  .dsh-focus{position:relative;display:flex;flex-wrap:wrap;align-items:center;gap:20px 26px;justify-content:space-between;background:linear-gradient(120deg,var(--gold-wash) 0%,#fbf6ec 58%,var(--paper) 100%);border:1px solid var(--gold-lt);border-radius:20px;padding:24px 28px 24px 32px;margin-bottom:20px;overflow:hidden;box-shadow:0 10px 30px rgba(168,126,61,.10);}
+  .dsh-focus::before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;background:linear-gradient(180deg,var(--gold),var(--gold-lt));}
+  .dsh-focus-main{flex:1 1 320px;min-width:0;}
+  .dsh-focus-k{display:inline-flex;align-items:center;gap:8px;font-family:'Jost',sans-serif;font-size:10px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:9px;}
+  .dsh-focus-k::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 3px rgba(168,126,61,.18);}
+  .dsh-focus-t{font-family:'Cormorant',serif;font-weight:600;font-size:27px;line-height:1.14;color:var(--ink);letter-spacing:-.3px;}
+  .dsh-focus-s{font-size:14px;color:var(--ink-soft);margin-top:8px;line-height:1.55;max-width:560px;}
+  .dsh-focus-cta{flex:0 0 auto;display:inline-flex;align-items:center;gap:9px;background:var(--gold);color:#fff;border:none;border-radius:26px;padding:14px 26px;font-family:'Jost',sans-serif;font-size:14px;font-weight:600;cursor:pointer;transition:transform .2s,box-shadow .2s;box-shadow:0 10px 26px rgba(168,126,61,.28);}
+  .dsh-focus-cta:hover{transform:translateY(-2px);box-shadow:0 14px 34px rgba(168,126,61,.4);}
+  .dsh-focus-cta svg{width:15px;height:15px;}
+  @media(max-width:560px){ .dsh-focus{padding:20px 20px 22px;} .dsh-focus-t{font-size:23px;} .dsh-focus-cta{width:100%;justify-content:center;} }
   .nav-group{font-family:'Jost',sans-serif;font-size:9.5px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:#8f8676;padding:0 15px;margin:16px 0 6px;display:flex;align-items:center;gap:8px;}
   .nav-group::after{content:"";flex:1;height:1px;background:rgba(201,168,103,.10);}
   .nav .nav-group:first-of-type{color:var(--gold-lt);}
@@ -4016,6 +4028,40 @@ function animateCounts(){
     (function step(t){ const p=Math.min(1,(t-start)/dur); el.textContent=Math.round(to*p); if(p<1) requestAnimationFrame(step); else el.textContent=to; })(start);
   });
 }
+// L'unique prochaine action de l'élève : leçon en cours -> practice -> livrable -> certificat.
+function dashNextStep(cur, w){
+  const weeksDone=Object.values(state.completed).filter(Boolean).length;
+  const totalP=(typeof PRACTICE!=='undefined'&&PRACTICE)?PRACTICE.length:8;
+  const doneP=(typeof PRACTICE!=='undefined'&&PRACTICE)?PRACTICE.filter(x=>PR_STATE.done[x.no]).length:0;
+  if(weeksDone>=8){
+    if(doneP>=totalP) return {k:'One last thing',t:'Collect your certificate',s:'Every week and every exercise is complete. It is ready, in your name.',cta:'Download my certificate',fn:'showCertificate()',icon:'seal'};
+    const left=totalP-doneP;
+    return {k:'Almost there',t:'Finish your last practice',s:'All eight weeks are done. Complete '+left+' more exercise'+(left>1?'s':'')+' to unlock your certificate.',cta:'Go to practice',fn:"goPage('practice')",icon:'play'};
+  }
+  const lessons=w.lessons||[];
+  const ld=state.lessons[cur]||[];
+  const watched=ld.filter(Boolean).length;
+  const nextLesson=lessons.findIndex((ls,i)=>!ld[i]);
+  if(nextLesson>=0){
+    const label=(lessons[nextLesson]&&lessons[nextLesson][0])||('Lesson '+(nextLesson+1));
+    return watched>0
+      ? {k:'Week '+cur+' · your next step',t:'Continue: '+label,s:watched+' of '+lessons.length+' lessons watched. Pick up exactly where you left off.',cta:'Continue this week',fn:'openWeek('+cur+')',icon:'play'}
+      : {k:'Week '+cur+' · your next step',t:'Start: '+label,s:'Begin Week '+cur+' — '+w.title+'. '+w.sub,cta:'Start this week',fn:'openWeek('+cur+')',icon:'play'};
+  }
+  let ratio=0; try{ ratio=weekPracticeRatio(cur); }catch(e){}
+  if(ratio<0.5){
+    return {k:'Week '+cur+' · your next step',t:"Do this week's practice",s:'Every lesson is watched. Complete at least half of the practice'+(cur<8?' to unlock Week '+(cur+1)+'.':'.'),cta:'Start the practice',fn:'openWeekPractice('+cur+')',icon:'play'};
+  }
+  const hasDeliv=(typeof SUBMISSIONS==='object'&&SUBMISSIONS&&SUBMISSIONS[cur]);
+  if(!hasDeliv){
+    return {k:'Week '+cur+' · your next step',t:'Send your Week '+cur+' deliverable',s:'Lessons watched, practice done. Create your deliverable and send it to Émilie for her feedback.',cta:'Open my deliverable',fn:'openWeek('+cur+')',icon:'play'};
+  }
+  return {k:'Week '+cur+' · well done',t:'Everything for this week is in',s:'Lesson, practice and deliverable are complete. Take a breath, then open your next module.',cta:'Open Week '+cur,fn:'openWeek('+cur+')',icon:'play'};
+}
+function focusIcon(kind){
+  if(kind==='seal') return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="10" r="6"/><path d="M8.5 15.5L7 22l5-2.5L17 22l-1.5-6.5" stroke-linejoin="round"/><path d="M9.5 10l1.6 1.6L14.5 8.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 3l14 9-14 9z" fill="currentColor" stroke="none"/></svg>';
+}
 // ===== Dashboard élève, page d'accueil =====
 function renderStudentDash(){
   const hero=document.getElementById('dshHero'), grid=document.getElementById('dshGrid');
@@ -4027,14 +4073,22 @@ function renderStudentDash(){
   const pct=Math.round(weeksDone/8*100);
   const cur=highestUnlocked(), w=WEEKS[cur-1];
   const done8=weeksDone>=8;
-  // ---- bandeau ----
+  // ---- bandeau : qui tu es, où tu en es (l'action vit dans le panneau focus ci-dessous) ----
+  const ns=dashNextStep(cur,w);
   hero.innerHTML=`<div class="dsh-hero">
     <div class="dsh-hi">Welcome back</div>
     <h1>${done8?'You have completed the program.':escapeHtml(first)+', your place is waiting.'}</h1>
     <p>${done8?'Every week is done. Collect your certificate, and keep the craft close.':'Week '+cur+' · '+escapeHtml(w.title)+'. '+escapeHtml(w.sub)}</p>
     <div class="dsh-bar"><i style="width:${pct}%"></i></div>
     <div class="dsh-barl">${weeksDone} of 8 weeks complete · ${pct}%</div>
-    <button class="dsh-cta" onclick="${done8?'goPage(\'program\')':'resumeContinue()'}">${PLAY}${done8?'Review my program':(weeksDone>0||lessonProgress(cur)>0?'Continue where I left off':'Begin week '+cur)}</button>
+  </div>
+  <div class="dsh-focus">
+    <div class="dsh-focus-main">
+      <div class="dsh-focus-k">${escapeHtml(ns.k)}</div>
+      <div class="dsh-focus-t">${escapeHtml(ns.t)}</div>
+      <div class="dsh-focus-s">${escapeHtml(ns.s)}</div>
+    </div>
+    <button class="dsh-focus-cta" onclick="${ns.fn}">${focusIcon(ns.icon)}${escapeHtml(ns.cta)}</button>
   </div>`;
   // ---- cartes ----
   const steps=(w.lessons||[]).map((ls,i)=>{
@@ -6192,7 +6246,7 @@ function startOnboarding(user, fullName){
 // ====== TOUR GUIDÉ DYNAMIQUE ======
 const TOUR_STEPS=[
   {sel:null, k:'Welcome', title:'A quick tour of your academy', body:"Here is everything inside, in under a minute. You can replay this any time with the gold button in the corner."},
-  {page:'program', sel:'.nav-item[data-page="program"]:not([data-scroll])', k:'My Program', title:'My Program', body:'Your eight weeks. Each opens a module with a lesson to watch and read, the insider codes, a practice, and one deliverable to send me. Complete at least half of a week's practice to unlock the next module.'},
+  {page:'program', sel:'.nav-item[data-page="program"]:not([data-scroll])', k:'My Program', title:'My Program', body:'Your eight weeks. Each opens a module with a lesson to watch and read, the insider codes, a practice, and one deliverable to send me. Complete at least half of a week\'s practice to unlock the next module.'},
   {page:'practice', sel:'.nav-item[data-page="practice"]', k:'Practice', title:'Practice', body:'Short, playful exercises to make each week stick, with points, badges and best scores. Replay them as often as you like.'},
   {page:'career', sel:'.nav-item[data-page="career"]', k:'Career Hub', title:'Career Hub', body:'Real, live roles from the agencies of this world, plus the boards to search yourself. Your own starting points for outreach.'},
   {page:'cv', sel:'.nav-item[data-page="cv"]', k:'CV Review', title:'CV Review', body:'Upload your CV and get an instant, honest read on what to fix before you send it anywhere.'},
