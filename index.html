@@ -36,7 +36,7 @@
   .sb-brand{display:flex;align-items:center;gap:10px;padding:0 8px 4px;margin-bottom:30px;}
   .sb-brand svg{width:26px;height:26px;flex-shrink:0;}
   .sb-brand .name{font-family:'Cormorant',serif;font-weight:700;font-size:21px;color:#F6F0E4;line-height:1;}
-  .sb-brand .name span{color:var(--gold-lt);}
+  .sb-brand .name span{color:var(--gold-lt);font-style:italic;}
   .sb-brand .tag{display:block;font-size:7.5px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:#9a9184;margin-top:3px;}
   .nav{display:flex;flex-direction:column;gap:1px;padding-bottom:64px;}
   .nav-item{
@@ -1010,7 +1010,7 @@
     .sidebar{display:none;}
     .topbar-m{display:flex;align-items:center;justify-content:space-between;padding:14px 18px;background:var(--sidebar);color:#F6F0E4;position:sticky;top:0;z-index:150;}
     .topbar-m .name{font-family:'Cormorant',serif;font-weight:700;font-size:19px;}
-    .topbar-m .name span{color:var(--gold-lt);}
+    .topbar-m .name span{color:var(--gold-lt);font-style:italic;}
     .m-tabs{display:flex;gap:6px;background:var(--sidebar);padding:0 12px 12px;position:sticky;top:48px;z-index:149;overflow-x:auto;}
     .m-tab{white-space:nowrap;font-size:13px;font-weight:600;color:#c7bfae;padding:9px 15px;border-radius:20px;cursor:pointer;}
     .m-tab.active{background:var(--gold);color:#fff;}
@@ -1771,8 +1771,8 @@
 <div class="gate" id="gate">
   <div class="gate-card">
     <svg class="glogo" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="8" cy="8" r="5" stroke="#A87E3D" stroke-width="1.5"/><circle cx="8" cy="8" r="1.7" fill="#A87E3D"/>
-      <path d="M11.5 11.5L20 20M17 17l2.2-2.2M15 15l1.6-1.6" stroke="#A87E3D" stroke-width="1.5" stroke-linecap="round"/>
+      <rect x="3.5" y="3.5" width="17" height="17" rx="5" stroke="#C6A96B" stroke-width="1.3"/>
+      <text x="12" y="16.7" text-anchor="middle" font-family="'Cormorant Garamond','Cormorant',Georgia,serif" font-size="13.5" font-weight="600" fill="#C6A96B">M</text>
     </svg>
     <div class="eyebrow">Maison Amarine</div>
     <h1>Welcome back</h1>
@@ -1789,8 +1789,8 @@
 <div class="gate hidden" id="setpw">
   <div class="gate-card">
     <svg class="glogo" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="8" cy="8" r="5" stroke="#A87E3D" stroke-width="1.5"/><circle cx="8" cy="8" r="1.7" fill="#A87E3D"/>
-      <path d="M11.5 11.5L20 20M17 17l2.2-2.2M15 15l1.6-1.6" stroke="#A87E3D" stroke-width="1.5" stroke-linecap="round"/>
+      <rect x="3.5" y="3.5" width="17" height="17" rx="5" stroke="#C6A96B" stroke-width="1.3"/>
+      <text x="12" y="16.7" text-anchor="middle" font-family="'Cormorant Garamond','Cormorant',Georgia,serif" font-size="13.5" font-weight="600" fill="#C6A96B">M</text>
     </svg>
     <div class="eyebrow">Maison Amarine</div>
     <h1 id="setpwTitle">Welcome</h1>
@@ -1808,7 +1808,7 @@
     <!-- Étape 1 : accueil cérémonial -->
     <div class="onb-step" data-step="1">
       <div class="onb-key">
-        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.2"><circle cx="8" cy="8" r="5"/><path d="M11.5 11.5L20 20M17 17l2-2" stroke-linecap="round"/></svg>
+        <svg viewBox="0 0 24 24" fill="none"><rect x="3.5" y="3.5" width="17" height="17" rx="5" stroke="currentColor" stroke-width="1.2"/><text x="12" y="16.7" text-anchor="middle" font-family="'Cormorant Garamond','Cormorant',Georgia,serif" font-size="13.5" font-weight="600" fill="currentColor">M</text></svg>
       </div>
       <div class="onb-eyebrow">Maison Amarine</div>
       <h1 class="onb-title">Welcome, <span id="onbName">there</span>.</h1>
@@ -1883,9 +1883,8 @@
   <aside class="sidebar">
     <div class="sb-brand">
       <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="8" cy="8" r="5" stroke="#C9A867" stroke-width="1.5"/>
-        <circle cx="8" cy="8" r="1.7" fill="#C9A867"/>
-        <path d="M11.5 11.5L20 20M17 17l2.2-2.2M15 15l1.6-1.6" stroke="#C9A867" stroke-width="1.5" stroke-linecap="round"/>
+        <rect x="3.5" y="3.5" width="17" height="17" rx="5" stroke="#C6A96B" stroke-width="1.3"/>
+        <text x="12" y="16.7" text-anchor="middle" font-family="'Cormorant Garamond','Cormorant',Georgia,serif" font-size="13.5" font-weight="600" fill="#C6A96B">M</text>
       </svg>
       <div><div class="name">Maison <span>Amarine</span></div><div class="tag">The Academy</div></div>
     </div>
