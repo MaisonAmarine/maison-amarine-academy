@@ -221,9 +221,9 @@
   .wcard:not(.locked):hover::before{opacity:1;}
   .wcard.locked{cursor:not-allowed;background:#faf7f0;opacity:.7;}
   .wcard-top{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:18px;}
-  .wcard-badge{width:56px;height:56px;flex-shrink:0;border-radius:15px;display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:'Cormorant',serif;font-weight:700;background:var(--gold-wash);color:var(--gold-deep);}
-  .wcard-badge .wk{font-size:9px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);font-family:'Jost',sans-serif;line-height:1;margin-bottom:2px;}
-  .wcard-badge .n{font-size:28px;line-height:1;}
+  .wcard-badge{width:44px;height:44px;flex-shrink:0;border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:'Cormorant',serif;font-weight:700;background:var(--gold-wash);color:var(--gold-deep);box-shadow:inset 0 1px 0 rgba(255,255,255,.55);}
+  .wcard-badge .wk{font-size:7.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);font-family:'Jost',sans-serif;line-height:1;margin-bottom:1px;}
+  .wcard-badge .n{font-size:21px;line-height:1;}
   .wcard.done .wcard-badge{background:linear-gradient(135deg,var(--gold),var(--gold-deep));color:#fff;}
   .wcard.done .wcard-badge .wk{color:rgba(255,255,255,.85);}
   .wcard.locked .wcard-badge{background:#efe9dc;color:var(--stone);}
@@ -240,7 +240,7 @@
   .wcard-state.current{background:var(--ink);color:var(--gold-lt);}
   .wcard-state.locked{background:#efe9dc;color:var(--stone);}
 .wcard-bar{width:100%;height:6px;border-radius:99px;background:rgba(30,25,18,.09);overflow:hidden;margin-top:12px;}
-.wcard-bar-fill{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,#2f9e5b,#38b56b);transition:width .5s ease;}
+.wcard-bar-fill{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,var(--gold-deep),var(--gold-lt));transition:width .5s ease;}
 .wcard.locked .wcard-bar{opacity:.55;}
   /* bandeau image d'ambiance en tête de chaque module */
   .wcard-img{margin:-26px -26px 18px;height:134px;background-size:cover;background-position:center;position:relative;flex-shrink:0;}
