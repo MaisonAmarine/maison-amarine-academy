@@ -1954,7 +1954,7 @@
       </div>
       <div class="dash-row" id="dashRow"></div>
       <div class="dash-quote" id="dashQuote"></div>
-      <div class="sec-head"><h3>My program</h3><p>Finish a week to unlock the next. Take your time, this is a journey, not a race.</p></div>
+      <div class="sec-head"><h3>My program</h3><p>Complete at least half of a week's practice to unlock the next module. Take your time, this is a journey, not a race.</p></div>
       <div class="weeks" id="weekList"></div>
       <div class="mentor" id="mentor">
         <div><h3>Your mentorship session</h3><p>Every week includes a personal session: feedback on your work, your questions, and guidance made for your path. It's included in your program.</p></div>
@@ -3017,7 +3017,7 @@ const PRACTICE = [
  ]}
 ];
 function loadPractice(){ try{ return JSON.parse(localStorage.getItem('ma_practice_v1'))||{best:{},done:{}}; }catch(e){ return {best:{},done:{}}; } }
-function savePractice(){ try{ localStorage.setItem('ma_practice_v1', JSON.stringify(PR_STATE)); }catch(e){} }
+function savePractice(){ try{ localStorage.setItem('ma_practice_v1', JSON.stringify(PR_STATE)); }catch(e){} try{ if(typeof renderWeeks==='function') renderWeeks(); }catch(e){} }
 let PR_STATE = loadPractice();
 let prState = null;
 function prBadge(t){ return t==='flash' ? 'Flashcards' : t==='quiz' ? 'Quick quiz' : 'Scenario'; }
@@ -3889,7 +3889,24 @@ async function saveWeek(no){
   await sb.from('week_progress').upsert({user_id:USER.id,week_number:no,completed,lessons_done:lessons,updated_at:new Date().toISOString()},{onConflict:'user_id,week_number'});
 }
 
-function highestUnlocked(){let u=1;for(let i=1;i<=8;i++){if(state.completed[i])u=i+1;}return Math.min(u,8);}
+/* Part du practice réellement fait pour une semaine (exercice principal + drills), entre 0 et 1 */
+function weekPracticeRatio(no){
+  try{
+    var nx = (typeof drillsFor==='function') ? drillsFor(no).length : 0;
+    var total = nx + 1;
+    var done = (typeof PR_STATE!=='undefined' && PR_STATE.done && PR_STATE.done[no]) ? 1 : 0;
+    for(var k=0;k<nx;k++){ if(typeof drillDone==='function' && drillDone(no,k)) done++; }
+    return total>0 ? done/total : 0;
+  }catch(e){ return 0; }
+}
+/* La semaine suivante se débloque quand ≥50% du practice de la semaine précédente est fait
+   (ou si la semaine précédente est déjà marquée terminée — sécurité pour les élèves en cours). */
+function weekUnlockMet(no){ return weekPracticeRatio(no) >= 0.5 || !!(state.completed && state.completed[no]); }
+function highestUnlocked(){
+  let u=1;
+  for(let i=1;i<=7;i++){ if(weekUnlockMet(i)) u=i+1; else break; }
+  return Math.min(u,8);
+}
 function weekStatus(no){if(state.completed[no])return "done";if(no<=highestUnlocked())return "current";return "locked";}
 function lessonProgress(no){const arr=state.lessons[no];if(!arr)return 0;const d=arr.filter(Boolean).length;return Math.round(d/arr.length*100);}
 
@@ -6175,7 +6192,7 @@ function startOnboarding(user, fullName){
 // ====== TOUR GUIDÉ DYNAMIQUE ======
 const TOUR_STEPS=[
   {sel:null, k:'Welcome', title:'A quick tour of your academy', body:"Here is everything inside, in under a minute. You can replay this any time with the gold button in the corner."},
-  {page:'program', sel:'.nav-item[data-page="program"]:not([data-scroll])', k:'My Program', title:'My Program', body:'Your eight weeks. Each opens a module with a lesson to watch and read, the insider codes, a practice, and one deliverable to send me. Finish a week to unlock the next.'},
+  {page:'program', sel:'.nav-item[data-page="program"]:not([data-scroll])', k:'My Program', title:'My Program', body:'Your eight weeks. Each opens a module with a lesson to watch and read, the insider codes, a practice, and one deliverable to send me. Complete at least half of a week's practice to unlock the next module.'},
   {page:'practice', sel:'.nav-item[data-page="practice"]', k:'Practice', title:'Practice', body:'Short, playful exercises to make each week stick, with points, badges and best scores. Replay them as often as you like.'},
   {page:'career', sel:'.nav-item[data-page="career"]', k:'Career Hub', title:'Career Hub', body:'Real, live roles from the agencies of this world, plus the boards to search yourself. Your own starting points for outreach.'},
   {page:'cv', sel:'.nav-item[data-page="cv"]', k:'CV Review', title:'CV Review', body:'Upload your CV and get an instant, honest read on what to fix before you send it anywhere.'},
