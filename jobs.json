@@ -1,5 +1,5 @@
 {
-  "updated": "Live roles + boards · updated 28 July 2026",
+  "updated": "Live roles + boards · updated 29 July 2026",
   "boards": [
     [
       "Morgan & Mallet",
@@ -61,44 +61,10 @@
     "americas": [
       {
         "flag": "🇺🇸",
-        "city": "Greenwich, CT",
+        "city": "Los Angeles, CA",
         "country": "United States",
         "title": "Estate Manager",
-        "agency": "EstateJobs.com",
-        "type": "Full time · Live-out",
-        "tags": [
-          "Estate Manager",
-          "Multi-property",
-          "Renovation projects"
-        ],
-        "salary": "$150,000 - $200,000 / year",
-        "posted": "Posted 27 June 2026",
-        "url": "https://www.estatejobs.com/job/q226px/estate-manager/greenwich/ct/united-states",
-        "blurb": "A private family seeks a hands-on Estate Manager to run multiple residences, including a 25,000 sq ft Greenwich estate under renovation plus homes in NYC, Southampton and Palm Beach. Works alongside the Chief of Staff, coordinating contractors, vendors and budgets."
-      },
-      {
-        "flag": "🇺🇸",
-        "city": "Houston, TX",
-        "country": "United States",
-        "title": "House Manager / Personal Assistant",
-        "agency": "British American Household Staffing",
-        "type": "Full time",
-        "tags": [
-          "House Manager",
-          "Personal Assistant",
-          "Multi-property"
-        ],
-        "salary": "From $130,000 / year",
-        "posted": "New this week",
-        "url": "https://www.mystaffhq.com/jobs/164946921-ko605-house-manager-personal-assistant-houston-tx",
-        "blurb": "Two high-performing executive families in Houston seek a proactive House Manager / PA to run five properties, manage vendors and vehicles, plan travel and support day-to-day logistics with minimal oversight."
-      },
-      {
-        "flag": "🇺🇸",
-        "city": "Western Malibu, CA",
-        "country": "United States",
-        "title": "Estate Manager",
-        "agency": "Rose's Agency",
+        "agency": "Morgan & Mallet",
         "type": "Full time · Live-out",
         "tags": [
           "Estate Manager",
@@ -107,12 +73,12 @@
         ],
         "salary": "Competitive / DOE + benefits",
         "posted": "Live on board",
-        "url": "https://rosesagency.com/job-board/full-time-estate-manager-in-western-malibu",
-        "blurb": "An UHNW entrepreneur seeks a discreet Estate Manager to oversee three modern residences - a Malibu beachfront home plus houses in Beverly Hills and Miami - managing staff, vendors, smart-home systems and budgets, including remote oversight of the Miami property."
+        "url": "https://www.householdstaff.agency/jobs/estate-manager-job-los-angeles/",
+        "blurb": "A discreet UHNW family returning from Europe seeks a hands-on Estate Manager to run their Brentwood primary residence and oversee a secondary beach property. Leads household staff, manages vendors and smart-home systems, and coordinates private events to the highest standard. Six-day week; personal vehicle required."
       },
       {
         "flag": "🇺🇸",
-        "city": "Palm Beach, FL",
+        "city": "South Florida, FL",
         "country": "United States",
         "title": "Estate Manager",
         "agency": "Silver Swan Recruitment",
@@ -122,82 +88,65 @@
           "UHNW",
           "Oceanfront estate"
         ],
-        "salary": "$120,000 - $140,000 / year",
+        "salary": "Competitive / DOE",
         "posted": "Live on board",
-        "url": "https://silverswanrecruitment.com/job/estate-manager-palm-beach-florida-4260/",
-        "blurb": "A private family seeks an experienced Estate Manager for a 20,000 sq ft oceanfront property in South Florida, with oversight across additional US residences. Leads household staff, manages vendors and budgets, and keeps every detail to a five-star standard."
+        "url": "https://silverswanrecruitment.com/job/estate-manager-south-florida-4260/",
+        "blurb": "A private family seeks an experienced Estate Manager for a large oceanfront property in South Florida, with oversight across additional US residences. Leads household staff, manages vendors and budgets, and maintains a five-star standard throughout."
       },
       {
         "flag": "🇺🇸",
-        "city": "New York, NY",
+        "city": "Delray Beach, FL",
         "country": "United States",
-        "title": "Estate Manager",
-        "agency": "The Pocketbook Agency",
-        "type": "Full time",
-        "tags": [
-          "Estate Manager",
-          "Luxury properties",
-          "Renovation"
-        ],
-        "salary": "DOE",
-        "posted": "Posted 17 July 2026",
-        "url": "https://www.estatejobs.com/job/d7uxtm/estate-manager/new-york/ny/united-states",
-        "blurb": "An experienced Estate Manager is needed to oversee daily operations of luxury properties, manage staff, coordinate events and renovations, and uphold high hospitality standards while maintaining absolute confidentiality."
-      },
-      {
-        "flag": "🇺🇸",
-        "city": "New York, NY",
-        "country": "United States",
-        "title": "House Manager / Personal Assistant",
-        "agency": "Nanny & Butler",
-        "type": "Full time · Live-out",
+        "title": "House Manager",
+        "agency": "Silver Swan Recruitment",
+        "type": "Permanent · Full time",
         "tags": [
           "House Manager",
-          "Personal Assistant",
-          "Two residences"
+          "Private residence",
+          "Vendor management"
         ],
-        "salary": "DOE",
-        "posted": "Posted 14 July 2026",
-        "url": "https://www.estatejobs.com/job/q9l5as/full-time-live-out-house-manager-personal-assistant-ues-new-york-city/new-york-city/ny/united-states",
-        "blurb": "A busy Upper East Side family seeks a dedicated House Manager / PA to oversee operations across two homes, manage staff and budgets, and handle personal duties. Strong multitasking, discretion and a proactive attitude are essential."
+        "salary": "Competitive / DOE",
+        "posted": "New this week",
+        "url": "https://silverswanrecruitment.com/job/house-manager-delray-beach-florida-4270/",
+        "blurb": "A private household in Delray Beach seeks a polished House Manager to run day-to-day operations, coordinate vendors and staff, and keep the residence impeccably maintained with discretion and strong organisation."
       },
       {
         "flag": "🇺🇸",
-        "city": "Miami Beach, FL",
+        "city": "Sun Valley, ID",
         "country": "United States",
-        "title": "Household Manager / Personal Concierge",
-        "agency": "Walsh Signature Staffing",
+        "title": "Property Manager",
+        "agency": "Silver Swan Recruitment",
         "type": "Full time",
         "tags": [
-          "Household Manager",
-          "Private concierge",
-          "UHNW"
+          "Property Manager",
+          "Mountain estate",
+          "Maintenance & grounds"
         ],
-        "salary": "DOE",
-        "posted": "Posted 6 July 2026",
-        "url": "https://www.estatejobs.com/job/hr7uvm/household-manager-personal-concierge-miami-fl/miami/fl/united-states",
-        "blurb": "A high-net-worth couple seeks a polished Household Manager to run daily operations of their luxury Miami Beach residence, managing staff, vendors and household systems with excellent communication, organisation and discretion."
+        "salary": "Competitive / DOE",
+        "posted": "Live on board",
+        "url": "https://silverswanrecruitment.com/job/property-manager-sun-valley-idaho-4261/",
+        "blurb": "A private family seeks a Property Manager for their Sun Valley residence, overseeing maintenance, grounds, vendors and seasonal preparations. A hands-on role for a proactive professional who keeps a mountain estate running smoothly year-round."
       },
       {
         "flag": "🇺🇸",
-        "city": "New York, NY",
+        "city": "Columbus, OH",
         "country": "United States",
-        "title": "Chief of Staff",
-        "agency": "Cass and Company",
+        "title": "House Manager",
+        "agency": "Silver Swan Recruitment",
         "type": "Full time",
         "tags": [
-          "Chief of Staff",
-          "Family office",
-          "Operations"
+          "House Manager",
+          "Household operations",
+          "Staff scheduling"
         ],
-        "salary": "DOE",
-        "posted": "Posted 8 July 2026",
-        "url": "https://www.estatejobs.com/job/twrskk/chief-of-staff/new-york-city/ny/united-states",
-        "blurb": "A high-net-worth family seeks a Chief of Staff to manage household operations, philanthropic initiatives and business engagements, coordinating staff and vendors while driving communication and strategic planning."
+        "salary": "Competitive / DOE",
+        "posted": "Live on board",
+        "url": "https://silverswanrecruitment.com/job/house-manager-columbus-ohio-4088/",
+        "blurb": "A private family in Columbus seeks an experienced House Manager to oversee household operations, staff scheduling and vendor coordination, keeping the home to a high standard with warmth and discretion."
       },
       {
         "flag": "🇺🇸",
-        "city": "La Cañada, CA",
+        "city": "Atherton, CA",
         "country": "United States",
         "title": "House Manager / Personal Assistant",
         "agency": "Rose's Agency",
@@ -205,12 +154,46 @@
         "tags": [
           "House Manager",
           "Personal Assistant",
-          "Household COO"
+          "Estate operations"
         ],
-        "salary": "$35 - $50 / hour",
+        "salary": "Competitive / DOE",
+        "posted": "Posted 9 June 2026",
+        "url": "https://rosesagency.com/job-board/part-time-house-managerpa-atherton",
+        "blurb": "A private family in Atherton seeks an experienced part-time House Manager / Personal Assistant to run daily estate operations and provide comprehensive personal support to two busy professionals and their family."
+      },
+      {
+        "flag": "🇺🇸",
+        "city": "Menlo Park, CA",
+        "country": "United States",
+        "title": "House Manager / Personal Assistant",
+        "agency": "Rose's Agency",
+        "type": "Full time",
+        "tags": [
+          "House Manager",
+          "Personal Assistant",
+          "Family support"
+        ],
+        "salary": "Competitive / DOE",
         "posted": "Live on board",
-        "url": "https://rosesagency.com/job-board/part-time-house-managerpersonal-assistant-in-la-caada",
-        "blurb": "Two older principals in La Cañada seek a warm, organised part-time House Manager / PA - essentially a household COO - to take ownership of operations, vendor coordination, scheduling, light bookkeeping and backlogged projects, 20-30 hours per week."
+        "url": "https://rosesagency.com/job-board/full-time-house-managerpa-menlo-park",
+        "blurb": "A Menlo Park family - technology executives in the AI field who recently welcomed their first child - seeks an exceptional House Manager / Personal Assistant to run their primary residence and provide high-level personal support."
+      },
+      {
+        "flag": "🇺🇸",
+        "city": "Eastern Long Island / NYC",
+        "country": "United States",
+        "title": "Estate & Facilities Manager",
+        "agency": "British American Household Staffing",
+        "type": "Full time",
+        "tags": [
+          "Estate Manager",
+          "Facilities",
+          "Two residences"
+        ],
+        "salary": "Competitive / DOE",
+        "posted": "New this week",
+        "url": "https://www.mystaffhq.com/jobs/94897814-kp629-full-time-estate-and-facilities-manager-eastern-long-island-nyc",
+        "blurb": "A detail-oriented Estate & Facilities Manager is sought to oversee a large estate on Eastern Long Island plus an apartment in New York City, leading property management, maintenance and staff across both locations."
       }
     ],
     "europe": [
@@ -226,10 +209,10 @@
           "Private residence",
           "Logistics"
         ],
-        "salary": "€3,460 - €3,850 gross / month",
-        "posted": "New this week",
+        "salary": "To be discussed",
+        "posted": "Posted 27 July 2026",
         "url": "https://www.householdstaff.agency/jobs/house-manager-job-in-paris-france/",
-        "blurb": "A private client in Paris 7th seeks a House Manager to run the household - upkeep, maintenance, logistics and light handywork - coordinating with the housekeeper and preparing a second home as required. Minimum five years' experience and a driving licence."
+        "blurb": "A private client in Paris 75007 seeks a House Manager for the operational running of the household - handywork, maintenance, logistics and services - working in coordination with the housekeeper. Permanent contract, 42 hours per week."
       },
       {
         "flag": "🇫🇷",
@@ -237,19 +220,53 @@
         "country": "France",
         "title": "House Manager",
         "agency": "Morgan & Mallet",
-        "type": "Permanent · Live-out",
+        "type": "Permanent · Full time",
         "tags": [
           "House Manager",
           "High-end residence",
           "Team leadership"
         ],
-        "salary": "€60,000 - €66,000 gross / year",
+        "salary": "To be discussed",
         "posted": "Posted 22 July 2026",
         "url": "https://www.householdstaff.agency/jobs/house-manager-job-cannes-france/",
-        "blurb": "An experienced House Manager is sought to oversee a high-end private residence in Cannes - maintenance, security, on-site staff and suppliers, stock, event logistics and household administration - with absolute discretion and strong organisation."
+        "blurb": "An experienced House Manager is sought to oversee the overall running of a high-end private residence in Cannes, managing the household, its upkeep and on-site staff. Strong discretion, excellent organisation and complete reliability are essential."
+      },
+      {
+        "flag": "🇬🇧",
+        "city": "London & Surrey",
+        "country": "United Kingdom",
+        "title": "House Manager",
+        "agency": "Silver Swan Recruitment",
+        "type": "Permanent · Full time",
+        "tags": [
+          "House Manager",
+          "Two residences",
+          "UHNW"
+        ],
+        "salary": "Competitive / DOE",
+        "posted": "Live on board",
+        "url": "https://silverswanrecruitment.com/jobs/house-manager-3491/",
+        "blurb": "A private family maintaining homes in London and Surrey seeks an experienced House Manager to run both residences to five-star standards, leading staff, managing schedules and coordinating vendors with flexibility to move between properties."
       }
     ],
     "mideast": [
+      {
+        "flag": "🇦🇪",
+        "city": "Dubai",
+        "country": "United Arab Emirates",
+        "title": "Butler / House Manager",
+        "agency": "Morgan & Mallet",
+        "type": "Permanent · Full time · Live-out",
+        "tags": [
+          "Butler",
+          "House Manager",
+          "Family office"
+        ],
+        "salary": "AED 45,000 - 55,000 / month",
+        "posted": "Live on board",
+        "url": "https://www.householdstaff.agency/jobs/butler-house-manager-job-dubai-uae/",
+        "blurb": "A UHNW principal in Palm Jumeirah seeks a senior Butler / House Manager to deliver white-glove service and oversee a luxury multi-property portfolio within a structured family-office environment. Requires 15+ years' UHNW experience and formal butler training."
+      },
       {
         "flag": "🇦🇪",
         "city": "Dubai",
@@ -265,7 +282,7 @@
         "salary": "AED 30,000 / month",
         "posted": "Live on board",
         "url": "https://silverswanrecruitment.com/job/house-manager-dubai-4404/",
-        "blurb": "A family newly moved to a large villa in Emirates Hills seeks an experienced House Manager to run a busy household to five-star standards, leading a team of 15-20 staff, managing budgets and overseeing procurement and supplier contracts. Dubai-based candidates only."
+        "blurb": "A family newly settled in a large Emirates Hills villa seeks an experienced House Manager to run a busy household with three young children and a team of around 20 staff to five-star standards. Live-out; Dubai-based candidates only."
       },
       {
         "flag": "🇦🇪",
@@ -282,24 +299,7 @@
         "salary": "AED 30,000 - 35,000 / month",
         "posted": "Live on board",
         "url": "https://silverswanrecruitment.com/job/house-manager-live-out-dubai-4212/",
-        "blurb": "An UHNW family seeks an experienced House Manager for a new residence in Dubai, overseeing daily operations, staff and standards. Live-out role; candidates must already be based in Dubai as relocation is not provided."
-      },
-      {
-        "flag": "🇦🇪",
-        "city": "Dubai",
-        "country": "United Arab Emirates",
-        "title": "Senior Housekeeper / Junior House Manager",
-        "agency": "Morgan & Mallet",
-        "type": "Permanent · Full time",
-        "tags": [
-          "Junior House Manager",
-          "Team supervision",
-          "Career progression"
-        ],
-        "salary": "To be discussed",
-        "posted": "Posted 24 July 2026",
-        "url": "https://www.householdstaff.agency/jobs/senior-housekeeper-junior-house-manager-job-dubai-uae/",
-        "blurb": "A European family in Dubai seeks a proactive Senior Housekeeper / Junior House Manager to supervise two staff while staying hands-on. A strong opportunity to grow into a full House Manager role as the family's property portfolio expands."
+        "blurb": "A UHNW family seeks an experienced House Manager for a new residence in Dubai, overseeing daily operations, staff and standards. Live-out role; candidates must already be based in Dubai as relocation is not provided."
       }
     ]
   }
