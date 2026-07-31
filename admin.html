@@ -841,6 +841,57 @@
   /* ---- Vue plein écran d'une étape ---- */
   .step-view{position:fixed;inset:0;background:var(--paper,#fff);border-radius:0;display:flex;flex-direction:column;opacity:0;visibility:hidden;transform:translateX(24px);transition:opacity .3s ease,transform .3s ease,visibility .3s;z-index:300;overflow:hidden;}
   .step-view.open{opacity:1;visibility:visible;transform:none;}
+  /* ===== Final Exam ===== */
+  .exam-view{position:fixed;inset:0;background:#FCF9F2;z-index:320;display:none;overflow-y:auto;}
+  .exam-view.open{display:block;}
+  .exam-inner{min-height:100%;display:flex;align-items:flex-start;justify-content:center;padding:52px 20px 60px;}
+  .exam-screen{position:relative;width:100%;max-width:720px;}
+  .exam-close{position:fixed;top:22px;right:26px;width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:#fff;color:var(--stone);font-size:16px;cursor:pointer;z-index:2;}
+  .exam-close:hover{color:var(--ink);border-color:var(--gold);}
+  .exam-seal{width:56px;height:56px;color:var(--gold-deep);margin:0 auto 18px;}
+  .exam-seal svg{width:56px;height:56px;}
+  .exam-k{text-align:center;font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:var(--gold-deep);font-weight:600;margin-bottom:12px;}
+  .exam-h{text-align:center;font-family:'Cormorant',serif;font-weight:400;font-size:40px;line-height:1.1;color:var(--ink);margin:0 0 16px;}
+  .exam-lead{text-align:center;font-family:'Cormorant',Georgia,serif;font-size:20px;line-height:1.7;color:#4a443b;max-width:600px;margin:0 auto 26px;}
+  .exam-best{text-align:center;font-family:'Jost',sans-serif;font-size:13px;color:var(--stone);margin-bottom:24px;}
+  .exam-passed{color:var(--gold-deep);font-weight:600;}
+  .exam-btn{display:block;margin:0 auto;font-family:'Jost',sans-serif;font-size:14px;font-weight:600;letter-spacing:.04em;color:#fff;background:linear-gradient(135deg,var(--gold),var(--gold-deep));border:none;border-radius:40px;padding:15px 40px;cursor:pointer;box-shadow:0 14px 34px -10px rgba(155,124,64,.6);transition:transform .2s;}
+  .exam-btn:hover{transform:translateY(-1px);}
+  .exam-btn.ghost{background:none;color:var(--stone);box-shadow:none;font-weight:500;margin-top:12px;padding:10px;}
+  .exam-btn.ghost:hover{color:var(--ink);transform:none;}
+  .exam-top{margin-bottom:30px;}
+  .exam-prog-k{font-family:'Jost',sans-serif;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-deep);font-weight:600;margin-bottom:9px;text-align:center;}
+  .exam-prog{width:100%;height:5px;border-radius:99px;background:rgba(30,25,18,.09);overflow:hidden;}
+  .exam-prog-f{height:100%;border-radius:99px;background:linear-gradient(90deg,var(--gold-deep),var(--gold-lt));transition:width .3s ease;}
+  .exam-stem{font-family:'Cormorant',serif;font-weight:500;font-size:29px;line-height:1.25;color:var(--ink);margin:0 0 26px;}
+  .exam-opts{display:flex;flex-direction:column;gap:12px;}
+  .exam-opt{text-align:left;font-family:'Jost',sans-serif;font-size:15.5px;line-height:1.5;color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 20px;cursor:pointer;transition:all .15s;}
+  .exam-opt:hover{border-color:var(--gold);}
+  .exam-opt.sel{border-color:var(--gold-deep);background:var(--gold-wash,#f7efdd);box-shadow:inset 0 0 0 1px var(--gold-deep);}
+  .exam-nav{display:flex;justify-content:space-between;gap:12px;margin-top:32px;}
+  .exam-nav-b{font-family:'Jost',sans-serif;font-size:14px;font-weight:500;color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:40px;padding:12px 28px;cursor:pointer;transition:.15s;}
+  .exam-nav-b:hover:not(:disabled){border-color:var(--gold);}
+  .exam-nav-b:disabled{opacity:.4;cursor:not-allowed;}
+  .exam-nav-next{color:#fff;background:linear-gradient(135deg,var(--gold),var(--gold-deep));border:none;}
+  .exam-score{text-align:center;font-family:'Cormorant',serif;font-weight:600;font-size:76px;line-height:1;color:var(--gold-deep);margin:6px 0 4px;}
+  .exam-score span{font-size:34px;color:var(--stone);}
+  .exam-result.fail .exam-score{color:var(--stone);}
+  .exam-result.fail .exam-seal{color:var(--stone);opacity:.7;}
+  .exam-actions{display:flex;flex-direction:column;align-items:center;margin-top:8px;}
+  @media(max-width:620px){ .exam-inner{padding:44px 16px 50px;} .exam-h{font-size:30px;} .exam-lead{font-size:18px;} .exam-stem{font-size:24px;} .exam-score{font-size:60px;} }
+  .pr-exam{display:flex;align-items:center;gap:22px;margin-top:26px;background:linear-gradient(135deg,#241d15,#17110b);border:1px solid rgba(201,168,103,.28);border-radius:20px;padding:26px 30px;color:#f3ead6;flex-wrap:wrap;}
+  .pr-exam.locked{background:linear-gradient(135deg,#f6f2ea,#efe9dc);border-color:var(--line);color:var(--ink);}
+  .pr-exam-ic{width:48px;height:48px;color:var(--gold-lt);flex:none;}
+  .pr-exam.locked .pr-exam-ic{color:var(--stone);opacity:.7;}
+  .pr-exam-ic svg{width:48px;height:48px;}
+  .pr-exam-tx{flex:1;min-width:240px;}
+  .pr-exam-k{font-family:'Jost',sans-serif;font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-lt);font-weight:600;margin-bottom:6px;}
+  .pr-exam.locked .pr-exam-k{color:var(--gold-deep);}
+  .pr-exam-tx h3{font-family:'Cormorant',serif;font-weight:500;font-size:25px;margin:0 0 4px;color:inherit;}
+  .pr-exam-tx p{font-family:'Jost',sans-serif;font-size:13px;line-height:1.55;color:rgba(243,234,214,.82);margin:0;}
+  .pr-exam.locked .pr-exam-tx p{color:var(--ink-soft);}
+  .pr-exam-btn{margin:0!important;flex:none;}
+  .pr-exam-lock{font-size:22px;opacity:.5;flex:none;}
   body.reading-lock{overflow:hidden;}
   .step-view-head{flex-shrink:0;padding:22px 32px 14px;border-bottom:1px solid var(--line);}
   .step-back{display:inline-flex;align-items:center;gap:9px;background:none;border:none;cursor:pointer;font-family:inherit;font-size:13px;font-weight:600;letter-spacing:.02em;color:var(--gold-deep);padding:8px 14px 8px 10px;border-radius:10px;transition:background .18s,transform .18s;}
@@ -2803,6 +2854,9 @@
   </div>
 </div>
 
+<!-- Vue plein écran : Final Exam -->
+<div class="exam-view" id="examView"><div class="exam-inner" id="examInner"></div></div>
+
 <!-- Vue plein écran : Dictionary of Luxury -->
 <div class="dict-view" id="dictView">
   <div class="dict-vhead">
@@ -3411,7 +3465,17 @@ function renderPractice(){
       <div class="pr-go ${all?'pr-done':''}">${nx?nDone+' of '+(nx+1)+' done':(done?'Play again':'Start')} &rarr;</div>
     </button>`;
   }).join('')+'</div>';
-  wrap.innerHTML=stats+cards;
+  const _est=examState(), _unlocked=examWeeksDone();
+  const examCard=`<div class="pr-exam${_unlocked?'':' locked'}${_est.passed?' passed':''}">
+    <div class="pr-exam-ic">${EXAM_SEAL}</div>
+    <div class="pr-exam-tx">
+      <div class="pr-exam-k">The final examination</div>
+      <h3>${_est.passed?'Final exam passed &#10022; certificate unlocked':(_unlocked?'The Final Exam':'The Final Exam')}</h3>
+      <p>${_est.passed?('Best score '+_est.best+'/100. You may retake it any time.'):(_unlocked?('100 questions from the whole program. Score '+EXAM_PASS+' or more to unlock your certificate.'+(_est.attempts?(' Best so far: '+_est.best+'/100.'):'')):'Finish all eight weeks to unlock the final exam and your certificate.')}</p>
+    </div>
+    ${_unlocked?`<button class="exam-btn pr-exam-btn" onclick="openFinalExam()">${_est.attempts?'Retake the exam':'Take the exam'}</button>`:`<div class="pr-exam-lock">&#128274;</div>`}
+  </div>`;
+  wrap.innerHTML=stats+cards+examCard;
 }
 function startPractice(no){
   const w=PRACTICE.find(x=>x.no===no); if(!w) return;
@@ -4304,16 +4368,21 @@ function updateResume(){
     const certH=document.getElementById('certH'), certP=document.getElementById('certP'), certBtn=document.getElementById('certBtn');
     if(cert){
       cert.classList.remove('hidden');
-      if(doneP>=totalP){
+      if(doneP>=totalP && examPassed()){
         cert.classList.remove('locked');
-        if(certH) certH.textContent="You have completed all eight weeks and every exercise.";
+        if(certH) certH.textContent="You have completed the program and passed the final exam.";
         if(certP) certP.textContent="Your certificate of completion is ready, in your name. Download it, keep it, and carry it with pride.";
         if(certBtn){ certBtn.textContent="Download my certificate"; certBtn.setAttribute('onclick','showCertificate()'); }
+      } else if(doneP>=totalP){
+        cert.classList.add('locked');
+        if(certH) certH.textContent="One last step: the final exam.";
+        if(certP) certP.textContent="Every week and every exercise is complete. Pass the final exam — "+EXAM_PASS+" correct out of 100 — to unlock your certificate. You can retake it as many times as you need.";
+        if(certBtn){ certBtn.textContent="Take the final exam"; certBtn.setAttribute('onclick','openFinalExam()'); }
       } else {
         cert.classList.add('locked');
         const left=totalP-doneP;
-        if(certH) certH.textContent="One last step before your certificate.";
-        if(certP) certP.textContent="All eight modules are done. Complete your Practice exercises to unlock your certificate. "+left+" week"+(left>1?"s":"")+" of practice still to go.";
+        if(certH) certH.textContent="Two steps before your certificate.";
+        if(certP) certP.textContent="All eight modules are done. Complete your Practice exercises, then pass the final exam, to unlock your certificate. "+left+" week"+(left>1?"s":"")+" of practice still to go.";
         if(certBtn){ certBtn.textContent="Go to my exercises"; certBtn.setAttribute('onclick',"goPage('practice')"); }
       }
     }
@@ -4436,6 +4505,184 @@ function renderDashboard(){
   animateCounts();
   const q=document.getElementById('dashQuote');
   if(q){ const idx=Math.floor(Date.now()/86400000)%DASH_QUOTES.length; q.innerHTML=`<div class="dash-q-k">&#10070; The code of the day</div><p>${DASH_QUOTES[idx]}</p>`; }
+}
+/* ==================== FINAL EXAM ==================== */
+var FINAL_EXAM = [
+  { wk:1, q:"Stripped of the glamour, what are you truly selling a household?", a:["Luxury, access and a glimpse of a rarefied world","Trust, discretion and a life that runs without friction","Long hours and tireless hard work","Impeccable taste and cultural sophistication"], c:1, fb:"Peace of mind is the product; they already own the luxury, and everything else is only the setting." },
+  { wk:1, q:"A friend says “so you want to be a butler?”. What is the most accurate reply?", a:["Yes, essentially a modern butler","It is one craft with several titles: house manager, private PA, estate manager, concierge","No, it is nothing like that at all","It is really a hospitality job that happens to be in a home"], c:1, fb:"It is a single craft behind many doors; the person who searches only one noun wrongly concludes the market is closed." },
+  { wk:1, q:"A guest boasts loudly about the price of everything they own. In this world that usually signals:", a:["The very top of the wealth ladder","A generous, warm personality","Nothing at all; wealth is wealth","Someone still proving it, rather than someone at ease with it"], c:3, fb:"The most established rarely mention cost; announcing prices is the language of proving, not of being at ease." },
+  { wk:1, q:"At dinner the principal warmly offers you a glass of wine, as if to a friend. You:", a:["Decline graciously and stay in your role, without making it awkward","Accept; they clearly want you to feel like family","Accept only a small amount, to be polite","Decline sharply so the boundary is unmistakable"], c:0, fb:"Warmth is not permission to step out of role; holding the line kindly protects you both." },
+  { wk:1, q:"On your first day you overhear something private about the family. What do you do with it?", a:["Note it quietly, in case it is useful later","Gently let them know you are there to support them","Nothing; you act as though you never heard it, now and forever","Mention it discreetly to a trusted colleague"], c:2, fb:"Discretion is vigilance over everything you happen to see or hear, not merely silence about what you are told." },
+  { wk:1, q:"A recruiter asks for a reference from a confidential household you served. The right move?", a:["Give the principal’s name; proof matters more than discretion here","Offer a reference through the family office, and name no one","Say you are sorry, you cannot provide any reference at all","Hint at who it was so they can verify it themselves"], c:1, fb:"You prove the role was real without breaching a confidence; handled this way, the unnamed house becomes your strongest line." },
+  { wk:1, q:"The principal snaps “why is the car not here?” when it is in fact early. The real message is usually:", a:["They are angry at you specifically","They are anxious about something ahead, and the worry landed on the car","They want you to defend the timing","They are testing whether you will stand up for yourself"], c:1, fb:"Read the emotion beneath the words and solve the feeling, not just the sentence." },
+  { wk:1, q:"Over dinner a friend asks which celebrity you work for. You:", a:["Tell them, but swear them to secrecy","Smile and say you work for a private family, and leave it there","Drop a hint and let them guess","Decline so firmly that it becomes awkward"], c:1, fb:"Warm, final and revealing nothing; a secret shared is a secret gone." },
+  { wk:1, q:"The most respectful term for the person you work for is:", a:["The boss","The client","The principal","The employer"], c:2, fb:"Using it naturally marks you as someone who knows the register of this world." },
+  { wk:1, q:"In an interview, which answer to “why private service?” opens the door?", a:["Honestly, the lifestyle: the travel, the houses, the access it gives me","I find real satisfaction in making someone’s life run seamlessly, without them noticing how","I am very organised, hard-working and I learn fast","I have always admired people who have achieved so much"], c:1, fb:"Service framed as craft and care, not access, is the register that reassures a principal." },
+  { wk:1, q:"What do the ultra-wealthy most value in the person who serves them?", a:["Someone visibly impressed by their taste and their world","Someone who treats them like celebrities at every moment","Someone unbothered by it all who simply gets things right","Someone endlessly eager to please"], c:2, fb:"They are surrounded by people who are impressed; calm competence is the rare and valuable thing." },
+  { wk:1, q:"Very often, the party that actually hires and manages you is:", a:["The family office, the private structure managing the family’s affairs and staff","The principal personally, in every case","The most senior member of the household staff","The recruiting agency, on an ongoing basis"], c:0, fb:"It is frequently the family office, not the family, that truly hires you and to whom you answer." },
+  { wk:2, q:"“Black tie” on an invitation calls for:", a:["A dark business suit and a conservative tie","A dinner jacket with a black bow tie","A tailcoat with a white waistcoat and white bow tie","Smart separates, jacket optional"], c:1, fb:"Black tie is a dinner jacket and black bow tie; a business suit at such an event is a quiet failure." },
+  { wk:2, q:"The most formal evening dress code, above black tie, is:", a:["Morning dress","White tie: tailcoat, white waistcoat and white bow tie","Cocktail attire","Black tie optional"], c:1, fb:"Recognising white tie on an invitation saves a principal a conspicuous, memorable error." },
+  { wk:2, q:"“Bespoke” differs from “made to measure” in that bespoke is:", a:["Built entirely to individual specification, from scratch, for one client","Simply the more expensive of two identical things","An existing pattern adjusted to fit the wearer","A marketing word with no real distinction"], c:0, fb:"Reserve the word for what is truly built from nothing; made to measure only adjusts an existing pattern." },
+  { wk:2, q:"An amuse-bouche is:", a:["A shared platter to begin a meal","A single bite chosen by the chef, served before the meal and never charged for","The most expensive course on the tasting menu","A palate cleanser served between courses"], c:1, fb:"It is the chef’s handshake; acknowledging it graciously flatters the kitchen." },
+  { wk:2, q:"The soft sheen that age gives to fine leather, silver, wood or a watch is called:", a:["Provenance","Lustre","Patina","Craquelure"], c:2, fb:"Old money treasures patina as evidence of quality that has endured; to over-restore an heirloom is to erase its story." },
+  { wk:2, q:"A restaurant holding three Michelin stars is described as:", a:["Worth a special journey, and exceptionally rare","Very good in its category","Worth a stop if you are nearby","A reliable everyday choice"], c:0, fb:"One star is a real achievement and three is exceptionally rare; speak of them accurately." },
+  { wk:2, q:"To secure the finest pairing for the principal’s table, you should:", a:["Ask the sommelier’s guidance and describe the meal and the taste","Demonstrate your own knowledge to the sommelier","Choose the most expensive bottle on the list","Insist on a famous label the principal will recognise"], c:0, fb:"Asking the sommelier’s guidance rather than performing knowledge yields the finest pairing." },
+  { wk:2, q:"When a mature red is to be served, the attentive move is to:", a:["Serve it straight from the bottle to preserve it","Chill it briefly before pouring","Shake the bottle gently to mix the sediment through","Offer to decant it, letting it breathe and leaving the sediment behind"], c:3, fb:"Decanting a mature red unprompted shows care and improves the glass." },
+  { wk:2, q:"“Savoir-faire” is best understood as:", a:["Formal academic knowledge","The confidence to take charge of any room","An inherited sense of style","Competence made to look effortless, shown rather than announced"], c:3, fb:"Savoir-faire is quiet competence handled gracefully; it is demonstrated, never proclaimed." },
+  { wk:2, q:"Before advising the principal on buying an artwork or antique, you first ask for:", a:["A second opinion on the colour scheme","The seller’s asking price","Its provenance, the documented ownership history","A certificate of the artist’s fame"], c:2, fb:"Strong provenance authenticates and protects value; a gap in it raises questions." },
+  { wk:2, q:"In the register of the oldest wealth, money is generally:", a:["Discussed openly to establish standing","Displayed through visible logos and prices","A frequent subject of conversation among peers","Rarely mentioned; restraint and understatement carry more than noise"], c:3, fb:"Discretion and understatement are the tells of established wealth; how money is spoken about says a great deal." },
+  { wk:4, q:"“Mise en place” — everything in its place before service begins — is a principle that:", a:["Belongs strictly to the professional kitchen","Applies only to formal dinners","Extends far beyond the kitchen to all anticipated, friction-free service","Concerns table settings alone"], c:2, fb:"Everything anticipated and ready in advance lets the moment itself unfold without friction, anywhere in the house." },
+  { wk:2, q:"A “family office” is:", a:["The room in the house where the family works","A co-working space for entrepreneurs","The private structure managing a family’s wealth, affairs and often its staff","The reception desk of a private members’ club"], c:2, fb:"A single-family office serves one family, a multi-family office several; it is an organisation, not a room." },
+  { wk:2, q:"“White glove” service today means:", a:["Service of the highest care and meticulous attention to detail","Staff must literally wear gloves at all times","Service reserved exclusively for royalty","A style limited to formal banquets"], c:0, fb:"The gloves are the origin of the phrase, not its meaning; use it only where you can truly deliver the standard." },
+  { wk:3, q:"Which best defines discretion?", a:["Never gossiping about your employer","Keeping the household’s secrets only until you leave","A permanent vigilance over the flow of information around the person you serve","Refusing to answer any question about your work"], c:2, fb:"Discretion governs everything you see, hear and record, not only what you say." },
+  { wk:3, q:"“Presence without intrusion” is the signature ideal of:", a:["Fine front-of-house personal service, the butler and its kin","The chef","The security detail","The family office"], c:0, fb:"To be available and anticipatory without ever imposing yourself is the whole art of personal service." },
+  { wk:3, q:"In a private household, an NDA should be treated as:", a:["The floor, not the ceiling: you would behave the same even without it","A formality you sign and forget","Optional once the family clearly trusts you","A document that expires when you leave"], c:0, fb:"The professionals worth hiring act as though one existed even where none was signed." },
+  { wk:3, q:"A journalist contacts you asking about your employer. You:", a:["Give a harmless, positive comment to protect their image","Ignore it and tell no one","Decline entirely, and report the contact to the family office","Ask what they already know before deciding"], c:2, fb:"Any comment at all is a breach; decline, and let the household know it happened, because journalists count on a friendly slip." },
+  { wk:3, q:"Trust in a household is built mainly through:", a:["One grand gesture that proves your worth","A thousand small, consistent, reliable moments","Being liked by everyone in the house","A long and impressive CV"], c:1, fb:"Reliability repeated is what earns deep trust, and it can break in a single lapse." },
+  { wk:3, q:"You realise you made an error that only you know about. You:", a:["Fix it quietly and never mention it","Disclose it plainly, with the fix already in hand","Wait to see if anyone notices","Prepare an explanation in case it comes up"], c:1, fb:"Fact, fix, ownership; trust survives an honest mistake but rarely survives a hidden one." },
+  { wk:3, q:"The right inner posture toward the people you serve is:", a:["Servile: do whatever is asked, with no view of your own","An equal free to push back on anything","A professional serving from a place of pride and judgement","Deferential to the point of never speaking"], c:2, fb:"Dignity on both sides: you serve well because you are good at it, not because you are small." },
+  { wk:3, q:"The safest rule for anything you see inside the home is:", a:["It can be shared if it is not embarrassing","It can be shared once you have left the role","It is fine to share with close family only","It stays inside the walls, full stop"], c:3, fb:"Assume everything is confidential; that single reflex prevents most disasters." },
+  { wk:3, q:"Discretion in this profession:", a:["Often endures permanently, and should always be treated as if it does","Ends the day your contract ends","Applies only to written information","Covers only what is marked confidential"], c:0, fb:"Discretion does not expire when the role does; behave as though it is permanent." },
+  { wk:3, q:"When the principal is warm and familiar with you, the professional response is to:", a:["Match the familiarity so they feel comfortable","Keep a cold distance to be safe","Receive it graciously while holding your professional line","Treat it as a signal that boundaries no longer apply"], c:2, fb:"Warmth is welcome, but the line is what protects the relationship over years." },
+  { wk:3, q:"You are corrected unfairly in front of another member of staff. In the moment you:", a:["Defend yourself immediately so the record is clear","Correct the principal on the facts","Absorb it calmly and address it privately later, if at all","Complain to a colleague afterwards"], c:2, fb:"Composure under an unfair correction protects your standing far more than being proven right in the moment." },
+  { wk:3, q:"The deepest reason a household values discretion is that:", a:["It is required by law in every case","It reduces the household’s paperwork","It impresses their guests","Privacy and peace of mind are precisely what they cannot easily buy"], c:3, fb:"A private life that stays private is the rare good they are paying for; your silence is the product." },
+  { wk:4, q:"The principal has an early flight tomorrow and has not mentioned breakfast. Anticipation means:", a:["Wait until morning and ask what they would like","Quietly arrange a light, travel-friendly option to be ready, offered without fanfare","Prepare a full formal breakfast to be safe","Assume they will eat at the airport"], c:1, fb:"You solve the need before it is spoken, and you do not take credit for it." },
+  { wk:4, q:"You notice the principal always leaves sparkling water untouched but finishes still. Next time you:", a:["Ask which they prefer, to be sure","Simply stock and serve still water, and quietly note the preference","Serve both every time so they can choose","Alternate the two to keep things interesting"], c:1, fb:"Anticipation is built from a thousand small observations acted on silently; asking makes them do the work." },
+  { wk:4, q:"No one has booked the usual car for a recurring Friday appointment. You:", a:["Discreetly confirm the appointment still stands, and book the car if so","Wait, in case plans changed","Book the car and say nothing, assuming it is the same","Ask the principal directly to reconfirm the whole week"], c:0, fb:"Anticipation plus a light-touch check covers the gap without presuming." },
+  { wk:4, q:"There is a genuine risk in over-anticipating. It is:", a:["Spending too little money","Being too slow to react","There is no risk; more is always better","Doing so much that the principal feels watched or crowded"], c:3, fb:"Anticipation must stay invisible and light; smothering is its shadow side." },
+  { wk:4, q:"A storm is forecast for the day of the principal’s outdoor event. You:", a:["Say nothing; it may pass","Cancel the event to be safe","Quietly prepare a covered alternative and brief the team, before being asked","Wait for the principal to raise it"], c:2, fb:"You solve the problem before it exists and leave the choice with them; that is the whole craft." },
+  { wk:4, q:"A guest who visited months ago is returning. Anticipation looks like:", a:["Quietly restoring the room and details they liked before, unprompted","Treating them as a first-time visitor","Asking them to remind you what they preferred","Preparing something entirely new to impress them"], c:0, fb:"The guest feels remembered without a word; your notes exist so they never have to repeat themselves." },
+  { wk:4, q:"You spot two commitments overlapping in the principal’s diary next week. You:", a:["Wait for them to notice","Cancel the one you judge less important","Leave a note and hope it is seen","Flag it early with a proposed resolution for each option"], c:3, fb:"Bring the problem and the solution together; that is what makes you easy to keep." },
+  { wk:4, q:"On a long flight you know the principal always feels cold. You:", a:["Wait for them to ask for a blanket","Have their preferred blanket and a warm drink ready before takeoff","Turn up the cabin heat for everyone","Mention that blankets are available if needed"], c:1, fb:"Comfort arranged before the need is spoken; a thousand of these build indispensability." },
+  { wk:4, q:"You sense the principal is quietly upset about something personal. The anticipatory move is:", a:["Ask directly what is wrong so you can help","Act especially cheerful to lift the mood","Mention that you have noticed they seem down","Quietly ease the day’s logistics and give them space, without comment"], c:3, fb:"Smooth the practical and respect the private: presence, not intrusion." },
+  { wk:4, q:"In your anticipation playbook you write down how you are most likely to fail. This helps because:", a:["Dwelling on failure keeps you humble","It gives your mentor something to grade","It lowers expectations if things go wrong","The failure mode you can name is the one you can catch before it happens"], c:3, fb:"Naming your pattern is precisely what stops you repeating it in a real house." },
+  { wk:4, q:"Faced with an unclear early-morning need, calibrated anticipation means you:", a:["Match the response to the actual need, avoiding both under- and over-delivery","Always do the maximum, to be certain","Do the minimum and adjust later","Ask a series of questions first"], c:0, fb:"Anticipation is calibrated, not maximal; over-delivering can be as clumsy as under-delivering." },
+  { wk:4, q:"Turndown service — bed opened, curtains drawn, lights softened, a small touch left — is best understood as:", a:["A hotel formality with no wider lesson","A task for junior staff only","Anticipation made visible, a logic to apply everywhere","A courtesy reserved for guests"], c:2, fb:"Study its logic: comfort readied in advance so the moment itself needs nothing." },
+  { wk:5, q:"The true test of any household system you build is:", a:["Whether it looks impressive to the principal","Whether it would still work if you were unreachable for a week","Whether it saves you personal effort","Whether it is fully digital"], c:1, fb:"A system that depends on you alone is not an asset but a risk, and houses eventually remove risks." },
+  { wk:5, q:"Before acting on any instruction, the six questions to pin down are:", a:["Why, how, who, when, where, and how often","What, when, where, why, who pays, and who approves","Who, what, when, where, how much, and who else knows","Who, what, when, where, why, and how long"], c:2, fb:"An incomplete brief is a decision you are about to make on their behalf; half of failures are a person who should have been told and was not." },
+  { wk:5, q:"“The confirmation” you send after taking a brief is:", a:["A request for the principal’s approval","A formal contract to be signed","A short written statement of understanding, sent within the hour","A note kept privately for your own records"], c:2, fb:"It catches the misunderstanding while it is still free and produces a written record; it is a statement, not a request." },
+  { wk:5, q:"In the black book, a Tier 1 supplier is one who:", a:["Has an impressive website and strong reviews","Was recommended by someone you trust but not yet used","Offers the best price for the standard of work","You have used personally more than once, including on a difficult day, and who has never disappointed or repeated anything"], c:3, fb:"Tier 1 is someone you would put in front of a principal without hesitating; most people’s book is actually Tier 3." },
+  { wk:5, q:"A supplier who warmly tells you which other families they work for should be:", a:["Permanently disqualified, because they will speak about you the same way","Prioritised, because they are clearly well connected","Used only for minor work","Asked to sign an NDA and then kept on"], c:0, fb:"A supplier who talks about their other clients will talk about you; it is a permanent disqualification." },
+  { wk:5, q:"On spending limits in a household, the professional approach is to:", a:["Establish it explicitly in your first week by asking, and then never test it","Guess the threshold from the principal’s lifestyle","Assume there is no limit unless told otherwise","Set your own limit and adjust as you go"], c:0, fb:"Ask “what is the level above which you would want me to check first?”, then never test it, not even when you are obviously right." },
+  { wk:5, q:"With household money, the reconciliation is best delivered:", a:["Monthly, before it is requested, with variances explained in a line","Only when the principal or office requests it","At the end of the year, in a single summary","Verbally, to avoid a paper trail"], c:0, fb:"A statement nobody asked for, delivered on schedule, is worth more to your standing than almost anything else you do." },
+  { wk:5, q:"A supplier offers you a “referral fee” for steering work their way. You:", a:["Accept it quietly; it is standard in their sector","Accept it and pass the saving to the family","Decline it, and say nothing to anyone","Decline it, and tell the household it was offered"], c:3, fb:"Both halves matter: declining protects your integrity, and telling the house protects you from the day they find out it was offered." },
+  { wk:5, q:"Household expenses should be paid on:", a:["Your own personal card, reimbursed later","Whichever card is most convenient at the time","Cash, to keep matters simple","A household card in the household’s name, never your own"], c:3, fb:"A pattern of personal-card spending is how good people end up in conversations they cannot win." },
+  { wk:5, q:"Logistics and travel almost always fail:", a:["At the handovers, the seams between one link and the next","In the middle of a journey","At the very start, before departure","Only when the weather turns"], c:0, fb:"At every seam there must be a named person on both sides who have each other’s number and have spoken before the day." },
+  { wk:5, q:"On a chartered yacht, the captain’s authority is such that you:", a:["Instruct him on the principal’s behalf","Deal only with the broker and never the captain","Negotiate the route directly with him","Pass on the principal’s wishes and ask what is possible"], c:3, fb:"The captain has absolute authority aboard, in law; you ask what is possible, you do not instruct." },
+  { wk:5, q:"The figure that catches everyone on a yacht charter is that the price you present should be:", a:["The all-in figure: charter fee, APA and VAT, separated then totalled","The charter fee alone, as quoted","The charter fee plus a rough guess for extras","Whatever the broker first mentions"], c:0, fb:"The APA and VAT can lift a $200,000 week close to $290,000 before a tip; always present the all-in figure in writing." },
+  { wk:6, q:"The best private-service roles are usually filled through:", a:["Public job boards and open applications","Social media advertising","Mass mailing of CVs to family offices","Trust, referral, and a handful of specialist agencies"], c:3, fb:"This world hires quietly; the best roles are filled before they are ever advertised." },
+  { wk:6, q:"When you approach a specialist agency, the impression to give is:", a:["Eager and available, applying to everything","Impressive: every skill and every famous person you have met","Flexible on absolutely everything, to seem easy","Discreet, poised, and clear about the specific value you offer"], c:3, fb:"Agencies place people they would trust in a home; poise is part of the qualification, and name-dropping breaks the very discretion they screen for." },
+  { wk:6, q:"A gap in your CV from a confidential household is best presented as:", a:["Left blank to avoid awkward questions","Explained in full detail to prove it is real","Filled with an unrelated job to look continuous","Private household, dates and scope; bound by confidentiality, reference via the family office"], c:3, fb:"Framed this way, the confidential role becomes a credential rather than a hole, and it shows you keep your word." },
+  { wk:6, q:"A specialist agency’s real job, when it puts you forward, is to:", a:["Find you any role as quickly as possible","Negotiate you the highest possible salary","Vouch for you to a family, staking its own reputation","Coach you through the interview"], c:2, fb:"They place people they would trust in a home; that is why your poise is itself part of qualifying." },
+  { wk:6, q:"When registering with several agencies, you should:", a:["Be consistent, honest and specific across all of them","Exaggerate slightly to stand out on each","Tell each that you are exclusive to them","Emphasise different, contradictory strengths to each"], c:0, fb:"A consultant has seen ten thousand CVs; consistency and truth are checkable, and being checkable is your advantage." },
+  { wk:6, q:"The strongest introduction into a household comes from:", a:["A cold application to a job post","A trusted person already inside this world vouching for you","A large social media following","A perfectly written cover letter"], c:1, fb:"A warm referral is worth more than any advert; the door is trust, not a job board." },
+  { wk:6, q:"Understanding the market’s layers, the agency layer is filled:", a:["By whoever applies fastest to the listing","From a folder of people the agency already knows","Purely by salary expectation","At random from the CV pile"], c:1, fb:"The agency opens a folder of people it already knows; being in the folder before the role exists is the entire game." },
+  { wk:6, q:"The sentence “I know her, she is good”, said by a consultant to a family, matters because:", a:["It flatters the candidate","It moves the same person and the same letter out of the pile entirely","It guarantees a higher salary","It replaces the need for references"], c:1, fb:"Same person, same letter, entirely different market; that sentence is what the week teaches you to earn." },
+  { wk:6, q:"Approaching this market, patience is:", a:["A weakness; move fast and apply everywhere","Irrelevant; it is purely luck","A strength; the right role is worth waiting and preparing for","A sign you are not serious"], c:2, fb:"Spraying applications reads as unselective; poise and patience are themselves part of the qualification." },
+  { wk:6, q:"In the private-service calendar, January and February are notable because:", a:["Nothing moves until spring","Households are closed and unreachable","Only summer roles are filled then","Families reorganise for the year and agencies are busy and receptive"], c:3, fb:"It is one of the best moments to make yourself visible, as hiring for the year gets under way." },
+  { wk:6, q:"Most private roles are never advertised because:", a:["Families are too busy to post them","This world hires through trust and referral, quietly","The roles do not really exist","Advertising is prohibited by law"], c:1, fb:"They very much exist; they simply move through private channels, which is why the map matters more than a CV blast." },
+  { wk:6, q:"In this market, the most useful way to think about your search is:", a:["Finding and winning an advertised job","Making sure the right thing is said about you when your name comes up in a room you are not in","Collecting as many agency registrations as possible","Being the cheapest credible candidate"], c:1, fb:"The method of the week is making that happen deliberately rather than by luck." },
+  { wk:6, q:"You brought a supplier into a household; another the family has used for twenty years. Whose contacts are yours to take onward?", a:["Only the supplier you introduced; long-standing household suppliers are household information","Both, since you managed them","Neither; all contacts belong to the agency","Whichever ones you used most often"], c:0, fb:"A supplier you brought in stays in your book; a family’s long-held suppliers are theirs, not yours to carry away." },
+  { wk:7, q:"At this level, the ordinary rules of applying invert. The market rewards:", a:["Visible enthusiasm and a strong pitch","Ambition, clearly stated","Being memorable at any cost","Composure and verifiability over persuasion"], c:3, fb:"They are not weighing your argument; they are checking whether you are safe." },
+  { wk:7, q:"The single question a household is really answering about you is:", a:["Whether they will regret you","Whether you are impressive","Whether you will stay cheap","Whether you will be entertaining"], c:0, fb:"Impressiveness does not answer it, and very often makes it worse." },
+  { wk:7, q:"The private-service CV should be:", a:["Three pages, richly designed, with a photograph","Two pages, no adjectives, scope not duties, everything verifiable","A one-page marketing pitch with a personal brand","A detailed portfolio of every task performed"], c:1, fb:"It is evidence a busy person can check in minutes and find nothing that worries them." },
+  { wk:7, q:"Naming a former principal on your CV is:", a:["Acceptable if that family would not mind","Fine as long as you note the dates","A complete disqualification, and the most common fatal error","Expected, to prove the role was real"], c:2, fb:"The discretion is the proof; naming a family, even a willing one, disqualifies you on its own." },
+  { wk:7, q:"For a confidential role you cannot name, the correct CV entry gives:", a:["A blank with no explanation","The employer’s initials as a hint","Location, level, dates and scope, bound by confidentiality, reference via the family office","A full account to demonstrate honesty"], c:2, fb:"It is complete, honest, names nobody, and tells a serious reader that you keep your word." },
+  { wk:7, q:"In the application letter, a gap, short tenure or unnameable house should be:", a:["Left for the interview, in case it never comes up","Addressed by you, in one calm sentence, without apology","Explained across a full paragraph of context","Hidden as thoroughly as possible"], c:1, fb:"The candidate who raises it first is a candidate in control of their own history." },
+  { wk:7, q:"The tone of the letter should be warm, precise and:", a:["Grateful and eager","Ambitious and forward-looking","Entirely without need","Detailed and comprehensive"], c:2, fb:"Need is always audible in writing, and it is the most damaging quality a candidate can transmit, because a household is buying calm." },
+  { wk:7, q:"Before giving a referee’s name, you should:", a:["Call them first, explain the role and profile, and say when to expect the call","Let them be surprised, so the reference sounds spontaneous","Only tell them afterwards, once the call has happened","Send their number and let the office handle it"], c:0, fb:"A referee who is surprised sounds hesitant, and hesitation is read as the answer." },
+  { wk:7, q:"A referee’s contact details should be given:", a:["On the CV itself, so they are easy to reach","Only when asked, to a named person, for a specific role","On a document that circulates, to save time","To every agency you register with"], c:1, fb:"A referee who receives calls about roles you never mentioned will quietly stop being your referee." },
+  { wk:7, q:"The interview with the principal or their partner is really testing:", a:["Your technical knowledge, in detail","Your salary expectations","How much you know about their family","Whether they could have this person in their house every day, for years, without thinking about it"], c:3, fb:"It will feel like a pleasant conversation and may barely touch your CV; it is the most consequential interview of your life." },
+  { wk:7, q:"The interview with the family office is characterised by:", a:["Warmth and charm you can win over","A quick, informal chat","A focus on your personality above all","A forensic, unsentimental check of competence, verifiability and stability"], c:3, fb:"They will go through your CV forensically and ask about money, contracts, notice and visas; the coldness is the function, not the person." },
+  { wk:7, q:"A distinctive, rarely-included element of a complete candidacy dossier is:", a:["A confidentiality statement, in your own words, on how you handle information","A cover photograph","A list of every course you have taken","A personal mission statement"], c:0, fb:"At this level it is read very carefully, because how you handle information is the entire question." },
+  { wk:8, q:"The objective of the first ninety days in a house is to become:", a:["The person who improves everything quickly","The most visible member of staff","Indispensable by being the only one who knows","The person nobody has to think about"], c:3, fb:"It is an unglamorous ambition and the correct one; the people who grasp it in month one are still there in year five." },
+  { wk:8, q:"In truth, the first ninety days are:", a:["A trial that nobody will describe to you as a trial, with no feedback until a settled view forms","A settling-in period with formal reviews along the way","A grace period where mistakes do not count","A time to demonstrate everything you learned"], c:0, fb:"There will be an accumulation of small observations and then, one day, a settled view that will not be revisited." },
+  { wk:8, q:"In the week before you begin, the one thing you must not do is:", a:["Prepare your toolkit, blank and ready","Learn the local geography and routes","Reread your code of conduct","Research the family, their business, history and photographs"], c:3, fb:"Everything you need you will be told or observe; the rest is curiosity, which in a house has a different name." },
+  { wk:8, q:"On day one, the single act that does most for your first month is to:", a:["Point out the first improvement you can see","Explain how things were done in your last house","Learn every person’s name and use it","Reorganise your own workspace"], c:2, fb:"Every name, the gardener, the night driver, the Thursday help; write them down and use them tomorrow." },
+  { wk:8, q:"You arrive and within days can see six things done badly. In the first fortnight you:", a:["Fix the most obvious one to prove your value","Propose a plan of reforms to the principal","Change nothing, and do the job exactly as it is currently done","Quietly fix the small ones only"], c:2, fb:"Everything that looks stupid has a history; find the history before you touch the thing." },
+  { wk:8, q:"When you do introduce your first change, it should be:", a:["One, small, invisible, chosen to remove friction from the principal’s life, and done quietly","Announced in a staff meeting for buy-in","A comprehensive overhaul of a broken system","Whatever makes your own work tidier"], c:0, fb:"A house changes by accretion, invisibly, without anyone having to agree to a programme of reform led by a newcomer." },
+  { wk:8, q:"Your first real mistake, which usually comes between day twenty and forty, is handled by:", a:["Fact, fix, ownership: three sentences, the same day, in a flat voice","Fixing it quietly and hoping it passes","Waiting for a calmer moment to raise it","Explaining in detail why it was not your fault"], c:0, fb:"The first mistake handled correctly is worth more than a flawless month: it proves bad news travels through you at full speed." },
+  { wk:8, q:"Between days forty-six and ninety, the act that most reliably converts a new employee into a senior one is:", a:["Asking for a pay review","Writing the household manual that nobody asked you to write","Making yourself the only person who knows the systems","Taking on visibly difficult tasks"], c:1, fb:"A house that has been written down can be run, and you will be replaceable, which is exactly why you will be promoted." },
+  { wk:8, q:"At around ninety days you ask for a review because:", a:["Your contract requires one","It is a chance to negotiate terms","Private households do not offer them, which is precisely why you should ask","You need written proof of your performance"], c:2, fb:"The most senior question, “is there anything I have not noticed?”, produces the real answer almost nobody has the courage to seek." },
+  { wk:8, q:"During that review, when you hear criticism you believe is unfair, you:", a:["Correct the record politely on the facts","Explain the context so they understand","Note it and raise a rebuttal later","Say nothing in defence, write down every word, thank them, and change it"], c:3, fb:"You do not defend a single thing, however unfair; you say thank you, you change it, and you never mention it again." },
+  { wk:8, q:"With existing staff who are polite but closed, the fastest way to earn them is to:", a:["Befriend them quickly and share confidences","Assert your authority so roles are clear","Take the unglamorous task once, visibly, without being asked or mentioning it","Join their complaints to show you are on their side"], c:2, fb:"That one act is worth more than four months of pleasantness, and the person who joins the complaining has chosen the losing side." },
+  { wk:8, q:"The single most important relationship in your first ninety days is often:", a:["The principal’s business assistant","The newest member of staff","The family office accountant","The long-serving housekeeper, whatever her title or authority"], c:3, fb:"She may have no title, no budget and no authority over you, but nineteen years in the house make her the whole game." },
+  { wk:8, q:"On the first day, arriving “six minutes early and perfectly ordinary about it” teaches that:", a:["Dramatic early arrivals impress the household","Being assumed reliable, quietly, is the foundation of everything","Punctuality matters only for the principal","Timing is unimportant in the first week"], c:1, fb:"It is noticed once, then assumed; being assumed reliable is what everything else is built on." },
+]; /* 100 questions injected here — {wk,q,a[],c,fb} */
+var EXAM_PASS = 50;
+function examState(){ try{ return JSON.parse(localStorage.getItem('ma_final_exam'))||{passed:false,best:0,attempts:0}; }catch(e){ return {passed:false,best:0,attempts:0}; } }
+function saveExamState(st){ try{ localStorage.setItem('ma_final_exam', JSON.stringify(st)); }catch(e){} }
+function examPassed(){ return !!examState().passed; }
+function examWeeksDone(){ try{ return Object.values(state.completed).filter(Boolean).length>=8; }catch(e){ return false; } }
+var EXAM_SEAL='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="10" r="6"/><path d="M8.5 15.5L7 22l5-2.5L17 22l-1.5-6.5" stroke-linejoin="round"/><path d="M9.5 10l1.6 1.6L14.5 8.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+var EX=null;
+function openFinalExam(){
+  if(!examWeeksDone()){ return; }
+  if(!Array.isArray(FINAL_EXAM)||!FINAL_EXAM.length){ return; }
+  document.getElementById('examView').classList.add('open');
+  document.body.classList.add('reading-lock');
+  examIntro();
+}
+function closeFinalExam(){ document.getElementById('examView').classList.remove('open'); document.body.classList.remove('reading-lock'); EX=null; try{ refresh(); }catch(e){} try{ renderPractice(); }catch(e){} }
+function examIntro(){
+  const st=examState(), n=FINAL_EXAM.length;
+  document.getElementById('examInner').innerHTML=`<div class="exam-screen exam-intro">
+    <button class="exam-close" onclick="closeFinalExam()" aria-label="Close">&#10005;</button>
+    <div class="exam-seal">${EXAM_SEAL}</div>
+    <div class="exam-k">The final examination</div>
+    <h1 class="exam-h">One last step before your certificate</h1>
+    <p class="exam-lead">${n} questions drawn from everything you have learned across the eight weeks. Answer <b>${EXAM_PASS} or more</b> correctly to earn your certificate. Take your time — and if you do not pass, you may retake it as many times as you need.</p>
+    ${st.attempts?`<div class="exam-best">Best score: <b>${st.best}/${n}</b>${st.passed?' &middot; <span class="exam-passed">Passed &#10022;</span>':''}</div>`:''}
+    <button class="exam-btn" onclick="examBegin()">${st.attempts?'Retake the exam':'Begin the exam'}</button>
+  </div>`;
+}
+function examBegin(){
+  const idx=FINAL_EXAM.map((_,k)=>k);
+  for(let i=idx.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); const t=idx[i]; idx[i]=idx[j]; idx[j]=t; }
+  EX={ order:idx, i:0, ans:new Array(idx.length).fill(-1) };
+  examRenderQ();
+}
+function examRenderQ(){
+  const qi=EX.order[EX.i], item=FINAL_EXAM[qi], n=EX.order.length, chosen=EX.ans[EX.i];
+  const opts=item.a.map((o,k)=>`<button class="exam-opt${chosen===k?' sel':''}" onclick="examPick(${k})">${escapeHtml(o)}</button>`).join('');
+  const last=EX.i===n-1, allDone=EX.ans.every(a=>a>=0);
+  document.getElementById('examInner').innerHTML=`<div class="exam-screen exam-q">
+    <button class="exam-close" onclick="examQuit()" aria-label="Close">&#10005;</button>
+    <div class="exam-top"><div class="exam-prog-k">Question ${EX.i+1} of ${n}</div><div class="exam-prog"><div class="exam-prog-f" style="width:${Math.round(EX.i/n*100)}%"></div></div></div>
+    <h2 class="exam-stem">${escapeHtml(item.q)}</h2>
+    <div class="exam-opts">${opts}</div>
+    <div class="exam-nav">
+      <button class="exam-nav-b" onclick="examPrev()" ${EX.i===0?'disabled':''}>Previous</button>
+      ${last?`<button class="exam-nav-b exam-nav-next" onclick="examFinish()" ${allDone?'':'disabled'}>Submit exam</button>`:`<button class="exam-nav-b exam-nav-next" onclick="examNext()" ${chosen<0?'disabled':''}>Next</button>`}
+    </div>
+  </div>`;
+  const b=document.getElementById('examInner').querySelector('.exam-screen'); if(b) b.scrollTop=0;
+}
+function examPick(k){ EX.ans[EX.i]=k; examRenderQ(); }
+function examNext(){ if(EX.i<EX.order.length-1){ EX.i++; examRenderQ(); } }
+function examPrev(){ if(EX.i>0){ EX.i--; examRenderQ(); } }
+function examQuit(){ if(confirm('Leave the exam? This attempt will not be saved.')){ closeFinalExam(); } }
+function examFinish(){
+  if(EX.ans.some(a=>a<0)) return;
+  let score=0; EX.order.forEach((qi,pos)=>{ if(EX.ans[pos]===FINAL_EXAM[qi].c) score++; });
+  const st=examState(); st.attempts=(st.attempts||0)+1; if(score>(st.best||0)) st.best=score; if(score>=EXAM_PASS) st.passed=true; st.last=score; saveExamState(st);
+  examResult(score, score>=EXAM_PASS);
+}
+function examResult(score, passed){
+  const n=EX?EX.order.length:FINAL_EXAM.length;
+  document.getElementById('examInner').innerHTML=`<div class="exam-screen exam-result ${passed?'pass':'fail'}">
+    <button class="exam-close" onclick="closeFinalExam()" aria-label="Close">&#10005;</button>
+    <div class="exam-seal">${EXAM_SEAL}</div>
+    <div class="exam-k">${passed?'Examination passed':'Not yet'}</div>
+    <div class="exam-score">${score}<span>/${n}</span></div>
+    <h1 class="exam-h">${passed?'You have earned your certificate.':'You are close.'}</h1>
+    <p class="exam-lead">${passed?'Congratulations. Your certificate of completion is now unlocked, in your name. Carry it with pride.':'You need '+EXAM_PASS+' correct answers to pass. Revisit the weeks you found hardest, then retake the exam when you are ready — as many times as you need.'}</p>
+    <div class="exam-actions">
+      ${passed?`<button class="exam-btn" onclick="closeFinalExam();goPage('program');setTimeout(function(){try{showCertificate();}catch(e){}},350);">Collect my certificate</button>`:`<button class="exam-btn" onclick="examBegin()">Retake the exam</button>`}
+      <button class="exam-btn ghost" onclick="closeFinalExam()">${passed?'Back to the academy':'Close for now'}</button>
+    </div>
+  </div>`;
+  try{ refresh(); }catch(e){}
 }
 function showCertificate(){
   const doneW=Object.values(state.completed).filter(Boolean).length;
