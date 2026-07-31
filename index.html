@@ -83,7 +83,7 @@
   .dsh-hi{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-lt);font-family:'Jost',sans-serif;font-weight:500;}
   .dsh-hero h1{font-family:'Cormorant',serif;font-weight:300;font-size:40px;line-height:1.08;margin:10px 0 6px;letter-spacing:-.5px;}
   .dsh-hero p{font-size:14.5px;color:#c9c0ae;max-width:480px;line-height:1.6;}
-  .dsh-bar{height:7px;background:rgba(255,255,255,.14);border-radius:6px;overflow:hidden;margin-top:20px;max-width:420px;}
+  .dsh-bar{height:7px;background:rgba(255,255,255,.2);border-radius:6px;overflow:hidden;margin-top:20px;max-width:420px;}
   .dsh-bar i{display:block;height:100%;background:linear-gradient(90deg,var(--gold),var(--gold-lt));border-radius:6px;transform-origin:left center;animation:dshGrow 1.3s cubic-bezier(.2,.7,.2,1) both;}
   @keyframes dshGrow{from{transform:scaleX(0);}to{transform:scaleX(1);}}
   @media(prefers-reduced-motion:reduce){.dsh-bar i{animation:none;}}
@@ -238,7 +238,7 @@
   .wcard-state .ic svg{width:13px;height:13px;}
   .wcard-state.done{background:var(--gold-wash);color:var(--gold-deep);}
   .wcard-state.current{background:var(--ink);color:var(--gold-lt);}
-  .wcard-state.locked{background:#efe9dc;color:var(--stone);}
+  .wcard-state.locked{background:#efe9dc;color:var(--ink-soft);}
 .wcard-bar{width:100%;height:6px;border-radius:99px;background:rgba(30,25,18,.09);overflow:hidden;margin-top:12px;}
 .wcard-bar-fill{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,var(--gold-deep),var(--gold-lt));transition:width .5s ease;}
 .wcard.locked .wcard-bar{opacity:.55;}
@@ -4137,7 +4137,7 @@ function renderWeeks(){
       var progVal=0;
       if(st==="done"){progVal=100;stateHTML=`<span class="wcard-state done"><span class="ic">${ICONS.checkSmall}</span>Done</span>`;}
       else if(st==="current"){const lp=lessonProgress(w.no);progVal=lp;stateHTML=`<span class="wcard-state current">${lp>0?lp+'% done':'Start now'}</span>`;}
-      else stateHTML=`<span class="wcard-state locked"><span class="ic">${ICONS.lock}</span>Locked</span>`;
+      else stateHTML=`<span class="wcard-state locked">Finish Week ${w.no-1} to unlock</span>`;
       card.innerHTML=`
         <div class="wcard-img" style="background-image:url('images/w${w.no}.jpg')"></div>
         <div class="wcard-top">
