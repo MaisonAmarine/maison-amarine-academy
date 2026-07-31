@@ -1,5 +1,5 @@
 {
-  "updated": "Live roles + boards · verified 30 July 2026",
+  "updated": "Live roles + boards · updated 31 July 2026",
   "boards": [
     ["EstateJobs.com", "Live US board - estate & house managers, PAs, chiefs of staff", "https://www.estatejobs.com/search"],
     ["Rose's Agency", "California private-staff job board - house & estate managers", "https://rosesagency.com/job-board"],
@@ -17,6 +17,32 @@
     "americas": [
       {
         "flag": "🇺🇸",
+        "city": "Port Washington, NY",
+        "country": "United States",
+        "title": "Estate Manager - Private Residence",
+        "agency": "EstateJobs (Confidential)",
+        "type": "Full time",
+        "tags": ["Estate Manager", "Long Island", "Staff & events"],
+        "salary": "Competitive / DOE",
+        "posted": "New this week",
+        "url": "https://www.estatejobs.com/job/2k9m9v/estate-manager-private-residence-|-long-island-ny/port-washington/ny/united-states",
+        "blurb": "A proactive Estate Manager is sought to oversee operations, staff and events at a private Long Island residence. The role calls for strong leadership, vendor coordination, budget tracking and experience in high-standard environments."
+      },
+      {
+        "flag": "🇺🇸",
+        "city": "New York, NY",
+        "country": "United States",
+        "title": "House Manager / Personal Assistant",
+        "agency": "EstateJobs (Confidential)",
+        "type": "Full time",
+        "tags": ["House Manager", "Personal Assistant", "Luxury residences"],
+        "salary": "Competitive / DOE",
+        "posted": "New this week",
+        "url": "https://www.estatejobs.com/job/a9avbf/house-manager-personal-assistant/new-york/ny/united-states",
+        "blurb": "A high-caliber House Manager is needed to oversee daily operations of luxury residences, manage staff and vendor contracts and coordinate logistics for a principal. Requires 7-10 years of estate management experience and strong communication skills."
+      },
+      {
+        "flag": "🇺🇸",
         "city": "New York, NY",
         "country": "United States",
         "title": "Estate Manager",
@@ -24,9 +50,22 @@
         "type": "Full time",
         "tags": ["Estate Manager", "UHNW", "Multi-property"],
         "salary": "Competitive / DOE",
-        "posted": "17 July 2026",
+        "posted": "Posted 17 July 2026",
         "url": "https://www.estatejobs.com/job/d7uxtm/estate-manager/new-york/ny/united-states",
         "blurb": "An experienced Estate Manager is needed to oversee daily operations of luxury properties, manage staff, coordinate events and renovations, and uphold five-star hospitality standards with full discretion."
+      },
+      {
+        "flag": "🇺🇸",
+        "city": "New York, NY",
+        "country": "United States",
+        "title": "Personal Assistant / Travel & Events Manager",
+        "agency": "Louer",
+        "type": "Full time",
+        "tags": ["Personal Assistant", "Luxury travel", "Events"],
+        "salary": "$250,000+ and benefits",
+        "posted": "Posted 14 July 2026",
+        "url": "https://www.estatejobs.com/job/d2xmge/full-time-personal-assistant-travel-and-events-manager-in-nyc-250k-and-benefits/new-york/ny/united-states",
+        "blurb": "A private executive seeks a Personal Assistant / Travel & Events Manager to handle luxury travel, event planning and lifestyle management. Strong organisation, discretion and grace under pressure are essential."
       },
       {
         "flag": "🇺🇸",
@@ -37,7 +76,7 @@
         "type": "Full time · Live-out",
         "tags": ["House Manager", "Personal Assistant", "Two residences"],
         "salary": "Competitive / DOE",
-        "posted": "14 July 2026",
+        "posted": "Posted 14 July 2026",
         "url": "https://www.estatejobs.com/job/q9l5as/full-time-live-out-house-manager-personal-assistant-ues-new-york-city/new-york-city/ny/united-states",
         "blurb": "A busy family on the Upper East Side seeks a live-out House Manager / Personal Assistant to oversee operations across two homes, manage staff and handle personal duties. Strong multitasking, discretion and a proactive attitude required."
       },
@@ -50,7 +89,7 @@
         "type": "Full time",
         "tags": ["Estate Manager", "Two residences", "Smart home"],
         "salary": "Competitive / DOE",
-        "posted": "13 July 2026",
+        "posted": "Posted 13 July 2026",
         "url": "https://www.estatejobs.com/job/puwq8p/estate-manager/new-york/ny/united-states",
         "blurb": "An executive couple seeks a seasoned Estate Manager to run two private residences, ensuring smooth operations, managing staff and vendors, and maintaining high service standards in a polished home."
       },
@@ -63,7 +102,7 @@
         "type": "Full time",
         "tags": ["Chief of Staff", "Family office", "Strategy"],
         "salary": "Competitive / DOE",
-        "posted": "8 July 2026",
+        "posted": "Posted 8 July 2026",
         "url": "https://www.estatejobs.com/job/twrskk/chief-of-staff/new-york-city/ny/united-states",
         "blurb": "The Chief of Staff manages operations for a high-net-worth family, coordinating household activities, philanthropic initiatives and business engagements while ensuring clear communication and strategic planning."
       },
@@ -71,27 +110,14 @@
         "flag": "🇺🇸",
         "city": "New York, NY",
         "country": "United States",
-        "title": "Estate Manager",
-        "agency": "Career Group Companies",
+        "title": "Senior Personal Assistant / Family Office",
+        "agency": "Concierge New York",
         "type": "Full time",
-        "tags": ["Estate Manager", "Multi-residence", "Budgets & events"],
+        "tags": ["Personal Assistant", "Family office", "Administrative lead"],
         "salary": "Competitive / DOE",
-        "posted": "30 June 2026",
-        "url": "https://www.estatejobs.com/job/rgtrdx/estate-manager-|-nyc/new-york/ny/united-states",
-        "blurb": "A top-tier Estate Manager is sought to oversee multiple NYC residences, manage household staff, build budgets and coordinate projects, travel and events with seamless execution."
-      },
-      {
-        "flag": "🇺🇸",
-        "city": "New York, NY",
-        "country": "United States",
-        "title": "Personal Assistant / Travel & Events Manager",
-        "agency": "Louer",
-        "type": "Full time",
-        "tags": ["Personal Assistant", "Luxury travel", "Events"],
-        "salary": "$250,000+ and benefits",
-        "posted": "14 July 2026",
-        "url": "https://www.estatejobs.com/job/d2xmge/full-time-personal-assistant-travel-and-events-manager-in-nyc-250k-and-benefits/new-york/ny/united-states",
-        "blurb": "A private executive seeks a Personal Assistant / Travel & Events Manager to handle luxury travel, event planning and lifestyle management. Strong organisation, discretion and grace under pressure are essential."
+        "posted": "Posted 21 July 2026",
+        "url": "https://www.estatejobs.com/job/8j46qf/full-time-senior-personal-assistant-family-office-administrative-support-lead/new-york/ny/united-states",
+        "blurb": "A family office seeks a Senior Personal Assistant to provide personal and administrative support to the principal. The role rewards flexibility, sharp organisation and a high level of responsiveness across errands and complex logistics."
       },
       {
         "flag": "🇺🇸",
@@ -102,48 +128,9 @@
         "type": "Full time",
         "tags": ["Director of Properties", "NYC / Hamptons", "Construction"],
         "salary": "Competitive / DOE",
-        "posted": "17 June 2026",
+        "posted": "Posted 17 June 2026",
         "url": "https://www.estatejobs.com/job/yv5n26/director-of-properties-new-york-ny/new-york/ny/united-states",
         "blurb": "A private family seeks a Director of Properties to manage luxury residences in NYC, Long Island and the Hamptons. Requires 10+ years in estate management overseeing operations, vendor relations and construction projects."
-      },
-      {
-        "flag": "🇺🇸",
-        "city": "Northwest Florida, FL",
-        "country": "United States",
-        "title": "Estate Manager",
-        "agency": "PFO",
-        "type": "Full time",
-        "tags": ["Estate Manager", "Systems & processes", "Private family"],
-        "salary": "Competitive / DOE",
-        "posted": "6 July 2026",
-        "url": "https://www.estatejobs.com/job/da89ly/estate-manager/northwest-florida/fl/united-states",
-        "blurb": "An Estate Manager is sought to enhance estate operations alongside the principals, improving systems and processes for efficient daily functioning in a supportive, communicative environment."
-      },
-      {
-        "flag": "🇺🇸",
-        "city": "Miami Beach, FL",
-        "country": "United States",
-        "title": "Household Manager / Personal Concierge",
-        "agency": "Walsh Signature Staffing",
-        "type": "Full time",
-        "tags": ["Household Manager", "Private concierge", "Luxury residence"],
-        "salary": "Competitive / DOE",
-        "posted": "6 July 2026",
-        "url": "https://www.estatejobs.com/job/hr7uvm/household-manager-personal-concierge-miami-fl/miami/fl/united-states",
-        "blurb": "A high-net-worth couple seeks a polished Household Manager / Personal Concierge to oversee daily operations of their Miami Beach residence, managing staff, vendors and household systems with discretion and follow-through."
-      },
-      {
-        "flag": "🇺🇸",
-        "city": "Lamont, FL",
-        "country": "United States",
-        "title": "Homes & Hospitality Manager",
-        "agency": "Turner Enterprises Management",
-        "type": "Full time",
-        "tags": ["Hospitality Manager", "Main & guest homes", "Events"],
-        "salary": "Competitive / DOE",
-        "posted": "11 July 2026",
-        "url": "https://www.estatejobs.com/job/z56zrn/homes-and-hospitality-manager/lamont/fl/united-states",
-        "blurb": "The Homes & Hospitality Manager oversees the main house and guest homes, providing personal service to owners and guests, managing staff, coordinating events and ensuring property maintenance and upkeep."
       },
       {
         "flag": "🇺🇸",
@@ -154,7 +141,7 @@
         "type": "Part time · Live-out",
         "tags": ["House Manager", "Personal Assistant", "Estate operations"],
         "salary": "Competitive / DOE",
-        "posted": "9 June 2026",
+        "posted": "Posted 9 June 2026",
         "url": "https://rosesagency.com/job-board/part-time-house-managerpa-atherton",
         "blurb": "A private family in Atherton seeks an experienced part-time House Manager / Personal Assistant to run daily estate operations and provide comprehensive personal support to two professionals and their family."
       },
@@ -167,51 +154,25 @@
         "type": "Full time",
         "tags": ["House Manager", "Personal Assistant", "Family support"],
         "salary": "Competitive / DOE",
-        "posted": "9 June 2026",
+        "posted": "Posted 9 June 2026",
         "url": "https://rosesagency.com/job-board/full-time-house-managerpa-menlo-park",
         "blurb": "A Menlo Park family - technology executives in the AI field who recently welcomed their first child - seeks an exceptional House Manager / Personal Assistant to run their primary residence and provide high-level personal support."
       },
       {
         "flag": "🇺🇸",
-        "city": "San Francisco, CA",
+        "city": "Venice & San Francisco, CA",
         "country": "United States",
         "title": "Estate Manager",
         "agency": "Rose's Agency",
-        "type": "Full time · Live-out",
-        "tags": ["Estate Manager", "Presidio", "Construction projects"],
+        "type": "Full time",
+        "tags": ["Estate Manager", "Three properties", "Multi-city"],
         "salary": "Competitive / DOE",
         "posted": "Live on board",
-        "url": "https://rosesagency.com/job-board/estate-manager-in-san-francisco",
-        "blurb": "An Estate Manager is sought for a Presidio residence on the historic landmarks registry; the principals split their time between LA and SF. Spearheads construction projects alongside the LA estate manager; a strong vendor network is ideal."
+        "url": "https://rosesagency.com/job-board/estate-manager-in-venice-amp-san-francisco",
+        "blurb": "An experienced Estate Manager is sought for a family based in Venice, overseeing three properties - Venice (3,700 sqft), San Francisco (9k sqft) and Ojai (5k sqft on 10 acres) - with full responsibility for operations and standards."
       }
     ],
     "europe": [
-      {
-        "flag": "🇬🇧",
-        "city": "Knightsbridge, London",
-        "country": "United Kingdom",
-        "title": "House Manager",
-        "agency": "Greycoat Lumleys",
-        "type": "Permanent · Full time",
-        "tags": ["House Manager", "Part-time residence", "Small team"],
-        "salary": "£75,000 - £85,000 GPA",
-        "posted": "Live on board",
-        "url": "https://www.greycoatlumleys.co.uk/job/house-manager-job-234972",
-        "blurb": "A private client seeks an experienced House Manager for a prestigious Knightsbridge residence. The family is primarily based in South East Asia, so the role keeps the home impeccable in their absence and supports visits, leading a small team of two housekeepers and a chef, with occasional monthly travel to Dubai."
-      },
-      {
-        "flag": "🇬🇧",
-        "city": "Marylebone, London",
-        "country": "United Kingdom",
-        "title": "Assistant House Manager",
-        "agency": "Greycoat Lumleys",
-        "type": "Permanent · Full time",
-        "tags": ["Assistant House Manager", "Private household", "London"],
-        "salary": "£50,000 - £55,000 GPA",
-        "posted": "Live on board",
-        "url": "https://www.greycoatlumleys.co.uk/job/assistant-house-manager-job-5776543",
-        "blurb": "An Assistant House Manager is sought to support the smooth running of a private Marylebone household, working alongside the House Manager on daily operations, staff coordination and guest-ready standards."
-      },
       {
         "flag": "🇮🇹",
         "city": "Florence",
@@ -224,8 +185,48 @@
         "posted": "New this week",
         "url": "https://www.greycoatlumleys.co.uk/jobs/house-manager",
         "blurb": "A quintessential live-in Butler / Villa Manager is sought for a newly built luxury villa a short drive from the centre of Florence, delivering formal service and overseeing the smooth running of the home for a family of four."
+      },
+      {
+        "flag": "🇬🇧",
+        "city": "Surrey",
+        "country": "United Kingdom",
+        "title": "Live-in House Manager",
+        "agency": "Greycoat Lumleys",
+        "type": "Permanent · Live-in",
+        "tags": ["House Manager", "Country residence", "Part-time family"],
+        "salary": "£50,000 GPA",
+        "posted": "Posted 25 July 2026",
+        "url": "https://www.greycoatlumleys.co.uk/jobs/house-manager",
+        "blurb": "A live-in House Manager is sought for a private residence in the Surrey Hills. The family is not in residence full time; when they are, the House Manager ensures seamless service and keeps the property impeccable year-round."
+      },
+      {
+        "flag": "🇬🇧",
+        "city": "Knightsbridge, London",
+        "country": "United Kingdom",
+        "title": "House Manager",
+        "agency": "Greycoat Lumleys",
+        "type": "Permanent · Full time",
+        "tags": ["House Manager", "Part-time residence", "Small team"],
+        "salary": "£75,000 - £85,000 GPA",
+        "posted": "Live on board",
+        "url": "https://www.greycoatlumleys.co.uk/job/house-manager-job-234972",
+        "blurb": "A private client seeks an experienced House Manager for a prestigious Knightsbridge residence. The family is primarily based in South East Asia, so the role keeps the home impeccable in their absence and supports visits, with occasional monthly travel to Dubai."
       }
     ],
-    "mideast": []
+    "mideast": [
+      {
+        "flag": "🇦🇪",
+        "city": "Dubai",
+        "country": "United Arab Emirates",
+        "title": "Senior Housekeeper / Junior House Manager",
+        "agency": "Morgan & Mallet",
+        "type": "Permanent · Full time",
+        "tags": ["Junior House Manager", "Team supervision", "Growth role"],
+        "salary": "To be discussed",
+        "posted": "Posted 24 July 2026",
+        "url": "https://www.householdstaff.agency/jobs/senior-housekeeper-junior-house-manager-job-dubai-uae/",
+        "blurb": "A European family in Dubai seeks a hands-on Senior Housekeeper / Junior House Manager to supervise two staff and run day-to-day operations, with clear scope to grow into a full House Manager role as the property portfolio expands."
+      }
+    ]
   }
 }
