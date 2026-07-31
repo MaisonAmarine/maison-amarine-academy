@@ -5251,7 +5251,7 @@ function svShowToc(){
   let html=`<div class="lsn-vault">
     <div class="lsn-hero" style="background-image:url('${heroImg}')"></div>
     <header class="rf-head"><div class="rf-k">${escapeHtml(s.subtitle||'Lesson')}</div><h1>${escapeHtml(s.title)}</h1></header>
-    ${vidBlock}
+    ${stepIdx===0 ? vidBlock : ""}
     ${lsnDownloadBtn()}
     ${secs.length?`<div class="lsn-toc-k">Contents</div><div class="lsn-chapters">${toc}</div>`:'<p class="sv-empty" style="text-align:center;">This module opens directly below.</p>'}`;
   if(stepIdx===3 && weekNo){ html += submitPanelHTML(weekNo); }
