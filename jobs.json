@@ -9,6 +9,7 @@
     ["MyStaffHq", "UHNW household job board - estate manager & private roles", "https://www.mystaffhq.com/jobs/estate-manager"],
     ["Colonial Agency", "Domestic & estate staffing since 1963 - nationwide US", "https://colonialdomestics.com/job-openings/"],
     ["Polo & Tweed", "London-based luxury staffing - house & estate manager roles", "https://jobs.poloandtweed.com/vacancies.aspx"],
+    ["Pocketbook Agency", "US domestic & family-office job board - house managers, PAs, chiefs of staff", "https://careers.pocketbookagency.com/?rtype=Domestic"],
     ["LinkedIn Jobs", "Live search: estate & house manager, private PA (US)", "https://www.linkedin.com/jobs/search/?keywords=estate%20manager%20private%20household&location=United%20States"],
     ["Indeed", "Live search: private estate manager (US)", "https://www.indeed.com/jobs?q=private+estate+manager&l=United+States"],
     ["ZipRecruiter", "Live search: UHNW estate manager (US)", "https://www.ziprecruiter.com/Jobs/Uhnw-Estate-Manager"]
@@ -43,16 +44,29 @@
       },
       {
         "flag": "🇺🇸",
-        "city": "New York, NY",
+        "city": "Palm Beach, FL",
         "country": "United States",
-        "title": "Estate Manager",
+        "title": "Junior House Manager",
+        "agency": "The Pocketbook Agency",
+        "type": "Full time · Onsite",
+        "tags": ["House Manager", "Household operations", "Estate support"],
+        "salary": "$120,000 - $140,000",
+        "posted": "Posted 9 June 2026",
+        "url": "https://careers.pocketbookagency.com/job/2538",
+        "blurb": "A private Palm Beach residence seeks a service-driven Household Operations Assistant to partner with the Estate Manager, building systems and SOPs, coordinating vendors and travel, and keeping the home calm, orderly and guest-ready."
+      },
+      {
+        "flag": "🇺🇸",
+        "city": "Los Angeles, CA",
+        "country": "United States",
+        "title": "Executive Personal Assistant",
         "agency": "The Pocketbook Agency",
         "type": "Full time",
-        "tags": ["Estate Manager", "UHNW", "Multi-property"],
+        "tags": ["Personal Assistant", "Family office", "Operations"],
         "salary": "Competitive / DOE",
-        "posted": "Posted 17 July 2026",
-        "url": "https://www.estatejobs.com/job/d7uxtm/estate-manager/new-york/ny/united-states",
-        "blurb": "An experienced Estate Manager is needed to oversee daily operations of luxury properties, manage staff, coordinate events and renovations, and uphold five-star hospitality standards with full discretion."
+        "posted": "Posted 4 May 2026",
+        "url": "https://careers.pocketbookagency.com/job/2301",
+        "blurb": "A private family office in Brentwood seeks a detail-oriented Executive Personal Assistant to run day-to-day operations across business and personal matters. Requires 10+ years supporting senior leadership in a real estate or family-office setting."
       },
       {
         "flag": "🇺🇸",
