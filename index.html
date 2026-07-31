@@ -917,6 +917,9 @@
   .lsn-video-wrap{max-width:760px;margin:24px auto 6px;}
   .lsn-video-wrap .wc-video{border-radius:14px;overflow:hidden;box-shadow:0 18px 40px rgba(33,28,21,.16);border:1px solid var(--line);}
   .lsn-video-cap{text-align:center;font-family:'Jost',sans-serif;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-deep);margin-top:12px;}
+  .lsn-video-ph{aspect-ratio:16/9;border-radius:14px;border:1px dashed rgba(201,168,103,.55);background:linear-gradient(160deg,#211c15,#141009);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;}
+  .lsn-video-ph-ic{width:58px;height:58px;border-radius:50%;border:1.5px solid var(--gold-lt);display:flex;align-items:center;justify-content:center;font-size:19px;color:var(--gold-lt);padding-left:4px;}
+  .lsn-video-ph-t{font-family:'Jost',sans-serif;font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-lt);}
   @media(max-width:620px){ .lsn-reading .lsn-para{font-size:18px;line-height:1.72;} .lsn-reading .lsn-para.lsn-drop::first-letter{font-size:46px;padding:6px 10px 0 0;} }
   .lsn-reading .lsn-para strong{font-weight:600;color:var(--ink);background:linear-gradient(transparent 70%, rgba(201,168,103,.26) 0);padding:0 1px;}
   .lsn-reading .lsn-para em{font-style:italic;color:var(--gold-deep);}
@@ -4995,7 +4998,9 @@ function svShowToc(){
   const toc=_vis.map((idx,n)=>`<button class="lsn-ch" onclick="svOpenSection(${idx})"><span class="lsn-ch-n">${String(n+1).padStart(2,'0')}</span><span class="lsn-ch-t">${escapeHtml((secs[idx]||{}).heading||'Introduction')}</span><span class="lsn-ch-go">${ICO_ARR}</span></button>`).join('');
   const heroImg = weekNo ? ('images/w'+weekNo+'.jpg') : 'images/dash.jpg';
   const emb=ytEmbed(s.video_url);
-  const vidBlock = emb ? `<div class="lsn-video-wrap"><div class="wc-video"><iframe src="${emb}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div><div class="lsn-video-cap">Watch first, then read the chapters below.</div></div>` : '';
+  const vidBlock = emb
+    ? `<div class="lsn-video-wrap"><div class="wc-video"><iframe src="${emb}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div><div class="lsn-video-cap">Watch first, then read the chapters below.</div></div>`
+    : `<div class="lsn-video-wrap"><div class="lsn-video-ph"><span class="lsn-video-ph-ic">▶</span><span class="lsn-video-ph-t">Lesson video coming soon</span></div><div class="lsn-video-cap">Watch here, then read the chapters below.</div></div>`;
   let html=`<div class="lsn-vault">
     <div class="lsn-hero" style="background-image:url('${heroImg}')"></div>
     <header class="rf-head"><div class="rf-k">${escapeHtml(s.subtitle||'Lesson')}</div><h1>${escapeHtml(s.title)}</h1></header>
