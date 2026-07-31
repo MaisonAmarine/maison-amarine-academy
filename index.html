@@ -910,9 +910,14 @@
   .lsn-chapmark{font-family:'Jost',sans-serif;font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;}
   .lsn-chtitle{font-family:'Cormorant',serif;font-weight:600;font-size:40px;line-height:1.1;color:var(--ink);margin:0 0 32px;padding-bottom:18px;border-bottom:2px solid var(--gold-wash);}
   /* corps de cours, lisible et structuré */
-  .lsn-reading .lsn-para{font-family:'Cormorant',Georgia,serif;font-weight:400;font-size:21px;line-height:1.72;color:#332E28;margin:0 0 12px;}
+  .lsn-reading .lsn-para{font-family:'Cormorant',Georgia,serif;font-weight:400;font-size:20px;line-height:1.75;color:#332E28;margin:0 0 14px;}
   .lsn-reading .lsn-para + .lsn-para{margin-top:0;}
-  .lsn-reading .lsn-para.lsn-drop::first-letter{font-family:'Cormorant',serif;font-weight:600;font-size:68px;line-height:.76;float:left;padding:8px 14px 0 0;color:var(--gold);}
+  .lsn-reading .lsn-para.lsn-drop::first-letter{font-family:'Cormorant',serif;font-weight:600;font-size:66px;line-height:.78;float:left;padding:8px 14px 0 0;color:var(--gold);}
+  /* contained lesson video (premium 'watch + read') */
+  .lsn-video-wrap{max-width:760px;margin:24px auto 6px;}
+  .lsn-video-wrap .wc-video{border-radius:14px;overflow:hidden;box-shadow:0 18px 40px rgba(33,28,21,.16);border:1px solid var(--line);}
+  .lsn-video-cap{text-align:center;font-family:'Jost',sans-serif;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-deep);margin-top:12px;}
+  @media(max-width:620px){ .lsn-reading .lsn-para{font-size:18px;line-height:1.72;} .lsn-reading .lsn-para.lsn-drop::first-letter{font-size:46px;padding:6px 10px 0 0;} }
   .lsn-reading .lsn-para strong{font-weight:600;color:var(--ink);background:linear-gradient(transparent 70%, rgba(201,168,103,.26) 0);padding:0 1px;}
   .lsn-reading .lsn-para em{font-style:italic;color:var(--gold-deep);}
   .lsn-reading .lsn-lead{font-weight:600;color:var(--gold-deep);background:none;}
@@ -4989,13 +4994,14 @@ function svShowToc(){
   const _vis=svCur.visible||secs.map((_,k)=>k);
   const toc=_vis.map((idx,n)=>`<button class="lsn-ch" onclick="svOpenSection(${idx})"><span class="lsn-ch-n">${String(n+1).padStart(2,'0')}</span><span class="lsn-ch-t">${escapeHtml((secs[idx]||{}).heading||'Introduction')}</span><span class="lsn-ch-go">${ICO_ARR}</span></button>`).join('');
   const heroImg = weekNo ? ('images/w'+weekNo+'.jpg') : 'images/dash.jpg';
+  const emb=ytEmbed(s.video_url);
+  const vidBlock = emb ? `<div class="lsn-video-wrap"><div class="wc-video"><iframe src="${emb}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div><div class="lsn-video-cap">Watch first, then read the chapters below.</div></div>` : '';
   let html=`<div class="lsn-vault">
     <div class="lsn-hero" style="background-image:url('${heroImg}')"></div>
     <header class="rf-head"><div class="rf-k">${escapeHtml(s.subtitle||'Lesson')}</div><h1>${escapeHtml(s.title)}</h1></header>
+    ${vidBlock}
     ${lsnDownloadBtn()}
     ${secs.length?`<div class="lsn-toc-k">Contents</div><div class="lsn-chapters">${toc}</div>`:'<p class="sv-empty" style="text-align:center;">This module opens directly below.</p>'}`;
-  const emb=ytEmbed(s.video_url);
-  if(emb){ html+=`<div class="wc-video" style="margin-top:26px;"><iframe src="${emb}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>`; }
   if(stepIdx===3 && weekNo){ html += submitPanelHTML(weekNo); }
   html+=`</div>`;
   body.innerHTML=html;
@@ -5105,7 +5111,7 @@ function svOpenSection(i){
       j++; continue;
     }
     let cls='lsn-para';
-    if(!dropDone && !afterLabel){ cls+=' lsn-drop'; dropDone=true; }
+    if(posV===0 && !dropDone && !afterLabel){ cls+=' lsn-drop'; dropDone=true; }
     if(afterLabel){ cls+=' lsn-callout-body'; afterLabel=false; }
     bodyhtml+=`<p class="${cls}">${mdInline(tk.v)}</p>`;
     j++;
