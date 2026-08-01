@@ -639,6 +639,44 @@
   .cv-mini{font-family:'Jost',sans-serif;font-size:13px;color:var(--ink-soft);line-height:1.55;padding:7px 0;border-top:1px solid var(--line);}
   .cv-mini:first-of-type{border-top:none;}
   @media(min-width:760px){ .cv-cols{grid-template-columns:1fr 1fr;} .cv-group.g-fix{grid-column:1 / -1;} }
+  /* CV Review — deep analysis UI */
+  .cv-cats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin:2px 0 24px;}
+  .cv-cat{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:15px 16px;}
+  .cv-cat-h{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:9px;}
+  .cv-cat-l{font-family:'Jost',sans-serif;font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);}
+  .cv-cat-n{font-family:'Cormorant',serif;font-weight:600;font-size:21px;color:var(--ink);line-height:1;}
+  .cv-cat-bar{height:6px;border-radius:99px;background:var(--line);overflow:hidden;}
+  .cv-cat-bar i{display:block;height:100%;border-radius:99px;transition:width .7s cubic-bezier(.2,.7,.2,1);}
+  .cv-cat.good .cv-cat-bar i{background:linear-gradient(90deg,#5f7d52,#7fa06a);} .cv-cat.good .cv-cat-n{color:#5f7d52;}
+  .cv-cat.mid .cv-cat-bar i{background:linear-gradient(90deg,var(--gold-deep),var(--gold-lt));} .cv-cat.mid .cv-cat-n{color:var(--gold-deep);}
+  .cv-cat.low .cv-cat-bar i{background:linear-gradient(90deg,#c0714f,#d08a63);} .cv-cat.low .cv-cat-n{color:#b06a4a;}
+  .cv-seck{font-family:'Jost',sans-serif;font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-deep);margin:28px 0 12px;}
+  .cv-item .it-ex{margin-top:9px;border-left:2px solid var(--gold-lt);padding:9px 13px;background:var(--gold-wash);border-radius:0 8px 8px 0;font-family:'Jost',sans-serif;font-size:12.5px;color:var(--ink-soft);line-height:1.55;}
+  .cv-item .it-ex b{color:var(--gold-deep);font-weight:600;}
+  .cv-imp{display:inline-block;font-size:9.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#b06a4a;background:#f6ece7;border-radius:20px;padding:2px 9px;margin-left:9px;vertical-align:middle;}
+  .cv-comps{display:flex;flex-wrap:wrap;gap:8px;}
+  .cv-comp{font-family:'Jost',sans-serif;font-size:12px;padding:6px 13px;border-radius:20px;border:1px solid var(--line);display:inline-flex;align-items:center;gap:7px;}
+  .cv-comp.on{background:var(--gold-wash);border-color:var(--gold-lt);color:var(--gold-deep);font-weight:600;}
+  .cv-comp.off{color:var(--stone);border-style:dashed;}
+  .cv-comp .d{width:6px;height:6px;border-radius:50%;background:currentColor;opacity:.75;}
+  .cv-flag{padding:13px 0;border-top:1px solid var(--line);}
+  .cv-flag:first-of-type{border-top:none;}
+  .cv-flag-q{font-family:'Jost',sans-serif;font-size:13px;color:var(--ink);background:#f6ece7;border-left:2px solid #cf8d6f;border-radius:0 8px 8px 0;padding:8px 13px;margin-bottom:7px;font-style:italic;}
+  .cv-flag-s{font-family:'Jost',sans-serif;font-size:12.5px;color:var(--ink-soft);line-height:1.5;}
+  .cv-flag-s b{color:var(--gold-deep);}
+  .cv-target{margin-top:14px;border:1px solid var(--line);border-radius:14px;background:var(--paper);overflow:hidden;}
+  .cv-target summary{list-style:none;cursor:pointer;padding:14px 18px;font-family:'Jost',sans-serif;font-size:13.5px;font-weight:600;color:var(--ink);display:flex;align-items:center;gap:9px;}
+  .cv-target summary::-webkit-details-marker{display:none;}
+  .cv-target summary .cvt-ic{color:var(--gold-deep);font-size:12px;transition:transform .2s;display:inline-block;}
+  .cv-target[open] summary .cvt-ic{transform:rotate(90deg);}
+  .cv-target .cvt-body{padding:0 18px 16px;}
+  .cv-target .cvt-hint{font-family:'Jost',sans-serif;font-size:12px;color:var(--stone);line-height:1.5;margin:2px 2px 10px;}
+  .cv-target textarea{width:100%;min-height:120px;resize:vertical;background:var(--ivory);border:1px solid var(--line);border-radius:12px;padding:14px 16px;font-family:'Jost',sans-serif;font-size:13px;line-height:1.55;color:var(--ink);outline:none;}
+  .cv-target textarea:focus{border-color:var(--gold-lt);}
+  .cv-match{display:flex;align-items:center;gap:18px;background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:20px 24px;margin-bottom:22px;flex-wrap:wrap;}
+  .cv-match-n{font-family:'Cormorant',serif;font-weight:600;font-size:30px;color:var(--ink);}
+  .cv-miss{display:flex;flex-wrap:wrap;gap:7px;}
+  .cv-miss span{font-family:'Jost',sans-serif;font-size:11.5px;background:#f6ece7;color:#a4593b;border-radius:20px;padding:3px 10px;}
 
   .roles{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin:16px 0 8px;}
   .role{background:var(--paper);border:1px solid var(--line);border-radius:15px;padding:22px 24px;transition:transform .2s,box-shadow .2s,border-color .2s;}
@@ -2284,6 +2322,13 @@
         <div class="cv-status" id="cvFileStatus"></div>
         <div class="cv-or"><span>or paste the text below</span></div>
         <textarea id="cvInput" class="cv-input" placeholder="Paste the full text of your CV here, then press Analyse."></textarea>
+        <details class="cv-target" id="cvTargetWrap">
+          <summary><span class="cvt-ic">&#9656;</span> Tailor to a specific role <span style="font-weight:400;color:var(--stone);">(optional)</span></summary>
+          <div class="cvt-body">
+            <div class="cvt-hint">Paste the job advert or the agency&rsquo;s brief. The tool checks how well your CV matches it and flags the key words you are missing &mdash; all read privately in your browser.</div>
+            <textarea id="cvTarget" placeholder="Paste the role description or agency brief here (optional)&hellip;"></textarea>
+          </div>
+        </details>
         <div class="cv-bar">
           <button class="cv-btn" onclick="analyzeCV()">Analyse my CV</button>
           <span class="cv-priv"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg> Private · read in your browser, never uploaded or stored</span>
@@ -3049,92 +3094,223 @@ async function cvHandleFile(file){
     status.textContent='Sorry, that file could not be read. Try a PDF or .docx, or paste the text into the box.';
   }
 }
+/* ============ CV REVIEW — deep client-side analysis (fully private) ============ */
+function cvEsc(s){ return escapeHtml(String(s)); }
+function cvLines(t){ return t.split(/\r?\n/).map(l=>l.trim()).filter(Boolean); }
+function cvBand(sc){ return sc>=85?['cv-good','Ready to send'] : sc>=65?['cv-mid','Nearly there'] : ['cv-low','Needs work']; }
+
+const CV_FLUFF=["passionate","dynamic","dedicated","hardworking","hard-working","detail-oriented","detail oriented","motivated","enthusiastic","team player","go-getter","results-driven","results driven","proactive","self-starter","self starter","meticulous","conscientious","reliable","trustworthy","adaptable","flexible","excellent communicator","people person","fast learner","hit the ground running","think outside the box","hardworking and reliable"];
+const CV_DUTY=["responsible for","duties included","duties include","in charge of","tasked with","responsibilities included","responsibilities include","assisted with","helped with","worked on","involved in","dealt with","various tasks","day to day tasks","day-to-day tasks"];
+const CV_WEAKOPEN=["responsible","assisted","helped","worked","involved","dealt","participated","supported","tasked","duties","responsibilities"];
+const CV_ACTIONVERBS=["managed","led","coordinated","organised","organized","ran","oversaw","overseen","directed","delivered","built","created","designed","planned","scheduled","booked","arranged","negotiated","sourced","procured","reduced","increased","saved","streamlined","implemented","introduced","launched","hired","recruited","trained","supervised","hosted","catered","chauffeured","maintained","overhauled","restored","curated","liaised","handled","executed","secured","budgeted","forecast","reconciled","administered","stewarded","accompanied","escorted","headed","spearheaded","established","developed","produced","provisioned","stocked","packed","styled","drove"];
+const CV_INSIDER=["principal","private household","family office","uhnw","ultra-high-net-worth","ultra high net worth","hnw","household","estate","discretion","discreet","confidential","confidentiality","bespoke","protocol","private service","concierge","chief of staff","house manager","estate manager","butler","valet","majordomo","private pa","staff of"];
+const CV_OUTDATED=[["references available upon request","Drop “references available upon request.” It is assumed, and it wastes a line."],["curriculum vitae","Remove the words “Curriculum Vitae” as a title — your name is the title of the page."],["career objective","Cut the “career objective” block. Lead with a two-line profile of what you do and for whom."],["objective:","Cut the “objective:” block. Lead with a tight profile line instead."],["date of birth","Remove date of birth — it does not belong on a private-service CV and can work against you."],["marital status","Remove marital status — it does not belong on the CV."]];
+const CV_COMPS=[
+ {name:"Household management",kw:["household management","house manager","running the","household operations","household manual","smooth running","standards throughout"]},
+ {name:"Staff leadership",kw:["staff of","team of","managed a team","supervis","rota","recruit","hiring","housekeep","gardener","led the household"]},
+ {name:"Budgets & accounts",kw:["budget","accounts","expenses","reconcil","petty cash","invoic","forecast","expenditure"]},
+ {name:"Travel & logistics",kw:["travel","logistics","itinerar","private aviation","private jet","yacht","charter","visa","transfers","chauffeur","fleet"]},
+ {name:"Events & entertaining",kw:["event","entertain","dinner part","hosting","gala","guest list","seating plan"]},
+ {name:"Food & wine",kw:["wine","cellar","menu","chef","f&b","sommelier","dietary","provision"]},
+ {name:"Wardrobe & personal",kw:["wardrobe","packing","valet","laundry","personal shopping","styling"]},
+ {name:"Family & childcare",kw:["children","childcare","nanny","school run","family of","governess","tutor"]},
+ {name:"Vendors & procurement",kw:["vendor","supplier","procure","sourc","contractor","negotiat","quote"]},
+ {name:"Property & projects",kw:["property","properties","residence","renovation","refurbish","maintenance","refit","project manage"]},
+ {name:"Security & discretion",kw:["security","cctv","discretion","confidential","nda","vetting","close protection"]},
+ {name:"Diary & correspondence",kw:["diary","calendar","correspondence","scheduling","gatekeep","appointments","inbox"]},
+];
+const CV_STOP=new Set("the a an and or of to for in on at by with from as is are be being been will would you your our their his her they them we me my i role job must should required requirement responsibilities duties experience ideal candidate looking seeking able ability strong good excellent within across into this that these those who whom which what when where able about have has had not but also more most very can may".split(/\s+/));
+
+function cvAnalyze(text, target){
+  const low=text.toLowerCase(), lines=cvLines(text);
+  const words=(text.match(/\S+/g)||[]).length;
+  const pages=Math.max(0.5, Math.round(words/475*10)/10);
+  const cat={evidence:100,voice:100,structure:100,discretion:100,contact:100};
+  const W={evidence:0.27,voice:0.22,structure:0.19,discretion:0.19,contact:0.13};
+  const R={score:0,cats:[],fixes:[],strengths:[],reminders:[],flags:[],comps:[],target:null,stats:{words,pages}};
+  const cut=(k,d)=>{ cat[k]=Math.max(0,cat[k]-d); };
+  const fix=(t,d,ex,imp)=>R.fixes.push({t,d,ex:ex||'',imp:imp||1});
+  const good=(s)=>R.strengths.push(s);
+  const wordy=lines.filter(l=>(l.match(/\S+/g)||[]).length>=5);
+  const opener=l=>(l.replace(/^[\-•\*▪●–►·\s]+/,'').split(/\s+/)[0]||'').toLowerCase();
+
+  // ---------- EVIDENCE & SCOPE ----------
+  const ff=CV_FLUFF.filter(w=>low.includes(w));
+  if(ff.length){ cut('evidence',Math.min(ff.length*5,22)); fix("Cut the empty adjectives","Found: "+ff.slice(0,6).map(f=>'“'+cvEsc(f)+'”').join(', ')+(ff.length>6?'…':'')+". Every candidate writes these, none can be verified, and they sit where evidence should be.","<b>Instead of</b> “dedicated, hardworking house manager” <b>write</b> “House manager for a principal across three residences; staff of 9.”",3); }
+  else good("No empty self-adjectives — you let the facts carry it.");
+
+  const df=CV_DUTY.filter(w=>low.includes(w));
+  if(df.length){ cut('evidence',Math.min(df.length*5,16)); fix("Turn duties into scope","Phrases like "+df.slice(0,4).map(f=>'“'+cvEsc(f)+'”').join(', ')+" describe tasks, not scale.","<b>Instead of</b> “responsible for travel” <b>write</b> “Coordinated travel for a family of five across three residences, including private aviation.”",3); }
+
+  const digits=(text.match(/\d/g)||[]).length;
+  const scopeHits=(low.match(/\b(staff of|team of|family of|budget|residences?|properties|guests?|years?|homes?)\b/g)||[]).length + (text.match(/[£$€]/g)||[]).length;
+  if(digits<3){ cut('evidence',16); fix("Add real numbers","There are almost no figures here. Scope is proven with numbers: how many residences, how large a staff, a family of how many, what budgets, how many years.","<b>Instead of</b> “managed a large household” <b>write</b> “Managed a 14-room principal residence and a staff of 9, on a £600k annual budget.”",3); }
+  else if(scopeHits>=3) good("Concrete, checkable scope is present — figures are what earn a callback.");
+  if(wordy.length>=6){ const qr=wordy.filter(l=>/\d/.test(l)).length/wordy.length; if(qr<0.25 && digits>=3) cut('evidence',7); }
+
+  // ---------- VOICE & LANGUAGE ----------
+  const fp=(low.match(/\bi\b/g)||[]).length+(low.match(/\bmy\b/g)||[]).length+(low.match(/\bme\b/g)||[]).length;
+  if(fp>6){ cut('voice',12); fix("Write it impersonally","You use “I / my / me” about "+fp+" times. A CV drops the first person and uses clipped lines that open with a verb.","<b>Instead of</b> “I was responsible for the diary” <b>write</b> “Managed the principal’s diary and correspondence.”",2); }
+  else good("Impersonal, verb-led voice — exactly right for a CV.");
+  if(wordy.length>=6){
+    const vr=wordy.filter(l=>CV_ACTIONVERBS.includes(opener(l))).length/wordy.length;
+    const wk=wordy.filter(l=>CV_WEAKOPEN.includes(opener(l))).length;
+    if(vr<0.25){ cut('voice',12); fix("Start lines with strong verbs","Few of your lines begin with an action verb. Open each achievement with one — Managed, Coordinated, Negotiated, Reduced, Hosted.","<b>Instead of</b> “Was in charge of events” <b>write</b> “Organised 20+ private events a year, up to 120 guests.”",2); }
+    else if(vr>=0.5) good("Most lines open with a strong action verb.");
+    if(wk>=2) cut('voice',6);
+  }
+
+  // ---------- STRUCTURE & SECTIONS ----------
+  const hasContact=/[\w.+-]+@[\w-]+\.[\w.-]+/.test(text)||/(\+?\d[\d\s().-]{7,}\d)/.test(text);
+  const sec={
+    profile:/\b(profile|summary|about me|personal statement)\b/i.test(text),
+    experience:/\b(experience|employment|work history|career history|positions? held)\b/i.test(text),
+    education:/\b(education|qualifications?|training|certificat|courses?)\b/i.test(text),
+    skills:/\b(skills|competenc|languages|it skills|driving licen)\b/i.test(text),
+  };
+  const missing=[];
+  if(!sec.experience) missing.push("an Experience section with clear role headings");
+  if(!sec.education) missing.push("an Education / Training section");
+  if(!sec.skills) missing.push("a short Skills / Languages section");
+  if(!sec.profile) missing.push("a two-line Profile at the top");
+  if(missing.length){ cut('structure',Math.min(missing.length*7,22)); fix("Give it a clear skeleton","A reader scans for structure in seconds. Yours is missing "+missing.join(', ')+".","A private-service CV runs: <b>Name & contact → Profile (2 lines) → Experience (recent first, dated) → Education / Training → Skills & Languages → References (discreet).</b>",2); }
+  else good("Clear, scannable structure — the sections a reader expects are all here.");
+
+  const dateRanges=text.match(/((19|20)\d{2})\s*(?:[–\-—]{1,3}|\bto\b)\s*((19|20)\d{2}|present|current|now)/gi)||[];
+  if(sec.experience && dateRanges.length<2){ cut('structure',10); fix("Date every role","Each position needs a clear month / year range. Undated experience reads as vague or evasive.","“<b>2019–2023</b> · House Manager · Private household, London”",2); }
+
+  if(pages<0.8){ cut('structure',10); fix("It reads thin","At about "+words+" words this is under a page. Build it out with scope and evidence to a full one to two pages.","",1); }
+  else if(pages>2.3){ cut('structure',10); fix("It runs long","At about "+words+" words this is likely over two pages. A private-service CV is two pages — cut the oldest and least relevant first.","",1); }
+  else good("Length sits right for a clean two-page CV.");
+
+  // tenure / stability
+  const spans=[]; const cy=(new Date()).getFullYear();
+  (text.match(/((19|20)\d{2})\s*(?:[–\-—]{1,3}|\bto\b)\s*((19|20)\d{2}|present|current|now)/gi)||[]).forEach(m=>{
+    const a=m.match(/(19|20)\d{2}/g); if(!a) return; const s=+a[0]; const e=/present|current|now/i.test(m)?cy:+a[a.length-1];
+    if(s&&e&&e>=s&&e-s<=45) spans.push(e-s);
+  });
+  if(spans.length>=3){
+    const shortN=spans.filter(d=>d<=1).length, avg=spans.reduce((a,b)=>a+b,0)/spans.length;
+    if(shortN>=Math.ceil(spans.length/2) && avg<1.6){ cut('discretion',6); fix("Frame the short tenures","Several roles look under a year. Private households prize stability. Where a role was seasonal, a maternity cover, a yacht season or a fixed contract, say so on the line so it reads as designed, not restless.","“2022 · Summer season (6 months, fixed) · Estate Manager · Private villa, Ibiza”",2); }
+    else if(avg>=3) good("Your tenures show real stability — a household reads that as trust.");
+  }
+
+  // ---------- DISCRETION & REGISTER ----------
+  const inf=CV_INSIDER.filter(w=>low.includes(w));
+  if(inf.length>=3) good("Insider register is present ("+inf.slice(0,4).map(cvEsc).join(', ')+") — it signals you know this world.");
+  else { cut('discretion',8); fix("Use the insider register","Little of the vocabulary of this world appears. Where it is true, use the right words: principal, private household, family office, discretion, estate.","",1); }
+  CV_OUTDATED.forEach(pair=>{ if(low.includes(pair[0])){ cut('discretion',5); fix("Remove an outdated line",pair[1],"",1); } });
+  if(/family office|bound by confidentiality|confidential/i.test(text)) good("You handle confidentiality on the page the way this world expects.");
+
+  const nameRisk=[]; let mm;
+  const famRe=/\bthe ([A-Z][a-z]{2,})(?:[-\s][A-Z][a-z]+)? family\b/g;
+  while((mm=famRe.exec(text))){ const w=mm[1].toLowerCase(); if(["royal","same","whole","entire","host","first","second","other","above","said","family","principal","client"].indexOf(w)===-1) nameRisk.push(mm[0]); }
+  (text.match(/\bfor (Mr|Mrs|Ms|Sir|Lord|Lady|Sheikh|Sheikha|Prince|Princess|HRH|HSH|Baron|Baroness|Count|Countess)\b[.\s]+[A-Z][a-z]+/g)||[]).forEach(x=>nameRisk.push(x.trim()));
+  if(nameRisk.length){ cut('discretion',15); fix("⚠ You may be naming a principal","This looks like it identifies an employer: "+nameRisk.slice(0,3).map(x=>'“'+cvEsc(x)+'”').join(', ')+". Never name a private principal — it is the fastest way to be rejected, because it proves you would one day name this house too.","<b>Write instead</b> “Private household · London &amp; Gstaad · bound by confidentiality; reference available via the family office.”",3); }
+
+  // ---------- CONTACT & POLISH ----------
+  const email=(text.match(/[\w.+-]+@[\w-]+\.[\w.-]+/)||[])[0];
+  if(!email){ cut('contact',14); fix("No contact email found","One clean, professional email must sit clearly at the top of the page.","",2); }
+  else{ const lp=email.split('@')[0].toLowerCase();
+    if(/\d{3,}|x{2,}|babe|sexy|lover|princess|kitten|420|69|xoxo/.test(lp)){ cut('contact',8); fix("Use a professional email","“"+cvEsc(email)+"” reads casual. Use firstname.lastname@… — it is free, and it changes the first impression.","",2); }
+    else good("A clean, professional contact email is present.");
+  }
+  if(!/(\+?\d[\d\s().-]{7,}\d)/.test(text)){ cut('contact',6); fix("Add a phone number","Agencies often call before they email. Put a reachable number beside your email.","",1); }
+  if(/(right to work|eligible to work|driving licen|driver'?s licen|clean licen|dbs|first aid|passport|references? on)/i.test(text)) good("Practical essentials (licence / right to work / checks) are noted — households look for these.");
+  else R.reminders.push("<b>State the practical essentials.</b> A clean driving licence, right to work, DBS / background check and first-aid are often deal-makers here — list the ones you hold.");
+  const polish=[];
+  if(/ {2,}/.test(text)) polish.push("double spaces");
+  if(/\b(\w+)\s+\1\b/i.test(text)) polish.push("a repeated word");
+  const caps=(text.match(/\b[A-Z]{4,}\b/g)||[]).filter(w=>["CEO","UHNW","HNW","NDA","DBS","VIP","HRH","HSH","CPR"].indexOf(w)===-1);
+  if(caps.length>4) polish.push("a lot of ALL-CAPS words");
+  if((new Set(text.match(/^[\-•\*▪●–►·]/gm)||[])).size>1) polish.push("mixed bullet symbols");
+  if(polish.length){ cut('contact',Math.min(polish.length*3,10)); fix("Tidy the small things","A discreet, exacting profession is judged on small consistency. Found: "+polish.join(', ')+". Read it once more, aloud.","",1); }
+
+  // ---------- COMPETENCY MAP ----------
+  R.comps=CV_COMPS.map(c=>({name:c.name, on:c.kw.some(k=>low.includes(k))}));
+
+  // ---------- LINE-BY-LINE FLAGS ----------
+  wordy.forEach(l=>{
+    if(R.flags.length>=6) return;
+    const clean=l.replace(/^[\-•\*▪●–►·\s]+/,''), w0=opener(l), ll=l.toLowerCase();
+    if(CV_DUTY.some(d=>ll.includes(d))) R.flags.push({q:l,s:"Duty phrasing. Recast as measurable scope — <b>what, how many, for whom.</b>"});
+    else if(CV_WEAKOPEN.indexOf(w0)>=0) R.flags.push({q:l,s:"Weak opener. Start with an action verb — <b>Managed, Coordinated, Delivered.</b>"});
+    else if(/\bi\b|\bmy\b/.test(ll) && clean.length>20) R.flags.push({q:l,s:"First person. Drop the “I / my” and lead with the verb."});
+    else if(clean.length>55 && !/\d/.test(clean) && CV_ACTIONVERBS.indexOf(w0)>=0) R.flags.push({q:l,s:"Strong line, but no number. <b>Add scale</b> — a figure makes it checkable."});
+  });
+
+  // ---------- TARGET-ROLE MATCH ----------
+  if(target && target.trim().length>40){
+    const counts={}; (target.toLowerCase().match(/[a-z][a-z'&/\-]{3,}/g)||[]).forEach(w=>{ if(!CV_STOP.has(w)) counts[w]=(counts[w]||0)+1; });
+    const keys=Object.keys(counts).sort((a,b)=>counts[b]-counts[a]).slice(0,24);
+    const have=keys.filter(k=>low.includes(k)), miss=keys.filter(k=>!low.includes(k));
+    const mscore=keys.length?Math.round(have.length/keys.length*100):0;
+    R.target={score:mscore, missing:miss.slice(0,12)};
+    if(keys.length && mscore<55) fix("Tailor this CV to the role","Your CV picks up only "+mscore+"% of the words this brief leans on. Weave in the ones that are genuinely true of you (listed under the match, below) — in your profile line and the relevant roles.","",2);
+  }
+
+  // ---------- FINAL SCORE ----------
+  let score=0; for(const k in cat) score+=cat[k]*W[k];
+  R.score=Math.max(6,Math.min(100,Math.round(score)));
+  R.cats=[
+    {k:'evidence',l:'Evidence & scope',v:Math.round(cat.evidence)},
+    {k:'voice',l:'Voice & language',v:Math.round(cat.voice)},
+    {k:'structure',l:'Structure',v:Math.round(cat.structure)},
+    {k:'discretion',l:'Discretion & register',v:Math.round(cat.discretion)},
+    {k:'contact',l:'Contact & polish',v:Math.round(cat.contact)},
+  ];
+  R.fixes.sort((a,b)=>b.imp-a.imp);
+  R.reminders.unshift("<b>Never name a confidential principal.</b> Write “private household, dates, scope; bound by confidentiality, reference available via the family office.” Handled this way, a discreet role becomes your strongest line.");
+  R.reminders.push("<b>Keep the design plain.</b> Two pages, no colour, no columns, no logo. It is a document, not a portfolio.");
+  R.reminders.push("<b>Tailor it to each house.</b> Lead with the experience that matches the specific role, and cut what does not serve it.");
+  return R;
+}
+
+function cvWrittenNote(R){
+  const s=R.score, rv=[];
+  rv.push(s>=85?"This is a strong CV. It already reads the way a private household or a specialist agency would want it to, and needs only a light polish before you send it."
+    : s>=65?"There is a good CV in here. The bones are right, and a few specific changes will lift it from promising into genuinely agency-ready."
+    : "This CV is not quite ready to send yet — and that is completely normal; almost nobody’s first draft is. The encouraging part: everything holding it back is fixable, and fast.");
+  const lowest=R.cats.slice().sort((a,b)=>a.v-b.v)[0];
+  if(lowest && lowest.v<80) rv.push("Your weakest area right now is <b>"+lowest.l.toLowerCase()+"</b> ("+lowest.v+"/100) — that is where the fixes below move the needle most.");
+  if(R.fixes.length) rv.push("Start with the top "+Math.min(3,R.fixes.length)+": "+R.fixes.slice(0,3).map(f=>f.t.replace(/^⚠\s*/,'').toLowerCase()).join("; ")+".");
+  if(R.strengths.length) rv.push("Already in your favour: "+R.strengths.slice(0,2).map(x=>x.replace(/\.$/,'')).map(x=>x.charAt(0).toLowerCase()+x.slice(1)).join(", and ")+".");
+  rv.push(s>=85?"Make the small fixes below and send it with confidence.":"Make the changes below, paste it back in, and watch the score climb. You are closer than it feels.");
+  return rv.map(p=>'<p>'+p+'</p>').join('');
+}
+
+function renderCvResult(R){
+  const box=document.getElementById('cvResult');
+  const band=cvBand(R.score);
+  const cats=R.cats.map(c=>{ const cc=c.v>=80?'good':c.v>=60?'mid':'low'; return '<div class="cv-cat '+cc+'"><div class="cv-cat-h"><span class="cv-cat-l">'+c.l+'</span><span class="cv-cat-n">'+c.v+'</span></div><div class="cv-cat-bar"><i style="width:'+c.v+'%"></i></div></div>'; }).join('');
+  const fixHtml=R.fixes.length?R.fixes.map(f=>'<div class="cv-item"><div class="it-t">'+cvEsc(f.t)+(f.imp>=3?'<span class="cv-imp">high impact</span>':'')+'</div><div class="it-d">'+f.d+'</div>'+(f.ex?'<div class="it-ex">'+f.ex+'</div>':'')+'</div>').join(''):'<div class="cv-mini">Nothing major to fix. Impressive.</div>';
+  const strongHtml=R.strengths.length?'<div class="cv-group g-strong"><h3>✓ Strengths</h3>'+R.strengths.map(s=>'<div class="cv-mini">'+s+'</div>').join('')+'</div>':'';
+  const flagsHtml=R.flags.length?'<div class="cv-group g-fix"><h3>⌖ Lines to rewrite</h3>'+R.flags.map(f=>'<div class="cv-flag"><div class="cv-flag-q">'+cvEsc(f.q)+'</div><div class="cv-flag-s">'+f.s+'</div></div>').join('')+'</div>':'';
+  const compsHtml='<div class="cv-group"><h3>◇ Competency coverage</h3><div class="cv-comps">'+R.comps.map(c=>'<span class="cv-comp '+(c.on?'on':'off')+'"><span class="d"></span>'+cvEsc(c.name)+'</span>').join('')+'</div><div class="cv-mini" style="border:none;padding-top:12px;">Filled chips are evidenced in your CV. Faded ones are worth adding <i>where they are true</i> — households hire on the breadth they can see.</div></div>';
+  const consHtml='<div class="cv-group g-consider"><h3>◆ Always remember</h3>'+R.reminders.map(s=>'<div class="cv-mini">'+s+'</div>').join('')+'</div>';
+  let targetHtml='';
+  if(R.target){ const tc=R.target.score>=70?'cv-good':R.target.score>=45?'cv-mid':'cv-low';
+    targetHtml='<div class="cv-seck">Match to the role you pasted</div><div class="cv-match '+tc+'"><div class="cv-ring" style="background:conic-gradient(var(--gold) '+(R.target.score*3.6)+'deg, var(--line) 0deg);"><div style="width:64px;height:64px;border-radius:50%;background:var(--paper);display:flex;align-items:center;justify-content:center;"><span class="cv-match-n">'+R.target.score+'<span style="font-size:14px;color:var(--stone)">%</span></span></div></div><div style="flex:1;min-width:220px;"><div class="cv-band" style="font-size:20px;margin-bottom:4px;">'+(R.target.score>=70?'Strong match':R.target.score>=45?'Partial match':'Weak match')+'</div>'+(R.target.missing.length?'<div class="cv-sub" style="margin-bottom:7px;">Words this brief leans on that your CV is missing — add the ones that are true of you:</div><div class="cv-miss">'+R.target.missing.map(m=>'<span>'+cvEsc(m)+'</span>').join('')+'</div>':'<div class="cv-sub">Your CV already covers the language of this brief well.</div>')+'</div></div>';
+  }
+  box.innerHTML='<div class="cv-res '+band[0]+'">'
+    +'<div class="cv-top"><div class="cv-ring" style="background:conic-gradient(var(--gold) '+(R.score*3.6)+'deg, var(--line) 0deg);"><div style="width:80px;height:80px;border-radius:50%;background:var(--paper);display:flex;flex-direction:column;align-items:center;justify-content:center;"><span class="cv-num">'+R.score+'</span><span style="font-family:\'Jost\',sans-serif;font-size:10px;color:var(--stone);margin-top:-4px;">/ 100</span></div></div>'
+    +'<div class="cv-tt"><div class="cv-band">'+band[1]+'</div><div class="cv-sub">'+R.stats.words+' words · ~'+R.stats.pages+' page'+(R.stats.pages>=1.5?'s':'')+' · scored across five dimensions</div></div></div>'
+    +'<div class="cv-cats">'+cats+'</div>'
+    +'<div class="cv-review"><div class="cv-review-k">A note on your CV</div>'+cvWrittenNote(R)+'</div>'
+    +targetHtml
+    +'<div class="cv-seck">Your priorities</div><div class="cv-cols"><div class="cv-group g-fix"><h3>→ Fix these, in order</h3>'+fixHtml+'</div>'+strongHtml+'</div>'
+    +(flagsHtml?('<div class="cv-seck">Line by line</div><div class="cv-cols">'+flagsHtml+'</div>'):'')
+    +'<div class="cv-seck">Coverage &amp; principles</div><div class="cv-cols">'+compsHtml+consHtml+'</div>'
+    +'</div>';
+}
+
 function analyzeCV(){
   const raw=(document.getElementById('cvInput').value||'').trim();
   const box=document.getElementById('cvResult');
-  if(raw.length<60){ box.innerHTML='<div class="cv-empty">Paste a little more of your CV, at least a few lines, to get a proper read.</div>'; return; }
-  const text=raw, low=text.toLowerCase();
-  const words=(text.match(/\S+/g)||[]).length;
-  let score=100; const strong=[], fix=[], consider=[];
-
-  const fluff=["passionate","dynamic","dedicated","hardworking","hard-working","detail-oriented","detail oriented","motivated","enthusiastic","team player","go-getter","results-driven","results driven","proactive","self-starter","self starter","driven","meticulous","conscientious"];
-  const ff=fluff.filter(w=>low.includes(w));
-  if(ff.length){ score-=Math.min(ff.length*4,20); fix.push({t:"Cut the empty adjectives", d:"Found: "+ff.map(f=>'“'+escapeHtml(f)+'”').join(', ')+". Every candidate writes these, none can be checked, and they take the space where evidence should be. Replace each one with a fact that proves it."}); }
-  else strong.push("No empty self-adjectives, you let the facts speak.");
-
-  const duty=["responsible for","duties included","duties included:","in charge of","tasked with","responsibilities included","assisted with","helped with"];
-  const df=duty.filter(w=>low.includes(w));
-  if(df.length){ score-=Math.min(df.length*5,15); fix.push({t:"Turn duties into scope", d:"Phrases like "+df.map(f=>'“'+escapeHtml(f)+'”').join(', ')+" describe tasks, not scale. Reframe as measurable scope: not “responsible for travel”, but “coordinated travel for a family of five across three residences, including private aviation.” A fact can be checked; a duty cannot."}); }
-
-  const nums=(text.match(/\d/g)||[]).length;
-  if(nums<3){ score-=15; fix.push({t:"Add real numbers", d:"There are almost no figures here. Scope is proven with numbers: how many residences, how large a staff, a family of how many, what budgets, how many years. Add them wherever they are true."}); }
-  else strong.push("Concrete figures are present, and checkable scope is exactly what earns a callback.");
-
-  if(words<120){ score-=10; fix.push({t:"It reads thin", d:"At roughly "+words+" words this is likely under a page. Build it out with scope and evidence until it fills one to two full pages."}); }
-  else if(words>950){ score-=10; fix.push({t:"It runs long", d:"At roughly "+words+" words this is likely more than two pages. A private-service CV is two pages, no more. Cut the oldest and least relevant first."}); }
-  else strong.push("Length looks right for a clean two-page CV.");
-
-  const fp=(low.match(/\bi\b/g)||[]).length + (low.match(/\bmy\b/g)||[]).length;
-  if(fp>6){ score-=8; fix.push({t:"Drop the first person", d:"You use “I” and “my” often ("+fp+" times). A CV is written impersonally, in clipped lines that begin with a verb: “Managed…”, “Coordinated…”, never “I managed…”."}); }
-
-  const hasEmail=/[\w.+-]+@[\w-]+\.[\w.-]+/.test(text);
-  if(!hasEmail){ score-=8; fix.push({t:"No contact email found", d:"Make sure one clean, professional email address sits clearly at the top of the page."}); }
-  else strong.push("A contact email is present.");
-
-  const ins=["principal","private household","family office","uhnw","ultra-high-net-worth","household","estate","discretion","confidential","bespoke","protocol","hnw","private service","concierge"];
-  const inf=ins.filter(w=>low.includes(w));
-  if(inf.length>=3) strong.push("Insider vocabulary is present ("+inf.slice(0,4).map(escapeHtml).join(', ')+"), which signals you know this world.");
-  else consider.push("Little of the insider vocabulary appears. Where it is true, use the right register: <b>principal</b>, <b>private household</b>, <b>family office</b>, <b>discretion</b>. It quietly signals fluency.");
-
-  consider.push("<b>Never name a confidential principal.</b> If your best role cannot be named, write: “private household, dates, scope; bound by confidentiality, reference available via the family office.” Handled this way, it becomes your strongest line.");
-  consider.push("<b>Keep the design plain.</b> Two pages, no colour, no columns, no photograph of a suitcase. It is a document, not a portfolio.");
-  consider.push("<b>Tailor it to each role.</b> Lead with the experience that matches the specific house or agency you are writing to, and cut what does not serve it.");
-
-  score=Math.max(4,Math.min(100,Math.round(score)));
-  const band = score>=85?["Ready to send","cv-good","This reads like a professional, checkable CV. Fix any small points below and send it."]
-    : score>=65?["Nearly there","cv-mid","A solid base. Work through the fixes below and it will move into agency-ready territory."]
-    : ["Needs work","cv-low","There is real room to sharpen this. The fixes below are the fastest wins, in order."];
-
-  // ---- avis écrit, en langage naturel (composé à partir des constats) ----
-  const rv=[];
-  rv.push(score>=85 ? "This is a strong CV. It already reads the way a private household or a specialist agency would want it to, and it needs only a light polish before you send it."
-    : score>=65 ? "There is a good CV in here. The bones are right, and a few specific changes will lift it from promising into genuinely agency-ready."
-    : "This CV is not quite ready to send yet, and that is completely normal, almost nobody's first draft is. The encouraging part is that everything holding it back is fixable, and fast.");
-  const problems=[];
-  if(ff.length) problems.push("it leans on adjectives such as "+ff.slice(0,2).map(f=>'“'+escapeHtml(f)+'”').join(' and ')+", the kind every candidate writes and none can prove; each one should be swapped for a fact that demonstrates it");
-  if(df.length) problems.push("it describes duties rather than scale, and a phrase like “responsible for travel” tells a reader far less than “coordinated travel for a family of five across three residences”");
-  if(nums<3) problems.push("it is missing numbers, and in this world scope is proven with figures, how many residences, how large a staff, what budgets");
-  if(fp>6) problems.push("it is written in the first person, where a CV wants clipped, impersonal lines that begin with a verb");
-  if(words<120) problems.push("it reads a little thin and could carry more evidence");
-  else if(words>950) problems.push("it runs long, and a private-service CV should sit within two pages");
-  if(!hasEmail) problems.push("there is no clear contact email at the top");
-  if(problems.length){
-    rv.push("The main things to work on: "+problems.slice(0,3).join("; ")+".");
-  }
-  if(strong.length){
-    rv.push("What already works in your favour: "+strong.slice(0,2).map(s=>s.replace(/\.$/,'').charAt(0).toLowerCase()+s.replace(/\.$/,'').slice(1)).join(", and ")+".");
-  }
-  rv.push("One rule above all: never name a confidential principal. Framed as “private household, bound by confidentiality, reference available via the family office,” a discreet role becomes your strongest line, not a gap.");
-  rv.push(score>=85 ? "Make the small fixes below and send it with confidence." : "Make the changes below, paste it back in, and watch the score climb. You are closer than it feels.");
-  const reviewHtml=`<div class="cv-review"><div class="cv-review-k">A note on your CV</div>${rv.map(p=>`<p>${p}</p>`).join('')}</div>`;
-
-  const strongHtml = strong.length? `<div class="cv-group g-strong"><h3>✓ Strengths</h3>${strong.map(s=>`<div class="cv-mini">${s}</div>`).join('')}</div>`:'';
-  const fixHtml = fix.length? `<div class="cv-group g-fix"><h3>→ Fix these</h3>${fix.map(it=>`<div class="cv-item"><div class="it-t">${escapeHtml(it.t)}</div><div class="it-d">${it.d}</div></div>`).join('')}</div>`
-    : `<div class="cv-group g-strong"><h3>✓ Fix these</h3><div class="cv-mini">Nothing major to fix. Impressive.</div></div>`;
-  const consHtml = `<div class="cv-group g-consider"><h3>◆ Always remember</h3>${consider.map(s=>`<div class="cv-mini">${s}</div>`).join('')}</div>`;
-
-  box.innerHTML = `<div class="cv-res ${band[1]}">
-    <div class="cv-top">
-      <div class="cv-ring" style="background:conic-gradient(var(--gold) ${score*3.6}deg, var(--line) 0deg);">
-        <div style="width:80px;height:80px;border-radius:50%;background:var(--paper);display:flex;flex-direction:column;align-items:center;justify-content:center;">
-          <span class="cv-num">${score}</span><span style="font-family:'Jost',sans-serif;font-size:10px;color:var(--stone);margin-top:-4px;">/ 100</span>
-        </div>
-      </div>
-      <div class="cv-tt"><div class="cv-band">${band[0]}</div><div class="cv-sub">${band[2]}</div></div>
-    </div>
-    ${reviewHtml}
-    <div class="cv-cols">${fixHtml}${strongHtml}${consHtml}</div>
-  </div>`;
+  if(raw.length<60){ box.innerHTML='<div class="cv-empty">Paste a little more of your CV — at least a few lines — to get a proper read.</div>'; return; }
+  const tEl=document.getElementById('cvTarget');
+  const R=cvAnalyze(raw, (tEl&&tEl.value)||'');
+  renderCvResult(R);
   box.scrollIntoView({behavior:'smooth',block:'nearest'});
 }
 
