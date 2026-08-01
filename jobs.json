@@ -1,18 +1,66 @@
 {
   "updated": "Live roles + boards · updated 1 August 2026",
   "boards": [
-    ["EstateJobs.com", "Live US board - estate & house managers, PAs, chiefs of staff", "https://www.estatejobs.com/search"],
-    ["Rose's Agency", "California private-staff job board - house & estate managers", "https://rosesagency.com/job-board"],
-    ["Greycoat Lumleys", "Private households & estates - UK, Europe & international", "https://www.greycoatlumleys.co.uk/jobs/private-households-and-estates"],
-    ["Morgan & Mallet", "Household, estate & family office - US offices NY, LA, Miami", "https://www.householdstaff.agency/jobs/"],
-    ["Silver Swan Recruitment", "Private household staff - New York, Miami, LA, SF, Dubai", "https://silverswanrecruitment.com/search-jobs/"],
-    ["MyStaffHq", "UHNW household job board - estate manager & private roles", "https://www.mystaffhq.com/jobs/estate-manager"],
-    ["Colonial Agency", "Domestic & estate staffing since 1963 - nationwide US", "https://colonialdomestics.com/job-openings/"],
-    ["Polo & Tweed", "London-based luxury staffing - house & estate manager roles", "https://jobs.poloandtweed.com/vacancies.aspx"],
-    ["Pocketbook Agency", "US domestic & family-office job board - house managers, PAs, chiefs of staff", "https://careers.pocketbookagency.com/?rtype=Domestic"],
-    ["LinkedIn Jobs", "Live search: estate & house manager, private PA (US)", "https://www.linkedin.com/jobs/search/?keywords=estate%20manager%20private%20household&location=United%20States"],
-    ["Indeed", "Live search: private estate manager (US)", "https://www.indeed.com/jobs?q=private+estate+manager&l=United+States"],
-    ["ZipRecruiter", "Live search: UHNW estate manager (US)", "https://www.ziprecruiter.com/Jobs/Uhnw-Estate-Manager"]
+    [
+      "EstateJobs.com",
+      "Live US board - estate & house managers, PAs, chiefs of staff",
+      "https://www.estatejobs.com/search"
+    ],
+    [
+      "Rose's Agency",
+      "California private-staff job board - house & estate managers",
+      "https://rosesagency.com/job-board"
+    ],
+    [
+      "Greycoat Lumleys",
+      "Private households & estates - UK, Europe & international",
+      "https://www.greycoatlumleys.co.uk/jobs/private-households-and-estates"
+    ],
+    [
+      "Morgan & Mallet",
+      "Household, estate & family office - US offices NY, LA, Miami",
+      "https://www.householdstaff.agency/jobs/"
+    ],
+    [
+      "Silver Swan Recruitment",
+      "Private household staff - New York, Miami, LA, SF, Dubai",
+      "https://silverswanrecruitment.com/search-jobs/"
+    ],
+    [
+      "MyStaffHq",
+      "UHNW household job board - estate manager & private roles",
+      "https://www.mystaffhq.com/jobs/estate-manager"
+    ],
+    [
+      "Colonial Agency",
+      "Domestic & estate staffing since 1963 - nationwide US",
+      "https://colonialdomestics.com/job-openings/"
+    ],
+    [
+      "Polo & Tweed",
+      "London-based luxury staffing - house & estate manager roles",
+      "https://jobs.poloandtweed.com/vacancies.aspx"
+    ],
+    [
+      "Pocketbook Agency",
+      "US domestic & family-office job board - house managers, PAs, estate managers, chiefs of staff",
+      "https://www.pocketbookagency.com/jobs-list/"
+    ],
+    [
+      "LinkedIn Jobs",
+      "Live search: estate & house manager, private PA (US)",
+      "https://www.linkedin.com/jobs/search/?keywords=estate%20manager%20private%20household&location=United%20States"
+    ],
+    [
+      "Indeed",
+      "Live search: private estate manager (US)",
+      "https://www.indeed.com/jobs?q=private+estate+manager&l=United+States"
+    ],
+    [
+      "ZipRecruiter",
+      "Live search: UHNW estate manager (US)",
+      "https://www.ziprecruiter.com/Jobs/Uhnw-Estate-Manager"
+    ]
   ],
   "jobs": {
     "americas": [
@@ -23,7 +71,11 @@
         "title": "Estate & Household Manager / Personal Assistant",
         "agency": "EstateJobs (Confidential)",
         "type": "Full time · Live-out",
-        "tags": ["Estate Manager", "Two residences", "Personal Assistant"],
+        "tags": [
+          "Estate Manager",
+          "Two residences",
+          "Personal Assistant"
+        ],
         "salary": "$190,000 - $275,000 DOE + benefits stipend",
         "posted": "Posted 29 June 2026",
         "url": "https://www.estatejobs.com/job/urjx94/house-estate-manager-pa-for-uhnw-couple/pleasanton/ca/united-states",
@@ -36,7 +88,11 @@
         "title": "Household Manager / Personal Concierge",
         "agency": "EstateJobs (Confidential)",
         "type": "Full time · Live-out",
-        "tags": ["Household Manager", "Concierge", "Bilingual Spanish"],
+        "tags": [
+          "Household Manager",
+          "Concierge",
+          "Bilingual Spanish"
+        ],
         "salary": "$120,000 - $160,000 + benefits DOE",
         "posted": "Posted 6 July 2026",
         "url": "https://www.estatejobs.com/job/hr7uvm/household-manager-personal-concierge-miami-fl/miami/fl/united-states",
@@ -49,7 +105,11 @@
         "title": "Estate Manager",
         "agency": "Rose's Agency",
         "type": "Full time · Live-out",
-        "tags": ["Estate Manager", "Large estate", "Team leadership"],
+        "tags": [
+          "Estate Manager",
+          "Large estate",
+          "Team leadership"
+        ],
         "salary": "$200,000 - $225,000 + benefits",
         "posted": "Live on board",
         "url": "https://rosesagency.com/job-board/full-time-estate-manager-in-nyc",
@@ -62,7 +122,11 @@
         "title": "Estate Manager",
         "agency": "Rose's Agency",
         "type": "Full time · Hybrid",
-        "tags": ["Estate Manager", "Team leadership", "Multi-property"],
+        "tags": [
+          "Estate Manager",
+          "Team leadership",
+          "Multi-property"
+        ],
         "salary": "Competitive / DOE",
         "posted": "Live on board",
         "url": "https://rosesagency.com/job-board/full-time-estate-manager-in-miami-fl",
@@ -75,7 +139,11 @@
         "title": "House Manager / Personal Assistant",
         "agency": "Rose's Agency",
         "type": "Part time · Live-out",
-        "tags": ["House Manager", "Personal Assistant", "Estate operations"],
+        "tags": [
+          "House Manager",
+          "Personal Assistant",
+          "Estate operations"
+        ],
         "salary": "Competitive / DOE",
         "posted": "Live on board",
         "url": "https://rosesagency.com/job-board/part-time-house-managerpa-atherton",
@@ -88,11 +156,49 @@
         "title": "Junior House Manager",
         "agency": "The Pocketbook Agency",
         "type": "Full time · Onsite",
-        "tags": ["House Manager", "Household operations", "Estate support"],
+        "tags": [
+          "House Manager",
+          "Household operations",
+          "Estate support"
+        ],
         "salary": "$120,000 - $140,000",
         "posted": "Posted 9 June 2026",
         "url": "https://careers.pocketbookagency.com/job/2538",
         "blurb": "A private Palm Beach residence seeks a service-driven Household Operations Assistant to partner with the Estate Manager, building systems and SOPs, coordinating vendors and travel, and keeping the home calm, orderly and guest-ready."
+      },
+      {
+        "flag": "🇺🇸",
+        "city": "New York, NY",
+        "country": "United States",
+        "title": "Personal Assistant / House Manager",
+        "agency": "The Pocketbook Agency",
+        "type": "Full time",
+        "tags": [
+          "Personal Assistant",
+          "House Manager",
+          "Multi-property"
+        ],
+        "salary": "$140,000 - $180,000 DOE + benefits",
+        "posted": "Live on board",
+        "url": "https://careers.pocketbookagency.com/job/2060",
+        "blurb": "A private Manhattan family seeks a proactive Personal Assistant / House Manager with a 24/7 mindset to coordinate private travel and itineraries, manage vendors and bill pay, oversee household staff across multiple properties including a Hamptons home, and handle calendars, events and ad hoc projects."
+      },
+      {
+        "flag": "🇺🇸",
+        "city": "Los Angeles, CA",
+        "country": "United States",
+        "title": "Executive Personal Assistant",
+        "agency": "The Pocketbook Agency",
+        "type": "Full time",
+        "tags": [
+          "Personal Assistant",
+          "Family office",
+          "Operations"
+        ],
+        "salary": "Competitive / DOE",
+        "posted": "Live on board",
+        "url": "https://careers.pocketbookagency.com/job/2301",
+        "blurb": "A private family office in Brentwood seeks a dynamic Executive Personal Assistant to run day-to-day operations across business and personal matters. Requires 10+ years supporting senior leadership, ideally within a family office, real estate firm or entrepreneurial environment."
       },
       {
         "flag": "🇺🇸",
@@ -101,7 +207,11 @@
         "title": "Estate Manager",
         "agency": "Morgan & Mallet",
         "type": "Full time · Live-out",
-        "tags": ["Estate Manager", "River Oaks", "Staff leadership"],
+        "tags": [
+          "Estate Manager",
+          "River Oaks",
+          "Staff leadership"
+        ],
         "salary": "Up to $170,000",
         "posted": "Live on board",
         "url": "https://www.householdstaff.agency/jobs/estate-manager-job-houston-texas-us/",
@@ -114,7 +224,11 @@
         "title": "House Manager / Personal Assistant",
         "agency": "British American Household Staffing",
         "type": "Full time · Live-out",
-        "tags": ["House Manager", "Personal Assistant", "UHNW family"],
+        "tags": [
+          "House Manager",
+          "Personal Assistant",
+          "UHNW family"
+        ],
         "salary": "From $150,000 + health benefits",
         "posted": "New this week",
         "url": "https://www.mystaffhq.com/jobs/308715152-zi397-full-time-house-manager-pa-miami-fl",
@@ -127,7 +241,11 @@
         "title": "Assistant House Manager",
         "agency": "Bespoke Crew Recruitment",
         "type": "Full time",
-        "tags": ["Assistant House Manager", "UHNW residence", "Household operations"],
+        "tags": [
+          "Assistant House Manager",
+          "UHNW residence",
+          "Household operations"
+        ],
         "salary": "$100,000 - $120,000",
         "posted": "New this week",
         "url": "https://www.mystaffhq.com/jobs/566347517-assistant-house-manager-miami-usa",
@@ -140,7 +258,11 @@
         "title": "Estate & Facilities Manager",
         "agency": "British American Household Staffing",
         "type": "Full time",
-        "tags": ["Estate Manager", "Facilities", "Large estate"],
+        "tags": [
+          "Estate Manager",
+          "Facilities",
+          "Large estate"
+        ],
         "salary": "Competitive / DOE",
         "posted": "Live on board",
         "url": "https://www.mystaffhq.com/jobs/94897814-kp629-full-time-estate-and-facilities-manager-eastern-long-island-nyc",
@@ -155,7 +277,11 @@
         "title": "House Manager",
         "agency": "Greycoat Lumleys",
         "type": "Permanent · Full time",
-        "tags": ["House Manager", "Part-time residence", "Small team"],
+        "tags": [
+          "House Manager",
+          "Part-time residence",
+          "Small team"
+        ],
         "salary": "£75,000 - £85,000 GPA",
         "posted": "Live on board",
         "url": "https://www.greycoatlumleys.co.uk/job/house-manager-job-234972",
@@ -168,7 +294,11 @@
         "title": "Assistant House Manager",
         "agency": "Greycoat Lumleys",
         "type": "Permanent · Full time",
-        "tags": ["Assistant House Manager", "Private residence", "London"],
+        "tags": [
+          "Assistant House Manager",
+          "Private residence",
+          "London"
+        ],
         "salary": "£50,000 - £55,000 GPA",
         "posted": "Live on board",
         "url": "https://www.greycoatlumleys.co.uk/job/assistant-house-manager-job-5776543",
@@ -183,7 +313,11 @@
         "title": "PA / House Manager",
         "agency": "Silver Swan Recruitment",
         "type": "Permanent · Full time",
-        "tags": ["House Manager", "Personal Assistant", "Large team"],
+        "tags": [
+          "House Manager",
+          "Personal Assistant",
+          "Large team"
+        ],
         "salary": "Competitive package + benefits",
         "posted": "Live on board",
         "url": "https://silverswanrecruitment.com/job/house-manager-pa-4113/",
@@ -196,7 +330,11 @@
         "title": "House Manager & Personal Assistant",
         "agency": "Morgan & Mallet",
         "type": "Permanent · Full time",
-        "tags": ["House Manager", "Personal Assistant", "Private household"],
+        "tags": [
+          "House Manager",
+          "Personal Assistant",
+          "Private household"
+        ],
         "salary": "To be discussed",
         "posted": "Live on board",
         "url": "https://www.householdstaff.agency/jobs/493-house-manager-job-offer-and-vacancy/",
