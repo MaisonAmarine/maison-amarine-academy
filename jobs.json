@@ -47,6 +47,11 @@
       "https://www.pocketbookagency.com/jobs-list/"
     ],
     [
+      "The Grapevine Agency",
+      "Nationwide US board - estate & house managers, PAs, chiefs of staff",
+      "https://job.thegrapevineagency.com/"
+    ],
+    [
       "LinkedIn Jobs",
       "Live search: estate & house manager, private PA (US)",
       "https://www.linkedin.com/jobs/search/?keywords=estate%20manager%20private%20household&location=United%20States"
@@ -250,6 +255,40 @@
         "posted": "Posted 9 June 2026",
         "url": "https://www.estatejobs.com/job/qlk52b/full-time-personal-assistant-house-manager/los-angeles/ca/united-states",
         "blurb": "A busy Los Angeles couple seeks a full-time Personal Assistant / House Manager to manage schedules, travel and household operations. The ideal candidate is tech-savvy, proactive, available on demand and comfortable working around dogs."
+      },
+      {
+        "flag": "🇺🇸",
+        "city": "Los Angeles, CA",
+        "country": "United States",
+        "title": "Chief of Staff",
+        "agency": "The Grapevine Agency",
+        "type": "Full time",
+        "tags": [
+          "Chief of Staff",
+          "Family office",
+          "Business & personal"
+        ],
+        "salary": "$225,000",
+        "posted": "Live on board",
+        "url": "https://job.thegrapevineagency.com/apply/11eb5798-f2c3-4e1b-9612-a35d51d0d1bc",
+        "blurb": "The CEO and founder of an entertainment media company seeks a Chief of Staff to act as strategic and operational right hand across business and personal matters, driving priorities, managing stakeholders and keeping both office and household running seamlessly."
+      },
+      {
+        "flag": "🇺🇸",
+        "city": "Santa Monica, CA",
+        "country": "United States",
+        "title": "Executive / Personal Assistant",
+        "agency": "The Grapevine Agency",
+        "type": "Full time",
+        "tags": [
+          "Executive Assistant",
+          "Personal Assistant",
+          "Private couple"
+        ],
+        "salary": "Up to $150,000",
+        "posted": "Live on board",
+        "url": "https://job.thegrapevineagency.com/apply/ce668a4c-1eb8-4620-9222-57e69b599287",
+        "blurb": "A busy Santa Monica couple seeks a polished Executive/Personal Assistant to manage calendars, travel, correspondence and day-to-day household coordination, anticipating needs with discretion and a proactive, service-first mindset."
       }
     ],
     "europe": [
