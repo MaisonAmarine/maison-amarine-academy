@@ -1,5 +1,5 @@
 {
-  "updated": "Live roles + boards · updated 4 August 2026",
+  "updated": "Live roles + boards · updated 5 August 2026",
   "boards": [
     [
       "EstateJobs.com",
@@ -151,6 +151,38 @@
       },
       {
         "flag": "🇺🇸",
+        "city": "Chicagoland, IL",
+        "country": "United States",
+        "title": "Executive Family Assistant | Family Operations (Live-In)",
+        "agency": "Confidential (EstateJobs)",
+        "type": "Full-time",
+        "tags": [
+          "Executive Assistant",
+          "Household Management"
+        ],
+        "salary": "Not specified",
+        "posted": "Posted 3 August 2026",
+        "url": "https://www.estatejobs.com/job/zuqcgr/executive-family-assistant-%7C-family-operations-(live-in)/chicagoland/il/united-states",
+        "blurb": "Executive Family Assistant for a private family in the Chicagoland area, combining household management, family logistics and executive support. Requires strong organizational skills, discretion and flexibility."
+      },
+      {
+        "flag": "🇺🇸",
+        "city": "Greenwich, CT",
+        "country": "United States",
+        "title": "Personal Assistant",
+        "agency": "The Estate Agency (EstateJobs)",
+        "type": "Full-time",
+        "tags": [
+          "Personal Assistant",
+          "Family Support"
+        ],
+        "salary": "Not specified",
+        "posted": "Posted 2 August 2026",
+        "url": "https://www.estatejobs.com/job/lnvhjr/personal-assistant-greenwich-ct/greenwich/ct/united-states",
+        "blurb": "A high-profile global family seeks a Personal Assistant to manage complex schedules, travel logistics and household matters, requiring discretion, organization and Google Workspace proficiency."
+      },
+      {
+        "flag": "🇺🇸",
         "city": "Newport Beach, CA",
         "country": "United States",
         "title": "Personal Assistant / House Manager for Private Couple",
@@ -161,7 +193,7 @@
           "House Manager"
         ],
         "salary": "Not specified",
-        "posted": "Posted 31 July 2026",
+        "posted": "Posted 3 August 2026",
         "url": "https://careers.pocketbookagency.com/job/2594",
         "blurb": "Personal Assistant / House Manager to support a private couple and oversee the day-to-day running of their Newport Beach residence."
       },
@@ -215,6 +247,102 @@
       },
       {
         "flag": "🇺🇸",
+        "city": "San Francisco, CA",
+        "country": "United States",
+        "title": "Executive / Personal Assistant to UHNW Principal",
+        "agency": "Pocketbook Agency",
+        "type": "Full-time",
+        "tags": [
+          "Executive Personal Assistant",
+          "UHNW"
+        ],
+        "salary": "$150,000–$200,000/yr",
+        "posted": "Posted 4 August 2026",
+        "url": "https://careers.pocketbookagency.com/job/2595",
+        "blurb": "Executive / Personal Assistant to a founder in San Francisco, operating across business and personal responsibilities including scheduling, child-related logistics, personal financial organization and lifestyle projects. A true right-hand role."
+      },
+      {
+        "flag": "🇺🇸",
+        "city": "San Francisco, CA",
+        "country": "United States",
+        "title": "Executive Assistant to AI Startup Founder",
+        "agency": "Pocketbook Agency",
+        "type": "Full-time",
+        "tags": [
+          "Executive Assistant",
+          "Startup"
+        ],
+        "salary": "$135,000–$165,000/yr",
+        "posted": "Posted 29 July 2026",
+        "url": "https://careers.pocketbookagency.com/job/2589",
+        "blurb": "Executive Assistant to a fast-moving AI startup founder, handling complex calendar management, cross-time-zone meetings, inbox triage and occasional personal logistics in a high-trust, high-urgency role."
+      },
+      {
+        "flag": "🇺🇸",
+        "city": "Albuquerque, NM",
+        "country": "United States",
+        "title": "Administrative & Facilities Coordinator",
+        "agency": "Pocketbook Agency",
+        "type": "Full-time",
+        "tags": [
+          "Facilities",
+          "Administration"
+        ],
+        "salary": "Not specified",
+        "posted": "Posted 31 July 2026",
+        "url": "https://careers.pocketbookagency.com/job/2593",
+        "blurb": "Administrative & Facilities Coordinator supporting the smooth running of an organization's offices and properties, blending administrative coordination with facilities and vendor management."
+      },
+      {
+        "flag": "🇺🇸",
+        "city": "Laguna Beach, CA",
+        "country": "United States",
+        "title": "Executive Assistant / Lifestyle Manager to Entrepreneur",
+        "agency": "Pocketbook Agency",
+        "type": "Full-time",
+        "tags": [
+          "Executive Assistant",
+          "Lifestyle Manager"
+        ],
+        "salary": "Not specified",
+        "posted": "Posted 27 July 2026",
+        "url": "https://careers.pocketbookagency.com/job/2535",
+        "blurb": "Executive Assistant / Lifestyle Manager to an entrepreneur in Laguna Beach, blending high-level executive support with personal and lifestyle management."
+      },
+      {
+        "flag": "🇺🇸",
+        "city": "West Hollywood, CA",
+        "country": "United States",
+        "title": "Chief of Staff to Founder & CEO of Entertainment & Media Company",
+        "agency": "The Grapevine Agency",
+        "type": "Full-time",
+        "tags": [
+          "Chief of Staff",
+          "Executive Support"
+        ],
+        "salary": "Up to $225,000/yr",
+        "posted": "New this week",
+        "url": "https://job.thegrapevineagency.com/apply/11eb5798-f2c3-4e1b-9612-a35d51d0d1bc",
+        "blurb": "Chief of Staff to the Founder and CEO of an entertainment and media company, serving as strategic and operational right hand."
+      },
+      {
+        "flag": "🇺🇸",
+        "city": "Beverly Hills, CA",
+        "country": "United States",
+        "title": "Executive Assistant to Founder of Branding & Marketing Agency",
+        "agency": "The Grapevine Agency",
+        "type": "Full-time",
+        "tags": [
+          "Executive Assistant",
+          "Founder Support"
+        ],
+        "salary": "$120,000–$140,000/yr",
+        "posted": "New this week",
+        "url": "https://job.thegrapevineagency.com/apply/a4b6ed19-67c2-49c5-9c16-73dee94a550d",
+        "blurb": "Executive Assistant to the founder of a branding and marketing agency in Beverly Hills, providing high-level administrative and operational support."
+      },
+      {
+        "flag": "🇺🇸",
         "city": "Santa Monica, CA",
         "country": "United States",
         "title": "Executive / Personal Assistant for Busy Couple",
@@ -245,38 +373,6 @@
         "posted": "Live on board",
         "url": "https://job.thegrapevineagency.com/apply/faadf725-1157-4a82-8779-f3045fdba022",
         "blurb": "Traveling Personal Assistant / Travel Attaché supporting a UHNW executive, managing complex travel logistics and on-the-road support."
-      },
-      {
-        "flag": "🇺🇸",
-        "city": "Los Angeles, CA",
-        "country": "United States",
-        "title": "Chief of Staff to CEO and Founder of Entertainment Media Co",
-        "agency": "The Grapevine Agency",
-        "type": "Full-time",
-        "tags": [
-          "Chief of Staff",
-          "Executive Support"
-        ],
-        "salary": "$225,000/yr",
-        "posted": "Live on board",
-        "url": "https://job.thegrapevineagency.com/apply/11eb5798-f2c3-4e1b-9612-a35d51d0d1bc",
-        "blurb": "Chief of Staff to the CEO and Founder of an entertainment media company, serving as strategic and operational right hand."
-      },
-      {
-        "flag": "🇺🇸",
-        "city": "Beverly Hills, CA",
-        "country": "United States",
-        "title": "Lead Housekeeper / House Manager, UHNW Estate",
-        "agency": "The Grapevine Agency",
-        "type": "Full-time",
-        "tags": [
-          "House Manager",
-          "UHNW Estate"
-        ],
-        "salary": "$50–$60/hr",
-        "posted": "Live on board",
-        "url": "https://job.thegrapevineagency.com/apply/ee07d4f2-355b-47ec-9dff-3f740a685891",
-        "blurb": "Lead Housekeeper / House Manager for a UHNW estate in Beverly Hills, overseeing household standards and day-to-day operations."
       },
       {
         "flag": "🇺🇸",
@@ -584,101 +680,6 @@
       },
       {
         "flag": "🇺🇸",
-        "city": "Chicagoland, IL",
-        "country": "United States",
-        "title": "Executive Family Assistant | Family Operations (Live-In)",
-        "agency": "Confidential (EstateJobs)",
-        "type": "Full-time",
-        "tags": [
-          "Executive Assistant",
-          "Household Management"
-        ],
-        "salary": "Not specified",
-        "posted": "Posted 3 August 2026",
-        "url": "https://www.estatejobs.com/job/zuqcgr/executive-family-assistant-%7C-family-operations-(live-in)/chicagoland/il/united-states",
-        "blurb": "Executive Family Assistant for a private family in the Chicagoland area, combining household management, family logistics and executive support. Requires strong organizational skills, discretion and flexibility."
-      },
-      {
-        "flag": "🇺🇸",
-        "city": "Greenwich, CT",
-        "country": "United States",
-        "title": "Personal Assistant",
-        "agency": "The Estate Agency (EstateJobs)",
-        "type": "Full-time",
-        "tags": [
-          "Personal Assistant",
-          "Family Support"
-        ],
-        "salary": "Not specified",
-        "posted": "Posted 2 August 2026",
-        "url": "https://www.estatejobs.com/job/lnvhjr/personal-assistant-greenwich-ct/greenwich/ct/united-states",
-        "blurb": "A high-profile global family seeks a Personal Assistant to manage complex schedules, travel logistics and household matters, requiring discretion, organization and Google Workspace proficiency."
-      },
-      {
-        "flag": "🇺🇸",
-        "city": "Miami, FL",
-        "country": "United States",
-        "title": "Executive Personal Assistant",
-        "agency": "Pocketbook Agency",
-        "type": "Full-time",
-        "tags": [
-          "Executive Personal Assistant",
-          "Corporate"
-        ],
-        "salary": "Not specified",
-        "posted": "Posted 15 June 2026",
-        "url": "https://careers.pocketbookagency.com/job/2473",
-        "blurb": "Executive Personal Assistant supporting a principal in Miami across professional and personal domains, managing calendars, travel and priorities with discretion."
-      },
-      {
-        "flag": "🇺🇸",
-        "city": "Los Angeles, CA",
-        "country": "United States",
-        "title": "Personal Assistant to Private High Profile Individual",
-        "agency": "Pocketbook Agency",
-        "type": "Full-time",
-        "tags": [
-          "Personal Assistant"
-        ],
-        "salary": "Not specified",
-        "posted": "Posted 9 June 2026",
-        "url": "https://careers.pocketbookagency.com/job/2487",
-        "blurb": "Personal Assistant to a private, high-profile individual in Los Angeles, handling schedules, logistics and confidential day-to-day matters."
-      },
-      {
-        "flag": "🇺🇸",
-        "city": "San Francisco, CA",
-        "country": "United States",
-        "title": "Executive Assistant to Founder of Private Equity Firm",
-        "agency": "Pocketbook Agency",
-        "type": "Full-time",
-        "tags": [
-          "Executive Assistant",
-          "Corporate"
-        ],
-        "salary": "Not specified",
-        "posted": "Posted 9 June 2026",
-        "url": "https://careers.pocketbookagency.com/job/2323",
-        "blurb": "Executive Assistant supporting the founder of a private equity firm in San Francisco with calendar management, travel and operational support."
-      },
-      {
-        "flag": "🇺🇸",
-        "city": "Laguna Beach, CA",
-        "country": "United States",
-        "title": "Executive Assistant / Lifestyle Manager to Entrepreneur",
-        "agency": "Pocketbook Agency",
-        "type": "Full-time",
-        "tags": [
-          "Executive Assistant",
-          "Lifestyle Manager"
-        ],
-        "salary": "Not specified",
-        "posted": "Posted 4 June 2026",
-        "url": "https://careers.pocketbookagency.com/job/2535",
-        "blurb": "Executive Assistant / Lifestyle Manager to an entrepreneur in Laguna Beach, blending high-level executive support with personal and lifestyle management."
-      },
-      {
-        "flag": "🇺🇸",
         "city": "Beverly Grove, CA",
         "country": "United States",
         "title": "Full-Time Personal Assistant",
@@ -722,6 +723,22 @@
         "posted": "Posted 16 April 2026",
         "url": "https://rosesagency.com/job-board/temp-personal-assistant-in-west-hollywood-with-possibility-to-extend",
         "blurb": "A Personal Assistant in West Hollywood on a six-month contract with possibility of extension, working on-site Mon-Fri with a somewhat flexible schedule."
+      },
+      {
+        "flag": "🇺🇸",
+        "city": "Holmby Hills / West Hollywood, CA",
+        "country": "United States",
+        "title": "Executive Personal / Family Assistant",
+        "agency": "Rose's Agency",
+        "type": "Full-time",
+        "tags": [
+          "Executive Assistant",
+          "Family Support"
+        ],
+        "salary": "Not specified",
+        "posted": "Posted 20 February 2026",
+        "url": "https://rosesagency.com/job-board/executive-personalfamily-assistant-in-holmby-hills-amp-west-hollywood",
+        "blurb": "A reliable, proactive Executive Personal/Family Assistant to support a busy CEO and her family in Holmby Hills, blending personal assistance, logistics and administrative support."
       },
       {
         "flag": "🇺🇸",
@@ -786,19 +803,18 @@
       },
       {
         "flag": "🇺🇸",
-        "city": "Holmby Hills / West Hollywood, CA",
+        "city": "West Hollywood, CA",
         "country": "United States",
-        "title": "Executive Personal / Family Assistant",
+        "title": "Executive Assistant",
         "agency": "Rose's Agency",
         "type": "Full-time",
         "tags": [
-          "Executive Assistant",
-          "Family Support"
+          "Executive Assistant"
         ],
         "salary": "Not specified",
-        "posted": "Posted 20 February 2026",
-        "url": "https://rosesagency.com/job-board/executive-personalfamily-assistant-in-holmby-hills-amp-west-hollywood",
-        "blurb": "A reliable, proactive Executive Personal/Family Assistant to support a busy CEO and her family in Holmby Hills, blending personal assistance, logistics and administrative support."
+        "posted": "Posted 5 March 2026",
+        "url": "https://rosesagency.com/job-board/executive-assistant-in-west-hollywood",
+        "blurb": "An organized and professional Executive Assistant for a high-end clothing company, providing high-level administrative support to the CEO and managing complex calendars, travel and communications from the West Hollywood office."
       },
       {
         "flag": "🇺🇸",
@@ -814,6 +830,22 @@
         "posted": "Posted 8 December 2025",
         "url": "https://rosesagency.com/job-board/junior-executive-personal-assistant-in-encino",
         "blurb": "A Junior Executive Personal Assistant in Encino, working Mon-Fri 9am-5:30pm."
+      },
+      {
+        "flag": "🇺🇸",
+        "city": "New York, NY",
+        "country": "United States",
+        "title": "Executive Assistant (Hudson Yards)",
+        "agency": "Rose's Agency",
+        "type": "Full-time",
+        "tags": [
+          "Executive Assistant",
+          "Corporate"
+        ],
+        "salary": "Not specified",
+        "posted": "Posted 18 November 2025",
+        "url": "https://rosesagency.com/job-board/executive-assistant-in-nyc-hudson-yards",
+        "blurb": "An experienced and highly organized Executive Assistant to support the CEO of an international investment firm, based at the NYC office in Hudson Yards."
       },
       {
         "flag": "🇺🇸",
@@ -844,6 +876,149 @@
         "posted": "Posted 30 October 2025",
         "url": "https://rosesagency.com/job-board/part-time-executive-personal-assistant-in-westside-village",
         "blurb": "A Part-Time Executive Personal Assistant for a client working from home in Westside Village, typically Mon-Fri 1pm-6pm with some flexibility."
+      },
+      {
+        "flag": "🇺🇸",
+        "city": "Atherton, CA",
+        "country": "United States",
+        "title": "Executive Personal Assistant",
+        "agency": "Rose's Agency",
+        "type": "Full-time",
+        "tags": [
+          "Executive Assistant"
+        ],
+        "salary": "Not specified",
+        "posted": "Posted 10 September 2025",
+        "url": "https://rosesagency.com/job-board/executive-personal-assistant-in-atherton",
+        "blurb": "A professional and smart Executive Personal Assistant in Atherton, supporting a single father of three teenage boys."
+      },
+      {
+        "flag": "🇺🇸",
+        "city": "Mandeville Canyon, CA",
+        "country": "United States",
+        "title": "Personal Assistant / Executive Assistant",
+        "agency": "Rose's Agency",
+        "type": "Full-time",
+        "tags": [
+          "Personal Assistant",
+          "Executive Assistant"
+        ],
+        "salary": "Not specified",
+        "posted": "Live on board",
+        "url": "https://rosesagency.com/job-board/full-timeish-eapa-mandeville-canyon",
+        "blurb": "A high-profile principal in Los Angeles seeks a polished, proactive Personal Assistant / Executive Assistant to provide seamless support in her private residence, serving as her right hand across time, commitments and household operations."
+      },
+      {
+        "flag": "🇺🇸",
+        "city": "Rancho Palos Verdes, CA",
+        "country": "United States",
+        "title": "Executive Assistant / Personal Assistant",
+        "agency": "Rose's Agency",
+        "type": "Full-time",
+        "tags": [
+          "Executive Assistant",
+          "Personal Assistant"
+        ],
+        "salary": "Not specified",
+        "posted": "Posted 31 July 2025",
+        "url": "https://rosesagency.com/job-board/full-time-eapa-torrancepalos-verdes",
+        "blurb": "A UHNW couple in Rancho Palos Verdes seeks a polished, proactive Executive Assistant / Personal Assistant to serve as their right hand, managing personal and business responsibilities for a busy, frequently traveling older couple."
+      },
+      {
+        "flag": "🇺🇸",
+        "city": "Beverly Hills, CA",
+        "country": "United States",
+        "title": "Executive Assistant (Family Office)",
+        "agency": "Rose's Agency",
+        "type": "Full-time",
+        "tags": [
+          "Executive Assistant",
+          "Family Office"
+        ],
+        "salary": "Not specified",
+        "posted": "Posted 31 January 2025",
+        "url": "https://rosesagency.com/job-board/executive-assistant-in-beverly-hills-family-office",
+        "blurb": "A talented Executive Assistant to join a private family office in Beverly Hills, working alongside the existing administrative team."
+      },
+      {
+        "flag": "🇺🇸",
+        "city": "Beverly Hills, CA",
+        "country": "United States",
+        "title": "Executive / Personal Assistant (30% Travel)",
+        "agency": "Rose's Agency",
+        "type": "Full-time",
+        "tags": [
+          "Executive Assistant",
+          "Personal Assistant"
+        ],
+        "salary": "Not specified",
+        "posted": "Posted 3 December 2024",
+        "url": "https://rosesagency.com/job-board/executivepersonal-assistant-in-beverly-hills-30-travel",
+        "blurb": "A detail-oriented Executive/Personal Assistant for a UHNW individual in Beverly Hills, traveling roughly 30% of the time and spending summers in the Hamptons."
+      },
+      {
+        "flag": "🇺🇸",
+        "city": "Miami, FL",
+        "country": "United States",
+        "title": "Personal Household Assistant",
+        "agency": "Rose's Agency",
+        "type": "Full-time",
+        "tags": [
+          "Personal Assistant",
+          "Household Management"
+        ],
+        "salary": "Not specified",
+        "posted": "Posted 5 November 2024",
+        "url": "https://rosesagency.com/job-board/full-time-personal-assistant-in-miami",
+        "blurb": "A high-profile family in Miami seeks a highly organized, adaptable Personal Household Assistant to manage daily life and household operations, coordinating schedules, travel and maintenance with minimal drama."
+      },
+      {
+        "flag": "🇺🇸",
+        "city": "Los Angeles, CA",
+        "country": "United States",
+        "title": "Travel Personal Assistant",
+        "agency": "Rose's Agency",
+        "type": "Full-time",
+        "tags": [
+          "Personal Assistant",
+          "Travel"
+        ],
+        "salary": "Not specified",
+        "posted": "Posted 5 November 2024",
+        "url": "https://rosesagency.com/job-board/full-time-travel-pa-based-in-la",
+        "blurb": "A UHNW family seeks an experienced Travel Assistant to provide comprehensive support with day-to-day personal and household needs, coordinating family activities alongside household staff and external providers."
+      },
+      {
+        "flag": "🇺🇸",
+        "city": "Santa Monica, CA",
+        "country": "United States",
+        "title": "Executive / Personal Assistant (Entry Level)",
+        "agency": "Rose's Agency",
+        "type": "Full-time",
+        "tags": [
+          "Executive Assistant",
+          "Personal Assistant"
+        ],
+        "salary": "Not specified",
+        "posted": "Posted 20 September 2024",
+        "url": "https://rosesagency.com/job-board/full-time-paea-in-santa-monica-entry-level",
+        "blurb": "A vibrant, motivated Executive/Personal Assistant to a small business owner in Santa Monica running a financing group, serving as his right hand across personal and work matters."
+      },
+      {
+        "flag": "🇺🇸",
+        "city": "Beverly Hills, CA",
+        "country": "United States",
+        "title": "Part-Time Personal Assistant (Bird Streets)",
+        "agency": "Rose's Agency",
+        "type": "Part-time",
+        "tags": [
+          "Personal Assistant",
+          "UHNW"
+        ],
+        "salary": "$40–$45/hr",
+        "posted": "Posted 20 September 2024",
+        "url": "https://rosesagency.com/job-board/part-time-pa-in-beverly-hills-bird-streets",
+        "blurb": "A proactive Part-Time Personal Assistant for a UHNW couple splitting time between Texas and Beverly Hills, roughly 10-20 hours weekly with some remote coordination. Pet lover essential."
       }
     ],
     "europe": [
