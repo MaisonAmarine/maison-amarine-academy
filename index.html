@@ -14,7 +14,7 @@
   :root{
     --ivory:#eeeef0; --paper:#FFFFFF; --ink:#141c2e; --ink-soft:#3f4759;
     --gold:#8b9098; --gold-deep:#5f646b; --gold-lt:#c4c9d0; --gold-wash:#e6e7ea;
-    --stone:#787e8a; --line:#dcdde1; --green:#0b8f3b; --green-lt:#13b24d; --shadow:rgba(20,29,46,0.10);
+    --stone:#787e8a; --line:#dcdde1; --green:#086b2c; --green-lt:#0a7a33; --shadow:rgba(20,29,46,0.10);
     --dark:#1b1d21; --sidebar:#1b1d21;
   }
   *{margin:0;padding:0;box-sizing:border-box;}
@@ -197,7 +197,7 @@
   .resume-right{width:290px;background:rgba(255,255,255,.04);padding:30px 34px;display:flex;flex-direction:column;justify-content:center;gap:18px;border-left:1px solid rgba(165,170,177,.14);}
   .prog-row{display:flex;align-items:baseline;justify-content:space-between;}
   .prog-row .big{font-family:'Cormorant',serif;font-weight:700;font-size:40px;color:var(--gold-lt);line-height:1;}
-  .prog-row .of{font-size:14px;color:#9b9fa7;font-weight:500;}
+  .prog-row .of{font-size:14px;color:#3f4759;font-weight:500;}
   .prog-label{font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--gold-lt);}
   .bar-track{height:8px;background:rgba(255,255,255,.08);border:none;border-radius:20px;overflow:hidden;}
   .bar-fill{height:100%;background:linear-gradient(90deg,var(--green),var(--green-lt));border-radius:20px;transition:width 1s cubic-bezier(.22,.61,.36,1);}
@@ -634,7 +634,7 @@
   .cv-ring .cv-den{font-family:'Calibri Light','Calibri','Carlito',sans-serif;font-size:11px;color:var(--stone);position:absolute;bottom:24px;}
   .cv-tt{flex:1;min-width:220px;}
   .cv-band{font-family:'Cormorant',serif;font-weight:500;font-size:26px;line-height:1.1;margin:0 0 6px;}
-  .cv-good .cv-band,.cv-good.cv-band{color:#0b8f3b;}
+  .cv-good .cv-band,.cv-good.cv-band{color:#086b2c;}
   .cv-mid .cv-band,.cv-mid.cv-band{color:var(--gold-deep);}
   .cv-low .cv-band,.cv-low.cv-band{color:#b06a4a;}
   .cv-sub{font-family:'Calibri Light','Calibri','Carlito',sans-serif;font-size:13.5px;color:var(--ink-soft);line-height:1.55;}
@@ -645,7 +645,7 @@
   .cv-cols{display:grid;grid-template-columns:1fr;gap:16px;}
   .cv-group{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:22px 24px;}
   .cv-group h3{font-family:'Calibri Light','Calibri','Carlito',sans-serif;font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;margin:0 0 14px;display:flex;align-items:center;gap:8px;}
-  .cv-group.g-strong h3{color:#0b8f3b;}
+  .cv-group.g-strong h3{color:#086b2c;}
   .cv-group.g-fix h3{color:#b06a4a;}
   .cv-group.g-consider h3{color:var(--gold-deep);}
   .cv-item{padding:11px 0;border-top:1px solid var(--line);}
@@ -663,7 +663,7 @@
   .cv-cat-n{font-family:'Cormorant',serif;font-weight:600;font-size:21px;color:var(--ink);line-height:1;}
   .cv-cat-bar{height:6px;border-radius:99px;background:var(--line);overflow:hidden;}
   .cv-cat-bar i{display:block;height:100%;border-radius:99px;transition:width .7s cubic-bezier(.2,.7,.2,1);}
-  .cv-cat.good .cv-cat-bar i{background:linear-gradient(90deg,#0b8f3b,#7fa06a);} .cv-cat.good .cv-cat-n{color:#0b8f3b;}
+  .cv-cat.good .cv-cat-bar i{background:linear-gradient(90deg,#086b2c,#7fa06a);} .cv-cat.good .cv-cat-n{color:#086b2c;}
   .cv-cat.mid .cv-cat-bar i{background:linear-gradient(90deg,var(--green),var(--green-lt));} .cv-cat.mid .cv-cat-n{color:var(--gold-deep);}
   .cv-cat.low .cv-cat-bar i{background:linear-gradient(90deg,#c0714f,#959aa1);} .cv-cat.low .cv-cat-n{color:#b06a4a;}
   .cv-seck{font-family:'Calibri Light','Calibri','Carlito',sans-serif;font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-deep);margin:28px 0 12px;}
@@ -821,13 +821,13 @@
   .cc-dots{display:flex;gap:4px;margin-top:auto;}
   .cc-dot{width:7px;height:7px;border-radius:50%;}
   .cc-dot-m{background:var(--gold-deep);}
-  .cc-dot-y{background:#0b8f3b;}
+  .cc-dot-y{background:#086b2c;}
   .cc-legend{display:flex;gap:18px;flex-wrap:wrap;margin-top:16px;font-family:'Calibri Light','Calibri','Carlito',sans-serif;font-size:11.5px;color:var(--stone);}
   .cc-legend .lg{display:inline-flex;align-items:center;gap:7px;}
   .cc-legend .lg::before{content:"";width:11px;height:11px;border-radius:3px;display:inline-block;}
   .lg-wk::before{background:var(--gold);}
   .lg-mentor::before{background:var(--gold-deep);border-radius:50%;}
-  .lg-you::before{background:#0b8f3b;border-radius:50%;}
+  .lg-you::before{background:#086b2c;border-radius:50%;}
   .lg-today::before{background:var(--gold-wash);border:1px solid var(--gold-lt);}
   .cw-date{font-family:'Calibri Light','Calibri','Carlito',sans-serif;font-size:11.5px;font-weight:600;color:var(--gold-deep);margin-left:6px;letter-spacing:.02em;}
   @media(max-width:620px){ .cc-cell{min-height:52px;padding:4px 5px;} .cc-wk{font-size:8.5px;padding:1px 6px;} .cc-grid{gap:4px;} }
@@ -4088,7 +4088,7 @@ let state = { completed:{}, lessons:{} };
 function initials(n){return (n||"?").split(' ').map(w=>w[0]).slice(0,2).join('').toUpperCase();}
 // couleur d'avatar stable et élégante, dérivée du nom (palette Maison Amarine)
 const AVATAR_COLORS=[
-  ['#666a72','#e9eaec'],['#0b8f3b','#eaf0e6'],['#5e626a','#e7e9eb'],
+  ['#666a72','#e9eaec'],['#086b2c','#eaf0e6'],['#5e626a','#e7e9eb'],
   ['#4a5c6e','#e4ebf0'],['#8a4a55','#e5e7e9'],['#6b5b7d','#ece5f0'],
   ['#7e838a','#f4f5f6'],['#556b5a','#e8efe9']
 ];
@@ -6259,7 +6259,7 @@ async function searchMembers(q){
   }catch(e){ results.innerHTML='<div class="wa-searchhint">Could not search right now.</div>'; }
 }
 function avatarInitials(name){ const parts=(name||'').trim().split(/\s+/); return ((parts[0]||'')[0]||'')+((parts[1]||'')[0]||''); }
-function avatarColor(name){ const colors=['#7e838a','#666a72','#0b8f3b','#71757d','#a4483f','#4a4238']; let h=0; for(const c of (name||'')) h=c.charCodeAt(0)+((h<<5)-h); return colors[Math.abs(h)%colors.length]; }
+function avatarColor(name){ const colors=['#7e838a','#666a72','#086b2c','#71757d','#a4483f','#4a4238']; let h=0; for(const c of (name||'')) h=c.charCodeAt(0)+((h<<5)-h); return colors[Math.abs(h)%colors.length]; }
 
 // ====== CONVERSATION PRIVÉE (DM) ======
 let dmChannel=null;
