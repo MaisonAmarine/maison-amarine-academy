@@ -1,5 +1,5 @@
 {
-  "updated": "Live roles + boards · updated 7 August 2026",
+  "updated": "Live roles + boards · updated 10 August 2026",
   "boards": [
     [
       "EstateJobs.com",
@@ -71,809 +71,89 @@
     "americas": [
       {
         "flag": "🇺🇸",
-        "city": "New York, NY",
+        "city": "Armonk, NY",
         "country": "United States",
-        "title": "Personal Assistant",
-        "agency": "Confidential (EstateJobs)",
-        "type": "Full-time",
-        "tags": [
-          "Personal Assistant",
-          "Family Support"
-        ],
-        "salary": "Not specified",
-        "posted": "Posted 29 July 2026",
-        "url": "https://www.estatejobs.com/job/s276kl/personal-assistant/new-york/ny/united-states",
-        "blurb": "Experienced Personal Assistant to manage a family’s daily life in NYC, overseeing properties, children’s schedules, and travel logistics. Requires 24/7 availability, strong organizational skills, and discretion."
-      },
-      {
-        "flag": "🇺🇸",
-        "city": "Port Washington, NY",
-        "country": "United States",
-        "title": "Estate Manager – Private Residence, Long Island",
-        "agency": "Confidential (EstateJobs)",
-        "type": "Full-time",
-        "tags": [
-          "Estate Manager",
-          "Private Residence"
-        ],
-        "salary": "Not specified",
-        "posted": "Posted 27 July 2026",
-        "url": "https://www.estatejobs.com/job/2k9m9v/estate-manager-private-residence-%7C-long-island-ny/port-washington/ny/united-states",
-        "blurb": "Proactive Estate Manager to oversee operations, staff, and events at a private residence. Requires strong leadership, communication, and experience in high-standard environments."
-      },
-      {
-        "flag": "🇺🇸",
-        "city": "New York, NY",
-        "country": "United States",
-        "title": "Personal Assistant – Upper West Side ($150K+)",
-        "agency": "Louer (EstateJobs)",
-        "type": "Full-time",
-        "tags": [
-          "Personal Assistant",
-          "UHNW Household"
-        ],
-        "salary": "$150K+ and benefits",
-        "posted": "Posted 5 August 2026",
-        "url": "https://www.estatejobs.com/job/4vpe3j/full-time-personal-assistant-in-upper-west-side-of-nyc-150k-and-benefits/new-york/ny/united-states",
-        "blurb": "Dedicated Personal Assistant for a principal in NYC, managing scheduling, travel planning and staff coordination. Requires strong organization, discretion and flexibility."
-      },
-      {
-        "flag": "🇺🇸",
-        "city": "New York, NY",
-        "country": "United States",
-        "title": "Personal Assistant / Travel and Events Manager ($250K+)",
-        "agency": "Louer (EstateJobs)",
-        "type": "Full-time",
-        "tags": [
-          "Personal Assistant",
-          "Travel & Events"
-        ],
-        "salary": "$250K+ and benefits",
-        "posted": "Posted 5 August 2026",
-        "url": "https://www.estatejobs.com/job/3qq6w5/full-time-personal-assistant-travel-and-events-manager-in-nyc-250k-and-benefits/new-york/ny/united-states",
-        "blurb": "Full-time Personal Assistant / Travel and Events Manager to coordinate luxury travel and events for a private Executive. Requires strong organization, discretion and grace under pressure."
-      },
-      {
-        "flag": "🇺🇸",
-        "city": "New York, NY",
-        "country": "United States",
-        "title": "House Manager / Personal Assistant",
-        "agency": "Confidential (EstateJobs)",
-        "type": "Full-time",
-        "tags": [
-          "House Manager",
-          "Personal Assistant"
-        ],
-        "salary": "Not specified",
-        "posted": "Posted 28 July 2026",
-        "url": "https://www.estatejobs.com/job/a9avbf/house-manager-personal-assistant/new-york/ny/united-states",
-        "blurb": "High-caliber House Manager to oversee daily operations of luxury residences, manage staff, vendor contracts and logistics for a Principal. Requires 7-10 years of estate management experience."
-      },
-      {
-        "flag": "🇺🇸",
-        "city": "New York, NY",
-        "country": "United States",
-        "title": "Executive Personal Assistant / House Manager",
-        "agency": "Confidential (EstateJobs)",
-        "type": "Full-time",
-        "tags": [
-          "Executive Assistant",
-          "House Manager"
-        ],
-        "salary": "Not specified",
-        "posted": "Posted 28 July 2026",
-        "url": "https://www.estatejobs.com/job/7sv6na/executive-personal-assistant-house-manager/new-york/ny/united-states",
-        "blurb": "Experienced Executive Personal Assistant to manage a high-profile executive’s personal and household affairs across two residences, requiring exceptional organization and discretion."
-      },
-      {
-        "flag": "🇺🇸",
-        "city": "New York, NY",
-        "country": "United States",
-        "title": "Senior Personal Assistant / Family Office Administrative Support Lead",
-        "agency": "Concierge New York (EstateJobs)",
-        "type": "Full-time",
-        "tags": [
-          "Personal Assistant",
-          "Family Office"
-        ],
-        "salary": "Not specified",
-        "posted": "Posted 21 July 2026",
-        "url": "https://www.estatejobs.com/job/8j46qf/full-time-senior-personal-assistant-family-office-administrative-support-lead/new-york/ny/united-states",
-        "blurb": "Family office seeks a Senior Personal Assistant to provide personal and administrative support to the principal, managing errands and complex logistics with responsiveness and discretion."
-      },
-      {
-        "flag": "🇺🇸",
-        "city": "New York, NY",
-        "country": "United States",
-        "title": "Estate Manager",
-        "agency": "The Pocketbook Agency (EstateJobs)",
-        "type": "Full-time",
-        "tags": [
-          "Estate Manager",
-          "UHNW Household"
-        ],
-        "salary": "Not specified",
-        "posted": "Posted 17 July 2026",
-        "url": "https://www.estatejobs.com/job/d7uxtm/estate-manager/new-york/ny/united-states",
-        "blurb": "Experienced Estate Manager to oversee daily operations of luxury properties, manage staff, coordinate events and ensure high hospitality standards while managing renovations."
-      },
-      {
-        "flag": "🇺🇸",
-        "city": "New York, NY",
-        "country": "United States",
-        "title": "House Manager / Personal Assistant – UES (Live-out)",
-        "agency": "Nanny&Butler (EstateJobs)",
-        "type": "Full-time",
-        "tags": [
-          "House Manager",
-          "Personal Assistant"
-        ],
-        "salary": "Not specified",
-        "posted": "Posted 14 July 2026",
-        "url": "https://www.estatejobs.com/job/q9l5as/full-time-live-out-house-manager-personal-assistant-ues-new-york-city/new-york-city/ny/united-states",
-        "blurb": "Busy family seeks a dedicated House Manager/Personal Assistant to oversee operations across two homes, manage staff and handle personal duties with discretion."
-      },
-      {
-        "flag": "🇺🇸",
-        "city": "New York, NY",
-        "country": "United States",
-        "title": "Estate Manager",
-        "agency": "Mahler Private Staffing (EstateJobs)",
-        "type": "Full-time",
-        "tags": [
-          "Estate Manager",
-          "Multiple Residences"
-        ],
-        "salary": "Not specified",
-        "posted": "Posted 13 July 2026",
-        "url": "https://www.estatejobs.com/job/puwq8p/estate-manager/new-york/ny/united-states",
-        "blurb": "Executive couple seeks a seasoned Estate Manager to oversee two private residences, managing staff and vendors and maintaining high service standards in a polished home."
-      },
-      {
-        "flag": "🇺🇸",
-        "city": "New York, NY",
-        "country": "United States",
-        "title": "Chief of Staff",
-        "agency": "Cass and Company, LLC (EstateJobs)",
-        "type": "Full-time",
-        "tags": [
-          "Chief of Staff",
-          "UHNW Family"
-        ],
-        "salary": "Not specified",
-        "posted": "Posted 8 July 2026",
-        "url": "https://www.estatejobs.com/job/twrskk/chief-of-staff/new-york-city/ny/united-states",
-        "blurb": "Chief of Staff to manage operations for a high-net-worth family, coordinating household activities, philanthropic initiatives and business engagements with strategic planning."
-      },
-      {
-        "flag": "🇺🇸",
-        "city": "New York, NY",
-        "country": "United States",
-        "title": "Estate Manager – NYC",
-        "agency": "Career Group Companies (EstateJobs)",
-        "type": "Full-time",
-        "tags": [
-          "Estate Manager",
-          "Multiple Residences"
-        ],
-        "salary": "Not specified",
-        "posted": "Posted 30 June 2026",
-        "url": "https://www.estatejobs.com/job/rgtrdx/estate-manager-%7C-nyc/new-york/ny/united-states",
-        "blurb": "Top-tier Estate Manager to oversee multiple residences in NYC, manage household staff, create budgets and coordinate projects, travel and events."
-      },
-      {
-        "flag": "🇺🇸",
-        "city": "Northwest Florida, FL",
-        "country": "United States",
-        "title": "Estate Manager",
-        "agency": "PFO (EstateJobs)",
-        "type": "Full-time",
-        "tags": [
-          "Estate Manager",
-          "Systems & Process"
-        ],
-        "salary": "Not specified",
-        "posted": "Posted 6 July 2026",
-        "url": "https://www.estatejobs.com/job/da89ly/estate-manager/northwest-florida/fl/united-states",
-        "blurb": "Estate Manager to enhance estate operations in collaboration with principals, focusing on improving systems and processes for efficient daily functioning."
-      },
-      {
-        "flag": "🇺🇸",
-        "city": "Miami, FL",
-        "country": "United States",
-        "title": "Executive Assistant to President of Family Office ($200K+)",
-        "agency": "Louer (EstateJobs)",
-        "type": "Full-time",
-        "tags": [
-          "Executive Assistant",
-          "Family Office"
-        ],
-        "salary": "$200K+ and benefits",
-        "posted": "Posted 5 August 2026",
-        "url": "https://www.estatejobs.com/job/sjwgsg/full-time-executive-assistant-for-president-of-family-office-200k-and-benefits/miami/fl/united-states",
-        "blurb": "Executive Assistant to the President providing high-level support across scheduling, travel and communications while overseeing corporate administration and special projects."
-      },
-      {
-        "flag": "🇺🇸",
-        "city": "West Palm Beach, FL",
-        "country": "United States",
-        "title": "Estate Manager – Palm Beach",
-        "agency": "Lorraine Lee Estate Staffing (EstateJobs)",
-        "type": "Full-time",
-        "tags": [
-          "Estate Manager",
-          "Multiple Residences"
-        ],
-        "salary": "Not specified",
-        "posted": "Posted 3 August 2026",
-        "url": "https://www.estatejobs.com/job/9vvup5/full-time-estate-manager-palm-beach/west-palm-beach/fl/united-states",
-        "blurb": "Proactive Estate Manager to oversee daily operations of two luxury Palm Beach residences, ensuring maintenance, managing staff and coordinating projects year-round."
-      },
-      {
-        "flag": "🇺🇸",
-        "city": "Tampa, FL",
-        "country": "United States",
-        "title": "Estate Manager",
-        "agency": "Achieve Hospitality (EstateJobs)",
-        "type": "Full-time",
-        "tags": [
-          "Estate Manager",
-          "UHNW Household"
-        ],
-        "salary": "Not specified",
-        "posted": "Posted 28 July 2026",
-        "url": "https://www.estatejobs.com/job/ev5mtc/estate-manager-in-tampa-fl/tampa/fl/united-states",
-        "blurb": "Experienced Estate Manager to oversee a private estate in Tampa, managing budgets, staff and vendor relationships while ensuring efficient operations and confidentiality."
-      },
-      {
-        "flag": "🇺🇸",
-        "city": "Tampa Bay, FL",
-        "country": "United States",
-        "title": "Estate Manager – Tampa Bay",
-        "agency": "Confidential (EstateJobs)",
-        "type": "Full-time",
-        "tags": [
-          "Estate Manager",
-          "Local Candidates"
-        ],
-        "salary": "Not specified",
-        "posted": "Posted 27 July 2026",
-        "url": "https://www.estatejobs.com/job/3jd9cw/estate-manager-tampa-bay-fl-seeking-local-candidates/tampa-bay/fl/united-states",
-        "blurb": "Experienced Estate Manager to oversee operations of a luxury Tampa Bay estate, including staff management, financial oversight and high standards of property presentation."
-      },
-      {
-        "flag": "🇺🇸",
-        "city": "Florida, FL",
-        "country": "United States",
-        "title": "Director of Estate Operations",
-        "agency": "Curtis Renewable Recruiting (EstateJobs)",
-        "type": "Full-time",
-        "tags": [
-          "Director of Residences",
-          "Multiple Residences"
-        ],
-        "salary": "Not specified",
-        "posted": "Posted 21 July 2026",
-        "url": "https://www.estatejobs.com/job/jp9hxw/director-of-estate-operations/-/fl/united-states",
-        "blurb": "Director of Estate Operations to build and lead a sophisticated residential operation on Florida’s Emerald Coast, focusing on team development and seamless service across properties."
-      },
-      {
-        "flag": "🇺🇸",
-        "city": "North Miami Beach, FL",
-        "country": "United States",
-        "title": "Estate Manager",
-        "agency": "householdstaffing.com (EstateJobs)",
-        "type": "Full-time",
-        "tags": [
-          "Estate Manager",
-          "UHNW Household"
-        ],
-        "salary": "Not specified",
-        "posted": "Posted 21 July 2026",
-        "url": "https://www.estatejobs.com/job/xckj6r/estate-manager/north-miami-beach/fl/united-states",
-        "blurb": "Experienced Estate Manager to oversee daily operations of a large estate, manage staff and vendors and ensure exceptional service standards with discretion."
-      },
-      {
-        "flag": "🇺🇸",
-        "city": "Miami, FL",
-        "country": "United States",
-        "title": "Estate Manager – Miami",
-        "agency": "Confidential (EstateJobs)",
-        "type": "Full-time",
-        "tags": [
-          "Estate Manager",
-          "Multiple Residences"
-        ],
-        "salary": "Not specified",
-        "posted": "Posted 21 July 2026",
-        "url": "https://www.estatejobs.com/job/hhvd3r/estate-manager-miami/miami/fl/united-states",
-        "blurb": "Busy Miami family seeks a live-out Estate Manager to oversee multiple properties, manage staff and vendors, negotiate contracts and handle household tasks."
-      },
-      {
-        "flag": "🇺🇸",
-        "city": "Palm Beach Gardens, FL",
-        "country": "United States",
-        "title": "Estate Manager",
-        "agency": "Confidential (EstateJobs)",
-        "type": "Full-time",
-        "tags": [
-          "Estate Manager",
-          "Private Residence"
-        ],
-        "salary": "Not specified",
-        "posted": "Posted 15 July 2026",
-        "url": "https://www.estatejobs.com/job/jjfklu/estate-manager/palm-beach-gardens/fl/united-states",
-        "blurb": "Estate Manager to oversee daily operations of a private residence, managing staff, budgets and events while maintaining a welcoming environment and property standards."
-      },
-      {
-        "flag": "🇺🇸",
-        "city": "Miami, FL",
-        "country": "United States",
-        "title": "Household Manager / Personal Concierge",
-        "agency": "Walsh Signature Staffing (EstateJobs)",
-        "type": "Full-time",
-        "tags": [
-          "Household Manager",
-          "Private Concierge"
-        ],
-        "salary": "Not specified",
-        "posted": "Posted 6 July 2026",
-        "url": "https://www.estatejobs.com/job/hr7uvm/household-manager-personal-concierge-miami-fl/miami/fl/united-states",
-        "blurb": "High-net-worth couple seeks a polished Household Manager to oversee daily operations of their Miami Beach residence, managing staff, vendors and household needs."
-      },
-      {
-        "flag": "🇺🇸",
-        "city": "Miami, FL",
-        "country": "United States",
-        "title": "Property Manager",
-        "agency": "Walsh Signature Staffing (EstateJobs)",
-        "type": "Full-time",
-        "tags": [
-          "Property Manager",
-          "Smart Home"
-        ],
-        "salary": "Not specified",
-        "posted": "Posted 6 July 2026",
-        "url": "https://www.estatejobs.com/job/klyyvx/property-manager-miami-fl/miami/fl/united-states",
-        "blurb": "Discreet Property Manager to oversee daily operations of a luxury Miami Beach residence, managing staff, vendors, maintenance and smart home systems to high standards."
-      },
-      {
-        "flag": "🇺🇸",
-        "city": "Miami, FL",
-        "country": "United States",
-        "title": "Director of Residences – Miami Beach",
-        "agency": "Career Group Companies (EstateJobs)",
-        "type": "Full-time",
-        "tags": [
-          "Director of Residences",
-          "UHNW Household"
-        ],
-        "salary": "Not specified",
-        "posted": "Posted 23 June 2026",
-        "url": "https://www.estatejobs.com/job/v6kajj/director-of-residences-%7C-miami-beach/miami/fl/united-states",
-        "blurb": "Experienced Director of Residences to manage ultra-luxury properties in Miami Beach, overseeing operations, capital projects, vendor management and emergency preparedness."
-      },
-      {
-        "flag": "🇺🇸",
-        "city": "Palm Beach, FL",
-        "country": "United States",
-        "title": "Household Operations & Personal Support Partner",
-        "agency": "Confidential (EstateJobs)",
-        "type": "Full-time",
-        "tags": [
-          "Household Manager",
-          "Personal Support"
-        ],
-        "salary": "Not specified",
-        "posted": "Posted 29 July 2026",
-        "url": "https://www.estatejobs.com/job/qlyecz/household-operations-personal-support-partner/palm-beach/fl/united-states",
-        "blurb": "Manage household operations and provide personal and administrative support, ensuring a well-organized and welcoming environment. Detail-oriented and self-directed."
-      },
-      {
-        "flag": "🇺🇸",
-        "city": "Tampa, FL",
-        "country": "United States",
-        "title": "House Manager / Personal Assistant (Hybrid)",
-        "agency": "SOFLO Domestics (EstateJobs)",
-        "type": "Full-time",
-        "tags": [
-          "House Manager",
-          "Personal Assistant"
-        ],
-        "salary": "Not specified",
-        "posted": "Posted 31 July 2026",
-        "url": "https://www.estatejobs.com/job/t2gjyt/house-manager-personal-assistant-private-residence-(hybrid)-tampa-fl/tampa/fl/united-states",
-        "blurb": "Private principal seeks a highly organized Personal Assistant/House Manager for personal and property management support, with a hybrid schedule and flexibility."
-      },
-      {
-        "flag": "🇺🇸",
-        "city": "Delray Beach, FL",
-        "country": "United States",
-        "title": "House Manager / Family Assistant",
-        "agency": "Lorraine Lee Estate Staffing (EstateJobs)",
-        "type": "Full-time",
-        "tags": [
-          "House Manager",
-          "Family Assistant"
-        ],
-        "salary": "Not specified",
-        "posted": "Posted 16 July 2026",
-        "url": "https://www.estatejobs.com/job/mnfg8g/house-manager-family-assistant-delray-beach/delray-beach/fl/united-states",
-        "blurb": "House Manager / Family Assistant to manage household tasks and assist with errands, appointments and meal prep for an adult in Delray Beach."
-      },
-      {
-        "flag": "🇺🇸",
-        "city": "Lamont, FL",
-        "country": "United States",
-        "title": "Homes and Hospitality Manager",
-        "agency": "Turner Enterprises Management (EstateJobs)",
-        "type": "Full-time",
-        "tags": [
-          "Homes & Hospitality",
-          "Guest Relations"
-        ],
-        "salary": "Not specified",
-        "posted": "Posted 11 July 2026",
-        "url": "https://www.estatejobs.com/job/z56zrn/homes-and-hospitality-manager/lamont/fl/united-states",
-        "blurb": "Homes and Hospitality Manager overseeing the Main House and Guest Homes, providing personal service to owners and guests, managing staff, events and property upkeep."
-      },
-      {
-        "flag": "🇺🇸",
-        "city": "New Smyrna, FL",
-        "country": "United States",
-        "title": "Household Manager / Family Lifestyle Assistant",
-        "agency": "British American Household Staffing (EstateJobs)",
-        "type": "Full-time",
-        "tags": [
-          "Household Manager",
-          "Lifestyle Manager"
-        ],
-        "salary": "Not specified",
-        "posted": "Posted 6 July 2026",
-        "url": "https://www.estatejobs.com/job/lm4jlx/household-manager-family-lifestyle-assistant-%7C-new-smyrna-fl/new-smyrna/fl/united-states",
-        "blurb": "Proactive Household Manager to oversee daily operations, maintain organization, manage schedules and assist with meal planning for a calm, efficient home."
-      },
-      {
-        "flag": "🇺🇸",
-        "city": "Odessa, FL",
-        "country": "United States",
-        "title": "Personal Assistant / Household Manager",
-        "agency": "Staffing at Tiffanie’s (EstateJobs)",
-        "type": "Full-time",
-        "tags": [
-          "Personal Assistant",
-          "Household Manager"
-        ],
-        "salary": "Not specified",
-        "posted": "Posted 1 July 2026",
-        "url": "https://www.estatejobs.com/job/6sfv9r/personal-assistant-household-manager-odessa-florida/odessa/fl/united-states",
-        "blurb": "Proactive Personal Assistant / Household Manager for a busy family in Odessa, managing household operations, scheduling and support for family activities."
-      },
-      {
-        "flag": "🇺🇸",
-        "city": "Miami Beach, FL",
-        "country": "United States",
-        "title": "House Manager / Executive Housekeeper",
-        "agency": "Career Group Companies (EstateJobs)",
-        "type": "Full-time",
-        "tags": [
-          "House Manager",
-          "Household"
-        ],
-        "salary": "Not specified",
-        "posted": "Posted 29 June 2026",
-        "url": "https://www.estatejobs.com/job/bvg6lt/house-manager-executive-housekeeper-miami-beach/miami-beach/fl/united-states",
-        "blurb": "Experienced House Manager/Executive Housekeeper to maintain a tidy home and oversee household care, including daily service, inventory management and vendor coordination."
-      },
-      {
-        "flag": "🇺🇸",
-        "city": "New York, NY",
-        "country": "United States",
-        "title": "House Manager / Personal Assistant – TriBeCa",
-        "agency": "British American Household Staffing (EstateJobs)",
-        "type": "Full-time",
-        "tags": [
-          "House Manager",
-          "Personal Assistant"
-        ],
-        "salary": "Not specified",
-        "posted": "Posted 3 August 2026",
-        "url": "https://www.estatejobs.com/job/ld2xvx/full-time-time-hm-pa-%7C-tribeca-nyc/new-york/ny/united-states",
-        "blurb": "Proactive House Manager/Personal Assistant to oversee daily operations of a luxury residence, manage vendors and ensure the home is impeccably maintained."
-      },
-      {
-        "flag": "🇺🇸",
-        "city": "New York, NY",
-        "country": "United States",
-        "title": "House Manager – West Village + Travel",
-        "agency": "British American Household Staffing (EstateJobs)",
-        "type": "Full-time",
-        "tags": [
-          "House Manager",
-          "Multiple Residences"
-        ],
-        "salary": "Not specified",
-        "posted": "Posted 29 July 2026",
-        "url": "https://www.estatejobs.com/job/ckdcsz/full-time-house-manager-%7C-west-village-travel/new-york/ny/united-states",
-        "blurb": "Experienced house manager for a West Village family, managing household staff, overseeing repairs and ensuring efficient operations across multiple homes."
-      },
-      {
-        "flag": "🇺🇸",
-        "city": "New York, NY",
-        "country": "United States",
-        "title": "Household Manager / Personal Assistant",
-        "agency": "Confidential (EstateJobs)",
-        "type": "Full-time",
-        "tags": [
-          "Household Manager",
-          "Personal Assistant"
-        ],
-        "salary": "Not specified",
-        "posted": "Posted 22 July 2026",
-        "url": "https://www.estatejobs.com/job/qu5fgr/household-manager-personal-assistant/new-york/ny/united-states",
-        "blurb": "Private household seeks an experienced Household Manager to oversee operations across two residences, manage schedules, coordinate vendors and provide proactive support."
-      },
-      {
-        "flag": "🇺🇸",
-        "city": "New York, NY",
-        "country": "United States",
-        "title": "House Manager (Formal Residence)",
-        "agency": "Society Staffing (EstateJobs)",
-        "type": "Full-time",
-        "tags": [
-          "House Manager",
-          "Formal Service"
-        ],
-        "salary": "Not specified",
-        "posted": "Posted 16 July 2026",
-        "url": "https://www.estatejobs.com/job/fjqjpe/house-manager-(formal-residence)/new-york/ny/united-states",
-        "blurb": "High-net-worth couple seeks an experienced House Manager to oversee their luxury Manhattan residence, ensuring operational excellence and exceptional service."
-      },
-      {
-        "flag": "🇺🇸",
-        "city": "New York, NY",
-        "country": "United States",
-        "title": "Personal Assistant / House Manager – NYC",
-        "agency": "Career Group Companies (EstateJobs)",
-        "type": "Full-time",
-        "tags": [
-          "Personal Assistant",
-          "House Manager"
-        ],
-        "salary": "Not specified",
-        "posted": "Posted 15 July 2026",
-        "url": "https://www.estatejobs.com/job/5wgtsr/personal-assistant-%7C-nyc/new-york/ny/united-states",
-        "blurb": "Hedge fund founder seeks a reliable Personal Assistant/House Manager to oversee household operations, manage schedules and coordinate travel with discretion."
-      },
-      {
-        "flag": "🇺🇸",
-        "city": "New York, NY",
-        "country": "United States",
-        "title": "Family Assistant / Personal Assistant / House Manager",
-        "agency": "Confidential (EstateJobs)",
-        "type": "Full-time",
-        "tags": [
-          "Family Assistant",
-          "House Manager"
-        ],
-        "salary": "Not specified",
-        "posted": "Posted 9 July 2026",
-        "url": "https://www.estatejobs.com/job/yaja4l/family-assistant-personal-assistant-house-manager-nyc/new-york/ny/united-states",
-        "blurb": "Warm NYC family seeks a Family Assistant to manage household operations, coordinate schedules and support daily activities in a collaborative environment."
-      },
-      {
-        "flag": "🇺🇸",
-        "city": "New York, NY",
-        "country": "United States",
-        "title": "Personal Household Assistant – NYC & the Hamptons",
-        "agency": "Career Group Companies (EstateJobs)",
-        "type": "Full-time",
-        "tags": [
-          "Personal Assistant",
-          "Guest Relations"
-        ],
-        "salary": "Not specified",
-        "posted": "Posted 25 June 2026",
-        "url": "https://www.estatejobs.com/job/rq54kf/personal-household-assistant-%7C-nyc-the-hamptons/new-york/ny/united-states",
-        "blurb": "Polished Personal Household Assistant to support a private family in NYC and the Hamptons across personal service, household operations, travel and events."
-      },
-      {
-        "flag": "🇺🇸",
-        "city": "New York, NY",
-        "country": "United States",
-        "title": "Personal Hospitality Assistant",
-        "agency": "Confidential (EstateJobs)",
-        "type": "Full-time",
-        "tags": [
-          "Guest Relations",
-          "Hospitality"
-        ],
-        "salary": "Not specified",
-        "posted": "Posted 24 June 2026",
-        "url": "https://www.estatejobs.com/job/5fgyp2/personal-hospitality-assistant-nyc-based/new-york/ny/united-states",
-        "blurb": "Highly organized Personal Hospitality Assistant to support a dynamic family in NYC and the Hamptons, managing household supplies and ensuring high standards of service."
-      },
-      {
-        "flag": "🇺🇸",
-        "city": "Dallas–Fort Worth, TX",
-        "country": "United States",
-        "title": "Executive Assistant to CEO – Family Office",
-        "agency": "Quay Crew (EstateJobs)",
-        "type": "Full-time",
-        "tags": [
-          "Executive Assistant",
-          "Family Office"
-        ],
-        "salary": "Not specified",
-        "posted": "Posted 6 August 2026",
-        "url": "https://www.estatejobs.com/job/f93euy/executive-assistant-to-ceo-family-office-dallas-fort-worth/dallas-fort-worth/tx/united-states",
-        "blurb": "Exceptional Executive Assistant to support the CEO of a dynamic private family office, managing executive calendars, travel and operational support."
-      },
-      {
-        "flag": "🇺🇸",
-        "city": "Austin, TX",
-        "country": "United States",
-        "title": "Household and Family Assistant – West Austin",
-        "agency": "Modern Household Staffing (EstateJobs)",
-        "type": "Full-time",
-        "tags": [
-          "Household Manager",
-          "Family Assistant"
-        ],
-        "salary": "Not specified",
-        "posted": "Posted 30 July 2026",
-        "url": "https://www.estatejobs.com/job/ch7l48/household-and-family-assistant-%7C-west-austin/austin/tx/united-states",
-        "blurb": "Seasoned Household and Family Assistant for a warm West Austin home, handling household management, meal prep and support for a renovation project."
-      },
-      {
-        "flag": "🇺🇸",
-        "city": "Austin, TX",
-        "country": "United States",
-        "title": "Executive Estate Manager ($180K–$200K)",
-        "agency": "Park Cities At Home (EstateJobs)",
-        "type": "Full-time",
-        "tags": [
-          "Estate Manager",
-          "Luxury Residence"
-        ],
-        "salary": "$180K–$200K",
-        "posted": "Posted 28 July 2026",
-        "url": "https://www.estatejobs.com/job/j6m4zq/executive-estate-manager-in-austin-luxury-private-residence-180k-200k/austin/tx/united-states",
-        "blurb": "Experienced Estate Manager for a luxury private residence in Austin, overseeing household operations, managing staff and ensuring exceptional service with discretion."
-      },
-      {
-        "flag": "🇺🇸",
-        "city": "Dallas, TX",
-        "country": "United States",
-        "title": "Family Assistant / Household Manager",
-        "agency": "Modern Household Staffing (EstateJobs)",
-        "type": "Full-time",
-        "tags": [
-          "Household Manager",
-          "Family Assistant"
-        ],
-        "salary": "Bonus PTO + health insurance",
-        "posted": "Posted 14 July 2026",
-        "url": "https://www.estatejobs.com/job/58wh45/full-time-family-assistant-household-manager-%7C-bonus-pto-health-insurance-%7C-dallas-tx/dallas/tx/united-states",
-        "blurb": "High-energy Family Assistant / Household Manager for a faith-centered Dallas household, managing household tasks and supporting family logistics."
-      },
-      {
-        "flag": "🇺🇸",
-        "city": "Austin, TX",
-        "country": "United States",
-        "title": "Seasoned Estate Manager – UHNW Family",
-        "agency": "The Suite Staff (EstateJobs)",
-        "type": "Full-time",
-        "tags": [
-          "Estate Manager",
-          "UHNW Family"
-        ],
-        "salary": "Not specified",
-        "posted": "Posted 12 July 2026",
-        "url": "https://www.estatejobs.com/job/e5fhm2/seasoned-estate-manager-needed-for-uhnw-family-in-austin/austin/tx/united-states",
-        "blurb": "Experienced Estate Manager for a UHNW family in Austin, managing staff, overseeing household operations and coordinating maintenance and vendor services."
-      },
-      {
-        "flag": "🇺🇸",
-        "city": "Austin, TX",
-        "country": "United States",
-        "title": "Estate Manager",
-        "agency": "Deb’s Domestic Agency (EstateJobs)",
-        "type": "Full-time",
-        "tags": [
-          "Estate Manager",
-          "UHNW Family"
-        ],
-        "salary": "Not specified",
-        "posted": "Posted 8 July 2026",
-        "url": "https://www.estatejobs.com/job/dx94jq/estate-manager/austin/tx/united-states",
-        "blurb": "Private UHNW family seeks an experienced Estate Manager for their Austin residence, managing staff, maintaining household operations and ensuring high standards."
-      },
-      {
-        "flag": "🇺🇸",
-        "city": "New York, NY",
-        "country": "United States",
-        "title": "Senior Personal Assistant",
-        "agency": "Confidential (EstateJobs)",
-        "type": "Full-time",
-        "tags": [
-          "Personal Assistant",
-          "UHNW Principal"
-        ],
-        "salary": "Not specified",
-        "posted": "Posted 5 August 2026",
-        "url": "https://www.estatejobs.com/job/cs5vpz/senior-personal-assistant/new-york-city/ny/united-states",
-        "blurb": "Highly experienced Senior Personal Assistant for a high-net-worth principal in NYC, managing calendars, travel, household operations and vendor coordination."
-      },
-      {
-        "flag": "🇺🇸",
-        "city": "West Palm Beach, FL",
-        "country": "United States",
-        "title": "Personal Assistant",
-        "agency": "Confidential (EstateJobs)",
-        "type": "Full-time",
-        "tags": [
-          "Personal Assistant",
-          "Administrative"
-        ],
-        "salary": "Not specified",
-        "posted": "Posted 5 August 2026",
-        "url": "https://www.estatejobs.com/job/blvdl9/personal-assistant/west-palm-beach/fl/united-states",
-        "blurb": "Highly organized and proactive Personal Assistant to provide administrative support, manage schedules, handle communications and maintain an efficient workspace."
-      },
-      {
-        "flag": "🇺🇸",
-        "city": "Los Altos, CA",
-        "country": "United States",
-        "title": "Senior Personal Assistant / Family Manager (Part-Time, Remote)",
+        "title": "Part-Time House Manager / Household Organizer",
         "agency": "Confidential (EstateJobs)",
         "type": "Part-time",
         "tags": [
-          "Personal Assistant",
-          "Family Manager"
+          "House Manager",
+          "Household Organization"
         ],
         "salary": "Not specified",
-        "posted": "Posted 5 August 2026",
-        "url": "https://www.estatejobs.com/job/b7uhpq/senior-personal-assistant-family-manager-part-time-remote/los-altos/ca/united-states",
-        "blurb": "Senior Personal Assistant / Family Manager to manage household operations for a family of four, including calendars, vendors and travel planning, primarily remote."
+        "posted": "Posted 8 August 2026",
+        "url": "https://www.estatejobs.com/job/3lhf5r/part-time-house-manager-household-organizer-%e2%80%94-armonk-ny-(live-out)/armonk/ny/united-states",
+        "blurb": "A private family in Armonk, NY seeks a part-time House Manager to maintain organization and manage household logistics. The role requires attention to detail, reliability, and the ability to work independently."
       },
       {
         "flag": "🇺🇸",
-        "city": "Chicagoland, IL",
+        "city": "Wilson, WY",
         "country": "United States",
-        "title": "Executive Family Assistant – Family Operations (Live-In)",
+        "title": "Director of Real Estate",
         "agency": "Confidential (EstateJobs)",
         "type": "Full-time",
         "tags": [
-          "Family Assistant",
-          "Household Manager"
+          "Director of Properties",
+          "Family Office"
         ],
         "salary": "Not specified",
-        "posted": "Posted 3 August 2026",
-        "url": "https://www.estatejobs.com/job/zuqcgr/executive-family-assistant-%7C-family-operations-(live-in)/chicagoland/il/united-states",
-        "blurb": "Dedicated Executive Family Assistant for a private Chicagoland family, handling household management and executive support with strong organization and adaptability."
+        "posted": "Posted 8 August 2026",
+        "url": "https://www.estatejobs.com/job/l2p6zj/director-of-real-estate/wilson/wy/united-states",
+        "blurb": "The Director of Real Estate oversees residential and commercial properties for a family office, ensuring high standards in management, budgeting, and vendor relations while fostering collaboration among diverse teams."
       },
       {
         "flag": "🇺🇸",
-        "city": "Arden Hills, MN",
+        "city": "San Carlos, CA",
         "country": "United States",
-        "title": "Administrative Office Assistant – Family Office",
-        "agency": "Confidential (EstateJobs)",
-        "type": "Full-time",
+        "title": "Part-Time Executive Assistant",
+        "agency": "DM Estate Staffing (EstateJobs)",
+        "type": "Part-time",
         "tags": [
-          "Family Office",
-          "Administrative"
+          "Executive Assistant",
+          "Private Support"
         ],
         "salary": "Not specified",
-        "posted": "Posted 6 August 2026",
-        "url": "https://www.estatejobs.com/job/rvt8fm/administrative-office-assistant/arden-hills/mn/united-states",
-        "blurb": "Administrative Office Assistant supporting a family office by managing tasks, maintaining organization and facilitating communication among team members and vendors."
+        "posted": "Posted 7 August 2026",
+        "url": "https://www.estatejobs.com/job/rjg78j/part-time-executive-assistant/san-carlos/ca/united-states",
+        "blurb": "Seeking a part-time Senior Executive Personal Assistant to support a dynamic executive in both professional and personal domains. The role requires strong organizational skills, excellent communication, and the ability to manage competing priorities."
+      },
+      {
+        "flag": "🇺🇸",
+        "city": "New York, NY",
+        "country": "United States",
+        "title": "Facilities Manager",
+        "agency": "DM Estate Staffing (EstateJobs)",
+        "type": "Full-time",
+        "tags": [
+          "Facilities Manager",
+          "Estate Operations"
+        ],
+        "salary": "Not specified",
+        "posted": "Posted 7 August 2026",
+        "url": "https://www.estatejobs.com/job/633s46/facilities-manager/new-york-city/ny/united-states",
+        "blurb": "The Facilities Manager oversees the maintenance and operations of property systems in NYC, ensuring optimal functionality of HVAC, electrical, plumbing, and security systems while managing vendor relationships and performing repairs."
+      },
+      {
+        "flag": "🇺🇸",
+        "city": "Brooklyn, NY",
+        "country": "United States",
+        "title": "Assistant to Chief of Staff",
+        "agency": "DM Estate Staffing (EstateJobs)",
+        "type": "Full-time",
+        "tags": [
+          "Chief of Staff",
+          "Household Operations"
+        ],
+        "salary": "Not specified",
+        "posted": "Posted 7 August 2026",
+        "url": "https://www.estatejobs.com/job/q2v6g7/assistant-to-chief-of-staff/brooklyn/ny/united-states",
+        "blurb": "A private family in Brooklyn Heights seeks a dependable Assistant to the Chief of Staff to manage daily tasks, coordinate logistics, and support household operations. Ideal for someone with executive support experience."
       },
       {
         "flag": "🇺🇸",
         "city": "Atherton, CA",
         "country": "United States",
-        "title": "Part-Time House Manager / Personal Assistant",
+        "title": "Part-Time House Manager / PA",
         "agency": "Rose's Agency",
         "type": "Part-time",
         "tags": [
@@ -883,13 +163,13 @@
         "salary": "Not specified",
         "posted": "Posted 9 June 2026",
         "url": "https://rosesagency.com/job-board/part-time-house-managerpa-atherton",
-        "blurb": "Private Atherton family seeks an experienced part-time House Manager / Personal Assistant to oversee estate operations and provide comprehensive personal support to two professionals and their family."
+        "blurb": "A private family in Atherton, California is seeking an experienced part-time House Manager / Personal Assistant to oversee the daily operations of their estate and provide comprehensive personal support to two professionals and their family."
       },
       {
         "flag": "🇺🇸",
         "city": "Menlo Park, CA",
         "country": "United States",
-        "title": "Full-Time House Manager / Personal Assistant",
+        "title": "House Manager / PA",
         "agency": "Rose's Agency",
         "type": "Full-time",
         "tags": [
@@ -899,7 +179,7 @@
         "salary": "Not specified",
         "posted": "Posted 9 June 2026",
         "url": "https://rosesagency.com/job-board/full-time-house-managerpa-menlo-park",
-        "blurb": "Private family (AI-industry tech executives) seeks a House Manager / Personal Assistant to oversee daily operations of their primary residence and provide high-level personal support."
+        "blurb": "A private family in Menlo Park seeks an exceptional House Manager / Personal Assistant to oversee the day-to-day operations of their primary residence and provide high-level personal support to technology-executive principals."
       },
       {
         "flag": "🇺🇸",
@@ -915,39 +195,39 @@
         "salary": "Not specified",
         "posted": "Posted 27 May 2026",
         "url": "https://rosesagency.com/job-board/part-time-house-managerpersonal-assistant-in-la-caada",
-        "blurb": "Smart, reliable Part-Time House Manager/Personal Assistant for two older principals in La Cañada, 20-30 hours per week."
+        "blurb": "A smart and reliable Part-Time House Manager/Personal Assistant is sought for two older principals in La Cañada, working 20-30 hours per week."
       },
       {
         "flag": "🇺🇸",
-        "city": "Venice, CA",
+        "city": "Venice & San Francisco, CA",
         "country": "United States",
-        "title": "Estate Manager – Venice & San Francisco",
+        "title": "Estate Manager",
         "agency": "Rose's Agency",
         "type": "Full-time",
         "tags": [
           "Estate Manager",
-          "Multiple Residences"
+          "Multi-Property"
         ],
         "salary": "Not specified",
         "posted": "Posted 8 April 2026",
         "url": "https://rosesagency.com/job-board/estate-manager-in-venice-amp-san-francisco",
-        "blurb": "Experienced Estate Manager for a family based in Venice, responsible for managing three properties in Venice, San Francisco and Ojai."
+        "blurb": "An experienced Estate Manager is sought for a family based in Venice, responsible for managing three properties in Venice, San Francisco, and Ojai."
       },
       {
         "flag": "🇺🇸",
         "city": "San Francisco, CA",
         "country": "United States",
-        "title": "Estate Manager (Presidio)",
+        "title": "Estate Manager",
         "agency": "Rose's Agency",
         "type": "Full-time",
         "tags": [
           "Estate Manager",
-          "Multiple Residences"
+          "Private Residence"
         ],
         "salary": "Not specified",
         "posted": "Posted 30 January 2026",
         "url": "https://rosesagency.com/job-board/estate-manager-in-san-francisco",
-        "blurb": "Estate Manager in San Francisco (the Presidio) for principals who split their time between LA and SF, working closely with the LA Estate Manager."
+        "blurb": "An Estate Manager is sought in San Francisco (the Presidio). The principals split their time between LA and SF, working closely with their Estate Manager in LA."
       },
       {
         "flag": "🇺🇸",
@@ -958,12 +238,12 @@
         "type": "Full-time",
         "tags": [
           "House Manager",
-          "Executive Assistant"
+          "Executive PA"
         ],
         "salary": "Not specified",
         "posted": "Posted 5 December 2025",
         "url": "https://rosesagency.com/job-board/house-managerexecutive-personal-assistant-in-pasadena",
-        "blurb": "Full-time House Manager/Executive Personal Assistant for a couple in Pasadena, Mon-Fri with some flexibility and occasional travel."
+        "blurb": "A full-time House Manager/Executive Personal Assistant is sought for a couple in Pasadena, Mon-Fri 9am-5pm with some flexibility and occasional travel."
       },
       {
         "flag": "🇺🇸",
@@ -974,12 +254,12 @@
         "type": "Full-time",
         "tags": [
           "Facilities Manager",
-          "Estate Operations"
+          "Estate Maintenance"
         ],
         "salary": "Not specified",
         "posted": "Posted 20 November 2025",
         "url": "https://rosesagency.com/job-board/full-time-assistant-facilities-manager-in-beverly-hills",
-        "blurb": "Assistant Facilities Manager supporting the daily upkeep and operational stewardship of multiple private residences and estate properties across Los Angeles."
+        "blurb": "The Assistant Facilities Manager supports the Facilities Manager in the daily upkeep and operational stewardship of multiple private residences and estate properties throughout Los Angeles."
       },
       {
         "flag": "🇺🇸",
@@ -990,12 +270,12 @@
         "type": "Full-time",
         "tags": [
           "Estate Manager",
-          "Multiple Residences"
+          "Multi-Property"
         ],
         "salary": "Not specified",
         "posted": "Posted 14 October 2025",
         "url": "https://rosesagency.com/job-board/estate-manager-in-atherton",
-        "blurb": "Estate Manager to run a newly purchased 13.5k sq ft Atherton residence plus properties in Miami, New York and Atlanta."
+        "blurb": "An Estate Manager is sought to manage a newly purchased 13.5k sq ft residence in Atherton as well as properties in Miami, New York, and Atlanta."
       },
       {
         "flag": "🇺🇸",
@@ -1006,12 +286,12 @@
         "type": "Full-time",
         "tags": [
           "Estate Manager",
-          "UHNW Entrepreneur"
+          "UHNW"
         ],
         "salary": "Not specified",
         "posted": "Posted 13 October 2025",
         "url": "https://rosesagency.com/job-board/full-time-estate-manager-in-western-malibu",
-        "blurb": "Discreet Estate Manager to oversee three modern luxury residences for a UHNW entrepreneur, including a Malibu beachfront primary and homes in Beverly Hills and Miami."
+        "blurb": "An accomplished and discreet Estate Manager is sought to oversee three modern luxury residences for a UHNW entrepreneur, including a beachfront property in Western Malibu and homes in Beverly Hills and Miami."
       },
       {
         "flag": "🇺🇸",
@@ -1022,28 +302,28 @@
         "type": "Full-time",
         "tags": [
           "House Manager",
-          "Household Staff"
+          "Private Residence"
         ],
         "salary": "Not specified",
-        "posted": "Posted 18 September 2025",
+        "posted": "Posted 16 September 2025",
         "url": "https://rosesagency.com/job-board/full-time-house-manager-in-beverly-hills-1",
-        "blurb": "House Manager to support daily operations of the principal’s residence, coordinating household staff and vendors while maintaining high service standards."
+        "blurb": "The House Manager supports the daily operations of the principal's residence, coordinating household staff and vendors while maintaining high service standards, reporting to the Property Manager."
       },
       {
         "flag": "🇺🇸",
         "city": "Bay Area, CA",
         "country": "United States",
-        "title": "Director of Residences – Bay Area, Montana & Tahoe",
+        "title": "Director of Residences",
         "agency": "Rose's Agency",
         "type": "Full-time",
         "tags": [
           "Director of Residences",
-          "Multiple Residences"
+          "Multi-Property"
         ],
         "salary": "Not specified",
-        "posted": "Posted 16 September 2025",
+        "posted": "Posted 11 September 2025",
         "url": "https://rosesagency.com/job-board/director-of-residences-bay-area-montana-amp-tahoe",
-        "blurb": "Director of Residences serving as first point of contact for household operations across a Bay Area primary residence and homes in Montana and Tahoe."
+        "blurb": "The Director of Residences serves as the first point of contact for all household operations across multiple properties in the Bay Area, Montana, and Tahoe, overseeing staff, vendors, and estate systems."
       },
       {
         "flag": "🇺🇸",
@@ -1057,9 +337,9 @@
           "Private Residence"
         ],
         "salary": "Not specified",
-        "posted": "Posted 11 September 2025",
+        "posted": "Posted 10 September 2025",
         "url": "https://rosesagency.com/job-board/full-time-house-manager-thousand-oaks",
-        "blurb": "Discreet, highly organized House Manager to oversee daily operations of a Thousand Oaks property, working closely with the Estate Manager and household team."
+        "blurb": "A discreet, highly organized, and experienced House Manager is sought to oversee the smooth daily operations of a property in Thousand Oaks, working closely with the Estate Manager and household staff."
       },
       {
         "flag": "🇺🇸",
@@ -1070,12 +350,12 @@
         "type": "Full-time",
         "tags": [
           "Estate Manager",
-          "Executive Assistant"
+          "Executive PA"
         ],
         "salary": "Not specified",
         "posted": "Posted 31 July 2025",
         "url": "https://rosesagency.com/job-board/full-time-estate-managerexecutive-personal-assistant-bay-area",
-        "blurb": "Dynamic Estate Manager / right-hand operations professional for a prominent executive, supporting both personal and professional domains across the Bay Area."
+        "blurb": "A prominent executive seeks a highly capable right-hand operations professional to provide comprehensive support across personal and professional domains in the San Francisco Bay Area."
       },
       {
         "flag": "🇺🇸",
@@ -1085,13 +365,13 @@
         "agency": "Rose's Agency",
         "type": "Full-time",
         "tags": [
-          "Personal Assistant",
-          "House Manager"
+          "House Manager",
+          "Personal Assistant"
         ],
         "salary": "Not specified",
         "posted": "Posted 21 July 2025",
         "url": "https://rosesagency.com/job-board/personal-assistanthouse-manager-in-laguna-beach",
-        "blurb": "Personal Assistant/House Manager to support a private couple and manage their Laguna Beach residence; on-site, requiring flexibility and discretion."
+        "blurb": "A Personal Assistant/House Manager is sought to support a private couple and manage their residence in Laguna Beach. This full-time, on-site role requires flexibility, discretion, and strong organization."
       },
       {
         "flag": "🇺🇸",
@@ -1102,12 +382,12 @@
         "type": "Full-time",
         "tags": [
           "Estate Manager",
-          "UHNW Family"
+          "UHNW"
         ],
         "salary": "Not specified",
         "posted": "Posted 8 July 2025",
         "url": "https://rosesagency.com/job-board/estate-manager-in-pasadena-1",
-        "blurb": "Experienced Estate Manager for a UHNW family in Pasadena with multiple California properties, primarily focused on the Pasadena residence."
+        "blurb": "An experienced Estate Manager is sought for a UHNW family in Pasadena. The family owns multiple California properties, with the Pasadena residence as the main priority."
       },
       {
         "flag": "🇺🇸",
@@ -1121,9 +401,9 @@
           "Personal Assistant"
         ],
         "salary": "Not specified",
-        "posted": "Posted 25 June 2025",
+        "posted": "Posted 2 July 2025",
         "url": "https://rosesagency.com/job-board/part-time-house-managerpersonal-assistant-in-sherman-oaks",
-        "blurb": "Part-Time House Manager/Personal Assistant in Sherman Oaks, minimum 10 hours per week with flexible days."
+        "blurb": "A Part-Time House Manager/Personal Assistant is sought in Sherman Oaks, minimum 10 hours per week with flexible days and hours."
       },
       {
         "flag": "🇺🇸",
@@ -1139,7 +419,7 @@
         "salary": "Not specified",
         "posted": "Posted 25 June 2025",
         "url": "https://rosesagency.com/job-board/full-time-estate-manager-in-lakeside-montana-live-inrelocation",
-        "blurb": "Elite-caliber Estate Manager for a ~9-acre, 24k sq ft Lakeside, Montana estate, keeping the property pristine while delivering an exceptional guest experience."
+        "blurb": "An elite-caliber Estate Manager is sought for a ~9-acre lakeside estate in Lakeside, Montana with ~24k sq ft of indoor living space, combining UHNW estate management with an exceptional guest experience."
       },
       {
         "flag": "🇺🇸",
@@ -1150,18 +430,18 @@
         "type": "Part-time",
         "tags": [
           "Personal Assistant",
-          "Hybrid"
+          "Family Support"
         ],
         "salary": "Not specified",
         "posted": "Posted 22 May 2025",
         "url": "https://rosesagency.com/job-board/part-time-hybrid-personal-assistant-in-hermosa-beach",
-        "blurb": "Organized Personal Assistant to support an engaged father of three in Hermosa Beach, blending family/household coordination with light executive assistance."
+        "blurb": "A highly organized Personal Assistant is sought to support an engaged father of three in Hermosa Beach, blending family/household coordination (80%) with light executive assistance (20%)."
       },
       {
         "flag": "🇺🇸",
-        "city": "Los Angeles, CA",
+        "city": "Hollywood, CA",
         "country": "United States",
-        "title": "House Manager / Personal Assistant",
+        "title": "House Manager / PA",
         "agency": "Rose's Agency",
         "type": "Full-time",
         "tags": [
@@ -1171,23 +451,23 @@
         "salary": "Not specified",
         "posted": "Posted 8 April 2025",
         "url": "https://rosesagency.com/job-board/full-time-house-managerpa-in-hollywood",
-        "blurb": "Professional Personal Assistant/House Manager for a private LA couple, with experience in construction and a passion for caring for art and antiques."
+        "blurb": "A very private couple in Los Angeles seeks a professional Personal Assistant/House Manager with experience in construction and a passion for caring for art and antiques."
       },
       {
         "flag": "🇺🇸",
         "city": "Beverly Grove, CA",
         "country": "United States",
-        "title": "Full-Time Personal Assistant",
+        "title": "Personal Assistant",
         "agency": "Rose's Agency",
         "type": "Full-time",
         "tags": [
           "Personal Assistant",
-          "Private Service"
+          "Private Support"
         ],
         "salary": "Not specified",
         "posted": "Posted 19 May 2026",
         "url": "https://rosesagency.com/job-board/full-time-personal-assistant-in-beverly-grove",
-        "blurb": "Organized, dependable and discreet Personal Assistant to provide comprehensive support to an active working senior in Beverly Grove."
+        "blurb": "A highly organized, dependable, and discreet Personal Assistant is sought to provide comprehensive support to an active working senior in Beverly Grove, Mon-Fri with occasional flexibility."
       },
       {
         "flag": "🇺🇸",
@@ -1198,12 +478,12 @@
         "type": "Full-time",
         "tags": [
           "Personal Assistant",
-          "Family Support"
+          "Family Office"
         ],
         "salary": "Not specified",
         "posted": "Posted 18 May 2026",
         "url": "https://rosesagency.com/job-board/full-time-personalfamily-assistant-in-austin-tx",
-        "blurb": "High-level Personal Assistant to manage the private and professional affairs of a female principal splitting time between London and the US, in-person and remote."
+        "blurb": "The Personal Assistant will provide high-level administrative and executive support to a female principal, managing her private and professional affairs across London and the United States with utmost discretion."
       },
       {
         "flag": "🇺🇸",
@@ -1211,15 +491,15 @@
         "country": "United States",
         "title": "Personal Assistant (Temp)",
         "agency": "Rose's Agency",
-        "type": "Contract",
+        "type": "Temporary",
         "tags": [
           "Personal Assistant",
-          "Temporary"
+          "Contract"
         ],
         "salary": "Not specified",
         "posted": "Posted 16 April 2026",
         "url": "https://rosesagency.com/job-board/temp-personal-assistant-in-west-hollywood-with-possibility-to-extend",
-        "blurb": "Personal Assistant in West Hollywood; six-month contract with possibility of extension, on-site Mon-Fri with a somewhat flexible schedule."
+        "blurb": "A Personal Assistant is sought in West Hollywood on a 6-month contract with the possibility of extension, working on-site Mon-Fri with a somewhat flexible schedule."
       },
       {
         "flag": "🇺🇸",
@@ -1229,21 +509,21 @@
         "agency": "Rose's Agency",
         "type": "Full-time",
         "tags": [
-          "Executive Assistant",
+          "Executive PA",
           "Family Support"
         ],
         "salary": "Not specified",
         "posted": "Posted 20 February 2026",
         "url": "https://rosesagency.com/job-board/executive-personalfamily-assistant-in-holmby-hills-amp-west-hollywood",
-        "blurb": "Proactive Executive Personal/Family Assistant to support a busy CEO and her family in Holmby Hills, blending personal assistance, childcare logistics and admin support."
+        "blurb": "A reliable, proactive Executive Personal/Family Assistant is sought to support a busy CEO and her family in Holmby Hills, blending personal assistance, childcare logistics, and administrative support."
       },
       {
         "flag": "🇺🇸",
         "city": "Beverly Hills, CA",
         "country": "United States",
-        "title": "Receptionist / Personal Assistant (Family Office)",
+        "title": "Receptionist / Personal Assistant (Temp)",
         "agency": "Rose's Agency",
-        "type": "Contract",
+        "type": "Temporary",
         "tags": [
           "Personal Assistant",
           "Family Office"
@@ -1251,7 +531,7 @@
         "salary": "Not specified",
         "posted": "Posted 30 January 2026",
         "url": "https://rosesagency.com/job-board/temp-receptionistpersonal-assistant-in-beverly-hills",
-        "blurb": "Flexible, detail-oriented Receptionist/Personal Assistant for a Beverly Hills family office; temporary (~3 months) with potential to become permanent."
+        "blurb": "A flexible, detail-oriented Receptionist/Personal Assistant is sought for a family office in Beverly Hills, a temporary role of about 3 months with potential to become permanent."
       },
       {
         "flag": "🇺🇸",
@@ -1262,16 +542,16 @@
         "type": "Full-time",
         "tags": [
           "Personal Assistant",
-          "Private Service"
+          "Private Support"
         ],
         "salary": "Not specified",
         "posted": "Posted 29 January 2026",
         "url": "https://rosesagency.com/job-board/full-time-to-part-time-personal-assistant-in-encino",
-        "blurb": "Responsible, trustworthy Personal Assistant for two retired principals in Encino, starting full-time and moving to part-time."
+        "blurb": "A responsible and trustworthy Personal Assistant is sought for two retired principals in Encino, starting full-time (approx 3 months) before moving to part-time."
       },
       {
         "flag": "🇺🇸",
-        "city": "Mid City, CA",
+        "city": "Mid City, Los Angeles, CA",
         "country": "United States",
         "title": "Part-Time Personal Assistant (Hybrid)",
         "agency": "Rose's Agency",
@@ -1283,7 +563,7 @@
         "salary": "Not specified",
         "posted": "Posted 27 January 2026",
         "url": "https://rosesagency.com/job-board/part-time-personal-assistant-in-mid-city-hybrid-25-hrsweek",
-        "blurb": "Exceptional Personal Assistant to provide structure, systems and external regulation for a retired entrepreneur managing family life, projects and travel."
+        "blurb": "An exceptional Personal Assistant is sought to support a retired entrepreneur managing family life, personal projects, and travel — building systems, documenting, and anticipating needs, 25 hours per week."
       },
       {
         "flag": "🇺🇸",
@@ -1293,29 +573,13 @@
         "agency": "Rose's Agency",
         "type": "Part-time",
         "tags": [
-          "Household Manager",
-          "Private Service"
+          "Household Assistant",
+          "Private Residence"
         ],
         "salary": "Not specified",
         "posted": "Posted 14 January 2026",
         "url": "https://rosesagency.com/job-board/part-time-household-assistant-in-san-francisco-presidio",
-        "blurb": "Part-Time Household Assistant in the Presidio, San Francisco, approximately 20 hours per week."
-      },
-      {
-        "flag": "🇺🇸",
-        "city": "Encino, CA",
-        "country": "United States",
-        "title": "Junior Executive Personal Assistant",
-        "agency": "Rose's Agency",
-        "type": "Full-time",
-        "tags": [
-          "Executive Assistant",
-          "Junior"
-        ],
-        "salary": "Not specified",
-        "posted": "Posted 8 December 2025",
-        "url": "https://rosesagency.com/job-board/junior-executive-personal-assistant-in-encino",
-        "blurb": "Junior Executive Personal Assistant in Encino, Mon-Fri 9am-5:30pm."
+        "blurb": "A Part-Time Household Assistant is sought in the Presidio, San Francisco, for approximately 20 hours per week."
       },
       {
         "flag": "🇺🇸",
@@ -1326,28 +590,44 @@
         "type": "Full-time",
         "tags": [
           "Executive Assistant",
-          "Corporate"
+          "CEO Support"
         ],
         "salary": "Not specified",
         "posted": "Posted 5 March 2026",
         "url": "https://rosesagency.com/job-board/executive-assistant-in-west-hollywood",
-        "blurb": "Organized, professional Executive Assistant for a high-end clothing company, supporting the CEO with complex calendars, travel and communications."
+        "blurb": "An organized and professional Executive Assistant is sought for a high-end clothing company in West Hollywood, providing high-level support to the CEO and managing complex calendars, travel, and communications."
+      },
+      {
+        "flag": "🇺🇸",
+        "city": "Encino, CA",
+        "country": "United States",
+        "title": "Junior Executive Personal Assistant",
+        "agency": "Rose's Agency",
+        "type": "Full-time",
+        "tags": [
+          "Executive PA",
+          "Entry Level"
+        ],
+        "salary": "Not specified",
+        "posted": "Posted 8 December 2025",
+        "url": "https://rosesagency.com/job-board/junior-executive-personal-assistant-in-encino",
+        "blurb": "A Junior Executive Personal Assistant is sought in Encino, Mon-Fri 9am-5:30pm."
       },
       {
         "flag": "🇺🇸",
         "city": "New York, NY",
         "country": "United States",
-        "title": "Executive Assistant (Hudson Yards)",
+        "title": "Executive Assistant",
         "agency": "Rose's Agency",
         "type": "Full-time",
         "tags": [
           "Executive Assistant",
-          "Investment Firm"
+          "CEO Support"
         ],
         "salary": "Not specified",
         "posted": "Posted 18 November 2025",
         "url": "https://rosesagency.com/job-board/executive-assistant-in-nyc-hudson-yards",
-        "blurb": "Experienced, highly organized Executive Assistant to support the CEO of an international investment firm from the NYC Hudson Yards office."
+        "blurb": "An experienced and highly organized Executive Assistant is sought to support the CEO of an international investment firm, based in the NYC office in Hudson Yards."
       },
       {
         "flag": "🇺🇸",
@@ -1363,23 +643,23 @@
         "salary": "Not specified",
         "posted": "Posted 17 November 2025",
         "url": "https://rosesagency.com/job-board/full-time-ea-in-manhattan-beach-mostly-remote",
-        "blurb": "Highly organized, proactive Executive Assistant to support a busy entrepreneur and family based in Manhattan Beach in a fast-paced, dynamic role."
+        "blurb": "A highly organized, proactive Executive Assistant is sought to support a busy entrepreneur and family in Manhattan Beach in a fast-paced, dynamic role balancing professional and personal priorities."
       },
       {
         "flag": "🇺🇸",
-        "city": "Westside Village, CA",
+        "city": "Westside Village, Los Angeles, CA",
         "country": "United States",
         "title": "Part-Time Executive Personal Assistant",
         "agency": "Rose's Agency",
         "type": "Part-time",
         "tags": [
-          "Executive Assistant",
-          "Personal Assistant"
+          "Executive PA",
+          "Private Support"
         ],
         "salary": "Not specified",
-        "posted": "Posted 14 October 2025",
+        "posted": "Posted 30 October 2025",
         "url": "https://rosesagency.com/job-board/part-time-executive-personal-assistant-in-westside-village",
-        "blurb": "Part-Time Executive Personal Assistant for a client working from home in Westside Village, typically Mon-Fri 1pm-6pm."
+        "blurb": "A Part-Time Executive Personal Assistant is sought for a client who works from home in Westside Village, typically Mon-Fri 1pm-6pm with some flexibility."
       },
       {
         "flag": "🇺🇸",
@@ -1389,83 +669,51 @@
         "agency": "Rose's Agency",
         "type": "Full-time",
         "tags": [
-          "Executive Assistant",
+          "Executive PA",
           "Family Support"
         ],
         "salary": "Not specified",
-        "posted": "Posted 10 September 2025",
+        "posted": "Posted 14 October 2025",
         "url": "https://rosesagency.com/job-board/executive-personal-assistant-in-atherton",
-        "blurb": "Professional Executive Personal Assistant in Atherton, assisting a single dad with three teenage boys."
+        "blurb": "A professional and smart Executive Personal Assistant is sought in Atherton, assisting a single dad with three teenage boys."
       },
       {
         "flag": "🇺🇸",
-        "city": "Los Angeles, CA",
+        "city": "Mandeville Canyon, Los Angeles, CA",
         "country": "United States",
-        "title": "Personal Assistant / Executive Assistant",
+        "title": "Executive / Personal Assistant",
         "agency": "Rose's Agency",
         "type": "Full-time",
         "tags": [
-          "Personal Assistant",
-          "Executive Assistant"
+          "Executive PA",
+          "Private Residence"
         ],
         "salary": "Not specified",
         "posted": "Posted 10 September 2025",
         "url": "https://rosesagency.com/job-board/full-timeish-eapa-mandeville-canyon",
-        "blurb": "Polished, proactive Personal Assistant / Executive Assistant to a high-profile Principal in LA, serving as her right hand in a private residence."
+        "blurb": "A high-profile principal in Los Angeles seeks a polished, proactive Personal Assistant/Executive Assistant to provide seamless support in her private residence, anticipating needs with warmth and discretion."
       },
       {
         "flag": "🇺🇸",
         "city": "Rancho Palos Verdes, CA",
         "country": "United States",
-        "title": "Executive Assistant / Personal Assistant",
+        "title": "Executive / Personal Assistant",
         "agency": "Rose's Agency",
         "type": "Full-time",
         "tags": [
-          "Executive Assistant",
-          "Personal Assistant"
-        ],
-        "salary": "Not specified",
-        "posted": "Posted 31 July 2025",
-        "url": "https://rosesagency.com/job-board/full-time-eapa-torrancepalos-verdes",
-        "blurb": "Polished Executive Assistant / Personal Assistant serving as right hand to a UHNW couple in Rancho Palos Verdes who travel frequently."
-      },
-      {
-        "flag": "🇺🇸",
-        "city": "Beverly Hills, CA",
-        "country": "United States",
-        "title": "Office Coordinator / Assistant",
-        "agency": "Rose's Agency",
-        "type": "Full-time",
-        "tags": [
-          "Executive Assistant",
-          "Artist Management"
+          "Executive PA",
+          "UHNW"
         ],
         "salary": "Not specified",
         "posted": "Posted 24 July 2025",
-        "url": "https://rosesagency.com/job-board/office-coordinatorassistant-in-beverly-hills-hybrid-remote",
-        "blurb": "Hybrid Office Coordinator/Assistant for an Artist Management company in Beverly Hills, supporting two major artists and their projects."
-      },
-      {
-        "flag": "🇺🇸",
-        "city": "Los Angeles, CA",
-        "country": "United States",
-        "title": "Executive Assistant (Business Manager)",
-        "agency": "Rose's Agency",
-        "type": "Full-time",
-        "tags": [
-          "Executive Assistant",
-          "Business Management"
-        ],
-        "salary": "Not specified",
-        "posted": "Posted 19 May 2025",
-        "url": "https://rosesagency.com/job-board/executive-assistant-for-business-manager-in-hollywood",
-        "blurb": "Full-Time Executive Assistant for a Business Manager in Hollywood, joining a small team including bookkeepers and another part-time EA."
+        "url": "https://rosesagency.com/job-board/full-time-eapa-torrancepalos-verdes",
+        "blurb": "A UHNW couple in Rancho Palos Verdes seeks a polished, proactive Executive Assistant/Personal Assistant to serve as their right hand, managing personal and business responsibilities with discretion."
       },
       {
         "flag": "🇺🇸",
         "city": "Beverly Hills, CA",
         "country": "United States",
-        "title": "Executive Assistant (Family Office)",
+        "title": "Executive Assistant",
         "agency": "Rose's Agency",
         "type": "Full-time",
         "tags": [
@@ -1475,55 +723,39 @@
         "salary": "Not specified",
         "posted": "Posted 31 January 2025",
         "url": "https://rosesagency.com/job-board/executive-assistant-in-beverly-hills-family-office",
-        "blurb": "Talented Executive Assistant to join a private Beverly Hills family office and its existing administrative team."
+        "blurb": "A talented Executive Assistant is sought to join a private family office in Beverly Hills, joining the existing administrative team."
       },
       {
         "flag": "🇺🇸",
         "city": "Beverly Hills, CA",
         "country": "United States",
-        "title": "Executive / Personal Assistant (30% Travel)",
+        "title": "Executive / Personal Assistant",
         "agency": "Rose's Agency",
         "type": "Full-time",
         "tags": [
-          "Executive Assistant",
-          "Travel"
+          "Executive PA",
+          "UHNW"
         ],
         "salary": "Not specified",
         "posted": "Posted 31 January 2025",
         "url": "https://rosesagency.com/job-board/executivepersonal-assistant-in-beverly-hills-30-travel",
-        "blurb": "Detail-oriented Executive/Personal Assistant for a UHNWI in Beverly Hills, traveling about 30% of the time including summers in the Hamptons."
-      },
-      {
-        "flag": "🇺🇸",
-        "city": "Culver City, CA",
-        "country": "United States",
-        "title": "Administrative Assistant",
-        "agency": "Rose's Agency",
-        "type": "Full-time",
-        "tags": [
-          "Executive Assistant",
-          "Administrative"
-        ],
-        "salary": "Not specified",
-        "posted": "Posted 3 December 2024",
-        "url": "https://rosesagency.com/job-board/full-time-administrative-assistant-in-culver-city",
-        "blurb": "Organized Administrative Assistant to support a Grammy- and Emmy-winning, Academy Award-nominated Director/Producer and CEO in Culver City."
+        "blurb": "A detail-oriented Executive/Personal Assistant is sought for a UHNWI in Beverly Hills, traveling about 30% of the time and spending summers in the Hamptons."
       },
       {
         "flag": "🇺🇸",
         "city": "Miami, FL",
         "country": "United States",
-        "title": "Personal Household Assistant",
+        "title": "Personal Assistant",
         "agency": "Rose's Agency",
         "type": "Full-time",
         "tags": [
           "Personal Assistant",
-          "Household Manager"
+          "UHNW"
         ],
         "salary": "Not specified",
         "posted": "Posted 5 November 2024",
         "url": "https://rosesagency.com/job-board/full-time-personal-assistant-in-miami",
-        "blurb": "Organized, adaptable Personal Household Assistant for a high-profile Miami family, managing daily life, complex schedules, travel and household maintenance."
+        "blurb": "A high-profile family seeks a highly organized Personal Household Assistant based in Miami to manage daily life and household operations, coordinating schedules, travel, and household maintenance."
       },
       {
         "flag": "🇺🇸",
@@ -1539,39 +771,55 @@
         "salary": "Not specified",
         "posted": "Posted 5 November 2024",
         "url": "https://rosesagency.com/job-board/full-time-travel-pa-based-in-la",
-        "blurb": "Experienced Travel Assistant for a UHNW family, coordinating activities and personal tasks while collaborating with household staff and service providers."
+        "blurb": "A UHNW family seeks an experienced Travel Assistant to provide comprehensive support for day-to-day personal and household needs, coordinating family activities and collaborating with household staff."
       },
       {
         "flag": "🇺🇸",
         "city": "Santa Monica, CA",
         "country": "United States",
-        "title": "Executive / Personal Assistant (Entry Level)",
+        "title": "Personal / Executive Assistant (Entry Level)",
         "agency": "Rose's Agency",
         "type": "Full-time",
         "tags": [
-          "Executive Assistant",
-          "Personal Assistant"
+          "Personal Assistant",
+          "Entry Level"
         ],
         "salary": "Not specified",
         "posted": "Posted 20 September 2024",
         "url": "https://rosesagency.com/job-board/full-time-paea-in-santa-monica-entry-level",
-        "blurb": "Vibrant, motivated Executive/Personal Assistant to a small business owner in Santa Monica running a financing group; the principal’s right hand."
+        "blurb": "A vibrant, motivated Executive/Personal Assistant is sought for a small business owner in Santa Monica running a financing group, serving as his right hand across personal and work matters."
       },
       {
         "flag": "🇺🇸",
         "city": "Beverly Hills, CA",
         "country": "United States",
-        "title": "Part-Time Personal Assistant (Bird Streets)",
+        "title": "Part-Time Personal Assistant",
         "agency": "Rose's Agency",
         "type": "Part-time",
         "tags": [
           "Personal Assistant",
-          "Pet-Friendly"
+          "UHNW"
         ],
-        "salary": "Not specified",
+        "salary": "$40–$45/hour",
         "posted": "Posted 20 September 2024",
         "url": "https://rosesagency.com/job-board/part-time-pa-in-beverly-hills-bird-streets",
-        "blurb": "Proactive part-time PA for a UHNW couple splitting time between Texas and Beverly Hills; pet lover preferred, 10-20 hours weekly at $40-$45/hour."
+        "blurb": "A proactive PA is sought for a UHNW couple splitting time between Texas and Beverly Hills. Must be a pet lover; 10-20 hours weekly, trust and discretion paramount."
+      },
+      {
+        "flag": "🇺🇸",
+        "city": "Brentwood, Los Angeles, CA",
+        "country": "United States",
+        "title": "Personal Assistant / House Manager to UHNW",
+        "agency": "The Grapevine Agency",
+        "type": "Full-time",
+        "tags": [
+          "House Manager",
+          "Personal Assistant"
+        ],
+        "salary": "$140K–$160K",
+        "posted": "New this week",
+        "url": "https://job.thegrapevineagency.com/apply/31987dc6-21bb-44cf-92e9-32c975f2c4fc",
+        "blurb": "A UHNW principal in Brentwood seeks a Personal Assistant / House Manager to oversee household operations and provide high-level personal support."
       },
       {
         "flag": "🇺🇸",
@@ -1581,30 +829,13 @@
         "agency": "The Grapevine Agency",
         "type": "Full-time",
         "tags": [
-          "Personal Assistant",
           "House Manager",
           "Lifestyle Manager"
         ],
-        "salary": "$60K–$80K/yr",
-        "posted": "Live on board",
+        "salary": "$60K–$80K",
+        "posted": "New this week",
         "url": "https://job.thegrapevineagency.com/apply/e92afddd-2f00-4014-9d79-33e93e517198",
-        "blurb": "Personal Assistant / House Manager / Lifestyle Assistant supporting a principal in Marina Del Rey across household and lifestyle needs."
-      },
-      {
-        "flag": "🇺🇸",
-        "city": "Encino, CA",
-        "country": "United States",
-        "title": "Executive / Personal Assistant to Entrepreneur",
-        "agency": "The Grapevine Agency",
-        "type": "Full-time",
-        "tags": [
-          "Executive Assistant",
-          "Personal Assistant"
-        ],
-        "salary": "$100K–$125K/yr",
-        "posted": "Live on board",
-        "url": "https://job.thegrapevineagency.com/apply/ded8f325-f24e-416c-aa6a-d5d6e85a3182",
-        "blurb": "Executive/Personal Assistant to a busy entrepreneur in the Encino area, managing professional and personal priorities."
+        "blurb": "A blended Personal Assistant / House Manager / Lifestyle Assistant role in Marina Del Rey, supporting a principal's household and lifestyle needs."
       },
       {
         "flag": "🇺🇸",
@@ -1615,12 +846,12 @@
         "type": "Full-time",
         "tags": [
           "Chief of Staff",
-          "Entertainment"
+          "Executive Support"
         ],
-        "salary": "Up to $225K/yr",
-        "posted": "Live on board",
+        "salary": "Up to $225K",
+        "posted": "New this week",
         "url": "https://job.thegrapevineagency.com/apply/11eb5798-f2c3-4e1b-9612-a35d51d0d1bc",
-        "blurb": "Chief of Staff to the Founder & CEO of an entertainment and media company, overseeing operations and strategic priorities."
+        "blurb": "A Chief of Staff is sought for the Founder & CEO of an entertainment and media company in West Hollywood, serving as strategic and operational right hand."
       },
       {
         "flag": "🇺🇸",
@@ -1631,12 +862,44 @@
         "type": "Full-time",
         "tags": [
           "Executive Assistant",
-          "Agency"
+          "Founder Support"
         ],
-        "salary": "$120K–$140K/yr",
-        "posted": "Live on board",
+        "salary": "$120K–$140K",
+        "posted": "New this week",
         "url": "https://job.thegrapevineagency.com/apply/a4b6ed19-67c2-49c5-9c16-73dee94a550d",
-        "blurb": "Executive Assistant to the Founder of a branding and marketing agency in Beverly Hills."
+        "blurb": "An Executive Assistant is sought to support the Founder of a branding and marketing agency in Beverly Hills."
+      },
+      {
+        "flag": "🇺🇸",
+        "city": "Encino, CA",
+        "country": "United States",
+        "title": "Executive / Personal Assistant to Entrepreneur",
+        "agency": "The Grapevine Agency",
+        "type": "Full-time",
+        "tags": [
+          "Executive PA",
+          "Entrepreneur Support"
+        ],
+        "salary": "$100K–$125K",
+        "posted": "New this week",
+        "url": "https://job.thegrapevineagency.com/apply/ded8f325-f24e-416c-aa6a-d5d6e85a3182",
+        "blurb": "An Executive/Personal Assistant is sought to support an entrepreneur in the Encino area across professional and personal matters."
+      },
+      {
+        "flag": "🇺🇸",
+        "city": "Los Angeles, CA",
+        "country": "United States",
+        "title": "Chef & House Manager",
+        "agency": "Pocketbook Agency",
+        "type": "Full-time",
+        "tags": [
+          "House Manager",
+          "Private Residence"
+        ],
+        "salary": "Not specified",
+        "posted": "Posted 8 August 2026",
+        "url": "https://careers.pocketbookagency.com/job/2602",
+        "blurb": "A discrete and capable Chef & House Manager is sought in Los Angeles to run a private residence and its household operations."
       },
       {
         "flag": "🇺🇸",
@@ -1647,15 +910,31 @@
         "type": "Full-time",
         "tags": [
           "Personal Assistant",
-          "Private Principal"
+          "Private Support"
         ],
         "salary": "Not specified",
         "posted": "Posted 5 August 2026",
         "url": "https://careers.pocketbookagency.com/job/2558",
-        "blurb": "Personal Assistant to a private principal in Baltimore, providing dedicated personal and administrative support."
+        "blurb": "A Personal Assistant is sought to support a private principal in Baltimore, Maryland, managing daily tasks and personal affairs."
       }
     ],
     "europe": [
+      {
+        "flag": "🇪🇸",
+        "city": "Barcelona",
+        "country": "Spain",
+        "title": "Bilingual Personal Assistant",
+        "agency": "DM Estate Staffing (EstateJobs)",
+        "type": "Full-time",
+        "tags": [
+          "Personal Assistant",
+          "Bilingual"
+        ],
+        "salary": "Not specified",
+        "posted": "Posted 10 August 2026",
+        "url": "https://www.estatejobs.com/job/v36xxd/bilingual-personal-assistant/barcelona/-/spain",
+        "blurb": "A bilingual personal assistant is needed to support a family relocating to Esplugues de Llobregat, providing practical assistance and translation services as they settle into their new environment."
+      },
       {
         "flag": "🇸🇪",
         "city": "Stockholm",
@@ -1670,7 +949,7 @@
         "salary": "Not specified",
         "posted": "Posted 18 September 2025",
         "url": "https://rosesagency.com/job-board/full-time-chief-of-staff-stockholm",
-        "blurb": "Strategic and operational right hand of the Principals, overseeing staffing, estate management, family logistics and lifestyle support across a UHNW household."
+        "blurb": "The Chief of Staff is the strategic and operational right hand of the principals, overseeing staffing, estate management, family logistics, and lifestyle support across all properties, building SOPs, vendors, and recruiting."
       }
     ],
     "mideast": []
