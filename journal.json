@@ -1,82 +1,88 @@
 {
-  "no": "No. 23",
-  "date": "Monday, 10 August 2026",
+  "no": "No. 24",
+  "date": "Wednesday, 12 August 2026",
   "strap": "A daily dispatch from the world you are entering",
   "lead": {
-    "cat": "The Craft",
-    "place": "New York, United States",
-    "tag": "The chef war",
-    "title": "Private chefs now command up to USD 300,000, and the household kitchen becomes the most contested hire of all",
-    "standfirst": "The salary for a principal's private chef has climbed to figures once reserved for the estate manager, as the wealthy chase their own Michelin standard behind closed doors.",
-    "body": "The private kitchen has quietly become the front line in the war for household talent. Benchmark pay for a full-time private chef now sits around USD 150,000 at the market median, according to recruiters, with Michelin-trained candidates who travel with the family reaching USD 270,000 and beyond. In the United States the very top of the range has touched USD 300,000, a figure that would once have belonged to the person running the entire estate rather than the person running the stove.\n\nThe pressure is structural, not seasonal. The population of ultra-high-net-worth individuals keeps expanding, the pool of genuinely qualified senior candidates grows slowly, and low-tax jurisdictions led by Dubai are bidding hard for the same English-speaking talent. A principal who wants a chef able to cook at restaurant level, cater a shooting weekend, feed the children something wholesome and then plate a private dinner for twenty is competing against every other principal who wants exactly that. When supply is thin, the price of the rare candidate rises, and it has.\n\nThe consequence inside the house is a churn the sector calls job-hopping. Chefs move for a better package, a lighter travel schedule or a kinder principal, and the household that loses one is thrown back into a market where the best people are rarely available and never cheap. For the family, a chef is no longer a line item but a retention project, managed with the same care once reserved for a chief investment officer.\n\nFor those entering private service, the shift is instructive. The kitchen is now a career with a ceiling that rivals the most senior roles in the house, and the skills that command the premium are specific: formal training, discretion, the flexibility to travel at short notice and the temperament to cook for the same discerning palate every single day.",
-    "why": "The person who runs a principal's household must now recruit, pay and retain a chef against a market that treats the role as a six-figure career, and understand that the kitchen is as hard to staff as any seat in the house.",
-    "src": "CNBC",
-    "url": "https://www.cnbc.com/2026/07/10/private-chef-salaries.html"
+    "cat": "The Market",
+    "place": "London, United Kingdom",
+    "tag": "Beyond the headcount",
+    "title": "Henley stops counting the millionaires who move, and measures instead which countries can hold them",
+    "standfirst": "The 2026 migration report abandons its headline headcount for a competitiveness score, and the change says as much about how the wealthy now live as any single number could.",
+    "body": "For more than a decade the Henley Private Wealth Migration Report was read for one figure above all others, the net number of dollar millionaires expected to pack up and cross a border in a given year. The 2026 edition, published in June, quietly retires that number. In its place Henley & Partners has built the Global Wealth Mobility Framework, a model that scores jurisdictions across twelve weighted dimensions, among them tax treatment, rule of law, quality of life, migration pathways, family inclusion, geopolitical stability and capital mobility. The firm has also removed the report's sole named author, a response to years of criticism that a single headline count was too blunt an instrument for a phenomenon this complex.\n\nThe shift is more than statistical housekeeping. It reflects a change in how the very wealthy actually organise their lives. The report describes a move away from the old idea of relocation, a family leaving one country for another, towards the assembly of what it calls sovereign portfolios, bundles of residence rights, citizenships, investments and business interests spread deliberately across several jurisdictions at once. The modern principal does not emigrate so much as diversify, holding a base in one place, a tax residence in another and a fallback passport in a third.\n\nThe geography of that diversification has a clear centre of gravity. The United Arab Emirates has established itself as the leading destination for mobile wealth, positioning itself as a durable hub for asset management on the strength of policy stability and an explicit strategy to attract capital and talent. Singapore tops the new competitiveness ranking with a score of 79.5 out of 100, the highest in the world. Across the board, Southeast Asia and the Gulf are now pulling wealthy residents away from Europe and North America faster than at any earlier point in modern wealth history.\n\nFor the household, the implication is structural. A principal whose legal life is spread across three or four jurisdictions does not run a house, she runs a network of them, each with its own staff, its own compliance and its own rhythm of occupancy. The person who serves such a family is no longer anchored to a single estate in a single country. She is expected to move with the portfolio, to hold the standard constant whether the family is in Dubai in February or on the Riviera in August, and to understand that the map of where the wealthy live is being redrawn beneath her feet.",
+    "why": "The report confirms that the household of the future is plural and mobile. The estate manager or chief of staff who can hold one standard across several jurisdictions, and coordinate the staff in each, is the person these families now compete to keep.",
+    "src": "Henley & Partners, Private Wealth Migration Report 2026",
+    "url": "https://www.henleyglobal.com/newsroom/press-releases/henley-private-wealth-migration-report-2026"
   },
   "articles": [
     {
-      "cat": "The Market",
-      "place": "New York, United States",
-      "tag": "Going direct",
-      "section": "The Market",
-      "title": "The family office stops writing cheques to funds and starts doing the deals itself, and the household it runs must keep pace",
-      "body": "There are now more than 8,000 family offices in the world, managing an estimated USD 5.5 trillion, a figure projected to reach USD 9 trillion by 2030. The striking change is not the size of the pool but how it is being deployed. According to the 2026 Global Family Office Report from J.P. Morgan Private Bank and parallel surveys, private markets have become the single largest allocation in the average family-office portfolio at roughly 29 per cent, ahead of public equities, fixed income, real estate and cash.\n\nBehind that number sits a change in behaviour. Around 70 per cent of family offices now invest directly into companies rather than through funds, and roughly 83 per cent of those direct deals are done as co-investments alongside a trusted partner rather than as solo bets. The family is no longer content to be a passive holder of fund units paying two and twenty. It wants ownership, board seats and the ability to use its own expertise, and it is building the in-house teams to do so.\n\nThat ambition has a staffing consequence that reaches all the way to the front door. A family office that runs its own deals needs analysts, lawyers and operators, and it needs a principal whose time is protected so that the deals get done. The household, the aircraft, the properties and the calendar exist to buy that time back. When the office turns itself into a private investment firm, the pressure on the people who run the private life rises in step.\n\nFor the future house or estate manager, the lesson is that the family office is the true employer behind the household, and its priorities set the weather. Understanding that the principal is increasingly an operator and not merely an owner explains why discretion, speed and seamless logistics have never been more valuable.",
-      "why": "The family office is the institution that pays for and directs the household, and its move into hands-on dealmaking raises the premium on staff who can protect the principal's time and run the private life without friction.",
-      "src": "J.P. Morgan Private Bank, 2026 Global Family Office Report",
-      "url": "https://privatebank.jpmorgan.com/nam/en/insights/reports/2026-family-office-report"
-    },
-    {
-      "cat": "At Sea & In the Air",
-      "place": "Monaco",
-      "tag": "The crew squeeze",
-      "section": "At Sea & In the Air",
-      "title": "The yacht is finished but the crew is not found, and the shortage at sea now decides which boats actually sail",
-      "body": "The constraint on the water in 2026 is not steel but people. Crew salaries have risen by roughly 8 to 12 per cent since 2023, pushed up by inflation and by a persistent shortage of qualified hands, and owners are being told to pay at the top of every range simply to attract and keep experienced professionals. Entry-level deckhands start around 2,500 euros a month, while a superyacht captain on a large hull can command 25,000 euros a month or more.\n\nThe scarcity is sharpest in the roles that keep a modern yacht legal and safe: engineers, qualified deck officers and crew willing to work rotational contracts that let them keep a life ashore. As the fleet grows and hulls get larger and more technical, the number of people certified to run them has not kept pace. The result is a seller's market for talent, in which the best chief stewardess or engineer can choose the boat, the itinerary and the package.\n\nMonaco sits at the centre of this world, its calendar of the Grand Prix, the nearby Cannes festival and the autumn yacht show setting the rhythm of hiring and the premium on rates across the Mediterranean. A crew placed for a Riviera summer costs more than the same crew in a quieter market, and owners increasingly plan their recruitment around these fixed points in the year.\n\nFor the household that oversees a yacht as one asset among several, the crew shortage is a management problem as much as a maritime one. The estate manager or family office that charters or owns must now think about retention at sea in the same terms it uses ashore, because a boat without a full, qualified crew is an expensive ornament that cannot leave the quay.",
-      "why": "A yacht is one of the household's most complex assets, and the person who oversees it must now recruit and retain scarce, expensive crew with the same rigour applied to staff on land.",
-      "src": "Morgan & Mallet International, Yacht Crew Salary Guide 2026",
-      "url": "https://www.yachtcrew.agency/employer/yacht-crew-salary-guide/"
-    },
-    {
-      "cat": "Objects & Culture",
+      "cat": "The Craft",
       "place": "London, United Kingdom",
-      "tag": "Ghost casks",
-      "section": "Objects & Culture",
-      "title": "Two casks from a distillery that no longer exists sell for GBP 4.25 million, and the ghost of Karuizawa sets a record",
-      "body": "At a Christie's wine and spirits sale in London on 10 March, two full casks of whisky from the closed Japanese distillery Karuizawa became the highest-value lots ever sold by the department, together achieving 4.25 million pounds. Each cask, numbered 6195 and 888, made 2.125 million pounds, and each holds roughly 420 bottles, giving the buyer not only the whisky but the right to shape its final maturation and release.\n\nKaruizawa is the most storied name in Japanese whisky precisely because it is gone. Founded in 1955 in the country's Southern Alps, the distillery closed its doors in 2000, and its remaining casks were acquired for posterity only when the site was threatened with demolition a decade later. Both casks in the sale were distilled in 1999, the year before production ceased, and came from the private collection of Sukhinder Singh, one of the most respected figures in the rare-whisky world.\n\nThe result confirms a market that has moved from bottles to whole casks, and from Scotch alone to a global chase that now runs through Japan and, separately, the United States. It is a market driven by scarcity in its purest form: a distillery that can never make another drop, and a finite number of casks that will only diminish as they are bottled.\n\nFor anyone serving a collector, fluency in this world is now part of the craft. Sourcing, storage, provenance and the quiet etiquette of the auction room are the concierge's domain, and a name like Karuizawa is exactly the kind of cultural knowledge a principal expects the household to possess before it is ever asked for.",
-      "why": "Collections of this kind pass through the household's hands, and cultural fluency in wine, whisky and provenance is part of the service a discerning principal takes for granted.",
-      "src": "The Drinks Business",
-      "url": "https://www.thedrinksbusiness.com/2026/03/rare-japaneses-whisky-casks-smash-auction-records-to-achieve-4-25-million-at-auction/"
-    },
-    {
-      "cat": "Hotels & Escapes",
-      "place": "Baa Atoll, Maldives",
-      "tag": "Into the reserve",
-      "section": "Hotels & Escapes",
-      "title": "Aman prepares its first Maldives island inside a protected biosphere, and the private escape learns to answer to the reef",
-      "body": "Aman has confirmed its first property in the Maldives, on an island that sits inside the UNESCO Biosphere Reserve of Baa Atoll, close to the celebrated manta and whale-shark waters of Hanifaru Bay. The plan runs to roughly 35 pavilions and villas, each with its own pool, alongside an Aman Spa and a resident marine-biology programme, a scale that is deliberately small for a brand that trades on space and silence.\n\nThe choice of a protected reserve is the point. Placing a resort inside a biosphere binds the operator to the health of the reef and the seasons of the marine life around it, and turns conservation from a marketing line into an operating constraint. For the guest who has seen every over-water villa, the promise is access to a genuinely protected marine environment rather than another manufactured lagoon.\n\nMaldives openings are famously prone to slippage, and several rival debuts have already moved into 2027, so the date should be read as an intention rather than a fixture. What is not in doubt is the direction of the ultra-luxury market, which continues to reward privacy, small key counts and a credible environmental story over sheer scale.\n\nFor the household that plans a family's travel, an opening like this is a note for the file. It signals where the most private guests will want to be, the kind of advance access that will need to be secured, and the growing expectation that even a barefoot escape now comes wrapped in a conservation commitment the principal will want honoured.",
-      "why": "Planning private travel means knowing which openings the most discreet families will chase, and increasingly that a destination's environmental credentials are part of what the principal expects the household to have vetted.",
-      "src": "Resortlife Maldives",
-      "url": "https://resortlife.travel/insights/new-luxury-maldives-resorts-2026-2027"
-    }
-  ],
-  "briefs": [
-    {
-      "t": "165,000 on the move",
-      "b": "The Henley Private Wealth Migration Report 2026 forecasts that as many as 165,000 millionaires will relocate internationally this year, up from about 142,000 in 2025 and the highest intensity recorded in 15 years. The United Arab Emirates remains the leading destination, while Singapore tops the report's new competitiveness score at 79.5 out of 100.",
-      "src": "Henley & Partners",
-      "url": "https://www.henleyglobal.com/newsroom/press-releases/henley-private-wealth-migration-report-2026"
-    },
-    {
-      "t": "The house manager climbs",
-      "b": "Recruiters report that house manager is now the fastest-rising salary among household staff, with average pay around USD 86,000 and the estate-manager range running from roughly USD 85,000 to USD 250,000. A slow-growing pool of qualified candidates and competition from Dubai continue to push senior pay to record levels.",
+      "tag": "The unseen hire",
+      "section": "The Craft",
+      "title": "The housekeeper becomes the household's hardest hire, and the search now reaches across borders to fill it",
+      "body": "Ask a private staffing agency which role generates the most requests and the fewest qualified candidates, and the answer is rarely the chef or the butler. It is the housekeeper. Recruiters report more instructions for experienced housekeepers than for any other position, and a candidate pool that has not grown to match. The role that once sat quietly at the base of the household hierarchy has become the pinch point of the entire staffing market.\n\nThe pay tells the story. In the United Kingdom a housekeeper's salary now runs from GBP 42,000 to GBP 75,000, with head housekeepers at principal residences commanding from GBP 70,000 to GBP 95,000. In the United States, entry-level live-out positions begin at USD 45,000 to USD 55,000, senior housekeepers in luxury households earn from USD 85,000 to USD 120,000, and executive housekeepers can pass USD 160,000. In New York, hourly rates of USD 25 to USD 35 are standard, while a senior house manager runs from USD 140,000 to USD 180,000. Live-in roles add accommodation, meals and comprehensive health cover on top.\n\nThree forces are pushing those numbers upward at once. The base of ultra-high-net-worth households keeps expanding, the pool of experienced and discreet candidates grows only slowly, and low-tax jurisdictions have entered the bidding. Recruiters single out Dubai, which now competes aggressively for English-speaking senior staff, drawing experienced housekeepers and house managers away from London and New York with tax-free packages the older capitals cannot match.\n\nThe result is a role being quietly redefined. The modern head housekeeper is expected to manage inventories worth more than most homes, to supervise a rota of junior staff and outside specialists, to protect fabrics, finishes and collections that cannot be replaced, and to do all of it invisibly. For anyone entering private service, the lesson is plain. The housekeeping route, long treated as the humble entry to the profession, has become one of its most contested and best-paid careers.",
+      "why": "The market's scarcest hire is also its most teachable entry point. Understanding why houses now pay six figures for a head housekeeper tells a candidate exactly where the leverage in this profession sits.",
       "src": "Oplu, Private Staff Salary Guide 2026",
       "url": "https://oplu.com/resources/private-staff-salary-guide-2026"
     },
     {
-      "t": "Bourbon's record night",
-      "b": "Sotheby's sold what it called the most valuable single-owner American whiskey collection ever offered at auction, totalling USD 2.5 million. Highlights included an Old Rip Van Winkle 20 Years Old, a sign that the rare-spirits chase now runs as strongly through American bourbon as through Scotch and Japanese malt.",
-      "src": "The Spirits Business",
-      "url": "https://www.thespiritsbusiness.com/2026/01/sothebys-2-5m-us-whiskey-auction-sets-record/"
+      "cat": "At Sea & In the Air",
+      "place": "Antibes, France",
+      "tag": "25 per cent",
+      "section": "At Sea & In the Air",
+      "title": "The charter yacht fills its calendar while its crew grows scarce, and wages at sea climb again through 2026",
+      "body": "The charter market, the part of the yachting world where a boat is rented rather than owned, is having a strong year and an expensive one. The global yacht charter market was estimated at USD 10.60 billion in 2025 and is expected to reach USD 11.28 billion in 2026, a compound growth rate of roughly 6.67 per cent. Demand is fed by a recovery in international travel and by charter guests who increasingly prize privacy, control over their own itinerary, wellness and multigenerational trips over anything a hotel can offer.\n\nThe strain is on the people who make those charters work. Crew wage inflation of up to 25 per cent, combined with a shortage of berths in the peak-season ports, is driving costs up sharply for operators and brokers. A chief stewardess or an experienced chef who can deliver a seven-figure charter to a demanding family is now among the most fought-over workers on the water, and the wage packet has moved to reflect it.\n\nThe geography of demand is concentrated and shifting at the edges. The Mediterranean, led by the French Riviera, the Greek islands and the Croatian coast, still accounts for around 42 per cent of European charter activity. Asia is the fastest-rising region, forecast to expand at an annual rate of 8.35 per cent to 2031. Online charter marketplaces, growing at nearly 12 per cent a year, are bringing transparent pricing and wider access, though they still lean on the expertise of the traditional broker rather than replacing it.\n\nFor the private service professional, the charter yacht is a compressed and intense version of the household itself, a floating estate that must be run to hotel standards for a fortnight and then reset for the next family. The wage inflation on deck is the same signal that runs through every part of this world. Skilled, discreet service has become the scarce commodity, and those who can supply it name their price.",
+      "why": "Charter crew and household staff are drawn from the same shrinking pool of skilled service professionals. The wages a demanding charter now pays set a benchmark that shore-based households increasingly have to meet.",
+      "src": "Mordor Intelligence, Yacht Charter Market Report 2026",
+      "url": "https://www.mordorintelligence.com/industry-reports/yacht-charter-market"
+    },
+    {
+      "cat": "Objects & Culture",
+      "place": "New York, United States",
+      "tag": "The colour premium",
+      "section": "Objects & Culture",
+      "title": "The blue diamond leads the salerooms again, and the rarest colours carry the jewellery market through 2026",
+      "body": "When the jewellery market wants to prove it is healthy, it reaches for a coloured diamond. The 2026 season has offered a run of them. At Christie's in New York, the Magnificent Jewels sale reached USD 49.7 million with every lot sold, led by the Azure Blue, a 31.62-carat, pear-shaped fancy blue diamond of VVS1 clarity that fetched USD 8.4 million. A 5.04-carat marquise-shaped, fancy vivid blue stone followed close behind at USD 8.2 million.\n\nSotheby's matched the mood. Its New York sale gathered USD 43.4 million at a 98 per cent sell-through rate, headed by a 10.02-carat, fancy intense blue, VS2 diamond that made USD 8.7 million. A 5.02-carat, fancy intense pink, internally flawless oval took second place at USD 2.9 million. In Geneva earlier in the year, an exceptionally rare, internally flawless fancy vivid blue diamond of 6.03 carats headlined the spring high jewellery sale.\n\nThe pattern beneath the headline lots matters more than any single price. Sell-through rates approaching or reaching 100 per cent tell a market that is finding buyers for almost everything on offer, not just the trophies. When the broader art and object markets wobble, the rarest natural colours, blue and pink diamonds chief among them, have again proved the most reliable store of value, prized precisely because so few exist and none can be manufactured to order.\n\nFor the household that holds such things, the auction result is only the visible tip of a quiet responsibility. Someone has to insure these stones, transport them, store them, and produce the right piece for the right evening without fuss. Cultural fluency in what these objects are, and why a colour can multiply a price many times over, is part of the education of anyone who serves at this level.",
+      "why": "Families at this level own the objects that cross the auction block, and expect the people around them to understand their worth. Knowing why a blue diamond outruns a white one is part of the discretion the role demands.",
+      "src": "JCK, Sotheby's and Phillips June Results 2026",
+      "url": "https://www.jckonline.com/editorial-article/sothebys-phillips-june-results/"
+    },
+    {
+      "cat": "Hotels & Escapes",
+      "place": "Mallorca, Spain",
+      "tag": "The private headland",
+      "section": "Hotels & Escapes",
+      "title": "Mandarin Oriental takes a private Mallorcan peninsula, and the Balearics gain an address built for the family that wants the whole headland",
+      "body": "Mandarin Oriental is opening on a private peninsula near Puerto Portals, on the south-west coast of Mallorca, with a resort called Punta Negra. The property carries 131 rooms, suites and bungalows, several swimming pools, a full-service spa built around Mediterranean wellness, and a spread of dining venues across the site. Its distinguishing feature is the setting itself, a headland with its own coves rather than a plot on a crowded shoreline.\n\nThe location is a statement about where wealth is settling in the western Mediterranean. Mallorca has spent years shedding its package-holiday reputation and rebuilding as a base for the affluent, drawn by proximity to northern Europe, reliable weather and a property market that rewards discretion. A branded resort of this kind arrives to serve families who may already own or rent nearby, and who want a serviced address for guests and overflow within reach of their own doors.\n\nFor the private service professional, an opening like this is worth reading less as a holiday than as an extension of the household's map. A principal with a house on the island now has a five-star operation next door to absorb visiting relatives, to host an event beyond the scale of the family villa, or to provide a serviced landing while a house is between staff. The good estate manager knows the general manager of the nearest such property by name, because sooner or later the family will need what it can offer.",
+      "why": "Serviced resorts near the wealthy enclaves are part of the estate manager's toolkit, not a rival to it. Knowing the best address on the island, and the people who run it, is how a household absorbs the demands a private villa cannot.",
+      "src": "Travel Weekly, Mandarin Oriental Opens on Mallorca",
+      "url": "https://www.travelweekly.com/World-of-Luxury/Mandarin-Oriental-opens-luxury-resort-on-Mallorca"
+    }
+  ],
+  "briefs": [
+    {
+      "t": "Monterey opens its biggest week",
+      "b": "Monterey Car Week is under way on the California coast, with RM Sotheby's holding its Monterey sale from 13 to 15 August. Headline lots include a 1996 McLaren F1 GTR estimated at more than USD 35 million, Clark Gable's 1935 Duesenberg and a 1962 Aston Martin DB4 GT Zagato guided at USD 12 million to USD 15 million.",
+      "src": "RM Sotheby's, The Monterey Auction 2026",
+      "url": "https://rmsothebys.com/auctions/mo26/"
+    },
+    {
+      "t": "Prime property inches up, Asia races ahead",
+      "b": "Knight Frank's Wealth Report 2026 puts global prime residential price growth at 3.2 per cent for 2025, a touch below the 3.6 per cent of 2024. The strongest movers sit in Asia, with Seoul forecast to lead all cities at 11 per cent in 2026 and Tokyo prime prices up 58.5 per cent on a weak yen.",
+      "src": "Knight Frank, The Wealth Report 2026",
+      "url": "https://www.knightfrank.com/research/article/2026/4/piri-100-ultimate-prime-residential-property-index"
+    },
+    {
+      "t": "Branded residences head for a thousand",
+      "b": "The branded residence, a home run to hotel standards by a luxury operator, continues its rapid multiplication. Knight Frank projects more than 1,000 live schemes worldwide by 2030. For the family that buys one, the appeal is a fully staffed household it never has to build or recruit for itself.",
+      "src": "Knight Frank, The Residence Report 2025/26",
+      "url": "https://content.knightfrank.com/research/3041/documents/en/the-residence-report-202526-12403.pdf"
+    },
+    {
+      "t": "Singapore tops the new mobility score",
+      "b": "Under Henley's redesigned framework, Singapore leads the world with a Wealth Mobility Competitiveness Score of 79.5 out of 100, cementing its place as the premier destination for relocating high-net-worth individuals in Asia. The score weighs tax, rule of law, quality of life and migration pathways rather than a raw count of arrivals.",
+      "src": "Henley & Partners, Private Wealth Migration Report 2026",
+      "url": "https://www.henleyglobal.com/publications/henley-private-wealth-migration-report-2026"
     }
   ]
 }

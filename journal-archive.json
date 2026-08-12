@@ -1,5 +1,87 @@
 [
   {
+    "no": "No. 23",
+    "date": "Monday, 10 August 2026",
+    "strap": "A daily dispatch from the world you are entering",
+    "lead": {
+      "cat": "The Craft",
+      "place": "New York, United States",
+      "tag": "The chef war",
+      "title": "Private chefs now command up to USD 300,000, and the household kitchen becomes the most contested hire of all",
+      "standfirst": "The salary for a principal's private chef has climbed to figures once reserved for the estate manager, as the wealthy chase their own Michelin standard behind closed doors.",
+      "body": "The private kitchen has quietly become the front line in the war for household talent. Benchmark pay for a full-time private chef now sits around USD 150,000 at the market median, according to recruiters, with Michelin-trained candidates who travel with the family reaching USD 270,000 and beyond. In the United States the very top of the range has touched USD 300,000, a figure that would once have belonged to the person running the entire estate rather than the person running the stove.\n\nThe pressure is structural, not seasonal. The population of ultra-high-net-worth individuals keeps expanding, the pool of genuinely qualified senior candidates grows slowly, and low-tax jurisdictions led by Dubai are bidding hard for the same English-speaking talent. A principal who wants a chef able to cook at restaurant level, cater a shooting weekend, feed the children something wholesome and then plate a private dinner for twenty is competing against every other principal who wants exactly that. When supply is thin, the price of the rare candidate rises, and it has.\n\nThe consequence inside the house is a churn the sector calls job-hopping. Chefs move for a better package, a lighter travel schedule or a kinder principal, and the household that loses one is thrown back into a market where the best people are rarely available and never cheap. For the family, a chef is no longer a line item but a retention project, managed with the same care once reserved for a chief investment officer.\n\nFor those entering private service, the shift is instructive. The kitchen is now a career with a ceiling that rivals the most senior roles in the house, and the skills that command the premium are specific: formal training, discretion, the flexibility to travel at short notice and the temperament to cook for the same discerning palate every single day.",
+      "why": "The person who runs a principal's household must now recruit, pay and retain a chef against a market that treats the role as a six-figure career, and understand that the kitchen is as hard to staff as any seat in the house.",
+      "src": "CNBC",
+      "url": "https://www.cnbc.com/2026/07/10/private-chef-salaries.html"
+    },
+    "articles": [
+      {
+        "cat": "The Market",
+        "place": "New York, United States",
+        "tag": "Going direct",
+        "section": "The Market",
+        "title": "The family office stops writing cheques to funds and starts doing the deals itself, and the household it runs must keep pace",
+        "body": "There are now more than 8,000 family offices in the world, managing an estimated USD 5.5 trillion, a figure projected to reach USD 9 trillion by 2030. The striking change is not the size of the pool but how it is being deployed. According to the 2026 Global Family Office Report from J.P. Morgan Private Bank and parallel surveys, private markets have become the single largest allocation in the average family-office portfolio at roughly 29 per cent, ahead of public equities, fixed income, real estate and cash.\n\nBehind that number sits a change in behaviour. Around 70 per cent of family offices now invest directly into companies rather than through funds, and roughly 83 per cent of those direct deals are done as co-investments alongside a trusted partner rather than as solo bets. The family is no longer content to be a passive holder of fund units paying two and twenty. It wants ownership, board seats and the ability to use its own expertise, and it is building the in-house teams to do so.\n\nThat ambition has a staffing consequence that reaches all the way to the front door. A family office that runs its own deals needs analysts, lawyers and operators, and it needs a principal whose time is protected so that the deals get done. The household, the aircraft, the properties and the calendar exist to buy that time back. When the office turns itself into a private investment firm, the pressure on the people who run the private life rises in step.\n\nFor the future house or estate manager, the lesson is that the family office is the true employer behind the household, and its priorities set the weather. Understanding that the principal is increasingly an operator and not merely an owner explains why discretion, speed and seamless logistics have never been more valuable.",
+        "why": "The family office is the institution that pays for and directs the household, and its move into hands-on dealmaking raises the premium on staff who can protect the principal's time and run the private life without friction.",
+        "src": "J.P. Morgan Private Bank, 2026 Global Family Office Report",
+        "url": "https://privatebank.jpmorgan.com/nam/en/insights/reports/2026-family-office-report"
+      },
+      {
+        "cat": "At Sea & In the Air",
+        "place": "Monaco",
+        "tag": "The crew squeeze",
+        "section": "At Sea & In the Air",
+        "title": "The yacht is finished but the crew is not found, and the shortage at sea now decides which boats actually sail",
+        "body": "The constraint on the water in 2026 is not steel but people. Crew salaries have risen by roughly 8 to 12 per cent since 2023, pushed up by inflation and by a persistent shortage of qualified hands, and owners are being told to pay at the top of every range simply to attract and keep experienced professionals. Entry-level deckhands start around 2,500 euros a month, while a superyacht captain on a large hull can command 25,000 euros a month or more.\n\nThe scarcity is sharpest in the roles that keep a modern yacht legal and safe: engineers, qualified deck officers and crew willing to work rotational contracts that let them keep a life ashore. As the fleet grows and hulls get larger and more technical, the number of people certified to run them has not kept pace. The result is a seller's market for talent, in which the best chief stewardess or engineer can choose the boat, the itinerary and the package.\n\nMonaco sits at the centre of this world, its calendar of the Grand Prix, the nearby Cannes festival and the autumn yacht show setting the rhythm of hiring and the premium on rates across the Mediterranean. A crew placed for a Riviera summer costs more than the same crew in a quieter market, and owners increasingly plan their recruitment around these fixed points in the year.\n\nFor the household that oversees a yacht as one asset among several, the crew shortage is a management problem as much as a maritime one. The estate manager or family office that charters or owns must now think about retention at sea in the same terms it uses ashore, because a boat without a full, qualified crew is an expensive ornament that cannot leave the quay.",
+        "why": "A yacht is one of the household's most complex assets, and the person who oversees it must now recruit and retain scarce, expensive crew with the same rigour applied to staff on land.",
+        "src": "Morgan & Mallet International, Yacht Crew Salary Guide 2026",
+        "url": "https://www.yachtcrew.agency/employer/yacht-crew-salary-guide/"
+      },
+      {
+        "cat": "Objects & Culture",
+        "place": "London, United Kingdom",
+        "tag": "Ghost casks",
+        "section": "Objects & Culture",
+        "title": "Two casks from a distillery that no longer exists sell for GBP 4.25 million, and the ghost of Karuizawa sets a record",
+        "body": "At a Christie's wine and spirits sale in London on 10 March, two full casks of whisky from the closed Japanese distillery Karuizawa became the highest-value lots ever sold by the department, together achieving 4.25 million pounds. Each cask, numbered 6195 and 888, made 2.125 million pounds, and each holds roughly 420 bottles, giving the buyer not only the whisky but the right to shape its final maturation and release.\n\nKaruizawa is the most storied name in Japanese whisky precisely because it is gone. Founded in 1955 in the country's Southern Alps, the distillery closed its doors in 2000, and its remaining casks were acquired for posterity only when the site was threatened with demolition a decade later. Both casks in the sale were distilled in 1999, the year before production ceased, and came from the private collection of Sukhinder Singh, one of the most respected figures in the rare-whisky world.\n\nThe result confirms a market that has moved from bottles to whole casks, and from Scotch alone to a global chase that now runs through Japan and, separately, the United States. It is a market driven by scarcity in its purest form: a distillery that can never make another drop, and a finite number of casks that will only diminish as they are bottled.\n\nFor anyone serving a collector, fluency in this world is now part of the craft. Sourcing, storage, provenance and the quiet etiquette of the auction room are the concierge's domain, and a name like Karuizawa is exactly the kind of cultural knowledge a principal expects the household to possess before it is ever asked for.",
+        "why": "Collections of this kind pass through the household's hands, and cultural fluency in wine, whisky and provenance is part of the service a discerning principal takes for granted.",
+        "src": "The Drinks Business",
+        "url": "https://www.thedrinksbusiness.com/2026/03/rare-japaneses-whisky-casks-smash-auction-records-to-achieve-4-25-million-at-auction/"
+      },
+      {
+        "cat": "Hotels & Escapes",
+        "place": "Baa Atoll, Maldives",
+        "tag": "Into the reserve",
+        "section": "Hotels & Escapes",
+        "title": "Aman prepares its first Maldives island inside a protected biosphere, and the private escape learns to answer to the reef",
+        "body": "Aman has confirmed its first property in the Maldives, on an island that sits inside the UNESCO Biosphere Reserve of Baa Atoll, close to the celebrated manta and whale-shark waters of Hanifaru Bay. The plan runs to roughly 35 pavilions and villas, each with its own pool, alongside an Aman Spa and a resident marine-biology programme, a scale that is deliberately small for a brand that trades on space and silence.\n\nThe choice of a protected reserve is the point. Placing a resort inside a biosphere binds the operator to the health of the reef and the seasons of the marine life around it, and turns conservation from a marketing line into an operating constraint. For the guest who has seen every over-water villa, the promise is access to a genuinely protected marine environment rather than another manufactured lagoon.\n\nMaldives openings are famously prone to slippage, and several rival debuts have already moved into 2027, so the date should be read as an intention rather than a fixture. What is not in doubt is the direction of the ultra-luxury market, which continues to reward privacy, small key counts and a credible environmental story over sheer scale.\n\nFor the household that plans a family's travel, an opening like this is a note for the file. It signals where the most private guests will want to be, the kind of advance access that will need to be secured, and the growing expectation that even a barefoot escape now comes wrapped in a conservation commitment the principal will want honoured.",
+        "why": "Planning private travel means knowing which openings the most discreet families will chase, and increasingly that a destination's environmental credentials are part of what the principal expects the household to have vetted.",
+        "src": "Resortlife Maldives",
+        "url": "https://resortlife.travel/insights/new-luxury-maldives-resorts-2026-2027"
+      }
+    ],
+    "briefs": [
+      {
+        "t": "165,000 on the move",
+        "b": "The Henley Private Wealth Migration Report 2026 forecasts that as many as 165,000 millionaires will relocate internationally this year, up from about 142,000 in 2025 and the highest intensity recorded in 15 years. The United Arab Emirates remains the leading destination, while Singapore tops the report's new competitiveness score at 79.5 out of 100.",
+        "src": "Henley & Partners",
+        "url": "https://www.henleyglobal.com/newsroom/press-releases/henley-private-wealth-migration-report-2026"
+      },
+      {
+        "t": "The house manager climbs",
+        "b": "Recruiters report that house manager is now the fastest-rising salary among household staff, with average pay around USD 86,000 and the estate-manager range running from roughly USD 85,000 to USD 250,000. A slow-growing pool of qualified candidates and competition from Dubai continue to push senior pay to record levels.",
+        "src": "Oplu, Private Staff Salary Guide 2026",
+        "url": "https://oplu.com/resources/private-staff-salary-guide-2026"
+      },
+      {
+        "t": "Bourbon's record night",
+        "b": "Sotheby's sold what it called the most valuable single-owner American whiskey collection ever offered at auction, totalling USD 2.5 million. Highlights included an Old Rip Van Winkle 20 Years Old, a sign that the rare-spirits chase now runs as strongly through American bourbon as through Scotch and Japanese malt.",
+        "src": "The Spirits Business",
+        "url": "https://www.thespiritsbusiness.com/2026/01/sothebys-2-5m-us-whiskey-auction-sets-record/"
+      }
+    ]
+  },
+  {
     "no": "No. 22",
     "date": "Saturday, 8 August 2026",
     "strap": "A daily dispatch from the world you are entering",
