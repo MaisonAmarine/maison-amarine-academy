@@ -7369,7 +7369,7 @@ async function admLoadStudents(force){
     const anyLesson=(Array.isArray(r.lessons_done)?r.lessons_done:[]).some(Boolean);
     if(r.completed||anyLesson) byUser[r.user_id].started=true;
   });
-  admStudents=(data||[]).filter(p=>{ var _e=String(p.email||'').toLowerCase(); return _e!==String(FOUNDER_EMAIL).toLowerCase() && !!p.cohort && ['charles.lecottier@edhec.com','charleslecottier@gmail.com'].indexOf(_e)<0; }).map(p=>{
+  admStudents=(data||[]).filter(p=>{ var _e=String(p.email||'').toLowerCase(); return _e!==String(FOUNDER_EMAIL).toLowerCase() && !!p.cohort && !/@themaisonamarine\.com$/.test(_e) && ['charles.lecottier@edhec.com','charleslecottier@gmail.com'].indexOf(_e)<0; }).map(p=>{
     const pr=byUser[p.id]||{done:0,weeks:{},started:false};
     let status;
     if(pr.done>=8) status='completed';
