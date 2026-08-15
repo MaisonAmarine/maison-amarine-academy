@@ -1504,6 +1504,24 @@
   }
 html,body,body *{font-family:'Calibri Light','Calibri','Carlito',system-ui,-apple-system,'Segoe UI',sans-serif !important;}
 .brand{font-family:'Cormorant Garamond',serif !important;}
+
+  /* ============================================================
+     NEW LOOK (2026-08-15) — educational · energetic · premium.
+     Dark-grey sidebar kept. Violet primary + emerald + coral.
+     Cascade-only override (appended last) — fully revertible.
+     ============================================================ */
+  :root{
+    --ivory:#f2f3f7; --line:#e7e9f0;
+    --gold:#6C5CE7; --gold-deep:#5646c9; --gold-lt:#a99bf0; --gold-wash:#eeecfb;
+    --green:#12b76a; --green-lt:#34d399;
+    --coral:#ff7a5a; --coral-wash:#ffe9e2; --amber:#f5a623;
+  }
+  .nav-item.active{ background:linear-gradient(135deg,#6C5CE7,#5646c9)!important; color:#fff!important; box-shadow:0 8px 20px rgba(108,92,231,.42)!important; }
+  .btn-primary,.dsh-cta,.mtr-cta{ background:linear-gradient(135deg,#6C5CE7,#5646c9)!important; color:#fff!important; box-shadow:0 8px 22px rgba(108,92,231,.34)!important; }
+  .btn-primary:hover,.dsh-cta:hover,.mtr-cta:hover{ filter:brightness(1.05); box-shadow:0 12px 28px rgba(108,92,231,.46)!important; }
+  .dsh-bar i,.bar-fill,.pr-prog-fill,.wcard-bar-fill{ background:linear-gradient(90deg,#12b76a,#34d399)!important; }
+  .pr-streak{ color:#e0552f!important; background:var(--coral-wash)!important; }
+  .dsh-card.clic:hover{ border-color:var(--gold-lt)!important; box-shadow:0 16px 36px rgba(108,92,231,.14)!important; }
 </style>
 
 <style>
