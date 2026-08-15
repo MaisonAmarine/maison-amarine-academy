@@ -1401,30 +1401,29 @@ html,body,body *{font-family:'Calibri Light','Calibri','Carlito',system-ui,-appl
 
   /* ============================================================
      ULTRA-LUXURY LOOK (2026-08-15) — private-service, high-end.
-     Dark-grey sidebar kept. Champagne gold + warm cream + warm ink.
-     Cascade-only override — fully revertible.
+     Dark-grey sidebar kept. Deep EMERALD accent (pairs with charcoal)
+     + crisp neutrals + deep ink. Cascade-only override — revertible.
      ============================================================ */
   :root{
-    --ivory:#F7F4EE; --paper:#FFFFFF;
-    --ink:#1E170F; --ink-soft:#4E463A; --stone:#9C8F7C; --line:#E9E2D4;
-    --gold:#C6A96B; --gold-deep:#9B7C40; --gold-lt:#DDC48C; --gold-wash:#F3ECDD;
-    --green:#5f7d52; --green-lt:#7a9b6a; --shadow:rgba(30,23,15,0.10);
+    --ivory:#F4F5F3; --paper:#FFFFFF;
+    --ink:#171C1A; --ink-soft:#48524D; --stone:#8A938C; --line:#E4E7E4;
+    --gold:#157A63; --gold-deep:#0E5E4C; --gold-lt:#7FC0AD; --gold-wash:#E6F1EC;
+    --green:#157A63; --green-lt:#2E9C7B; --shadow:rgba(20,28,25,0.10);
   }
   body{ color:var(--ink); }
-  /* editorial, easy-to-read spacing */
   p,.dsh-s,.pr-rev-w,.lsn-reading p{ line-height:1.74; }
   .lsn-reading .rf-sec,.lsn-reading p{ font-size:16.5px; }
-  /* active nav → champagne plaque on the dark sidebar */
-  .nav-item.active{ background:linear-gradient(135deg,#D4B876,#B4923F)!important; color:#211a10!important; box-shadow:0 7px 18px rgba(198,169,107,.34)!important; }
-  .nav-item.active svg{ stroke:#211a10!important; }
-  /* primary buttons / CTAs → champagne gold, dark ink text */
-  .btn-primary,.dsh-cta,.mtr-cta{ background:linear-gradient(135deg,#D0B471,#B08F3E)!important; color:#211a10!important; box-shadow:0 8px 22px rgba(155,124,64,.30)!important; }
-  .btn-primary:hover,.dsh-cta:hover,.mtr-cta:hover{ filter:brightness(1.04); box-shadow:0 12px 28px rgba(155,124,64,.42)!important; }
-  /* progress → refined champagne */
-  .dsh-bar i,.bar-fill,.pr-prog-fill,.wcard-bar-fill{ background:linear-gradient(90deg,#B4923F,#DDC48C)!important; }
-  /* streak / small accents → warm gold */
+  /* active nav → emerald plaque on the dark sidebar */
+  .nav-item.active{ background:linear-gradient(135deg,#1B8A6F,#0E5E4C)!important; color:#F3FBF7!important; box-shadow:0 8px 20px rgba(21,122,99,.36)!important; }
+  .nav-item.active svg{ stroke:#F3FBF7!important; }
+  /* primary buttons / CTAs → emerald */
+  .btn-primary,.dsh-cta,.mtr-cta{ background:linear-gradient(135deg,#1B8A6F,#0F6650)!important; color:#F3FBF7!important; box-shadow:0 8px 22px rgba(21,122,99,.30)!important; }
+  .btn-primary:hover,.dsh-cta:hover,.mtr-cta:hover{ filter:brightness(1.05); box-shadow:0 12px 28px rgba(21,122,99,.42)!important; }
+  /* progress → emerald */
+  .dsh-bar i,.bar-fill,.pr-prog-fill,.wcard-bar-fill{ background:linear-gradient(90deg,#0F6650,#2E9C7B)!important; }
+  /* small accents */
   .pr-streak{ color:var(--gold-deep)!important; background:var(--gold-wash)!important; }
-  .dsh-card.clic:hover{ border-color:var(--gold-lt)!important; box-shadow:0 16px 40px rgba(30,23,15,.12)!important; }
+  .dsh-card.clic:hover{ border-color:var(--gold-lt)!important; box-shadow:0 16px 40px rgba(20,28,25,.12)!important; }
 </style>
 
 <style>
