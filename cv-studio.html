@@ -1,0 +1,827 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Maison Amarine — CV Studio</title>
+<style>
+/* ============================================================
+   CV STUDIO  — everything namespaced .cvg  /  #cvg-*
+   Self-contained: no external fonts/libs. Print = real PDF.
+   ============================================================ */
+.cvg *{box-sizing:border-box;}
+.cvg{
+  --ink:#211c15; --ink-soft:#3a342b; --stone:#8a8377; --line:#e6e2d9;
+  --paper:#ffffff; --wash:#faf8f4; --gold:#b08d4f; --gold-deep:#8a6d38;
+  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;
+  color:var(--ink); background:var(--wash);
+  -webkit-font-smoothing:antialiased;
+}
+.cvg-shell{display:flex;gap:22px;align-items:flex-start;max-width:1320px;margin:0 auto;padding:22px;}
+@media(max-width:1040px){ .cvg-shell{flex-direction:column;} }
+
+/* ---------- left: editor ---------- */
+.cvg-editor{flex:0 0 430px;max-width:430px;width:100%;background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:20px 20px 30px;box-shadow:0 10px 30px rgba(33,28,21,.05);}
+@media(max-width:1040px){ .cvg-editor{flex:1;max-width:none;} }
+.cvg-eyebrow{font-size:10.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-deep);}
+.cvg-editor h2{font-size:22px;font-weight:600;margin:6px 0 2px;letter-spacing:-.02em;}
+.cvg-editor .cvg-sub{font-size:13px;color:var(--stone);line-height:1.5;margin-bottom:16px;}
+
+.cvg-acc{border-top:1px solid var(--line);}
+.cvg-acc-h{display:flex;align-items:center;gap:10px;padding:14px 2px;cursor:pointer;user-select:none;font-weight:600;font-size:14.5px;}
+.cvg-acc-h .cvg-ic{width:22px;height:22px;flex:0 0 22px;display:flex;align-items:center;justify-content:center;border-radius:6px;background:var(--wash);color:var(--gold-deep);font-size:13px;}
+.cvg-acc-h .cvg-chev{margin-left:auto;transition:transform .2s;color:var(--stone);font-size:12px;}
+.cvg-acc.open .cvg-chev{transform:rotate(90deg);}
+.cvg-acc-body{display:none;padding:2px 2px 16px;}
+.cvg-acc.open .cvg-acc-body{display:block;}
+
+.cvg-row{display:flex;gap:10px;}
+.cvg-row>*{flex:1;min-width:0;}
+.cvg-f{margin-bottom:10px;}
+.cvg-f label{display:block;font-size:11px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--stone);margin-bottom:4px;}
+.cvg-f input,.cvg-f textarea{width:100%;border:1px solid var(--line);border-radius:9px;padding:9px 11px;font-size:13.5px;font-family:inherit;color:var(--ink);background:var(--paper);transition:border-color .15s,box-shadow .15s;}
+.cvg-f input:focus,.cvg-f textarea:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(176,141,79,.13);}
+.cvg-f textarea{resize:vertical;min-height:66px;line-height:1.5;}
+.cvg-hint{font-size:11.5px;color:var(--stone);margin:-3px 0 8px;line-height:1.45;}
+
+.cvg-item{border:1px solid var(--line);border-radius:11px;padding:13px;margin-bottom:11px;background:var(--wash);position:relative;}
+.cvg-item .cvg-del{position:absolute;top:9px;right:9px;border:none;background:none;color:var(--stone);cursor:pointer;font-size:16px;line-height:1;padding:2px 5px;border-radius:6px;}
+.cvg-item .cvg-del:hover{background:#f2d9d3;color:#a1442f;}
+.cvg-add{display:inline-flex;align-items:center;gap:7px;border:1px dashed var(--gold);color:var(--gold-deep);background:none;border-radius:9px;padding:9px 14px;font-size:13px;font-weight:600;cursor:pointer;width:100%;justify-content:center;transition:background .15s;}
+.cvg-add:hover{background:rgba(176,141,79,.07);}
+.cvg-secrow{display:flex;align-items:center;gap:10px;margin-bottom:8px;}
+.cvg-secrow input[type=checkbox]{width:auto;flex:0 0 auto;cursor:pointer;}
+.cvg-secttl{flex:1;min-width:0;border:1px solid var(--line);border-radius:8px;padding:8px 10px;font-size:13px;font-family:inherit;color:var(--ink);background:var(--paper);}
+.cvg-secttl:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(176,141,79,.13);}
+/* sections manager v2 */
+.cvg-secrow2{border:1px solid var(--line);border-radius:10px;padding:9px 10px;margin-bottom:9px;background:var(--wash);}
+.cvg-sr-top{display:flex;align-items:center;gap:7px;}
+.cvg-sr-top input[type=checkbox]{width:auto;flex:0 0 auto;cursor:pointer;}
+.cvg-sr-ttl{flex:1;min-width:0;border:1px solid var(--line);border-radius:8px;padding:7px 9px;font-size:13px;font-family:inherit;background:#fff;color:var(--ink);}
+.cvg-sr-ttl:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(176,141,79,.13);}
+.cvg-sr-btn{border:1px solid var(--line);background:#fff;border-radius:7px;min-width:26px;height:28px;cursor:pointer;font-size:12px;color:var(--stone);flex:0 0 auto;padding:0 6px;}
+.cvg-sr-btn:hover{border-color:var(--gold);color:var(--gold-deep);}
+.cvg-sr-cont{margin-top:8px;}
+.cvg-sr-cont textarea{width:100%;border:1px solid var(--line);border-radius:8px;padding:8px 10px;font-size:12.5px;font-family:inherit;min-height:56px;resize:vertical;line-height:1.5;}
+/* photo on the CV */
+.cvp-photo{flex:0 0 auto;}
+.cvp-photo img{width:0.95in;height:0.95in;object-fit:cover;border-radius:50%;display:block;}
+.cvp-2col .cvp-side .cvp-photo{margin:0 auto 12pt;}
+.cvp-2col .cvp-side .cvp-photo img{width:1.3in;height:1.3in;border:2pt solid rgba(255,255,255,.4);}
+.cvp-2col .cvp-side.light .cvp-photo img{border-color:rgba(0,0,0,.12);}
+/* role smart-suggestions */
+.cvg-sugg-h{font-size:10.5px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:var(--gold-deep);margin:16px 0 8px;}
+.cvg-sugg-card{border:1px solid var(--line);border-radius:10px;padding:11px 12px;margin-bottom:9px;font-size:12.5px;line-height:1.55;color:var(--ink-soft);background:#fff;}
+.cvg-chips{display:flex;flex-wrap:wrap;}
+.cvg-chip{display:inline-flex;align-items:center;gap:5px;border:1px solid var(--line);background:#fff;border-radius:20px;padding:5px 11px;font-size:12px;margin:0 6px 6px 0;cursor:pointer;color:var(--ink-soft);text-align:left;}
+.cvg-chip:hover{border-color:var(--gold);color:var(--gold-deep);background:rgba(176,141,79,.06);}
+.cvg-chip::before{content:"＋";font-size:11px;color:var(--gold);font-weight:700;}
+.cvg-bullet{display:block;width:100%;border:1px solid var(--line);background:#fff;border-radius:8px;padding:8px 11px;font-size:12.3px;line-height:1.45;margin-bottom:7px;cursor:pointer;color:var(--ink-soft);text-align:left;}
+.cvg-bullet:hover{border-color:var(--gold);color:var(--gold-deep);background:rgba(176,141,79,.05);}
+.cvg-use{border:1px solid var(--gold);color:var(--gold-deep);background:none;border-radius:7px;padding:6px 13px;font-size:12px;font-weight:600;cursor:pointer;margin-top:8px;}
+.cvg-use:hover{background:rgba(176,141,79,.08);}
+
+/* ---------- right: preview ---------- */
+.cvg-stage{flex:1;min-width:0;position:sticky;top:16px;}
+.cvg-toolbar{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:12px 14px;margin-bottom:14px;display:flex;gap:12px;align-items:center;flex-wrap:wrap;box-shadow:0 8px 24px rgba(33,28,21,.05);}
+.cvg-tsel{display:flex;flex-direction:column;gap:3px;}
+.cvg-tsel label{font-size:10px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--stone);}
+.cvg-tsel select{border:1px solid var(--line);border-radius:9px;padding:8px 11px;font-size:13.5px;font-family:inherit;background:var(--paper);color:var(--ink);min-width:180px;font-weight:600;}
+.cvg-swatches{display:flex;gap:7px;}
+.cvg-sw{width:24px;height:24px;border-radius:50%;cursor:pointer;border:2px solid #fff;box-shadow:0 0 0 1px var(--line);transition:transform .12s;}
+.cvg-sw:hover{transform:scale(1.12);}
+.cvg-sw.on{box-shadow:0 0 0 2px var(--ink);}
+.cvg-fontsel select{border:1px solid var(--line);border-radius:9px;padding:8px 11px;font-size:13px;font-family:inherit;background:var(--paper);}
+.cvg-spacer{flex:1;}
+.cvg-dl{display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:#fff;border:none;border-radius:10px;padding:10px 18px;font-size:13.5px;font-weight:600;cursor:pointer;transition:background .15s;}
+.cvg-dl:hover{background:#000;}
+.cvg-ghost{background:none;border:1px solid var(--line);color:var(--ink-soft);border-radius:10px;padding:9px 14px;font-size:13px;font-weight:600;cursor:pointer;}
+.cvg-ghost:hover{border-color:var(--gold);color:var(--gold-deep);}
+
+.cvg-paperwrap{background:#e9e6df;border-radius:14px;padding:24px;max-height:calc(100vh - 130px);overflow:auto;display:flex;justify-content:center;}
+#cvg-pageholder{position:relative;margin:0 auto;}
+.cvg-tpl-count{font-size:11px;color:var(--stone);text-align:center;margin-top:8px;}
+
+/* ============ THE CV PAGE (US Letter 8.5x11) ============ */
+/* On screen we scale down; in print it's exact. */
+#cvg-page{
+  width:8.5in;min-height:11in;background:#fff;color:#1a1a1a;
+  box-shadow:0 8px 30px rgba(0,0,0,.16);
+  --accent:#7a1f2b; --pg-font:Georgia,'Times New Roman',serif; --pg-sans:Helvetica,Arial,sans-serif;
+  font-family:var(--pg-font);position:relative;
+}
+/* templates fill via .cvp-* classes below */
+
+/* ====== shared CV type ====== */
+.cvp{padding:0.7in 0.75in;line-height:1.4;font-size:10.5pt;color:#222;}
+.cvp h1{font-size:26pt;font-weight:700;letter-spacing:.01em;margin:0;color:#1a1a1a;}
+.cvp .cvp-title{font-size:11.5pt;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-top:4pt;font-family:var(--pg-sans);}
+.cvp .cvp-contact{font-size:9pt;color:#555;margin-top:7pt;font-family:var(--pg-sans);letter-spacing:.01em;}
+.cvp .cvp-contact span{white-space:nowrap;}
+.cvp .cvp-sec{margin-top:15pt;}
+.cvp .cvp-sec-h{font-size:10.5pt;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);border-bottom:1.2pt solid var(--accent);padding-bottom:3pt;margin-bottom:7pt;font-family:var(--pg-sans);}
+.cvp .cvp-role{display:flex;justify-content:space-between;gap:12pt;align-items:baseline;}
+.cvp .cvp-role b{font-size:11pt;color:#1a1a1a;}
+.cvp .cvp-role .cvp-co{font-style:italic;color:#444;}
+.cvp .cvp-when{font-size:9pt;color:#666;white-space:nowrap;font-family:var(--pg-sans);}
+.cvp ul{margin:4pt 0 0;padding-left:15pt;}
+.cvp li{margin:0 0 2.5pt;line-height:1.38;}
+.cvp .cvp-sum{line-height:1.5;color:#333;}
+.cvp .cvp-block{margin-bottom:10pt;}
+.cvp .cvp-skills{display:flex;flex-wrap:wrap;gap:5pt 7pt;font-family:var(--pg-sans);font-size:9.2pt;}
+.cvp .cvp-skills span{background:rgba(0,0,0,.045);border:0.6pt solid rgba(0,0,0,.09);border-radius:20px;padding:2.5pt 9pt;}
+.cvp .cvp-inline{font-family:var(--pg-sans);font-size:9.4pt;color:#333;}
+.cvp .cvp-ref{font-family:var(--pg-sans);font-size:9pt;color:#777;font-style:italic;margin-top:12pt;}
+
+/* ===== LAYOUT: two-column (sidebar) ===== */
+.cvp-2col{display:flex;padding:0;min-height:11in;}
+.cvp-2col .cvp-side{width:2.5in;flex:0 0 2.5in;background:var(--accent);color:#fff;padding:0.6in 0.42in;}
+.cvp-2col .cvp-side.light{background:var(--sidewash,#f3efe7);color:#2a2a2a;}
+.cvp-2col .cvp-main{flex:1;padding:0.6in 0.5in;}
+.cvp-2col.right{flex-direction:row-reverse;}
+.cvp-2col .cvp-side h1{color:inherit;font-size:21pt;line-height:1.05;}
+.cvp-2col .cvp-side .cvp-title{color:inherit;opacity:.9;}
+.cvp-2col .cvp-side .cvp-sec-h{color:inherit;border-color:rgba(255,255,255,.5);}
+.cvp-2col .cvp-side.light .cvp-sec-h{color:var(--accent);border-color:var(--accent);}
+.cvp-2col .cvp-side .cvp-contact{color:inherit;opacity:.92;line-height:1.9;}
+.cvp-2col .cvp-side .cvp-contact span{display:block;white-space:normal;}
+.cvp-2col .cvp-side .cvp-skills span{background:rgba(255,255,255,.16);border-color:rgba(255,255,255,.25);color:inherit;}
+.cvp-2col .cvp-side.light .cvp-skills span{background:rgba(0,0,0,.05);border-color:rgba(0,0,0,.1);color:#333;}
+
+/* ===== LAYOUT: header band ===== */
+.cvp-band .cvp-hd{background:var(--accent);color:#fff;padding:0.45in 0.75in;}
+.cvp-band .cvp-hd h1{color:#fff;}
+.cvp-band .cvp-hd .cvp-title{color:rgba(255,255,255,.88);}
+.cvp-band .cvp-hd .cvp-contact{color:rgba(255,255,255,.9);}
+.cvp-band .cvp-body{padding:0.55in 0.75in;}
+
+/* ===== LAYOUT: centered ===== */
+.cvp-center{text-align:center;}
+.cvp-center .cvp-head{text-align:center;padding-bottom:9pt;border-bottom:1.5pt solid var(--accent);margin-bottom:4pt;}
+.cvp-center .cvp-sec-h{border:none;text-align:center;position:relative;}
+.cvp-center .cvp-sec-h::after{content:"";display:block;width:34pt;height:1.4pt;background:var(--accent);margin:5pt auto 0;}
+.cvp-center .cvp-role{text-align:left;}
+.cvp-center ul{text-align:left;}
+.cvp-center .cvp-skills{justify-content:center;}
+.cvp-center .cvp-contact span{white-space:normal;}
+
+/* ===== LAYOUT: minimal ===== */
+.cvp-min .cvp-sec-h{border:none;color:#1a1a1a;letter-spacing:.28em;font-size:9pt;padding-bottom:0;margin-bottom:6pt;}
+.cvp-min .cvp-role b{font-weight:600;}
+.cvp-min h1{font-weight:400;letter-spacing:.02em;}
+.cvp-min .cvp-title{color:#666;}
+.cvp-min .cvp-head{border-bottom:0.7pt solid #ddd;padding-bottom:10pt;}
+
+/* ===== LAYOUT: accent-rule (modern single col) ===== */
+.cvp-modern h1{font-family:var(--pg-sans);font-weight:700;}
+.cvp-modern .cvp-head{border-left:4pt solid var(--accent);padding-left:12pt;}
+.cvp-modern .cvp-sec-h{border:none;display:flex;align-items:center;gap:8pt;}
+.cvp-modern .cvp-sec-h::before{content:"";width:14pt;height:2.4pt;background:var(--accent);}
+
+@media(max-width:560px){
+  .cvg-shell{padding:12px;}
+  #cvg-page{transform-origin:top left;}
+}
+
+/* colored bands/sidebars must survive printing */
+#cvg-page,#cvg-page *{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+
+/* ============ PRINT ============ */
+@media print{
+  @page{size:letter;margin:0;}
+  body *{visibility:hidden;}
+  #cvg-pageholder,#cvg-page,#cvg-page *{visibility:visible;}
+  #cvg-pageholder{width:auto!important;height:auto!important;position:static!important;}
+  #cvg-page{position:absolute!important;left:0;top:0;box-shadow:none;margin:0;width:8.5in;transform:none!important;}
+  .cvg-noprint{display:none!important;}
+}
+</style>
+</head>
+<body>
+<div class="cvg">
+<div class="cvg-shell">
+
+  <!-- ============ EDITOR ============ -->
+  <div class="cvg-editor cvg-noprint">
+    <div class="cvg-eyebrow">Maison Amarine · Career</div>
+    <h2>CV Studio</h2>
+    <div class="cvg-sub">Build a clean, US-format CV the private-service world takes seriously. Fill it in — the preview updates live. Switch templates anytime.</div>
+
+    <!-- Contact -->
+    <div class="cvg-acc open" data-acc>
+      <div class="cvg-acc-h"><span class="cvg-ic">①</span> Your details <span class="cvg-chev">▸</span></div>
+      <div class="cvg-acc-body">
+        <div class="cvg-row">
+          <div class="cvg-f"><label>First name</label><input data-k="first" placeholder="Alexandra"></div>
+          <div class="cvg-f"><label>Last name</label><input data-k="last" placeholder="Moreau"></div>
+        </div>
+        <div class="cvg-f"><label>Professional title</label><input data-k="title" placeholder="Private Chef · Estate Manager"></div>
+        <div class="cvg-row">
+          <div class="cvg-f"><label>Email</label><input data-k="email" placeholder="alexandra@email.com"></div>
+          <div class="cvg-f"><label>Phone</label><input data-k="phone" placeholder="+1 (212) 555-0148"></div>
+        </div>
+        <div class="cvg-row">
+          <div class="cvg-f"><label>Location</label><input data-k="location" placeholder="New York, NY"></div>
+          <div class="cvg-f"><label>Website / LinkedIn</label><input data-k="web" placeholder="linkedin.com/in/…"></div>
+        </div>
+        <label style="display:flex;align-items:center;gap:8px;font-size:13px;color:var(--ink-soft);margin-top:6px;cursor:pointer"><input type="checkbox" id="cvg-showphoto" style="width:auto"> Add a photo</label>
+        <div class="cvg-hint" style="margin-top:4px">US &amp; Canadian résumés normally carry <b>no photo</b> (anti-discrimination norms — many recruiters/ATS reject them). Turn this on only if an agency specifically asks for one.</div>
+        <div class="cvg-f" id="cvg-photowrap" style="display:none;margin-top:8px">
+          <div style="display:flex;align-items:center;gap:10px">
+            <div id="cvg-photoprev" style="width:52px;height:52px;border-radius:50%;background:var(--wash);border:1px solid var(--line);overflow:hidden;flex:0 0 auto;background-size:cover;background-position:center"></div>
+            <label class="cvg-ghost" style="cursor:pointer;margin:0">Upload<input type="file" id="cvg-photofile" accept="image/*" style="display:none"></label>
+            <button class="cvg-ghost" id="cvg-photodel" type="button">Remove</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Role & smart suggestions -->
+    <div class="cvg-acc open" data-acc>
+      <div class="cvg-acc-h"><span class="cvg-ic">✦</span> Role &amp; suggestions <span class="cvg-chev">▸</span></div>
+      <div class="cvg-acc-body">
+        <div class="cvg-f"><label>Your target role</label><select id="cvg-role"><option value="">Choose a role…</option></select></div>
+        <div class="cvg-hint">Pick your role to get ready-made, private-service wording. Click any suggestion to add it — then edit freely.</div>
+        <div id="cvg-rolesugg"></div>
+      </div>
+    </div>
+
+    <!-- Summary -->
+    <div class="cvg-acc open" data-acc>
+      <div class="cvg-acc-h"><span class="cvg-ic">②</span> Professional summary <span class="cvg-chev">▸</span></div>
+      <div class="cvg-acc-body">
+        <div class="cvg-hint">2–3 lines. Who you are, your specialty, and the level you operate at.</div>
+        <div class="cvg-f"><textarea data-k="summary" placeholder="Discreet, detail-obsessed private chef with 8+ years in UHNW households across New York and the Hamptons…"></textarea></div>
+      </div>
+    </div>
+
+    <!-- Experience -->
+    <div class="cvg-acc open" data-acc>
+      <div class="cvg-acc-h"><span class="cvg-ic">③</span> Experience <span class="cvg-chev">▸</span></div>
+      <div class="cvg-acc-body">
+        <div id="cvg-exp"></div>
+        <button class="cvg-add" data-add="exp">＋ Add a role</button>
+      </div>
+    </div>
+
+    <!-- Education -->
+    <div class="cvg-acc" data-acc>
+      <div class="cvg-acc-h"><span class="cvg-ic">④</span> Education <span class="cvg-chev">▸</span></div>
+      <div class="cvg-acc-body">
+        <div id="cvg-edu"></div>
+        <button class="cvg-add" data-add="edu">＋ Add education</button>
+      </div>
+    </div>
+
+    <!-- Skills / Languages / Certs -->
+    <div class="cvg-acc" data-acc>
+      <div class="cvg-acc-h"><span class="cvg-ic">⑤</span> Skills, languages & more <span class="cvg-chev">▸</span></div>
+      <div class="cvg-acc-body">
+        <div class="cvg-f"><label>Skills</label><textarea data-k="skills" placeholder="Fine dining · Menu design · Wine pairing · Household budgeting · Event service"></textarea><div class="cvg-hint">Separate with commas or “·”.</div></div>
+        <div class="cvg-f"><label>Languages</label><input data-k="languages" placeholder="English (native) · French (fluent) · Italian (conversational)"></div>
+        <div class="cvg-f"><label>Certifications</label><textarea data-k="certs" placeholder="ServSafe Certified · WSET Level 2 · First Aid / CPR"></textarea></div>
+        <label style="display:flex;align-items:center;gap:8px;font-size:13px;color:var(--ink-soft);margin-top:4px;cursor:pointer;"><input type="checkbox" data-k="refs" style="width:auto;"> Add “References available upon request”</label>
+      </div>
+    </div>
+
+    <!-- Sections & titles -->
+    <div class="cvg-acc" data-acc>
+      <div class="cvg-acc-h"><span class="cvg-ic">⑥</span> Section titles <span class="cvg-chev">▸</span></div>
+      <div class="cvg-acc-body">
+        <div class="cvg-hint">Rename any section heading, or uncheck it to remove that section from the CV.</div>
+        <div id="cvg-sections"></div>
+      </div>
+    </div>
+
+    <div style="display:flex;gap:9px;margin-top:16px;">
+      <button class="cvg-ghost" id="cvg-sample" style="flex:1;">Load an example</button>
+      <button class="cvg-ghost" id="cvg-clear" style="flex:1;">Clear all</button>
+    </div>
+  </div>
+
+  <!-- ============ STAGE ============ -->
+  <div class="cvg-stage">
+    <div class="cvg-toolbar cvg-noprint">
+      <div class="cvg-tsel">
+        <label>Market</label>
+        <select id="cvg-market">
+          <option value="us">🇺🇸 US</option>
+          <option value="ca">🇨🇦 Canada (EN)</option>
+          <option value="cafr">🇨🇦 Canada (FR)</option>
+        </select>
+      </div>
+      <div class="cvg-tsel">
+        <label>Template</label>
+        <select id="cvg-template"></select>
+      </div>
+      <div class="cvg-tsel cvg-fontsel">
+        <label>Font</label>
+        <select id="cvg-font">
+          <option value="serif">Serif (classic)</option>
+          <option value="sans">Sans (modern)</option>
+        </select>
+      </div>
+      <div class="cvg-tsel">
+        <label>Accent</label>
+        <div class="cvg-swatches" id="cvg-swatches"></div>
+      </div>
+      <div class="cvg-spacer"></div>
+      <button class="cvg-dl" id="cvg-download">⬇ Download PDF</button>
+    </div>
+
+    <div class="cvg-paperwrap">
+      <div id="cvg-pageholder"><div id="cvg-page"></div></div>
+    </div>
+    <div class="cvg-tpl-count cvg-noprint" id="cvg-count"></div>
+  </div>
+
+</div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var LS='ma_cv_studio_v1';
+
+  /* ---------------- data model ---------------- */
+  var DATA={
+    first:'',last:'',title:'',email:'',phone:'',location:'',web:'',
+    photo:'', showPhoto:false,
+    summary:'',skills:'',languages:'',certs:'',refs:false,
+    exp:[], edu:[],
+    role:'',          // target role id, drives the smart suggestions
+    market:'us',      // us | ca | cafr
+    sections:[]       // ordered [{id,type,title,hidden,col,content,asText}] — built on first run
+  };
+
+  /* ---------------- role intelligence (private-service knowledge base) ---------------- */
+  var ROLES=[
+    {id:'chef', name:'Private Chef',
+      summaries:[
+        'Discreet, detail-obsessed private chef with 8+ years serving UHNW families. Equally at home with intimate family dinners and formal service for large gatherings, with full command of dietary needs, sourcing, and household budgets.',
+        'Classically trained private chef who brings restaurant-level cuisine into the home — menu design, wine pairing, and vendor relationships handled to the quiet standards a principal expects, every day.'],
+      skills:['Fine dining','Seasonal menu design','Wine pairing','Dietary & allergy management','Household budgeting','Formal & buffet service','Vendor & purveyor relations','Event catering','Provisioning & inventory','Kitchen management'],
+      bullets:['Designed and executed daily menus for a family of five, adapting to dietary needs and preferences','Managed a $140k annual food & beverage budget with full sourcing and vendor negotiation','Delivered seamless formal service for events of up to 40 guests','Maintained impeccable kitchen standards, hygiene, and inventory across two residences','Sourced rare and seasonal ingredients through a trusted network of purveyors']},
+    {id:'butler', name:'Butler / House Manager',
+      summaries:[
+        'Polished butler and house manager who runs a private residence to five-star standards — formal service, staff coordination, and the discretion UHNW households require.',
+        'Experienced house manager blending traditional butling with modern estate operations: formal table service, vendor management, security liaison, and staff scheduling.'],
+      skills:['Formal service','Table setting & etiquette','Staff supervision','Vendor management','Wine cellar management','Wardrobe & valet','Event coordination','Household budgeting','Security liaison','Discretion & confidentiality'],
+      bullets:['Managed the day-to-day running of a large residence and a team of eight staff','Delivered formal service for private dinners and events to exacting standards','Oversaw vendors, contractors, and household budgets with full accountability','Maintained the wine cellar, silver, and household inventories','Coordinated the principals’ schedules, travel, and household logistics','Upheld absolute discretion and confidentiality at all times']},
+    {id:'estate', name:'Estate Manager',
+      summaries:[
+        'Estate manager who runs multiple properties as one seamless operation — staff, budgets, capital projects, and security, reporting directly to the principal and family office.',
+        'Operations-minded estate manager with a record of hiring strong teams, controlling multi-million-dollar budgets, and delivering renovation projects on time and to standard.'],
+      skills:['Multi-property management','Staff hiring & training','Capital projects','Vendor & contractor management','Budgeting & reporting','Security systems','Grounds & maintenance','Preventive maintenance','Household systems','Confidentiality'],
+      bullets:['Oversaw operations across three properties totaling fifteen staff','Managed multi-million-dollar operating budgets and capital projects','Hired, trained, and led household and grounds teams','Directed renovations and contractor relationships end to end','Implemented preventive-maintenance and security protocols']},
+    {id:'nanny', name:'Nanny / Governess',
+      summaries:[
+        'Warm, professional nanny with a nurturing, structured approach to childcare and a genuine focus on each child’s development, education, and wellbeing.',
+        'Experienced governess trusted to travel internationally with UHNW families, maintaining routines, education, and calm wherever the family goes.'],
+      skills:['Early-childhood development','Educational activities','Multilingual care','Routine & boundaries','Travel with family','Homework & tutoring support','Newborn care','Meal planning for children','First aid / CPR','Discretion'],
+      bullets:['Provided attentive, nurturing care for two children aged three and six','Planned educational and enrichment activities aligned with each child’s stage','Travelled internationally with the family, keeping routines steady on the road','Supported schooling, homework, and language development','Maintained a safe, structured, and warm environment']},
+    {id:'housekeeper', name:'Executive Housekeeper',
+      summaries:[
+        'Meticulous executive housekeeper who maintains a private residence to immaculate five-star standards, with expert care of fine fabrics, antiques, and delicate surfaces.',
+        'Detail-driven housekeeper skilled in wardrobe management, inventory control, and training junior staff to a consistent, exacting standard.'],
+      skills:['Fine fabric & garment care','Silver & antiques care','Inventory management','Wardrobe management','Deep-cleaning standards','Laundry & pressing','Staff supervision','Supply ordering','Attention to detail','Discretion'],
+      bullets:['Maintained a large residence to immaculate five-star standards','Cared for fine fabrics, antiques, silver, and delicate surfaces','Managed household inventories and supply ordering','Supervised and trained junior housekeeping staff','Prepared the home for events and principal arrivals']},
+    {id:'pa', name:'Private / Executive Assistant',
+      summaries:[
+        'Highly organized private assistant who keeps a principal’s personal and professional life running seamlessly — diary, travel, events, and confidential matters, always a step ahead.',
+        'Trusted executive assistant blending household administration with high-level coordination across the family office, staff, and external partners.'],
+      skills:['Diary & calendar management','Travel coordination','Expense management','Event planning','Vendor liaison','Confidential correspondence','Household administration','Project coordination','Tech-savvy','Discretion'],
+      bullets:['Managed complex calendars and international travel for the principal','Coordinated household administration, vendors, and payments','Planned private events and managed guest logistics','Handled confidential correspondence and personal matters','Anticipated needs and kept every detail ahead of schedule']},
+    {id:'chauffeur', name:'Chauffeur / Security',
+      summaries:[
+        'Professional chauffeur with an impeccable driving record, advanced route planning, and the discretion and situational awareness UHNW families rely on.',
+        'Security-minded chauffeur experienced in close protection, fleet care, and coordinating safe, punctual travel around a demanding schedule.'],
+      skills:['Defensive & advanced driving','Route planning','Vehicle maintenance','Close protection','Fleet management','Security awareness','First aid','Punctuality','Clean driving record','Discretion'],
+      bullets:['Provided safe, punctual transport for the principal and family','Planned routes and managed timing around a demanding schedule','Maintained and detailed a fleet of luxury vehicles','Coordinated with security and household teams','Handled logistics for travel, events, and airport transfers']},
+    {id:'couple', name:'Household Couple',
+      summaries:[
+        'Dedicated household couple offering all-round support for a private residence — cooking and service, housekeeping, property care, and driving, delivered with flexibility and discretion.',
+        'Versatile domestic couple who run a home end to end, combining cooking, housekeeping, grounds, and errands into one reliable, discreet service.'],
+      skills:['Cooking & service','Housekeeping','Property care','Driving','Gardening & grounds','Pet care','Errands & provisioning','Maintenance','Flexibility','Discretion'],
+      bullets:['Ran a private residence as a dedicated household couple','Combined cooking, service, housekeeping, and property care','Managed grounds, maintenance, and day-to-day errands','Cared for pets and coordinated deliveries and vendors','Provided flexible, discreet, all-round support']}
+  ];
+  function roleById(id){ return ROLES.filter(function(r){return r.id===id;})[0]||null; }
+
+  /* ---------------- section config + market labels ---------------- */
+  var MARKET_LABELS={
+    us:  {summary:'Profile', experience:'Experience', skills:'Skills',       education:'Education', languages:'Languages', certs:'Certifications'},
+    ca:  {summary:'Profile', experience:'Experience', skills:'Skills',       education:'Education', languages:'Languages', certs:'Certifications'},
+    cafr:{summary:'Profil',  experience:'Expérience', skills:'Compétences',  education:'Formation', languages:'Langues',   certs:'Certifications'}
+  };
+  var REFS_TEXT={ us:'References available upon request.', ca:'References available upon request.', cafr:'Références disponibles sur demande.' };
+  var BUILTIN=['summary','experience','skills','education','languages','certs'];
+  var SIDE_DEFAULT={skills:1,languages:1};   // default sidebar column for 2-column templates
+  function defaultSections(){
+    return BUILTIN.map(function(t){ return {id:t,type:t,title:'',hidden:false,col:(SIDE_DEFAULT[t]?'side':'main')}; });
+  }
+  function secTitle(sec){
+    if(sec.title) return sec.title;
+    if(sec.type==='custom') return 'Section';
+    var d=MARKET_LABELS[DATA.market]||MARKET_LABELS.us; return d[sec.type]||'Section';
+  }
+  function newId(){ return 'c'+Math.abs(Date.now()).toString(36)+Math.floor((performance.now()%1000)).toString(36); }
+
+  /* ---------------- templates ----------------
+     Each = {id,name,layout,side,accentDefault}. 20 distinct combos. */
+  var ACCENTS=['#7a1f2b','#1f3a5f','#2f4f3e','#8a6d38','#3a3a3a','#5b3a67','#0f4c5c','#8c3b2f'];
+  var TEMPLATES=[
+    {id:'meridian',   name:'Meridian — Classic Centered', layout:'center', accent:'#7a1f2b', font:'serif'},
+    {id:'manhattan',  name:'Manhattan — Classic Left',    layout:'classic',accent:'#1f3a5f', font:'serif'},
+    {id:'sterling',   name:'Sterling — Sidebar Left',     layout:'2col',   accent:'#1f3a5f', font:'serif'},
+    {id:'fifthave',   name:'Fifth Avenue — Sidebar Right',layout:'2col-r', accent:'#8a6d38', font:'serif'},
+    {id:'executive',  name:'Executive — Header Band',     layout:'band',   accent:'#2f4f3e', font:'serif'},
+    {id:'minimalist', name:'Minimalist — Whitespace',     layout:'min',    accent:'#3a3a3a', font:'serif'},
+    {id:'hudson',     name:'Hudson — Modern Accent',      layout:'modern', accent:'#0f4c5c', font:'sans'},
+    {id:'ivory',      name:'Ivory — Elegant Minimal',     layout:'min',    accent:'#8a6d38', font:'serif'},
+    {id:'belgravia',  name:'Belgravia — Sidebar Serif',   layout:'2col',   accent:'#2f4f3e', font:'serif'},
+    {id:'metropolitan',name:'Metropolitan — Modern Right',layout:'2col-r', accent:'#3a3a3a', font:'sans'},
+    {id:'prestige',   name:'Prestige — Black & Accent',   layout:'band',   accent:'#1a1a1a', font:'serif'},
+    {id:'concierge',  name:'Concierge — Clean Left',      layout:'classic',accent:'#8c3b2f', font:'sans'},
+    {id:'aristo',     name:'Aristo — Centered Serif',     layout:'center', accent:'#5b3a67', font:'serif'},
+    {id:'riviera',    name:'Riviera — Bright Modern',     layout:'modern', accent:'#0f6c8c', font:'sans'},
+    {id:'grace',      name:'Grace — Centered Minimal',    layout:'center', accent:'#8a7355', font:'serif'},
+    {id:'sovereign',  name:'Sovereign — Midnight Band',   layout:'band',   accent:'#16233a', font:'serif'},
+    {id:'atelier',    name:'Atelier — Light Sidebar',     layout:'2col-l', accent:'#8a6d38', font:'sans'},
+    {id:'windsor',    name:'Windsor — Traditional',       layout:'classic',accent:'#5a1f24', font:'serif'},
+    {id:'noir',       name:'Noir — Minimal Dark',         layout:'min',    accent:'#111111', font:'sans'},
+    {id:'hampton',    name:'Hampton — Sidebar Light',     layout:'2col-l', accent:'#2f4f3e', font:'serif'}
+  ];
+  var current=TEMPLATES[0];
+  var accentOverride=null, fontOverride=null;
+
+  /* ---------------- helpers ---------------- */
+  function esc(s){return (s==null?'':''+s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  function nl2br(s){return esc(s).replace(/\n/g,'<br>');}
+  function splitList(s){return (s||'').split(/[,·\n;]+/).map(function(x){return x.trim();}).filter(Boolean);}
+  function bullets(s){return (s||'').split(/\n+/).map(function(x){return x.replace(/^[•\-\*\s]+/,'').trim();}).filter(Boolean);}
+  function fullName(){var n=((DATA.first||'')+' '+(DATA.last||'')).trim();return n||'Your Name';}
+  function contactBits(){
+    var b=[];
+    if(DATA.email)b.push(esc(DATA.email));
+    if(DATA.phone)b.push(esc(DATA.phone));
+    if(DATA.location)b.push(esc(DATA.location));
+    if(DATA.web)b.push(esc(DATA.web));
+    return b;
+  }
+
+  /* ---------------- section renderers ---------------- */
+  function expBody(){
+    return DATA.exp.map(function(e){
+      var bl=bullets(e.bullets);
+      return '<div class="cvp-block"><div class="cvp-role"><div><b>'+esc(e.role||'Role')+'</b>'+
+        (e.company?' <span class="cvp-co">— '+esc(e.company)+'</span>':'')+'</div>'+
+        '<div class="cvp-when">'+esc([e.start,e.end].filter(Boolean).join(' – '))+'</div></div>'+
+        (e.location?'<div class="cvp-when" style="margin-top:1pt">'+esc(e.location)+'</div>':'')+
+        (bl.length?'<ul>'+bl.map(function(x){return '<li>'+esc(x)+'</li>';}).join('')+'</ul>':'')+'</div>';
+    }).join('');
+  }
+  function eduBody(){
+    return DATA.edu.map(function(e){
+      return '<div class="cvp-block"><div class="cvp-role"><div><b>'+esc(e.degree||'Degree')+'</b>'+
+        (e.school?' <span class="cvp-co">— '+esc(e.school)+'</span>':'')+'</div>'+
+        '<div class="cvp-when">'+esc(e.year||'')+'</div></div>'+
+        (e.location?'<div class="cvp-when" style="margin-top:1pt">'+esc(e.location)+'</div>':'')+'</div>';
+    }).join('');
+  }
+  function sectionBody(sec){
+    switch(sec.type){
+      case 'summary': return DATA.summary?'<div class="cvp-sum">'+nl2br(DATA.summary)+'</div>':'';
+      case 'experience': return DATA.exp.length?expBody():'';
+      case 'education': return DATA.edu.length?eduBody():'';
+      case 'skills': { var sk=splitList(DATA.skills); return sk.length?'<div class="cvp-skills">'+sk.map(function(x){return '<span>'+esc(x)+'</span>';}).join('')+'</div>':''; }
+      case 'languages': return DATA.languages?'<div class="cvp-inline">'+esc(DATA.languages)+'</div>':'';
+      case 'certs': { var c=splitList(DATA.certs); return c.length?'<ul>'+c.map(function(x){return '<li>'+esc(x)+'</li>';}).join('')+'</ul>':''; }
+      case 'custom': {
+        var v=(sec.content||'').trim(); if(!v) return '';
+        var mode=sec.mode||(sec.asText?'paragraph':'bullets');
+        if(mode==='paragraph') return '<div class="cvp-sum">'+nl2br(sec.content)+'</div>';
+        if(mode==='dated'){
+          var lines=sec.content.split(/\n+/).map(function(l){return l.trim();}).filter(Boolean);
+          return lines.map(function(l){
+            var p=l.split('|').map(function(x){return x.trim();});
+            var t=p[0]||'', d=p[1]||'', det=p[2]||'';
+            return '<div class="cvp-block"><div class="cvp-role"><div><b>'+esc(t)+'</b></div><div class="cvp-when">'+esc(d)+'</div></div>'+(det?'<div class="cvp-when" style="margin-top:1pt">'+esc(det)+'</div>':'')+'</div>';
+          }).join('');
+        }
+        var items=bullets(sec.content); return items.length?'<ul>'+items.map(function(x){return '<li>'+esc(x)+'</li>';}).join('')+'</ul>':'';
+      }
+    }
+    return '';
+  }
+  function sectionBlock(sec){
+    if(sec.hidden) return '';
+    var body=sectionBody(sec); if(!body) return '';
+    return '<div class="cvp-sec"><div class="cvp-sec-h">'+esc(secTitle(sec))+'</div>'+body+'</div>';
+  }
+  function refsHtml(){ return DATA.refs?'<div class="cvp-ref">'+esc(REFS_TEXT[DATA.market]||REFS_TEXT.us)+'</div>':''; }
+  function photoHtml(){ return (DATA.showPhoto&&DATA.photo)?'<div class="cvp-photo"><img src="'+esc(DATA.photo)+'" alt=""></div>':''; }
+  function nameTitle(){
+    return '<h1>'+esc(fullName())+'</h1>'+(DATA.title?'<div class="cvp-title">'+esc(DATA.title)+'</div>':'');
+  }
+  function contactLine(joined){
+    return '<div class="cvp-contact">'+contactBits().map(function(x){return '<span>'+x+'</span>';}).join(joined?' &nbsp;·&nbsp; ':'')+'</div>';
+  }
+  function headHtml(centered){
+    var inner=nameTitle()+contactLine(true), ph=photoHtml();
+    if(ph && centered) return '<div class="cvp-head">'+ph+inner+'</div>';
+    if(ph) return '<div class="cvp-head" style="display:flex;gap:16pt;align-items:center;justify-content:space-between"><div style="flex:1;min-width:0">'+inner+'</div>'+ph+'</div>';
+    return '<div class="cvp-head">'+inner+'</div>';
+  }
+
+  /* ---------------- layout assembly ---------------- */
+  function render(){
+    var page=document.getElementById('cvg-page');
+    var accent=accentOverride||current.accent;
+    var font=fontOverride||current.font;
+    page.style.setProperty('--accent',accent);
+    page.style.setProperty('--pg-font', font==='sans'?"Helvetica,Arial,sans-serif":"Georgia,'Times New Roman',serif");
+    var L=current.layout, html='';
+    var order=DATA.sections||[];
+    var sideSecs=order.filter(function(s){return (s.col||'main')==='side';});
+    var mainSecs=order.filter(function(s){return (s.col||'main')!=='side';});
+    var allHtml=order.map(sectionBlock).join('');
+
+    if(L==='2col'||L==='2col-r'||L==='2col-l'){
+      var light=(L==='2col-l');
+      var rightCls=(L==='2col-r')?' right':'';
+      var sideCls='cvp-side'+(light?' light':'');
+      html='<div class="cvp cvp-2col'+rightCls+'">'+
+        '<div class="'+sideCls+'">'+photoHtml()+nameTitle()+
+          '<div style="margin-top:12pt"></div>'+contactLine(false)+sideSecs.map(sectionBlock).join('')+'</div>'+
+        '<div class="cvp-main">'+mainSecs.map(sectionBlock).join('')+refsHtml()+'</div>'+
+      '</div>';
+      if(light) page.style.setProperty('--sidewash','#f4f0e8');
+    } else if(L==='band'){
+      var ph=photoHtml();
+      var band = ph
+        ? '<div class="cvp-hd" style="display:flex;gap:16pt;align-items:center;justify-content:space-between"><div style="flex:1;min-width:0">'+nameTitle()+contactLine(true)+'</div>'+ph+'</div>'
+        : '<div class="cvp-hd">'+nameTitle()+contactLine(true)+'</div>';
+      html='<div class="cvp cvp-band" style="padding:0">'+band+'<div class="cvp-body">'+allHtml+refsHtml()+'</div></div>';
+    } else if(L==='center'){
+      html='<div class="cvp cvp-center">'+headHtml(true)+allHtml+refsHtml()+'</div>';
+    } else if(L==='min'){
+      html='<div class="cvp cvp-min">'+headHtml(false)+allHtml+refsHtml()+'</div>';
+    } else if(L==='modern'){
+      html='<div class="cvp cvp-modern">'+headHtml(false)+allHtml+refsHtml()+'</div>';
+    } else { /* classic */
+      html='<div class="cvp">'+headHtml(false)+allHtml+refsHtml()+'</div>';
+    }
+    page.className='';
+    page.innerHTML=html;
+    fitPage();
+  }
+
+  /* scale the page to fit the preview width, sizing a holder so there is no overflow */
+  function fitPage(){
+    var wrap=document.querySelector('.cvg-paperwrap'), holder=document.getElementById('cvg-pageholder'), page=document.getElementById('cvg-page');
+    if(!wrap||!holder) return;
+    var avail=wrap.clientWidth-48;
+    if(avail<=0) return; // hidden (e.g. tab not shown yet) — refit on resize when visible
+    var pageW=8.5*96;
+    var scale=Math.min(1, avail/pageW);
+    page.style.transform='scale('+scale+')';
+    page.style.transformOrigin='top left';
+    var h=page.offsetHeight; // unscaled layout height
+    holder.style.width=(pageW*scale)+'px';
+    holder.style.height=(h*scale)+'px';
+  }
+  window.addEventListener('resize',fitPage);
+
+  /* ---------------- editor: repeatable items ---------------- */
+  function expItem(e,i){
+    return '<div class="cvg-item" data-exp="'+i+'"><button class="cvg-del" data-delexp="'+i+'">×</button>'+
+      '<div class="cvg-f"><label>Job title</label><input data-ek="role" value="'+esc(e.role)+'" placeholder="Private Chef"></div>'+
+      '<div class="cvg-row"><div class="cvg-f"><label>Employer / Household</label><input data-ek="company" value="'+esc(e.company)+'" placeholder="Private Family Office"></div>'+
+      '<div class="cvg-f"><label>Location</label><input data-ek="location" value="'+esc(e.location)+'" placeholder="New York, NY"></div></div>'+
+      '<div class="cvg-row"><div class="cvg-f"><label>Start</label><input data-ek="start" value="'+esc(e.start)+'" placeholder="2021"></div>'+
+      '<div class="cvg-f"><label>End</label><input data-ek="end" value="'+esc(e.end)+'" placeholder="Present"></div></div>'+
+      '<div class="cvg-f"><label>What you did (one line each)</label><textarea data-ek="bullets" placeholder="Designed seasonal menus for a family of five&#10;Managed a $120k annual food budget">'+esc(e.bullets)+'</textarea></div></div>';
+  }
+  function eduItem(e,i){
+    return '<div class="cvg-item" data-edu="'+i+'"><button class="cvg-del" data-deledu="'+i+'">×</button>'+
+      '<div class="cvg-f"><label>Degree / Program</label><input data-dk="degree" value="'+esc(e.degree)+'" placeholder="Grand Diplôme, Culinary Arts"></div>'+
+      '<div class="cvg-row"><div class="cvg-f"><label>School</label><input data-dk="school" value="'+esc(e.school)+'" placeholder="Le Cordon Bleu"></div>'+
+      '<div class="cvg-f"><label>Year</label><input data-dk="year" value="'+esc(e.year)+'" placeholder="2016"></div></div>'+
+      '<div class="cvg-f"><label>Location</label><input data-dk="location" value="'+esc(e.location)+'" placeholder="Paris, France"></div></div>';
+  }
+  function renderExp(){document.getElementById('cvg-exp').innerHTML=DATA.exp.map(expItem).join('');}
+  function renderEdu(){document.getElementById('cvg-edu').innerHTML=DATA.edu.map(eduItem).join('');}
+
+  /* ---------------- events ---------------- */
+  var root=document;
+  // simple field binding
+  root.querySelectorAll('[data-k]').forEach(function(el){
+    var k=el.getAttribute('data-k');
+    if(el.type==='checkbox'){ el.addEventListener('change',function(){DATA[k]=el.checked;save();render();}); }
+    else el.addEventListener('input',function(){DATA[k]=el.value;save();render();});
+  });
+  // accordions
+  root.querySelectorAll('[data-acc] .cvg-acc-h').forEach(function(h){
+    h.addEventListener('click',function(){h.parentNode.classList.toggle('open');});
+  });
+  // add buttons
+  root.querySelectorAll('[data-add]').forEach(function(b){
+    b.addEventListener('click',function(){
+      var t=b.getAttribute('data-add');
+      if(t==='exp'){DATA.exp.push({role:'',company:'',location:'',start:'',end:'',bullets:''});renderExp();}
+      else{DATA.edu.push({degree:'',school:'',year:'',location:''});renderEdu();}
+      save();render();
+    });
+  });
+  // delegated inputs for repeatable items
+  document.getElementById('cvg-exp').addEventListener('input',function(e){
+    var it=e.target.closest('[data-exp]'); if(!it)return; var i=+it.getAttribute('data-exp');
+    var k=e.target.getAttribute('data-ek'); if(k){DATA.exp[i][k]=e.target.value;save();render();}
+  });
+  document.getElementById('cvg-exp').addEventListener('click',function(e){
+    var d=e.target.closest('[data-delexp]'); if(!d)return; DATA.exp.splice(+d.getAttribute('data-delexp'),1);renderExp();save();render();
+  });
+  document.getElementById('cvg-edu').addEventListener('input',function(e){
+    var it=e.target.closest('[data-edu]'); if(!it)return; var i=+it.getAttribute('data-edu');
+    var k=e.target.getAttribute('data-dk'); if(k){DATA.edu[i][k]=e.target.value;save();render();}
+  });
+  document.getElementById('cvg-edu').addEventListener('click',function(e){
+    var d=e.target.closest('[data-deledu]'); if(!d)return; DATA.edu.splice(+d.getAttribute('data-deledu'),1);renderEdu();save();render();
+  });
+
+  // template select
+  var tsel=document.getElementById('cvg-template');
+  TEMPLATES.forEach(function(t){var o=document.createElement('option');o.value=t.id;o.textContent=t.name;tsel.appendChild(o);});
+
+  // ---------- role smart-suggestions ----------
+  var rsel=document.getElementById('cvg-role');
+  ROLES.forEach(function(r){var o=document.createElement('option');o.value=r.id;o.textContent=r.name;rsel.appendChild(o);});
+  rsel.addEventListener('change',function(){ DATA.role=rsel.value; save(); renderRoleSuggestions(); });
+  function addSkill(sk){
+    var cur=splitList(DATA.skills);
+    for(var i=0;i<cur.length;i++){ if(cur[i].toLowerCase()===sk.toLowerCase()) return; }
+    cur.push(sk); DATA.skills=cur.join(' · ');
+    var el=document.querySelector('[data-k="skills"]'); if(el) el.value=DATA.skills;
+    save(); render();
+  }
+  function addBullet(text){
+    if(!DATA.exp.length){ DATA.exp.push({role:'',company:'',location:'',start:'',end:'',bullets:''}); }
+    var last=DATA.exp[DATA.exp.length-1];
+    last.bullets=(last.bullets? last.bullets.replace(/\s*$/,'')+'\n':'')+text;
+    renderExp(); save(); render();
+  }
+  function useSummary(text){ DATA.summary=text; var el=document.querySelector('[data-k="summary"]'); if(el) el.value=text; save(); render(); }
+  function renderRoleSuggestions(){
+    var host=document.getElementById('cvg-rolesugg'); if(!host) return;
+    var r=roleById(DATA.role);
+    if(!r){ host.innerHTML='<div class="cvg-hint" style="margin:0">Select a role above to see tailored suggestions.</div>'; return; }
+    var h='<div class="cvg-sugg-h">Summary ideas</div>';
+    h+=r.summaries.map(function(s,i){ return '<div class="cvg-sugg-card">'+esc(s)+'<div><button class="cvg-use" data-use-sum="'+i+'">Use this summary</button></div></div>'; }).join('');
+    h+='<div class="cvg-sugg-h">Suggested skills — click to add</div><div class="cvg-chips">'+r.skills.map(function(s){return '<button class="cvg-chip" data-add-skill="'+esc(s)+'">'+esc(s)+'</button>';}).join('')+'</div>';
+    h+='<div class="cvg-sugg-h">Achievement lines — add to your latest role</div>'+r.bullets.map(function(b){return '<button class="cvg-bullet" data-add-bullet="'+esc(b)+'">'+esc(b)+'</button>';}).join('');
+    host.innerHTML=h;
+  }
+  document.getElementById('cvg-rolesugg').addEventListener('click',function(e){
+    var b=e.target.closest('button'); if(!b) return; var v;
+    if((v=b.getAttribute('data-use-sum'))!=null){ var r=roleById(DATA.role); if(r) useSummary(r.summaries[+v]); }
+    else if((v=b.getAttribute('data-add-skill'))!=null){ addSkill(v); }
+    else if((v=b.getAttribute('data-add-bullet'))!=null){ addBullet(v); }
+  });
+
+  tsel.addEventListener('change',function(){
+    current=TEMPLATES.filter(function(t){return t.id===tsel.value;})[0]||TEMPLATES[0];
+    accentOverride=null; // reset accent to template default
+    fontOverride=null;
+    document.getElementById('cvg-font').value=current.font;
+    paintSwatches();
+    renderSections();
+    save();render();
+  });
+  // font
+  document.getElementById('cvg-font').addEventListener('change',function(){fontOverride=this.value;save();render();});
+  // swatches
+  function paintSwatches(){
+    var wrap=document.getElementById('cvg-swatches');wrap.innerHTML='';
+    var activeAccent=accentOverride||current.accent;
+    ACCENTS.forEach(function(c){
+      var s=document.createElement('div');s.className='cvg-sw'+(c===activeAccent?' on':'');s.style.background=c;
+      s.addEventListener('click',function(){accentOverride=c;paintSwatches();save();render();});
+      wrap.appendChild(s);
+    });
+  }
+  // ---------- sections manager (reorder / rename / hide / column / custom) ----------
+  function is2col(){ return current.layout==='2col'||current.layout==='2col-r'||current.layout==='2col-l'; }
+  function renderSections(){
+    var host=document.getElementById('cvg-sections'); if(!host) return;
+    var showCol=is2col();
+    host.innerHTML=(DATA.sections||[]).map(function(s,i){
+      var custom=(s.type==='custom');
+      var def=custom?'Section title':((MARKET_LABELS[DATA.market]||MARKET_LABELS.us)[s.type]||'');
+      var colBtn=showCol?'<button class="cvg-sr-btn" data-sec-col="'+i+'" title="Sidebar or main column">'+((s.col||'main')==='side'?'◧ Side':'▭ Main')+'</button>':'';
+      var top='<div class="cvg-sr-top">'+
+        '<input type="checkbox" data-sec-show="'+i+'"'+(!s.hidden?' checked':'')+' title="Show / hide">'+
+        '<input class="cvg-sr-ttl" data-sec-title="'+i+'" value="'+esc(s.title||'')+'" placeholder="'+esc(def)+'">'+
+        '<button class="cvg-sr-btn" data-sec-up="'+i+'" title="Move up">↑</button>'+
+        '<button class="cvg-sr-btn" data-sec-down="'+i+'" title="Move down">↓</button>'+
+        colBtn+
+        (custom?'<button class="cvg-sr-btn" data-sec-del="'+i+'" title="Delete section" style="color:var(--gold-deep)">✕</button>':'')+
+        '</div>';
+      var mode=s.mode||(s.asText?'paragraph':'bullets');
+      var ph=(mode==='dated')?'One entry per line: Head Butler, Windsor Estate | 2019–2023 | Led a team of 8':'One item per line, or a paragraph…';
+      var cont=custom?('<div class="cvg-sr-cont"><textarea data-sec-content="'+i+'" placeholder="'+esc(ph)+'">'+esc(s.content||'')+'</textarea>'+
+        '<div style="display:flex;align-items:center;gap:8px;margin-top:5px"><span style="font-size:11.5px;color:var(--stone)">Format</span>'+
+        '<select data-sec-mode="'+i+'" style="font-size:12px;padding:5px 8px;border:1px solid var(--line);border-radius:7px;font-family:inherit;background:#fff">'+
+        ['bullets','paragraph','dated'].map(function(m){var lbl={bullets:'Bullets',paragraph:'Paragraph',dated:'Dated entries'}[m];return '<option value="'+m+'"'+(mode===m?' selected':'')+'>'+lbl+'</option>';}).join('')+'</select></div>'+
+        (mode==='dated'?'<div class="cvg-hint" style="margin-top:5px">One entry per line: <b>Title | Date | detail</b> (detail optional, separated by “|”).</div>':'')+
+        '</div>'):'';
+      return '<div class="cvg-secrow2">'+top+cont+'</div>';
+    }).join('')+'<button class="cvg-add" id="cvg-addsec" style="margin-top:4px">＋ Add a custom section</button>';
+  }
+  (function(){
+    var host=document.getElementById('cvg-sections');
+    host.addEventListener('input',function(e){
+      var t=e.target, i;
+      if((i=t.getAttribute('data-sec-title'))!=null){ DATA.sections[+i].title=t.value; save(); render(); }
+      else if((i=t.getAttribute('data-sec-content'))!=null){ DATA.sections[+i].content=t.value; save(); render(); }
+    });
+    host.addEventListener('change',function(e){
+      var t=e.target, i;
+      if((i=t.getAttribute('data-sec-show'))!=null){ DATA.sections[+i].hidden=!t.checked; save(); render(); }
+      else if((i=t.getAttribute('data-sec-mode'))!=null){ DATA.sections[+i].mode=t.value; save(); renderSections(); render(); }
+    });
+    host.addEventListener('click',function(e){
+      var b=e.target.closest('button'); if(!b) return; var i, a=DATA.sections;
+      if((i=b.getAttribute('data-sec-up'))!=null){ i=+i; if(i>0){ var x=a[i];a[i]=a[i-1];a[i-1]=x; save();renderSections();render(); } }
+      else if((i=b.getAttribute('data-sec-down'))!=null){ i=+i; if(i<a.length-1){ var y=a[i];a[i]=a[i+1];a[i+1]=y; save();renderSections();render(); } }
+      else if((i=b.getAttribute('data-sec-col'))!=null){ i=+i; a[i].col=((a[i].col||'main')==='side')?'main':'side'; save();renderSections();render(); }
+      else if((i=b.getAttribute('data-sec-del'))!=null){ a.splice(+i,1); save();renderSections();render(); }
+      else if(b.id==='cvg-addsec'){ a.push({id:newId(),type:'custom',title:'New section',hidden:false,col:'main',content:'',mode:'bullets'}); save();renderSections();render(); }
+    });
+  })();
+  // market
+  document.getElementById('cvg-market').addEventListener('change',function(){
+    DATA.market=this.value; save(); renderSections(); render();
+  });
+  // photo
+  document.getElementById('cvg-showphoto').addEventListener('change',function(){
+    DATA.showPhoto=this.checked; document.getElementById('cvg-photowrap').style.display=this.checked?'block':'none'; save(); render();
+  });
+  document.getElementById('cvg-photofile').addEventListener('change',function(){
+    var f=this.files&&this.files[0]; if(!f) return;
+    var rd=new FileReader(); rd.onload=function(){ DATA.photo=rd.result; document.getElementById('cvg-photoprev').style.backgroundImage='url('+DATA.photo+')'; save(); render(); }; rd.readAsDataURL(f); this.value='';
+  });
+  document.getElementById('cvg-photodel').addEventListener('click',function(){ DATA.photo=''; document.getElementById('cvg-photoprev').style.backgroundImage=''; save(); render(); });
+  // download
+  document.getElementById('cvg-download').addEventListener('click',function(){window.print();});
+  // sample + clear
+  document.getElementById('cvg-sample').addEventListener('click',function(){loadSample();});
+  document.getElementById('cvg-clear').addEventListener('click',function(){
+    if(!confirm('Clear everything?'))return;
+    DATA={first:'',last:'',title:'',email:'',phone:'',location:'',web:'',photo:'',showPhoto:false,summary:'',skills:'',languages:'',certs:'',refs:false,exp:[],edu:[],role:'',market:DATA.market||'us',sections:defaultSections()};
+    syncInputs();renderExp();renderEdu();save();render();
+  });
+
+  /* ---------------- persistence ---------------- */
+  function save(){try{localStorage.setItem(LS,JSON.stringify({d:DATA,t:current.id,a:accentOverride,f:fontOverride}));}catch(e){}}
+  function load(){try{var r=JSON.parse(localStorage.getItem(LS));if(r&&r.d){DATA=Object.assign(DATA,r.d);if(!DATA.exp)DATA.exp=[];if(!DATA.edu)DATA.edu=[];if(!DATA.sections||!DATA.sections.length)DATA.sections=defaultSections();DATA.sections.forEach(function(s){if(s.type==='custom'&&!s.mode)s.mode=s.asText?'paragraph':'bullets';});current=TEMPLATES.filter(function(t){return t.id===r.t;})[0]||TEMPLATES[0];accentOverride=r.a||null;fontOverride=r.f||null;}}catch(e){}}
+  function syncInputs(){
+    root.querySelectorAll('[data-k]').forEach(function(el){var k=el.getAttribute('data-k');if(el.type==='checkbox')el.checked=!!DATA[k];else el.value=DATA[k]||'';});
+    tsel.value=current.id; document.getElementById('cvg-font').value=fontOverride||current.font;
+    document.getElementById('cvg-market').value=DATA.market||'us';
+    if(!DATA.sections||!DATA.sections.length) DATA.sections=defaultSections();
+    var sp=document.getElementById('cvg-showphoto');
+    if(sp){ sp.checked=!!DATA.showPhoto; document.getElementById('cvg-photowrap').style.display=DATA.showPhoto?'block':'none'; document.getElementById('cvg-photoprev').style.backgroundImage=DATA.photo?('url('+DATA.photo+')'):''; }
+    document.getElementById('cvg-role').value=DATA.role||'';
+    renderRoleSuggestions();
+    renderSections();
+  }
+
+  function loadSample(){
+    DATA={
+      first:'Alexandra',last:'Moreau',title:'Private Chef · Household Manager',
+      email:'a.moreau@email.com',phone:'+1 (212) 555-0148',location:'New York, NY',web:'linkedin.com/in/amoreau',
+      summary:'Discreet, detail-obsessed private chef with 8+ years serving UHNW families across New York and the Hamptons. Trusted with full household budgets, formal service for up to 40 guests, and the quiet standards this world runs on.',
+      skills:'Fine dining · Seasonal menu design · Wine pairing · Household budgeting · Formal & buffet service · Dietary & allergy management · Vendor relations · Event coordination',
+      languages:'English (native) · French (fluent) · Italian (conversational)',
+      certs:'ServSafe Certified\nWSET Level 2 Award in Wines\nFirst Aid / CPR (2024)',
+      refs:true,
+      exp:[
+        {role:'Private Chef',company:'Confidential Family Office',location:'New York, NY & East Hampton',start:'2021',end:'Present',bullets:'Design seasonal menus for a family of five and a rotating calendar of formal events\nManage a $140k annual food & beverage budget with full vendor sourcing\nCoordinate seamless service for dinners of up to 40 guests'},
+        {role:'Sous Chef',company:'Le Bernardin',location:'New York, NY',start:'2017',end:'2021',bullets:'Ran the fish station in a three-Michelin-star kitchen\nTrained and supervised a brigade of six cooks'}
+      ],
+      edu:[{degree:'Grand Diplôme, Culinary Arts',school:'Le Cordon Bleu',year:'2016',location:'Paris, France'}],
+      role:'chef', market:DATA.market||'us', photo:'', showPhoto:false, sections:defaultSections()
+    };
+    syncInputs();renderExp();renderEdu();save();render();
+  }
+
+  /* ---------------- init ---------------- */
+  load();
+  syncInputs();renderExp();renderEdu();paintSwatches();
+  // open the accordions that have content already handled by markup defaults
+  if(!DATA.first && !DATA.exp.length){ loadSample(); } else { render(); }
+  document.getElementById('cvg-count').textContent=TEMPLATES.length+' templates · US letter · updates live';
+})();
+</script>
+</body>
+</html>

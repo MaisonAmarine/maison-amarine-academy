@@ -2202,11 +2202,22 @@ html,body,body *{font-family:'Calibri Light','Calibri','Carlito',system-ui,-appl
 
     <!-- ============ PAGE: CV REVIEW ============ -->
     <section class="page hidden" id="page-cv">
+      <style>
+        #page-cv .cvtabs{display:flex;gap:8px;margin:0 0 22px;border-bottom:1px solid var(--line);}
+        #page-cv .cvtab{appearance:none;-webkit-appearance:none;border:none;background:none;font-family:inherit;font-size:14px;font-weight:600;color:var(--stone);padding:11px 18px;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1px;}
+        #page-cv .cvtab.on{color:var(--ink-soft);border-bottom-color:var(--gold);}
+        #page-cv .cvtab:hover{color:var(--ink-soft);}
+      </style>
       <div class="page-h">
         <div class="eyebrow">CV Review</div>
-        <h1>Have your CV read the way an agency would.</h1>
-        <p>Paste your CV below and this tool checks it against the exact standards this world hires on, the ones you learn in Week 7. You get a score and specific, honest fixes in seconds. Nothing you paste ever leaves your browser, it is completely private.</p>
+        <h1>Have your CV read the way an agency would — then build a better one.</h1>
+        <p>Two tools in one. <b>Review</b> checks your existing CV against the exact standards this world hires on. <b>Build</b> lets you create a clean, US or Canadian résumé from scratch, with 20 templates and wording tailored to your role. Everything stays private in your browser.</p>
       </div>
+      <div class="cvtabs">
+        <button class="cvtab on" data-cvtab="review">Review my CV</button>
+        <button class="cvtab" data-cvtab="build">✦ Build my CV</button>
+      </div>
+      <div id="cv-review-panel">
       <div class="cv-wrap">
         <label class="cv-drop" id="cvDrop" ondragover="event.preventDefault();this.classList.add('drag');" ondragleave="this.classList.remove('drag');" ondrop="event.preventDefault();this.classList.remove('drag');cvHandleFile(event.dataTransfer.files[0]);">
           <input type="file" id="cvFile" accept=".pdf,.docx,.txt" style="display:none;" onchange="cvHandleFile(this.files[0]); this.value='';">
@@ -2229,6 +2240,22 @@ html,body,body *{font-family:'Calibri Light','Calibri','Carlito',system-ui,-appl
         </div>
         <div id="cvResult"></div>
       </div>
+      </div><!-- /cv-review-panel -->
+      <div id="cv-build-panel" style="display:none">
+        <iframe id="cvBuildFrame" title="CV Studio" style="width:100%;height:calc(100vh - 200px);min-height:640px;border:1px solid var(--line);border-radius:16px;background:#fff;display:block"></iframe>
+      </div>
+      <script>
+        (function(){
+          var tabs=document.querySelectorAll('#page-cv .cvtab');
+          var rev=document.getElementById('cv-review-panel'), bld=document.getElementById('cv-build-panel'), fr=document.getElementById('cvBuildFrame');
+          tabs.forEach(function(t){ t.addEventListener('click',function(){
+            tabs.forEach(function(x){x.classList.remove('on');}); t.classList.add('on');
+            var b=(t.getAttribute('data-cvtab')==='build');
+            rev.style.display=b?'none':''; bld.style.display=b?'':'none';
+            if(b){ if(!fr.getAttribute('src')){ fr.setAttribute('src','cv-studio.html'); } setTimeout(function(){ try{ fr.contentWindow.dispatchEvent(new Event('resize')); }catch(e){} }, 300); }
+          }); });
+        })();
+      </script>
     </section>
 
     <!-- ============ PAGE: CAREER HUB ============ -->
