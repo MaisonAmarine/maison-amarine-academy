@@ -5078,7 +5078,7 @@ function renderCalendar(){
   if(ps && CAL_PLAN) ps.value=CAL_PLAN.start;
   if(pp && CAL_PLAN) pp.value=String(CAL_PLAN.interval);
   const clr=document.getElementById('planClear'); if(clr) clr.style.display=(CAL_PLAN && !CAL_PLAN._default)?'inline-flex':'none';
-  if(!calYM){ const base=CAL_PLAN?calParse(CAL_PLAN.start):new Date(); calYM={y:base.getFullYear(),m:base.getMonth()}; }
+  if(!calYM){ calYM={y:new Date().getFullYear(),m:new Date().getMonth()}; }   // toujours ouvrir sur le mois actuel
   renderCalMonth(); renderScheduleList();
 }
 function setPlan(){
