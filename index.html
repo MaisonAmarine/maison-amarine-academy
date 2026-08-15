@@ -2207,6 +2207,8 @@ html,body,body *{font-family:'Calibri Light','Calibri','Carlito',system-ui,-appl
         #page-cv .cvtab{appearance:none;-webkit-appearance:none;border:none;background:none;font-family:inherit;font-size:14px;font-weight:600;color:var(--stone);padding:11px 18px;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1px;}
         #page-cv .cvtab.on{color:var(--ink-soft);border-bottom-color:var(--gold);}
         #page-cv .cvtab:hover{color:var(--ink-soft);}
+        #page-cv.cvbuild{max-width:none;padding-left:20px;padding-right:20px;}
+        #page-cv.cvbuild .cvtabs{margin-bottom:12px;}
       </style>
       <div class="page-h">
         <div class="eyebrow">CV Review</div>
@@ -2242,11 +2244,12 @@ html,body,body *{font-family:'Calibri Light','Calibri','Carlito',system-ui,-appl
       </div>
       </div><!-- /cv-review-panel -->
       <div id="cv-build-panel" style="display:none">
-        <iframe id="cvBuildFrame" title="CV Studio" style="width:100%;height:calc(100vh - 118px);min-height:720px;border:none;border-radius:0;background:#1b1d21;display:block"></iframe>
+        <iframe id="cvBuildFrame" title="CV Studio" style="width:100%;height:calc(100vh - 132px);min-height:700px;border:none;background:#eeeef0;display:block"></iframe>
       </div>
       <script>
         (function(){
           var tabs=document.querySelectorAll('#page-cv .cvtab');
+          var pg=document.getElementById('page-cv');
           var rev=document.getElementById('cv-review-panel'), bld=document.getElementById('cv-build-panel'), fr=document.getElementById('cvBuildFrame');
           var hd=document.querySelector('#page-cv .page-h');
           tabs.forEach(function(t){ t.addEventListener('click',function(){
@@ -2254,6 +2257,7 @@ html,body,body *{font-family:'Calibri Light','Calibri','Carlito',system-ui,-appl
             var b=(t.getAttribute('data-cvtab')==='build');
             rev.style.display=b?'none':''; bld.style.display=b?'':'none';
             if(hd) hd.style.display=b?'none':'';
+            pg.classList.toggle('cvbuild', b);
             if(b){ if(!fr.getAttribute('src')){ fr.setAttribute('src','cv-studio.html'); } setTimeout(function(){ try{ fr.contentWindow.dispatchEvent(new Event('resize')); }catch(e){} }, 300); }
           }); });
         })();
