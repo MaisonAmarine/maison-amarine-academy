@@ -2242,16 +2242,18 @@ html,body,body *{font-family:'Calibri Light','Calibri','Carlito',system-ui,-appl
       </div>
       </div><!-- /cv-review-panel -->
       <div id="cv-build-panel" style="display:none">
-        <iframe id="cvBuildFrame" title="CV Studio" style="width:100%;height:calc(100vh - 200px);min-height:640px;border:1px solid var(--line);border-radius:16px;background:#fff;display:block"></iframe>
+        <iframe id="cvBuildFrame" title="CV Studio" style="width:100%;height:calc(100vh - 118px);min-height:720px;border:none;border-radius:0;background:#1b1d21;display:block"></iframe>
       </div>
       <script>
         (function(){
           var tabs=document.querySelectorAll('#page-cv .cvtab');
           var rev=document.getElementById('cv-review-panel'), bld=document.getElementById('cv-build-panel'), fr=document.getElementById('cvBuildFrame');
+          var hd=document.querySelector('#page-cv .page-h');
           tabs.forEach(function(t){ t.addEventListener('click',function(){
             tabs.forEach(function(x){x.classList.remove('on');}); t.classList.add('on');
             var b=(t.getAttribute('data-cvtab')==='build');
             rev.style.display=b?'none':''; bld.style.display=b?'':'none';
+            if(hd) hd.style.display=b?'none':'';
             if(b){ if(!fr.getAttribute('src')){ fr.setAttribute('src','cv-studio.html'); } setTimeout(function(){ try{ fr.contentWindow.dispatchEvent(new Event('resize')); }catch(e){} }, 300); }
           }); });
         })();
