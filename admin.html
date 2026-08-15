@@ -2381,6 +2381,7 @@ html,body,body *{font-family:'Calibri Light','Calibri','Carlito',system-ui,-appl
       <div class="block-sub">Real vacancies, live with the agencies that posted them. Click any role to read it in full and apply directly on the agency's own site. <span id="jobsUpdated" style="color:var(--gold-deep);font-weight:600;"></span></div>
       <div class="job-tabs" id="jobTabs">
         <button class="job-tab active" data-region="americas">🌎 Americas</button>
+        <button class="job-tab" data-region="canada">🇨🇦 Canada</button>
         <button class="job-tab" data-region="europe">🌍 Europe</button>
         <button class="job-tab" data-region="mideast">🌏 Middle East</button>
         <span class="job-count" id="jobCount"></span>
@@ -2403,6 +2404,8 @@ html,body,body *{font-family:'Calibri Light','Calibri','Carlito',system-ui,-appl
           <input id="jobSearch" type="text" placeholder="Search role, agency, city, keyword…" autocomplete="off">
         </div>
         <select id="jobCountry" class="jf-sel"><option value="">All countries</option></select>
+        <select id="jobState" class="jf-sel"><option value="">All states/provinces</option></select>
+        <select id="jobCity" class="jf-sel"><option value="">All cities</option></select>
         <select id="jobType" class="jf-sel"><option value="">All types</option></select>
         <button id="jobClear" class="jf-clear" type="button">Clear</button>
       </div>
@@ -4249,6 +4252,104 @@ let JOBS = {
     {flag:"🇰🇼",city:"Kuwait City",country:"Kuwait",title:"House Manager · Supervising a team of 12",agency:"Morgan & Mallet",type:"Permanent · Full time",tags:["Team of 12","Family office","Discreet"],salary:"On application",posted:"5 Feb 2026",
      url:"https://www.householdstaff.agency/jobs/house-manager-job-kuwait-city-kuwait/",
      blurb:"A high-profile family seeks an experienced and discreet house manager. Reporting to the principal or the family office, supervising twelve household staff."},
+  ],
+  canada:[
+    {flag:"🇨🇦",city:"Old Montreal, QC",country:"Canada",title:"Housekeeper",agency:"Elite Domo",type:"Part-time",tags:["Housekeeping", "Laundry & Ironing", "Attention To Detail"],salary:"Not specified",posted:"Posted August 2026",
+     url:"https://elitedomo.com/en/job-listings",
+     blurb:"Maintain a 5,500 sq. ft. private residence in Old Montreal."},
+    {flag:"🇨🇦",city:"Barrie, ON",country:"Canada",title:"Housekeeper",agency:"Elite Domo",type:"Part-time",tags:["Housekeeping", "Laundry & Ironing", "Attention To Detail"],salary:"Not specified",posted:"Posted August 2026",
+     url:"https://elitedomo.com/en/job-listings",
+     blurb:"Experienced housekeeper for the day-to-day care and upkeep of a private residence."},
+    {flag:"🇨🇦",city:"Outremont, QC",country:"Canada",title:"Executive Personal Assistant",agency:"Elite Domo",type:"Full-time",tags:["Diary Management", "Administration", "Discretion"],salary:"Not specified",posted:"Posted August 2026",
+     url:"https://elitedomo.com/en/job-listings",
+     blurb:"Administrative and personal support to the principal and family during a maternity leave."},
+    {flag:"🇨🇦",city:"Westmount, QC",country:"Canada",title:"Private Chef",agency:"Elite Domo",type:"Part-time",tags:["Menu Design", "Healthy Cuisine", "Family Service"],salary:"Not specified",posted:"Posted August 2026",
+     url:"https://elitedomo.com/en/job-listings",
+     blurb:"Prepare healthy, balanced and varied meals three to four evenings a week."},
+    {flag:"🇨🇦",city:"Outremont, QC",country:"Canada",title:"Executive Personal Assistant",agency:"Elite Domo",type:"Full-time",tags:["Diary Management", "Administration", "Discretion"],salary:"Not specified",posted:"Posted August 2026",
+     url:"https://elitedomo.com/en/job-listings",
+     blurb:"Comprehensive administrative support to a principal and their family."},
+    {flag:"🇨🇦",city:"Lac-Beauport, QC",country:"Canada",title:"House Steward / Handyman",agency:"Elite Domo",type:"Full-time",tags:["Maintenance", "Property Care"],salary:"Not specified",posted:"Posted August 2026",
+     url:"https://elitedomo.com/en/job-listings",
+     blurb:"General maintenance, repairs and household operations on a private estate."},
+    {flag:"🇨🇦",city:"Montreal, QC",country:"Canada",title:"Housekeeper",agency:"Elite Domo",type:"Part-time",tags:["Housekeeping", "Laundry & Ironing", "Attention To Detail"],salary:"Not specified",posted:"Posted August 2026",
+     url:"https://elitedomo.com/en/job-listings",
+     blurb:"Upkeep, organisation and daily care of a private residence in Petite-Patrie."},
+    {flag:"🇨🇦",city:"Montreal, QC",country:"Canada",title:"Housekeeper",agency:"Elite Domo",type:"Full-time",tags:["Housekeeping", "Laundry & Ironing", "Attention To Detail"],salary:"Not specified",posted:"Posted August 2026",
+     url:"https://elitedomo.com/en/job-listings",
+     blurb:"Daily maintenance and care of a primary and secondary residence."},
+    {flag:"🇨🇦",city:"Senneville, QC",country:"Canada",title:"Nanny",agency:"Elite Domo",type:"Full-time",tags:["Childcare", "Early Development", "First Aid"],salary:"Not specified",posted:"Posted August 2026",
+     url:"https://elitedomo.com/en/job-listings",
+     blurb:"Daily care, wellbeing and development of a young child."},
+    {flag:"🇨🇦",city:"Old Montreal, QC",country:"Canada",title:"House Governess",agency:"Elite Domo",type:"Part-time",tags:["Household Care", "Childcare"],salary:"Not specified",posted:"Posted August 2026",
+     url:"https://elitedomo.com/en/job-listings",
+     blurb:"Maintenance of a 5,500 sq. ft. residence and a secondary property."},
+    {flag:"🇨🇦",city:"Toronto, ON",country:"Canada",title:"Private Chef",agency:"Portico",type:"Full-time",tags:["Menu Design", "Healthy Cuisine", "Family Service"],salary:"Not specified",posted:"Posted August 2026",
+     url:"https://www.porticostaff.com/jobs",
+     blurb:"Chef for a family of five; experience with healthy, protein-based meals is critical."},
+    {flag:"🇨🇦",city:"Toronto, ON",country:"Canada",title:"Housekeeper",agency:"Portico",type:"Full-time",tags:["Housekeeping", "Laundry & Ironing", "Attention To Detail"],salary:"Not specified",posted:"Posted August 2026",
+     url:"https://www.porticostaff.com/jobs",
+     blurb:"Experienced housekeeper with strong laundry and excellent ironing skills for a family of five."},
+    {flag:"🇨🇦",city:"Toronto, ON",country:"Canada",title:"Family Assistant Housekeeper",agency:"Portico",type:"Full-time",tags:["Childcare", "Household Support", "Organization"],salary:"Not specified",posted:"Posted August 2026",
+     url:"https://www.porticostaff.com/jobs",
+     blurb:"Child-related housekeeping, organisation and meal support for a family with three-year-old twins."},
+    {flag:"🇨🇦",city:"Waterloo, ON",country:"Canada",title:"Estate Manager",agency:"Portico",type:"Full-time",tags:["Property Management", "Staff Supervision", "Vendor Management"],salary:"Not specified",posted:"Posted August 2026",
+     url:"https://www.porticostaff.com/jobs",
+     blurb:"Oversee the day-to-day operations of a busy household and multiple properties."},
+    {flag:"🇨🇦",city:"Guelph, ON",country:"Canada",title:"Bilingual Live-In Nanny",agency:"Portico",type:"Live-in",tags:["Childcare", "Early Development", "First Aid"],salary:"Not specified",posted:"Posted August 2026",
+     url:"https://www.porticostaff.com/jobs",
+     blurb:"French-English bilingual nanny for a young child on a country property."},
+    {flag:"🇨🇦",city:"Mississauga, ON",country:"Canada",title:"Private Chef",agency:"Portico",type:"Full-time",tags:["Menu Design", "Healthy Cuisine", "Family Service"],salary:"Not specified",posted:"Posted August 2026",
+     url:"https://www.porticostaff.com/jobs",
+     blurb:"Professionally trained chef preparing fresh, healthy, restaurant-quality meals with a focus on children's nutrition."},
+    {flag:"🇨🇦",city:"Toronto, ON",country:"Canada",title:"Housekeeper Cook",agency:"Portico",type:"Full-time",tags:["Housekeeping", "Cooking", "Hospitality"],salary:"Not specified",posted:"Posted August 2026",
+     url:"https://www.porticostaff.com/jobs",
+     blurb:"Reliable, detail-oriented professional combining housekeeping with hospitality support and food preparation."},
+    {flag:"🇨🇦",city:"Toronto, ON",country:"Canada",title:"Housekeeper",agency:"Portico",type:"Full-time",tags:["Housekeeping", "Laundry & Ironing", "Attention To Detail"],salary:"Not specified",posted:"Posted August 2026",
+     url:"https://www.porticostaff.com/jobs",
+     blurb:"Housekeeper with strong laundry and ironing skills for a family of five."},
+    {flag:"🇨🇦",city:"Calgary, AB",country:"Canada",title:"Live-In Nanny",agency:"Heritage Nanny",type:"Live-in",tags:["Childcare", "Early Development", "First Aid"],salary:"Not specified",posted:"Posted August 2026",
+     url:"https://heritagenanny.com/job/live-in-nanny/",
+     blurb:"Live-in nanny for a private family in Calgary."},
+    {flag:"🇨🇦",city:"Calgary, AB",country:"Canada",title:"Full-Time Nanny",agency:"Heritage Nanny",type:"Full-time",tags:["Childcare", "Early Development", "First Aid"],salary:"Not specified",posted:"Posted August 2026",
+     url:"https://heritagenanny.com/job/full-time-nanny/",
+     blurb:"Full-time nanny for a family in Calgary."},
+    {flag:"🇨🇦",city:"Mississauga, ON",country:"Canada",title:"Nanny / Babysitter",agency:"Heritage Nanny",type:"Full-time",tags:["Childcare", "Early Development", "First Aid"],salary:"Not specified",posted:"Posted August 2026",
+     url:"https://heritagenanny.com/job/nanny-babysitter/",
+     blurb:"Full-time nanny / babysitter for a family in Mississauga."},
+    {flag:"🇨🇦",city:"Calgary, AB",country:"Canada",title:"Full-Time Housekeeper",agency:"Heritage Nanny",type:"Full-time",tags:["Housekeeping", "Laundry & Ironing", "Attention To Detail"],salary:"Not specified",posted:"Posted August 2026",
+     url:"https://heritagenanny.com/job/full-time-housekeeper/",
+     blurb:"Full-time housekeeper for a private residence in Calgary."},
+    {flag:"🇨🇦",city:"Calgary, AB",country:"Canada",title:"Family Assistant",agency:"Heritage Nanny",type:"Full-time",tags:["Childcare", "Household Support", "Organization"],salary:"Not specified",posted:"Posted August 2026",
+     url:"https://heritagenanny.com/job/family-assistant/",
+     blurb:"Family assistant supporting a busy household in Calgary."},
+    {flag:"🇨🇦",city:"Toronto, ON",country:"Canada",title:"Housekeeper / Nanny / Family Assistant",agency:"Heritage Nanny",type:"Full-time",tags:["Childcare", "Household Support", "Organization"],salary:"$25.00–$35.00 / hour",posted:"Posted August 2026",
+     url:"https://heritagenanny.com/job/full-time-housekeeper-nanny-family-assistant-25-00-35-00-per-hour/",
+     blurb:"Combined housekeeper, nanny and family-assistant role for a Toronto family."},
+    {flag:"🇨🇦",city:"Toronto, ON",country:"Canada",title:"Nanny / Housekeeper",agency:"Heritage Nanny",type:"Full-time",tags:["Childcare", "Household Support", "Organization"],salary:"$25.00–$35.00 / hour",posted:"Posted August 2026",
+     url:"https://heritagenanny.com/job/full-time-nanny-housekeeper-25-00-35-00-per-hour/",
+     blurb:"Full-time nanny / housekeeper for a family in Toronto."},
+    {flag:"🇨🇦",city:"Saskatoon, SK",country:"Canada",title:"Nanny / Family Assistant",agency:"Heritage Nanny",type:"Full-time",tags:["Childcare", "Household Support", "Organization"],salary:"$25.00–$38.00 / hour",posted:"Posted August 2026",
+     url:"https://heritagenanny.com/job/full-time-nanny-family-assistant-25-00-38-00-per-hour/",
+     blurb:"Full-time nanny and family assistant for a household in Saskatoon."},
+    {flag:"🇨🇦",city:"Edmonton, AB",country:"Canada",title:"Full-Time Nanny",agency:"Heritage Nanny",type:"Full-time",tags:["Childcare", "Early Development", "First Aid"],salary:"$19.00–$22.00 / hour",posted:"Posted August 2026",
+     url:"https://heritagenanny.com/job/full-time-nanny-19-00-22-00-per-hour/",
+     blurb:"Full-time nanny for a family in Edmonton."},
+    {flag:"🇨🇦",city:"Fort McMurray, AB",country:"Canada",title:"Full-Time Nanny",agency:"Heritage Nanny",type:"Full-time",tags:["Childcare", "Early Development", "First Aid"],salary:"$16.00–$19.00 / hour",posted:"Posted August 2026",
+     url:"https://heritagenanny.com/job/full-time-nanny-16-19-hour/",
+     blurb:"Full-time nanny for a family in Fort McMurray."},
+    {flag:"🇨🇦",city:"Calgary, AB",country:"Canada",title:"Executive Housekeeper",agency:"Heritage Nanny",type:"Full-time",tags:["Housekeeping", "Laundry & Ironing", "Attention To Detail"],salary:"Not specified",posted:"Posted August 2026",
+     url:"https://heritagenanny.com/job/executive-housekeepers/",
+     blurb:"Executive housekeeper for a private residence in Calgary."},
+    {flag:"🇨🇦",city:"Calgary, AB",country:"Canada",title:"Nanny / Housekeeper",agency:"Heritage Nanny",type:"Full-time",tags:["Childcare", "Household Support", "Organization"],salary:"$17.00–$25.00 / hour",posted:"Posted August 2026",
+     url:"https://heritagenanny.com/job/nanny-housekeeper_17-to-25-per/",
+     blurb:"Full-time nanny / housekeeper for a Calgary family."},
+    {flag:"🇨🇦",city:"Calgary, AB",country:"Canada",title:"Executive Housekeeper",agency:"Heritage Nanny",type:"Full-time",tags:["Housekeeping", "Laundry & Ironing", "Attention To Detail"],salary:"$25.00–$27.00 / hour",posted:"Posted August 2026",
+     url:"https://heritagenanny.com/job/full-time-executive-housekeepers-25-27-per-hour/",
+     blurb:"Full-time executive housekeeper for a private residence in Calgary."},
+    {flag:"🇨🇦",city:"Calgary, AB",country:"Canada",title:"Nanny / House Manager",agency:"Heritage Nanny",type:"Full-time",tags:["Household Management", "Staff Coordination"],salary:"$20.00–$35.00 / hour",posted:"Posted August 2026",
+     url:"https://heritagenanny.com/job/nanny-house-manager-20-00-35-00-per-hour/",
+     blurb:"Full-time nanny / house manager for a Calgary household."}
   ]
 };
 
@@ -4258,6 +4359,13 @@ let JOB_BOARDS = [
   ["Silver Swan Recruitment","Private staffing for UHNW · London, Dubai, US","https://silverswanrecruitment.com/search-jobs/"],
   ["Private House Jobs","The largest private-household job board in Europe","https://www.privatehousejobs.com/"],
   ["Estate Jobs","Estate & private service roles, United States","https://estatejobs.com/"],
+];
+const CA_BOARDS = [
+  ["Diamond Personnel","Canada's leading nanny, eldercare & household staffing · 38+ years","https://diamondpersonnel.com/for-caregivers-job-listings"],
+  ["Heritage Nanny","Household & estate staff · Calgary, Toronto, Vancouver, Regina","https://heritagenanny.com/jobs/"],
+  ["Elite Domo","Private household professionals · Montreal & across Canada","https://elitedomo.com/en/job-listings"],
+  ["Portico","Domestic staffing for families of distinction · Toronto","https://www.porticostaff.com/jobs"],
+  ["Charles MacPherson Agency","Butlers, house & estate managers, chefs · Toronto","https://www.charlesmacpherson.com/canada/house-staff/"],
 ];
 
 let JOBS_UPDATED = "Live roles · verified 14 July 2026";
@@ -4276,7 +4384,7 @@ async function fetchLive(file){
 async function loadCareerData(){
   try{
     const d = await fetchLive('jobs.json');
-    if(d && d.jobs)    JOBS        = d.jobs;
+    if(d && d.jobs)    JOBS        = Object.assign({}, JOBS, d.jobs);
     if(d && d.boards)  JOB_BOARDS  = d.boards;
     if(d && d.updated) JOBS_UPDATED= d.updated;
     return true;
@@ -5014,22 +5122,37 @@ function renderAgencies(){
 const ICO_EXT='<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/></svg>';
 
 let JOB_REGION='americas';
+function stateOf(j){ const p=String(j.city||'').split(','); const last=(p[p.length-1]||'').trim(); return /^[A-Za-z]{2,3}$/.test(last)?last.toUpperCase():''; }
+function cityOf(j){ const c=String(j.city||''); const p=c.split(','); return (p.length>1 && /^[A-Za-z]{2,3}$/.test((p[p.length-1]||'').trim()))?p.slice(0,-1).join(',').trim():c.trim(); }
+function jobPopulateCities(){
+  const arr=JOBS[JOB_REGION]||[]; const sSel=document.getElementById('jobState'), ciSel=document.getElementById('jobCity');
+  if(!ciSel) return; const fs=sSel?sSel.value:'';
+  const cities=[...new Set(arr.filter(j=>!fs||stateOf(j)===fs).map(cityOf).filter(Boolean))].sort();
+  const cur=ciSel.value;
+  ciSel.innerHTML='<option value="">All cities</option>'+cities.map(c=>`<option value="${escapeHtml(c)}">${escapeHtml(c)}</option>`).join('');
+  ciSel.value = cities.indexOf(cur)>=0 ? cur : '';
+}
 function jobPopulateFilters(){
   const arr=JOBS[JOB_REGION]||[];
-  const cSel=document.getElementById('jobCountry'), tSel=document.getElementById('jobType');
+  const cSel=document.getElementById('jobCountry'), sSel=document.getElementById('jobState'), tSel=document.getElementById('jobType');
   if(!cSel||!tSel) return;
   const countries=[...new Set(arr.map(j=>j.country).filter(Boolean))].sort();
+  const states=[...new Set(arr.map(stateOf).filter(Boolean))].sort();
   const types=[...new Set(arr.map(j=>j.type).filter(Boolean))].sort();
   cSel.innerHTML='<option value="">All countries</option>'+countries.map(c=>`<option value="${escapeHtml(c)}">${escapeHtml(c)}</option>`).join('');
+  if(sSel) sSel.innerHTML='<option value="">All states/provinces</option>'+states.map(x=>`<option value="${escapeHtml(x)}">${escapeHtml(x)}</option>`).join('');
   tSel.innerHTML='<option value="">All types</option>'+types.map(t=>`<option value="${escapeHtml(t)}">${escapeHtml(t)}</option>`).join('');
+  jobPopulateCities();
 }
 function renderJobs(region){
   if(region) JOB_REGION=region;
   const list=document.getElementById('jobList'); if(!list) return; list.innerHTML="";
-  const qEl=document.getElementById('jobSearch'), cEl=document.getElementById('jobCountry'), tEl=document.getElementById('jobType');
-  const q=(qEl?qEl.value:'').toLowerCase().trim(), fc=cEl?cEl.value:'', ft=tEl?tEl.value:'';
+  const qEl=document.getElementById('jobSearch'), cEl=document.getElementById('jobCountry'), sEl=document.getElementById('jobState'), ciEl=document.getElementById('jobCity'), tEl=document.getElementById('jobType');
+  const q=(qEl?qEl.value:'').toLowerCase().trim(), fc=cEl?cEl.value:'', fs=sEl?sEl.value:'', fci=ciEl?ciEl.value:'', ft=tEl?tEl.value:'';
   const arr=(JOBS[JOB_REGION]||[]).filter(j=>{
     if(fc && j.country!==fc) return false;
+    if(fs && stateOf(j)!==fs) return false;
+    if(fci && cityOf(j)!==fci) return false;
     if(ft && j.type!==ft) return false;
     if(q){ const hay=((j.title||'')+' '+(j.agency||'')+' '+(j.city||'')+' '+(j.country||'')+' '+(j.type||'')+' '+(j.blurb||'')+' '+((j.tags||[]).join(' '))).toLowerCase(); if(hay.indexOf(q)<0) return false; }
     return true;
@@ -5060,7 +5183,7 @@ function renderJobs(region){
 
 function renderJobBoards(){
   const box=document.getElementById('jobBoards'); if(!box) return;
-  box.innerHTML = JOB_BOARDS.map(b=>`
+  box.innerHTML = JOB_BOARDS.concat(CA_BOARDS).map(b=>`
     <a class="board" href="${b[2]}" target="_blank" rel="noopener">
       <div class="bd-t">
         <div class="b1">${escapeHtml(b[0])}</div>
@@ -5076,15 +5199,16 @@ function initJobTabs(){
     document.querySelectorAll('.job-tab').forEach(x=>x.classList.remove('active'));
     t.classList.add('active');
     JOB_REGION=t.dataset.region;
-    const cEl=document.getElementById('jobCountry'), tEl=document.getElementById('jobType');
-    if(cEl) cEl.value=''; if(tEl) tEl.value='';   // country/type are region-specific → reset
+    ['jobCountry','jobState','jobCity','jobType'].forEach(id=>{const e=document.getElementById(id); if(e) e.value='';});
     jobPopulateFilters();
     renderJobs();
   }));
   const s=document.getElementById('jobSearch'); if(s) s.addEventListener('input',()=>renderJobs());
   const c=document.getElementById('jobCountry'); if(c) c.addEventListener('change',()=>renderJobs());
+  const st=document.getElementById('jobState'); if(st) st.addEventListener('change',()=>{ jobPopulateCities(); renderJobs(); });
+  const ci=document.getElementById('jobCity'); if(ci) ci.addEventListener('change',()=>renderJobs());
   const ty=document.getElementById('jobType'); if(ty) ty.addEventListener('change',()=>renderJobs());
-  const cl=document.getElementById('jobClear'); if(cl) cl.addEventListener('click',()=>{ if(s)s.value=''; if(c)c.value=''; if(ty)ty.value=''; renderJobs(); });
+  const cl=document.getElementById('jobClear'); if(cl) cl.addEventListener('click',()=>{ ['jobSearch','jobCountry','jobState','jobCity','jobType'].forEach(id=>{const e=document.getElementById(id); if(e) e.value='';}); jobPopulateFilters(); renderJobs(); });
   JOB_REGION='americas';
   jobPopulateFilters();
   renderJobs('americas');
