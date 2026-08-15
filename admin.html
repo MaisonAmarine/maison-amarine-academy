@@ -1400,22 +1400,31 @@ html,body,body *{font-family:'Calibri Light','Calibri','Carlito',system-ui,-appl
 .brand{font-family:'Cormorant Garamond',serif !important;}
 
   /* ============================================================
-     NEW LOOK (2026-08-15) — educational · energetic · premium.
-     Dark-grey sidebar kept. Violet primary + emerald + coral.
-     Cascade-only override (appended last) — fully revertible.
+     ULTRA-LUXURY LOOK (2026-08-15) — private-service, high-end.
+     Dark-grey sidebar kept. Champagne gold + warm cream + warm ink.
+     Cascade-only override — fully revertible.
      ============================================================ */
   :root{
-    --ivory:#f2f3f7; --line:#e7e9f0;
-    --gold:#6C5CE7; --gold-deep:#5646c9; --gold-lt:#a99bf0; --gold-wash:#eeecfb;
-    --green:#12b76a; --green-lt:#34d399;
-    --coral:#ff7a5a; --coral-wash:#ffe9e2; --amber:#f5a623;
+    --ivory:#F7F4EE; --paper:#FFFFFF;
+    --ink:#1E170F; --ink-soft:#4E463A; --stone:#9C8F7C; --line:#E9E2D4;
+    --gold:#C6A96B; --gold-deep:#9B7C40; --gold-lt:#DDC48C; --gold-wash:#F3ECDD;
+    --green:#5f7d52; --green-lt:#7a9b6a; --shadow:rgba(30,23,15,0.10);
   }
-  .nav-item.active{ background:linear-gradient(135deg,#6C5CE7,#5646c9)!important; color:#fff!important; box-shadow:0 8px 20px rgba(108,92,231,.42)!important; }
-  .btn-primary,.dsh-cta,.mtr-cta{ background:linear-gradient(135deg,#6C5CE7,#5646c9)!important; color:#fff!important; box-shadow:0 8px 22px rgba(108,92,231,.34)!important; }
-  .btn-primary:hover,.dsh-cta:hover,.mtr-cta:hover{ filter:brightness(1.05); box-shadow:0 12px 28px rgba(108,92,231,.46)!important; }
-  .dsh-bar i,.bar-fill,.pr-prog-fill,.wcard-bar-fill{ background:linear-gradient(90deg,#12b76a,#34d399)!important; }
-  .pr-streak{ color:#e0552f!important; background:var(--coral-wash)!important; }
-  .dsh-card.clic:hover{ border-color:var(--gold-lt)!important; box-shadow:0 16px 36px rgba(108,92,231,.14)!important; }
+  body{ color:var(--ink); }
+  /* editorial, easy-to-read spacing */
+  p,.dsh-s,.pr-rev-w,.lsn-reading p{ line-height:1.74; }
+  .lsn-reading .rf-sec,.lsn-reading p{ font-size:16.5px; }
+  /* active nav → champagne plaque on the dark sidebar */
+  .nav-item.active{ background:linear-gradient(135deg,#D4B876,#B4923F)!important; color:#211a10!important; box-shadow:0 7px 18px rgba(198,169,107,.34)!important; }
+  .nav-item.active svg{ stroke:#211a10!important; }
+  /* primary buttons / CTAs → champagne gold, dark ink text */
+  .btn-primary,.dsh-cta,.mtr-cta{ background:linear-gradient(135deg,#D0B471,#B08F3E)!important; color:#211a10!important; box-shadow:0 8px 22px rgba(155,124,64,.30)!important; }
+  .btn-primary:hover,.dsh-cta:hover,.mtr-cta:hover{ filter:brightness(1.04); box-shadow:0 12px 28px rgba(155,124,64,.42)!important; }
+  /* progress → refined champagne */
+  .dsh-bar i,.bar-fill,.pr-prog-fill,.wcard-bar-fill{ background:linear-gradient(90deg,#B4923F,#DDC48C)!important; }
+  /* streak / small accents → warm gold */
+  .pr-streak{ color:var(--gold-deep)!important; background:var(--gold-wash)!important; }
+  .dsh-card.clic:hover{ border-color:var(--gold-lt)!important; box-shadow:0 16px 40px rgba(30,23,15,.12)!important; }
 </style>
 
 <style>
