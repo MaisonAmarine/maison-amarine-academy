@@ -2286,6 +2286,27 @@ html,body,body *{font-family:'Calibri Light','Calibri','Carlito',system-ui,-appl
         <button class="job-tab" data-region="mideast">🌏 Middle East</button>
         <span class="job-count" id="jobCount"></span>
       </div>
+      <style>
+        .job-filters{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:0 0 18px;}
+        .jf-search{flex:1;min-width:220px;display:flex;align-items:center;gap:9px;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:10px 14px;}
+        .jf-search svg{width:17px;height:17px;color:var(--stone);flex:0 0 auto;}
+        .jf-search input{flex:1;border:none;outline:none;background:none;font-family:inherit;font-size:14px;color:var(--ink);}
+        .jf-sel{border:1px solid var(--line);border-radius:12px;padding:10px 14px;font-family:inherit;font-size:14px;background:var(--paper);color:var(--ink);cursor:pointer;min-width:160px;}
+        .jf-sel:focus,.jf-search:focus-within{outline:none;border-color:var(--gold-lt);}
+        .jf-clear{border:1px solid var(--line);border-radius:12px;padding:10px 16px;font-family:inherit;font-size:13.5px;font-weight:600;background:none;color:var(--ink-soft);cursor:pointer;}
+        .jf-clear:hover{border-color:var(--gold);color:var(--gold-deep);}
+        .job-empty{padding:44px 20px;text-align:center;color:var(--stone);font-size:14px;}
+        @media(max-width:640px){ .jf-sel,.jf-clear{flex:1;} }
+      </style>
+      <div class="job-filters">
+        <div class="jf-search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4" stroke-linecap="round"/></svg>
+          <input id="jobSearch" type="text" placeholder="Search role, agency, city, keyword…" autocomplete="off">
+        </div>
+        <select id="jobCountry" class="jf-sel"><option value="">All countries</option></select>
+        <select id="jobType" class="jf-sel"><option value="">All types</option></select>
+        <button id="jobClear" class="jf-clear" type="button">Clear</button>
+      </div>
       <div class="jobs" id="jobList"></div>
 
       <div class="note-band" style="margin-top:22px;">
@@ -4838,10 +4859,29 @@ function renderAgencies(){
 
 const ICO_EXT='<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/></svg>';
 
+let JOB_REGION='americas';
+function jobPopulateFilters(){
+  const arr=JOBS[JOB_REGION]||[];
+  const cSel=document.getElementById('jobCountry'), tSel=document.getElementById('jobType');
+  if(!cSel||!tSel) return;
+  const countries=[...new Set(arr.map(j=>j.country).filter(Boolean))].sort();
+  const types=[...new Set(arr.map(j=>j.type).filter(Boolean))].sort();
+  cSel.innerHTML='<option value="">All countries</option>'+countries.map(c=>`<option value="${escapeHtml(c)}">${escapeHtml(c)}</option>`).join('');
+  tSel.innerHTML='<option value="">All types</option>'+types.map(t=>`<option value="${escapeHtml(t)}">${escapeHtml(t)}</option>`).join('');
+}
 function renderJobs(region){
-  const list=document.getElementById('jobList');list.innerHTML="";
-  const arr = JOBS[region]||[];
-  document.getElementById('jobCount').textContent = arr.length + (arr.length===1?' live role':' live roles');
+  if(region) JOB_REGION=region;
+  const list=document.getElementById('jobList'); if(!list) return; list.innerHTML="";
+  const qEl=document.getElementById('jobSearch'), cEl=document.getElementById('jobCountry'), tEl=document.getElementById('jobType');
+  const q=(qEl?qEl.value:'').toLowerCase().trim(), fc=cEl?cEl.value:'', ft=tEl?tEl.value:'';
+  const arr=(JOBS[JOB_REGION]||[]).filter(j=>{
+    if(fc && j.country!==fc) return false;
+    if(ft && j.type!==ft) return false;
+    if(q){ const hay=((j.title||'')+' '+(j.agency||'')+' '+(j.city||'')+' '+(j.country||'')+' '+(j.type||'')+' '+(j.blurb||'')+' '+((j.tags||[]).join(' '))).toLowerCase(); if(hay.indexOf(q)<0) return false; }
+    return true;
+  });
+  const cnt=document.getElementById('jobCount'); if(cnt) cnt.textContent = arr.length + (arr.length===1?' live role':' live roles');
+  if(!arr.length){ list.innerHTML='<div class="job-empty">No role matches your search. Try another keyword, country, or region.</div>'; return; }
   arr.forEach(j=>{
     const el=document.createElement('a');
     el.className="job";
@@ -4877,12 +4917,22 @@ function renderJobBoards(){
 }
 
 function initJobTabs(){
-  document.getElementById('jobsUpdated').textContent=JOBS_UPDATED;
+  const upd=document.getElementById('jobsUpdated'); if(upd) upd.textContent=JOBS_UPDATED;
   document.querySelectorAll('.job-tab').forEach(t=>t.addEventListener('click',()=>{
     document.querySelectorAll('.job-tab').forEach(x=>x.classList.remove('active'));
     t.classList.add('active');
-    renderJobs(t.dataset.region);
+    JOB_REGION=t.dataset.region;
+    const cEl=document.getElementById('jobCountry'), tEl=document.getElementById('jobType');
+    if(cEl) cEl.value=''; if(tEl) tEl.value='';   // country/type are region-specific → reset
+    jobPopulateFilters();
+    renderJobs();
   }));
+  const s=document.getElementById('jobSearch'); if(s) s.addEventListener('input',()=>renderJobs());
+  const c=document.getElementById('jobCountry'); if(c) c.addEventListener('change',()=>renderJobs());
+  const ty=document.getElementById('jobType'); if(ty) ty.addEventListener('change',()=>renderJobs());
+  const cl=document.getElementById('jobClear'); if(cl) cl.addEventListener('click',()=>{ if(s)s.value=''; if(c)c.value=''; if(ty)ty.value=''; renderJobs(); });
+  JOB_REGION='americas';
+  jobPopulateFilters();
   renderJobs('americas');
   document.querySelectorAll('.job-tab').forEach(x=>x.classList.toggle('active', x.dataset.region==='americas'));
   renderJobBoards();
