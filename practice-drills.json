@@ -87,6 +87,30 @@
       "Do not raise it again"
      ],
      "why": "Fact, fix, ownership. The first mistake handled this way is worth more than a flawless month: it proves bad news travels through you at full speed."
+    },
+    {
+     "scene": "The improper request",
+     "stem": "The principal asks you to do something that crosses a line. Put your handling in order.",
+     "steps": [
+      "Do not react or moralise — keep your face and your voice even",
+      "Separate the person from the request: you are declining the act, not them",
+      "Offer the proper way to get the legitimate part of what they want",
+      "If it touches money or their name, ask for it in writing, which quietly ends most of it",
+      "If pressed, hold the line once, calmly, and tell the family office only if it recurs"
+     ],
+     "why": "You decline the act without wounding the person, redirect to the legitimate path, and let the written record and a single calm 'no' do the work. Moralising loses you the house; folding loses you yourself."
+    },
+    {
+     "scene": "The ninety-day review",
+     "stem": "You reach ninety days in the house. Put the review in order.",
+     "steps": [
+      "Ask for a review yourself — private households rarely offer one",
+      "Ask the senior question: 'is there anything I have not noticed?'",
+      "When you hear criticism you believe is unfair, write down every word",
+      "Say nothing in your defence, however unjust it feels",
+      "Thank them, change it, and never mention it again"
+     ],
+     "why": "Households don't offer reviews, which is exactly why you ask. And you defend nothing: you thank, you change, you move on — that is the most senior thing you can do."
     }
    ]
   },
@@ -209,6 +233,46 @@
      "t": "I would be so grateful for the chance to be part of your world",
      "b": 0,
      "fb": "Warm but self-facing, and 'your world' is the wrong register. Weak, though not fatal."
+    },
+    {
+     "t": "I'd tell the principal an unwelcome truth the same day, even at my own cost",
+     "b": 1,
+     "fb": "Bad news at full speed is the ideal. The failure is softening or delaying it, never the honesty itself."
+    },
+    {
+     "t": "A reporter clearly already knows a detail about the family, so I'd confirm just that one",
+     "b": 2,
+     "fb": "You confirm nothing, ever. A detail 'they already know' becomes a sourced fact the moment you nod — confirmation is the breach."
+    },
+    {
+     "t": "I'd take the unglamorous task once, unasked and unmentioned",
+     "b": 1,
+     "fb": "That single quiet act earns the long-serving staff faster than months of pleasantness."
+    },
+    {
+     "t": "I'd befriend the staff quickly and trade confidences so I fit in",
+     "b": 2,
+     "fb": "Trading confidences makes you a channel for gossip and a liability. Warmth is not intimacy."
+    },
+    {
+     "t": "I'd research the family thoroughly before day one so I arrive well informed",
+     "b": 2,
+     "fb": "You are shown what you need. Arriving 'informed' by research signals the wrong instinct — in a private house, curiosity has another name."
+    },
+    {
+     "t": "I never take sides — but if both principals disagree, I'd quietly do what the one who pays me wants",
+     "b": 2,
+     "fb": "Between two principals there is no 'one who pays you'; there is the household. Choosing one is choosing the losing side."
+    },
+    {
+     "t": "I'd ask for instructions in writing, openly, so we both hold the same record",
+     "b": 0,
+     "fb": "Legitimate self-protection, done in the open. Clean — the opposite of a secret file."
+    },
+    {
+     "t": "I'd never mention what the family earns or spends, to anyone",
+     "b": 1,
+     "fb": "Restraint about money is the register of established wealth; it serves the household."
     }
    ]
   },
@@ -422,6 +486,68 @@
        "fb": "A spend you can explain on the spot is the habit that keeps you above suspicion for years."
       }
      ]
+    },
+    {
+     "scene": "The eager newcomer",
+     "stem": "Your first fortnight in a new house. Mark the mistakes.",
+     "lines": [
+      {
+       "t": "You spot six things done badly and fix the most obvious one to prove your value",
+       "bad": true,
+       "fb": "Everything that looks stupid has a history. Find it before you touch it — reform in week one is the classic newcomer failure."
+      },
+      {
+       "t": "You learn every name — the gardener, the night driver, the Thursday help — and use them",
+       "bad": false,
+       "fb": "Names first. Nothing does more for your first month."
+      },
+      {
+       "t": "You explain how your last house did things, to raise the standard",
+       "bad": true,
+       "fb": "It reads as arrogance and homesickness at once. The house you're in is the only one that exists now."
+      },
+      {
+       "t": "You change only your own workspace and leave everything else exactly as it is",
+       "bad": false,
+       "fb": "Change what is yours, learn the rest. The correct posture for a newcomer."
+      },
+      {
+       "t": "You quietly write down how the house actually runs, though no one asked you to",
+       "bad": false,
+       "fb": "The house that has been written down can be run — which is precisely why the person who wrote it gets promoted."
+      }
+     ]
+    },
+    {
+     "scene": "What you may say",
+     "stem": "A week of small moments. Mark the ones handled wrongly.",
+     "lines": [
+      {
+       "t": "A friend asks who you work for; you say 'a private family' and leave it there",
+       "bad": false,
+       "fb": "Warm, final, revealing nothing. Correct."
+      },
+      {
+       "t": "An old colleague already knows the family, so you compare notes about them",
+       "bad": true,
+       "fb": "Shared knowledge is not permission. Two people confirming each other is exactly how a confidence leaks."
+      },
+      {
+       "t": "You post a photo of a beautiful room — no faces, no location tag",
+       "bad": true,
+       "fb": "No faces is not enough. A room, a view, a car can place it. You post nothing of the house at all."
+      },
+      {
+       "t": "A recruiter asks for a reference; you route it through the family office and name no one",
+       "bad": false,
+       "fb": "You prove the role was real without breaching a confidence. Correct."
+      },
+      {
+       "t": "The principal introduces you to a guest as 'almost family'; you stay warm but keep your role",
+       "bad": false,
+       "fb": "Warmth is not a change of role. Holding the line kindly protects you both."
+      }
+     ]
     }
    ]
   },
@@ -471,6 +597,20 @@
      "hint": "Warm, equal, taking no side.",
      "model": "I understand, and I want to get this right for you both. What I can do is make sure the house does exactly what you agree — I'll hold whatever you decide together, and lay the options out plainly if that helps. But the choice is yours as a couple; it isn't mine to weigh in on.",
      "note": "You serve the household, never one principal against the other. The day you take a side, you have chosen the losing one."
+    },
+    {
+     "scene": "The lavish gift",
+     "stem": "The principal warmly presses an expensive personal gift on you. Write your reply.",
+     "hint": "Grateful, warm, and quietly transparent — you do not wound their warmth.",
+     "model": "Thank you — truly, that's so kind and it means a great deal. If it's all right, I'll just note it with the office, only so that anything to do with me stays completely transparent; I'd never want a single thing between us to become a question. But genuinely, thank you.",
+     "note": "You don't reject their warmth with a cold refusal. You accept graciously and make it transparent, which keeps you clean without coldness."
+    },
+    {
+     "scene": "Just this once",
+     "stem": "The principal asks you, warmly, to bend a firm rule 'just this once'. Write what you say.",
+     "hint": "Give them the outcome, not the shortcut. Warm, and holding the line.",
+     "model": "Of course — I want to make this easy for you, and I can get you exactly that by [the proper route], today. The one thing I'd rather not do is [the shortcut], only because it's the kind of thing that protects you as much as me. Leave the rest with me and I'll have it sorted.",
+     "note": "You hold the line by solving the real need another way. Kindly held, a boundary protects you both; folded once, it is gone for good."
     }
    ]
   }
