@@ -5137,7 +5137,106 @@ function showCertificate(){
     </div>
   </div></div>
   <script>window.onload=function(){setTimeout(function(){try{window.print()}catch(e){}},600);};<\/script>
-  </body></html>`;
+  <!-- ============ THE BUTLER — AI assistant (academy + real-life private service) ============ -->
+<style>
+  #butlerFab{position:fixed;right:22px;bottom:22px;z-index:99998;display:flex;align-items:center;gap:10px;
+    background:#24262E;color:#F4F2ED;border:1px solid #3a3d47;border-radius:40px;padding:12px 18px 12px 14px;
+    cursor:pointer;box-shadow:0 10px 30px rgba(0,0,0,.28);font-family:'Cormorant',Georgia,serif;font-size:16px;
+    transition:transform .18s ease, box-shadow .18s ease}
+  #butlerFab:hover{transform:translateY(-2px);box-shadow:0 14px 36px rgba(0,0,0,.34)}
+  #butlerFab .bf-ic{width:30px;height:30px;border-radius:50%;background:#C4C9D0;color:#24262E;display:flex;align-items:center;justify-content:center;font-size:16px;flex:0 0 30px}
+  #butlerFab .bf-lbl{letter-spacing:.02em}
+  @media(max-width:520px){ #butlerFab .bf-lbl{display:none} #butlerFab{padding:12px} }
+  #butlerPanel{position:fixed;right:22px;bottom:22px;z-index:99999;width:min(400px,calc(100vw - 32px));height:min(600px,calc(100vh - 40px));
+    background:#F4F2ED;border:1px solid #d8d5cc;border-radius:18px;box-shadow:0 24px 70px rgba(0,0,0,.34);
+    display:none;flex-direction:column;overflow:hidden;font-family:'Cormorant',Georgia,serif}
+  #butlerPanel.open{display:flex}
+  .bp-head{background:#24262E;color:#F4F2ED;padding:16px 18px;display:flex;align-items:center;gap:12px}
+  .bp-head .bp-av{width:38px;height:38px;border-radius:50%;background:#C4C9D0;color:#24262E;display:flex;align-items:center;justify-content:center;font-size:18px;flex:0 0 38px}
+  .bp-head h4{margin:0;font-size:19px;font-weight:600;line-height:1.1}
+  .bp-head .bp-sub{font-size:12.5px;opacity:.7;font-family:'Calibri Light','Calibri',sans-serif;letter-spacing:.02em}
+  .bp-head .bp-x{margin-left:auto;background:none;border:none;color:#F4F2ED;opacity:.7;font-size:22px;cursor:pointer;line-height:1}
+  .bp-head .bp-x:hover{opacity:1}
+  .bp-msgs{flex:1;overflow-y:auto;padding:18px;display:flex;flex-direction:column;gap:12px;background:#F4F2ED}
+  .bp-msg{max-width:86%;padding:11px 14px;border-radius:14px;font-size:16px;line-height:1.55;white-space:normal;word-wrap:break-word}
+  .bp-msg.bot{align-self:flex-start;background:#fff;border:1px solid #e4e0d6;color:#2b2b2b;border-bottom-left-radius:4px}
+  .bp-msg.me{align-self:flex-end;background:#24262E;color:#F4F2ED;border-bottom-right-radius:4px}
+  .bp-msg p{margin:0 0 8px} .bp-msg p:last-child{margin:0}
+  .bp-msg ul{margin:6px 0;padding-left:18px} .bp-msg li{margin:2px 0}
+  .bp-typing{align-self:flex-start;display:flex;gap:4px;padding:12px 14px}
+  .bp-typing span{width:7px;height:7px;border-radius:50%;background:#b7b2a6;animation:bpb 1.2s infinite}
+  .bp-typing span:nth-child(2){animation-delay:.2s} .bp-typing span:nth-child(3){animation-delay:.4s}
+  @keyframes bpb{0%,60%,100%{opacity:.3;transform:translateY(0)}30%{opacity:1;transform:translateY(-3px)}}
+  .bp-in{border-top:1px solid #e0ddd3;padding:12px;display:flex;gap:8px;background:#F4F2ED}
+  .bp-in textarea{flex:1;resize:none;border:1px solid #d8d5cc;border-radius:12px;padding:10px 12px;font-family:'Calibri Light','Calibri',sans-serif;font-size:14.5px;max-height:120px;background:#fff;outline:none;color:#2b2b2b}
+  .bp-in textarea:focus{border-color:#24262E}
+  .bp-in button{flex:0 0 auto;background:#24262E;color:#F4F2ED;border:none;border-radius:12px;padding:0 16px;cursor:pointer;font-family:'Cormorant',serif;font-size:16px}
+  .bp-in button:disabled{opacity:.5;cursor:default}
+  .bp-hint{font-size:11px;color:#8a8577;text-align:center;padding:0 12px 10px;font-family:'Calibri Light','Calibri',sans-serif;background:#F4F2ED}
+</style>
+<div id="butlerFab" onclick="butlerOpen()"><span class="bf-ic">✦</span><span class="bf-lbl">Ask the Butler</span></div>
+<div id="butlerPanel" aria-live="polite">
+  <div class="bp-head">
+    <div class="bp-av">✦</div>
+    <div><h4 id="bpName">Ambrose</h4><div class="bp-sub">Your Maison Amarine butler</div></div>
+    <button class="bp-x" onclick="butlerClose()" aria-label="Close">×</button>
+  </div>
+  <div class="bp-msgs" id="bpMsgs"></div>
+  <div class="bp-in">
+    <textarea id="bpInput" rows="1" placeholder="Ask about the course, or a real situation you're facing…" onkeydown="butlerKey(event)"></textarea>
+    <button id="bpSend" onclick="butlerSend()">Send</button>
+  </div>
+  <div class="bp-hint">On the course · on the job · always discreet</div>
+</div>
+<script>
+(function(){
+  var EP="https://beexlhyvcngeopkkxoco.supabase.co/functions/v1/academy-chat";
+  var KEY="sb_publishable_qVIwPd3lkJnSoObnYMuUKg_mn0i2LY9";
+  var history=[], busy=false, greeted=false;
+  var NAME="Ambrose";
+  function el(id){ return document.getElementById(id); }
+  window.butlerOpen=function(){ el('butlerPanel').classList.add('open'); el('butlerFab').style.display='none';
+    if(!greeted){ greeted=true; addBot("Good day. I am "+NAME+", your butler here at Maison Amarine. Ask me anything — about a module, how to study, an interview, or a real situation you're facing on the job. How may I help?"); }
+    setTimeout(function(){ el('bpInput').focus(); }, 60);
+  };
+  window.butlerClose=function(){ el('butlerPanel').classList.remove('open'); el('butlerFab').style.display='flex'; };
+  window.butlerKey=function(e){ if(e.key==='Enter' && !e.shiftKey){ e.preventDefault(); butlerSend(); } };
+  // minimal, safe markdown → HTML (escape first, then bold + bullets + paragraphs)
+  function esc(s){ return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+  function fmt(t){
+    var lines=esc(t).split(/\n/), out=[], list=[];
+    function flush(){ if(list.length){ out.push('<ul>'+list.map(function(x){return '<li>'+x+'</li>';}).join('')+'</ul>'); list=[]; } }
+    lines.forEach(function(ln){
+      ln=ln.replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>');
+      var m=ln.match(/^\s*[-•]\s+(.*)$/);
+      if(m){ list.push(m[1]); } else { flush(); if(ln.trim()) out.push('<p>'+ln+'</p>'); }
+    });
+    flush(); return out.join('');
+  }
+  function addBot(t){ var d=document.createElement('div'); d.className='bp-msg bot'; d.innerHTML=fmt(t); el('bpMsgs').appendChild(d); scroll(); }
+  function addMe(t){ var d=document.createElement('div'); d.className='bp-msg me'; d.textContent=t; el('bpMsgs').appendChild(d); scroll(); }
+  function scroll(){ var m=el('bpMsgs'); m.scrollTop=m.scrollHeight; }
+  function typing(on){ var t=el('bpTyping'); if(on){ if(t) return; var d=document.createElement('div'); d.className='bp-typing'; d.id='bpTyping'; d.innerHTML='<span></span><span></span><span></span>'; el('bpMsgs').appendChild(d); scroll(); } else if(t){ t.remove(); } }
+  window.butlerSend=function(){
+    var inp=el('bpInput'); var txt=(inp.value||'').trim(); if(!txt||busy) return;
+    addMe(txt); history.push({role:'user',content:txt}); inp.value=''; inp.style.height='auto';
+    busy=true; el('bpSend').disabled=true; typing(true);
+    fetch(EP,{method:'POST',headers:{'Content-Type':'application/json','apikey':KEY},body:JSON.stringify({messages:history})})
+      .then(function(r){return r.json();})
+      .then(function(d){
+        typing(false); busy=false; el('bpSend').disabled=false;
+        if(d && d.name){ NAME=d.name; el('bpName').textContent=d.name; }
+        if(d && d.reply){ addBot(d.reply); history.push({role:'assistant',content:d.reply}); }
+        else { addBot("Forgive me — I'm momentarily unavailable. Do try again in a moment."); }
+        el('bpInput').focus();
+      })
+      .catch(function(){ typing(false); busy=false; el('bpSend').disabled=false; addBot("Forgive me — I couldn't reach the study just now. Please try again shortly."); });
+  };
+  // auto-grow the textarea
+  document.addEventListener('input',function(e){ if(e.target && e.target.id==='bpInput'){ e.target.style.height='auto'; e.target.style.height=Math.min(120,e.target.scrollHeight)+'px'; } });
+})();
+</script>
+</body></html>`;
   const w=window.open('','_blank');
   if(!w){ toast&&toast('Please allow pop-ups to open your certificate', true); return; }
   w.document.open(); w.document.write(html); w.document.close();
@@ -5780,7 +5879,7 @@ function lsnLeafPositions(bodyhtml){ const re=/<\/(p|ul|ol)>/g; let m,pos=[]; wh
 // intercale 1 (ou 2 pour les longs chapitres) image(s) du thème de la semaine, en variant la position : haut / milieu / fin
 function lsnInjectFigures(bodyhtml, weekNo, i){
   // pas de photo dans le module d'introduction (ouvert avec stepIdx -1)
-  if(typeof svCur!=='undefined' && svCur && svCur.stepIdx===-1) return bodyhtml;
+  if(typeof svCur!=='undefined' && svCur && (svCur.stepIdx===-1 || svCur.stepIdx===3)) return bodyhtml; // no photos in the intro or the deliverable module
   if(bodyhtml.indexOf('class="lsn-case"')>=0) return bodyhtml;  // pas de photo dans les chapitres à cases
   const pos=lsnLeafPositions(bodyhtml), L=pos.length;
   if(L<3) return bodyhtml;                       // chapitre trop court : aucune image

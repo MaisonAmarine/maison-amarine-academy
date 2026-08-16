@@ -5628,7 +5628,7 @@ function lsnLeafPositions(bodyhtml){ const re=/<\/(p|ul|ol)>/g; let m,pos=[]; wh
 // de la semaine, on ne met pas de photo (plutôt que d'en répéter une).
 function lsnInjectFigures(bodyhtml, weekNo, posV){
   // pas de photo dans le module d'introduction (ouvert avec stepIdx -1)
-  if(typeof svCur!=='undefined' && svCur && svCur.stepIdx===-1) return bodyhtml;
+  if(typeof svCur!=='undefined' && svCur && (svCur.stepIdx===-1 || svCur.stepIdx===3)) return bodyhtml; // no photos in the intro or the deliverable module
   if(bodyhtml.indexOf('class="lsn-case"')>=0) return bodyhtml;  // pas de photo dans les chapitres à cases
   const pos=lsnLeafPositions(bodyhtml), L=pos.length;
   if(L<3) return bodyhtml;                       // chapitre trop court : aucune image
