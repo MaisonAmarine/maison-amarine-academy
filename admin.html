@@ -1411,7 +1411,7 @@ html,body,body *{font-family:'Calibri Light','Calibri','Carlito',system-ui,-appl
     --gold:#24262E; --gold-deep:#33353B; --gold-lt:#9AA0A8; --gold-wash:#ECECEE;
     --green:#0B8F3B; --green-lt:#12A24A; --shadow:rgba(20,28,46,0.08);
   }
-  body{ color:var(--ink); }
+  body{ color:var(--ink); zoom:1.10; }   /* everything ~10% larger, platform-wide */
   p,.dsh-s,.pr-rev-w,.lsn-reading p{ line-height:1.74; }
   .lsn-reading .rf-sec,.lsn-reading p{ font-size:16.5px; }
   /* active nav on the dark sidebar → light translucent plaque + thin light bar (no blue) */
@@ -5837,11 +5837,8 @@ function openStepView(s, weekNo, stepIdx){
   try{ setResume({wk:weekNo, step:stepIdx, ci:-1, title:s.title||'', sub:s.subtitle||'', ts:Date.now()}); updateResumeChip(); }catch(e){}
 }
 function lsnDownloadBtn(){
-  const s=svCur.s;
-  const dlSvg=`<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12M7 11l5 5 5-5M5 21h14" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
-  return s.doc_url
-    ? `<div style="text-align:center;margin-bottom:26px;"><a class="rf-dl" href="${s.doc_url}" target="_blank" rel="noopener">Download as PDF ${dlSvg}</a></div>`
-    : `<div style="text-align:center;margin-bottom:26px;"><button class="rf-dl" onclick="downloadLesson()">Download as PDF ${dlSvg}</button></div>`;
+  // PDFs removed platform-wide — the on-screen lesson is the course (always in sync).
+  return '';
 }
 function svSectionTitle(i){ const x=svCur.secs[i]; return x&&x.heading ? x.heading : 'Introduction'; }
 function svShowToc(){
