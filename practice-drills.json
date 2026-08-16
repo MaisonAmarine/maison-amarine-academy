@@ -613,6 +613,111 @@
      "note": "You hold the line by solving the real need another way. Kindly held, a boundary protects you both; folded once, it is gone for good."
     }
    ]
+  },
+  {
+   "type": "sort",
+   "title": "Who sits where",
+   "sub": "Place each role on the right ladder of the house.",
+   "buckets": [
+    "The family office",
+    "The management ladder",
+    "The domestic ladder"
+   ],
+   "items": [
+    {
+     "t": "The family office director",
+     "b": 0,
+     "fb": "Runs the office and the family's affairs; frequently your true employer."
+    },
+    {
+     "t": "The chief of staff",
+     "b": 0,
+     "fb": "The principal's right hand across business and private life — often the person you report to."
+    },
+    {
+     "t": "The controller who keeps the household budget",
+     "b": 0,
+     "fb": "The money sits in the office: budgets, payroll, the invoices you must be able to explain."
+    },
+    {
+     "t": "The principal's private PA",
+     "b": 0,
+     "fb": "Diary and correspondence — your closest daily counterpart, on the office side."
+    },
+    {
+     "t": "The estate manager across several properties",
+     "b": 1,
+     "fb": "Runs multiple residences, their staff and budgets. The management ladder."
+    },
+    {
+     "t": "The house manager of one residence",
+     "b": 1,
+     "fb": "Runs a single house and its staff. Management ladder."
+    },
+    {
+     "t": "The butler, senior of formal service",
+     "b": 1,
+     "fb": "Front of house, the senior of formal service — the management of the life, not only the maintenance."
+    },
+    {
+     "t": "The head housekeeper",
+     "b": 2,
+     "fb": "Leads the domestic team, but on the domestic ladder — paid for the condition of the house, done superbly."
+    },
+    {
+     "t": "The private chef",
+     "b": 2,
+     "fb": "The table. A craft of its own, on the domestic ladder."
+    },
+    {
+     "t": "The chauffeur",
+     "b": 2,
+     "fb": "A domestic role, and a craft of its own."
+    },
+    {
+     "t": "The nanny or governess",
+     "b": 2,
+     "fb": "Domestic ladder — organised around the daily life of the house."
+    }
+   ]
+  },
+  {
+   "type": "spot",
+   "title": "Know the board",
+   "sub": "A new house manager, first week. Mark the mistakes.",
+   "items": [
+    {
+     "scene": "Learning who's who",
+     "stem": "Mark the mistakes.",
+     "lines": [
+      {
+       "t": "You send the month's household invoices to the family office controller",
+       "bad": false,
+       "fb": "Correct — the money runs through the office, and a spend you route cleanly is a spend you can explain."
+      },
+      {
+       "t": "You ask the private chef to also manage the principal's diary, since he seems free",
+       "bad": true,
+       "fb": "Wrong role, wrong ladder. Knowing who does what is the whole point; the diary is the PA's, not the kitchen's."
+      },
+      {
+       "t": "You take a legal question straight to the chief of staff rather than guessing",
+       "bad": false,
+       "fb": "You know the query is above your seat and route it to the right one. Correct."
+      },
+      {
+       "t": "On day three you reorganise the head housekeeper's team to show initiative",
+       "bad": true,
+       "fb": "Newcomer overreach across ladders. Learn the house before you touch it, and never rearrange another leader's team in week one."
+      },
+      {
+       "t": "You learn every person's role and who they answer to before you change a thing",
+       "bad": false,
+       "fb": "Exactly. The manager who knows the whole board is the one they trust to run it."
+      }
+     ]
+    }
+   ]
   }
  ],
  "2": [
@@ -2906,6 +3011,101 @@
      "hint": "Generous and practical. The things that are not in the manual.",
      "model": "Everything operational is in the manual, which is current to this week. This note is the part that is not written down anywhere. The principal reads messages first thing and rarely after eight in the evening, so anything needing a decision should land before seven. Thursdays are heavier than they look, the board pack arrives Wednesday evening and the study needs to be ready by six. Marta has been here eleven years and knows more about this house than the manual does, ask her before you change anything. The heating in the east wing takes four hours to respond, not one. And the family office prefers one written summary on Friday to messages across the week. Good luck. It is a good house.",
      "note": "It gives the successor rhythm, thresholds and people, which is exactly what a manual cannot hold. Naming Marta and directing them to her is generous and also protects the house. It is a good house is the last line, and leaving that behind rather than a warning is what people remember about you years later."
+    }
+   ]
+  },
+  {
+   "type": "sort",
+   "title": "The independent's judgement",
+   "sub": "Sort each move as an independent professional.",
+   "buckets": [
+    "Sound practice",
+    "A costly mistake",
+    "A career-ender"
+   ],
+   "items": [
+    {
+     "t": "You take a deposit of a third to a half before a project begins",
+     "b": 0,
+     "fb": "Standard and wise. The deposit protects your time and tests their seriousness."
+    },
+    {
+     "t": "You begin the engagement before your insurance is in place",
+     "b": 2,
+     "fb": "Uninsured, a single incident ends a career, not just a contract. Never work a day without cover."
+    },
+    {
+     "t": "You price at the naive daily equivalent of the salary, with no uplift",
+     "b": 1,
+     "fb": "You will work harder than employed for less. The 1.6–2.5 uplift pays for everything an employer used to."
+    },
+    {
+     "t": "You name a past principal to win the next engagement",
+     "b": 2,
+     "fb": "Every future client hears it as a promise about them. It ends the independent career faster than the employed one."
+    },
+    {
+     "t": "You route every reference through the family office, naming no one",
+     "b": 0,
+     "fb": "You prove the work was real without breaching a confidence. The strongest line you have."
+    },
+    {
+     "t": "You skip the written scope because the job is only two weeks",
+     "b": 1,
+     "fb": "If it is not written, it does not exist. The absence of a contract protects only the person who wrote none."
+    },
+    {
+     "t": "You run with no cash buffer, relying on continuous work",
+     "b": 1,
+     "fb": "There will be empty weeks. Three to six months of buffer is the difference between choosing work and taking any."
+    },
+    {
+     "t": "You set aside your tax from every invoice the day it is paid",
+     "b": 0,
+     "fb": "The habit that keeps your first year from ending in a panic."
+    },
+    {
+     "t": "You advertise loudly, with a client's name, to get noticed",
+     "b": 2,
+     "fb": "In this world you are found, not heard. A named client in an advert ends your discretion, and your career."
+    },
+    {
+     "t": "You invoice the day the work is done, payable within 7 to 14 days",
+     "b": 0,
+     "fb": "Prompt, plain, and it keeps your cash flowing. Correct."
+    }
+   ]
+  },
+  {
+   "type": "order",
+   "title": "Price your day rate",
+   "sub": "Put the pricing of an independent day rate in order.",
+   "items": [
+    {
+     "scene": "Setting your number",
+     "stem": "Put the steps in order.",
+     "steps": [
+      "Take the annual salary of the equivalent employed role",
+      "Divide it by about 220 working days",
+      "Multiply by 1.6 to 2.5 for holiday, sick pay, pension, gaps, insurance and admin",
+      "Bill travel and any agreed expenses separately, on top",
+      "Take a deposit, and set payment within 7 to 14 days"
+     ],
+     "why": "The multiple is not greed; it pays for everything an employer used to carry. Skip it and independence costs you money instead of making it."
+    }
+   ]
+  },
+  {
+   "type": "write",
+   "title": "Quote without flinching",
+   "sub": "Draft your own, then read a model.",
+   "items": [
+    {
+     "scene": "The day rate",
+     "stem": "A family office asks your day rate for a ten-week project. Write your reply.",
+     "hint": "Clear, confident, no apology. Give the rate, the deposit, what's included, and how references work.",
+     "model": "Thank you — I'd be glad to. For a project of this length my rate is [X] a day, with a forty per cent deposit to begin and the balance invoiced in stages, payable within seven days. That covers [scope]; travel and any agreed expenses are billed separately, and I carry full professional indemnity and public liability. I'm happy to have references confirmed through the relevant family office.",
+     "note": "You state the number without flinching, protect yourself with the deposit and the insurance line, and keep references discreet. An apology inside a quote reads as doubt."
     }
    ]
   }
