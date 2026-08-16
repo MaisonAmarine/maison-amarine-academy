@@ -966,7 +966,7 @@
   .lsn-ch-t{flex:1;font-family:'Cormorant',serif;font-weight:500;font-size:21px;color:var(--ink);line-height:1.25;}
   .lsn-ch-go{color:var(--gold-deep);opacity:.55;display:inline-flex;transition:opacity .18s,transform .18s;}
   .lsn-ch:hover .lsn-ch-go{opacity:1;transform:translateX(3px);}
-  .lsn-reading{max-width:720px;margin:0 auto;}
+  .lsn-reading{max-width:820px;margin:0 auto;}
   /* tableau terme / définition (encadré, premium) */
   .lsn-reading .lsn-defs{margin:20px 0 28px;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--paper);box-shadow:0 6px 20px rgba(33,28,21,.04);}
   .lsn-reading .lsn-def{display:grid;grid-template-columns:34% 1fr;}
@@ -1426,7 +1426,7 @@ html,body,body *{font-family:'Calibri Light','Calibri','Carlito',system-ui,-appl
   .pr-streak{ color:#B07D1C!important; background:#F6EEDA!important; }
   .dsh-card.clic:hover{ border-color:var(--gold-lt)!important; box-shadow:0 16px 40px rgba(20,28,46,.10)!important; }
   /* ---- Week reading: calmer, easier to read and to follow (2026-08-16) ---- */
-  .lsn-reading{ max-width:700px; }
+  .lsn-reading{ max-width:820px; }
   .lsn-reading .rf-sec,.lsn-reading p,.lsn-reading li{ font-size:17.5px!important; line-height:1.85!important; }
   .lsn-reading .rf-body p{ margin:0 0 16px!important; color:#39332c; }
   .lsn-reading .rf-sec{ padding-bottom:32px!important; margin-bottom:32px!important; }
@@ -5764,7 +5764,7 @@ const LSN_POOL=['images/lsn-1.jpg','images/lsn-2.jpg','images/lsn-3.jpg','images
 // images choisies pour coller au thème de chaque semaine
 //  service/table : 1,2,11,12,18,19 · voitures/chauffeur : 7,8,9,13,15,16,21,22 · aviation : 10,14,17,20 · lieux/monde : 3,4,5,6,9
 const LSN_BY_WEEK={
-  1:['images/lsn-3.jpg','images/lsn-5.jpg','images/lsn-6.jpg','images/lsn-9.jpg','images/lsn-4.jpg','images/lsn-10.jpg'], // le monde des UHNW
+  1:['images/lsn-3.jpg','images/lsn-5.jpg','images/lsn-6.jpg','images/lsn-4.jpg'], // le monde des UHNW — retiré lsn-9 (supercars) & lsn-10 (Lambo+jet), trop "flashy", hors-sujet vs le texte
   2:['images/lsn-1.jpg','images/lsn-2.jpg','images/lsn-12.jpg','images/lsn-11.jpg','images/lsn-18.jpg'],                 // codes & art de la table
   3:['images/lsn-13.jpg','images/lsn-16.jpg','images/lsn-15.jpg','images/lsn-19.jpg','images/lsn-11.jpg'],              // discrétion, chauffeur, service discret
   4:['images/lsn-12.jpg','images/lsn-19.jpg','images/lsn-18.jpg','images/lsn-11.jpg','images/lsn-2.jpg'],               // anticipation & service
