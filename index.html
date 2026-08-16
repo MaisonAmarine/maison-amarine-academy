@@ -1178,7 +1178,11 @@
   .mrow.them{align-self:flex-start;align-items:flex-start;}
   @keyframes bubIn{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:none;}}
   .mrow{position:relative;}
-  .mbubble{padding:9px 14px;border-radius:18px;font-size:14px;line-height:1.45;position:relative;word-wrap:break-word;box-shadow:0 1px 1.5px rgba(33,28,21,.08);}
+  .mbubble{padding:9px 14px;border-radius:18px;font-size:14px;line-height:1.45;position:relative;word-wrap:break-word;white-space:pre-wrap;box-shadow:0 1px 1.5px rgba(33,28,21,.08);}
+  .dm-acts{display:inline-flex;gap:4px;margin:0 6px;opacity:0;transition:opacity .15s;vertical-align:middle;}
+  .mrow.me:hover .dm-acts{opacity:1;}
+  .dm-act{background:none;border:none;cursor:pointer;font-size:13px;color:var(--stone);padding:2px 4px;border-radius:6px;line-height:1;}
+  .dm-act:hover{background:rgba(0,0,0,.06);color:var(--ink);}
   .mrow.them .mbubble{background:#fff;color:var(--ink);border-top-left-radius:6px;}
   .mrow.them:not(.grouped) .mbubble::before{content:"";position:absolute;top:0;left:-7px;width:0;height:0;border:7px solid transparent;border-top-color:#fff;border-right:0;}
   .mrow.me .mbubble{background:var(--gold);color:#fff;border-top-right-radius:6px;}
@@ -6566,7 +6570,9 @@ async function loadDm(){
     const row=document.createElement('div'); row.className='mrow '+(mine?'me':'them');
     const media=m.media_url?mediaHTML(m.media_url,m.media_type):'';
     const txt=m.body?escapeHtml(m.body):'';
-    row.innerHTML=`<div class="mbubble">${media}${txt}<span class="mtime">${fmtTime(m.created_at)}</span></div>`;
+    DM_BODIES[m.id]=m.body||'';
+    const acts = mine ? `<span class="dm-acts"><button class="dm-act" onclick="editDm(${m.id})" title="Edit">✎</button><button class="dm-act" onclick="deleteDm(${m.id})" title="Delete">🗑</button></span>` : '';
+    row.innerHTML=`<div class="mbubble">${media}${txt}<span class="mtime">${fmtTime(m.created_at)}</span></div>${acts}`;
     body.appendChild(row);
   });
   body.scrollTop=body.scrollHeight;
@@ -6586,6 +6592,23 @@ async function sendDm(){
   btn.disabled=false;
   if(error){ toast('Could not send, please try again'); return; }
   inp.value=''; inp.style.height='auto'; clearPreview('dm');
+  loadDm();
+}
+var DM_BODIES={};
+async function editDm(id){
+  const cur=DM_BODIES[id]||'';
+  const next=prompt('Edit your message:', cur);
+  if(next===null) return;
+  const txt=next.trim();
+  if(!txt){ toast('Message cannot be empty'); return; }
+  const {error}=await sb.from('direct_messages').update({body:txt}).eq('id',id);
+  if(error){ toast('Could not edit'); return; }
+  loadDm();
+}
+async function deleteDm(id){
+  if(!confirm('Delete this message?')) return;
+  const {error}=await sb.from('direct_messages').delete().eq('id',id);
+  if(error){ toast('Could not delete'); return; }
   loadDm();
 }
 // liste des conversations privées existantes (dans la colonne de gauche)
