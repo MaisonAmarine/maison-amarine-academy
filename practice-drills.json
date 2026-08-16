@@ -63,6 +63,30 @@
       "Add it to your own reference file for next time"
      ],
      "why": "You accept first, because hesitation is what they remember. One question, not five, because each question is a small tax on their attention. You learn from a professional rather than improvising. You report the outcome, never the struggle. And you capture the method, so the second time costs you nothing."
+    },
+    {
+     "scene": "Overheard",
+     "stem": "You overhear something private you were not meant to hear. Put your response in order.",
+     "steps": [
+      "Show nothing in the moment — no reaction, no change in your face",
+      "Decide whether it touches the principal's safety or interests, or is merely private",
+      "If it must be known, tell only the one person whose job it is to know, and no one else",
+      "Otherwise, treat it as though you never heard it, now and permanently",
+      "Never repeat it, never hint at it, and never put it on a device"
+     ],
+     "why": "Discretion is not merely silence about what you are told; it is vigilance over everything you happen to see or hear. You escalate only the rare thing that must be known, to the single right person, and forget the rest."
+    },
+    {
+     "scene": "The first mistake",
+     "stem": "You have made your first real mistake in the house. Put the recovery in order.",
+     "steps": [
+      "Tell the person affected the same day, before they find it themselves",
+      "State the fact plainly, in one sentence, without cushioning it",
+      "Say what you have already done to put it right",
+      "Own it in a flat voice — no excuse, no account of whose fault it was",
+      "Do not raise it again"
+     ],
+     "why": "Fact, fix, ownership. The first mistake handled this way is worth more than a flawless month: it proves bad news travels through you at full speed."
     }
    ]
   },
@@ -135,6 +159,56 @@
      "t": "I have always dreamed of working with a family like yours",
      "b": 0,
      "fb": "It is about your dream. Warm, harmless, and it tells them nothing they can use."
+    },
+    {
+     "t": "I would quietly note anything sensitive I happen to overhear, in case it is ever useful",
+     "b": 2,
+     "fb": "Holding information as leverage is a breach, not diligence. The instinct alone is disqualifying."
+    },
+    {
+     "t": "Before I changed anything, I would first understand why the house does it that way",
+     "b": 1,
+     "fb": "Everything that looks wrong has a history; finding it before you touch it is exactly the register they want."
+    },
+    {
+     "t": "A supplier offered me a personal cut to win the account; I mention it to show my network",
+     "b": 2,
+     "fb": "A commission is the one thing that ends a career on the spot. Naming it as an asset compounds the error."
+    },
+    {
+     "t": "I keep the diary so nothing collides and nothing is forgotten",
+     "b": 1,
+     "fb": "Frictionless logistics, framed around their life. Strong."
+    },
+    {
+     "t": "I am discreet — I simply never repeat what I am told",
+     "b": 0,
+     "fb": "Only half the idea. Discretion is vigilance over everything you see, not merely silence about what you are told."
+    },
+    {
+     "t": "I would make sure I am the only one who knows how the systems work",
+     "b": 2,
+     "fb": "Indispensability by secrecy is a failure, not a strength. A house that cannot run without you will resent you and never promote you."
+    },
+    {
+     "t": "I would confirm in writing what the role covers, and what it does not, before I start",
+     "b": 0,
+     "fb": "Legitimate self-protection. It serves you, cleanly, and a good office will respect it."
+    },
+    {
+     "t": "If I saw a member of staff being disloyal, I would tell the principal at once",
+     "b": 2,
+     "fb": "Informing and taking sides is fatal. You serve the household, never one faction of it against another."
+    },
+    {
+     "t": "I would want to understand the household's standards before proposing anything",
+     "b": 1,
+     "fb": "Standards first, changes second. This is the newcomer's correct posture."
+    },
+    {
+     "t": "I would be so grateful for the chance to be part of your world",
+     "b": 0,
+     "fb": "Warm but self-facing, and 'your world' is the wrong register. Weak, though not fatal."
     }
    ]
   },
@@ -286,6 +360,68 @@
        "fb": "Length is not proof of work. One page is read, three are skimmed."
       }
      ]
+    },
+    {
+     "scene": "A difficult week",
+     "stem": "The principal asks you for several things across a week. Mark the ones you should not simply do.",
+     "lines": [
+      {
+       "t": "Asks you to book a restaurant under a pseudonym for privacy — you do it",
+       "bad": false,
+       "fb": "A name for privacy is ordinary here; it protects the principal and harms no one."
+      },
+      {
+       "t": "Asks you to tell their spouse they were at the office when they were not — you do it to keep the peace",
+       "bad": true,
+       "fb": "You have been made the instrument of a lie inside the household. Do it once and you are its instrument forever."
+      },
+      {
+       "t": "Asks you to move a large sum between their accounts on a verbal instruction only — you do it",
+       "bad": true,
+       "fb": "Money never moves on words. The written instruction protects you both; its absence should stop you."
+      },
+      {
+       "t": "Asks you to keep a medical appointment off the shared calendar — you do it",
+       "bad": false,
+       "fb": "Discretion about health is proper; a private entry the office cannot see is exactly right."
+      },
+      {
+       "t": "Asks you to sign a delivery in their name because they are out — you do it, it is only a parcel",
+       "bad": true,
+       "fb": "Signing in another's name, however small, is the very habit a serious improper request later relies on. Decline the pattern, not just the parcel."
+      }
+     ]
+    },
+    {
+     "scene": "The account",
+     "stem": "You are appointing the household's regular suppliers. Mark the mistakes.",
+     "lines": [
+      {
+       "t": "A vendor offers you ten per cent, paid to you personally, to win the account — you accept, as it costs the family nothing",
+       "bad": true,
+       "fb": "A commission is theft dressed as a discount. It is never invisible, and it ends a career the day it is found."
+      },
+      {
+       "t": "You choose the supplier who is best value for the household, not the one who courts you",
+       "bad": false,
+       "fb": "The only loyalty is to the household's interest. That is the whole of it."
+      },
+      {
+       "t": "A supplier sends a case of wine at Christmas; you log it and tell the family office",
+       "bad": false,
+       "fb": "A modest, declared, recorded gift is clean. Concealment is what turns a gift into a problem."
+      },
+      {
+       "t": "A vendor offers to 'look after you' if you delay paying their rival — you agree",
+       "bad": true,
+       "fb": "You have been bought. The moment a decision serves a supplier over the principal, you work for the wrong person."
+      },
+      {
+       "t": "You keep every quote and invoice so any spend can be explained the same day",
+       "bad": false,
+       "fb": "A spend you can explain on the spot is the habit that keeps you above suspicion for years."
+      }
+     ]
     }
    ]
   },
@@ -321,6 +457,20 @@
      "hint": "Short. Confirmed facts, one flagged decision, no narration.",
      "model": "Good evening. The week is confirmed as follows. Tuesday, the car is at the house at seven fifteen for the eight o'clock. Wednesday and Thursday are clear at present. Friday, the dinner is at eight, six guests, and the florist comes at four. One thing needs you: the Saturday tennis court is held but not paid, and they release it Thursday noon. A yes or a no is all I need. Everything else is handled.",
      "note": "Facts first, decision second, and the decision is isolated so it cannot be missed. Everything else is handled is the sentence that buys you trust, and you can only write it if it is true. Note what is absent: no explanation of how hard the florist was to reach."
+    },
+    {
+     "scene": "The commission",
+     "stem": "A supplier has quietly offered you a personal commission to win the household's account. Write your reply.",
+     "hint": "Two or three sentences. Warm, final, and leaving no opening.",
+     "model": "Thank you, but I don't take anything personally on the household's accounts — I choose suppliers purely on what is right for the family, and I keep it that way so there is never a question. Quote on the same terms as everyone else, and if you are the best value, the work is yours.",
+     "note": "You decline without a lecture, keep the relationship, and make clear the door is closed for good, not just today."
+    },
+    {
+     "scene": "Two principals",
+     "stem": "A husband and wife each ask you, separately, to take their side in a disagreement about the house. Write what you say to each.",
+     "hint": "Warm, equal, taking no side.",
+     "model": "I understand, and I want to get this right for you both. What I can do is make sure the house does exactly what you agree — I'll hold whatever you decide together, and lay the options out plainly if that helps. But the choice is yours as a couple; it isn't mine to weigh in on.",
+     "note": "You serve the household, never one principal against the other. The day you take a side, you have chosen the losing one."
     }
    ]
   }
