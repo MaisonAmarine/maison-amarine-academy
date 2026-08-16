@@ -1506,29 +1506,29 @@ html,body,body *{font-family:'Calibri Light','Calibri','Carlito',system-ui,-appl
 .brand{font-family:'Cormorant Garamond',serif !important;}
 
   /* ============================================================
-     LOOK (2026-08-15b) — Maison Amarine CRM tones.
-     Cool grey base + white cards + charcoal sidebar. Refined BLUE
-     accent used sparingly (exactly like the CRM), GREEN for
-     progress, pewter for secondary. Cascade override — revertible.
+     LOOK (2026-08-16) — Maison Amarine dark-grey (Elysium-clean).
+     Cool grey base + white cards + charcoal sidebar. Accent = the
+     SAME dark grey/charcoal as the sidebar (NO blue), GREEN for
+     progress. Cascade override — revertible.
      ============================================================ */
   :root{
     --ivory:#EEF0F2; --paper:#FFFFFF;
     --ink:#141C2E; --ink-soft:#3F4759; --stone:#787E8A; --line:#DCDDE1;
-    --gold:#2563EB; --gold-deep:#1D4FD0; --gold-lt:#5B8DEF; --gold-wash:#E7EDFB;
+    --gold:#24262E; --gold-deep:#33353B; --gold-lt:#9AA0A8; --gold-wash:#ECECEE;
     --green:#0B8F3B; --green-lt:#12A24A; --shadow:rgba(20,28,46,0.08);
   }
   body{ color:var(--ink); }
   p,.dsh-s,.pr-rev-w,.lsn-reading p{ line-height:1.74; }
   .lsn-reading .rf-sec,.lsn-reading p{ font-size:16.5px; }
-  /* active nav → CRM style: soft translucent blue + a thin blue bar (no bold gradient) */
-  .nav-item.active{ background:rgba(91,141,239,.16)!important; color:#FFFFFF!important; box-shadow:inset 3px 0 0 0 #5B8DEF!important; }
+  /* active nav on the dark sidebar → light translucent plaque + thin light bar (no blue) */
+  .nav-item.active{ background:rgba(255,255,255,.12)!important; color:#FFFFFF!important; box-shadow:inset 3px 0 0 0 #C4C9D0!important; }
   .nav-item.active svg{ stroke:#FFFFFF!important; }
-  /* primary buttons / CTAs → flat CRM blue */
-  .btn-primary,.dsh-cta,.mtr-cta{ background:#2563EB!important; color:#FFFFFF!important; box-shadow:0 6px 18px rgba(37,99,235,.26)!important; }
-  .btn-primary:hover,.dsh-cta:hover,.mtr-cta:hover{ background:#1D4FD0!important; box-shadow:0 10px 24px rgba(37,99,235,.34)!important; }
-  /* progress → green (CRM success colour — adds warmth, avoids all-blue) */
+  /* primary buttons / CTAs → charcoal, like the sidebar and the welcome email */
+  .btn-primary,.dsh-cta,.mtr-cta,.dsh-focus-cta{ background:#24262E!important; color:#FFFFFF!important; box-shadow:0 6px 18px rgba(20,22,26,.22)!important; }
+  .btn-primary:hover,.dsh-cta:hover,.mtr-cta:hover,.dsh-focus-cta:hover{ background:#33353B!important; box-shadow:0 10px 24px rgba(20,22,26,.28)!important; }
+  /* progress stays green (completion colour, a touch of life) */
   .dsh-bar i,.bar-fill,.pr-prog-fill,.wcard-bar-fill{ background:linear-gradient(90deg,#0B8F3B,#12A24A)!important; }
-  /* small accents — warm amber streak for a playful touch (like the badges) */
+  /* warm amber streak (small playful touch) */
   .pr-streak{ color:#B07D1C!important; background:#F6EEDA!important; }
   .dsh-card.clic:hover{ border-color:var(--gold-lt)!important; box-shadow:0 16px 40px rgba(20,28,46,.10)!important; }
 </style>
