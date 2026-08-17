@@ -977,8 +977,15 @@
   /* Contents : chaque chapitre = une page à ouvrir */
   .lsn-toc-k{text-align:center;font-family:'Calibri Light','Calibri','Carlito',sans-serif;font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-deep);margin:6px 0 16px;}
   .lsn-chapters{display:flex;flex-direction:column;gap:10px;}
-  .lsn-part{font-family:'Calibri Light','Calibri','Carlito',sans-serif;font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-deep);margin:22px 2px 8px;padding-bottom:8px;border-bottom:1px solid var(--gold-lt);}
-  .lsn-part:first-child{margin-top:2px;}
+  .lsn-pcard{display:flex;align-items:center;gap:16px;width:100%;text-align:left;background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:14px 18px;cursor:pointer;margin-top:16px;transition:border-color .18s,box-shadow .18s;}
+  .lsn-pcard:hover{border-color:var(--gold-lt);box-shadow:0 10px 26px rgba(33,28,21,.07);}
+  .lpc-thumb{width:64px;height:64px;border-radius:12px;background-size:cover;background-position:center;flex:0 0 64px;box-shadow:inset 0 0 0 1px rgba(0,0,0,.04);}
+  .lpc-mid{flex:1;min-width:0;}
+  .lpc-k{font-family:'Calibri Light','Calibri','Carlito',sans-serif;font-size:10.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-deep);}
+  .lpc-t{font-family:'Cormorant',Georgia,serif;font-size:21px;font-weight:600;color:var(--ink);line-height:1.2;margin-top:1px;}
+  .lpc-s{font-size:12px;color:var(--stone);margin-top:2px;}
+  .lpc-go{flex:0 0 auto;transition:transform .2s;color:var(--gold-deep);}
+  .lsn-pbody{margin:10px 0 0;display:flex;flex-direction:column;gap:10px;padding-left:10px;}
   .lsn-ch{display:flex;align-items:center;gap:18px;width:100%;text-align:left;background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:17px 22px;cursor:pointer;transition:border-color .18s,background .18s,transform .18s;}
   .lsn-ch:hover{border-color:var(--gold-lt);background:#fffdf8;transform:translateX(3px);}
   .lsn-ch-n{font-family:'Cormorant',serif;font-weight:600;font-size:21px;color:var(--gold);min-width:30px;}
@@ -5691,22 +5698,38 @@ function svSectionTitle(i){ const x=svCur.secs[i]; return x&&x.heading ? x.headi
 // Optional part-dividers inside a module's Contents (keeps a long module from feeling like a wall).
 // Keyed by "week:stepIdx"; each entry lists [chapter heading that starts a part, part label].
 const LSN_PARTS={ '1:0':[
-  ["The field","Part I · The world you're entering"],
-  ["The economics of the role","Part II · The economics & the craft"],
-  ["The principal","Part III · The people & the risks"],
+  {r:'I',  t:"The world you're entering", start:"The field",                 img:"images/lsn-3.jpg"},
+  {r:'II', t:"The economics & the craft", start:"The economics of the role", img:"images/lsn-5.jpg"},
+  {r:'III',t:"The people & the risks",    start:"The principal",             img:"images/lsn-6.jpg"},
 ] };
+function svTogglePart(pi){
+  const b=document.getElementById('lpc-body-'+pi), g=document.getElementById('lpc-go-'+pi);
+  if(!b) return;
+  if(b.hasAttribute('hidden')){ b.removeAttribute('hidden'); if(g) g.style.transform='rotate(90deg)'; }
+  else { b.setAttribute('hidden',''); if(g) g.style.transform=''; }
+}
 function svShowToc(){
   const {s,secs,stepIdx,weekNo}=svCur;
   const body=document.getElementById('stepViewBody');
   const _vis=svCur.visible||secs.map((_,k)=>k);
   const _parts=(LSN_PARTS[weekNo+':'+stepIdx])||[];
-  const _partOf=(h)=>{ const p=_parts.find(x=>x[0]===h); return p?p[1]:null; };
-  const toc=_vis.map((idx,n)=>{
-    const _h=(secs[idx]||{}).heading||'Introduction';
-    const _pl=_partOf(_h);
-    const _div=_pl?`<div class="lsn-part">${escapeHtml(_pl)}</div>`:'';
-    return _div+`<button class="lsn-ch" onclick="svOpenSection(${idx})"><span class="lsn-ch-n">${String(n+1).padStart(2,'0')}</span><span class="lsn-ch-t">${escapeHtml(_h)}</span><span class="lsn-ch-go">${ICO_ARR}</span></button>`;
-  }).join('');
+  const _chBtn=(idx,n)=>`<button class="lsn-ch" onclick="svOpenSection(${idx})"><span class="lsn-ch-n">${String(n+1).padStart(2,'0')}</span><span class="lsn-ch-t">${escapeHtml((secs[idx]||{}).heading||'Introduction')}</span><span class="lsn-ch-go">${ICO_ARR}</span></button>`;
+  let toc='';
+  if(_parts.length){
+    const _chs=_vis.map((idx,n)=>({idx,no:n,h:(secs[idx]||{}).heading||'Introduction'}));
+    const _starts=_parts.map(p=>_chs.findIndex(c=>c.h===p.start));
+    const _first=_starts[0]<0?_chs.length:_starts[0];
+    _chs.slice(0,_first).forEach(c=>{ toc+=_chBtn(c.idx,c.no); });
+    _parts.forEach((p,pi)=>{
+      const _from=_starts[pi]; if(_from<0) return;
+      const _to=(pi+1<_parts.length && _starts[pi+1]>=0)?_starts[pi+1]:_chs.length;
+      const _inner=_chs.slice(_from,_to).map(c=>_chBtn(c.idx,c.no)).join('');
+      const _cnt=_to-_from;
+      toc+=`<div class="lsn-pcard" onclick="svTogglePart(${pi})"><div class="lpc-thumb" style="background-image:url('${p.img}')"></div><div class="lpc-mid"><div class="lpc-k">Part ${p.r}</div><div class="lpc-t">${escapeHtml(p.t)}</div><div class="lpc-s">${_cnt} chapter${_cnt>1?'s':''}</div></div><div class="lpc-go" id="lpc-go-${pi}">${ICO_ARR}</div></div><div class="lsn-pbody" id="lpc-body-${pi}" hidden>${_inner}</div>`;
+    });
+  } else {
+    toc=_vis.map((idx,n)=>_chBtn(idx,n)).join('');
+  }
   const heroImg = weekNo ? ('images/w'+weekNo+'.jpg') : 'images/dash.jpg';
   const emb=ytEmbed(s.video_url);
   const vidBlock = emb
