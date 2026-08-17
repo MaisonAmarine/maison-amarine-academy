@@ -7,15 +7,16 @@
    "items": [
     {
      "scene": "The offer arrives",
-     "stem": "You have been offered a position in a private household. Put these in the order you would take them.",
+     "stem": "You have been offered a position in a private household. Put these in the order a professional takes them.",
      "steps": [
-      "Read the whole offer, including the confidentiality clause, before replying to anything",
-      "Write down every question you have, then ask them all in one message",
-      "Confirm in writing what the role covers and what it does not",
-      "Accept in writing, restating the start date and the reporting line",
+      "Read the whole offer, the contract, the NDA and any non-compete, before you reply to anything",
+      "Price the entire package, housing, car, health and reliable bonuses, not the base figure alone",
+      "Put every question in one message, then have the family office confirm the scope and reporting line in writing",
+      "Negotiate calmly on the parts that move, and treat the red flags as a reason to decline rather than to hope",
+      "Accept in writing, restating the start date, the reporting line and what was agreed",
       "Ask what you should read or prepare before day one"
      ],
-     "why": "You read before you react, because a clause you sign is a clause you live with. Questions go in one batch, since a drip of separate messages reads as anxious. Scope is confirmed in writing before acceptance, never after. Only then do you accept, and only then do you ask how to prepare, which is the first thing that makes you look like a professional rather than a hire."
+     "why": "You read before you react, because a clause you sign is a clause you live with, and the headline base means little until the whole package is priced. Only once the scope is confirmed in writing do you accept, and asking how to prepare is the first thing that makes you look like a professional rather than a hire."
     },
     {
      "scene": "Overheard",
@@ -23,10 +24,10 @@
      "steps": [
       "Move out of earshot immediately and without drawing attention",
       "Say nothing about it, then or ever, to anyone inside or outside the house",
-      "Continue as though the conversation did not happen",
+      "Continue exactly as though the conversation did not happen",
       "If the principal later refers to it, respond only to what they choose to tell you"
      ],
-     "why": "Leaving is first and it is physical, not mental. Silence is not merely refraining from gossip, it is refraining from acknowledgement. Behaving normally is the proof, since a person who suddenly becomes careful around you has told you they heard something. And if the principal raises it, you know only what they have just said, nothing more."
+     "why": "Leaving is first and it is physical, not mental. Silence is not merely refraining from gossip, it is refraining from acknowledgement, and behaving normally is the proof, since a person who suddenly becomes careful around you has told you they heard something."
     },
     {
      "scene": "The reference request",
@@ -38,7 +39,7 @@
       "Tell the consultant the reference is available through the office",
       "Follow up once, in writing, to confirm the reference was given"
      ],
-     "why": "You establish what is actually needed before you disturb anyone, because most verifications need dates and scope, not a name. Permission comes from the office because that is the channel built for it. You never name a principal to win a role. And the single follow up is what separates the organised from the hopeful."
+     "why": "You establish what is actually needed before you disturb anyone, because most verifications need dates and scope, not a name. Permission comes from the office because that is the channel built for it, and the single follow-up is what separates the organised from the hopeful."
     },
     {
      "scene": "The first week",
@@ -46,11 +47,11 @@
      "steps": [
       "Learn every name, and how long each person has been in the house",
       "Ask each person to show you how they currently do their work",
-      "Write down what you observe, and change nothing yet",
+      "Read the house book and write down what you observe, changing nothing yet",
       "Identify the one thing that is visibly failing and fix only that",
       "Propose anything larger only after the first month"
      ],
-     "why": "Names first, because the staff decide whether you survive long before the family does. You ask to be shown, which makes them the authority and you the student. You write and wait, because early changes are read as judgement. One visible fix earns the right to propose more. Everything structural waits."
+     "why": "Names first, because the staff decide whether you survive long before the family does. You ask to be shown, which makes them the authority and you the student; you learn the documented standard and wait, because early changes are read as judgement, and one visible fix earns the right to propose more."
     },
     {
      "scene": "The unfamiliar request",
@@ -60,21 +61,21 @@
       "Find out how it is properly done, from someone who knows",
       "Do it, and build the record so it can be repeated",
       "Report it done, briefly, without narrating the difficulty",
-      "Add it to your own reference file for next time"
+      "Add the procedure to the house's systems for next time"
      ],
-     "why": "You accept first, because hesitation is what they remember. One question, not five, because each question is a small tax on their attention. You learn from a professional rather than improvising. You report the outcome, never the struggle. And you capture the method, so the second time costs you nothing."
+     "why": "You accept first, because hesitation is what they remember, and one question, not five, because each question is a small tax on their attention. You learn from someone who knows rather than improvising, report the outcome and never the struggle, and capture the method so the second time costs you nothing."
     },
     {
-     "scene": "Overheard",
-     "stem": "You overhear something private you were not meant to hear. Put your response in order.",
+     "scene": "The move",
+     "stem": "The family migrates to another residence next month. Put the advance work in order.",
      "steps": [
-      "Show nothing in the moment, no reaction, no change in your face",
-      "Decide whether it touches the principal's safety or interests, or is merely private",
-      "If it must be known, tell only the one person whose job it is to know, and no one else",
-      "Otherwise, treat it as though you never heard it, now and permanently",
-      "Never repeat it, never hint at it, and never put it on a device"
+      "About a month out, confirm the dates and the guest list, and brief the destination to open, air and stock the house",
+      "Two weeks out, book the travel and check passports, visas and medications against the itinerary",
+      "Plan the wardrobe and the cellar against the diary of the stay, so what is needed is already there",
+      "Track the passports and the few irreplaceable things personally, never in the general baggage",
+      "Send the receiving house an arrival brief, then close the departing residence properly behind the family"
      ],
-     "why": "Discretion is not merely silence about what you are told; it is vigilance over everything you happen to see or hear. You escalate only the rare thing that must be known, to the single right person, and forget the rest."
+     "why": "A move is a project with a critical path, opening one house while closing another, so the long-lead work and the destination briefing come first. The irreplaceable few are tracked by hand because a missing passport ends a tenure, and the arrival brief means the family walks into a life already running rather than a building."
     },
     {
      "scene": "The first mistake",
@@ -86,7 +87,7 @@
       "Own it in a flat voice, no excuse, no account of whose fault it was",
       "Do not raise it again"
      ],
-     "why": "Fact, fix, ownership. The first mistake handled this way is worth more than a flawless month: it proves bad news travels through you at full speed."
+     "why": "Fact, fix, ownership, in that order. A bad fact delivered early is a problem the house can solve; delivered late it becomes a crisis about you. Handled this way the first mistake is worth more than a flawless month, because it proves bad news travels through you at full speed."
     },
     {
      "scene": "The improper request",
@@ -98,19 +99,19 @@
       "If it touches money or their name, ask for it in writing, which quietly ends most of it",
       "If pressed, hold the line once, calmly, and tell the family office only if it recurs"
      ],
-     "why": "You decline the act without wounding the person, redirect to the legitimate path, and let the written record and a single calm 'no' do the work. Moralising loses you the house; folding loses you yourself."
+     "why": "You decline the act without wounding the person, redirect to the legitimate path, and let the written record and a single calm no do the work. Moralising loses you the house; folding loses you yourself."
     },
     {
-     "scene": "The ninety-day review",
-     "stem": "You reach ninety days in the house. Put the review in order.",
+     "scene": "Leaving the house",
+     "stem": "You have resigned from a house you served for years. Put your departure in order.",
      "steps": [
-      "Ask for a review yourself, private households rarely offer one",
-      "Ask the senior question: 'is there anything I have not noticed?'",
-      "When you hear criticism you believe is unfair, write down every word",
-      "Say nothing in your defence, however unjust it feels",
-      "Thank them, change it, and never mention it again"
+      "Give your full notice in writing, and serve it properly however you were treated",
+      "Write the handover so a competent stranger could run the house from it alone",
+      "Hand over every password, code, contact and file, and let them all be changed after you",
+      "Say nothing about the family, then or ever, and never trade on what you know",
+      "Ask, warmly and directly, for a written reference"
      ],
-     "why": "Households don't offer reviews, which is exactly why you ask. And you defend nothing: you thank, you change, you move on, that is the most senior thing you can do."
+     "why": "You leave a house as carefully as you built it: full notice, a handover that lets a stranger run the place, and every credential handed over and changed. The discretion does not expire with the contract, and the exit is the reference, which is the whole mechanism of this industry."
     }
    ]
   },
@@ -125,19 +126,19 @@
    ],
    "items": [
     {
-     "t": "I love the travel and the houses this world gives me access to",
-     "b": 2,
-     "fb": "It announces that the role is a means to your own experience. In this market that is disqualifying, not merely weak."
-    },
-    {
-     "t": "I find satisfaction in a life that runs without anyone noticing how",
+     "t": "I find satisfaction in a life that runs so smoothly nobody notices how",
      "b": 1,
      "fb": "Service framed as craft. This is the register a principal is listening for."
     },
     {
+     "t": "I love the travel and the houses this world gives me access to",
+     "b": 2,
+     "fb": "It announces the role is a means to your own experience, which is disqualifying, not merely weak."
+    },
+    {
      "t": "I am very organised and I learn quickly",
      "b": 0,
-     "fb": "True perhaps, and entirely generic. It describes you without telling them anything about whether you understand this world."
+     "fb": "True perhaps, and entirely generic. It describes you without showing you understand this world."
     },
     {
      "t": "Reference available through the family office",
@@ -147,12 +148,12 @@
     {
      "t": "My last principal was a well known name, I can tell you privately",
      "b": 2,
-     "fb": "Naming a confidential principal to win a role is the clearest possible signal that you will name this one too."
+     "fb": "Naming a confidential principal to win a role is the clearest signal that you will name this one too."
     },
     {
      "t": "I have run a household of nine staff across two residences",
      "b": 1,
-     "fb": "Scope, verifiable, no names. This is how you make experience concrete without breaching anything."
+     "fb": "Scope, verifiable, and no names. This is how you make experience concrete without breaching anything."
     },
     {
      "t": "I would be so grateful for the opportunity",
@@ -160,39 +161,29 @@
      "fb": "Gratitude is fine, but it positions you as a supplicant rather than a professional. It weakens the room."
     },
     {
-     "t": "I keep a household manual so the house runs whether or not I am in it",
+     "t": "I keep a house book, so the residence runs whether or not I am in it",
      "b": 1,
-     "fb": "It says you build systems rather than make yourself indispensable. Principals hear the difference immediately."
+     "fb": "You build systems rather than make yourself indispensable, and principals hear the difference at once."
     },
     {
-     "t": "I am happy to be on call at any hour, always",
+     "t": "I would want the whole package priced, housing and health included, before I decide",
      "b": 0,
-     "fb": "Well meant, and it quietly promises something no person sustains. Reliability beats limitless availability."
+     "fb": "Sensible and sophisticated: the base always understates the role. It serves you, and it reads as competence."
     },
     {
      "t": "I posted a photo of the villa, with no faces and no location",
      "b": 2,
-     "fb": "There is no acceptable version of this. Photographing a principal's home ends careers, faces or no faces."
+     "fb": "There is no acceptable version. A window or a monogram places a house; photographing it ends careers."
     },
     {
-     "t": "I would want to understand the household's standards before proposing anything",
+     "t": "Before I change anything, I first learn why the house does it that way",
      "b": 1,
-     "fb": "It signals patience and respect for what exists. This is the anti pattern to the new hire who reorganises in week one."
+     "fb": "Everything that looks wrong has a history. Finding it before you touch it is exactly the newcomer's register."
     },
     {
-     "t": "I have always dreamed of working with a family like yours",
+     "t": "I am happy to be on call at any hour, always",
      "b": 0,
-     "fb": "It is about your dream. Warm, harmless, and it tells them nothing they can use."
-    },
-    {
-     "t": "I would quietly note anything sensitive I happen to overhear, in case it is ever useful",
-     "b": 2,
-     "fb": "Holding information as leverage is a breach, not diligence. The instinct alone is disqualifying."
-    },
-    {
-     "t": "Before I changed anything, I would first understand why the house does it that way",
-     "b": 1,
-     "fb": "Everything that looks wrong has a history; finding it before you touch it is exactly the register they want."
+     "fb": "Well meant, and it quietly promises what no person sustains. Reliability beats limitless availability."
     },
     {
      "t": "A supplier offered me a personal cut to win the account; I mention it to show my network",
@@ -200,24 +191,29 @@
      "fb": "A commission is the one thing that ends a career on the spot. Naming it as an asset compounds the error."
     },
     {
-     "t": "I keep the diary so nothing collides and nothing is forgotten",
+     "t": "The luxury is the same coffee at the same temperature every morning, not the grand gesture",
      "b": 1,
-     "fb": "Frictionless logistics, framed around their life. Strong."
+     "fb": "Consistency, not flourish, is the product. This is the idea that separates the professional from the beginner."
     },
     {
-     "t": "I am discreet, I simply never repeat what I am told",
+     "t": "I have always dreamed of working with a family like yours",
      "b": 0,
-     "fb": "Only half the idea. Discretion is vigilance over everything you see, not merely silence about what you are told."
+     "fb": "It is about your dream. Warm, harmless, and it tells them nothing they can use."
     },
     {
      "t": "I would make sure I am the only one who knows how the systems work",
      "b": 2,
-     "fb": "Indispensability by secrecy is a failure, not a strength. A house that cannot run without you will resent you and never promote you."
+     "fb": "Indispensability by secrecy is feared, not promoted. A house that cannot run without you will resent you."
+    },
+    {
+     "t": "I keep a preferences file, so the principal is never asked a thing twice",
+     "b": 1,
+     "fb": "Every repeated question is a small tax on their attention. The file drives that tax to zero."
     },
     {
      "t": "I would confirm in writing what the role covers, and what it does not, before I start",
      "b": 0,
-     "fb": "Legitimate self-protection. It serves you, cleanly, and a good office will respect it."
+     "fb": "Legitimate self-protection, done in the open. It serves you cleanly, and a good office respects it."
     },
     {
      "t": "If I saw a member of staff being disloyal, I would tell the principal at once",
@@ -225,54 +221,59 @@
      "fb": "Informing and taking sides is fatal. You serve the household, never one faction of it against another."
     },
     {
-     "t": "I would want to understand the household's standards before proposing anything",
+     "t": "A genuine trade discount belongs to the household, so I have it put on their invoice",
      "b": 1,
-     "fb": "Standards first, changes second. This is the newcomer's correct posture."
+     "fb": "The advantage is theirs, not yours. Handing it back openly shows the office whose side you are on."
     },
     {
-     "t": "I would be so grateful for the chance to be part of your world",
+     "t": "I would have my day off and off hours written into the contract, not merely discussed",
      "b": 0,
-     "fb": "Warm but self-facing, and 'your world' is the wrong register. Weak, though not fatal."
+     "fb": "An edge built in advance is what protects you. Legitimate, though it is your interest it serves, not theirs."
     },
     {
-     "t": "I'd tell the principal an unwelcome truth the same day, even at my own cost",
-     "b": 1,
-     "fb": "Bad news at full speed is the ideal. The failure is softening or delaying it, never the honesty itself."
-    },
-    {
-     "t": "A reporter clearly already knows a detail about the family, so I'd confirm just that one",
+     "t": "A reporter already knew a detail about the family, so I confirmed just that one",
      "b": 2,
-     "fb": "You confirm nothing, ever. A detail 'they already know' becomes a sourced fact the moment you nod, confirmation is the breach."
+     "fb": "You confirm nothing, ever. A detail they already know becomes a sourced fact the moment you nod."
     },
     {
-     "t": "I'd take the unglamorous task once, unasked and unmentioned",
+     "t": "Between two principals I serve the household and favour neither",
      "b": 1,
-     "fb": "That single quiet act earns the long-serving staff faster than months of pleasantness."
+     "fb": "There is no one who pays you against the household. Choosing a side is choosing the losing one."
     },
     {
-     "t": "I'd befriend the staff quickly and trade confidences so I fit in",
+     "t": "I would befriend the staff quickly and trade confidences so I fit in",
      "b": 2,
      "fb": "Trading confidences makes you a channel for gossip and a liability. Warmth is not intimacy."
     },
     {
-     "t": "I'd research the family thoroughly before day one so I arrive well informed",
-     "b": 2,
-     "fb": "You are shown what you need. Arriving 'informed' by research signals the wrong instinct, in a private house, curiosity has another name."
-    },
-    {
-     "t": "I never take sides, but if both principals disagree, I'd quietly do what the one who pays me wants",
-     "b": 2,
-     "fb": "Between two principals there is no 'one who pays you'; there is the household. Choosing one is choosing the losing side."
-    },
-    {
-     "t": "I'd ask for instructions in writing, openly, so we both hold the same record",
+     "t": "I would ask for a work phone rather than a stipend on my own device",
      "b": 0,
-     "fb": "Legitimate self-protection, done in the open. Clean, the opposite of a secret file."
+     "fb": "Prudent for you and for confidentiality, so the family's data never lives on a device that is legally yours."
     },
     {
-     "t": "I'd never mention what the family earns or spends, to anyone",
+     "t": "If one spouse asked me to keep a purchase from the other, I would do it as a kindness",
+     "b": 2,
+     "fb": "Hold one spouse's secret from the other and you have chosen a side. You will be dismissed by the very person you meant to help."
+    },
+    {
+     "t": "I build the diary on departure times, not event times, so the mornings never collide",
      "b": 1,
-     "fb": "Restraint about money is the register of established wealth; it serves the household."
+     "fb": "The departure time is the load-bearing figure. Frictionless logistics, framed around their life."
+    },
+    {
+     "t": "I would accept a grateful supplier's weekend away, since it costs the family nothing",
+     "b": 2,
+     "fb": "A third party's gift is a hook until proven otherwise. A benefit you must keep quiet is disqualified by that alone."
+    },
+    {
+     "t": "I never mention what the family earns or spends, to anyone",
+     "b": 1,
+     "fb": "Restraint about money is the register of established wealth, and it serves the household."
+    },
+    {
+     "t": "I render the monthly account to the office early and unprompted, and it reconciles to the penny",
+     "b": 1,
+     "fb": "Numbers that are always tidy and always early buy you forgiveness for a great deal else."
     }
    ]
   },
@@ -293,10 +294,10 @@
       {
        "t": "Greets the housekeeper by asking how long the last person lasted",
        "bad": true,
-       "fb": "It invites gossip on day one and tells the staff you are already looking for grievances."
+       "fb": "It invites gossip on day one and tells the staff you are already collecting grievances."
       },
       {
-       "t": "Asks where the main water shut off is before the end of the first day",
+       "t": "Asks where the main water shut-off is before the end of the first day",
        "bad": false,
        "fb": "An excellent first question, and one most new hires do not think to ask for months."
       },
@@ -311,9 +312,19 @@
        "fb": "Structured observation, recorded, and kept where it belongs. Correct."
       },
       {
+       "t": "Saves the gate codes to the notes app on a personal phone for convenience",
+       "bad": true,
+       "fb": "Codes live in the sanctioned password manager, never in a personal device that syncs and can be lost."
+      },
+      {
        "t": "Tells the chef about the standards at the previous household",
        "bad": true,
        "fb": "Two errors at once: it discloses another house, and it announces that you intend to change this one."
+      },
+      {
+       "t": "Asks to see the house book before proposing any change",
+       "bad": false,
+       "fb": "You learn the documented standard first. Exactly the newcomer's posture."
       }
      ]
     },
@@ -340,6 +351,11 @@
        "t": "Asks whether the family prefers to be greeted in the morning or left alone",
        "bad": false,
        "fb": "A precise, useful preference question. Exactly the right kind."
+      },
+      {
+       "t": "Uses the principal's first name before being invited to",
+       "bad": true,
+       "fb": "You hold the formal register until the principal changes it explicitly. Their friendliness is a manner, not a promotion."
       },
       {
        "t": "Offers an opinion on the art in the room",
@@ -376,6 +392,16 @@
        "t": "Mentions that the family travels a great deal in August",
        "bad": true,
        "fb": "You have just told a room when a residence stands empty. This is the leak that has consequences."
+      },
+      {
+       "t": "Complains about being called out late at night, since they are the injured party",
+       "bad": true,
+       "fb": "Complaining leaks the family's private life as surely as boasting. Take the frustration to a confidant, in shape, never in content."
+      },
+      {
+       "t": "Leaves a phone on the table where a diary preview flashes up on the lock screen",
+       "bad": true,
+       "fb": "A calendar is pure movement information. Turn previews off and never leave it readable to the room."
       },
       {
        "t": "Changes the subject when pressed for detail",
@@ -450,6 +476,11 @@
        "fb": "Discretion about health is proper; a private entry the office cannot see is exactly right."
       },
       {
+       "t": "Asks you to alter the date on a delivery note so the invoice falls in the last quarter, you do it",
+       "bad": true,
+       "fb": "Altering a dated record is falsification, whatever its size. You decline warmly and pass it to the office."
+      },
+      {
        "t": "Asks you to sign a delivery in their name because they are out, you do it, it is only a parcel",
        "bad": true,
        "fb": "Signing in another's name, however small, is the very habit a serious improper request later relies on. Decline the pattern, not just the parcel."
@@ -471,14 +502,19 @@
        "fb": "The only loyalty is to the household's interest. That is the whole of it."
       },
       {
-       "t": "A supplier sends a case of wine at Christmas; you log it and tell the family office",
+       "t": "A supplier sends a case of wine at Christmas; you log it and add it to the house cellar",
        "bad": false,
-       "fb": "A modest, declared, recorded gift is clean. Concealment is what turns a gift into a problem."
+       "fb": "A modest third party gift, declared and shared with the house, stops being a private obligation."
       },
       {
        "t": "A vendor offers to 'look after you' if you delay paying their rival, you agree",
        "bad": true,
        "fb": "You have been bought. The moment a decision serves a supplier over the principal, you work for the wrong person."
+      },
+      {
+       "t": "The principal gives you a generous watch after a hard season; you thank them once and note it quietly with the office",
+       "bad": false,
+       "fb": "A gift from the principal, accepted graciously and recorded, is clean. The record protects you if anyone ever asks."
       },
       {
        "t": "You keep every quote and invoice so any spend can be explained the same day",
@@ -488,64 +524,84 @@
      ]
     },
     {
-     "scene": "The eager newcomer",
-     "stem": "Your first fortnight in a new house. Mark the mistakes.",
+     "scene": "After hours",
+     "stem": "Late-evening moments in a live-in role. Mark the mistakes.",
      "lines": [
       {
-       "t": "You spot six things done badly and fix the most obvious one to prove your value",
+       "t": "The principal presses a glass of wine on you at their party; you decline warmly and stay on water",
+       "bad": false,
+       "fb": "You are the sober adult in every room. Declining without a speech is exactly right."
+      },
+      {
+       "t": "Takes the day-off phone off entirely rather than leaving it on silent to glance at",
+       "bad": false,
+       "fb": "Off means off. The one time you glance is the time the always-on culture wins."
+      },
+      {
+       "t": "Stays in the room after the work is done, hoping the conversation continues",
        "bad": true,
-       "fb": "Everything that looks stupid has a history. Find it before you touch it, reform in week one is the classic newcomer failure."
+       "fb": "Warmth serves and then leaves. Presence that overstays is the first tell of familiarity."
       },
       {
-       "t": "You learn every name, the gardener, the night driver, the Thursday help, and use them",
-       "bad": false,
-       "fb": "Names first. Nothing does more for your first month."
-      },
-      {
-       "t": "You explain how your last house did things, to raise the standard",
+       "t": "Answers an eleven o'clock call about a missing corkscrew as though it were an emergency",
        "bad": true,
-       "fb": "It reads as arrogance and homesickness at once. The house you're in is the only one that exists now."
+       "fb": "Answer the inconvenience once and you have taught the house there is no difference between it and an emergency."
       },
       {
-       "t": "You change only your own workspace and leave everything else exactly as it is",
-       "bad": false,
-       "fb": "Change what is yours, learn the rest. The correct posture for a newcomer."
+       "t": "Quietly keeps the passwords and contacts in their own head to feel indispensable",
+       "bad": true,
+       "fb": "The single point of failure is feared, not promoted. Document everything and be safe to lose."
       },
       {
-       "t": "You quietly write down how the house actually runs, though no one asked you to",
+       "t": "Helps with a genuine after-hours problem, then says they will pick everything up properly at eight",
        "bad": false,
-       "fb": "The house that has been written down can be run, which is precisely why the person who wrote it gets promoted."
+       "fb": "You help, and restate the edge in the same breath, without a flicker of resentment."
+      },
+      {
+       "t": "Starts saying 'we should' about the family's own decisions",
+       "bad": true,
+       "fb": "Those are their matters, not yours. The unasked opinion is familiarity leaning where warmth should serve."
       }
      ]
     },
     {
-     "scene": "What you may say",
-     "stem": "A week of small moments. Mark the ones handled wrongly.",
+     "scene": "The family and its guests",
+     "stem": "A week serving the wider household. Mark the mistakes.",
      "lines": [
       {
-       "t": "A friend asks who you work for; you say 'a private family' and leave it there",
+       "t": "The principal's sister confides her frustration with the principal and waits for you to agree; you offer sympathy and no verdict",
        "bad": false,
-       "fb": "Warm, final, revealing nothing. Correct."
+       "fb": "Sympathy for the feeling, no opinion on the person. Neutrality is refusing to be recruited."
       },
       {
-       "t": "An old colleague already knows the family, so you compare notes about them",
+       "t": "One spouse asks what the other spent; you say you would have to check with the office, though you know",
+       "bad": false,
+       "fb": "Confidentiality runs inward too. You do not carry a fact between two principals, even holding the answer."
+      },
+      {
+       "t": "The teenager asks you to hide from their parents that an older stranger has been messaging them; you keep it quiet",
        "bad": true,
-       "fb": "Shared knowledge is not permission. Two people confirming each other is exactly how a confidence leaks."
+       "fb": "Ordinary confidences you may keep; anything touching the child's safety you never conceal from the parents."
       },
       {
-       "t": "You post a photo of a beautiful room, no faces, no location tag",
+       "t": "The principal's adult son tells you to charge his holiday to the household account; you do it at once",
        "bad": true,
-       "fb": "No faces is not enough. A room, a view, a car can place it. You post nothing of the house at all."
+       "fb": "An adult child is not your employer. You help within your remit and route anything that commits the family's money through the office."
       },
       {
-       "t": "A recruiter asks for a reference; you route it through the family office and name no one",
+       "t": "A weekend guest waves away the offer to unpack; you give them space rather than pressing service",
        "bad": false,
-       "fb": "You prove the role was real without breaching a confidence. Correct."
+       "fb": "You read the guest and calibrate. Service pressed on someone who wants space reads as suffocation."
       },
       {
-       "t": "The principal introduces you to a guest as 'almost family'; you stay warm but keep your role",
-       "bad": false,
-       "fb": "Warmth is not a change of role. Holding the line kindly protects you both."
+       "t": "Over dinner you repeat an amusing thing a guest said that weekend",
+       "bad": true,
+       "fb": "What you observe of guests is held as closely as what you observe of the family. The weekend simply went well."
+      },
+      {
+       "t": "You visibly do a little more for the child you find easiest to serve",
+       "bad": true,
+       "fb": "In a family alert to slight, an unevenness you did not intend is read as a judgement you did not make."
       }
      ]
     }
@@ -561,56 +617,56 @@
      "stem": "A consultant has asked for a reference from a confidential household. Write your reply.",
      "hint": "Three or four sentences. Warm, unhesitating, and naming no one.",
      "model": "Thank you, I can certainly provide that. The household was a private family office placement, and references are handled through their office rather than by the principal directly. If you send me what you need to verify, dates, scope of the role and reporting line, I will have the office confirm it with you this week. I am not able to share the family's name, and I would say the same about yours to anyone else.",
-     "note": "It says yes before it says no, which keeps the door open. It routes the request to the proper channel rather than refusing. The closing line turns your discretion into a selling point rather than an obstacle, and it is the sentence consultants remember."
+     "note": "It says yes before it says no, which keeps the door open, and it routes the request to the proper channel rather than refusing. The closing line turns your discretion into a selling point, and it is the sentence a consultant remembers."
     },
     {
      "scene": "The withheld answer",
      "stem": "At a dinner outside the house, a guest asks who you work for. Write what you actually say.",
      "hint": "Two or three sentences. Easy, unbothered, and closing the subject without rudeness.",
      "model": "I look after a private household, which mostly means I make sure a busy family's life runs on time. I am afraid I keep the rest of it to myself, it is rather the point of the job. What about you, what do you do?",
-     "note": "It answers, which is what stops the questioning. It names the constraint lightly rather than solemnly, so nobody feels rebuked. And it hands the conversation back, which is the move that actually closes the subject. The classic error is a stiff refusal, which makes the family sound far more interesting than it is."
+     "note": "It answers, which is what stops the questioning, and names the constraint lightly rather than solemnly, so nobody feels rebuked. Handing the conversation back is the move that actually closes the subject; a stiff refusal only makes the family sound more interesting than it is."
     },
     {
-     "scene": "The first day questions",
-     "stem": "Write the message you send to the family office before your first day, asking what you need to know.",
-     "hint": "One short message, every question in one batch, no more than five.",
-     "model": "Good afternoon. Looking forward to Monday. Five things I would like to have straight before I arrive, so I am not asking on the day. What time should I be at the house, and where should I park. Who will introduce me to the staff. Is there a household manual or standards document I should read first. What is the reporting line for day to day matters, and what should go straight to you. And is there anything the family particularly dislikes being asked in the first weeks. Thank you.",
-     "note": "Everything in one message, which is the whole discipline. Each question is operational rather than personal. The last one is the professional's question, and it is the one that tells the office you have done this before. Sending five separate messages across the weekend would undo all of it."
-    },
-    {
-     "scene": "The small promise",
-     "stem": "You told the principal you would confirm the week's schedule by evening. Write that message.",
-     "hint": "Short. Confirmed facts, one flagged decision, no narration.",
-     "model": "Good evening. The week is confirmed as follows. Tuesday, the car is at the house at seven fifteen for the eight o'clock. Wednesday and Thursday are clear at present. Friday, the dinner is at eight, six guests, and the florist comes at four. One thing needs you: the Saturday tennis court is held but not paid, and they release it Thursday noon. A yes or a no is all I need. Everything else is handled.",
-     "note": "Facts first, decision second, and the decision is isolated so it cannot be missed. Everything else is handled is the sentence that buys you trust, and you can only write it if it is true. Note what is absent: no explanation of how hard the florist was to reach."
+     "scene": "The house card",
+     "stem": "You are new and will soon be paying for household spending. Write the message to the family office that sets this up.",
+     "hint": "Short. Frame it as how the work is properly done, not a favour you are asking.",
+     "model": "Good morning. Before I start spending for the house, I would like a household card or a small float set up through the office, so everything reconciles cleanly for the controller. I will capture every receipt on the day and render a short account each month, in the same format, against budget. Could you let me know which you would prefer, and how you would like the monthly report sent. Thank you.",
+     "note": "You never advance your own money, so you ask for the proper instrument as a matter of course, not a favour. Promising receipts on the day and a tidy monthly account tells the office the house is in careful hands before you have spent a penny."
     },
     {
      "scene": "The commission",
      "stem": "A supplier has quietly offered you a personal commission to win the household's account. Write your reply.",
      "hint": "Two or three sentences. Warm, final, and leaving no opening.",
-     "model": "Thank you, but I don't take anything personally on the household's accounts, I choose suppliers purely on what is right for the family, and I keep it that way so there is never a question. Quote on the same terms as everyone else, and if you are the best value, the work is yours.",
-     "note": "You decline without a lecture, keep the relationship, and make clear the door is closed for good, not just today."
-    },
-    {
-     "scene": "Two principals",
-     "stem": "A husband and wife each ask you, separately, to take their side in a disagreement about the house. Write what you say to each.",
-     "hint": "Warm, equal, taking no side.",
-     "model": "I understand, and I want to get this right for you both. What I can do is make sure the house does exactly what you agree, I'll hold whatever you decide together, and lay the options out plainly if that helps. But the choice is yours as a couple; it isn't mine to weigh in on.",
-     "note": "You serve the household, never one principal against the other. The day you take a side, you have chosen the losing one."
+     "model": "Thank you, but I don't take anything personally on the household's accounts. I choose suppliers purely on what is right for the family, and I keep it that way so there is never a question. Quote on the same terms as everyone else, and if you are the best value, the work is yours.",
+     "note": "You decline without a lecture, keep the relationship, and make clear the door is closed for good, not just today. A boundary drawn in calm holds; the same line found in the moment comes out either preachy or weak."
     },
     {
      "scene": "The lavish gift",
      "stem": "The principal warmly presses an expensive personal gift on you. Write your reply.",
      "hint": "Grateful, warm, and quietly transparent, you do not wound their warmth.",
      "model": "Thank you, truly, that's so kind and it means a great deal. If it's all right, I'll just note it with the office, only so that anything to do with me stays completely transparent; I'd never want a single thing between us to become a question. But genuinely, thank you.",
-     "note": "You don't reject their warmth with a cold refusal. You accept graciously and make it transparent, which keeps you clean without coldness."
+     "note": "You don't reject their warmth with a cold refusal. You accept graciously and let the light fall on it, which keeps you clean without coldness, and the record is what protects you if anyone ever asks how you came to own it."
+    },
+    {
+     "scene": "The off-hours call",
+     "stem": "It is your day off, the phone was meant to be off, and the family calls with a genuine problem. Write what you say.",
+     "hint": "Warm, unbothered, brief. Help, and restate the edge in the same breath.",
+     "model": "Of course, let me help you sort that, give me a couple of minutes and I'll call you straight back. Once it's done: I'm glad that's settled. I'm back in properly at eight tomorrow and will pick up everything then, and if anything genuinely urgent comes up before that, the covering colleague is on and knows the house.",
+     "note": "You help, and restate the edge in the same breath, without a flicker of resentment. Naming the covering colleague gives the boundary a backup, which is the only kind of boundary that survives being tested."
+    },
+    {
+     "scene": "Two principals",
+     "stem": "A husband and wife each ask you, separately, to take their side in a disagreement about the house. Write what you say to each.",
+     "hint": "Warm, equal, taking no side.",
+     "model": "I understand, and I want to get this right for you both. What I can do is make sure the house does exactly what you agree, I'll hold whatever you decide together, and lay the options out plainly if that helps. But the choice is yours as a couple; it isn't mine to weigh in on.",
+     "note": "You serve the household, never one principal against the other, and you offer real usefulness in place of a verdict. The day you take a side, you have chosen the losing one."
     },
     {
      "scene": "Just this once",
      "stem": "The principal asks you, warmly, to bend a firm rule 'just this once'. Write what you say.",
      "hint": "Give them the outcome, not the shortcut. Warm, and holding the line.",
-     "model": "Of course, I want to make this easy for you, and I can get you exactly that by [the proper route], today. The one thing I'd rather not do is [the shortcut], only because it's the kind of thing that protects you as much as me. Leave the rest with me and I'll have it sorted.",
-     "note": "You hold the line by solving the real need another way. Kindly held, a boundary protects you both; folded once, it is gone for good."
+     "model": "Of course, I want to make this easy for you, and I can get you exactly that by the proper route, today. The one thing I'd rather not do is the shortcut, only because it's the kind of thing that protects you as much as me. Leave the rest with me and I'll have it sorted.",
+     "note": "You hold the line by solving the real need another way, so the refusal reads as protection rather than obstruction. Kindly held, a boundary protects you both; folded once, it is gone for good."
     }
    ]
   },
@@ -709,6 +765,11 @@
        "t": "On day three you reorganise the head housekeeper's team to show initiative",
        "bad": true,
        "fb": "Newcomer overreach across ladders. Learn the house before you touch it, and never rearrange another leader's team in week one."
+      },
+      {
+       "t": "You keep the family's movements off the general shared system, in the tightest permissions available",
+       "bad": false,
+       "fb": "Movement is security information. Segregating it ruthlessly is the board read correctly."
       },
       {
        "t": "You learn every person's role and who they answer to before you change a thing",
