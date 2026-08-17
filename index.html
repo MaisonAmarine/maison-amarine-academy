@@ -977,15 +977,15 @@
   /* Contents : chaque chapitre = une page à ouvrir */
   .lsn-toc-k{text-align:center;font-family:'Calibri Light','Calibri','Carlito',sans-serif;font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-deep);margin:6px 0 16px;}
   .lsn-chapters{display:flex;flex-direction:column;gap:10px;}
-  .lsn-parts-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin-top:16px;}
-  .lsn-pcard{display:flex;flex-direction:column;gap:2px;background:#24262E;color:#F4F2ED;border:2px solid transparent;border-radius:16px;padding:16px 18px;cursor:pointer;box-shadow:0 8px 20px rgba(0,0,0,.12);transition:transform .16s,box-shadow .16s,border-color .16s;}
-  .lsn-pcard:hover{transform:translateY(-2px);}
-  .lsn-pcard.active{border-color:var(--gold-lt);box-shadow:0 12px 28px rgba(0,0,0,.22);}
-  .lpc-badge{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.10);display:flex;align-items:center;justify-content:center;font-family:'Cormorant',Georgia,serif;font-size:17px;font-weight:600;margin-bottom:6px;}
-  .lpc-k{font-family:'Calibri Light','Calibri','Carlito',sans-serif;font-size:10px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#c4c9d0;}
-  .lpc-t{font-family:'Cormorant',Georgia,serif;font-size:20px;font-weight:600;color:#F4F2ED;line-height:1.16;}
-  .lpc-s{font-size:11.5px;color:#c4c9d0;opacity:.85;margin-top:3px;}
-  .lsn-part-chapters{margin-top:16px;display:flex;flex-direction:column;gap:10px;}
+  .lsn-parts-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin-top:18px;}
+  .lsn-pcard{position:relative;display:flex;flex-direction:column;background:#24262E;color:#F4F2ED;border-radius:18px;padding:24px 24px 22px;cursor:pointer;min-height:180px;box-shadow:0 12px 30px rgba(0,0,0,.16);transition:transform .18s,box-shadow .18s;}
+  .lsn-pcard:hover{transform:translateY(-3px);box-shadow:0 20px 46px rgba(0,0,0,.26);}
+  .lpc-go{position:absolute;top:24px;right:24px;color:#F4F2ED;opacity:.55;}
+  .lpc-badge{width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,.10);display:flex;align-items:center;justify-content:center;font-family:'Cormorant',Georgia,serif;font-size:20px;font-weight:600;}
+  .lpc-mid{margin-top:auto;padding-top:18px;}
+  .lpc-k{font-family:'Calibri Light','Calibri','Carlito',sans-serif;font-size:10.5px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:#c4c9d0;}
+  .lpc-t{font-family:'Cormorant',Georgia,serif;font-size:24px;font-weight:600;color:#F4F2ED;line-height:1.16;margin-top:3px;}
+  .lpc-s{font-size:12px;color:#c4c9d0;opacity:.85;margin-top:6px;}
   .lsn-ch{display:flex;align-items:center;gap:18px;width:100%;text-align:left;background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:17px 22px;cursor:pointer;transition:border-color .18s,background .18s,transform .18s;}
   .lsn-ch:hover{border-color:var(--gold-lt);background:#fffdf8;transform:translateX(3px);}
   .lsn-ch-n{font-family:'Cormorant',serif;font-weight:600;font-size:21px;color:var(--gold);min-width:30px;}
@@ -5709,15 +5709,19 @@ const LSN_PARTS={
   {r:'III',t:"The line, and the cases", start:"Boundaries, and the cost of this work"},
  ],
 };
-function svSelectPart(pi){
+function svShowPart(pi){
   if(!svCur||!svCur.partGroups) return;
   const g=svCur.partGroups[pi]; if(!g) return;
-  document.querySelectorAll('.lsn-parts-grid .lsn-pcard').forEach((c,i)=>c.classList.toggle('active', i===pi));
-  const box=document.getElementById('lsn-part-chapters');
-  if(box){ box.innerHTML=g.chapters.map(c=>`<button class="lsn-ch" onclick="svOpenSection(${c.idx})"><span class="lsn-ch-n">${String(c.no+1).padStart(2,'0')}</span><span class="lsn-ch-t">${escapeHtml(c.h)}</span><span class="lsn-ch-go">${ICO_ARR}</span></button>`).join(''); }
+  svCur.activePart=pi;
+  const body=document.getElementById('stepViewBody');
+  const chs=g.chapters.map(c=>`<button class="lsn-ch" onclick="svOpenSection(${c.idx})"><span class="lsn-ch-n">${String(c.no+1).padStart(2,'0')}</span><span class="lsn-ch-t">${escapeHtml(c.h)}</span><span class="lsn-ch-go">${ICO_ARR}</span></button>`).join('');
+  body.innerHTML=`<div class="lsn-vault"><button class="lsn-toc-back" onclick="svShowToc()">${ICO_ARL} Contents</button><header class="rf-head"><div class="rf-k">Part ${g.r}</div><h1>${escapeHtml(g.t)}</h1></header><div class="lsn-chapters">${chs}</div></div>`;
+  try{ window.scrollTo({top:0,behavior:'smooth'}); }catch(e){}
 }
+function svBackToList(){ if(svCur && svCur.activePart!=null && svCur.partGroups){ svShowPart(svCur.activePart); } else { svShowToc(); } }
 function svShowToc(){
   const {s,secs,stepIdx,weekNo}=svCur;
+  svCur.activePart=null;
   const body=document.getElementById('stepViewBody');
   const _vis=svCur.visible||secs.map((_,k)=>k);
   const _parts=(LSN_PARTS[weekNo+':'+stepIdx])||[];
@@ -5734,10 +5738,8 @@ function svShowToc(){
       return { r:p.r, t:p.t, chapters:(_from<0?[]:_chs.slice(_from,_to)) };
     });
     toc+='<div class="lsn-parts-grid">'+svCur.partGroups.map((g,pi)=>
-      `<div class="lsn-pcard${pi===0?' active':''}" onclick="svSelectPart(${pi})"><div class="lpc-badge">${g.r}</div><div class="lpc-k">Part ${g.r}</div><div class="lpc-t">${escapeHtml(g.t)}</div><div class="lpc-s">${g.chapters.length} chapter${g.chapters.length>1?'s':''}</div></div>`
+      `<div class="lsn-pcard" onclick="svShowPart(${pi})"><div class="lpc-go">${ICO_ARR}</div><div class="lpc-badge">${g.r}</div><div class="lpc-mid"><div class="lpc-k">Part ${g.r}</div><div class="lpc-t">${escapeHtml(g.t)}</div><div class="lpc-s">${g.chapters.length} chapter${g.chapters.length>1?'s':''}</div></div></div>`
     ).join('')+'</div>';
-    const _g0=svCur.partGroups[0];
-    toc+='<div class="lsn-part-chapters" id="lsn-part-chapters">'+(_g0?_g0.chapters.map(c=>_chBtn(c.idx,c.no)).join(''):'')+'</div>';
   } else {
     toc=_vis.map((idx,n)=>_chBtn(idx,n)).join('');
   }
@@ -5869,7 +5871,7 @@ function svOpenSection(i){
   // aérer la lecture : image(s) éditoriale(s) intercalée(s), en variant la position
   bodyhtml = lsnInjectFigures(bodyhtml, svCur.weekNo, posV);
   let html=`<div class="lsn-vault lsn-reading">
-    <button class="lsn-toc-back" onclick="svShowToc()">${ICO_ARL} Contents</button>
+    <button class="lsn-toc-back" onclick="svBackToList()">${ICO_ARL} Back</button>
     <div class="lsn-chapmark">Chapter ${posV+1} of ${total}</div>
     <article class="rf-sec"><h2 class="lsn-chtitle">${escapeHtml(x.heading||'Introduction')}</h2><div class="rf-body">${bodyhtml}</div></article>
     <div class="lsn-foot">
