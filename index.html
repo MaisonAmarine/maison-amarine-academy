@@ -5765,7 +5765,18 @@ function svOpenSection(i){
   if(svCur.debriefIdx && svCur.debriefIdx.has(i)){ i=(vis.length?vis[0]:0); }
   if(i<0||i>=secs.length) return;
   const posV=Math.max(0, vis.indexOf(i)), total=vis.length;
-  const prevIdx=posV>0?vis[posV-1]:-1, nextIdx=posV<total-1?vis[posV+1]:-1;
+  let prevIdx=posV>0?vis[posV-1]:-1, nextIdx=posV<total-1?vis[posV+1]:-1;
+  let _pTotal=total, _pPos=posV;
+  if(svCur.partGroups && svCur.partGroups.length){
+    for(var _pk=0;_pk<svCur.partGroups.length;_pk++){
+      if(svCur.partGroups[_pk].chapters.some(function(c){return c.idx===i;})){
+        var _pl=svCur.partGroups[_pk].chapters.map(function(c){return c.idx;}).filter(function(ix){return vis.indexOf(ix)>=0;});
+        var _pp=_pl.indexOf(i);
+        prevIdx=_pp>0?_pl[_pp-1]:-1; nextIdx=_pp<_pl.length-1?_pl[_pp+1]:-1;
+        _pTotal=_pl.length; _pPos=_pp; svCur.activePart=_pk; break;
+      }
+    }
+  }
   svCur.ci=i;
   try{ const r=getResume()||{}; setResume({wk:svCur.weekNo, step:svCur.stepIdx, ci:i, title:(svCur.s&&svCur.s.title)||r.title||'', sub:(svCur.s&&svCur.s.subtitle)||'', chapter:(secs[i]&&(secs[i].heading||'Introduction'))||'', ts:Date.now()}); updateResumeChip(); }catch(e){}
   const x=secs[i], body=document.getElementById('stepViewBody');
@@ -5871,7 +5882,7 @@ function svOpenSection(i){
   bodyhtml = lsnInjectFigures(bodyhtml, svCur.weekNo, posV);
   let html=`<div class="lsn-vault lsn-reading">
     <button class="lsn-toc-back" onclick="svBackToList()">${ICO_ARL} Back</button>
-    <div class="lsn-chapmark">Chapter ${posV+1} of ${total}</div>
+    <div class="lsn-chapmark">Chapter ${_pPos+1} of ${_pTotal}</div>
     <article class="rf-sec"><h2 class="lsn-chtitle">${escapeHtml(x.heading||'Introduction')}</h2><div class="rf-body">${bodyhtml}</div></article>
     <div class="lsn-foot">
       <button class="lsn-nav" onclick="svOpenSection(${prevIdx})" ${prevIdx<0?'disabled':''}>${ICO_ARL} Previous</button>
