@@ -1007,7 +1007,9 @@
   .lsn-reading .lsn-subhead:first-child{margin-top:8px;}
   .lsn-callout-k{font-family:'Calibri Light','Calibri','Carlito',sans-serif;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-deep);margin:40px 0 0;}
   .lsn-callout-k + .lsn-callout-body{margin-top:8px;}
-  .lsn-callout-body{background:var(--gold-wash);border-left:3px solid var(--gold-lt);border-radius:0 12px 12px 0;padding:16px 22px;font-family:'Cormorant',serif;font-weight:500;font-size:20px;line-height:1.7;color:#3a342c;margin:0 0 20px;}
+  .lsn-callout-body{background:var(--gold-wash);border-left:3px solid var(--gold-lt);border-radius:0 12px 12px 0;padding:16px 22px;margin:0 0 20px;}
+  .lsn-callout-body p{font-family:'Cormorant',serif;font-weight:500;font-size:20px;line-height:1.7;color:#3a342c;margin:0 0 12px;}
+  .lsn-callout-body p:last-child{margin-bottom:0;}
   .lsn-callout-body strong{font-weight:700;color:var(--gold-deep);background:none;}
   /* listes numérotées / à puces */
   .lsn-reading ol.lsn-list{margin:8px 0 22px;padding-left:0;list-style:none;}
@@ -6025,7 +6027,7 @@ function svOpenSection(i){
     }
     if(tk.t==='bold'){
       const isAllCaps = tk.v===tk.v.toUpperCase() && /[A-Z]/.test(tk.v);
-      if(isAllCaps){ bodyhtml+=`<div class="lsn-callout-k">${escapeHtml(tk.v)}</div>`; afterLabel=true; }
+      if(isAllCaps){ bodyhtml+=`<div class="lsn-callout-k">${escapeHtml(tk.v)}</div>`; if(tokens[j+1] && tokens[j+1].t==='p'){ var _cp=String(tokens[j+1].v).split('@@P@@').map(function(s){return s.trim();}).filter(Boolean); bodyhtml+='<div class="lsn-callout-body">'+_cp.map(function(x){return '<p>'+mdInline(x)+'</p>';}).join('')+'</div>'; j++; } afterLabel=false; }
       else { bodyhtml+=`<h3 class="lsn-subhead">${mdInline(tk.v)}</h3>`; afterLabel=false; }
       j++; continue;
     }
