@@ -5855,11 +5855,18 @@ function lsnDownloadBtn(){
   return '';
 }
 function svSectionTitle(i){ const x=svCur.secs[i]; return x&&x.heading ? x.heading : 'Introduction'; }
-const LSN_PARTS={ '1:0':[
-  {r:'I',  t:"The world you're entering", start:"The field",                 img:"images/lsn-3.jpg"},
-  {r:'II', t:"The economics & the craft", start:"The economics of the role", img:"images/lsn-5.jpg"},
-  {r:'III',t:"The people & the risks",    start:"The principal",             img:"images/lsn-6.jpg"},
-] };
+const LSN_PARTS={
+ '1:0':[
+  {r:'I',  t:"The world you're entering", start:"The field"},
+  {r:'II', t:"The economics & the craft", start:"The economics of the role"},
+  {r:'III',t:"The people & the risks",    start:"The principal"},
+ ],
+ '1:1':[
+  {r:'I',  t:"Trust & discretion",      start:"The economy of trust"},
+  {r:'II', t:"The temptations",         start:"Money, gifts, and the quiet corruptions"},
+  {r:'III',t:"The line, and the cases", start:"Boundaries, and the cost of this work"},
+ ],
+};
 function svTogglePart(pi){
   const b=document.getElementById('lpc-body-'+pi), g=document.getElementById('lpc-go-'+pi);
   if(!b) return;
