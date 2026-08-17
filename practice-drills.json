@@ -68,7 +68,7 @@
      "scene": "Overheard",
      "stem": "You overhear something private you were not meant to hear. Put your response in order.",
      "steps": [
-      "Show nothing in the moment — no reaction, no change in your face",
+      "Show nothing in the moment, no reaction, no change in your face",
       "Decide whether it touches the principal's safety or interests, or is merely private",
       "If it must be known, tell only the one person whose job it is to know, and no one else",
       "Otherwise, treat it as though you never heard it, now and permanently",
@@ -83,7 +83,7 @@
       "Tell the person affected the same day, before they find it themselves",
       "State the fact plainly, in one sentence, without cushioning it",
       "Say what you have already done to put it right",
-      "Own it in a flat voice — no excuse, no account of whose fault it was",
+      "Own it in a flat voice, no excuse, no account of whose fault it was",
       "Do not raise it again"
      ],
      "why": "Fact, fix, ownership. The first mistake handled this way is worth more than a flawless month: it proves bad news travels through you at full speed."
@@ -92,7 +92,7 @@
      "scene": "The improper request",
      "stem": "The principal asks you to do something that crosses a line. Put your handling in order.",
      "steps": [
-      "Do not react or moralise — keep your face and your voice even",
+      "Do not react or moralise, keep your face and your voice even",
       "Separate the person from the request: you are declining the act, not them",
       "Offer the proper way to get the legitimate part of what they want",
       "If it touches money or their name, ask for it in writing, which quietly ends most of it",
@@ -104,13 +104,13 @@
      "scene": "The ninety-day review",
      "stem": "You reach ninety days in the house. Put the review in order.",
      "steps": [
-      "Ask for a review yourself — private households rarely offer one",
+      "Ask for a review yourself, private households rarely offer one",
       "Ask the senior question: 'is there anything I have not noticed?'",
       "When you hear criticism you believe is unfair, write down every word",
       "Say nothing in your defence, however unjust it feels",
       "Thank them, change it, and never mention it again"
      ],
-     "why": "Households don't offer reviews, which is exactly why you ask. And you defend nothing: you thank, you change, you move on — that is the most senior thing you can do."
+     "why": "Households don't offer reviews, which is exactly why you ask. And you defend nothing: you thank, you change, you move on, that is the most senior thing you can do."
     }
    ]
   },
@@ -205,7 +205,7 @@
      "fb": "Frictionless logistics, framed around their life. Strong."
     },
     {
-     "t": "I am discreet — I simply never repeat what I am told",
+     "t": "I am discreet, I simply never repeat what I am told",
      "b": 0,
      "fb": "Only half the idea. Discretion is vigilance over everything you see, not merely silence about what you are told."
     },
@@ -242,7 +242,7 @@
     {
      "t": "A reporter clearly already knows a detail about the family, so I'd confirm just that one",
      "b": 2,
-     "fb": "You confirm nothing, ever. A detail 'they already know' becomes a sourced fact the moment you nod — confirmation is the breach."
+     "fb": "You confirm nothing, ever. A detail 'they already know' becomes a sourced fact the moment you nod, confirmation is the breach."
     },
     {
      "t": "I'd take the unglamorous task once, unasked and unmentioned",
@@ -257,17 +257,17 @@
     {
      "t": "I'd research the family thoroughly before day one so I arrive well informed",
      "b": 2,
-     "fb": "You are shown what you need. Arriving 'informed' by research signals the wrong instinct — in a private house, curiosity has another name."
+     "fb": "You are shown what you need. Arriving 'informed' by research signals the wrong instinct, in a private house, curiosity has another name."
     },
     {
-     "t": "I never take sides — but if both principals disagree, I'd quietly do what the one who pays me wants",
+     "t": "I never take sides, but if both principals disagree, I'd quietly do what the one who pays me wants",
      "b": 2,
      "fb": "Between two principals there is no 'one who pays you'; there is the household. Choosing one is choosing the losing side."
     },
     {
      "t": "I'd ask for instructions in writing, openly, so we both hold the same record",
      "b": 0,
-     "fb": "Legitimate self-protection, done in the open. Clean — the opposite of a secret file."
+     "fb": "Legitimate self-protection, done in the open. Clean, the opposite of a secret file."
     },
     {
      "t": "I'd never mention what the family earns or spends, to anyone",
@@ -430,27 +430,27 @@
      "stem": "The principal asks you for several things across a week. Mark the ones you should not simply do.",
      "lines": [
       {
-       "t": "Asks you to book a restaurant under a pseudonym for privacy — you do it",
+       "t": "Asks you to book a restaurant under a pseudonym for privacy, you do it",
        "bad": false,
        "fb": "A name for privacy is ordinary here; it protects the principal and harms no one."
       },
       {
-       "t": "Asks you to tell their spouse they were at the office when they were not — you do it to keep the peace",
+       "t": "Asks you to tell their spouse they were at the office when they were not, you do it to keep the peace",
        "bad": true,
        "fb": "You have been made the instrument of a lie inside the household. Do it once and you are its instrument forever."
       },
       {
-       "t": "Asks you to move a large sum between their accounts on a verbal instruction only — you do it",
+       "t": "Asks you to move a large sum between their accounts on a verbal instruction only, you do it",
        "bad": true,
        "fb": "Money never moves on words. The written instruction protects you both; its absence should stop you."
       },
       {
-       "t": "Asks you to keep a medical appointment off the shared calendar — you do it",
+       "t": "Asks you to keep a medical appointment off the shared calendar, you do it",
        "bad": false,
        "fb": "Discretion about health is proper; a private entry the office cannot see is exactly right."
       },
       {
-       "t": "Asks you to sign a delivery in their name because they are out — you do it, it is only a parcel",
+       "t": "Asks you to sign a delivery in their name because they are out, you do it, it is only a parcel",
        "bad": true,
        "fb": "Signing in another's name, however small, is the very habit a serious improper request later relies on. Decline the pattern, not just the parcel."
       }
@@ -461,7 +461,7 @@
      "stem": "You are appointing the household's regular suppliers. Mark the mistakes.",
      "lines": [
       {
-       "t": "A vendor offers you ten per cent, paid to you personally, to win the account — you accept, as it costs the family nothing",
+       "t": "A vendor offers you ten per cent, paid to you personally, to win the account, you accept, as it costs the family nothing",
        "bad": true,
        "fb": "A commission is theft dressed as a discount. It is never invisible, and it ends a career the day it is found."
       },
@@ -476,7 +476,7 @@
        "fb": "A modest, declared, recorded gift is clean. Concealment is what turns a gift into a problem."
       },
       {
-       "t": "A vendor offers to 'look after you' if you delay paying their rival — you agree",
+       "t": "A vendor offers to 'look after you' if you delay paying their rival, you agree",
        "bad": true,
        "fb": "You have been bought. The moment a decision serves a supplier over the principal, you work for the wrong person."
       },
@@ -494,10 +494,10 @@
       {
        "t": "You spot six things done badly and fix the most obvious one to prove your value",
        "bad": true,
-       "fb": "Everything that looks stupid has a history. Find it before you touch it — reform in week one is the classic newcomer failure."
+       "fb": "Everything that looks stupid has a history. Find it before you touch it, reform in week one is the classic newcomer failure."
       },
       {
-       "t": "You learn every name — the gardener, the night driver, the Thursday help — and use them",
+       "t": "You learn every name, the gardener, the night driver, the Thursday help, and use them",
        "bad": false,
        "fb": "Names first. Nothing does more for your first month."
       },
@@ -514,7 +514,7 @@
       {
        "t": "You quietly write down how the house actually runs, though no one asked you to",
        "bad": false,
-       "fb": "The house that has been written down can be run — which is precisely why the person who wrote it gets promoted."
+       "fb": "The house that has been written down can be run, which is precisely why the person who wrote it gets promoted."
       }
      ]
     },
@@ -533,7 +533,7 @@
        "fb": "Shared knowledge is not permission. Two people confirming each other is exactly how a confidence leaks."
       },
       {
-       "t": "You post a photo of a beautiful room — no faces, no location tag",
+       "t": "You post a photo of a beautiful room, no faces, no location tag",
        "bad": true,
        "fb": "No faces is not enough. A room, a view, a car can place it. You post nothing of the house at all."
       },
@@ -588,28 +588,28 @@
      "scene": "The commission",
      "stem": "A supplier has quietly offered you a personal commission to win the household's account. Write your reply.",
      "hint": "Two or three sentences. Warm, final, and leaving no opening.",
-     "model": "Thank you, but I don't take anything personally on the household's accounts — I choose suppliers purely on what is right for the family, and I keep it that way so there is never a question. Quote on the same terms as everyone else, and if you are the best value, the work is yours.",
+     "model": "Thank you, but I don't take anything personally on the household's accounts, I choose suppliers purely on what is right for the family, and I keep it that way so there is never a question. Quote on the same terms as everyone else, and if you are the best value, the work is yours.",
      "note": "You decline without a lecture, keep the relationship, and make clear the door is closed for good, not just today."
     },
     {
      "scene": "Two principals",
      "stem": "A husband and wife each ask you, separately, to take their side in a disagreement about the house. Write what you say to each.",
      "hint": "Warm, equal, taking no side.",
-     "model": "I understand, and I want to get this right for you both. What I can do is make sure the house does exactly what you agree — I'll hold whatever you decide together, and lay the options out plainly if that helps. But the choice is yours as a couple; it isn't mine to weigh in on.",
+     "model": "I understand, and I want to get this right for you both. What I can do is make sure the house does exactly what you agree, I'll hold whatever you decide together, and lay the options out plainly if that helps. But the choice is yours as a couple; it isn't mine to weigh in on.",
      "note": "You serve the household, never one principal against the other. The day you take a side, you have chosen the losing one."
     },
     {
      "scene": "The lavish gift",
      "stem": "The principal warmly presses an expensive personal gift on you. Write your reply.",
-     "hint": "Grateful, warm, and quietly transparent — you do not wound their warmth.",
-     "model": "Thank you — truly, that's so kind and it means a great deal. If it's all right, I'll just note it with the office, only so that anything to do with me stays completely transparent; I'd never want a single thing between us to become a question. But genuinely, thank you.",
+     "hint": "Grateful, warm, and quietly transparent, you do not wound their warmth.",
+     "model": "Thank you, truly, that's so kind and it means a great deal. If it's all right, I'll just note it with the office, only so that anything to do with me stays completely transparent; I'd never want a single thing between us to become a question. But genuinely, thank you.",
      "note": "You don't reject their warmth with a cold refusal. You accept graciously and make it transparent, which keeps you clean without coldness."
     },
     {
      "scene": "Just this once",
      "stem": "The principal asks you, warmly, to bend a firm rule 'just this once'. Write what you say.",
      "hint": "Give them the outcome, not the shortcut. Warm, and holding the line.",
-     "model": "Of course — I want to make this easy for you, and I can get you exactly that by [the proper route], today. The one thing I'd rather not do is [the shortcut], only because it's the kind of thing that protects you as much as me. Leave the rest with me and I'll have it sorted.",
+     "model": "Of course, I want to make this easy for you, and I can get you exactly that by [the proper route], today. The one thing I'd rather not do is [the shortcut], only because it's the kind of thing that protects you as much as me. Leave the rest with me and I'll have it sorted.",
      "note": "You hold the line by solving the real need another way. Kindly held, a boundary protects you both; folded once, it is gone for good."
     }
    ]
@@ -632,7 +632,7 @@
     {
      "t": "The chief of staff",
      "b": 0,
-     "fb": "The principal's right hand across business and private life — often the person you report to."
+     "fb": "The principal's right hand across business and private life, often the person you report to."
     },
     {
      "t": "The controller who keeps the household budget",
@@ -642,7 +642,7 @@
     {
      "t": "The principal's private PA",
      "b": 0,
-     "fb": "Diary and correspondence — your closest daily counterpart, on the office side."
+     "fb": "Diary and correspondence, your closest daily counterpart, on the office side."
     },
     {
      "t": "The estate manager across several properties",
@@ -657,12 +657,12 @@
     {
      "t": "The butler, senior of formal service",
      "b": 1,
-     "fb": "Front of house, the senior of formal service — the management of the life, not only the maintenance."
+     "fb": "Front of house, the senior of formal service, the management of the life, not only the maintenance."
     },
     {
      "t": "The head housekeeper",
      "b": 2,
-     "fb": "Leads the domestic team, but on the domestic ladder — paid for the condition of the house, done superbly."
+     "fb": "Leads the domestic team, but on the domestic ladder, paid for the condition of the house, done superbly."
     },
     {
      "t": "The private chef",
@@ -677,7 +677,7 @@
     {
      "t": "The nanny or governess",
      "b": 2,
-     "fb": "Domestic ladder — organised around the daily life of the house."
+     "fb": "Domestic ladder, organised around the daily life of the house."
     }
    ]
   },
@@ -693,7 +693,7 @@
       {
        "t": "You send the month's household invoices to the family office controller",
        "bad": false,
-       "fb": "Correct — the money runs through the office, and a spend you route cleanly is a spend you can explain."
+       "fb": "Correct, the money runs through the office, and a spend you route cleanly is a spend you can explain."
       },
       {
        "t": "You ask the private chef to also manage the principal's diary, since he seems free",
@@ -3104,7 +3104,7 @@
      "scene": "The day rate",
      "stem": "A family office asks your day rate for a ten-week project. Write your reply.",
      "hint": "Clear, confident, no apology. Give the rate, the deposit, what's included, and how references work.",
-     "model": "Thank you — I'd be glad to. For a project of this length my rate is [X] a day, with a forty per cent deposit to begin and the balance invoiced in stages, payable within seven days. That covers [scope]; travel and any agreed expenses are billed separately, and I carry full professional indemnity and public liability. I'm happy to have references confirmed through the relevant family office.",
+     "model": "Thank you, I'd be glad to. For a project of this length my rate is [X] a day, with a forty per cent deposit to begin and the balance invoiced in stages, payable within seven days. That covers [scope]; travel and any agreed expenses are billed separately, and I carry full professional indemnity and public liability. I'm happy to have references confirmed through the relevant family office.",
      "note": "You state the number without flinching, protect yourself with the deposit and the insurance line, and keep references discreet. An apology inside a quote reads as doubt."
     }
    ]

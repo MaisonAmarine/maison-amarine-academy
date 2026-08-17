@@ -106,7 +106,7 @@
   .dsh-step.ok .dsh-dot svg{width:9px;height:9px;color:#fff;}
   .dsh-step.ok{color:var(--ink);}
   .dsh-pill{display:inline-block;margin-top:auto;padding-top:14px;font-family:'Calibri Light','Calibri','Carlito',sans-serif;font-size:12.5px;font-weight:600;color:var(--gold-deep);}
-  /* Focus panel : « ta semaine, cette action » — l'unique prochaine étape, mise en avant */
+  /* Focus panel : « ta semaine, cette action », l'unique prochaine étape, mise en avant */
   .dsh-focus{position:relative;display:flex;flex-wrap:wrap;align-items:center;gap:20px 26px;justify-content:space-between;background:linear-gradient(120deg,var(--gold-wash) 0%,#f5f6f7 58%,var(--paper) 100%);border:1px solid var(--gold-lt);border-radius:20px;padding:24px 28px 24px 32px;margin-bottom:20px;overflow:hidden;box-shadow:0 10px 30px rgba(126,131,138,.10);}
   .dsh-focus::before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;background:linear-gradient(180deg,var(--gold),var(--gold-lt));}
   .dsh-focus-main{flex:1 1 320px;min-width:0;}
@@ -169,7 +169,7 @@
   .page-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(20,16,12,.35),rgba(20,16,12,0) 60%),linear-gradient(0deg,rgba(20,16,12,.22),rgba(20,16,12,0) 55%);}
   .page-hero .ph-tag{position:absolute;left:24px;bottom:16px;z-index:2;font-family:'Calibri Light','Calibri','Carlito',sans-serif;font-size:10.5px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:#fff;text-shadow:0 1px 8px rgba(0,0,0,.5);}
   @media(max-width:620px){ .page-hero{height:112px;} }
-  /* accessibilité clavier — anneau de focus visible et élégant */
+  /* accessibilité clavier, anneau de focus visible et élégant */
   :focus-visible{outline:2px solid var(--gold);outline-offset:2px;border-radius:6px;}
   .nav-item:focus-visible,.m-tab:focus-visible,.wcard:focus-visible,.pr-card:focus-visible,.cc-cell:focus-visible{outline-offset:-2px;}
   .page-h{margin-bottom:24px;padding-bottom:22px;border-bottom:1px solid var(--line);position:relative;animation:phIn .6s cubic-bezier(.2,.7,.2,1) both;}
@@ -655,7 +655,7 @@
   .cv-mini{font-family:'Calibri Light','Calibri','Carlito',sans-serif;font-size:13px;color:var(--ink-soft);line-height:1.55;padding:7px 0;border-top:1px solid var(--line);}
   .cv-mini:first-of-type{border-top:none;}
   @media(min-width:760px){ .cv-cols{grid-template-columns:1fr 1fr;} .cv-group.g-fix{grid-column:1 / -1;} }
-  /* CV Review — deep analysis UI */
+  /* CV Review, deep analysis UI */
   .cv-cats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin:2px 0 24px;}
   .cv-cat{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:15px 16px;}
   .cv-cat-h{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:9px;}
@@ -1141,7 +1141,7 @@
   @media(min-width:861px){.m-tabs,.topbar-m,.m-more-menu,.m-more-backdrop,.m-more-btn{display:none!important;}}
   @media(prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;transition-duration:.12s!important;}html{scroll-behavior:auto;}}
 
-  /* LOGIN GATE — premium ceremony */
+  /* LOGIN GATE, premium ceremony */
   .gate{position:fixed;inset:0;z-index:500;background:radial-gradient(1100px 640px at 50% -8%, #2f3237, var(--sidebar));display:flex;align-items:center;justify-content:center;padding:20px;overflow:hidden;}
   .gate.hidden{display:none;}
   .gate::before{content:"";position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");opacity:.05;mix-blend-mode:overlay;pointer-events:none;}
@@ -1440,7 +1440,7 @@
   .wc-step.done .wc-step-ic svg{stroke:#fff;}
 
   /* ============================================================
-     ULTRA-PREMIUM PASS — module & reading experience
+     ULTRA-PREMIUM PASS, module & reading experience
      Appended last: refines the base styles through the cascade,
      nothing removed, easy to review or revert.
      ============================================================ */
@@ -1519,10 +1519,10 @@ html,body,body *{font-family:'Calibri Light','Calibri','Carlito',system-ui,-appl
 .brand{font-family:'Cormorant Garamond',serif !important;}
 
   /* ============================================================
-     LOOK (2026-08-16) — Maison Amarine dark-grey (Elysium-clean).
+     LOOK (2026-08-16), Maison Amarine dark-grey (Elysium-clean).
      Cool grey base + white cards + charcoal sidebar. Accent = the
      SAME dark grey/charcoal as the sidebar (NO blue), GREEN for
-     progress. Cascade override — revertible.
+     progress. Cascade override, revertible.
      ============================================================ */
   :root{
     --ivory:#EEF0F2; --paper:#FFFFFF;
@@ -2261,7 +2261,7 @@ html,body,body *{font-family:'Calibri Light','Calibri','Carlito',system-ui,-appl
       </style>
       <div class="page-h">
         <div class="eyebrow">CV Review</div>
-        <h1>Have your CV read the way an agency would — then build a better one.</h1>
+        <h1>Have your CV read the way an agency would, then build a better one.</h1>
         <p>Two tools in one. <b>Review</b> checks your existing CV against the exact standards this world hires on. <b>Build</b> lets you create a clean, US or Canadian résumé from scratch, with 20 templates and wording tailored to your role. Everything stays private in your browser.</p>
       </div>
       <div class="cvtabs">
@@ -2941,12 +2941,12 @@ async function cvHandleFile(file){
     status.textContent='Sorry, that file could not be read. Try a PDF or .docx, or paste the text into the box.';
   }
 }
-/* ============ CV REVIEW — deep client-side analysis, aligned to Week 7 (fully private) ============ */
+/* ============ CV REVIEW, deep client-side analysis, aligned to Week 7 (fully private) ============ */
 function cvEsc(s){ return escapeHtml(String(s)); }
 function cvLines(t){ return t.split(/\r?\n/).map(l=>l.trim()).filter(Boolean); }
 function cvBand(sc){ return sc>=85?['cv-good','Ready to send'] : sc>=65?['cv-mid','Nearly there'] : ['cv-low','Needs work']; }
 
-/* Week 7 · 2.3 — "adjectives about yourself": passionate, dynamic, dedicated, detail-oriented … */
+/* Week 7 · 2.3, "adjectives about yourself": passionate, dynamic, dedicated, detail-oriented … */
 const CV_FLUFF=["passionate","dynamic","dedicated","detail-oriented","detail oriented","hardworking","hard-working","motivated","enthusiastic","team player","go-getter","results-driven","results driven","proactive","self-starter","self starter","meticulous","conscientious","reliable","trustworthy","adaptable","flexible","excellent communicator","people person","fast learner","hit the ground running","think outside the box"];
 const CV_DUTY=["responsible for","duties included","duties include","in charge of","tasked with","responsibilities included","responsibilities include","assisted with","helped with","worked on","involved in","dealt with","various tasks","day to day tasks","day-to-day tasks"];
 const CV_WEAKOPEN=["responsible","assisted","helped","worked","involved","dealt","participated","supported","tasked","duties","responsibilities"];
@@ -2997,22 +2997,22 @@ function cvAnalyze(text, target){
   const digits=(text.match(/\d/g)||[]).length;
   const scopeHits=(low.match(/\b(staff of|team of|family of|budget|residences?|properties|guests?|years?|homes?)\b/g)||[]).length + (text.match(/[£$€]/g)||[]).length;
   if(digits<3){ cut('verify',18); fix("Quantify every line of scope","Week 7 scope is proven with numbers: household size, staff coordinated, residences, budget managed, travel volume. There are almost none here.","<b>Instead of</b> “managed a large household” <b>write</b> “Managed a 14-room principal residence and a staff of 9, on a £600k annual household budget.”",3); }
-  else if(scopeHits>=3) good("Concrete, checkable scope is present — this is the verifiability a family office reads for.");
+  else if(scopeHits>=3) good("Concrete, checkable scope is present, this is the verifiability a family office reads for.");
   if(wordy.length>=6){ const qr=wordy.filter(l=>/\d/.test(l)).length/wordy.length; if(qr<0.3 && digits>=3){ cut('verify',8); fix("Not every line is quantified","The self-test in Week 7 asks that <i>every</i> experience line be quantified. Some of yours carry no figure.","",2); } }
-  if(!df.length && digits>=3) good("Claims read as checkable — scope over duties.");
+  if(!df.length && digits>=3) good("Claims read as checkable, scope over duties.");
 
   // ---------- RESTRAINT (no adjectives, no design, no personal brand) ----------
   const ff=CV_FLUFF.filter(w=>low.includes(w));
-  if(ff.length){ cut('restraint',Math.min(ff.length*5,22)); fix("Cut the adjectives about yourself","Week 7 · killer #3: “passionate, dynamic, dedicated, detail-oriented” — unverifiable, everyone writes them, and they sit where evidence should be. Found: "+ff.slice(0,6).map(f=>'“'+cvEsc(f)+'”').join(', ')+(ff.length>6?'…':'')+".","<b>Instead of</b> “dedicated, hardworking house manager” <b>write</b> “House manager for a principal across three residences; staff of 9.”",3); }
-  else good("No adjectives about yourself — you let the evidence speak (Week 7 · Restraint).");
+  if(ff.length){ cut('restraint',Math.min(ff.length*5,22)); fix("Cut the adjectives about yourself","Week 7 · killer #3: “passionate, dynamic, dedicated, detail-oriented”, unverifiable, everyone writes them, and they sit where evidence should be. Found: "+ff.slice(0,6).map(f=>'“'+cvEsc(f)+'”').join(', ')+(ff.length>6?'…':'')+".","<b>Instead of</b> “dedicated, hardworking house manager” <b>write</b> “House manager for a principal across three residences; staff of 9.”",3); }
+  else good("No adjectives about yourself, you let the evidence speak (Week 7 · Restraint).");
   const fp=(low.match(/\bi\b/g)||[]).length+(low.match(/\bmy\b/g)||[]).length+(low.match(/\bme\b/g)||[]).length;
   if(fp>6){ cut('restraint',10); fix("Write it impersonally","You use “I / my / me” about "+fp+" times. A CV drops the first person and opens each line with a verb.","<b>Instead of</b> “I was responsible for the diary” <b>write</b> “Managed the principal’s diary and correspondence.”",2); }
   // "the line" vs a six-line personal statement (killer #4)
   let psLong=false;
   lines.forEach((l,idx)=>{ if(/\b(personal statement|profile|summary|about me)\b/i.test(l)){ let c=0; for(let k=idx+1;k<lines.length&&k<idx+7;k++){ if((lines[k].match(/\S+/g)||[]).length>=6) c++; else break; } if(c>=3) psLong=true; } });
   const earlyLong=lines.slice(0,7).some(l=>(l.match(/\S+/g)||[]).length>=40);
-  if(psLong||earlyLong){ cut('restraint',10); fix("Replace the personal statement with “the line”","Week 7 · killer #4: a personal statement of six lines — nobody reads it. Replace it with <b>one sentence</b>: what you are and the rung you are on.","<b>The line:</b> “Private concierge, four years in luxury hospitality, currently supporting a private household in Palm Beach.” No adjectives. None at all.",2); }
-  if(wordy.length>=6){ const vr=wordy.filter(l=>CV_ACTIONVERBS.includes(opener(l))).length/wordy.length; if(vr>=0.5) good("Lines open with strong verbs — clipped and impersonal, exactly right."); }
+  if(psLong||earlyLong){ cut('restraint',10); fix("Replace the personal statement with “the line”","Week 7 · killer #4: a personal statement of six lines, nobody reads it. Replace it with <b>one sentence</b>: what you are and the rung you are on.","<b>The line:</b> “Private concierge, four years in luxury hospitality, currently supporting a private household in Palm Beach.” No adjectives. None at all.",2); }
+  if(wordy.length>=6){ const vr=wordy.filter(l=>CV_ACTIONVERBS.includes(opener(l))).length/wordy.length; if(vr>=0.5) good("Lines open with strong verbs, clipped and impersonal, exactly right."); }
 
   // ---------- STRUCTURE (Week 7 · 2.2 skeleton + two pages + gaps) ----------
   const sec={
@@ -3027,7 +3027,7 @@ function cvAnalyze(text, target){
   if(!sec.practical) missing.push("Languages and practical");
   if(!sec.references) missing.push("References");
   if(missing.length){ cut('structure',Math.min(missing.length*7,22)); fix("Use the Week 7 skeleton","A reader scans for structure in seconds. Yours is missing: "+missing.join(', ')+".","The structure: <b>Header → The line (one sentence) → Experience (scope, dated, recent first) → Education and training → Languages and practical → References (“Available on request”).</b>",2); }
-  else good("The Week 7 structure is all here — a reader can scan it in seconds.");
+  else good("The Week 7 structure is all here, a reader can scan it in seconds.");
   if(sec.experience && ranges.length<2){ cut('structure',10); fix("Date every role","Each position needs its dates. Undated experience reads as vague in a document whose whole purpose is to remove question marks.","“<b>Private household, Greenwich · 2021 to 2024</b> · Ultra-high-net-worth family, five residences.”",2); }
   // two pages, not three
   if(pages>2.3){ cut('structure',10); fix("Two pages, not three","Week 7 · killer #7: “Three pages. Two.” If a career genuinely does not fit on two pages, it is because duties were written instead of scope.","",2); }
@@ -3035,41 +3035,41 @@ function cvAnalyze(text, target){
   else good("Length sits within the two-page rule.");
   // gaps (killer #8)
   let maxGap=0; for(let k=1;k<ranges.length;k++){ const g=ranges[k][0]-ranges[k-1][1]; if(g>maxGap) maxGap=g; }
-  if(ranges.length>=2 && maxGap>=2){ cut('structure',7); fix("Explain the gap in one line","Week 7 · killer #8: an unexplained gap is a question mark in a document built to remove them. There looks to be a gap of about "+maxGap+" years. One line — what you were doing. Explained, not defended.","“2020–2021 · Career break — relocation and family.”",2); }
+  if(ranges.length>=2 && maxGap>=2){ cut('structure',7); fix("Explain the gap in one line","Week 7 · killer #8: an unexplained gap is a question mark in a document built to remove them. There looks to be a gap of about "+maxGap+" years. One line, what you were doing. Explained, not defended.","“2020–2021 · Career break, relocation and family.”",2); }
 
   // ---------- DISCRETION (naming, confidentiality, referees, tenure) ----------
   const inf=CV_INSIDER.filter(w=>low.includes(w));
-  if(inf.length>=3) good("The register is right ("+inf.slice(0,4).map(cvEsc).join(', ')+") — it signals you know this world.");
+  if(inf.length>=3) good("The register is right ("+inf.slice(0,4).map(cvEsc).join(', ')+"), it signals you know this world.");
   else { cut('discretion',7); fix("Use the register of this world","Little of the vocabulary appears. Where true, use the right words: principal, private household, family office, discretion, estate, the rung.","",1); }
-  // naming a principal (killer #2 — the single most common fatal error)
+  // naming a principal (killer #2, the single most common fatal error)
   const nameRisk=[]; let mm;
   const famRe=/\bthe ([A-Z][a-z]{2,})(?:[-\s][A-Z][a-z]+)? family\b/g;
   while((mm=famRe.exec(text))){ const w=mm[1].toLowerCase(); if(["royal","same","whole","entire","host","first","second","other","above","said","family","principal","client"].indexOf(w)===-1) nameRisk.push(mm[0]); }
   (text.match(/\bfor (Mr|Mrs|Ms|Sir|Lord|Lady|Sheikh|Sheikha|Prince|Princess|HRH|HSH|Baron|Baroness|Count|Countess)\b[.\s]+[A-Z][a-z]+/g)||[]).forEach(x=>nameRisk.push(x.trim()));
-  if(nameRisk.length){ cut('discretion',18); fix("⚠ You may be naming a principal","Week 7 · killer #2: naming a family — even a former one, even one who would not mind — is, on its own, a complete disqualification, and the single most common fatal error. Found: "+nameRisk.slice(0,3).map(x=>'“'+cvEsc(x)+'”').join(', ')+".","<b>Write it exactly like this:</b> “Private household, Greenwich · 2021 to 2024 · Ultra-high-net-worth family, five residences. Personal affairs, relocation and renovation projects, staff and supplier coordination. Bound by confidentiality. Reference available through the family office.”",3); }
-  if(/bound by confidentiality|family office|confidential/i.test(text)) good("You frame confidentiality the way Week 7 teaches — that tells a reader you keep your word.");
+  if(nameRisk.length){ cut('discretion',18); fix("⚠ You may be naming a principal","Week 7 · killer #2: naming a family, even a former one, even one who would not mind, is, on its own, a complete disqualification, and the single most common fatal error. Found: "+nameRisk.slice(0,3).map(x=>'“'+cvEsc(x)+'”').join(', ')+".","<b>Write it exactly like this:</b> “Private household, Greenwich · 2021 to 2024 · Ultra-high-net-worth family, five residences. Personal affairs, relocation and renovation projects, staff and supplier coordination. Bound by confidentiality. Reference available through the family office.”",3); }
+  if(/bound by confidentiality|family office|confidential/i.test(text)) good("You frame confidentiality the way Week 7 teaches, that tells a reader you keep your word.");
   // referee phone numbers on the CV (Week 7 · References)
   const refIdx=lines.findIndex(l=>/^references?\b/i.test(l)||/\breferee/i.test(l));
   const refBlock=refIdx>=0?lines.slice(refIdx,refIdx+6).join(' '):'';
   if(refBlock && /(\+?\d[\d\s().-]{7,}\d)|[\w.+-]+@[\w-]+\.[\w.-]+/.test(refBlock)){ cut('discretion',9); fix("Never list a referee’s contact details","Week 7: under References write <b>“Available on request”</b> and nothing else. You never put a referee’s telephone number or email on a document that will be forwarded.","References<br>Available on request.",2); }
   // tenure / eight-month pattern (killer #9)
   if(ranges.length>=3){ const spans=ranges.map(r=>r[1]-r[0]); const shortN=spans.filter(d=>d<=1).length; const avg=spans.reduce((a,b)=>a+b,0)/spans.length;
-    if(shortN>=Math.ceil(spans.length/2) && avg<1.6){ cut('discretion',6); fix("Address the short tenures","Week 7 · killer #9: two years is the unit of credibility. A pattern of eight-month roles must be addressed — in the letter, in one sentence, without defensiveness (seasonal, fixed contract, maternity cover).","“2022 · Summer season (fixed, 6 months) · Estate Manager · Private villa, Ibiza.”",2); }
-    else if(avg>=3) good("Your tenures show stability — two years is the unit of credibility, and you clear it.");
+    if(shortN>=Math.ceil(spans.length/2) && avg<1.6){ cut('discretion',6); fix("Address the short tenures","Week 7 · killer #9: two years is the unit of credibility. A pattern of eight-month roles must be addressed, in the letter, in one sentence, without defensiveness (seasonal, fixed contract, maternity cover).","“2022 · Summer season (fixed, 6 months) · Estate Manager · Private villa, Ibiza.”",2); }
+    else if(avg>=3) good("Your tenures show stability, two years is the unit of credibility, and you clear it.");
   }
 
   // ---------- HEADER & POLISH ----------
   const email=(text.match(/[\w.+-]+@[\w-]+\.[\w.-]+/)||[])[0];
   if(!email){ cut('header',14); fix("No contact email in the header","Week 7 · the header: an email “that is your name and nothing else”, clearly at the top.","",2); }
   else{ const lp=email.split('@')[0].toLowerCase();
-    if(/\d{3,}|x{2,}|babe|sexy|lover|princess|kitten|420|69|xoxo/.test(lp)){ cut('header',9); fix("Use an email that is your name","Week 7 · killer #6: an unprofessional email address is read as a judgment failure — and judgment is the whole job. “"+cvEsc(email)+"”. Use firstname.lastname@…","",2); }
-    else good("A clean email — your name and nothing else, as the header should be.");
+    if(/\d{3,}|x{2,}|babe|sexy|lover|princess|kitten|420|69|xoxo/.test(lp)){ cut('header',9); fix("Use an email that is your name","Week 7 · killer #6: an unprofessional email address is read as a judgment failure, and judgment is the whole job. “"+cvEsc(email)+"”. Use firstname.lastname@…","",2); }
+    else good("A clean email, your name and nothing else, as the header should be.");
   }
   if(!/(\+?\d[\d\s().-]{7,}\d)/.test(text)){ cut('header',6); fix("Add a telephone to the header","The header carries name, city, telephone, email, citizenship / work authorization, and languages. A number is missing.","",1); }
   // social media link (killer #6)
   if(/(instagram\.com|facebook\.com|fb\.com|tiktok\.com|twitter\.com|x\.com\/|snapchat|onlyfans)/i.test(text)){ cut('header',7); fix("Remove the social media link","Week 7 · killer #6: a personal social-media link is read, like a casual email, as a judgment failure. Take it off.","",2); }
   if(/(right to work|work authorization|work authorisation|citizenship|eligible to work|driving licen|driver'?s licen|clean licen|visa|first aid|passport)/i.test(text)) good("The practical header essentials (work authorization / licence / first aid) are present.");
-  else R.reminders.push("<b>Complete the header.</b> Week 7: name, city, telephone, an email that is your name, <b>citizenship / work authorization</b>, and <b>languages with an honest level</b>. Add <b>first aid</b> — it costs a weekend and appears on every serious CV.");
+  else R.reminders.push("<b>Complete the header.</b> Week 7: name, city, telephone, an email that is your name, <b>citizenship / work authorization</b>, and <b>languages with an honest level</b>. Add <b>first aid</b>, it costs a weekend and appears on every serious CV.");
   // typographical error (killer #11) + design signals
   const polish=[];
   if(/ {2,}/.test(text)) polish.push("double spaces");
@@ -3077,7 +3077,7 @@ function cvAnalyze(text, target){
   const caps=(text.match(/\b[A-Z]{4,}\b/g)||[]).filter(w=>["CEO","UHNW","HNW","NDA","DBS","VIP","HRH","HSH","CPR"].indexOf(w)===-1);
   if(caps.length>5) polish.push("a lot of ALL-CAPS words");
   if((new Set(text.match(/^[\-•\*▪●–►·]/gm)||[])).size>1) polish.push("mixed bullet symbols");
-  if(polish.length){ cut('header',Math.min(polish.length*3,10)); fix("Proof it once more, aloud","Week 7 · killer #11: one typographical error is enough — this is a profession whose entire product is that you notice things. Found signals: "+polish.join(', ')+".","",2); }
+  if(polish.length){ cut('header',Math.min(polish.length*3,10)); fix("Proof it once more, aloud","Week 7 · killer #11: one typographical error is enough, this is a profession whose entire product is that you notice things. Found signals: "+polish.join(', ')+".","",2); }
 
   // ---------- COMPETENCY MAP ----------
   R.comps=CV_COMPS.map(c=>({name:c.name, on:c.kw.some(k=>low.includes(k))}));
@@ -3086,10 +3086,10 @@ function cvAnalyze(text, target){
   wordy.forEach(l=>{
     if(R.flags.length>=6) return;
     const clean=l.replace(/^[\-•\*▪●–►·\s]+/,''), w0=opener(l), ll=l.toLowerCase();
-    if(CV_DUTY.some(d=>ll.includes(d))) R.flags.push({q:l,s:"Duty phrasing. Recast as scope — <b>household size, staff, residences, budget, travel volume.</b>"});
-    else if(CV_WEAKOPEN.indexOf(w0)>=0) R.flags.push({q:l,s:"Weak opener. Start with a verb — <b>Managed, Coordinated, Delivered.</b>"});
+    if(CV_DUTY.some(d=>ll.includes(d))) R.flags.push({q:l,s:"Duty phrasing. Recast as scope, <b>household size, staff, residences, budget, travel volume.</b>"});
+    else if(CV_WEAKOPEN.indexOf(w0)>=0) R.flags.push({q:l,s:"Weak opener. Start with a verb, <b>Managed, Coordinated, Delivered.</b>"});
     else if(/\bi\b|\bmy\b/.test(ll) && clean.length>20) R.flags.push({q:l,s:"First person. Drop the “I / my” and lead with the verb."});
-    else if(clean.length>55 && !/\d/.test(clean) && CV_ACTIONVERBS.indexOf(w0)>=0) R.flags.push({q:l,s:"Strong line, but no number. <b>Add scale</b> — a figure makes it checkable."});
+    else if(clean.length>55 && !/\d/.test(clean) && CV_ACTIONVERBS.indexOf(w0)>=0) R.flags.push({q:l,s:"Strong line, but no number. <b>Add scale</b>, a figure makes it checkable."});
   });
 
   // ---------- TARGET-ROLE MATCH ----------
@@ -3099,7 +3099,7 @@ function cvAnalyze(text, target){
     const have=keys.filter(k=>low.includes(k)), miss=keys.filter(k=>!low.includes(k));
     const mscore=keys.length?Math.round(have.length/keys.length*100):0;
     R.target={score:mscore, missing:miss.slice(0,12)};
-    if(keys.length && mscore<55) fix("Tailor this CV to the role","Your CV picks up only "+mscore+"% of the words this brief leans on. Weave in the ones that are genuinely true of you (below) — in the line and the relevant roles.","",2);
+    if(keys.length && mscore<55) fix("Tailor this CV to the role","Your CV picks up only "+mscore+"% of the words this brief leans on. Weave in the ones that are genuinely true of you (below), in the line and the relevant roles.","",2);
   }
 
   // ---------- FINAL SCORE ----------
@@ -3113,20 +3113,20 @@ function cvAnalyze(text, target){
     {k:'header',l:'Header & polish',v:Math.round(cat.header)},
   ];
   R.fixes.sort((a,b)=>b.imp-a.imp);
-  R.reminders.unshift("<b>Never name a confidential principal.</b> Write “private household, city, dates; ultra-high-net-worth family; scope; bound by confidentiality; reference available through the family office.” Named nobody, said everything — and it tells them you keep your word.");
-  R.reminders.push("<b>References: “Available on request.”</b> Nothing else — never a referee’s telephone number on a document that will be forwarded.");
-  R.reminders.push("<b>Restraint in the design.</b> No colour, no columns, no icons, no photograph. It is a document, not a portfolio — serious houses read seriousness in restraint.");
-  R.reminders.push("<b>Add a confidentiality statement to your dossier.</b> Method, not promise. In Week 7 it is the piece the family office reads first — and the piece that gets you hired.");
+  R.reminders.unshift("<b>Never name a confidential principal.</b> Write “private household, city, dates; ultra-high-net-worth family; scope; bound by confidentiality; reference available through the family office.” Named nobody, said everything, and it tells them you keep your word.");
+  R.reminders.push("<b>References: “Available on request.”</b> Nothing else, never a referee’s telephone number on a document that will be forwarded.");
+  R.reminders.push("<b>Restraint in the design.</b> No colour, no columns, no icons, no photograph. It is a document, not a portfolio, serious houses read seriousness in restraint.");
+  R.reminders.push("<b>Add a confidentiality statement to your dossier.</b> Method, not promise. In Week 7 it is the piece the family office reads first, and the piece that gets you hired.");
   return R;
 }
 
 function cvWrittenNote(R){
   const s=R.score, rv=[];
-  rv.push(s>=85?"This is a strong CV. It reads the way a family office wants it to — verifiable and restrained — and needs only a light polish before you send it."
+  rv.push(s>=85?"This is a strong CV. It reads the way a family office wants it to, verifiable and restrained, and needs only a light polish before you send it."
     : s>=65?"There is a good CV in here. The bones are right, and a few specific changes will lift it into genuinely agency-ready territory."
-    : "This CV is not quite ready to send yet — and that is normal; almost nobody’s first draft is. The encouraging part: everything holding it back is fixable, and fast.");
+    : "This CV is not quite ready to send yet, and that is normal; almost nobody’s first draft is. The encouraging part: everything holding it back is fixable, and fast.");
   const lowest=R.cats.slice().sort((a,b)=>a.v-b.v)[0];
-  if(lowest && lowest.v<80) rv.push("Your weakest dimension right now is <b>"+lowest.l.toLowerCase()+"</b> ("+lowest.v+"/100) — that is where the fixes below move the needle most. The family office reads first for verifiability and restraint.");
+  if(lowest && lowest.v<80) rv.push("Your weakest dimension right now is <b>"+lowest.l.toLowerCase()+"</b> ("+lowest.v+"/100), that is where the fixes below move the needle most. The family office reads first for verifiability and restraint.");
   if(R.fixes.length) rv.push("Start with the top "+Math.min(3,R.fixes.length)+": "+R.fixes.slice(0,3).map(f=>f.t.replace(/^⚠\s*/,'').toLowerCase()).join("; ")+".");
   if(R.strengths.length) rv.push("Already in your favour: "+R.strengths.slice(0,2).map(x=>x.replace(/\.$/,'')).map(x=>x.charAt(0).toLowerCase()+x.slice(1)).join(", and ")+".");
   rv.push(s>=85?"Make the small fixes below and send it with confidence.":"Make the changes below, paste it back in, and watch the score climb. You are closer than it feels.");
@@ -3140,11 +3140,11 @@ function renderCvResult(R){
   const fixHtml=R.fixes.length?R.fixes.map(f=>'<div class="cv-item"><div class="it-t">'+cvEsc(f.t)+(f.imp>=3?'<span class="cv-imp">high impact</span>':'')+'</div><div class="it-d">'+f.d+'</div>'+(f.ex?'<div class="it-ex">'+f.ex+'</div>':'')+'</div>').join(''):'<div class="cv-mini">Nothing major to fix. Impressive.</div>';
   const strongHtml=R.strengths.length?'<div class="cv-group g-strong"><h3>✓ Strengths</h3>'+R.strengths.map(s=>'<div class="cv-mini">'+s+'</div>').join('')+'</div>':'';
   const flagsHtml=R.flags.length?'<div class="cv-group g-fix"><h3>⌖ Lines to rewrite</h3>'+R.flags.map(f=>'<div class="cv-flag"><div class="cv-flag-q">'+cvEsc(f.q)+'</div><div class="cv-flag-s">'+f.s+'</div></div>').join('')+'</div>':'';
-  const compsHtml='<div class="cv-group"><h3>◇ Competency coverage</h3><div class="cv-comps">'+R.comps.map(c=>'<span class="cv-comp '+(c.on?'on':'off')+'"><span class="d"></span>'+cvEsc(c.name)+'</span>').join('')+'</div><div class="cv-mini" style="border:none;padding-top:12px;">Filled chips are evidenced in your CV. Faded ones are worth adding <i>where they are true</i> — households hire on the breadth they can see.</div></div>';
+  const compsHtml='<div class="cv-group"><h3>◇ Competency coverage</h3><div class="cv-comps">'+R.comps.map(c=>'<span class="cv-comp '+(c.on?'on':'off')+'"><span class="d"></span>'+cvEsc(c.name)+'</span>').join('')+'</div><div class="cv-mini" style="border:none;padding-top:12px;">Filled chips are evidenced in your CV. Faded ones are worth adding <i>where they are true</i>, households hire on the breadth they can see.</div></div>';
   const consHtml='<div class="cv-group g-consider"><h3>◆ Always remember (Week 7)</h3>'+R.reminders.map(s=>'<div class="cv-mini">'+s+'</div>').join('')+'</div>';
   let targetHtml='';
   if(R.target){ const tc=R.target.score>=70?'cv-good':R.target.score>=45?'cv-mid':'cv-low';
-    targetHtml='<div class="cv-seck">Match to the role you pasted</div><div class="cv-match '+tc+'"><div class="cv-ring" style="background:conic-gradient(var(--gold) '+(R.target.score*3.6)+'deg, var(--line) 0deg);"><div style="width:64px;height:64px;border-radius:50%;background:var(--paper);display:flex;align-items:center;justify-content:center;"><span class="cv-match-n">'+R.target.score+'<span style="font-size:14px;color:var(--stone)">%</span></span></div></div><div style="flex:1;min-width:220px;"><div class="cv-band" style="font-size:20px;margin-bottom:4px;">'+(R.target.score>=70?'Strong match':R.target.score>=45?'Partial match':'Weak match')+'</div>'+(R.target.missing.length?'<div class="cv-sub" style="margin-bottom:7px;">Words this brief leans on that your CV is missing — add the ones that are true of you:</div><div class="cv-miss">'+R.target.missing.map(m=>'<span>'+cvEsc(m)+'</span>').join('')+'</div>':'<div class="cv-sub">Your CV already covers the language of this brief well.</div>')+'</div></div>';
+    targetHtml='<div class="cv-seck">Match to the role you pasted</div><div class="cv-match '+tc+'"><div class="cv-ring" style="background:conic-gradient(var(--gold) '+(R.target.score*3.6)+'deg, var(--line) 0deg);"><div style="width:64px;height:64px;border-radius:50%;background:var(--paper);display:flex;align-items:center;justify-content:center;"><span class="cv-match-n">'+R.target.score+'<span style="font-size:14px;color:var(--stone)">%</span></span></div></div><div style="flex:1;min-width:220px;"><div class="cv-band" style="font-size:20px;margin-bottom:4px;">'+(R.target.score>=70?'Strong match':R.target.score>=45?'Partial match':'Weak match')+'</div>'+(R.target.missing.length?'<div class="cv-sub" style="margin-bottom:7px;">Words this brief leans on that your CV is missing, add the ones that are true of you:</div><div class="cv-miss">'+R.target.missing.map(m=>'<span>'+cvEsc(m)+'</span>').join('')+'</div>':'<div class="cv-sub">Your CV already covers the language of this brief well.</div>')+'</div></div>';
   }
   box.innerHTML='<div class="cv-res '+band[0]+'">'
     +'<div class="cv-top"><div class="cv-ring" style="background:conic-gradient(var(--gold) '+(R.score*3.6)+'deg, var(--line) 0deg);"><div style="width:80px;height:80px;border-radius:50%;background:var(--paper);display:flex;flex-direction:column;align-items:center;justify-content:center;"><span class="cv-num">'+R.score+'</span><span style="font-family:\'Jost\',sans-serif;font-size:10px;color:var(--stone);margin-top:-4px;">/ 100</span></div></div>'
@@ -3161,7 +3161,7 @@ function renderCvResult(R){
 function analyzeCV(){
   const raw=(document.getElementById('cvInput').value||'').trim();
   const box=document.getElementById('cvResult');
-  if(raw.length<60){ box.innerHTML='<div class="cv-empty">Paste a little more of your CV — at least a few lines — to get a proper read.</div>'; return; }
+  if(raw.length<60){ box.innerHTML='<div class="cv-empty">Paste a little more of your CV, at least a few lines, to get a proper read.</div>'; return; }
   const tEl=document.getElementById('cvTarget');
   const R=cvAnalyze(raw, (tEl&&tEl.value)||'');
   renderCvResult(R);
@@ -4595,7 +4595,7 @@ function updateResume(){
       } else if(doneP>=totalP){
         cert.classList.add('locked');
         if(certH) certH.textContent="One last step: the final exam.";
-        if(certP) certP.textContent="Every week and every exercise is complete. Pass the final exam — "+EXAM_PASS+" correct out of 100 — to unlock your certificate. You can retake it as many times as you need.";
+        if(certP) certP.textContent="Every week and every exercise is complete. Pass the final exam, "+EXAM_PASS+" correct out of 100, to unlock your certificate. You can retake it as many times as you need.";
         if(certBtn){ certBtn.textContent="Take the final exam"; certBtn.setAttribute('onclick','openFinalExam()'); }
       } else {
         cert.classList.add('locked');
@@ -4655,7 +4655,7 @@ function dashNextStep(cur, w){
     const label=(lessons[nextLesson]&&lessons[nextLesson][0])||('Lesson '+(nextLesson+1));
     return watched>0
       ? {k:'Week '+cur+' · your next step',t:'Continue: '+label,s:watched+' of '+lessons.length+' lessons watched. Pick up exactly where you left off.',cta:'Continue this week',fn:'openWeek('+cur+')',icon:'play'}
-      : {k:'Week '+cur+' · your next step',t:'Start: '+label,s:'Begin Week '+cur+' — '+w.title+'. '+w.sub,cta:'Start this week',fn:'openWeek('+cur+')',icon:'play'};
+      : {k:'Week '+cur+' · your next step',t:'Start: '+label,s:'Begin Week '+cur+', '+w.title+'. '+w.sub,cta:'Start this week',fn:'openWeek('+cur+')',icon:'play'};
   }
   let ratio=0; try{ ratio=weekPracticeRatio(cur); }catch(e){}
   if(ratio<0.5){
@@ -4792,7 +4792,7 @@ var FINAL_EXAM = [
   { wk:2, q:"“Savoir-faire” is best understood as:", a:["Formal academic knowledge","The confidence to take charge of any room","An inherited sense of style","Competence made to look effortless, shown rather than announced"], c:3, fb:"Savoir-faire is quiet competence handled gracefully; it is demonstrated, never proclaimed." },
   { wk:2, q:"Before advising the principal on buying an artwork or antique, you first ask for:", a:["A second opinion on the colour scheme","The seller’s asking price","Its provenance, the documented ownership history","A certificate of the artist’s fame"], c:2, fb:"Strong provenance authenticates and protects value; a gap in it raises questions." },
   { wk:2, q:"In the register of the oldest wealth, money is generally:", a:["Discussed openly to establish standing","Displayed through visible logos and prices","A frequent subject of conversation among peers","Rarely mentioned; restraint and understatement carry more than noise"], c:3, fb:"Discretion and understatement are the tells of established wealth; how money is spoken about says a great deal." },
-  { wk:4, q:"“Mise en place” — everything in its place before service begins — is a principle that:", a:["Belongs strictly to the professional kitchen","Applies only to formal dinners","Extends far beyond the kitchen to all anticipated, friction-free service","Concerns table settings alone"], c:2, fb:"Everything anticipated and ready in advance lets the moment itself unfold without friction, anywhere in the house." },
+  { wk:4, q:"“Mise en place”, everything in its place before service begins, is a principle that:", a:["Belongs strictly to the professional kitchen","Applies only to formal dinners","Extends far beyond the kitchen to all anticipated, friction-free service","Concerns table settings alone"], c:2, fb:"Everything anticipated and ready in advance lets the moment itself unfold without friction, anywhere in the house." },
   { wk:2, q:"A “family office” is:", a:["The room in the house where the family works","A co-working space for entrepreneurs","The private structure managing a family’s wealth, affairs and often its staff","The reception desk of a private members’ club"], c:2, fb:"A single-family office serves one family, a multi-family office several; it is an organisation, not a room." },
   { wk:2, q:"“White glove” service today means:", a:["Service of the highest care and meticulous attention to detail","Staff must literally wear gloves at all times","Service reserved exclusively for royalty","A style limited to formal banquets"], c:0, fb:"The gloves are the origin of the phrase, not its meaning; use it only where you can truly deliver the standard." },
   { wk:3, q:"Which best defines discretion?", a:["Never gossiping about your employer","Keeping the household’s secrets only until you leave","A permanent vigilance over the flow of information around the person you serve","Refusing to answer any question about your work"], c:2, fb:"Discretion governs everything you see, hear and record, not only what you say." },
@@ -4818,7 +4818,7 @@ var FINAL_EXAM = [
   { wk:4, q:"You sense the principal is quietly upset about something personal. The anticipatory move is:", a:["Ask directly what is wrong so you can help","Act especially cheerful to lift the mood","Mention that you have noticed they seem down","Quietly ease the day’s logistics and give them space, without comment"], c:3, fb:"Smooth the practical and respect the private: presence, not intrusion." },
   { wk:4, q:"In your anticipation playbook you write down how you are most likely to fail. This helps because:", a:["Dwelling on failure keeps you humble","It gives your mentor something to grade","It lowers expectations if things go wrong","The failure mode you can name is the one you can catch before it happens"], c:3, fb:"Naming your pattern is precisely what stops you repeating it in a real house." },
   { wk:4, q:"Faced with an unclear early-morning need, calibrated anticipation means you:", a:["Match the response to the actual need, avoiding both under- and over-delivery","Always do the maximum, to be certain","Do the minimum and adjust later","Ask a series of questions first"], c:0, fb:"Anticipation is calibrated, not maximal; over-delivering can be as clumsy as under-delivering." },
-  { wk:4, q:"Turndown service — bed opened, curtains drawn, lights softened, a small touch left — is best understood as:", a:["A hotel formality with no wider lesson","A task for junior staff only","Anticipation made visible, a logic to apply everywhere","A courtesy reserved for guests"], c:2, fb:"Study its logic: comfort readied in advance so the moment itself needs nothing." },
+  { wk:4, q:"Turndown service, bed opened, curtains drawn, lights softened, a small touch left, is best understood as:", a:["A hotel formality with no wider lesson","A task for junior staff only","Anticipation made visible, a logic to apply everywhere","A courtesy reserved for guests"], c:2, fb:"Study its logic: comfort readied in advance so the moment itself needs nothing." },
   { wk:5, q:"The true test of any household system you build is:", a:["Whether it looks impressive to the principal","Whether it would still work if you were unreachable for a week","Whether it saves you personal effort","Whether it is fully digital"], c:1, fb:"A system that depends on you alone is not an asset but a risk, and houses eventually remove risks." },
   { wk:5, q:"Before acting on any instruction, the six questions to pin down are:", a:["Why, how, who, when, where, and how often","What, when, where, why, who pays, and who approves","Who, what, when, where, how much, and who else knows","Who, what, when, where, why, and how long"], c:2, fb:"An incomplete brief is a decision you are about to make on their behalf; half of failures are a person who should have been told and was not." },
   { wk:5, q:"“The confirmation” you send after taking a brief is:", a:["A request for the principal’s approval","A formal contract to be signed","A short written statement of understanding, sent within the hour","A note kept privately for your own records"], c:2, fb:"It catches the misunderstanding while it is still free and produces a written record; it is a statement, not a request." },
@@ -4869,7 +4869,7 @@ var FINAL_EXAM = [
   { wk:8, q:"With existing staff who are polite but closed, the fastest way to earn them is to:", a:["Befriend them quickly and share confidences","Assert your authority so roles are clear","Take the unglamorous task once, visibly, without being asked or mentioning it","Join their complaints to show you are on their side"], c:2, fb:"That one act is worth more than four months of pleasantness, and the person who joins the complaining has chosen the losing side." },
   { wk:8, q:"The single most important relationship in your first ninety days is often:", a:["The principal’s business assistant","The newest member of staff","The family office accountant","The long-serving housekeeper, whatever her title or authority"], c:3, fb:"She may have no title, no budget and no authority over you, but nineteen years in the house make her the whole game." },
   { wk:8, q:"On the first day, arriving “six minutes early and perfectly ordinary about it” teaches that:", a:["Dramatic early arrivals impress the household","Being assumed reliable, quietly, is the foundation of everything","Punctuality matters only for the principal","Timing is unimportant in the first week"], c:1, fb:"It is noticed once, then assumed; being assumed reliable is what everything else is built on." },
-]; /* 100 questions injected here — {wk,q,a[],c,fb} */
+]; /* 100 questions injected here, {wk,q,a[],c,fb} */
 var EXAM_PASS = 50;
 function examState(){ try{ return JSON.parse(localStorage.getItem('ma_final_exam'))||{passed:false,best:0,attempts:0}; }catch(e){ return {passed:false,best:0,attempts:0}; } }
 function saveExamState(st){ try{ localStorage.setItem('ma_final_exam', JSON.stringify(st)); }catch(e){} }
@@ -4892,7 +4892,7 @@ function examIntro(){
     <div class="exam-seal">${EXAM_SEAL}</div>
     <div class="exam-k">The final examination</div>
     <h1 class="exam-h">One last step before your certificate</h1>
-    <p class="exam-lead">${n} questions drawn from everything you have learned across the eight weeks. Answer <b>${EXAM_PASS} or more</b> correctly to earn your certificate. Take your time — and if you do not pass, you may retake it as many times as you need.</p>
+    <p class="exam-lead">${n} questions drawn from everything you have learned across the eight weeks. Answer <b>${EXAM_PASS} or more</b> correctly to earn your certificate. Take your time, and if you do not pass, you may retake it as many times as you need.</p>
     ${st.attempts?`<div class="exam-best">Best score: <b>${st.best}/${n}</b>${st.passed?' &middot; <span class="exam-passed">Passed &#10022;</span>':''}</div>`:''}
     <button class="exam-btn" onclick="examBegin()">${st.attempts?'Retake the exam':'Begin the exam'}</button>
   </div>`;
@@ -4937,7 +4937,7 @@ function examResult(score, passed){
     <div class="exam-k">${passed?'Examination passed':'Not yet'}</div>
     <div class="exam-score">${score}<span>/${n}</span></div>
     <h1 class="exam-h">${passed?'You have earned your certificate.':'You are close.'}</h1>
-    <p class="exam-lead">${passed?'Congratulations. Your certificate of completion is now unlocked, in your name. Carry it with pride.':'You need '+EXAM_PASS+' correct answers to pass. Revisit the weeks you found hardest, then retake the exam when you are ready — as many times as you need.'}</p>
+    <p class="exam-lead">${passed?'Congratulations. Your certificate of completion is now unlocked, in your name. Carry it with pride.':'You need '+EXAM_PASS+' correct answers to pass. Revisit the weeks you found hardest, then retake the exam when you are ready, as many times as you need.'}</p>
     <div class="exam-actions">
       ${passed?`<button class="exam-btn" onclick="closeFinalExam();goPage('program');setTimeout(function(){try{showCertificate();}catch(e){}},350);">Collect my certificate</button>`:`<button class="exam-btn" onclick="examBegin()">Retake the exam</button>`}
       <button class="exam-btn ghost" onclick="closeFinalExam()">${passed?'Back to the academy':'Close for now'}</button>
@@ -5149,7 +5149,7 @@ function renderCalMonth(){
   const marks={};
   if(CAL_PLAN){ for(let n=1;n<=8;n++){ const wd=weekDate(n); marks[calYmd(wd)]=Object.assign(marks[calYmd(wd)]||{},{wk:n}); const md=mentorDate(n); const k=calYmd(md); marks[k]=Object.assign(marks[k]||{},{mentor:true}); } }
   myEvents.forEach(ev=>{ const cur=marks[ev.date]||{}; cur.you=(cur.you||[]).concat([ev.title]); marks[ev.date]=cur; });
-  // real booked mentorship sessions (from the `sessions` table) — mark their actual day + make it clickable
+  // real booked mentorship sessions (from the `sessions` table), mark their actual day + make it clickable
   if(typeof MY_SESSIONS!=='undefined' && MY_SESSIONS.length){
     MY_SESSIONS.forEach(s=>{ const d=new Date(s.start_time); if(isNaN(d)) return; const k=calYmd(d); const cur=marks[k]||{}; cur.mentor=true; cur.session=true; marks[k]=cur; });
   }
@@ -5623,7 +5623,7 @@ const LSN_POOL=['images/lsn-1.jpg','images/lsn-2.jpg','images/lsn-3.jpg','images
 // images choisies pour coller au thème de chaque semaine
 //  service/table : 1,2,11,12,18,19 · voitures/chauffeur : 7,8,9,13,15,16,21,22 · aviation : 10,14,17,20 · lieux/monde : 3,4,5,6,9
 const LSN_BY_WEEK={
-  1:['images/lsn-3.jpg','images/lsn-5.jpg','images/lsn-6.jpg','images/lsn-4.jpg'], // le monde des UHNW — retiré lsn-9 (supercars) & lsn-10 (Lambo+jet), trop "flashy", hors-sujet vs le texte
+  1:['images/lsn-3.jpg','images/lsn-5.jpg','images/lsn-6.jpg','images/lsn-4.jpg'], // le monde des UHNW, retiré lsn-9 (supercars) & lsn-10 (Lambo+jet), trop "flashy", hors-sujet vs le texte
   2:['images/lsn-1.jpg','images/lsn-2.jpg','images/lsn-12.jpg','images/lsn-11.jpg','images/lsn-18.jpg'],                 // codes & art de la table
   3:['images/lsn-13.jpg','images/lsn-16.jpg','images/lsn-15.jpg','images/lsn-19.jpg','images/lsn-11.jpg'],              // discrétion, chauffeur, service discret
   4:['images/lsn-12.jpg','images/lsn-19.jpg','images/lsn-18.jpg','images/lsn-11.jpg','images/lsn-2.jpg'],               // anticipation & service
@@ -5691,7 +5691,7 @@ function openStepView(s, weekNo, stepIdx){
   try{ setResume({wk:weekNo, step:stepIdx, ci:-1, title:s.title||'', sub:s.subtitle||'', ts:Date.now()}); updateResumeChip(); }catch(e){}
 }
 function lsnDownloadBtn(){
-  // PDFs removed platform-wide — the on-screen lesson is the course (always in sync).
+  // PDFs removed platform-wide, the on-screen lesson is the course (always in sync).
   return '';
 }
 function svSectionTitle(i){ const x=svCur.secs[i]; return x&&x.heading ? x.heading : 'Introduction'; }
@@ -7218,7 +7218,7 @@ sb.auth.onAuthStateChange((event, session)=>{
 </script>
 <div id="toast"></div>
 
-<!-- ============ THE BUTLER — AI assistant (academy + real-life private service) ============ -->
+<!-- ============ THE BUTLER, AI assistant (academy + real-life private service) ============ -->
 <style>
   #butlerFab{position:fixed;right:22px;bottom:22px;z-index:99998;display:flex;align-items:center;gap:10px;
     background:#24262E;color:#F4F2ED;border:1px solid #3a3d47;border-radius:40px;padding:12px 18px 12px 14px;
@@ -7277,7 +7277,7 @@ sb.auth.onAuthStateChange((event, session)=>{
   var NAME="Ambrose";
   function el(id){ return document.getElementById(id); }
   window.butlerOpen=function(){ el('butlerPanel').classList.add('open'); el('butlerFab').style.display='none';
-    if(!greeted){ greeted=true; addBot("Good day. I am "+NAME+", your butler here at Maison Amarine. Ask me anything — about a module, how to study, an interview, or a real situation you're facing on the job. How may I help?"); }
+    if(!greeted){ greeted=true; addBot("Good day. I am "+NAME+", your butler here at Maison Amarine. Ask me anything, about a module, how to study, an interview, or a real situation you're facing on the job. How may I help?"); }
     setTimeout(function(){ el('bpInput').focus(); }, 60);
   };
   window.butlerClose=function(){ el('butlerPanel').classList.remove('open'); el('butlerFab').style.display='flex'; };
@@ -7308,10 +7308,10 @@ sb.auth.onAuthStateChange((event, session)=>{
         typing(false); busy=false; el('bpSend').disabled=false;
         if(d && d.name){ NAME=d.name; el('bpName').textContent=d.name; }
         if(d && d.reply){ addBot(d.reply); history.push({role:'assistant',content:d.reply}); }
-        else { addBot("Forgive me — I'm momentarily unavailable. Do try again in a moment."); }
+        else { addBot("Forgive me, I'm momentarily unavailable. Do try again in a moment."); }
         el('bpInput').focus();
       })
-      .catch(function(){ typing(false); busy=false; el('bpSend').disabled=false; addBot("Forgive me — I couldn't reach the study just now. Please try again shortly."); });
+      .catch(function(){ typing(false); busy=false; el('bpSend').disabled=false; addBot("Forgive me, I couldn't reach the study just now. Please try again shortly."); });
   };
   // auto-grow the textarea
   document.addEventListener('input',function(e){ if(e.target && e.target.id==='bpInput'){ e.target.style.height='auto'; e.target.style.height=Math.min(120,e.target.scrollHeight)+'px'; } });
