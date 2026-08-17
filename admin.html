@@ -5906,7 +5906,6 @@ function svShowToc(){
     ? `<div class="lsn-video-wrap"><div class="wc-video"><iframe src="${emb}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div><div class="lsn-video-cap">Watch first, then read the chapters below.</div></div>`
     : `<div class="lsn-video-wrap"><div class="lsn-video-ph"><span class="lsn-video-ph-ic">▶</span><span class="lsn-video-ph-t">Lesson video coming soon</span></div><div class="lsn-video-cap">Watch here, then read the chapters below.</div></div>`;
   let html=`<div class="lsn-vault">
-    <div class="lsn-hero" style="background-image:url('${heroImg}')"></div>
     <header class="rf-head"><div class="rf-k">${escapeHtml(s.subtitle||'Lesson')}</div><h1>${escapeHtml(s.title)}</h1></header>
     ${stepIdx===0 ? vidBlock : ""}
     ${lsnDownloadBtn()}
