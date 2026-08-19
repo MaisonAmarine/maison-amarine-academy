@@ -3070,7 +3070,7 @@ const sb = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 // ═══════════════════════════════════════════════════════════════════
 let JOURNAL_NO      = "No. 1";
 let JOURNAL_DATE    = "Tuesday, 14 July 2026";
-let JOURNAL_STRAP   = "A weekly dispatch from the world you are entering";
+let JOURNAL_STRAP   = "Your daily briefing from the private service world";
 
 // L'éditorial : trois ou quatre phrases, la lecture de la semaine.
 let JOURNAL_EDITORIAL = {
@@ -6885,7 +6885,7 @@ async function loadCommunity(){
   if(error) return;
   const body=document.getElementById('commBody');
   const empty=document.getElementById('commEmpty');
-  body.querySelectorAll('.cbub').forEach(b=>b.remove());
+  body.querySelectorAll('.crow').forEach(b=>b.remove());
   if(!data || data.length===0){ if(empty)empty.style.display='block'; return; }
   if(empty)empty.style.display='none';
   // charger les réactions de tous les messages en une fois
@@ -6967,25 +6967,32 @@ async function editCommunity(id){
   if(error){ toast('Could not update'); return; }
   loadCommunity();
 }
+var SENDING_COMM=false;
 async function sendCommunity(){
+  if(SENDING_COMM) return;                       // guard: prevents double insert (Enter + click, key repeat)
   const inp=document.getElementById('commInput');
   const txt=inp.value.trim();
   const media=pendingMedia.comm;
   if((!txt && !media) || !USER) return;
+  SENDING_COMM=true;
   const btn=document.getElementById('commSend');
   btn.disabled=true;
-  const name=(PROFILE && PROFILE.full_name) ? PROFILE.full_name : (USER.email||'').split('@')[0];
-  let media_url=null, media_type=null;
-  if(media){
-    media_url = await uploadMedia(media.file, media.isVoice);
-    if(!media_url){ btn.disabled=false; toast('Could not upload the file, please try again'); return; }
-    media_type = mediaTypeOf(media.file, media.isVoice);
+  try{
+    const name=(PROFILE && PROFILE.full_name) ? PROFILE.full_name : (USER.email||'').split('@')[0];
+    let media_url=null, media_type=null;
+    if(media){
+      media_url = await uploadMedia(media.file, media.isVoice);
+      if(!media_url){ toast('Could not upload the file, please try again'); return; }
+      media_type = mediaTypeOf(media.file, media.isVoice);
+    }
+    const {error}=await sb.from('community_messages').insert({author_id:USER.id,author_name:name,is_admin:false,body:txt,media_url,media_type});
+    if(error){ toast('Could not send, please try again'); return; }
+    inp.value=''; inp.style.height='auto'; clearPreview('comm');
+    loadCommunity();
+  } finally {
+    SENDING_COMM=false;
+    btn.disabled=false;
   }
-  const {error}=await sb.from('community_messages').insert({author_id:USER.id,author_name:name,is_admin:false,body:txt,media_url,media_type});
-  btn.disabled=false;
-  if(error){ toast('Could not send, please try again'); return; }
-  inp.value=''; inp.style.height='auto'; clearPreview('comm');
-  loadCommunity();
 }
 document.getElementById('commSend').addEventListener('click',sendCommunity);
 document.getElementById('commInput').addEventListener('keydown',e=>{
@@ -7300,7 +7307,7 @@ const TOUR_STEPS=[
   {page:'vault', sel:'.nav-item[data-page="vault"]', k:'The Vault', title:'The Vault', body:'Your reference library: the toolkit, the casebook, cultural fluency, the CV and more. Read them here, or download them.'},
   {page:'library', sel:'.nav-item[data-page="library"]', k:'Codes Library', title:'Codes Library', body:'The vocabulary and codes of the private world, defined plainly, so you always know how to speak.'},
   {page:'register', sel:'.nav-item[data-page="register"]', k:'The Register', title:'The Register', body:'The houses and agencies that set the standard of this world. Know them the way an insider does.'},
-  {page:'journal', sel:'.nav-item[data-page="journal"]', k:'The Journal', title:'The Journal', body:'A weekly dispatch from the world you are entering, refreshed for you every week.'},
+  {page:'journal', sel:'.nav-item[data-page="journal"]', k:'The Journal', title:'The Journal', body:'Your daily briefing on the private service world, refreshed every day. All the news of the sector, so you are always current on who and what matters.'},
   {page:'screening', sel:'.nav-item[data-page="screening"]', k:'Screening Room', title:'The Screening Room', body:'Films, series and documentaries that teach the codes of luxury, hand-picked for you.'},
   {page:'calendar', sel:'.nav-item[data-page="calendar"]', k:'Calendar', title:'Your Calendar', body:'Your eight weeks laid out on real dates, at your own rhythm. Add your own mentorship calls and deadlines.'},
   {page:'messages', sel:'.nav-item[data-page="messages"]', k:'Messages', title:'Messages', body:'Your private line to me, and the community salon with the others on your path. Ask me anything, any time.'},
