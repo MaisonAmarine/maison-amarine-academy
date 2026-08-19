@@ -6740,8 +6740,7 @@ async function loadCommunity(){
   if(error) return;
   const body=document.getElementById('commBody');
   const empty=document.getElementById('commEmpty');
-  body.querySelectorAll('.crow').forEach(b=>b.remove());
-  if(!data || data.length===0){ if(empty)empty.style.display='block'; return; }
+  if(!data || data.length===0){ body.querySelectorAll('.crow').forEach(b=>b.remove()); if(empty)empty.style.display='block'; return; }
   if(empty)empty.style.display='none';
   // charger les réactions de tous les messages en une fois
   RCT_MAP={};
@@ -6750,6 +6749,7 @@ async function loadCommunity(){
     const {data:rr}=await sb.from('message_reactions').select('message_id,user_id,emoji').in('message_id',ids);
     (rr||[]).forEach(r=>{ (RCT_MAP[r.message_id]=RCT_MAP[r.message_id]||[]).push(r); });
   }catch(e){ RCT_MAP={}; }
+  body.querySelectorAll('.crow').forEach(b=>b.remove());   // clear immediately before append (atomic, no await between -> no double-render race)
   data.forEach(m=>{
     const mine = m.author_id===USER.id;
     const div=document.createElement('div');
