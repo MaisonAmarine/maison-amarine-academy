@@ -6034,7 +6034,9 @@ function svOpenSection(i){
     let cls='lsn-para';
     if(posV===0 && !dropDone && !afterLabel){ cls+=' lsn-drop'; dropDone=true; }
     if(afterLabel){ cls+=' lsn-callout-body'; afterLabel=false; }
-    bodyhtml+=`<p class="${cls}">${mdInline(tk.v)}</p>`;
+    var _pp=String(tk.v).split('@@P@@').map(function(s){return s.trim();}).filter(Boolean);
+    if(_pp.length){ bodyhtml+=_pp.map(function(x,ix){return '<p class="'+(ix===0?cls:'lsn-para')+'">'+mdInline(x)+'</p>';}).join(''); }
+    else { bodyhtml+=`<p class="${cls}">${mdInline(tk.v)}</p>`; }
     j++;
   }
   // aérer la lecture : image(s) éditoriale(s) intercalée(s), en variant la position
