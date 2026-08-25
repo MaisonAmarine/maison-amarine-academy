@@ -996,6 +996,12 @@
   .lsn-video-wrap{max-width:760px;margin:24px auto 6px;}
   .lsn-pgbar{max-width:760px;margin:0 auto 22px;height:3px;border-radius:3px;background:rgba(165,150,120,.20);overflow:hidden;}
   .lsn-pgbar-fill{height:100%;background:var(--gold-lt,#c8a75a);border-radius:3px;transition:width .35s ease;}
+  .lsn-chapnav{position:fixed;left:28px;top:118px;width:212px;max-height:72vh;overflow:auto;padding:2px 0;z-index:5;}
+  .lsn-chapnav-k{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-deep,#9a7a42);font-weight:700;margin:0 12px 12px;}
+  .lsn-chapnav-i{display:block;width:100%;text-align:left;background:none;border:0;border-left:2px solid transparent;padding:7px 12px;font-family:'Jost',sans-serif;font-size:12.5px;line-height:1.35;color:#8a8378;cursor:pointer;transition:color .15s,border-color .15s;}
+  .lsn-chapnav-i:hover{color:#3a342c;}
+  .lsn-chapnav-i.on{color:#141009;border-left-color:var(--gold-lt,#c8a75a);font-weight:600;}
+  @media(max-width:1180px){.lsn-chapnav{display:none;}}
   .lsn-video-wrap .wc-video{border-radius:14px;overflow:hidden;box-shadow:0 18px 40px rgba(33,28,21,.16);border:1px solid var(--line);}
   .lsn-video-cap{text-align:center;font-family:'Calibri Light','Calibri','Carlito',sans-serif;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-deep);margin-top:12px;}
   .lsn-video-ph{aspect-ratio:16/9;border-radius:14px;border:1px dashed rgba(165,170,177,.55);background:linear-gradient(160deg,#1b1d21,#141009);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;}
@@ -5961,6 +5967,7 @@ function svOpenSection(i, pg){
   pg=Math.max(0,Math.min((pg|0),_pages-1)); svCur.pg=pg;
   const _pgA=_pageStarts[pg], _pgB=(pg+1<_pages)?_pageStarts[pg+1]:_allParas.length;
   const _pageParas=_allParas.slice(_pgA,_pgB);
+  const _pgLabels=_pageStarts.map((st)=>{ const p0=_allParas[st]||''; let m=p0.match(/^\*\*(\d+\.\d+[^*]*)\*\*/); if(m) return m[1].trim(); if(/^\*\*CHAPTER SUMMARY\*\*/i.test(p0)) return 'Summary'; return 'Overview'; });
   // 1) tokeniser les paragraphes (texte, gras/titre, éléments de liste)
   const titleSplit=(txt)=>{ const m=txt.match(/^([A-Za-z][A-Za-z ,'’\-]{2,44}?)\s+(?=[0-9]|[A-Z])/); if(m && m[1].split(' ').length<=6){ return [m[1].trim(), txt.slice(m[0].length).trim()]; } return ['', txt]; };
   const tokens=[];
@@ -6068,7 +6075,8 @@ function svOpenSection(i, pg){
   const _prevDis=(pg<=0 && prevIdx<0), _nextDis=(pg>=_pages-1 && nextIdx<0);
   const _pgMark=_pages>1?` · Page ${pg+1} of ${_pages}`:'';
   const _pgBar=_pages>1?`<div class="lsn-pgbar"><div class="lsn-pgbar-fill" style="width:${Math.round((pg+1)/_pages*100)}%"></div></div>`:'';
-  let html=`<div class="lsn-vault lsn-reading">
+  const _chapNav=_pages>1?`<aside class="lsn-chapnav"><div class="lsn-chapnav-k">In this chapter</div>${_pgLabels.map((lb,pi)=>`<button class="lsn-chapnav-i${pi===pg?' on':''}" onclick="svOpenSection(${i}, ${pi})">${escapeHtml(lb)}</button>`).join('')}</aside>`:'';
+  let html=`<div class="lsn-vault lsn-reading">${_chapNav}
     <button class="lsn-toc-back" onclick="svBackToList()">${ICO_ARL} Back</button>
     <div class="lsn-chapmark">Chapter ${_pPos+1} of ${_pTotal}${_pgMark}</div>
     ${_pgBar}
