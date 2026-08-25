@@ -5805,6 +5805,9 @@ function lsnInjectFigures(bodyhtml, weekNo, i){
   // pas de photo dans le module d'introduction (ouvert avec stepIdx -1)
   if(typeof svCur!=='undefined' && svCur && (svCur.stepIdx===-1 || svCur.stepIdx===3)) return bodyhtml; // no photos in the intro or the deliverable module
   if(bodyhtml.indexOf('class="lsn-case"')>=0) return bodyhtml;  // pas de photo dans les chapitres à cases
+  const _pgNow=(typeof svCur!=='undefined'&&svCur&&typeof svCur.pg==='number')?svCur.pg:0;
+  const _pgTot=(typeof svCur!=='undefined'&&svCur&&typeof svCur.pgTotal==='number')?svCur.pgTotal:1;
+  if(_pgNow!==(_pgTot>1?1:0)) return bodyhtml;   // 1 seule image par chapitre, jamais deux fois la meme photo dans la semaine
   const pos=lsnLeafPositions(bodyhtml), L=pos.length;
   if(L<3) return bodyhtml;                       // chapitre trop court : aucune image
   const wk=Math.abs(weekNo||1), ch=Math.abs(i||0);
@@ -5964,7 +5967,7 @@ function svOpenSection(i, pg){
   let _pageStarts=[0];
   for(let _k=1;_k<_allParas.length;_k++){ if(_isPB(_allParas[_k])) _pageStarts.push(_k); }
   const _pages=_pageStarts.length;
-  pg=Math.max(0,Math.min((pg|0),_pages-1)); svCur.pg=pg;
+  pg=Math.max(0,Math.min((pg|0),_pages-1)); svCur.pg=pg; svCur.pgTotal=_pages;
   const _pgA=_pageStarts[pg], _pgB=(pg+1<_pages)?_pageStarts[pg+1]:_allParas.length;
   const _pageParas=_allParas.slice(_pgA,_pgB);
   const _pgLabels=_pageStarts.map((st)=>{ const p0=_allParas[st]||''; let m=p0.match(/^\*\*(\d+\.\d+[^*]*)\*\*/); if(m) return m[1].trim(); if(/^\*\*CHAPTER SUMMARY\*\*/i.test(p0)) return 'Summary'; return 'Overview'; });
