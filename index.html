@@ -5540,7 +5540,7 @@ function openWeek(no){
       title: _title,
       subtitle: s.subtitle || ls[1] || '',
       icon: ls[2] || 'file',
-      video_url: s.video_url||'',
+      video_url: (s.video_url && s.video_url.trim()) ? s.video_url : (d.video_url||''),
       text: txt,
       doc_url: doc,
       doc_name: s.doc_name || (doc?'The full module (PDF)':'')
