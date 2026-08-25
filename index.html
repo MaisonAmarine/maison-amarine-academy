@@ -5717,7 +5717,9 @@ function svShowPart(pi){
   svCur.activePart=pi;
   const body=document.getElementById('stepViewBody');
   const chs=g.chapters.map(c=>`<button class="lsn-ch" onclick="svOpenSection(${c.idx})"><span class="lsn-ch-n">${String(c.no+1).padStart(2,'0')}</span><span class="lsn-ch-t">${escapeHtml(c.h)}</span><span class="lsn-ch-go">${ICO_ARR}</span></button>`).join('');
-  body.innerHTML=`<div class="lsn-vault"><button class="lsn-toc-back" onclick="svShowToc()">${ICO_ARL} Contents</button><header class="rf-head"><div class="rf-k">Part ${g.r}</div><h1>${escapeHtml(g.t)}</h1></header><div class="lsn-chapters">${chs}</div></div>`;
+  const _pvemb=(svCur.stepIdx===0 && pi===0)?ytEmbed((svCur.s&&svCur.s.video_url)||''):null;
+  const _pvid=_pvemb?`<div class="lsn-video-wrap"><div class="wc-video"><iframe src="${_pvemb}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div><div class="lsn-video-cap">Watch first, then read the chapters below.</div></div>`:'';
+  body.innerHTML=`<div class="lsn-vault"><button class="lsn-toc-back" onclick="svShowToc()">${ICO_ARL} Contents</button><header class="rf-head"><div class="rf-k">Part ${g.r}</div><h1>${escapeHtml(g.t)}</h1></header>${_pvid}<div class="lsn-chapters">${chs}</div></div>`;
   try{ window.scrollTo({top:0,behavior:'smooth'}); }catch(e){}
 }
 function svBackToList(){ if(svCur && svCur.activePart!=null && svCur.partGroups){ svShowPart(svCur.activePart); } else { svShowToc(); } }
@@ -5752,7 +5754,7 @@ function svShowToc(){
     : `<div class="lsn-video-wrap"><div class="lsn-video-ph"><span class="lsn-video-ph-ic">▶</span><span class="lsn-video-ph-t">Lesson video coming soon</span></div><div class="lsn-video-cap">Watch here, then read the chapters below.</div></div>`;
   let html=`<div class="lsn-vault">
     <header class="rf-head"><div class="rf-k">${escapeHtml(s.subtitle||'Lesson')}</div><h1>${escapeHtml(s.title)}</h1></header>
-    ${stepIdx===0 ? vidBlock : ""}
+    
     ${lsnDownloadBtn()}
     ${secs.length?`<div class="lsn-toc-k">Contents</div><div class="lsn-chapters">${toc}</div>`:'<p class="sv-empty" style="text-align:center;">This module opens directly below.</p>'}`;
   if(stepIdx===3 && weekNo){ html += submitPanelHTML(weekNo); }
