@@ -1,5 +1,104 @@
 [
   {
+    "no": "No. 34",
+    "date": "Monday, 24 August 2026",
+    "strap": "A daily dispatch from the world you are entering",
+    "lead": {
+      "cat": "Household security",
+      "place": "New York, United States",
+      "tag": "The way in",
+      "title": "Two in five family offices report a cyber attack, and the household is increasingly where the intruder gets in",
+      "standfirst": "Deloitte finds that 43 per cent of family offices have been attacked within the past two years, and that the weakest point is rarely the investment desk.",
+      "body": "Deloitte Private's family office cybersecurity research puts a number on something the private world has preferred to discuss in the abstract. Some 43 per cent of family offices surveyed reported at least one cyber attack in the preceding 12 to 24 months, and a quarter of those affected reported three or more. The exposure rises with size and with geography: 57 per cent of North American offices reported an attack, against 41 per cent in Europe and 24 per cent in Asia Pacific, and among offices managing more than USD 1 billion the figure reaches 62 per cent.\n\nThe methods are unglamorous. Phishing was involved in 93 per cent of reported incidents, malware in 35 per cent and social engineering in 23 per cent. These are not exotic intrusions into trading systems. They are messages that look like a supplier, a bank, a lawyer or a principal, and they succeed because someone in the structure has the authority to move money and the habit of moving it quickly. Business email compromise, invoice manipulation and payment redirection remain the most productive financial attacks against private structures, and they land on precisely the people who approve household expenditure.\n\nThe preparedness gap is the more striking finding. Roughly 31 per cent of family offices have no cyber incident response plan at all. An organisation that will spend months on the due diligence of a single co-investment will often have no written answer to the question of who is telephoned, in what order, on the morning a payment is discovered to have gone to the wrong account.\n\nThe household sits inside this perimeter and is rarely counted as part of it. Domestic staff hold alarm codes, guest lists, delivery schedules, medical appointments, school runs and the wireless credentials of the house. Estate managers hold vendor lists and approve invoices. Travel coordinators hold itineraries. Very little of that information is protected by anything more than the discretion of the person holding it, and much of it is transacted on personal devices, in messaging applications, outside any system the family office controls. A single compromised household telephone can yield a family's movements for the next three months.\n\nThat is where the risk stops being financial. Movement data, vessel positions, aircraft records and school routines convert a data breach into a physical one. The practical response is not technical sophistication so much as ordinary discipline: verification of payment instructions by a second channel and a known voice, separate devices or accounts for household business, restraint in group messaging, and a written escalation route that every member of staff has read. Synthetic voice and video have made the instruction that sounds exactly like the principal an unreliable form of authority.",
+      "why": "Whoever runs the house is part of the family's security architecture whether or not anyone has said so. Verifying a payment instruction, keeping itineraries off open channels and knowing who to call first are now core competences of private service, not IT department concerns.",
+      "src": "Deloitte Private, The Family Office Cybersecurity Report",
+      "url": "https://www.deloitte.com/global/en/services/deloitte-private/research/family-office-cybersecurity-report.html"
+    },
+    "articles": [
+      {
+        "cat": "Prime property",
+        "place": "Aspen, United States",
+        "tag": "Down fifty-one",
+        "section": "The Private World",
+        "title": "Aspen dollar sales fall 51 per cent in the first half, and the quietest mountain season since 2020 is not a distressed one",
+        "body": "Between 1 January and 30 June 2026, combined dollar sales across Aspen and Snowmass fell 51 per cent against the same period a year earlier, with unit sales down 39 per cent, according to figures compiled by the Estin Report and published locally. Aspen alone recorded a fall of 56 per cent in dollar volume and 44 per cent in transactions. It is the slowest first half the valley has seen since the pandemic years of 2020 and 2021.\n\nThe contraction is sharpest precisely where the private service market lives. Sales above USD 10 million fell 56 per cent by value and 48 per cent by number of transactions. At the very top, deals above USD 20 million dropped from 19 in the first half of 2025 to 13 in the first half of 2026, a fall of about a third.\n\nWhat makes the numbers unusual is the context. Equity markets have been at record levels through much of the period, and the wealth that buys in Aspen has not disappeared. Local analysts describe the market as high value but quiet rather than distressed. Prices have held. What has thinned is supply and the willingness of existing owners to sell, and a market with almost nothing available records very few transactions regardless of how much demand exists.\n\nFor households, a market that stops trading behaves differently from one that is falling. Families keep houses longer, which lengthens the horizon of the people who run them. Renovation cycles replace acquisition cycles, and the estate manager's year fills with contractors, permits and phased works rather than handovers and inventories. Continuity of staff becomes more valuable to the principal, because the person who knows the building becomes the only continuous record of it.",
+        "why": "A market that trades rarely rewards long service. Where houses change hands slowly, the household team becomes the institutional memory of the property, and renovation management moves to the centre of the estate manager's role.",
+        "src": "The Aspen Times, citing the Estin Report",
+        "url": "https://www.aspentimes.com/news/aspen-snowmass-market-experiences-slowest-first-half-since-covid/"
+      },
+      {
+        "cat": "Charter",
+        "place": "Antibes, France",
+        "tag": "Thirty per cent off",
+        "section": "At Sea & In the Air",
+        "title": "The Mediterranean charter season runs as much as 30 per cent behind last year, and August weeks are still being discounted",
+        "body": "For several seasons the standard advice in the charter market was that the best hulls were committed by early spring and that a family deciding in June would be choosing from what nobody else wanted. That advice did not hold in 2026. Summer charters in the Mediterranean have run between 20 and 30 per cent below last year, and a significant number of yachts have carried discounts and incentives into the last weeks of July and August.\n\nJonathan Beckett, chief executive of the brokerage Burgess, told CNBC that American bookings for the Mediterranean began the year strongly and then slowed following the outbreak of conflict involving Iran, and estimated that the summer charter season may finish about 30 per cent down. Premium vessels remained available at the start of July, some with upgrades or flexible terms attached, a situation the market had not seen since the years immediately after the pandemic.\n\nDemand has not vanished so much as compressed and moved later. Brokers report that the overwhelming majority of forward summer bookings still fall between June and August, but that they are being confirmed far closer to departure than they were. A yacht that once knew its season in March now learns much of it in weeks.\n\nThat compression is felt by crew before it is felt by owners. Rosters, provisioning, berth reservations and shore arrangements all depend on a calendar that is now being written at short notice, and the ability to mobilise a full guest programme in days rather than months has become the operational test of a charter operation. For the household side, the same principle applies on land: the villa, the cars, the staff and the shore programme are increasingly booked into the same narrowing window.",
+        "why": "Shorter lead times move the burden onto whoever executes. The estate manager or chief of staff who can assemble a full itinerary, crew, cars and shore arrangements in a fortnight is now doing what used to be a season's planning.",
+        "src": "CNBC",
+        "url": "https://www.cnbc.com/2026/07/22/mediterranean-yacht-rentals.html"
+      },
+      {
+        "cat": "Watches",
+        "place": "Bienne, Switzerland",
+        "tag": "The American month",
+        "section": "Objects & Culture",
+        "title": "Swiss watch exports rise 9.6 per cent in July, and more than a quarter of everything shipped now goes to the United States",
+        "body": "Swiss watch exports reached CHF 2.63 billion in July, a rise of 9.6 per cent against July 2025, according to the Federation of the Swiss Watch Industry. The month was strong enough to pull the cumulative figure for the first seven months of the year back into positive territory, up 0.9 per cent, after a first half that had been broadly flat.\n\nThe United States did most of the work. American imports of Swiss watches rose 26.5 per cent in the month to CHF 701.3 million, which is 26.7 per cent of everything Switzerland shipped in July. The European Union rose 12.4 per cent, led by Germany, and the United Kingdom rose 9.5 per cent. Asia told the opposite story: Hong Kong was almost flat at 0.5 per cent, Singapore rose 2.3 per cent, Japan fell 3.7 per cent and mainland China fell 18.5 per cent. The United Arab Emirates fell 3.7 per cent.\n\nThe materials data shows where the growth is. Watches in precious metals rose 3.7 per cent by value, steel rose 9 per cent, and bimetallic gold and steel models rose 23.8 per cent, the strongest category of the month. Volumes rose too, with roughly 97,000 more watches shipped than in July 2025, taking total wristwatch exports to about 1.5 million units.\n\nThe geographic shift matters more than the headline. A market in which one country absorbs more than a quarter of Swiss production, while China contracts sharply, changes where the important collections are being assembled and where the specialist service, insurance and valuation infrastructure follows. For anyone who will be responsible for a principal's collection, that is not trivia. Watches are among the few high-value objects that leave the safe daily, travel in hand luggage, are worn at dinner and are lent, gifted and inherited, and the person who manages the household is usually the one who knows where each piece is.",
+        "why": "Cultural fluency is part of the job. Knowing what a piece is, what it is worth, how it should be serviced, insured and transported, and how to discuss it without valuing it aloud, is ordinary competence in a senior private household.",
+        "src": "Federation of the Swiss Watch Industry, reported by WWD",
+        "url": "https://wwd.com/accessories-news/watches/swiss-watch-exports-july-2026-1239144100/"
+      },
+      {
+        "cat": "Wealth allocation",
+        "place": "Basel, Switzerland",
+        "tag": "One fifth in art",
+        "section": "The Market",
+        "title": "Wealthy collectors now hold a fifth of their wealth in art, and the collection stops being decoration on the balance sheet",
+        "body": "The Art Basel and UBS survey of global collecting, compiled by Arts Economics from responses of some 3,100 high net worth individuals across ten markets, found that collectors allocated an average of 20 per cent of their wealth to art, up from 15 per cent a year earlier. Among those with more than USD 50 million in assets the figure reaches 28 per cent. Intentions point the same way: 40 per cent said they planned to buy more art over the following twelve months, while selling intentions eased to 25 per cent.\n\nThe wider market has stabilised beneath those numbers. Global art sales rose 4 per cent to an estimated USD 59.6 billion in 2025, with the dealer sector up 2 per cent at USD 34.8 billion and public auction sales up 9 per cent at USD 20.7 billion. Sentiment among dealers entering 2026 improved, with 43 per cent expecting sales to rise and 38 per cent expecting them to hold steady.\n\nA collection at a quarter of a family's wealth is no longer furniture. It is an asset class kept in the places where the family lives, and that has consequences the balance sheet does not show. Light levels, humidity, hanging, insurance schedules, condition reports, loan agreements with museums, transport, customs paperwork and the logistics of moving works between residences all sit somewhere in the household's operating rhythm.\n\nThe survey also found that 96 per cent of respondents intend to attend art events during 2026, and 48 per cent expect to attend more than the year before. Fairs, previews, openings and private views generate their own operational load: travel that must be arranged around a fixed calendar, invitations that must be tracked, and a diary that is set by the art world's year rather than the family's.",
+        "why": "Where a fifth of the family's wealth hangs on the walls, the household is the custodian of an asset portfolio. Condition, climate, movement records and insurance documentation become part of house management, not an outside specialism.",
+        "src": "The Art Basel and UBS reports, by Arts Economics",
+        "url": "https://www.ubs.com/global/en/our-firm/art/art-market-research.html"
+      },
+      {
+        "cat": "Escapes",
+        "place": "Crete, Greece",
+        "tag": "Five villas",
+        "section": "Hotels & Escapes",
+        "title": "A five villa estate opens on Crete, and the private rental continues to move away from the hotel",
+        "body": "Tierras Villas opens on Crete this month, a small estate of five villas designed by Manos Kipritidis in stone and wood, each with its own pool and terraces facing the sea. The scale is the point. Five keys is not a hotel, and the property is built around the assumption that guests want a house with service rather than a room with a lobby.\n\nThe pattern is now consistent across the Greek islands and the wider Mediterranean. New openings at the top of the market are villa led, low in key count and high in staff ratio, and the guest expects a level of personal attention that resembles a private household more than it resembles hospitality. Service is delivered by people who learn a family's preferences over a week rather than a shift.\n\nFor a student of private service, this end of the market is the closest commercial analogue to the work itself. The disciplines are the same: reading a household's rhythm, anticipating rather than responding, holding a standard without being visible, and running a small team in a building that is somebody's home for the duration of their stay.",
+        "why": "Villa led properties recruit and train in exactly the competences a private household requires, and a season in one is among the more direct routes into estate work.",
+        "src": "Wallpaper*",
+        "url": "https://www.wallpaper.com/travel/hotels/best-new-hotels"
+      }
+    ],
+    "briefs": [
+      {
+        "t": "A record island season",
+        "b": "Palm Beach closed its 2025 to 2026 season with record sales at record prices. The median single family sale on the island reached USD 12.9 million, with average values near USD 9.8 million and still rising into 2026. The year's highest recorded transaction, a waterfront estate on Old Harbour Road, closed at USD 97.5 million.",
+        "src": "Premier Estate Properties",
+        "url": "https://premierestateproperties.com/blog/palm-beach-luxury-real-estate-market-report-2026-trophy-estates-cash-heavy-condos-and-where-opportunity-still-hides/"
+      },
+      {
+        "t": "Six months, not two years",
+        "b": "Under the Employment Rights Act 2025, the qualifying period for ordinary unfair dismissal protection falls from two years to six months on 1 January 2027. Private households employing staff directly are covered in the same way as any other employer, which shortens considerably the window in which a placement can be ended without full process.",
+        "src": "Pinsent Masons",
+        "url": "https://www.pinsentmasons.com/out-law/guides/employment-rights-bill-timeline-2026-beyond"
+      },
+      {
+        "t": "Past fifteen hundred",
+        "b": "Singapore has passed 1,500 registered single family offices in 2026, having counted fewer than 200 seven years ago. Each new office brings with it residences, travel patterns and household staffing requirements, and the city remains one of the fastest growing private employment markets in Asia.",
+        "src": "StashAway",
+        "url": "https://www.stashaway.sg/r/guide-to-establish-family-offices-singapore"
+      },
+      {
+        "t": "The four most requested",
+        "b": "Housekeepers, private chefs, nannies and estate managers remain the four most requested roles across the United States, according to the Morgan & Mallet household staff industry report for 2026. Estate managers are the hardest of the four to fill, because the combination of security awareness, technical literacy and team management the role now demands is rarely found in one candidate.",
+        "src": "Morgan & Mallet International",
+        "url": "https://www.householdstaff.agency/household-staff-annual-report/"
+      }
+    ]
+  },
+  {
     "no": "No. 33",
     "date": "Sunday, 23 August 2026",
     "strap": "A daily dispatch from the world you are entering",
