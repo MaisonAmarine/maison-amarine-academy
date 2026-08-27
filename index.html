@@ -5713,7 +5713,7 @@ function svSectionTitle(i){ const x=svCur.secs[i]; return x&&x.heading ? x.headi
 const LSN_PARTS={
  '1:0':[
   {r:'I',  t:"The world you're entering", start:"The field"},
-  {r:'II', t:"The economics & the craft", start:"The economics of the role"},
+  {r:'II', t:"The economics & the craft", start:"The economics of the role", v:"https://youtu.be/D96Hw2uVJgs"},
   {r:'III',t:"The people & the risks",    start:"The principal"},
  ],
  '1:1':[
@@ -5738,7 +5738,9 @@ function svShowPart(pi){
   svCur.activePart=pi;
   const body=document.getElementById('stepViewBody');
   const chs=g.chapters.map(c=>`<button class="lsn-ch" onclick="svOpenSection(${c.idx})"><span class="lsn-ch-n">${String(c.no+1).padStart(2,'0')}</span><span class="lsn-ch-t">${escapeHtml(c.h)}</span><span class="lsn-ch-go">${ICO_ARR}</span></button>`).join('');
-  const _pvemb=(svCur.stepIdx===0 && pi===0)?ytEmbed((svCur.s&&svCur.s.video_url)||''):null;
+  const _pmeta=((LSN_PARTS[svCur.weekNo+':'+svCur.stepIdx]||[])[pi])||{};
+  const _pvurl=(_pmeta.v&&_pmeta.v.trim())?_pmeta.v:((svCur.stepIdx===0 && pi===0)?((svCur.s&&svCur.s.video_url)||''):'');
+  const _pvemb=ytEmbed(_pvurl);
   const _pvid=_pvemb?`<div class="lsn-video-wrap"><div class="wc-video"><iframe src="${_pvemb}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div><div class="lsn-video-cap">Watch first, then read the chapters below.</div></div>`:'';
   body.innerHTML=`<div class="lsn-vault"><button class="lsn-toc-back" onclick="svShowToc()">${ICO_ARL} Contents</button><header class="rf-head"><div class="rf-k">Part ${g.r}</div><h1>${escapeHtml(g.t)}</h1></header>${_pvid}<div class="lsn-chapters">${chs}</div></div>`;
   try{ window.scrollTo({top:0,behavior:'smooth'}); }catch(e){}
