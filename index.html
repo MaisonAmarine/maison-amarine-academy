@@ -608,7 +608,7 @@
   .practice-nudge .pn-txt{flex:1;min-width:200px;font-family:'Calibri Light','Calibri','Carlito',sans-serif;font-size:13px;color:var(--ink-soft);line-height:1.5;}
   .practice-nudge .pn-txt b{color:var(--ink);}
   .practice-nudge .pr-btn{white-space:nowrap;}
-  /* ===== CV Review ===== */
+  /* ===== Resume Review ===== */
   .cv-wrap{max-width:900px;}
   .cv-drop{display:flex;align-items:center;gap:16px;width:100%;background:var(--gold-wash);border:1.5px dashed var(--gold-lt);border-radius:16px;padding:22px 24px;cursor:pointer;transition:background .18s,border-color .18s;}
   .cv-drop:hover,.cv-drop.drag{background:#e1e2e5;border-color:var(--gold);}
@@ -655,7 +655,7 @@
   .cv-mini{font-family:'Calibri Light','Calibri','Carlito',sans-serif;font-size:13px;color:var(--ink-soft);line-height:1.55;padding:7px 0;border-top:1px solid var(--line);}
   .cv-mini:first-of-type{border-top:none;}
   @media(min-width:760px){ .cv-cols{grid-template-columns:1fr 1fr;} .cv-group.g-fix{grid-column:1 / -1;} }
-  /* CV Review, deep analysis UI */
+  /* Resume Review, deep analysis UI */
   .cv-cats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin:2px 0 24px;}
   .cv-cat{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:15px 16px;}
   .cv-cat-h{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:9px;}
@@ -2088,7 +2088,7 @@ html,body,body *{font-family:'Calibri Light','Calibri','Carlito',system-ui,-appl
       </div>
       <div class="nav-item" data-page="cv">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 3h7l5 5v13H7z" stroke-linejoin="round"/><path d="M14 3v5h5M9.5 13l2 2 3.5-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        CV Review
+        Resume Review
       </div>
 
       <div class="nav-group">Connect</div>
@@ -2118,7 +2118,7 @@ html,body,body *{font-family:'Calibri Light','Calibri','Carlito',system-ui,-appl
     <div class="m-more-head">Everything else<span class="m-more-x" id="mMoreClose">✕</span></div>
     <div class="m-more-grid">
       <div class="m-more-link" data-page="career">Career Hub</div>
-      <div class="m-more-link" data-page="cv">CV Review</div>
+      <div class="m-more-link" data-page="cv">Resume Review</div>
       <div class="m-more-link" data-page="vault">The Vault</div>
       <div class="m-more-link" data-page="library">Codes Library</div>
       <div class="m-more-link" data-page="register">The Register</div>
@@ -2259,7 +2259,7 @@ html,body,body *{font-family:'Calibri Light','Calibri','Carlito',system-ui,-appl
       <div id="practiceWrap"></div>
     </section>
 
-    <!-- ============ PAGE: CV REVIEW ============ -->
+    <!-- ============ PAGE: RESUME REVIEW ============ -->
     <section class="page hidden" id="page-cv">
       <style>
         #page-cv .cvtabs{display:flex;gap:8px;margin:0 0 22px;border-bottom:1px solid var(--line);}
@@ -2270,40 +2270,40 @@ html,body,body *{font-family:'Calibri Light','Calibri','Carlito',system-ui,-appl
         #page-cv.cvbuild .cvtabs{margin-bottom:12px;}
       </style>
       <div class="page-h">
-        <div class="eyebrow">CV Review</div>
-        <h1>Have your CV read the way an agency would, then build a better one.</h1>
-        <p>Two tools in one. <b>Review</b> checks your existing CV against the exact standards this world hires on. <b>Build</b> lets you create a clean, US or Canadian résumé from scratch, with 20 templates and wording tailored to your role. Everything stays private in your browser.</p>
+        <div class="eyebrow">Resume Review</div>
+        <h1>Have your resume read the way an agency would, then build a better one.</h1>
+        <p>Two tools in one. <b>Review</b> checks your existing resume against the exact standards this world hires on. <b>Build</b> lets you create a clean, US or Canadian résumé from scratch, with 20 templates and wording tailored to your role. Everything stays private in your browser.</p>
       </div>
       <div class="cvtabs">
-        <button class="cvtab on" data-cvtab="review">Review my CV</button>
-        <button class="cvtab" data-cvtab="build">✦ Build my CV</button>
+        <button class="cvtab on" data-cvtab="review">Review my resume</button>
+        <button class="cvtab" data-cvtab="build">✦ Build my resume</button>
       </div>
       <div id="cv-review-panel">
       <div class="cv-wrap">
         <label class="cv-drop" id="cvDrop" ondragover="event.preventDefault();this.classList.add('drag');" ondragleave="this.classList.remove('drag');" ondrop="event.preventDefault();this.classList.remove('drag');cvHandleFile(event.dataTransfer.files[0]);">
           <input type="file" id="cvFile" accept=".pdf,.docx,.txt" style="display:none;" onchange="cvHandleFile(this.files[0]); this.value='';">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 16V4M12 4l-4 4M12 4l4 4" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 16v3a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-3" stroke-linecap="round"/></svg>
-          <div class="cv-drop-t"><b>Upload your CV</b><span>PDF, Word (.docx) or text file · click here or drag it in</span></div>
+          <div class="cv-drop-t"><b>Upload your resume</b><span>PDF, Word (.docx) or text file · click here or drag it in</span></div>
         </label>
         <div class="cv-status" id="cvFileStatus"></div>
         <div class="cv-or"><span>or paste the text below</span></div>
-        <textarea id="cvInput" class="cv-input" placeholder="Paste the full text of your CV here, then press Analyze."></textarea>
+        <textarea id="cvInput" class="cv-input" placeholder="Paste the full text of your resume here, then press Analyze."></textarea>
         <details class="cv-target" id="cvTargetWrap">
           <summary><span class="cvt-ic">&#9656;</span> Tailor to a specific role <span style="font-weight:400;color:var(--stone);">(optional)</span></summary>
           <div class="cvt-body">
-            <div class="cvt-hint">Paste the job advert or the agency&rsquo;s brief. The tool checks how well your CV matches it and flags the key words you are missing &mdash; all read privately in your browser.</div>
+            <div class="cvt-hint">Paste the job advert or the agency&rsquo;s brief. The tool checks how well your resume matches it and flags the key words you are missing &mdash; all read privately in your browser.</div>
             <textarea id="cvTarget" placeholder="Paste the role description or agency brief here (optional)&hellip;"></textarea>
           </div>
         </details>
         <div class="cv-bar">
-          <button class="cv-btn" onclick="analyzeCV()">Analyze my CV</button>
+          <button class="cv-btn" onclick="analyzeCV()">Analyze my resume</button>
           <span class="cv-priv"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg> Private · read in your browser, never uploaded or stored</span>
         </div>
         <div id="cvResult"></div>
       </div>
       </div><!-- /cv-review-panel -->
       <div id="cv-build-panel" style="display:none">
-        <iframe id="cvBuildFrame" title="CV Studio" style="width:100%;height:calc(100vh - 132px);min-height:700px;border:none;background:#eeeef0;display:block"></iframe>
+        <iframe id="cvBuildFrame" title="Resume Studio" style="width:100%;height:calc(100vh - 132px);min-height:700px;border:none;background:#eeeef0;display:block"></iframe>
       </div>
       <script>
         (function(){
@@ -2907,7 +2907,7 @@ const REGISTER = [
   {name:"John Paul Group",tier:"Corporate Leader",loc:"Paris · International",desc:"One of the leaders of global corporate concierge services. Founded in 2008, it operates at scale for both private members and major institutions, a different world from the boutiques, but a serious employer in the field.",clients:"Corporate & private",note:"Scale and structure"},
   {name:"Ten Lifestyle Group",tier:"Established",loc:"International",desc:"A long-established concierge group serving private members and the clients of premium financial institutions worldwide. A reliable name to know when mapping the wider landscape of the industry.",clients:"Members & financial partners",note:"Broad international reach"},
 ];
-// ====== CV REVIEW (analyseur local, rien n'est envoyé) ======
+// ====== RESUME REVIEW (analyseur local, rien n'est envoyé) ======
 function cvLoadScript(src){
   return new Promise((res,rej)=>{
     if(document.querySelector('script[data-lib="'+src+'"]')) return res();
@@ -2947,11 +2947,11 @@ async function cvHandleFile(file){
     analyzeCV();
     status.textContent='✓ Read from “'+file.name+'”. You can edit the text above and analyze again.';
   }catch(e){
-    console.warn('CV read error',e);
+    console.warn('resume read error',e);
     status.textContent='Sorry, that file could not be read. Try a PDF or .docx, or paste the text into the box.';
   }
 }
-/* ============ CV REVIEW, deep client-side analysis, aligned to Week 7 (fully private) ============ */
+/* ============ RESUME REVIEW, deep client-side analysis, aligned to Week 7 (fully private) ============ */
 function cvEsc(s){ return escapeHtml(String(s)); }
 function cvLines(t){ return t.split(/\r?\n/).map(l=>l.trim()).filter(Boolean); }
 function cvBand(sc){ return sc>=85?['cv-good','Ready to send'] : sc>=65?['cv-mid','Nearly there'] : ['cv-low','Needs work']; }
@@ -3016,7 +3016,7 @@ function cvAnalyze(text, target){
   if(ff.length){ cut('restraint',Math.min(ff.length*5,22)); fix("Cut the adjectives about yourself","Week 7 · killer #3: “passionate, dynamic, dedicated, detail-oriented”, unverifiable, everyone writes them, and they sit where evidence should be. Found: "+ff.slice(0,6).map(f=>'“'+cvEsc(f)+'”').join(', ')+(ff.length>6?'…':'')+".","<b>Instead of</b> “dedicated, hardworking house manager” <b>write</b> “House manager for a principal across three residences; staff of 9.”",3); }
   else good("No adjectives about yourself, you let the evidence speak (Week 7 · Restraint).");
   const fp=(low.match(/\bi\b/g)||[]).length+(low.match(/\bmy\b/g)||[]).length+(low.match(/\bme\b/g)||[]).length;
-  if(fp>6){ cut('restraint',10); fix("Write it impersonally","You use “I / my / me” about "+fp+" times. A CV drops the first person and opens each line with a verb.","<b>Instead of</b> “I was responsible for the diary” <b>write</b> “Managed the principal’s diary and correspondence.”",2); }
+  if(fp>6){ cut('restraint',10); fix("Write it impersonally","You use “I / my / me” about "+fp+" times. A resume drops the first person and opens each line with a verb.","<b>Instead of</b> “I was responsible for the diary” <b>write</b> “Managed the principal’s diary and correspondence.”",2); }
   // "the line" vs a six-line personal statement (killer #4)
   let psLong=false;
   lines.forEach((l,idx)=>{ if(/\b(personal statement|profile|summary|about me)\b/i.test(l)){ let c=0; for(let k=idx+1;k<lines.length&&k<idx+7;k++){ if((lines[k].match(/\S+/g)||[]).length>=6) c++; else break; } if(c>=3) psLong=true; } });
@@ -3058,7 +3058,7 @@ function cvAnalyze(text, target){
   (text.match(/\bfor (Mr|Mrs|Ms|Sir|Lord|Lady|Sheikh|Sheikha|Prince|Princess|HRH|HSH|Baron|Baroness|Count|Countess)\b[.\s]+[A-Z][a-z]+/g)||[]).forEach(x=>nameRisk.push(x.trim()));
   if(nameRisk.length){ cut('discretion',18); fix("⚠ You may be naming a principal","Week 7 · killer #2: naming a family, even a former one, even one who would not mind, is, on its own, a complete disqualification, and the single most common fatal error. Found: "+nameRisk.slice(0,3).map(x=>'“'+cvEsc(x)+'”').join(', ')+".","<b>Write it exactly like this:</b> “Private household, Greenwich · 2021 to 2024 · Ultra-high-net-worth family, five residences. Personal affairs, relocation and renovation projects, staff and supplier coordination. Bound by confidentiality. Reference available through the family office.”",3); }
   if(/bound by confidentiality|family office|confidential/i.test(text)) good("You frame confidentiality the way Week 7 teaches, that tells a reader you keep your word.");
-  // referee phone numbers on the CV (Week 7 · References)
+  // referee phone numbers on the resume (Week 7 · References)
   const refIdx=lines.findIndex(l=>/^references?\b/i.test(l)||/\breferee/i.test(l));
   const refBlock=refIdx>=0?lines.slice(refIdx,refIdx+6).join(' '):'';
   if(refBlock && /(\+?\d[\d\s().-]{7,}\d)|[\w.+-]+@[\w-]+\.[\w.-]+/.test(refBlock)){ cut('discretion',9); fix("Never list a referee’s contact details","Week 7: under References write <b>“Available on request”</b> and nothing else. You never put a referee’s telephone number or email on a document that will be forwarded.","References<br>Available on request.",2); }
@@ -3079,7 +3079,7 @@ function cvAnalyze(text, target){
   // social media link (killer #6)
   if(/(instagram\.com|facebook\.com|fb\.com|tiktok\.com|twitter\.com|x\.com\/|snapchat|onlyfans)/i.test(text)){ cut('header',7); fix("Remove the social media link","Week 7 · killer #6: a personal social-media link is read, like a casual email, as a judgment failure. Take it off.","",2); }
   if(/(right to work|work authorization|work authorisation|citizenship|eligible to work|driving licen|driver'?s licen|clean licen|visa|first aid|passport)/i.test(text)) good("The practical header essentials (work authorization / license / first aid) are present.");
-  else R.reminders.push("<b>Complete the header.</b> Week 7: name, city, telephone, an email that is your name, <b>citizenship / work authorization</b>, and <b>languages with an honest level</b>. Add <b>first aid</b>, it costs a weekend and appears on every serious CV.");
+  else R.reminders.push("<b>Complete the header.</b> Week 7: name, city, telephone, an email that is your name, <b>citizenship / work authorization</b>, and <b>languages with an honest level</b>. Add <b>first aid</b>, it costs a weekend and appears on every serious resume.");
   // typographical error (killer #11) + design signals
   const polish=[];
   if(/ {2,}/.test(text)) polish.push("double spaces");
@@ -3109,7 +3109,7 @@ function cvAnalyze(text, target){
     const have=keys.filter(k=>low.includes(k)), miss=keys.filter(k=>!low.includes(k));
     const mscore=keys.length?Math.round(have.length/keys.length*100):0;
     R.target={score:mscore, missing:miss.slice(0,12)};
-    if(keys.length && mscore<55) fix("Tailor this CV to the role","Your CV picks up only "+mscore+"% of the words this brief leans on. Weave in the ones that are genuinely true of you (below), in the line and the relevant roles.","",2);
+    if(keys.length && mscore<55) fix("Tailor this resume to the role","Your resume picks up only "+mscore+"% of the words this brief leans on. Weave in the ones that are genuinely true of you (below), in the line and the relevant roles.","",2);
   }
 
   // ---------- FINAL SCORE ----------
@@ -3132,9 +3132,9 @@ function cvAnalyze(text, target){
 
 function cvWrittenNote(R){
   const s=R.score, rv=[];
-  rv.push(s>=85?"This is a strong CV. It reads the way a family office wants it to, verifiable and restrained, and needs only a light polish before you send it."
-    : s>=65?"There is a good CV in here. The bones are right, and a few specific changes will lift it into genuinely agency-ready territory."
-    : "This CV is not quite ready to send yet, and that is normal; almost nobody’s first draft is. The encouraging part: everything holding it back is fixable, and fast.");
+  rv.push(s>=85?"This is a strong resume. It reads the way a family office wants it to, verifiable and restrained, and needs only a light polish before you send it."
+    : s>=65?"There is a good resume in here. The bones are right, and a few specific changes will lift it into genuinely agency-ready territory."
+    : "This resume is not quite ready to send yet, and that is normal; almost nobody’s first draft is. The encouraging part: everything holding it back is fixable, and fast.");
   const lowest=R.cats.slice().sort((a,b)=>a.v-b.v)[0];
   if(lowest && lowest.v<80) rv.push("Your weakest dimension right now is <b>"+lowest.l.toLowerCase()+"</b> ("+lowest.v+"/100), that is where the fixes below move the needle most. The family office reads first for verifiability and restraint.");
   if(R.fixes.length) rv.push("Start with the top "+Math.min(3,R.fixes.length)+": "+R.fixes.slice(0,3).map(f=>f.t.replace(/^⚠\s*/,'').toLowerCase()).join("; ")+".");
@@ -3150,17 +3150,17 @@ function renderCvResult(R){
   const fixHtml=R.fixes.length?R.fixes.map(f=>'<div class="cv-item"><div class="it-t">'+cvEsc(f.t)+(f.imp>=3?'<span class="cv-imp">high impact</span>':'')+'</div><div class="it-d">'+f.d+'</div>'+(f.ex?'<div class="it-ex">'+f.ex+'</div>':'')+'</div>').join(''):'<div class="cv-mini">Nothing major to fix. Impressive.</div>';
   const strongHtml=R.strengths.length?'<div class="cv-group g-strong"><h3>✓ Strengths</h3>'+R.strengths.map(s=>'<div class="cv-mini">'+s+'</div>').join('')+'</div>':'';
   const flagsHtml=R.flags.length?'<div class="cv-group g-fix"><h3>⌖ Lines to rewrite</h3>'+R.flags.map(f=>'<div class="cv-flag"><div class="cv-flag-q">'+cvEsc(f.q)+'</div><div class="cv-flag-s">'+f.s+'</div></div>').join('')+'</div>':'';
-  const compsHtml='<div class="cv-group"><h3>◇ Competency coverage</h3><div class="cv-comps">'+R.comps.map(c=>'<span class="cv-comp '+(c.on?'on':'off')+'"><span class="d"></span>'+cvEsc(c.name)+'</span>').join('')+'</div><div class="cv-mini" style="border:none;padding-top:12px;">Filled chips are evidenced in your CV. Faded ones are worth adding <i>where they are true</i>, households hire on the breadth they can see.</div></div>';
+  const compsHtml='<div class="cv-group"><h3>◇ Competency coverage</h3><div class="cv-comps">'+R.comps.map(c=>'<span class="cv-comp '+(c.on?'on':'off')+'"><span class="d"></span>'+cvEsc(c.name)+'</span>').join('')+'</div><div class="cv-mini" style="border:none;padding-top:12px;">Filled chips are evidenced in your resume. Faded ones are worth adding <i>where they are true</i>, households hire on the breadth they can see.</div></div>';
   const consHtml='<div class="cv-group g-consider"><h3>◆ Always remember (Week 7)</h3>'+R.reminders.map(s=>'<div class="cv-mini">'+s+'</div>').join('')+'</div>';
   let targetHtml='';
   if(R.target){ const tc=R.target.score>=70?'cv-good':R.target.score>=45?'cv-mid':'cv-low';
-    targetHtml='<div class="cv-seck">Match to the role you pasted</div><div class="cv-match '+tc+'"><div class="cv-ring" style="background:conic-gradient(var(--gold) '+(R.target.score*3.6)+'deg, var(--line) 0deg);"><div style="width:64px;height:64px;border-radius:50%;background:var(--paper);display:flex;align-items:center;justify-content:center;"><span class="cv-match-n">'+R.target.score+'<span style="font-size:14px;color:var(--stone)">%</span></span></div></div><div style="flex:1;min-width:220px;"><div class="cv-band" style="font-size:20px;margin-bottom:4px;">'+(R.target.score>=70?'Strong match':R.target.score>=45?'Partial match':'Weak match')+'</div>'+(R.target.missing.length?'<div class="cv-sub" style="margin-bottom:7px;">Words this brief leans on that your CV is missing, add the ones that are true of you:</div><div class="cv-miss">'+R.target.missing.map(m=>'<span>'+cvEsc(m)+'</span>').join('')+'</div>':'<div class="cv-sub">Your CV already covers the language of this brief well.</div>')+'</div></div>';
+    targetHtml='<div class="cv-seck">Match to the role you pasted</div><div class="cv-match '+tc+'"><div class="cv-ring" style="background:conic-gradient(var(--gold) '+(R.target.score*3.6)+'deg, var(--line) 0deg);"><div style="width:64px;height:64px;border-radius:50%;background:var(--paper);display:flex;align-items:center;justify-content:center;"><span class="cv-match-n">'+R.target.score+'<span style="font-size:14px;color:var(--stone)">%</span></span></div></div><div style="flex:1;min-width:220px;"><div class="cv-band" style="font-size:20px;margin-bottom:4px;">'+(R.target.score>=70?'Strong match':R.target.score>=45?'Partial match':'Weak match')+'</div>'+(R.target.missing.length?'<div class="cv-sub" style="margin-bottom:7px;">Words this brief leans on that your resume is missing, add the ones that are true of you:</div><div class="cv-miss">'+R.target.missing.map(m=>'<span>'+cvEsc(m)+'</span>').join('')+'</div>':'<div class="cv-sub">Your resume already covers the language of this brief well.</div>')+'</div></div>';
   }
   box.innerHTML='<div class="cv-res '+band[0]+'">'
     +'<div class="cv-top"><div class="cv-ring" style="background:conic-gradient(var(--gold) '+(R.score*3.6)+'deg, var(--line) 0deg);"><div style="width:80px;height:80px;border-radius:50%;background:var(--paper);display:flex;flex-direction:column;align-items:center;justify-content:center;"><span class="cv-num">'+R.score+'</span><span style="font-family:\'Jost\',sans-serif;font-size:10px;color:var(--stone);margin-top:-4px;">/ 100</span></div></div>'
     +'<div class="cv-tt"><div class="cv-band">'+band[1]+'</div><div class="cv-sub">'+R.stats.words+' words · ~'+R.stats.pages+' page'+(R.stats.pages>=1.5?'s':'')+' · scored on the Week 7 rubric</div></div></div>'
     +'<div class="cv-cats">'+cats+'</div>'
-    +'<div class="cv-review"><div class="cv-review-k">A note on your CV</div>'+cvWrittenNote(R)+'</div>'
+    +'<div class="cv-review"><div class="cv-review-k">A note on your resume</div>'+cvWrittenNote(R)+'</div>'
     +targetHtml
     +'<div class="cv-seck">Your priorities</div><div class="cv-cols"><div class="cv-group g-fix"><h3>→ Fix these, in order</h3>'+fixHtml+'</div>'+strongHtml+'</div>'
     +(flagsHtml?('<div class="cv-seck">Line by line</div><div class="cv-cols">'+flagsHtml+'</div>'):'')
@@ -3171,7 +3171,7 @@ function renderCvResult(R){
 function analyzeCV(){
   const raw=(document.getElementById('cvInput').value||'').trim();
   const box=document.getElementById('cvResult');
-  if(raw.length<60){ box.innerHTML='<div class="cv-empty">Paste a little more of your CV, at least a few lines, to get a proper read.</div>'; return; }
+  if(raw.length<60){ box.innerHTML='<div class="cv-empty">Paste a little more of your resume, at least a few lines, to get a proper read.</div>'; return; }
   const tEl=document.getElementById('cvTarget');
   const R=cvAnalyze(raw, (tEl&&tEl.value)||'');
   renderCvResult(R);
@@ -3343,7 +3343,7 @@ const PRACTICE = [
  {no:6, title:"The map of the market", type:"quiz", items:[
    {stem:"How are the best private-service roles usually filled?", options:[
      {t:"Through public job boards and open applications.", ok:false, fb:"Rarely. The best roles are filled before they are ever advertised."},
-     {t:"Through trust, referral, and a handful of specialist agencies.", ok:true, fb:"This is why the map, and how you enter it, matters more than a CV blast."},
+     {t:"Through trust, referral, and a handful of specialist agencies.", ok:true, fb:"This is why the map, and how you enter it, matters more than a resume blast."},
      {t:"Through social media adverts.", ok:false, fb:"No. This world is discreet and hires quietly."}]},
    {stem:"A 'family office' is:", options:[
      {t:"The room where the family works.", ok:false, fb:"It is an organization, not a room."},
@@ -3353,7 +3353,7 @@ const PRACTICE = [
      {t:"Eager and available, applying to everything.", ok:false, fb:"Reads as unselective and slightly desperate. Not the register of this world."},
      {t:"Discreet, poised, and clear about the specific value you offer.", ok:true, fb:"Agencies place people they would trust in a home. Poise is part of the qualification."},
      {t:"Impressive: list every skill and every famous person you have met.", ok:false, fb:"Name-dropping breaks the very discretion they are screening for."}]},
-   {stem:"A gap in your CV from a confidential household is best presented as:", options:[
+   {stem:"A gap in your resume from a confidential household is best presented as:", options:[
      {t:"Left blank to avoid awkward questions.", ok:false, fb:"A blank invites worse suspicion. Handle it, do not hide it."},
      {t:"Private household, dates, scope; bound by confidentiality, reference via the family office.", ok:true, fb:"Framed this way, the confidential role becomes a credential, not a hole."},
      {t:"Explained in full detail to prove it is real.", ok:false, fb:"Detail is the one thing you must not give. The discretion is the proof."}]},
@@ -3366,7 +3366,7 @@ const PRACTICE = [
      {t:"Vouch for you to a family, staking their own reputation.", ok:true, fb:"They place people they would trust in a home. That is why poise is part of qualifying."},
      {t:"Negotiate the highest salary for you.", ok:false, fb:"They serve the placement fit first, not your maximum number."}]},
    {stem:"When registering with several agencies, you should:", options:[
-     {t:"Exaggerate slightly to stand out on each.", ok:false, fb:"A consultant has seen ten thousand CVs. Inflation is spotted, and you are quietly dropped."},
+     {t:"Exaggerate slightly to stand out on each.", ok:false, fb:"A consultant has seen ten thousand resumes. Inflation is spotted, and you are quietly dropped."},
      {t:"Be consistent, honest and specific across all of them.", ok:true, fb:"Consistency and truth are checkable, and being checkable is your advantage."},
      {t:"Tell each one you are exclusive to them.", ok:false, fb:"A lie that unravels the moment they compare notes."}]},
    {stem:"The strongest introduction into a household comes from:", options:[
@@ -3383,7 +3383,7 @@ const PRACTICE = [
      {t:"Whether you are the most impressive candidate.", ok:false, fb:"Impressiveness is not the question, and can even work against you."},
      {t:"Whether they will regret you: whether you are safe, discreet and easy to live with.", ok:true, fb:"They are checking for reassurance, not brilliance."},
      {t:"Whether you have the most experience.", ok:false, fb:"Experience helps, but it is not what the first impression is testing."}]},
-   {scene:"The CV", stem:"Which line belongs on a private-service CV?", options:[
+   {scene:"The resume", stem:"Which line belongs on a private-service resume?", options:[
      {t:"'Passionate, dynamic, dedicated professional.'", ok:false, fb:"Empty adjectives every candidate writes. They take the space evidence should fill."},
      {t:"'Coordinated travel for a family of five across three residences, including private aviation.'", ok:true, fb:"A checkable fact, not a claim. That is exactly the register that earns a callback."},
      {t:"'References: a well-known royal family.'", ok:false, fb:"Pointing to a confidential principal, even vaguely, is disqualifying."}]},
@@ -3407,14 +3407,14 @@ const PRACTICE = [
      {t:"State it, and let it anchor the offer low.", ok:false, fb:"Past pay need not define future worth. Redirect to the value of this role."},
      {t:"Speak to the market value of the role and your researched expectation.", ok:true, fb:"Calm, evidence-based, forward-looking. You set a fair anchor without dishonesty."},
      {t:"Refuse to answer at all.", ok:false, fb:"Flat refusal reads as awkward. Redirect gracefully instead."}]},
-   {scene:"The photograph", stem:"On a private-service CV, a photo should be:", options:[
+   {scene:"The photograph", stem:"On a private-service resume, a photo should be:", options:[
      {t:"A glamorous, stylised portrait.", ok:false, fb:"Glamour is the wrong register. This is a document, not a portfolio."},
      {t:"Simple, professional and understated, if included at all.", ok:true, fb:"Understated and neat, matching the quiet tone of the whole document."},
      {t:"A casual holiday snap to seem approachable.", ok:false, fb:"Too casual undercuts your seriousness. Keep it professional."}]},
    {scene:"Why they will regret you", stem:"The single question behind every interview is:", options:[
      {t:"Are you the most talented candidate?", ok:false, fb:"Talent helps, but it is not the fear they are testing."},
      {t:"Will we regret letting this person into our private life?", ok:true, fb:"Everything you do in the room either soothes or feeds that fear. Aim to soothe it."},
-     {t:"Do you have the longest CV?", ok:false, fb:"Length is not the question. Safety and fit are."}]}
+     {t:"Do you have the longest resume?", ok:false, fb:"Length is not the question. Safety and fit are."}]}
  ]},
  {no:8, title:"Your first ninety days", type:"scenario", items:[
    {scene:"The first fortnight", stem:"In your first two weeks in a new house you spot six things done badly. You:", options:[
@@ -4015,7 +4015,7 @@ const WEEKS = [
    obj:"Skills need access. This week gives you the map and the method to build your own network, the tools, not a ready-made address book.",
    lessons:[["Watch and read the lesson","Video · 21 min","video"],["Read the insider codes","Confidential note","note"],["Do the practice","Network mapping","task"],["Create your deliverable","Your market entry plan","file"]]},
   {no:7, pillar:"Savoir-faire", title:"Your Candidacy", sub:"Presenting yourself to a world that does not like to be sold to.", codeTitle:"How to be chosen without ever selling yourself",
-   obj:"This week we build the dossier that opens interviews: your CV, your letter, your references, and the composure to sit in front of a family or an agency without ever appearing to sell.",
+   obj:"This week we build the dossier that opens interviews: your resume, your letter, your references, and the composure to sit in front of a family or an agency without ever appearing to sell.",
    lessons:[["Watch and read the lesson","Video · 20 min","video"],["Read the insider codes","Confidential note","note"],["Do the practice","Mock interview & references","task"],["Create your deliverable","Your complete candidacy dossier","file"]]},
   {no:8, pillar:"All pillars", title:"Your First Ninety Days", sub:"Entering a house, and being kept.", codeTitle:"The first ninety days inside a house",
    obj:"Getting in is not the achievement. Being kept is. This week is the method for your first ninety days: learning a house, earning its trust, and never losing it.",
@@ -4809,7 +4809,7 @@ var FINAL_EXAM = [
   { wk:3, q:"“Presence without intrusion” is the signature ideal of:", a:["Fine front-of-house personal service, the butler and its kin","The chef","The security detail","The family office"], c:0, fb:"To be available and anticipatory without ever imposing yourself is the whole art of personal service." },
   { wk:3, q:"In a private household, an NDA should be treated as:", a:["The floor, not the ceiling: you would behave the same even without it","A formality you sign and forget","Optional once the family clearly trusts you","A document that expires when you leave"], c:0, fb:"The professionals worth hiring act as though one existed even where none was signed." },
   { wk:3, q:"A journalist contacts you asking about your employer. You:", a:["Give a harmless, positive comment to protect their image","Ignore it and tell no one","Decline entirely, and report the contact to the family office","Ask what they already know before deciding"], c:2, fb:"Any comment at all is a breach; decline, and let the household know it happened, because journalists count on a friendly slip." },
-  { wk:3, q:"Trust in a household is built mainly through:", a:["One grand gesture that proves your worth","A thousand small, consistent, reliable moments","Being liked by everyone in the house","A long and impressive CV"], c:1, fb:"Reliability repeated is what earns deep trust, and it can break in a single lapse." },
+  { wk:3, q:"Trust in a household is built mainly through:", a:["One grand gesture that proves your worth","A thousand small, consistent, reliable moments","Being liked by everyone in the house","A long and impressive resume"], c:1, fb:"Reliability repeated is what earns deep trust, and it can break in a single lapse." },
   { wk:3, q:"You realize you made an error that only you know about. You:", a:["Fix it quietly and never mention it","Disclose it plainly, with the fix already in hand","Wait to see if anyone notices","Prepare an explanation in case it comes up"], c:1, fb:"Fact, fix, ownership; trust survives an honest mistake but rarely survives a hidden one." },
   { wk:3, q:"The right inner posture toward the people you serve is:", a:["Servile: do whatever is asked, with no view of your own","An equal free to push back on anything","A professional serving from a place of pride and judgment","Deferential to the point of never speaking"], c:2, fb:"Dignity on both sides: you serve well because you are good at it, not because you are small." },
   { wk:3, q:"The safest rule for anything you see inside the home is:", a:["It can be shared if it is not embarrassing","It can be shared once you have left the role","It is fine to share with close family only","It stays inside the walls, full stop"], c:3, fb:"Assume everything is confidential; that single reflex prevents most disasters." },
@@ -4841,30 +4841,30 @@ var FINAL_EXAM = [
   { wk:5, q:"Logistics and travel almost always fail:", a:["At the handovers, the seams between one link and the next","In the middle of a journey","At the very start, before departure","Only when the weather turns"], c:0, fb:"At every seam there must be a named person on both sides who have each other’s number and have spoken before the day." },
   { wk:5, q:"On a chartered yacht, the captain’s authority is such that you:", a:["Instruct him on the principal’s behalf","Deal only with the broker and never the captain","Negotiate the route directly with him","Pass on the principal’s wishes and ask what is possible"], c:3, fb:"The captain has absolute authority aboard, in law; you ask what is possible, you do not instruct." },
   { wk:5, q:"The figure that catches everyone on a yacht charter is that the price you present should be:", a:["The all-in figure: charter fee, APA and VAT, separated then totalled","The charter fee alone, as quoted","The charter fee plus a rough guess for extras","Whatever the broker first mentions"], c:0, fb:"The APA and VAT can lift a $200,000 week close to $290,000 before a tip; always present the all-in figure in writing." },
-  { wk:6, q:"The best private-service roles are usually filled through:", a:["Public job boards and open applications","Social media advertising","Mass mailing of CVs to family offices","Trust, referral, and a handful of specialist agencies"], c:3, fb:"This world hires quietly; the best roles are filled before they are ever advertised." },
+  { wk:6, q:"The best private-service roles are usually filled through:", a:["Public job boards and open applications","Social media advertising","Mass mailing of resumes to family offices","Trust, referral, and a handful of specialist agencies"], c:3, fb:"This world hires quietly; the best roles are filled before they are ever advertised." },
   { wk:6, q:"When you approach a specialist agency, the impression to give is:", a:["Eager and available, applying to everything","Impressive: every skill and every famous person you have met","Flexible on absolutely everything, to seem easy","Discreet, poised, and clear about the specific value you offer"], c:3, fb:"Agencies place people they would trust in a home; poise is part of the qualification, and name-dropping breaks the very discretion they screen for." },
-  { wk:6, q:"A gap in your CV from a confidential household is best presented as:", a:["Left blank to avoid awkward questions","Explained in full detail to prove it is real","Filled with an unrelated job to look continuous","Private household, dates and scope; bound by confidentiality, reference via the family office"], c:3, fb:"Framed this way, the confidential role becomes a credential rather than a hole, and it shows you keep your word." },
+  { wk:6, q:"A gap in your resume from a confidential household is best presented as:", a:["Left blank to avoid awkward questions","Explained in full detail to prove it is real","Filled with an unrelated job to look continuous","Private household, dates and scope; bound by confidentiality, reference via the family office"], c:3, fb:"Framed this way, the confidential role becomes a credential rather than a hole, and it shows you keep your word." },
   { wk:6, q:"A specialist agency’s real job, when it puts you forward, is to:", a:["Find you any role as quickly as possible","Negotiate you the highest possible salary","Vouch for you to a family, staking its own reputation","Coach you through the interview"], c:2, fb:"They place people they would trust in a home; that is why your poise is itself part of qualifying." },
-  { wk:6, q:"When registering with several agencies, you should:", a:["Be consistent, honest and specific across all of them","Exaggerate slightly to stand out on each","Tell each that you are exclusive to them","Emphasise different, contradictory strengths to each"], c:0, fb:"A consultant has seen ten thousand CVs; consistency and truth are checkable, and being checkable is your advantage." },
+  { wk:6, q:"When registering with several agencies, you should:", a:["Be consistent, honest and specific across all of them","Exaggerate slightly to stand out on each","Tell each that you are exclusive to them","Emphasise different, contradictory strengths to each"], c:0, fb:"A consultant has seen ten thousand resumes; consistency and truth are checkable, and being checkable is your advantage." },
   { wk:6, q:"The strongest introduction into a household comes from:", a:["A cold application to a job post","A trusted person already inside this world vouching for you","A large social media following","A perfectly written cover letter"], c:1, fb:"A warm referral is worth more than any advert; the door is trust, not a job board." },
-  { wk:6, q:"Understanding the market’s layers, the agency layer is filled:", a:["By whoever applies fastest to the listing","From a folder of people the agency already knows","Purely by salary expectation","At random from the CV pile"], c:1, fb:"The agency opens a folder of people it already knows; being in the folder before the role exists is the entire game." },
+  { wk:6, q:"Understanding the market’s layers, the agency layer is filled:", a:["By whoever applies fastest to the listing","From a folder of people the agency already knows","Purely by salary expectation","At random from the resume pile"], c:1, fb:"The agency opens a folder of people it already knows; being in the folder before the role exists is the entire game." },
   { wk:6, q:"The sentence “I know her, she is good”, said by a consultant to a family, matters because:", a:["It flatters the candidate","It moves the same person and the same letter out of the pile entirely","It guarantees a higher salary","It replaces the need for references"], c:1, fb:"Same person, same letter, entirely different market; that sentence is what the week teaches you to earn." },
   { wk:6, q:"Approaching this market, patience is:", a:["A weakness; move fast and apply everywhere","Irrelevant; it is purely luck","A strength; the right role is worth waiting and preparing for","A sign you are not serious"], c:2, fb:"Spraying applications reads as unselective; poise and patience are themselves part of the qualification." },
   { wk:6, q:"In the private-service calendar, January and February are notable because:", a:["Nothing moves until spring","Households are closed and unreachable","Only summer roles are filled then","Families reorganize for the year and agencies are busy and receptive"], c:3, fb:"It is one of the best moments to make yourself visible, as hiring for the year gets under way." },
-  { wk:6, q:"Most private roles are never advertised because:", a:["Families are too busy to post them","This world hires through trust and referral, quietly","The roles do not really exist","Advertising is prohibited by law"], c:1, fb:"They very much exist; they simply move through private channels, which is why the map matters more than a CV blast." },
+  { wk:6, q:"Most private roles are never advertised because:", a:["Families are too busy to post them","This world hires through trust and referral, quietly","The roles do not really exist","Advertising is prohibited by law"], c:1, fb:"They very much exist; they simply move through private channels, which is why the map matters more than a resume blast." },
   { wk:6, q:"In this market, the most useful way to think about your search is:", a:["Finding and winning an advertised job","Making sure the right thing is said about you when your name comes up in a room you are not in","Collecting as many agency registrations as possible","Being the cheapest credible candidate"], c:1, fb:"The method of the week is making that happen deliberately rather than by luck." },
   { wk:6, q:"You brought a supplier into a household; another the family has used for twenty years. Whose contacts are yours to take onward?", a:["Only the supplier you introduced; long-standing household suppliers are household information","Both, since you managed them","Neither; all contacts belong to the agency","Whichever ones you used most often"], c:0, fb:"A supplier you brought in stays in your book; a family’s long-held suppliers are theirs, not yours to carry away." },
   { wk:7, q:"At this level, the ordinary rules of applying invert. The market rewards:", a:["Visible enthusiasm and a strong pitch","Ambition, clearly stated","Being memorable at any cost","Composure and verifiability over persuasion"], c:3, fb:"They are not weighing your argument; they are checking whether you are safe." },
   { wk:7, q:"The single question a household is really answering about you is:", a:["Whether they will regret you","Whether you are impressive","Whether you will stay cheap","Whether you will be entertaining"], c:0, fb:"Impressiveness does not answer it, and very often makes it worse." },
-  { wk:7, q:"The private-service CV should be:", a:["Three pages, richly designed, with a photograph","Two pages, no adjectives, scope not duties, everything verifiable","A one-page marketing pitch with a personal brand","A detailed portfolio of every task performed"], c:1, fb:"It is evidence a busy person can check in minutes and find nothing that worries them." },
-  { wk:7, q:"Naming a former principal on your CV is:", a:["Acceptable if that family would not mind","Fine as long as you note the dates","A complete disqualification, and the most common fatal error","Expected, to prove the role was real"], c:2, fb:"The discretion is the proof; naming a family, even a willing one, disqualifies you on its own." },
-  { wk:7, q:"For a confidential role you cannot name, the correct CV entry gives:", a:["A blank with no explanation","The employer’s initials as a hint","Location, level, dates and scope, bound by confidentiality, reference via the family office","A full account to demonstrate honesty"], c:2, fb:"It is complete, honest, names nobody, and tells a serious reader that you keep your word." },
+  { wk:7, q:"The private-service resume should be:", a:["Three pages, richly designed, with a photograph","Two pages, no adjectives, scope not duties, everything verifiable","A one-page marketing pitch with a personal brand","A detailed portfolio of every task performed"], c:1, fb:"It is evidence a busy person can check in minutes and find nothing that worries them." },
+  { wk:7, q:"Naming a former principal on your resume is:", a:["Acceptable if that family would not mind","Fine as long as you note the dates","A complete disqualification, and the most common fatal error","Expected, to prove the role was real"], c:2, fb:"The discretion is the proof; naming a family, even a willing one, disqualifies you on its own." },
+  { wk:7, q:"For a confidential role you cannot name, the correct resume entry gives:", a:["A blank with no explanation","The employer’s initials as a hint","Location, level, dates and scope, bound by confidentiality, reference via the family office","A full account to demonstrate honesty"], c:2, fb:"It is complete, honest, names nobody, and tells a serious reader that you keep your word." },
   { wk:7, q:"In the application letter, a gap, short tenure or unnameable house should be:", a:["Left for the interview, in case it never comes up","Addressed by you, in one calm sentence, without apology","Explained across a full paragraph of context","Hidden as thoroughly as possible"], c:1, fb:"The candidate who raises it first is a candidate in control of their own history." },
   { wk:7, q:"The tone of the letter should be warm, precise and:", a:["Grateful and eager","Ambitious and forward-looking","Entirely without need","Detailed and comprehensive"], c:2, fb:"Need is always audible in writing, and it is the most damaging quality a candidate can transmit, because a household is buying calm." },
   { wk:7, q:"Before giving a referee’s name, you should:", a:["Call them first, explain the role and profile, and say when to expect the call","Let them be surprised, so the reference sounds spontaneous","Only tell them afterwards, once the call has happened","Send their number and let the office handle it"], c:0, fb:"A referee who is surprised sounds hesitant, and hesitation is read as the answer." },
-  { wk:7, q:"A referee’s contact details should be given:", a:["On the CV itself, so they are easy to reach","Only when asked, to a named person, for a specific role","On a document that circulates, to save time","To every agency you register with"], c:1, fb:"A referee who receives calls about roles you never mentioned will quietly stop being your referee." },
-  { wk:7, q:"The interview with the principal or their partner is really testing:", a:["Your technical knowledge, in detail","Your salary expectations","How much you know about their family","Whether they could have this person in their house every day, for years, without thinking about it"], c:3, fb:"It will feel like a pleasant conversation and may barely touch your CV; it is the most consequential interview of your life." },
-  { wk:7, q:"The interview with the family office is characterised by:", a:["Warmth and charm you can win over","A quick, informal chat","A focus on your personality above all","A forensic, unsentimental check of competence, verifiability and stability"], c:3, fb:"They will go through your CV forensically and ask about money, contracts, notice and visas; the coldness is the function, not the person." },
+  { wk:7, q:"A referee’s contact details should be given:", a:["On the resume itself, so they are easy to reach","Only when asked, to a named person, for a specific role","On a document that circulates, to save time","To every agency you register with"], c:1, fb:"A referee who receives calls about roles you never mentioned will quietly stop being your referee." },
+  { wk:7, q:"The interview with the principal or their partner is really testing:", a:["Your technical knowledge, in detail","Your salary expectations","How much you know about their family","Whether they could have this person in their house every day, for years, without thinking about it"], c:3, fb:"It will feel like a pleasant conversation and may barely touch your resume; it is the most consequential interview of your life." },
+  { wk:7, q:"The interview with the family office is characterised by:", a:["Warmth and charm you can win over","A quick, informal chat","A focus on your personality above all","A forensic, unsentimental check of competence, verifiability and stability"], c:3, fb:"They will go through your resume forensically and ask about money, contracts, notice and visas; the coldness is the function, not the person." },
   { wk:7, q:"A distinctive, rarely-included element of a complete candidacy dossier is:", a:["A confidentiality statement, in your own words, on how you handle information","A cover photograph","A list of every course you have taken","A personal mission statement"], c:0, fb:"At this level it is read very carefully, because how you handle information is the entire question." },
   { wk:8, q:"The objective of the first ninety days in a house is to become:", a:["The person who improves everything quickly","The most visible member of staff","Indispensable by being the only one who knows","The person nobody has to think about"], c:3, fb:"It is an unglamorous ambition and the correct one; the people who grasp it in month one are still there in year five." },
   { wk:8, q:"In truth, the first ninety days are:", a:["A trial that nobody will describe to you as a trial, with no feedback until a settled view forms","A settling-in period with formal reviews along the way","A grace period where mistakes do not count","A time to demonstrate everything you learned"], c:0, fb:"There will be an accumulation of small observations and then, one day, a settled view that will not be revisited." },
@@ -7201,8 +7201,8 @@ const TOUR_STEPS=[
   {page:'program', sel:'.nav-item[data-page="program"]:not([data-scroll])', k:'My Program', title:'My Program', body:'Your eight weeks. Each opens a module with a lesson to watch and read, the insider codes, a practice, and one deliverable to send me. Complete at least half of a week\'s practice to unlock the next module.'},
   {page:'practice', sel:'.nav-item[data-page="practice"]', k:'Practice', title:'Practice', body:'Short, playful exercises to make each week stick, with points, badges and best scores. Replay them as often as you like.'},
   {page:'career', sel:'.nav-item[data-page="career"]', k:'Career Hub', title:'Career Hub', body:'Real, live roles from the agencies of this world, plus the boards to search yourself. Your own starting points for outreach.'},
-  {page:'cv', sel:'.nav-item[data-page="cv"]', k:'CV Review', title:'CV Review', body:'Upload your CV and get an instant, honest read on what to fix before you send it anywhere.'},
-  {page:'vault', sel:'.nav-item[data-page="vault"]', k:'The Vault', title:'The Vault', body:'Your reference library: the toolkit, the casebook, cultural fluency, the CV and more. Read them here, or download them.'},
+  {page:'cv', sel:'.nav-item[data-page="cv"]', k:'Resume Review', title:'Resume Review', body:'Upload your resume and get an instant, honest read on what to fix before you send it anywhere.'},
+  {page:'vault', sel:'.nav-item[data-page="vault"]', k:'The Vault', title:'The Vault', body:'Your reference library: the toolkit, the casebook, cultural fluency, the resume and more. Read them here, or download them.'},
   {page:'library', sel:'.nav-item[data-page="library"]', k:'Codes Library', title:'Codes Library', body:'The vocabulary and codes of the private world, defined plainly, so you always know how to speak.'},
   {page:'register', sel:'.nav-item[data-page="register"]', k:'The Register', title:'The Register', body:'The houses and agencies that set the standard of this world. Know them the way an insider does.'},
   {page:'journal', sel:'.nav-item[data-page="journal"]', k:'The Journal', title:'The Journal', body:'Your daily briefing on the private service world, refreshed every day. All the news of the sector, so you are always current on who and what matters.'},
