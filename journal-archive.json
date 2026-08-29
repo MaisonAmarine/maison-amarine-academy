@@ -1,5 +1,82 @@
 [
   {
+    "no": "No. 38",
+    "date": "Friday, 28 August 2026",
+    "strap": "A daily dispatch from the world you are entering",
+    "lead": {
+      "cat": "The Private World",
+      "place": "Zurich, Switzerland",
+      "tag": "The alpine split",
+      "title": "Swiss mountain property rises 6 per cent while the lakes reach a plateau, and the chalet stops being a seasonal house",
+      "standfirst": "The annual UBS study of Swiss luxury property finds Alpine prices climbing twice as fast as the national average, driven by foreign buyers who treat a chalet as a holding rather than a holiday.",
+      "body": "UBS Chief Investment Office publishes an annual survey of the Swiss luxury property landscape, and the 2026 edition describes a market that has split in two. Across the 31 top locations the bank tracks, luxury prices rose by an average of just over 3 per cent in 2025. That was a slowdown on the previous year and, unusually, slightly weaker than price growth in the broader owner-occupied market. The mountains did not slow. Luxury prices in the Alpine resorts rose 6 per cent, faster than the year before, and the bank attributes the difference almost entirely to buyers from abroad.\n\nThe price levels are worth reading precisely, because they set the operating scale of the houses attached to them. St. Moritz is now the most expensive luxury location in Switzerland at an average of about CHF 52,000 per square metre. Gstaad and Verbier follow at roughly CHF 45,000. Outside the mountains the highest prices are on Lake Geneva, where Cologny averages CHF 43,000, and on Lake Zurich, where Küsnacht averages CHF 37,000. In practical terms, a 150 square metre apartment in a good position with a high specification costs from CHF 4 million to CHF 5 million, and a single family house standing on more than 1,000 square metres of land moves quickly past CHF 10 million.\n\nOver the past five years, Swiss luxury prices have risen by just under 5 per cent a year on average, and mountain property is now around 40 per cent more expensive than it was five years ago, the strongest gain of any Swiss region. The bank puts much of this down to domestic wealth creation alongside foreign demand. Switzerland currently has about 50 per cent more taxpayers declaring assets above CHF 10 million than it did in 2019, an increase of nearly 10,000 people. Measured internationally, St. Moritz leads the ranking, Monaco is second and Aspen third, with average luxury prices in all three of at least USD 60,000 per square metre and six figure prices per square metre no longer uncommon in the best micro locations.\n\nThe outlook is the part that will shape hiring. UBS expects 2026 to be weaker than recent years. Slow economic conditions and declining affordability for luxury apartments in the mid single digit millions are likely to weigh on demand, and in the primary-home markets on Lake Geneva and Lake Zurich the bank believes a price plateau has already been reached in many places. The mountains are the exception it does not expect to reverse, because the buyers there are foreign, largely insensitive to price, and increasingly regard a vacation home as an investment asset. The strongest global gains in 2025 were recorded in the Middle East, but the bank expects demand to refocus on classic locations with high political stability, which keeps Switzerland at the front of the queue.",
+      "why": "A chalet held as an asset is kept ready rather than opened for a fortnight in February. That turns seasonal caretaking into year round household management, with permanent staff, standing supplier accounts and a house that must be presentable for a principal who may arrive at short notice, or not at all.",
+      "src": "UBS Chief Investment Office, Luxury Property Focus 2026",
+      "url": "https://www.ubs.com/global/en/media/display-page-ndp/en-20260506-luxury-real-estate.html"
+    },
+    "articles": [
+      {
+        "cat": "The Craft",
+        "place": "London",
+        "tag": "The cost of a gate",
+        "section": "The Craft",
+        "title": "Residential security in prime central London settles at £35,000 to £85,000 a year, and the house manager is the one who administers the contract",
+        "body": "A market guide published in July by Priority First, a London building management and security firm, and updated at the beginning of August, puts a number on something the private house has been absorbing quietly. Comprehensive residential security in prime central London, meaning manned guarding, remote monitoring and integration with front of house, now costs from £35,000 to £85,000 a year. Properties in Mayfair, Belgravia and Knightsbridge are spending an average of £48,000. The market has grown markedly since 2023, and the firm notes that houses in the SW1, W1 and SW3 postcodes are disproportionately targeted because of perceived wealth concentration.\n\nThe largest component is people, not hardware. A single officer on a 12 hour shift costs from £180 to £320, depending on experience and the level of vetting required. A house that wants a physical presence around the clock is therefore committing between £131,400 and £233,600 a year in staffing alone, before management overhead, training or relief cover for holiday and sickness. Mobile patrols, typically two to four visits a night, run from £3,600 to £7,200 a year and are treated as a supplement to a resident presence rather than a replacement for it.\n\nEquipment is the smaller line. A full installation for a typical townhouse, covering perimeter detection, internal cameras, access control and alarms, costs from £25,000 to £65,000 to fit, with a further £4,800 to £9,600 a year for monitoring and maintenance and £6,000 to £15,000 for control room cover. Compliance sits on top of all of it. Every operative must hold a valid Security Industry Authority licence, and prime properties generally insist on BS7858 screening, which verifies five years of employment history alongside criminal record and credit checks. Cameras bring the house inside UK data protection law, with obligations on signage, retention periods and secure storage. Listed buildings add a further layer: Westminster's planning department reports that 43 per cent of security applications for Grade II listed properties require modification to meet heritage requirements.\n\nThe guide's working rule is 0.5 to 1.2 per cent of property value a year, weighted upward where a house holds a significant collection or accommodates a public figure. It also makes a point that will be familiar to anyone who has run a large household: security functions best when it is coordinated with maintenance and front of house rather than bought as an isolated service. Unlit paths, failed locks, compromised service entrances and overgrown planting that blocks a camera are found on maintenance rounds, not on patrol.",
+        "why": "Vetting files, licence expiry dates, control room escalation routes and visitor logs land on the desk of whoever runs the house. Reading a security quotation properly, and knowing which items sit outside the headline price, has become part of estate management rather than a specialism bought in.",
+        "src": "Priority First, Residential Security in Prime Central London 2026",
+        "url": "https://www.priorityfirst.co.uk/insights/best-residential-security-companies-prime-central-london"
+      },
+      {
+        "cat": "At Sea & In the Air",
+        "place": "United States",
+        "tag": "746 in six months",
+        "section": "At Sea & In the Air",
+        "title": "Pre-owned aircraft dealers close 746 transactions in six months, and the shelf a family buys from keeps getting shorter",
+        "body": "The International Aircraft Dealers Association reported 746 pre-owned business aircraft transactions by its accredited members in the first half of 2026, an increase of 21 per cent on the same period last year. A further 536 aircraft were placed under acquisition agreements during the six months, up 8 per cent. The trade is not simply brokering other people's aeroplanes: dealers took 118 aircraft into their own inventory, an increase of 87 per cent year on year and twice the figure recorded in the first half of 2024.\n\nThe pricing signal runs the same way. Dealers reported 67 price reductions over the period, 11 per cent fewer than a year earlier and the smallest number since the association began tracking the measure in 2023. Buying aircraft onto your own balance sheet and cutting fewer asking prices are both statements of confidence about resale, and they are being made at the same time.\n\nAMSTAT's analysis of the second quarter reaches the same conclusion from the supply side. Transactions rose 11.2 per cent year on year and ran about 14 per cent above the ten year average for the quarter, while listed turbine inventory finished June at 5.8 per cent of the active fleet, the lowest reading since February 2024 and well below the ten year norm of 7.2 per cent. For jets specifically the figure was 6.5 per cent against a norm of 8.1 per cent. The heavy jet segment, the category most relevant to long range private travel, was the strongest of all, with transactions up 43.8 per cent year on year.\n\nA tight second hand market changes the arithmetic of ownership. A family that would once have traded up within a season now finds the aircraft it wants is not listed at all, and the choice narrows to waiting for a new delivery or keeping the existing aeroplane in service for longer than planned. Both outcomes push work back onto the household rather than the dealer.",
+        "why": "When an aircraft cannot be replaced quickly, the one the family already has must be kept flying. Maintenance windows, crew retention and charter fallback shift from occasional decisions into standing responsibilities for whoever coordinates the principal's movements.",
+        "src": "Corporate Jet Investor, on IADA and AMSTAT data",
+        "url": "https://www.corporatejetinvestor.com/news/deals-increase-21-yoy-during-q2-2026-says-iada/"
+      },
+      {
+        "cat": "Objects & Culture",
+        "place": "London",
+        "tag": "Seven of eight",
+        "section": "Objects & Culture",
+        "title": "Seven of the eight largest watch brands hold their value better than in the spring, and the secondary market finds a floor",
+        "body": "The quarterly watch market review compiled by Morgan Stanley with WatchCharts, taken from a snapshot on 29 June 2026, found that seven of the eight brands it tracks improved their value retention against the first quarter. In plain terms, watches from those makers are being discounted less on the second hand market than they were three months earlier. After a long stretch in which the direction of travel was consistently downward, that is the first broad reversal in the data.\n\nThe movements themselves are modest. Secondary market prices rose quarter on quarter at Rolex, up 1.7 per cent, Patek Philippe, up 3.0 per cent, Cartier, up 1.9 per cent, and Omega, up 1.9 per cent. Nobody is describing this as a return to the conditions of 2021 and 2022, when waiting lists at authorised dealers were a form of currency. What has changed is that the secondary market has stopped acting as a discount channel for surplus supply.\n\nDiscontinuation still moves prices faster than anything else. Rolex confirmed at Watches and Wonders in 2026 that its Pepsi references were ending, and the stainless steel Ref. 126710BLRO gained close to 12 per cent in the first quarter, trading at around USD 22,500. Scarcity announced from the top of the house remains the most reliable driver of value in the category.\n\nFor a household, none of this is abstract. Watches are insured on scheduled valuations, carried between residences, occasionally worn to events that generate photographs, and periodically sold. A market that has stopped falling means replacement values quoted two years ago are now more likely to be too low than too high.",
+        "why": "Insurance schedules, travel inventories and safe records are usually maintained inside the house. When second hand values turn, the person keeping the collection log is the first to see that a valuation has gone stale and needs to be raised with the family office.",
+        "src": "WatchPro, on Morgan Stanley and WatchCharts data",
+        "url": "https://www.watchpro.com/rolex-prices-rise-again-on-secondary-market/"
+      }
+    ],
+    "briefs": [
+      {
+        "t": "The 35th show opens on 23 September",
+        "b": "The Monaco Yacht Show returns to Port Hercule from 23 to 26 September 2026 for its 35th edition, with more than 560 exhibitors expected by the opening. A new Designer Gallery, announced on 12 August, gives naval architects and interior designers a dedicated space alongside the shipyards, brokerage houses and management firms.",
+        "src": "Monaco Yacht Show",
+        "url": "https://www.monacoyachtshow.com/en/2026-exhibitor-list"
+      },
+      {
+        "t": "Departures back above 78,000",
+        "b": "Global private jet departures passed 78,000 in the week ending 9 August 2026, an increase of 2.3 per cent on the same week last year and the first year on year gain in three weeks. A 4 per cent rise in United States flights carried the increase, returning the year to date trend to roughly 4 per cent ahead of 2025.",
+        "src": "Private Jet Card Comparisons",
+        "url": "https://privatejetcardcomparisons.com/2026/08/14/private-jet-flight-activity-analysis-2026-week-32/"
+      },
+      {
+        "t": "A third of family offices struggled to hire",
+        "b": "Botoff Consulting's 2026 compensation and talent planning survey, drawing on 365 family offices, family investment firms and private trust companies, found that more than a third reported recruiting difficulties over the past year, with the larger offices reporting greater difficulty than the smaller ones. Total direct compensation rose meaningfully year on year for both executives and staff.",
+        "src": "Botoff Consulting",
+        "url": "https://www.botoffconsulting.com/survey-reports/2026-us-compensation-talent-planning-report"
+      },
+      {
+        "t": "Four to six months to fill a post",
+        "b": "Recruitment guidance for 2026 advises families to begin household searches four to six months ahead rather than the traditional two to three, and to budget 15 to 20 per cent above standard rates for candidates holding specialist qualifications. Hybrid posts such as family assistant and nanny housekeeper remain the fastest growing part of the market.",
+        "src": "White Glove Talent",
+        "url": "https://whiteglovetalent.com/hiring-household-staff-2026/"
+      }
+    ]
+  },
+  {
     "no": "No. 37",
     "date": "Thursday, 27 August 2026",
     "strap": "A daily dispatch from the world you are entering",
