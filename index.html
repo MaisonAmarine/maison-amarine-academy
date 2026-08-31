@@ -2705,6 +2705,65 @@ html,body,body *{font-family:'Calibri Light','Calibri','Carlito',system-ui,-appl
   <div class="np-row"><button onclick="noteCancel()">Cancel</button><button class="np-save" onclick="noteSave()">Save</button></div>
 </div>
 
+<!-- ===== Plan : passage Signature -> Private ===== -->
+<style>
+  .nav-item.nav-locked{opacity:.72;}
+  .nav-item .nav-lock{margin-left:auto;display:inline-flex;}
+  .nav-item .nav-lock svg{width:14px;height:14px;}
+  .mentor.mentor-locked h3 svg{width:16px;height:16px;vertical-align:-3px;margin-right:7px;}
+  .cw-ev.mentor-ev.locked{opacity:.78;}
+  .cw-ev.mentor-ev.locked svg{width:13px;height:13px;}
+  .upg-mask{position:fixed;inset:0;background:rgba(18,15,10,.62);backdrop-filter:blur(3px);display:none;align-items:center;justify-content:center;z-index:120;padding:20px;}
+  .upg-mask.open{display:flex;}
+  .upg-box{background:var(--ivory,#F7F4EE);border-radius:20px;max-width:560px;width:100%;max-height:88vh;overflow:auto;padding:34px 34px 28px;position:relative;box-shadow:0 30px 80px rgba(20,16,12,.4);}
+  .upg-x{position:absolute;top:14px;right:16px;background:none;border:none;font-size:26px;line-height:1;color:var(--stone,#9C8F7C);cursor:pointer;}
+  .upg-k{font-family:'Calibri Light','Calibri','Carlito',sans-serif;font-size:10.5px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-deep,#9B7C40);margin-bottom:10px;}
+  .upg-box h3{margin:0 0 10px;font-size:23px;line-height:1.25;}
+  .upg-lead{color:var(--ink,#1E170F);opacity:.86;line-height:1.65;margin:0 0 18px;font-size:14.5px;}
+  .upg-list{list-style:none;padding:0;margin:0 0 18px;}
+  .upg-list li{position:relative;padding:0 0 0 24px;margin-bottom:9px;line-height:1.55;font-size:14px;}
+  .upg-list li:before{content:"";position:absolute;left:2px;top:8px;width:7px;height:7px;border-radius:50%;background:var(--gold,#C6A96B);}
+  .upg-sess{border:1px solid var(--line,#E9E2D4);border-radius:14px;padding:16px 18px;margin:0 0 20px;background:rgba(255,255,255,.55);}
+  .upg-sess-k{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-deep,#9B7C40);font-weight:600;margin-bottom:9px;}
+  .upg-sess ol{margin:0;padding-left:18px;font-size:13.4px;line-height:1.75;color:var(--ink,#1E170F);opacity:.85;}
+  .upg-foot{display:flex;gap:10px;flex-wrap:wrap;align-items:center;}
+  .upg-note{font-size:12.5px;color:var(--stone,#9C8F7C);margin-top:14px;line-height:1.55;}
+</style>
+<div class="upg-mask" id="upgMask">
+  <div class="upg-box" role="dialog" aria-modal="true">
+    <button class="upg-x" onclick="closeUpgrade()" aria-label="Close">&times;</button>
+    <div class="upg-k">Private plan</div>
+    <h3>Move to the Private plan</h3>
+    <p class="upg-lead">Signature teaches the craft. <b>Private is the same craft applied to you, live</b> &mdash; eight one-to-one sessions with &Eacute;milie, each ending with a document you keep.</p>
+    <ul class="upg-list">
+      <li>8 private 1-to-1 mentorship sessions</li>
+      <li>Sessions tailored to your target role</li>
+      <li>A personal recommendation letter on completion</li>
+      <li>One free contract review when your first offer lands</li>
+      <li>Service guarantee: not ready after 8 sessions? 2 more, free</li>
+      <li>3 months of the Alumni Circle</li>
+      <li>12 months of platform access</li>
+    </ul>
+    <div class="upg-sess">
+      <div class="upg-sess-k">The eight sessions</div>
+      <ol>
+        <li>Starting Point &amp; Roadmap</li>
+        <li>Live Simulation + First Blind Spot</li>
+        <li>Why People Get Fired</li>
+        <li>Deliverable Review &amp; Angle</li>
+        <li>Live Resume Rebuild</li>
+        <li>Mock Interview #1</li>
+        <li>Mock Interview #2 + Negotiation</li>
+        <li>Launch Strategy &amp; 90-Day Plan</li>
+      </ol>
+    </div>
+    <div class="upg-foot">
+      <button class="btn-gold" onclick="upgradeAsk()" style="border:none;cursor:pointer;">Ask &Eacute;milie about it</button>
+      <button class="adm-btn-cancel" onclick="closeUpgrade()" style="cursor:pointer;">Not now</button>
+    </div>
+    <p class="upg-note">Everything else in the Academy &mdash; the eight-week program, the 32 modules, the certification and all 15 platform spaces &mdash; is already yours.</p>
+  </div>
+</div>
 <!-- Session mentor : détail + réservation Calendly -->
 <div class="mtr-mask" id="mtrMask">
   <div class="mtr-box" role="dialog" aria-modal="true">
@@ -4436,6 +4495,7 @@ async function loadProfile(){
   document.getElementById('hiLine').textContent="Hi "+name.split(' ')[0];
   const tbHi=document.getElementById('tbHi'); if(tbHi) tbHi.innerHTML="Hello, <span>"+escapeHtml(name.split(' ')[0])+"</span>";
   refreshSidebarAvatar();
+  try{ applyPlanUI(); }catch(e){}
 }
 // ====== PROFIL ÉLÈVE ======
 function openProfile(){ goPage('profile'); }
@@ -5193,6 +5253,43 @@ function openMentorForDay(key){
     if(typeof openMentor==='function') openMentor(wk);
   }catch(e){ if(typeof calPickDay==='function') calPickDay(key); }
 }
+/* ===== PLAN : Signature ou Private =====
+   Le plan vit dans profiles.plan. Absent, vide ou inconnu -> 'private',
+   donc rien ne change pour les élèves déjà créés tant que la colonne n'existe pas. */
+function studentPlan(){
+  try{ return String((typeof PROFILE!=='undefined' && PROFILE && PROFILE.plan)||'private').trim().toLowerCase()==='signature' ? 'signature' : 'private'; }
+  catch(e){ return 'private'; }
+}
+function planLocked(){ return studentPlan()==='signature'; }
+const ICO_LOCK='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>';
+function openUpgrade(){ const m=document.getElementById('upgMask'); if(m) m.classList.add('open'); }
+function closeUpgrade(){ const m=document.getElementById('upgMask'); if(m) m.classList.remove('open'); }
+function upgradeAsk(){
+  closeUpgrade();
+  try{
+    goPage('messages');
+    setTimeout(function(){
+      var t=document.getElementById('commInput');
+      if(t){ t.value="Hello Émilie, I would like to move to the Private plan and add the eight one-to-one sessions. Could you tell me how?"; try{ t.focus(); }catch(e){} }
+    },350);
+  }catch(e){}
+}
+function applyPlanUI(){
+  var locked=planLocked();
+  var mb=document.getElementById('mentor');
+  if(mb && locked && !mb.classList.contains('mentor-locked')){
+    mb.classList.add('mentor-locked');
+    mb.innerHTML='<div><h3>'+ICO_LOCK+'Your mentorship sessions</h3><p>The eight private one-to-one sessions are part of the <b>Private</b> plan. Your Signature access includes the full eight-week program, the certification and every tool in the platform.</p></div>'
+      +'<button class="btn-gold" onclick="openUpgrade()" style="border:none;cursor:pointer;">Move to the Private plan</button>';
+  }
+  document.querySelectorAll('.nav-item[data-scroll="mentor"]').forEach(function(n){
+    n.classList.toggle('nav-locked', locked);
+    var ex=n.querySelector('.nav-lock');
+    if(locked && !ex){ var s=document.createElement('span'); s.className='nav-lock'; s.innerHTML=ICO_LOCK; n.appendChild(s); }
+    if(!locked && ex) ex.remove();
+  });
+  try{ if(typeof renderScheduleList==='function' && document.getElementById('calPhases')) renderScheduleList(); }catch(e){}
+}
 // ===== Sessions mentor : lien Calendly + détail =====
 const MENTOR_CALENDLY = "https://calendly.com/academy-themaisonamarine/30-minute-one-on-one";   // <-- remplacer par le vrai lien Calendly
 const MENTOR_DURATION = "30 minutes";
@@ -5233,6 +5330,7 @@ function sessionTimeLabel(s){
   return d.toLocaleDateString('en-GB',{weekday:'long',day:'numeric',month:'long'})+', '+d.toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'});
 }
 function openMentor(no){
+  if(typeof planLocked==='function' && planLocked()){ openUpgrade(); return; }
   const w=WEEKS[no-1]; if(!w) return;
   const s=sessionForWeek(no);
   let d=null; try{ d=mentorDate(no); }catch(e){}
@@ -5289,6 +5387,9 @@ function renderScheduleList(){
         <div class="cw-events">
           <span class="cw-ev">Lessons &amp; practice</span>
           ${(function(){
+            if(typeof planLocked==='function' && planLocked()){
+              return '<span class="cw-ev mentor-ev locked" onclick="openUpgrade()" title="Included in the Private plan">'+ICO_LOCK+' Mentorship · Private plan</span>';
+            }
             var s=null; try{ s=sessionForWeek(w.no); }catch(e){}
             var lbl, cls='';
             if(s){
@@ -6364,6 +6465,7 @@ document.getElementById('resumeBtn').addEventListener('click',()=>{const r=getRe
 
 // ---------- navigation ----------
 function goPage(name, scrollTo){
+  if(scrollTo==='mentor' && typeof planLocked==='function' && planLocked()){ openUpgrade(); return; }
   document.querySelectorAll('.page').forEach(p=>p.classList.add('hidden'));
   const _pg=document.getElementById('page-'+name);
   _pg.classList.remove('hidden');
