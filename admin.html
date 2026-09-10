@@ -15,7 +15,7 @@
     --ivory:#eeeef0; --paper:#FFFFFF; --ink:#141c2e; --ink-soft:#3f4759;
     --gold:#8b9098; --gold-deep:#5f646b; --gold-lt:#c4c9d0; --gold-wash:#e6e7ea;
     --stone:#787e8a; --line:#dcdde1; --green:#086b2c; --green-lt:#0a7a33; --shadow:rgba(20,29,46,0.10);
-    --dark:#1b1d21; --sidebar:#1b1d21;
+    --dark:#171827; --sidebar:#171827;
   }
   *{margin:0;padding:0;box-sizing:border-box;}
   html{scroll-behavior:smooth;}
@@ -26,7 +26,7 @@
   /* ---------- layout: sidebar + main ---------- */
   .app{display:flex;min-height:100vh;}
   .sidebar{
-    width:248px;flex-shrink:0;background:linear-gradient(180deg,#25272b,var(--sidebar));color:#e5e6e9;
+    width:248px;flex-shrink:0;background:linear-gradient(180deg,#212332,var(--sidebar));color:#e5e6e9;
     border-right:1px solid rgba(161,165,173,.13);
     display:flex;flex-direction:column;position:sticky;top:0;height:100vh;padding:26px 18px;
     overflow-y:auto;scrollbar-width:none;
@@ -1123,7 +1123,7 @@
   @media(prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;transition-duration:.12s!important;}html{scroll-behavior:auto;}}
 
   /* LOGIN GATE, premium ceremony */
-  .gate{position:fixed;inset:0;z-index:500;background:radial-gradient(1100px 640px at 50% -8%, #2f3237, var(--sidebar));display:flex;align-items:center;justify-content:center;padding:20px;overflow:hidden;}
+  .gate{position:fixed;inset:0;z-index:500;background:radial-gradient(1100px 640px at 50% -8%, #2b2d3d, var(--sidebar));display:flex;align-items:center;justify-content:center;padding:20px;overflow:hidden;}
   .gate.hidden{display:none;}
   .gate::before{content:"";position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");opacity:.05;mix-blend-mode:overlay;pointer-events:none;}
   .gate::after{content:"";position:absolute;left:50%;top:36%;width:720px;height:720px;transform:translate(-50%,-50%);background:radial-gradient(circle, rgba(165,170,177,.16), transparent 62%);pointer-events:none;}
@@ -1305,7 +1305,7 @@
   .rct-pick button{border:none;background:none;font-size:20px;line-height:1;cursor:pointer;padding:4px 5px;border-radius:10px;transition:transform .12s,background .12s;}
   .rct-pick button:hover{transform:scale(1.25);background:var(--gold-wash);}
   /* ONBOARDING CÉRÉMONIAL */
-  .onb{position:fixed;inset:0;z-index:9999;background:radial-gradient(120% 100% at 50% 0%,#2b2d31,var(--ink) 70%);display:flex;align-items:center;justify-content:center;padding:30px;overflow-y:auto;}
+  .onb{position:fixed;inset:0;z-index:9999;background:radial-gradient(120% 100% at 50% 0%,#272940,var(--ink) 70%);display:flex;align-items:center;justify-content:center;padding:30px;overflow-y:auto;}
   .onb.hidden{display:none;}
   .onb-inner{max-width:620px;width:100%;text-align:center;position:relative;padding:40px 0;}
   .onb-step{animation:onbIn .8s cubic-bezier(.22,.61,.36,1);}
