@@ -1,5 +1,104 @@
 [
   {
+    "no": "No. 55",
+    "date": "Monday, 14 September 2026",
+    "strap": "A daily dispatch from the world you are entering",
+    "lead": {
+      "cat": "Governance",
+      "place": "Zurich, Switzerland",
+      "tag": "Thirty five per cent",
+      "title": "Two thirds of the world's largest family offices have no succession plan, and the generation due to inherit is already being handed the keys",
+      "standfirst": "UBS surveyed more than 300 family offices with an average net worth of USD 2.7 billion and found that only 35 per cent have a defined plan for what happens next.",
+      "body": "The Global Family Office Report 2026, published by UBS with Campden Wealth, is built on the opinions of more than 300 family office clients across upwards of 30 markets, each representing an average net worth of USD 2.7 billion. It is the closest thing the private wealth world has to a census of its own management layer. The headline finding is not about markets. Only 35 per cent of those family offices have a defined succession plan in place.\n\nThat figure sits against what UBS describes as the beginning of a wealth transfer running into the trillions of dollars between generations. The response so far is educational rather than structural. Fifty two per cent of the relevant family offices plan to introduce financial education programmes, and around 40 per cent intend to engage younger family members through seats on investment committees or through entrepreneurial ventures backed by the family. Those are preparations for a handover, not the handover itself.\n\nThe investment picture around that governance gap is unusually unsettled. Sixty per cent of family offices plan to change their strategic asset allocation within the next twelve months, a record level of intended movement. Sixty five per cent expect confidence in the US dollar's reserve status to weaken. Resilience and diversification are named as the priorities for 2026, with one notable exception: American family offices moved the other way, raising home bias from 86 per cent in 2025 to 88 per cent in 2026.\n\nFor the household attached to such a family, succession is rarely announced. It arrives as a change in who signs, who calls, and whose preferences now set the standard. A principal's adult children begin using the houses more often, travelling with different requirements and expecting different things of the same staff. Where no plan exists, that transition happens informally, and the people running the properties absorb it without briefing.\n\nThe practical consequence is that continuity in a private house is increasingly carried by the staff rather than by the structure. A house manager who has kept accurate records, written procedures and a working knowledge of vendors and contracts becomes the institutional memory of an estate that has none of its own.",
+      "why": "Succession changes the employer, not the job. The households that survive a handover intact are the ones where records, procedures and vendor relationships were documented before anyone needed them.",
+      "src": "UBS Global Family Office Report 2026",
+      "url": "https://www.ubs.com/global/en/wealthmanagement/who-we-serve/family-office-and-uhnw/global-family-office-report.html"
+    },
+    "articles": [
+      {
+        "cat": "Staffing",
+        "place": "Miami, United States",
+        "tag": "The snowbird season",
+        "section": "The Craft",
+        "title": "Florida's hiring season opens in September, and the staff being placed now will follow the family north again in May",
+        "body": "Of all the private service markets, Florida is the one that runs on a calendar. Recruiters at Morgan & Mallet describe a high season for hiring that begins in August and September, because by October the houses need to be staffed and ready. The families arriving are the ones known in the trade as snowbirds, coming down from Massachusetts, New York, Connecticut and Canada, and the staff rotate between properties and follow the principals.\n\nThat rhythm makes Florida a distinct proposition for a candidate. It hires against the northeastern cycle rather than with it, which means a household manager or housekeeper can build a year from two seasons in two states. It also has no state income tax, so a salary in Miami or Palm Beach leaves more in hand than the same figure in New York or Los Angeles. The mountain west operates on a similar logic, with Aspen, Jackson Hole and Scottsdale hiring for second homes, often a domestic couple, and Wyoming and Nevada charging no state income tax either.\n\nThe roles themselves are consolidating. Recruiters report that families who once hired three people now want one person covering tidying, meal preparation and the school run, paid at a higher salary for the combined remit. A senior New York recruiter puts it plainly: instead of hiring three people, they hire one at a higher salary. Anyone who can cover all of it moves up a level, and anyone who cannot is competing in a thinner part of the market.\n\nTenure has collapsed at the same time. Staff once stayed with a single family for around twenty years. The figure now cited is closer to three. Recruiters screen for candidates who stayed five years or more in a post, on the reasoning that length of service is the only available evidence that a person can work inside a family rather than merely for one.\n\nTwo other details are worth holding. Where a role carries a confidentiality agreement, the agency advises adding 15 to 20 per cent to base pay, and the closer the work sits to the principal the more that premium matters. In Miami, 79 per cent of the personal assistants the agency places have already worked alongside a security team.",
+        "why": "The seasonal markets are where a newcomer can build a year of continuous work without waiting for a single permanent post to open. They also punish anyone who cannot cover more than one function.",
+        "src": "Morgan & Mallet International",
+        "url": "https://www.householdstaff.agency/best-household-staff-jobs-us/"
+      },
+      {
+        "cat": "Geography",
+        "place": "New York, United States",
+        "tag": "Twelve cities",
+        "section": "The Private World",
+        "title": "More than a fifth of the world's ultra wealthy now live in twelve cities, and every one of them grew by double digits last year",
+        "body": "Altrata's World Ultra Wealth Report 2026, the fourteenth edition of its annual study, counts 121,960 individuals worth more than USD 30 million living in the twelve leading ultra high net worth cities in 2025. That is an increase of more than 17,000 on the year before, and every one of the twelve recorded double digit growth. Taken together, the group grew slightly faster than the global ultra wealthy population as a whole.\n\nNew York remains the dominant centre, home to almost 24,000 ultra wealthy individuals and the largest of eight United States cities in the top twelve. Altrata attributes its resilience to the artificial intelligence investment boom moving through the city's private capital markets, family offices and ultra prime property, and notes that this held despite competition from more streamlined tax and residency jurisdictions.\n\nHong Kong sits second, with a population that expanded by 26 per cent in 2025 to 18,290 individuals, recovering after a subdued period and drawing on an equity market revival, property and investment reforms, and regional demand for sophisticated wealth management. Seoul was the standout, rising more than a third and entering the top twelve on the back of an equity rally driven by South Korean companies in the artificial intelligence hardware supply chain.\n\nThe absences are as instructive as the entries. China and Germany, the world's second and third largest ultra wealth markets, place no city in the top twelve, their highest ranked being 29th and 44th. Their private net worth is spread more evenly across domestic urban centres, in contrast to London and Tokyo, each of which holds an unusually high share of its country's ultra wealthy population.\n\nFor anyone deciding where to build a career in private service, that concentration is the map. Twelve cities hold more than a fifth of the potential employers, and the two moving fastest are in Asia.",
+        "why": "Where the households are determines where the posts are. A candidate willing to work in Hong Kong or Seoul is entering markets growing faster than any in Europe.",
+        "src": "Altrata, World Ultra Wealth Report 2026",
+        "url": "https://altrata.com/articles/uhnw-population-by-city-2025-rankings-and-trends"
+      },
+      {
+        "cat": "Yachting",
+        "place": "Monaco",
+        "tag": "Forty three deliveries",
+        "section": "At Sea & In the Air",
+        "title": "A new commission at a leading yard now means waiting until 2028, which is why forty three boats delivering this year are the scarcest thing in Monaco",
+        "body": "The Monaco Yacht Show holds its 35th edition from 23 to 26 September at Port Hercule, with a fleet expected to reach 120 yachts by opening day. Forty three of them are delivering in 2026. The organiser's argument for the show rests entirely on that number: a new commission at a leading shipyard now means waiting until 2028 or beyond, so a harbour holding this year's completed boats, their builders and the brokers who will charter, manage or resell them is a rare concentration.\n\nThe context comes from BOAT International's Global Order Book 2026. The order book has contracted in unit count for a second consecutive year, while average length and tonnage under construction stand at record highs, and build slots at the leading yards are committed through 2028 and 2029. Fewer projects, each of them larger. Italian builders account for 52 per cent of global superyacht production by projects ordered or under construction, and Sanlorenzo, Azimut Benetti and the Ferretti Group brands accordingly top the Monaco hull count.\n\nThe 2026 class runs the full length of the fleet, from Arcadia's 23.98 metre A80 to the 102 metre <i>Nixie</i> from Lurssen at Quai Rainier Ier. The densest bracket sits between 40 and 60 metres, where semi custom series production meets charter economics, and it is dominated by this year's deliveries. Damen Yachting alone brings two, the 80 metre <i>Pangea</i> and the 60 metre <i>QU2</i>.\n\nThe other half of the quay is the existing fleet changing hands. As of publication, 38 of the confirmed yachts are presented not by their builders but by brokerage and charter firms, with launch years spanning four decades. Their average length is close to 49 metres and their average launch year 2016, which places them squarely in the most commercially active band of the market.\n\nA fleet that is contracting in number while growing in size has a direct staffing consequence. Larger hulls carry larger interior and deck teams, longer service rotations and more complex guest operations, and they need them in a market that has already been struggling to supply senior crew.",
+        "why": "Bigger boats mean bigger crews and longer lead times on every appointment. A household that charters or owns will be planning crew further ahead than it plans anything on land.",
+        "src": "Monaco Yacht Show",
+        "url": "https://www.monacoyachtshow.com/en/2026-superyacht-list"
+      },
+      {
+        "cat": "Wine",
+        "place": "New York, United States",
+        "tag": "Two hundred and sixty seven lots",
+        "section": "Objects & Culture",
+        "title": "A cellar assembled from Sotheby's own greatest single owner sales closes this week, and its 267 lots are a lesson in what provenance is worth",
+        "body": "Sotheby's is closing a wine sale in New York on 17 September titled The Wine Cellar of a Visionary, subtitled A Collection from Sotheby's Greatest Single Owner Auctions. The description is literal. The 267 lots were assembled by one buyer out of the house's own landmark single owner sales, which makes the collection a record of two decades of the fine wine market's most sought after consignments passing through a single cellar.\n\nThe names are those of the Northern Rhone and the Southern Rhone at their most collected: Gentaz Dervieux and Noel Verset, both growers whose domaines ceased production and whose bottles have become effectively finite, alongside Henri Bonneau and Jean Louis Chave, across Cote Rotie, Cornas, Chateauneuf du Pape and Hermitage. These are wines whose value rests less on vintage than on the certainty of where they have been stored and by whom.\n\nThe week continues in the same register. Sotheby's holds a whisky sale on 18 September in New York featuring The Wax Top Collection, and in Hong Kong a high jewellery sale on 17 September and important watches across 18 and 19 September. Read together, the calendar is a reminder that the collecting categories a private household physically handles, wine, whisky, jewellery and watches, are now traded with the same documentary rigour as pictures.\n\nThat rigour is the point for anyone running a cellar. A bottle's price is a function of unbroken provenance, and provenance in practice means temperature and humidity logs, insurance schedules, original cases and wooden panels kept intact, and a written record of every movement between properties. A collection that has been well kept sells as a collection. One that has not sells as wine.",
+        "why": "Cellars, watch rolls and jewellery are the assets most often moved between houses and most easily devalued by careless handling. Documentation is the difference between an asset and a drink.",
+        "src": "Sotheby's",
+        "url": "https://www.sothebys.com/en/buy/auction/2026/finest-rarest-wines-4-2"
+      },
+      {
+        "cat": "Openings",
+        "place": "Hornbaek, Denmark",
+        "tag": "A 1935 building",
+        "section": "Hotels & Escapes",
+        "title": "A forgotten 1935 seaside building on the Kattegat reopens with 77 rooms and five townhouses",
+        "body": "Cori Hornbaek has opened on a sandy beach on the northern shore of Zealand, looking out over the Kattegat Strait. The building was designed by Ole Falkentorp in 1935 and had been left to decline. It has been brought back by Jon Clausen of the Copenhagen practice NVMBR Architects with the Scandinavian studio AART.\n\nThe house holds 77 rooms and five townhouses, with a bar, a restaurant and a spa the designers describe as drawn from the raw character of the Hornbaek coastline. The townhouses are the relevant detail for private service: they are the format a family takes when it wants a hotel's kitchen and housekeeping without a hotel's corridors, and they are increasingly how principals travel with children, staff or both.\n\nHornbaek itself is a long established summer address for Copenhagen, roughly an hour north of the city, which places the house within easy reach of a European capital while remaining a genuinely coastal destination. For a principal who wants Scandinavia without Iceland's logistics or Norway's distances, it is a straightforward booking.",
+        "why": "Townhouse and villa formats inside hotels are where private staff most often work alongside hotel staff. Knowing which properties offer them shortens the search when a family wants both service models at once.",
+        "src": "Wallpaper*",
+        "url": "https://www.wallpaper.com/travel/hotels/best-new-hotels"
+      }
+    ],
+    "briefs": [
+      {
+        "t": "Business aviation keeps climbing",
+        "b": "Global business aviation flight activity rose 5.6 per cent year on year in July 2026, according to Argus, with turboprops leading the increase in North America. Every month of the first half of the year finished in positive territory, with activity up 3.5 per cent across the half.",
+        "src": "Aviation International News",
+        "url": "https://www.ainonline.com/aviation-news/business-aviation/2026-08-11/argus-july-global-business-aviation-activity-rose-56"
+      },
+      {
+        "t": "Where the best paid posts are",
+        "b": "Morgan & Mallet's 2025/26 salary report places 60.7 per cent of the world's highest paying household roles in the United States, ahead of Switzerland at 28.6 per cent. Around 10 per cent of the agency's United States requests are for estate managers, a role it describes as consistently hard to fill.",
+        "src": "Morgan & Mallet International",
+        "url": "https://www.householdstaff.agency/household-staff-annual-report/"
+      },
+      {
+        "t": "The forecast to 2030",
+        "b": "Altrata's World Ultra Wealth Report 2026 records USD 63.8 trillion of combined wealth held by individuals worth more than USD 30 million, and forecasts a population of 746,570 by 2030. The report is the fourteenth annual edition of the study.",
+        "src": "Altrata",
+        "url": "https://altrata.com/reports/world-ultra-wealth-report-2026"
+      },
+      {
+        "t": "Hong Kong's collecting week",
+        "b": "Sotheby's holds a high jewellery sale in Hong Kong on 17 September and important watches across 18 and 19 September, with a whisky sale in New York on 18 September featuring The Wax Top Collection. The autumn calendar is now spread across four categories and two continents in a single week.",
+        "src": "Sotheby's",
+        "url": "https://www.sothebys.com/en/calendar"
+      }
+    ]
+  },
+  {
     "no": "No. 54",
     "date": "Sunday, 13 September 2026",
     "strap": "A daily dispatch from the world you are entering",

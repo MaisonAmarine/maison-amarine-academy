@@ -1,5 +1,104 @@
 [
   {
+    "no": "No. 55",
+    "date": "Monday, 14 September 2026",
+    "strap": "A daily dispatch from the world you are entering",
+    "lead": {
+      "cat": "Governance",
+      "place": "Zurich, Switzerland",
+      "tag": "Thirty five per cent",
+      "title": "Two thirds of the world's largest family offices have no succession plan, and the generation due to inherit is already being handed the keys",
+      "standfirst": "UBS surveyed more than 300 family offices with an average net worth of USD 2.7 billion and found that only 35 per cent have a defined plan for what happens next.",
+      "body": "The Global Family Office Report 2026, published by UBS with Campden Wealth, is built on the opinions of more than 300 family office clients across upwards of 30 markets, each representing an average net worth of USD 2.7 billion. It is the closest thing the private wealth world has to a census of its own management layer. The headline finding is not about markets. Only 35 per cent of those family offices have a defined succession plan in place.\n\nThat figure sits against what UBS describes as the beginning of a wealth transfer running into the trillions of dollars between generations. The response so far is educational rather than structural. Fifty two per cent of the relevant family offices plan to introduce financial education programmes, and around 40 per cent intend to engage younger family members through seats on investment committees or through entrepreneurial ventures backed by the family. Those are preparations for a handover, not the handover itself.\n\nThe investment picture around that governance gap is unusually unsettled. Sixty per cent of family offices plan to change their strategic asset allocation within the next twelve months, a record level of intended movement. Sixty five per cent expect confidence in the US dollar's reserve status to weaken. Resilience and diversification are named as the priorities for 2026, with one notable exception: American family offices moved the other way, raising home bias from 86 per cent in 2025 to 88 per cent in 2026.\n\nFor the household attached to such a family, succession is rarely announced. It arrives as a change in who signs, who calls, and whose preferences now set the standard. A principal's adult children begin using the houses more often, travelling with different requirements and expecting different things of the same staff. Where no plan exists, that transition happens informally, and the people running the properties absorb it without briefing.\n\nThe practical consequence is that continuity in a private house is increasingly carried by the staff rather than by the structure. A house manager who has kept accurate records, written procedures and a working knowledge of vendors and contracts becomes the institutional memory of an estate that has none of its own.",
+      "why": "Succession changes the employer, not the job. The households that survive a handover intact are the ones where records, procedures and vendor relationships were documented before anyone needed them.",
+      "src": "UBS Global Family Office Report 2026",
+      "url": "https://www.ubs.com/global/en/wealthmanagement/who-we-serve/family-office-and-uhnw/global-family-office-report.html"
+    },
+    "articles": [
+      {
+        "cat": "Staffing",
+        "place": "Miami, United States",
+        "tag": "The snowbird season",
+        "section": "The Craft",
+        "title": "Florida's hiring season opens in September, and the staff being placed now will follow the family north again in May",
+        "body": "Of all the private service markets, Florida is the one that runs on a calendar. Recruiters at Morgan & Mallet describe a high season for hiring that begins in August and September, because by October the houses need to be staffed and ready. The families arriving are the ones known in the trade as snowbirds, coming down from Massachusetts, New York, Connecticut and Canada, and the staff rotate between properties and follow the principals.\n\nThat rhythm makes Florida a distinct proposition for a candidate. It hires against the northeastern cycle rather than with it, which means a household manager or housekeeper can build a year from two seasons in two states. It also has no state income tax, so a salary in Miami or Palm Beach leaves more in hand than the same figure in New York or Los Angeles. The mountain west operates on a similar logic, with Aspen, Jackson Hole and Scottsdale hiring for second homes, often a domestic couple, and Wyoming and Nevada charging no state income tax either.\n\nThe roles themselves are consolidating. Recruiters report that families who once hired three people now want one person covering tidying, meal preparation and the school run, paid at a higher salary for the combined remit. A senior New York recruiter puts it plainly: instead of hiring three people, they hire one at a higher salary. Anyone who can cover all of it moves up a level, and anyone who cannot is competing in a thinner part of the market.\n\nTenure has collapsed at the same time. Staff once stayed with a single family for around twenty years. The figure now cited is closer to three. Recruiters screen for candidates who stayed five years or more in a post, on the reasoning that length of service is the only available evidence that a person can work inside a family rather than merely for one.\n\nTwo other details are worth holding. Where a role carries a confidentiality agreement, the agency advises adding 15 to 20 per cent to base pay, and the closer the work sits to the principal the more that premium matters. In Miami, 79 per cent of the personal assistants the agency places have already worked alongside a security team.",
+        "why": "The seasonal markets are where a newcomer can build a year of continuous work without waiting for a single permanent post to open. They also punish anyone who cannot cover more than one function.",
+        "src": "Morgan & Mallet International",
+        "url": "https://www.householdstaff.agency/best-household-staff-jobs-us/"
+      },
+      {
+        "cat": "Geography",
+        "place": "New York, United States",
+        "tag": "Twelve cities",
+        "section": "The Private World",
+        "title": "More than a fifth of the world's ultra wealthy now live in twelve cities, and every one of them grew by double digits last year",
+        "body": "Altrata's World Ultra Wealth Report 2026, the fourteenth edition of its annual study, counts 121,960 individuals worth more than USD 30 million living in the twelve leading ultra high net worth cities in 2025. That is an increase of more than 17,000 on the year before, and every one of the twelve recorded double digit growth. Taken together, the group grew slightly faster than the global ultra wealthy population as a whole.\n\nNew York remains the dominant centre, home to almost 24,000 ultra wealthy individuals and the largest of eight United States cities in the top twelve. Altrata attributes its resilience to the artificial intelligence investment boom moving through the city's private capital markets, family offices and ultra prime property, and notes that this held despite competition from more streamlined tax and residency jurisdictions.\n\nHong Kong sits second, with a population that expanded by 26 per cent in 2025 to 18,290 individuals, recovering after a subdued period and drawing on an equity market revival, property and investment reforms, and regional demand for sophisticated wealth management. Seoul was the standout, rising more than a third and entering the top twelve on the back of an equity rally driven by South Korean companies in the artificial intelligence hardware supply chain.\n\nThe absences are as instructive as the entries. China and Germany, the world's second and third largest ultra wealth markets, place no city in the top twelve, their highest ranked being 29th and 44th. Their private net worth is spread more evenly across domestic urban centres, in contrast to London and Tokyo, each of which holds an unusually high share of its country's ultra wealthy population.\n\nFor anyone deciding where to build a career in private service, that concentration is the map. Twelve cities hold more than a fifth of the potential employers, and the two moving fastest are in Asia.",
+        "why": "Where the households are determines where the posts are. A candidate willing to work in Hong Kong or Seoul is entering markets growing faster than any in Europe.",
+        "src": "Altrata, World Ultra Wealth Report 2026",
+        "url": "https://altrata.com/articles/uhnw-population-by-city-2025-rankings-and-trends"
+      },
+      {
+        "cat": "Yachting",
+        "place": "Monaco",
+        "tag": "Forty three deliveries",
+        "section": "At Sea & In the Air",
+        "title": "A new commission at a leading yard now means waiting until 2028, which is why forty three boats delivering this year are the scarcest thing in Monaco",
+        "body": "The Monaco Yacht Show holds its 35th edition from 23 to 26 September at Port Hercule, with a fleet expected to reach 120 yachts by opening day. Forty three of them are delivering in 2026. The organiser's argument for the show rests entirely on that number: a new commission at a leading shipyard now means waiting until 2028 or beyond, so a harbour holding this year's completed boats, their builders and the brokers who will charter, manage or resell them is a rare concentration.\n\nThe context comes from BOAT International's Global Order Book 2026. The order book has contracted in unit count for a second consecutive year, while average length and tonnage under construction stand at record highs, and build slots at the leading yards are committed through 2028 and 2029. Fewer projects, each of them larger. Italian builders account for 52 per cent of global superyacht production by projects ordered or under construction, and Sanlorenzo, Azimut Benetti and the Ferretti Group brands accordingly top the Monaco hull count.\n\nThe 2026 class runs the full length of the fleet, from Arcadia's 23.98 metre A80 to the 102 metre <i>Nixie</i> from Lurssen at Quai Rainier Ier. The densest bracket sits between 40 and 60 metres, where semi custom series production meets charter economics, and it is dominated by this year's deliveries. Damen Yachting alone brings two, the 80 metre <i>Pangea</i> and the 60 metre <i>QU2</i>.\n\nThe other half of the quay is the existing fleet changing hands. As of publication, 38 of the confirmed yachts are presented not by their builders but by brokerage and charter firms, with launch years spanning four decades. Their average length is close to 49 metres and their average launch year 2016, which places them squarely in the most commercially active band of the market.\n\nA fleet that is contracting in number while growing in size has a direct staffing consequence. Larger hulls carry larger interior and deck teams, longer service rotations and more complex guest operations, and they need them in a market that has already been struggling to supply senior crew.",
+        "why": "Bigger boats mean bigger crews and longer lead times on every appointment. A household that charters or owns will be planning crew further ahead than it plans anything on land.",
+        "src": "Monaco Yacht Show",
+        "url": "https://www.monacoyachtshow.com/en/2026-superyacht-list"
+      },
+      {
+        "cat": "Wine",
+        "place": "New York, United States",
+        "tag": "Two hundred and sixty seven lots",
+        "section": "Objects & Culture",
+        "title": "A cellar assembled from Sotheby's own greatest single owner sales closes this week, and its 267 lots are a lesson in what provenance is worth",
+        "body": "Sotheby's is closing a wine sale in New York on 17 September titled The Wine Cellar of a Visionary, subtitled A Collection from Sotheby's Greatest Single Owner Auctions. The description is literal. The 267 lots were assembled by one buyer out of the house's own landmark single owner sales, which makes the collection a record of two decades of the fine wine market's most sought after consignments passing through a single cellar.\n\nThe names are those of the Northern Rhone and the Southern Rhone at their most collected: Gentaz Dervieux and Noel Verset, both growers whose domaines ceased production and whose bottles have become effectively finite, alongside Henri Bonneau and Jean Louis Chave, across Cote Rotie, Cornas, Chateauneuf du Pape and Hermitage. These are wines whose value rests less on vintage than on the certainty of where they have been stored and by whom.\n\nThe week continues in the same register. Sotheby's holds a whisky sale on 18 September in New York featuring The Wax Top Collection, and in Hong Kong a high jewellery sale on 17 September and important watches across 18 and 19 September. Read together, the calendar is a reminder that the collecting categories a private household physically handles, wine, whisky, jewellery and watches, are now traded with the same documentary rigour as pictures.\n\nThat rigour is the point for anyone running a cellar. A bottle's price is a function of unbroken provenance, and provenance in practice means temperature and humidity logs, insurance schedules, original cases and wooden panels kept intact, and a written record of every movement between properties. A collection that has been well kept sells as a collection. One that has not sells as wine.",
+        "why": "Cellars, watch rolls and jewellery are the assets most often moved between houses and most easily devalued by careless handling. Documentation is the difference between an asset and a drink.",
+        "src": "Sotheby's",
+        "url": "https://www.sothebys.com/en/buy/auction/2026/finest-rarest-wines-4-2"
+      },
+      {
+        "cat": "Openings",
+        "place": "Hornbaek, Denmark",
+        "tag": "A 1935 building",
+        "section": "Hotels & Escapes",
+        "title": "A forgotten 1935 seaside building on the Kattegat reopens with 77 rooms and five townhouses",
+        "body": "Cori Hornbaek has opened on a sandy beach on the northern shore of Zealand, looking out over the Kattegat Strait. The building was designed by Ole Falkentorp in 1935 and had been left to decline. It has been brought back by Jon Clausen of the Copenhagen practice NVMBR Architects with the Scandinavian studio AART.\n\nThe house holds 77 rooms and five townhouses, with a bar, a restaurant and a spa the designers describe as drawn from the raw character of the Hornbaek coastline. The townhouses are the relevant detail for private service: they are the format a family takes when it wants a hotel's kitchen and housekeeping without a hotel's corridors, and they are increasingly how principals travel with children, staff or both.\n\nHornbaek itself is a long established summer address for Copenhagen, roughly an hour north of the city, which places the house within easy reach of a European capital while remaining a genuinely coastal destination. For a principal who wants Scandinavia without Iceland's logistics or Norway's distances, it is a straightforward booking.",
+        "why": "Townhouse and villa formats inside hotels are where private staff most often work alongside hotel staff. Knowing which properties offer them shortens the search when a family wants both service models at once.",
+        "src": "Wallpaper*",
+        "url": "https://www.wallpaper.com/travel/hotels/best-new-hotels"
+      }
+    ],
+    "briefs": [
+      {
+        "t": "Business aviation keeps climbing",
+        "b": "Global business aviation flight activity rose 5.6 per cent year on year in July 2026, according to Argus, with turboprops leading the increase in North America. Every month of the first half of the year finished in positive territory, with activity up 3.5 per cent across the half.",
+        "src": "Aviation International News",
+        "url": "https://www.ainonline.com/aviation-news/business-aviation/2026-08-11/argus-july-global-business-aviation-activity-rose-56"
+      },
+      {
+        "t": "Where the best paid posts are",
+        "b": "Morgan & Mallet's 2025/26 salary report places 60.7 per cent of the world's highest paying household roles in the United States, ahead of Switzerland at 28.6 per cent. Around 10 per cent of the agency's United States requests are for estate managers, a role it describes as consistently hard to fill.",
+        "src": "Morgan & Mallet International",
+        "url": "https://www.householdstaff.agency/household-staff-annual-report/"
+      },
+      {
+        "t": "The forecast to 2030",
+        "b": "Altrata's World Ultra Wealth Report 2026 records USD 63.8 trillion of combined wealth held by individuals worth more than USD 30 million, and forecasts a population of 746,570 by 2030. The report is the fourteenth annual edition of the study.",
+        "src": "Altrata",
+        "url": "https://altrata.com/reports/world-ultra-wealth-report-2026"
+      },
+      {
+        "t": "Hong Kong's collecting week",
+        "b": "Sotheby's holds a high jewellery sale in Hong Kong on 17 September and important watches across 18 and 19 September, with a whisky sale in New York on 18 September featuring The Wax Top Collection. The autumn calendar is now spread across four categories and two continents in a single week.",
+        "src": "Sotheby's",
+        "url": "https://www.sothebys.com/en/calendar"
+      }
+    ]
+  },
+  {
     "no": "No. 54",
     "date": "Sunday, 13 September 2026",
     "strap": "A daily dispatch from the world you are entering",
@@ -3580,88 +3679,6 @@
         "b": "In the same UBS survey, 65 per cent of family offices expect confidence in the US dollar's reserve status to weaken, and many are building multi-currency frameworks around the euro and Swiss franc. As offices diversify the currencies they hold, households that span several countries may find salaries, budgets and payments increasingly denominated and reviewed in more than one currency.",
         "src": "UBS Global Family Office Report 2026",
         "url": "https://www.ubs.com/global/en/media/display-page-ndp/en-20260528-global-family-office-report-2026.html"
-      }
-    ]
-  },
-  {
-    "no": "No. 15",
-    "date": "Thursday, 30 July 2026",
-    "strap": "A daily dispatch from the world you are entering",
-    "lead": {
-      "cat": "The Craft",
-      "place": "London, United Kingdom",
-      "tag": "The nursery premium",
-      "title": "The private nanny becomes one of the best-paid hires in the house, and the qualified candidate is now the scarcest of all",
-      "standfirst": "Salary guides for 2026 place senior career nannies in ultra-wealthy households on pay that rivals the estate manager, and the shortage of trained candidates is the tightest in private service.",
-      "body": "For a generation the private nanny sat quietly below the principal roles of the household. That order has been overturned. The salary surveys published for 2026 place senior career nannies working for ultra-high-net-worth families on packages of £95,000 to £140,000 and above, a band that now overlaps with the estate manager and the head of house. The Norland-trained nanny, long the benchmark of the profession, has become one of the most sought-after and most expensive hires a family can make.\n\nThe wider market sits a step below that ceiling but has still moved sharply. Most experienced nannies in the United Kingdom now earn between £50,000 and £80,000 a year, with newly qualified live-in roles in London and the South East starting from £40,000 to £55,000. The top of the range, from £120,000 upwards, is reserved for rota and international positions, where two nannies rotate weeks so the household is never uncovered, and where the successful candidate is expected to travel, to speak more than one language and to work seamlessly alongside security and the wider staff.\n\nThe pressure is a supply problem before it is a pay problem. The pool of formally trained, discreet, security-aware candidates grows slowly, and it is now being drawn abroad. Dubai and other low-tax jurisdictions are competing hard for English-speaking senior staff, offering tax-free packages and accommodation that a London family struggles to match on cash alone. The result is that families are paying more to recruit and, harder still, to retain.\n\nFor the house that gets it right, the nanny is not a peripheral hire but a figure at the centre of the family's trust, present in the most private hours of the day and often the longest-serving member of staff. Recruiting for the role, budgeting for it across several residences and holding on to the right person has become one of the defining tests of how well a modern household is run.",
-      "why": "For a house or estate manager, the nanny is now a senior recruitment, budgeting and retention challenge, not an afterthought, and a poor hire in the most trusted seat in the house is among the costliest mistakes a principal can make.",
-      "src": "Oplu Private Staff Salary Guide 2026",
-      "url": "https://oplu.com/resources/private-staff-salary-guide-2026"
-    },
-    "articles": [
-      {
-        "cat": "The Market",
-        "place": "London, United Kingdom",
-        "tag": "Sovereign portfolios",
-        "section": "The Market",
-        "title": "A record 165,000 of the world's wealthy will move country this year, and the fortune now travels as a portfolio of passports",
-        "body": "The Henley Private Wealth Migration Report for 2026 projects that 165,000 high-net-worth individuals will relocate internationally this year, a rise of 16 per cent on the record 142,000 moves recorded in 2025. The figure is the highest the survey has logged, and it confirms that the movement of private wealth across borders has become a permanent feature of the landscape rather than a reaction to any single event.\n\nThe destinations are familiar. The United Arab Emirates, the United States, Italy and Switzerland continue to absorb the largest inflows, while the United Kingdom remains the standout loser, shedding wealthy residents at a pace that policy has done little to slow. Most departing British millionaires are heading to those same four destinations, drawn by lighter tax, residence-by-investment routes and the sense of optionality that a second base provides.\n\nThe more telling shift is in how the wealthy now think about the move itself. Henley describes a change from the single relocation to the assembly of what it calls sovereign portfolios, collections of residence rights, citizenships and cross-border investments held so that a family can pivot quickly if circumstances change. The emphasis has moved from leaving one country for another to building resilience and contingency into the structure of the family's affairs.\n\nFor the people who serve these households, the consequence is concrete. A principal who holds rights in three or four jurisdictions expects the household to function across all of them, which means staff who can travel, who understand the paperwork of multiple residences and who can open, close and run a home at short notice wherever the family chooses to be.",
-        "why": "The internationally mobile family expects its household to move and operate across several jurisdictions, so multi-country fluency and readiness to travel are becoming baseline expectations of senior private staff.",
-        "src": "Henley & Partners, Private Wealth Migration Report 2026",
-        "url": "https://www.henleyglobal.com/newsroom/press-releases/henley-private-wealth-migration-report-2026"
-      },
-      {
-        "cat": "The Private World",
-        "place": "London, United Kingdom",
-        "tag": "The pause",
-        "section": "The Private World",
-        "title": "London's super-prime tenants set records, then press pause as the wealth-tax question hangs over the market",
-        "body": "London's super-prime lettings market has just closed its strongest year on record. Agents report a financial year driven by repeat business and a globally diverse client base, with a flagship letting in prime central London agreed at £60,000 a week and landmark country houses changing hands at £14,000 to £17,000 a week. In the South West, one super-prime lettings desk lifted income by 45 per cent and deal volumes by 33 per cent over the same period.\n\nThe force behind the surge is tax. With buyers reluctant to absorb stamp duty and the prospect of a mansion tax, and with the abolition of non-domiciled status reshaping the calculus for internationally mobile residents, many of the wealthy have chosen to rent rather than own. Renting preserves the freedom to leave at short notice, and for a client whose plans may change with the next budget, that flexibility has been worth paying a great deal for.\n\nYet the same caution that fed the rental boom is now cooling it. In the first half of 2026 there were 17 per cent fewer lettings above £5,000 a week in prime central London than in the same period a year earlier. Agents attribute the slowdown to speculation about a possible wealth tax, which has prompted some internationally mobile tenants to hold back and wait for clarity before committing to a London base at all.\n\nThe swing from record activity to hesitation inside twelve months captures how quickly the top of the market now reacts to policy signals, and how provisional the presence of a wealthy household in any one city has become.",
-        "why": "When principals rent rather than buy, and treat a residence as temporary, the way a house is staffed, opened and closed changes, and the estate manager must run a portfolio built for mobility rather than permanence.",
-        "src": "Knight Frank, Rental Market Adjusts to Reforms and Future Tax Risks",
-        "url": "https://www.knightfrank.co.uk/research/article/2026/7/rental-market-adjusts-to-reforms-and-future-tax-risks"
-      },
-      {
-        "cat": "At Sea & In the Air",
-        "place": "Monaco",
-        "tag": "Fully committed",
-        "section": "At Sea & In the Air",
-        "title": "The Mediterranean charter season sells out at the top, and the family that books late finds the best hulls already gone",
-        "body": "The Mediterranean charter market has tightened again for the summer of 2026, with weekly rates across the region expected to rise by 5 to 12 per cent depending on area and category. A yacht of 30 to 35 metres now commands roughly USD 35,000 to USD 65,000 a week, a 40 to 45 metre vessel USD 60,000 to USD 120,000, and a 50 to 55 metre yacht USD 100,000 to USD 200,000, before fuel, provisioning and taxes are added.\n\nGeography still shapes the bill. France opens at around EUR 80,000 a week with 20 per cent VAT on top, Italy from a similar base with 22 per cent, while Greece and Croatia remain the softer entry points, with charters starting near EUR 15,000 a week under a 13 per cent rate. The gap has pushed a steady stream of demand towards the eastern Mediterranean, where value and cruising ground are easier to reconcile.\n\nThe defining feature of the season, however, is scarcity. Availability is tightening fastest for mid-size superyachts with generous beach clubs, water-toy packages and family cabin layouts, and July and August are expected to be almost fully committed for anything above 50 metres by early spring. The family that leaves its booking to the last moment now finds the strongest hulls long gone.\n\nCrew is the quieter constraint behind the numbers. A Mediterranean-wide shortage of experienced crew pushed operating costs up by 15 to 20 per cent in recent seasons, and service quality varies more than it once did, so vetting the specific captain and chef has come to matter as much as choosing the yacht itself.",
-        "why": "The concierge or house manager who arranges a charter must now plan close to a year ahead and vet the crew as rigorously as the vessel, since a late booking or an unproven captain can undo the whole trip.",
-        "src": "Yatco, Mediterranean Yacht Charter Summer 2026",
-        "url": "https://www.yatco.com/mediterranean-yacht-charter-summer-2026/"
-      },
-      {
-        "cat": "Objects & Culture",
-        "place": "Bordeaux, France",
-        "tag": "The 2025 question",
-        "section": "Objects & Culture",
-        "title": "Bordeaux offers a fine 2025 into a cautious market, and the collector weighs real quality against five years of falling prices",
-        "body": "Bordeaux has released its 2025 vintage into one of the most testing markets in a generation. The wines themselves are widely admired, combining the depth of a warm year with freshness, polished tannins and lower alcohol, and the crop is one of the smallest in recent decades. On quality alone, 2025 is a vintage the serious cellar would want to own.\n\nThe difficulty is price. There is broad recognition across the trade that releases had to stay close to 2024 levels, with only modest increases at most, if the campaign was to sell at all. Most estates obliged. The conspicuous exception was Cheval Blanc, which released its 2025 futures at EUR 336 a bottle ex-négoce, up 20 per cent on the previous year, and which reached American shelves near USD 473 a bottle thanks to a weak dollar.\n\nEarly sales rose on the weak 2024 campaign, with leading merchants describing volumes as up a little, though still below the levels of five years ago. The secondary market gives the reason for restraint. The Liv-ex Bordeaux 500 index, a standard gauge of prices, fell 16.5 per cent over the five years to the end of May 2026, a decline that has taught buyers to treat en primeur as a question rather than a certainty.\n\nWith delivery of the 2025s not due until 2028, the collector is being asked to commit capital now for wine that will arrive in three years, into a market that has punished impatience. The vintage rewards those who buy for the cellar and the table, and tests those who buy for the ledger.",
-        "why": "Wine fluency is part of the private service repertoire, and the household that builds a cellar is judged on patience and timing as much as on the labels it chooses.",
-        "src": "Decanter, Bordeaux en primeur sales up a little",
-        "url": "https://www.decanter.com/wine/wine-investment-bordeaux-en-primeur-sales-up-a-little/"
-      }
-    ],
-    "briefs": [
-      {
-        "t": "Business jet deliveries reach a 17-year high",
-        "b": "New business jet deliveries jumped almost 15 per cent in the first quarter of 2026, with 162 aircraft handed over worldwide, and IBA forecasts more than 884 deliveries for the full year, up 6.5 per cent. Gulfstream led 2025 with 158 aircraft and USD 10.01 billion in billings, just ahead of Bombardier on 157.",
-        "src": "IBA",
-        "url": "https://www.iba.aero/about/news/iba-forcasts-over-880-business-jet-deliveries-in-2026-up-6-5-yoy/"
-      },
-      {
-        "t": "UAE residents turn to contingency planning",
-        "b": "Henley & Partners recorded a 41 per cent rise in enquiries from UAE-based individuals between the fourth quarter of 2025 and the first quarter of 2026, with applications for alternative residence or citizenship up 29 per cent. The firm frames it as a phase of diversification and optionality rather than an exodus.",
-        "src": "Henley & Partners",
-        "url": "https://www.henleyglobal.com/publications/henley-private-wealth-migration-report-2026"
-      },
-      {
-        "t": "Senior private-staff pay keeps climbing",
-        "b": "The 2026 private-staff salary guides show compensation pushing higher again across the top of the profession, with the largest rises falling to estate managers, Michelin-trained private chefs and senior career nannies. Competition from Dubai and other low-tax jurisdictions for English-speaking senior staff is a principal driver.",
-        "src": "Oplu Private Staff Salary Guide 2026",
-        "url": "https://oplu.com/resources/private-staff-salary-guide-2026"
       }
     ]
   }
