@@ -1,5 +1,87 @@
 [
   {
+    "no": "No. 59",
+    "date": "Friday, 18 September 2026",
+    "strap": "A daily dispatch from the world you are entering",
+    "lead": {
+      "cat": "Estate Management",
+      "place": "Aspen, Colorado, United States",
+      "tag": "The score decides",
+      "title": "A single wildfire score now decides whether the mountain house can be insured at all, and the people who run it sit inside the file",
+      "standfirst": "Colorado's disclosure law took effect this summer as carriers retreated from the resort valleys, and documented mitigation has become the difference between a policy and a refusal.",
+      "body": "Since 1 July 2026, under Colorado's House Bill 25-1182, every insurer writing a home in the state must disclose the wildfire risk score it used to rate that property, give the owner a route to contest it, and credit documented mitigation against it. The score itself is produced by one of a small number of models, Verisk FireLine, CoreLogic or ZestyAI Z-FIRE depending on the carrier, and in the Roaring Fork Valley it has become the single number that determines whether a house is placed with an admitted insurer, moved to the surplus lines market at a multiple of the price, or declined outright. Pitkin County adopted the state aligned wildfire hazard map in 2025 alongside the Colorado Wildfire Resiliency Code, and parcels the county had long classified as low hazard were reclassified upwards without anything on the ground changing.\n\nThe retreat of the carriers is not theoretical. Insurers are non renewing or declining new business across Aspen, Vail, Telluride and Steamboat Springs over concentrated wildfire exposure. United Policyholders documented one Colorado case in which a client's USD 20 million of buildings cover, previously written on a single policy at USD 60,000 a year, was non renewed and had to be rebuilt across four separate policies totalling USD 600,000 in combined premium. The state backstop offers no shelter at this level: the Colorado FAIR Plan caps residential cover at USD 750,000, paid at actual cash value, and only for fire, lightning and smoke.\n\nUnderneath the placement sits a second problem, which is that the sum insured on most of these houses is wrong. Custom construction in the Roaring Fork Valley runs from USD 800 to USD 1,500 per square foot, so a house of 6,000 square feet costs from USD 4.8 million to USD 9 million to rebuild. Sale prices move on entirely different logic: Aspen's median single family sale price reached USD 17.5 million in 2025, up 31 per cent in a year, and Snowmass Village's reached USD 8.25 million, up 11 per cent. A dwelling limit copied from a purchase price or a stale appraisal is the most common and most expensive error on these files.\n\nOccupancy is underwritten as heavily as fire. A large share of Aspen and Snowmass houses stand empty for months, which means an undiscovered frozen pipe or an evacuation with nobody on site. Most private client carriers now require a central water shutoff with low temperature monitoring bound as a policy condition, prefer to write the primary residence and the mountain house together, and price the vacancy months upward where there is no one in residence. Pitkin County runs a free professional wildfire risk assessment, roughly two hours on site with a written mitigation report delivered within fifteen days, and that report is precisely the documentation the new law obliges insurers to credit.\n\nThe practical consequence is that the house's insurability is now assembled from evidence that only the household can produce: defensible space maintained to code, a Class A roof and ember resistant vents recorded, the water shutoff tested, the assessment report filed, the contents schedule current, and somebody who can be at the property within the hour.",
+      "why": "Defensible space, a monitored water shutoff, a current inventory and a caretaker on site are underwriting facts now, not housekeeping. Whoever keeps that record is the reason a policy is offered, priced or withdrawn.",
+      "src": "Latent Insurance",
+      "url": "https://www.latentinsure.com/high-value-home-insurance/aspen-snowmass"
+    },
+    "articles": [
+      {
+        "cat": "Wealth",
+        "place": "New York, United States",
+        "tag": "Eight trillion",
+        "section": "The Market",
+        "title": "The four hundred wealthiest Americans are now worth USD 8 trillion, and the price of admission has never been higher",
+        "body": "Forbes published the 45th edition of its Forbes 400 on 15 September. The four hundred richest people in the United States are collectively worth a record USD 8 trillion, up USD 1.4 trillion on last year's list. The threshold to appear at all is USD 4.4 billion, a record in its own right and USD 600 million higher than the cut off twelve months ago.\n\nAt the top the concentration is extreme. Elon Musk holds first place for the fifth consecutive year at USD 908 billion, having more than doubled his fortune over the year. Jeff Bezos is second at USD 378 billion and Larry Page of Alphabet third at USD 278 billion. Between them, the three account for roughly a fifth of the entire list.\n\nThe more revealing figure sits below the line. A record 590 American billionaires were not wealthy enough to qualify, among them names as publicly conspicuous as Oprah Winfrey and Taylor Swift. Ten figure fortunes have become numerous enough that they no longer distinguish anyone, which is a reasonable description of the American employer market as it now stands.\n\nFor the private household, the shape of the list matters more than its arithmetic. A deepening tier of billionaires who fall outside the first four hundred is the tier that buys second and third residences, establishes single family offices, and staffs them. That is the population from which most private service appointments in the United States are made, and it grew again this year.",
+        "why": "The American market sets the ceiling for private service pay in most roles. A wider band of billionaire households below the very top is where the volume of estate, chef and chief of staff appointments actually comes from.",
+        "src": "Forbes",
+        "url": "https://www.forbes.com/sites/chasewithorn/2026/09/15/the-2026-forbes-400-list-of-wealthiest-americans-facts-and-figures/"
+      },
+      {
+        "cat": "Private Aviation",
+        "place": "Englewood, Colorado, United States",
+        "tag": "Deposits at risk",
+        "section": "At Sea & In the Air",
+        "title": "A charter broker has paused every flight for thirty days, and roughly USD 150 million of prepaid client money is exposed",
+        "body": "OneFlight International, the charter broker behind the BAJit jet card, halted all flight activity on 15 September, telling customers the pause would run for the next thirty days or until further notice while it evaluates its operations. Private Jet Card Comparisons, which first reported the halt, estimates that around USD 150 million in prepaid card balances and booked flight value is now exposed. OneFlight sells cards with deposits starting at USD 100,000 and owns no aircraft, arranging every flight through third party operators.\n\nThe strain was visible before the pause. In August the company told card holders they faced a 35 per cent economic surcharge, citing extraordinary economic pressures in private aviation, then withdrew it after customer objection. On 9 September a company vice president wrote that the chief executive was actively addressing financial and operational issues that had developed under the previous finance director. Several charter operators say they are owed money, one reporting USD 250,000 outstanding on a recent flight, while others report being paid as recently as August. OneFlight recorded USD 232 million of revenue in 2025, up 90 per cent year on year.\n\nThe structural point is the one worth carrying forward. A prepaid jet card deposit held by a broker is very rarely kept in escrow, separate from the company's operating cash. It functions as an unsecured loan to that company, and in an insolvency the card holder queues behind secured lenders and administrative costs. The precedent is documented: when JetSuite grounded its fleet in 2020, SuiteKey card holders were told to expect between 2.3 per cent and 15 per cent of their claims, and the payments that eventually arrived came closer to half a cent on the dollar.\n\nCompetitors have moved within days. FlyUSA launched a USD 100 million recovery programme for stranded customers, offering a complimentary membership with no new deposit and 20 per cent of qualifying flight spend returned as credit up to the value of a verified stranded balance. Amalfi Jets has waived its usual USD 100,000 deposit for current and former OneFlight members until 15 October.",
+        "why": "Whoever books the family's flights is choosing a counterparty, not just a price. Two questions belong on the file before any deposit is wired: will it be held in escrow, and does the company own the aircraft it puts you on.",
+        "src": "GlobalAir.com",
+        "url": "https://www.globalair.com/articles/oneflight-pauses-flights-with-150-million-in-customer-deposits-at-risk/12681"
+      },
+      {
+        "cat": "Collecting",
+        "place": "New York, United States",
+        "tag": "328 bottles",
+        "section": "Objects & Culture",
+        "title": "The largest single offering of Willett ever brought to auction closes today, inside Sotheby's first wine and spirits festival",
+        "body": "Sotheby's is staging its inaugural Nightcap Wine and Spirits Festival at the Breuer building in New York from 16 to 19 September. The whisky centrepiece is the Whisky and Whiskey sale, which has run since 3 September and closes today, and which is led by The Wax Top Collection: 328 bottles, the single largest offering of Willett Family Estate ever brought to auction at one time.\n\nWillett is the label that turned American whiskey into a collecting category rather than a drinking one, and the wax sealed bottlings that give the collection its name are the most closely tracked expressions in that market. Around them the sale offers more than 250 further lots spanning pre Prohibition and Prohibition era American whiskey, rare Scotch and Japanese single malts, which is a fair map of where spirits collecting has moved over the past decade.\n\nOne lot sits slightly apart. A Bowmore ARC-54, a 54 year old Islay malt distilled in 1968 and bottled at 44.3 per cent, carries an estimate from USD 40,000 to USD 60,000, with proceeds benefiting The Foundation of Hope.\n\nThe practical relevance is that spirits are now handled with the documentary rigour long applied to wine and pictures. Bottles at these levels are scheduled on an insurance policy, and their value depends on fill level, label condition, storage temperature and an unbroken record of custody. A house with a serious spirits room is holding a catalogued asset, and the person who signs for deliveries is the first link in its provenance.",
+        "why": "Cellars and spirits rooms are inventoried assets. Condition, storage and chain of custody are recorded by whoever runs the residence, and they determine what a bottle is worth when it is next valued or sold.",
+        "src": "The Whiskey Wash",
+        "url": "https://thewhiskeywash.com/whiskey-news/sothebys-nightcap-festival-willett-wax-top-collection-auction/"
+      },
+      {
+        "cat": "Openings",
+        "place": "West Hollywood, California, United States",
+        "tag": "8300 Sunset",
+        "section": "Hotels & Escapes",
+        "title": "The Standard's old address on Sunset returns this month as a 137 room house, behind USD 116.5 million of fresh debt",
+        "body": "Ian Schrager and Ed Scheetz have secured USD 116.5 million of bridge financing for Public Hotel West Hollywood, the 137 key property at 8300 Sunset Boulevard that is due to open this month on the site of the former Standard. Driftwood Capital and Benefit Street Partners provided the loan, negotiated by Cushman and Wakefield, and it was reported on 8 September.\n\nThe pair bought the site for USD 112.5 million in early 2023, two years after the Standard closed, and have run a ground up renovation since. Guest rooms and suites have been redesigned and the amenity programme now includes a new rooftop deck and a nightclub, in a building Schrager developed with the British architect John Pawson.\n\nThe reopening matters chiefly as a signal about the Sunset Strip, which spent several years without an anchor address after the Standard went dark. Schrager's stated position on the Public brand is accessible pricing attached to design, service and social space, which puts the house in a different register from the private club model that has dominated recent Los Angeles openings.\n\nFor a household with a Los Angeles diary, the Strip returning to use changes the geography of an evening. It is one address, in a city where the map of where people actually go is rewritten every couple of seasons.",
+        "why": "Knowing which houses are opening, and where they sit on the map a principal actually uses, is part of the standing brief. It is the difference between booking a table and choosing one.",
+        "src": "Commercial Observer",
+        "url": "https://commercialobserver.com/2026/09/ian-schrager-ed-scheetz-public-hotel-west-hollywood/"
+      }
+    ],
+    "briefs": [
+      {
+        "t": "Heavy jets pull away from the rest",
+        "b": "Global Jet Capital's forecast to 2030 has pre owned heavy jet transactions growing 4.9 per cent a year while light and medium volumes barely move. Large cabin aircraft currently sell in a median of 78 days against 134 for mid size, available inventory sits at 6.6 per cent of the active fleet against a historical average near 10 per cent, and manufacturer backlog has risen 12.8 per cent in six months to USD 66.8 billion.",
+        "src": "GlobalAir.com",
+        "url": "https://www.globalair.com/articles/five-year-forecast-confirms-it-heavy-jets-are-pulling-away-from-the-rest-of-the-market/12675"
+      },
+      {
+        "t": "London design closes on Sunday",
+        "b": "The London Design Festival runs from 12 to 20 September across eleven districts, with Soho taking part for the first time and Shoreditch Design Week the largest district on the schedule. The Design Museum's programme includes the first retrospective devoted to NIGO, artistic director of KENZO.",
+        "src": "Dezeen",
+        "url": "https://www.dezeen.com/eventsguide/london-design-festival-2026/"
+      },
+      {
+        "t": "Ski homes up 23 per cent in five years",
+        "b": "Knight Frank's Alpine Property Report records prime ski homes rising 23 per cent on average over the past five years, a period in which several major prime markets slowed. Courchevel 1850 remains the French benchmark, while Verbier has effectively plateaued after several strong years.",
+        "src": "Knight Frank",
+        "url": "https://www.knightfrank.fr/en/research/thematic-studies/alpine-property-report-2026/"
+      }
+    ]
+  },
+  {
     "no": "No. 58",
     "date": "Thursday, 17 September 2026",
     "strap": "A daily dispatch from the world you are entering",
@@ -3608,105 +3690,6 @@
         "b": "The United States is the world's largest source of new wealth yet scores only 62.3 on Henley's wealth-mobility scale, held back by citizenship-based taxation and fiscal complexity. Applications from US nationals doubled in 2025, with nearly half directed at European programmes.",
         "src": "Henley & Partners",
         "url": "https://www.henleyglobal.com/newsroom/press-releases/henley-private-wealth-migration-report-2026"
-      }
-    ]
-  },
-  {
-    "no": "No. 19",
-    "date": "Monday, 3 August 2026",
-    "strap": "A daily dispatch from the world you are entering",
-    "lead": {
-      "cat": "The Craft",
-      "place": "London, United Kingdom",
-      "tag": "The invisible hire",
-      "title": "Close protection becomes the household's fastest-growing hire, and the family now budgets for safety the way it once budgeted for staff",
-      "standfirst": "Executive protection is the quickest-rising role in private security, and the modern household increasingly builds a discreet detail into its running costs.",
-      "body": "For most of the last century the private household measured itself in visible service: the butler at the door, the chauffeur at the car, the cook in the kitchen. In 2026 a quieter figure has moved to the centre of the payroll. Close protection, once the preserve of heads of state and touring celebrities, has become the fastest-growing role in the whole of private security, and the family that lives at the top of the wealth curve now treats a personal detail as a fixed cost rather than a crisis measure.\n\nThe numbers explain the shift. Demand for close protection is rising by about 15 per cent a year, the fastest of any security discipline, and pay is climbing by roughly 9 per cent, also the quickest in the field. In the United Kingdom, an experienced officer on a private family assignment commands from 350 to 600 pounds a day, with elite hostile-environment work reaching around 110,000 pounds a year. In the United States the market is deeper still: an executive-protection detail agent sits near USD 128,000 in base pay, a detail leader near USD 185,000, and a director of security near USD 230,000. Contract day rates run from USD 1,200 to USD 2,500 an agent, depending on experience and whether the work stays at home or crosses borders.\n\nThe real cost, however, is not one person but the rota. Round-the-clock cover of a principal or a residence cannot be done by a single officer, and a three-agent rotation to hold a property twenty-four hours a day costs from USD 285,000 to USD 375,000 a year in salary alone, before travel, equipment and training. This is why protection now appears on the same ledger as the estate manager and the private chef, and why the family that adds a detail rarely does so lightly.\n\nThe bar to entry is high. Serious details expect from 5 to 10 years of experience, and the most demanding ultra-high-net-worth assignments look for at least a decade, ideally with military or specialist policing behind it. The officer is expected to be invisible in a drawing room and decisive on a pavement, to read a route as fluently as a maitre d' reads a table. That blend of discretion and capability is scarce, and scarcity, as ever in this world, is what sets the price.\n\nFor the household that surrounds the principal, the arrival of a permanent detail changes the shape of the whole operation. Schedules must be shared without being leaked, travel must be planned around advance work, and the domestic staff and the security team must learn to move through the same house without friction. The person who holds all of that together is, increasingly, the house manager.",
-      "why": "The estate or house manager is now expected to recruit, vet and rota a protection detail alongside the domestic staff, and to keep two very different cultures working under one roof.",
-      "src": "Talent Gurus",
-      "url": "https://www.talent-gurus.com/executive-protection-cost"
-    },
-    "articles": [
-      {
-        "cat": "The Private World",
-        "place": "Dubai, United Arab Emirates",
-        "tag": "The badge on the door",
-        "section": "The Private World",
-        "title": "Branded residences multiply across ninety countries, and the family that buys one is really buying a household it never has to build",
-        "body": "The branded residence, an apartment or villa that carries the name and the service standard of a luxury hotel or fashion house, has moved from novelty to norm. The number of live schemes worldwide has risen from 764 at the end of 2024 to around 910 by the close of 2025, a growth rate near 19 per cent in a single year. Savills projects 1,747 projects by 2032, and Knight Frank expects more than 1,000 live schemes by 2030. What was a curiosity a decade ago is now one of the most reliable growth stories in prime property.\n\nBuyers are paying handsomely for the label. Savills calculates a global average premium of 33 per cent over an equivalent unbranded home, a figure that has held steady year on year, with resort schemes commanding an even richer 39 per cent. The premium buys more than a name over the lobby: it buys housekeeping, security, maintenance, concierge and food and beverage delivered to a hotel standard, without the owner ever having to hire or manage a soul.\n\nThe map is widening fast. The pipeline now spans more than 90 countries, with 25 of them seeing their first branded scheme. Asia Pacific has grown by 55 per cent in five years, led by Vietnam, India and Thailand, while the Middle East and North Africa have surged by 187 per cent, with Dubai at the centre of the boom. The concept, once anchored to a handful of trophy cities, is becoming a global default for the mobile wealthy.\n\nThe product itself is changing too. By 2026 luxury in these buildings is defined less by marble and more by wellbeing, with spa and wellness floors, dedicated medical services, longevity programmes and personalised fitness moving from extras to expectations. The branded residence is quietly turning into a private-service platform dressed as real estate.",
-        "why": "The branded residence competes directly with the traditional private household, offering hotel-grade service without in-house staff, and the estate manager must now argue the case for what a dedicated team does better.",
-        "src": "Savills",
-        "url": "https://www.savills.com/research_articles/255800/226909-1"
-      },
-      {
-        "cat": "At Sea & In the Air",
-        "place": "Monaco",
-        "tag": "Range over show",
-        "section": "At Sea & In the Air",
-        "title": "The explorer yacht becomes the fastest-growing hull afloat, and the crew that runs one must master the ends of the earth",
-        "body": "The most telling change in the yachting market is not the size of the largest vessels but the direction of the newest ones. The expedition and explorer category is the fastest-growing cohort in the industry, and by the start of 2026 there were 101 expedition-oriented vessels in build or on order, the second-highest figure ever recorded in Boat International's Global Order Book. Projections suggest as many as 315 explorers could be delivered within a single decade by 2030.\n\nThe appeal is a shift in what wealth wants to say. For a rising generation of owners, the ostentatious superyacht anchored in central Monaco reads as a liability rather than a statement. The fastest-growing part of the fleet is not about being seen; it is about access. Luxury is increasingly defined by where a family can go, from Arctic fjords to remote Pacific atolls, rather than by what it can display along the Riviera.\n\nThese are serious machines. Explorer yachts are built for a range of 4,000 to 6,000 nautical miles or more, with enhanced stability for hard seas and expedition infrastructure that can include helicopter facilities, submersible stowage, dive centres, large tender garages and high-bandwidth satellite links. Notably, the growth is not only at the top: pocket explorers, vessels from 24 to 40 metres, now account for 72 per cent of explorer deliveries, bringing the category within reach of a far wider band of owners.\n\nRunning such a vessel is a different craft from working the Mediterranean charter circuit. Provisioning must be planned for weeks away from a chandler, medical cover must assume distance from a hospital, and the interior, increasingly built to feel like a private home rather than a floating hotel, must be maintained in conditions the conventional fleet never meets.",
-        "why": "Crew and shore teams on an explorer must handle remote logistics, provisioning and medical planning at range, a specialist skill set the family will pay to secure and struggle to replace.",
-        "src": "Impact Wealth (Boat International Global Order Book 2026)",
-        "url": "https://impactwealth.org/the-rise-of-explorer-yachts-among-global-billionaires/"
-      },
-      {
-        "cat": "Objects & Culture",
-        "place": "Pebble Beach, United States",
-        "tag": "The August block",
-        "section": "Objects & Culture",
-        "title": "Monterey Car Week readies its biggest sale of the year, and the great motor car proves the collector still pays for the singular",
-        "body": "Every August the collector world turns to the Monterey Peninsula for the most important few days in the global market for the motor car. The 2026 edition carries extra weight: it marks the 75th running of the Pebble Beach Concours d'Elegance, with the centrepiece staged on Sunday 16 August on the 18th fairway of Pebble Beach Golf Links at The Lodge. Around it, the great auction houses stage the year's defining sales.\n\nThe headline lot belongs to RM Sotheby's, which offers Nick Mason's 1996 McLaren F1 GTR with a presale estimate given as a value in excess of USD 35,000,000, the most expensive car on the block this year. Gooding Christie's, the official Pebble Beach partner, answers with a 1964 Shelby Cobra Daytona Coupe estimated in excess of USD 25,000,000, while a 1963 Ferrari 250 P is guided at from USD 15,000,000 to USD 20,000,000.\n\nThe field is shifting around them. Bonhams moves its sale to the Monterey Motorsports Reunion, and the theatrical presentations of Mecum and RM Sotheby's continue to draw the largest rooms. Beneath the record headline numbers, the market's message is consistent: the singular car, with unimpeachable provenance and racing history, holds its value even when the broader collectible market softens.\n\nFor the family that collects, a great motor car is not a static trophy. It travels to concours and to track, it must be stored in controlled conditions, insured to the value of a house, and documented to the last chassis number.",
-        "why": "A serious motor collection is a managed asset in its own right, requiring transport, climate-controlled storage, provenance records and event logistics that increasingly fall to the household to coordinate.",
-        "src": "RM Sotheby's (via Classic Car Auctions)",
-        "url": "https://www.classic-car-auctions.info/usa/california/monterey/2026-rm-sothebys-monterey-sale-top-cars-preview/"
-      },
-      {
-        "cat": "The Market",
-        "place": "New York, United States",
-        "tag": "The great handover",
-        "section": "The Market",
-        "title": "The ultra-wealthy population hits a record 556,850, and the coming handover of fortunes rewrites who the household actually serves",
-        "body": "The world has never held more very rich people. Altrata's World Ultra Wealth Report 2026, published on 23 June, puts the global ultra-high-net-worth population at an all-time high of 556,850 individuals, a rise of 14.4 per cent in 2025 and the strongest annual expansion since 2017. Over just two years the ranks of the ultra wealthy have grown by almost 30 per cent, adding more than 120,000 people to a group that already commands a decisive share of global assets.\n\nThe report frames the moment less as a peak than as a threshold. It identifies a USD 26 trillion investable opportunity tied to the wealth now in play, and forecasts the ultra-wealthy population to reach 746,570 individuals holding a combined USD 85 trillion by 2030. The engines of that growth are named plainly: wealth created by artificial intelligence, a reordering of global capital along geopolitical lines, and an accelerating transfer of fortunes between generations.\n\nGeography is tilting east. Asia recorded ultra-wealthy population growth of 15.8 per cent in 2025 and is forecast to post the strongest expansion of the three major regions to 2030. New centres of demand are forming faster than the service industries that support them, which is precisely where the strain on private staffing tends to appear first.\n\nThe intergenerational handover is the part that will be felt inside the house. As fortunes pass to younger principals, the expectations of the employer change: more mobile lives, more technology, more emphasis on wellbeing and discretion, and less patience for the formality of the old household. The people who serve these families are being asked to adapt to a client who looks nothing like the one their profession was built around.",
-        "why": "A younger, more mobile and more tech-fluent generation of principals is inheriting the world's fortunes, and the household must evolve its manners, its systems and its skills to serve them.",
-        "src": "Altrata",
-        "url": "https://altrata.com/reports/world-ultra-wealth-report-2026"
-      },
-      {
-        "cat": "Hotels & Escapes",
-        "place": "Baja California Sur, Mexico",
-        "tag": "Silence in Baja",
-        "section": "Hotels & Escapes",
-        "title": "Aman opens its first Mexican resort on the Sea of Cortes, and the private-travel map gains a new coast",
-        "body": "Aman, the group whose name has become shorthand for total privacy, opens its first resort in Mexico in the spring of 2026. Amanvari sits on the East Cape of Baja California Sur, where desert, farmland and shoreline meet, and it is the brand's first property with direct access to the Sea of Cortes. It is a significant addition to a map that the private traveller reads closely.\n\nThe resort occupies just 18 casitas within the 1,500-acre Costa Palmas development, and though it shares that address with a superyacht marina and a Robert Trent Jones II golf course, it operates as an independent enclave behind the wall of silence that defines the brand. The scale is deliberately small, the setting deliberately remote, and the point is seclusion within reach of serious infrastructure.\n\nThe opening lands in a demanding market. Ultra-high-net-worth travel spending rose sharply from 2023 to 2025, and that surge has left the established trophy properties under real occupancy pressure, particularly in the peak weeks. A new Aman with marina access on an underused coast offers a rare thing: a genuinely fresh option at the very top.",
-        "why": "The concierge and house manager who plan a family's private travel need to know a remote new Aman with its own marina, because it becomes a logistical node for a yacht itinerary as much as a place to stay.",
-        "src": "Aman (via StarsDesk)",
-        "url": "https://www.starsdesk.com/blog/new-aman-hotels-opening-in-20262030"
-      }
-    ],
-    "briefs": [
-      {
-        "t": "Security by rotation",
-        "b": "Round-the-clock close protection now runs on a three-agent rota, and the salary bill alone for that cover reaches from USD 285,000 to USD 375,000 a year in the United States, before travel and equipment. It is why protection now sits on the household ledger beside the estate manager.",
-        "src": "Talent Gurus",
-        "url": "https://www.talent-gurus.com/executive-protection-salary-guide"
-      },
-      {
-        "t": "Wellness moves in",
-        "b": "The branded-residence pipeline now spans more than 90 countries, with the Middle East and North Africa up 187 per cent in five years. Spa, longevity and dedicated medical services are becoming standard features rather than extras.",
-        "src": "Savills",
-        "url": "https://www.savills.com/research_articles/255800/226909-1"
-      },
-      {
-        "t": "The Cobra returns",
-        "b": "A 1964 Shelby Cobra Daytona Coupe carries an estimate in excess of USD 25,000,000 at Gooding Christie's Pebble Beach, the second most valuable lot of Monterey week. It trails only a 1996 McLaren F1 GTR guided above USD 35,000,000.",
-        "src": "Classic Car Auctions",
-        "url": "https://www.classic-car-auctions.info/usa/california/monterey/2026-top-ten-cars-at-monterey-car-week-auctions/"
-      },
-      {
-        "t": "Jackson Hole waits",
-        "b": "Amangani, Aman's clifftop lodge above Jackson Hole, has been closed for a full renovation since April 2025 and is due to reopen in late 2026. It returns to a market where trophy properties are running short of peak-season rooms.",
-        "src": "Aman (via StarsDesk)",
-        "url": "https://www.starsdesk.com/blog/new-aman-hotels-opening-in-20262030"
       }
     ]
   }

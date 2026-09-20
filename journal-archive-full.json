@@ -1,5 +1,87 @@
 [
   {
+    "no": "No. 59",
+    "date": "Friday, 18 September 2026",
+    "strap": "A daily dispatch from the world you are entering",
+    "lead": {
+      "cat": "Estate Management",
+      "place": "Aspen, Colorado, United States",
+      "tag": "The score decides",
+      "title": "A single wildfire score now decides whether the mountain house can be insured at all, and the people who run it sit inside the file",
+      "standfirst": "Colorado's disclosure law took effect this summer as carriers retreated from the resort valleys, and documented mitigation has become the difference between a policy and a refusal.",
+      "body": "Since 1 July 2026, under Colorado's House Bill 25-1182, every insurer writing a home in the state must disclose the wildfire risk score it used to rate that property, give the owner a route to contest it, and credit documented mitigation against it. The score itself is produced by one of a small number of models, Verisk FireLine, CoreLogic or ZestyAI Z-FIRE depending on the carrier, and in the Roaring Fork Valley it has become the single number that determines whether a house is placed with an admitted insurer, moved to the surplus lines market at a multiple of the price, or declined outright. Pitkin County adopted the state aligned wildfire hazard map in 2025 alongside the Colorado Wildfire Resiliency Code, and parcels the county had long classified as low hazard were reclassified upwards without anything on the ground changing.\n\nThe retreat of the carriers is not theoretical. Insurers are non renewing or declining new business across Aspen, Vail, Telluride and Steamboat Springs over concentrated wildfire exposure. United Policyholders documented one Colorado case in which a client's USD 20 million of buildings cover, previously written on a single policy at USD 60,000 a year, was non renewed and had to be rebuilt across four separate policies totalling USD 600,000 in combined premium. The state backstop offers no shelter at this level: the Colorado FAIR Plan caps residential cover at USD 750,000, paid at actual cash value, and only for fire, lightning and smoke.\n\nUnderneath the placement sits a second problem, which is that the sum insured on most of these houses is wrong. Custom construction in the Roaring Fork Valley runs from USD 800 to USD 1,500 per square foot, so a house of 6,000 square feet costs from USD 4.8 million to USD 9 million to rebuild. Sale prices move on entirely different logic: Aspen's median single family sale price reached USD 17.5 million in 2025, up 31 per cent in a year, and Snowmass Village's reached USD 8.25 million, up 11 per cent. A dwelling limit copied from a purchase price or a stale appraisal is the most common and most expensive error on these files.\n\nOccupancy is underwritten as heavily as fire. A large share of Aspen and Snowmass houses stand empty for months, which means an undiscovered frozen pipe or an evacuation with nobody on site. Most private client carriers now require a central water shutoff with low temperature monitoring bound as a policy condition, prefer to write the primary residence and the mountain house together, and price the vacancy months upward where there is no one in residence. Pitkin County runs a free professional wildfire risk assessment, roughly two hours on site with a written mitigation report delivered within fifteen days, and that report is precisely the documentation the new law obliges insurers to credit.\n\nThe practical consequence is that the house's insurability is now assembled from evidence that only the household can produce: defensible space maintained to code, a Class A roof and ember resistant vents recorded, the water shutoff tested, the assessment report filed, the contents schedule current, and somebody who can be at the property within the hour.",
+      "why": "Defensible space, a monitored water shutoff, a current inventory and a caretaker on site are underwriting facts now, not housekeeping. Whoever keeps that record is the reason a policy is offered, priced or withdrawn.",
+      "src": "Latent Insurance",
+      "url": "https://www.latentinsure.com/high-value-home-insurance/aspen-snowmass"
+    },
+    "articles": [
+      {
+        "cat": "Wealth",
+        "place": "New York, United States",
+        "tag": "Eight trillion",
+        "section": "The Market",
+        "title": "The four hundred wealthiest Americans are now worth USD 8 trillion, and the price of admission has never been higher",
+        "body": "Forbes published the 45th edition of its Forbes 400 on 15 September. The four hundred richest people in the United States are collectively worth a record USD 8 trillion, up USD 1.4 trillion on last year's list. The threshold to appear at all is USD 4.4 billion, a record in its own right and USD 600 million higher than the cut off twelve months ago.\n\nAt the top the concentration is extreme. Elon Musk holds first place for the fifth consecutive year at USD 908 billion, having more than doubled his fortune over the year. Jeff Bezos is second at USD 378 billion and Larry Page of Alphabet third at USD 278 billion. Between them, the three account for roughly a fifth of the entire list.\n\nThe more revealing figure sits below the line. A record 590 American billionaires were not wealthy enough to qualify, among them names as publicly conspicuous as Oprah Winfrey and Taylor Swift. Ten figure fortunes have become numerous enough that they no longer distinguish anyone, which is a reasonable description of the American employer market as it now stands.\n\nFor the private household, the shape of the list matters more than its arithmetic. A deepening tier of billionaires who fall outside the first four hundred is the tier that buys second and third residences, establishes single family offices, and staffs them. That is the population from which most private service appointments in the United States are made, and it grew again this year.",
+        "why": "The American market sets the ceiling for private service pay in most roles. A wider band of billionaire households below the very top is where the volume of estate, chef and chief of staff appointments actually comes from.",
+        "src": "Forbes",
+        "url": "https://www.forbes.com/sites/chasewithorn/2026/09/15/the-2026-forbes-400-list-of-wealthiest-americans-facts-and-figures/"
+      },
+      {
+        "cat": "Private Aviation",
+        "place": "Englewood, Colorado, United States",
+        "tag": "Deposits at risk",
+        "section": "At Sea & In the Air",
+        "title": "A charter broker has paused every flight for thirty days, and roughly USD 150 million of prepaid client money is exposed",
+        "body": "OneFlight International, the charter broker behind the BAJit jet card, halted all flight activity on 15 September, telling customers the pause would run for the next thirty days or until further notice while it evaluates its operations. Private Jet Card Comparisons, which first reported the halt, estimates that around USD 150 million in prepaid card balances and booked flight value is now exposed. OneFlight sells cards with deposits starting at USD 100,000 and owns no aircraft, arranging every flight through third party operators.\n\nThe strain was visible before the pause. In August the company told card holders they faced a 35 per cent economic surcharge, citing extraordinary economic pressures in private aviation, then withdrew it after customer objection. On 9 September a company vice president wrote that the chief executive was actively addressing financial and operational issues that had developed under the previous finance director. Several charter operators say they are owed money, one reporting USD 250,000 outstanding on a recent flight, while others report being paid as recently as August. OneFlight recorded USD 232 million of revenue in 2025, up 90 per cent year on year.\n\nThe structural point is the one worth carrying forward. A prepaid jet card deposit held by a broker is very rarely kept in escrow, separate from the company's operating cash. It functions as an unsecured loan to that company, and in an insolvency the card holder queues behind secured lenders and administrative costs. The precedent is documented: when JetSuite grounded its fleet in 2020, SuiteKey card holders were told to expect between 2.3 per cent and 15 per cent of their claims, and the payments that eventually arrived came closer to half a cent on the dollar.\n\nCompetitors have moved within days. FlyUSA launched a USD 100 million recovery programme for stranded customers, offering a complimentary membership with no new deposit and 20 per cent of qualifying flight spend returned as credit up to the value of a verified stranded balance. Amalfi Jets has waived its usual USD 100,000 deposit for current and former OneFlight members until 15 October.",
+        "why": "Whoever books the family's flights is choosing a counterparty, not just a price. Two questions belong on the file before any deposit is wired: will it be held in escrow, and does the company own the aircraft it puts you on.",
+        "src": "GlobalAir.com",
+        "url": "https://www.globalair.com/articles/oneflight-pauses-flights-with-150-million-in-customer-deposits-at-risk/12681"
+      },
+      {
+        "cat": "Collecting",
+        "place": "New York, United States",
+        "tag": "328 bottles",
+        "section": "Objects & Culture",
+        "title": "The largest single offering of Willett ever brought to auction closes today, inside Sotheby's first wine and spirits festival",
+        "body": "Sotheby's is staging its inaugural Nightcap Wine and Spirits Festival at the Breuer building in New York from 16 to 19 September. The whisky centrepiece is the Whisky and Whiskey sale, which has run since 3 September and closes today, and which is led by The Wax Top Collection: 328 bottles, the single largest offering of Willett Family Estate ever brought to auction at one time.\n\nWillett is the label that turned American whiskey into a collecting category rather than a drinking one, and the wax sealed bottlings that give the collection its name are the most closely tracked expressions in that market. Around them the sale offers more than 250 further lots spanning pre Prohibition and Prohibition era American whiskey, rare Scotch and Japanese single malts, which is a fair map of where spirits collecting has moved over the past decade.\n\nOne lot sits slightly apart. A Bowmore ARC-54, a 54 year old Islay malt distilled in 1968 and bottled at 44.3 per cent, carries an estimate from USD 40,000 to USD 60,000, with proceeds benefiting The Foundation of Hope.\n\nThe practical relevance is that spirits are now handled with the documentary rigour long applied to wine and pictures. Bottles at these levels are scheduled on an insurance policy, and their value depends on fill level, label condition, storage temperature and an unbroken record of custody. A house with a serious spirits room is holding a catalogued asset, and the person who signs for deliveries is the first link in its provenance.",
+        "why": "Cellars and spirits rooms are inventoried assets. Condition, storage and chain of custody are recorded by whoever runs the residence, and they determine what a bottle is worth when it is next valued or sold.",
+        "src": "The Whiskey Wash",
+        "url": "https://thewhiskeywash.com/whiskey-news/sothebys-nightcap-festival-willett-wax-top-collection-auction/"
+      },
+      {
+        "cat": "Openings",
+        "place": "West Hollywood, California, United States",
+        "tag": "8300 Sunset",
+        "section": "Hotels & Escapes",
+        "title": "The Standard's old address on Sunset returns this month as a 137 room house, behind USD 116.5 million of fresh debt",
+        "body": "Ian Schrager and Ed Scheetz have secured USD 116.5 million of bridge financing for Public Hotel West Hollywood, the 137 key property at 8300 Sunset Boulevard that is due to open this month on the site of the former Standard. Driftwood Capital and Benefit Street Partners provided the loan, negotiated by Cushman and Wakefield, and it was reported on 8 September.\n\nThe pair bought the site for USD 112.5 million in early 2023, two years after the Standard closed, and have run a ground up renovation since. Guest rooms and suites have been redesigned and the amenity programme now includes a new rooftop deck and a nightclub, in a building Schrager developed with the British architect John Pawson.\n\nThe reopening matters chiefly as a signal about the Sunset Strip, which spent several years without an anchor address after the Standard went dark. Schrager's stated position on the Public brand is accessible pricing attached to design, service and social space, which puts the house in a different register from the private club model that has dominated recent Los Angeles openings.\n\nFor a household with a Los Angeles diary, the Strip returning to use changes the geography of an evening. It is one address, in a city where the map of where people actually go is rewritten every couple of seasons.",
+        "why": "Knowing which houses are opening, and where they sit on the map a principal actually uses, is part of the standing brief. It is the difference between booking a table and choosing one.",
+        "src": "Commercial Observer",
+        "url": "https://commercialobserver.com/2026/09/ian-schrager-ed-scheetz-public-hotel-west-hollywood/"
+      }
+    ],
+    "briefs": [
+      {
+        "t": "Heavy jets pull away from the rest",
+        "b": "Global Jet Capital's forecast to 2030 has pre owned heavy jet transactions growing 4.9 per cent a year while light and medium volumes barely move. Large cabin aircraft currently sell in a median of 78 days against 134 for mid size, available inventory sits at 6.6 per cent of the active fleet against a historical average near 10 per cent, and manufacturer backlog has risen 12.8 per cent in six months to USD 66.8 billion.",
+        "src": "GlobalAir.com",
+        "url": "https://www.globalair.com/articles/five-year-forecast-confirms-it-heavy-jets-are-pulling-away-from-the-rest-of-the-market/12675"
+      },
+      {
+        "t": "London design closes on Sunday",
+        "b": "The London Design Festival runs from 12 to 20 September across eleven districts, with Soho taking part for the first time and Shoreditch Design Week the largest district on the schedule. The Design Museum's programme includes the first retrospective devoted to NIGO, artistic director of KENZO.",
+        "src": "Dezeen",
+        "url": "https://www.dezeen.com/eventsguide/london-design-festival-2026/"
+      },
+      {
+        "t": "Ski homes up 23 per cent in five years",
+        "b": "Knight Frank's Alpine Property Report records prime ski homes rising 23 per cent on average over the past five years, a period in which several major prime markets slowed. Courchevel 1850 remains the French benchmark, while Verbier has effectively plateaued after several strong years.",
+        "src": "Knight Frank",
+        "url": "https://www.knightfrank.fr/en/research/thematic-studies/alpine-property-report-2026/"
+      }
+    ]
+  },
+  {
     "no": "No. 58",
     "date": "Thursday, 17 September 2026",
     "strap": "A daily dispatch from the world you are entering",
