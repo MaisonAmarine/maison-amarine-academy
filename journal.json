@@ -1,71 +1,93 @@
 {
-  "no": "No. 64",
-  "date": "Thursday, 24 September 2026",
+  "no": "No. 65",
+  "date": "Friday, 25 September 2026",
   "strap": "A daily dispatch from the world you are entering",
   "lead": {
-    "cat": "The Market",
-    "place": "New York, United States",
-    "tag": "The widening pool",
-    "title": "The world's ultra wealthy population has grown by nearly a third in two years, and the households behind it are multiplying faster than trained staff to run them",
-    "standfirst": "Altrata's latest count puts the ultra high net worth population at a record 556,850, on course to pass 746,000 by 2030, a pace of household formation that outstrips any count of people trained to run one.",
-    "body": "Altrata's World Ultra Wealth Report 2026, published on 23 June, counts 556,850 individuals worldwide with a net worth of USD 30 million or more. The population has expanded by close to 30 per cent over two years, adding more than 120,000 people, the strongest annual growth the report has recorded since 2017. Combined wealth across the group stands at USD 63.8 trillion, of which USD 26 trillion is investable, about 10 per cent of the world's investable asset stock.\n\nNorth America holds the largest share of this population, 37 per cent, with Asia the second largest region and Africa the fastest growing, up 24 per cent in a single year. Annual luxury spending by the ultra wealthy now runs to USD 282 billion and philanthropic giving to USD 220 billion. The group represents just 1.1 per cent of the world's millionaires yet controls 32 per cent of millionaire wealth, and Altrata expects the population to reach 746,570 individuals by 2030, with combined wealth of USD 85 trillion.\n\nThe report does not measure the private service workforce this growth requires, and no equivalent count exists of butlers, house managers, estate managers, private chefs or estate security staff entering the market each year. What the figures do show is concentration: wealth of this scale is gathering inside fewer, larger households rather than spreading evenly, which is why agencies and training schools report demand clustering around a smaller number of multi property, multi staff operations rather than growing at the margins.",
-    "why": "The report is a demand curve. Every household added to it, eventually, is a house that needs running, and the pace of its growth is what recruiters, agencies and training academies plan against.",
-    "src": "Altrata",
-    "url": "https://altrata.com/reports/world-ultra-wealth-report-2026"
+    "cat": "The Craft",
+    "place": "London, United Kingdom",
+    "tag": "The scarcity premium",
+    "title": "Household staff salaries are climbing again as agencies report record demand and a shortage of estate managers deep enough to be called critical",
+    "standfirst": "Morgan & Mallet's 2025/26 salary guide finds private chefs earning up to USD 300,000 in the United States and confidentiality alone worth a fifth of a salary, describing the tightest market for senior household staff the agency has recorded.",
+    "body": "Morgan & Mallet International, one of the longest established household staffing agencies, has published its 2025/26 salary guide describing \"record demand, global mobility, and serious talent shortages\" across private service. In the United States, which pays best for 60 per cent of the roles the guide tracks, a butler now earns from USD 90,000 to USD 180,000, an estate manager from USD 150,000 to USD 250,000 and a private chef as much as USD 300,000. Switzerland and the United Kingdom trail, but not by much: a Swiss estate manager earns the equivalent of up to USD 180,000, a British one up to USD 158,400.\n\nThe shortage is sharpest at the top of the house. The guide describes estate managers, the role that coordinates staff across more than one property, as \"critically undersupplied.\" Mobility carries its own premium: a traveling nanny placed in the United Arab Emirates now commands USD 163,200, and the guide notes that only 2.36 per cent of nannies nationally are equipped for rotational, multi household postings, which agencies describe as the real constraint on staffing a family with more than one residence.\n\nDiscretion has become a priced line item rather than an assumption. In Los Angeles, 77 per cent of personal assistant roles now require a signed non disclosure agreement, and the guide estimates that confidentiality alone adds 15 to 20 per cent to a salary once a role touches a principal's calendar, health or finances closely enough to matter. Specialisation pays in a similar way: chefs with nutrition qualifications and nannies with STEM backgrounds are, in the guide's words, \"particularly sought after,\" reaching placements generalists no longer do.\n\nFor anyone training for the profession now, the practical reading of the guide is that the wage floor has moved for candidates who can document a specialism and a record of discretion, while placements for generalist staff without either are getting harder to find even as overall demand keeps rising.",
+    "why": "The guide is the clearest evidence yet that discretion and documented specialism, not tenure alone, now set private service pay, which is the standard a student entering the field is training against.",
+    "src": "Morgan & Mallet International",
+    "url": "https://www.householdstaff.agency/salaries/"
   },
   "articles": [
     {
-      "cat": "The Craft",
-      "place": "Zurich, Switzerland",
-      "tag": "The security line",
-      "section": "The Craft",
-      "title": "More than a third of family offices plan to spend more on security in 2026, and that line item usually becomes a household hire",
-      "body": "UBS surveyed more than 300 of its family office clients across over 30 markets for its Global Family Office Report 2026. The average family represented is worth USD 2.7 billion, with the average family office managing USD 1.3 billion in assets. Among the strategic shifts planned for 2026, 39 per cent of family offices intend to increase allocation to defence and security infrastructure, alongside 65 per cent adding exposure to artificial intelligence and 35 per cent to infrastructure more broadly.\n\nThe same report finds a gap on the other side of the family office desk. Among next generation family members old enough to take part, 29 per cent currently have no involvement in the office at all. Family offices, in other words, are investing in protection and continuity even as some of the people meant to inherit both stay outside the room.\n\nFor the household, a security budget rarely stays at the office level. It typically converts into close protection officers, upgraded residence security systems, and chiefs of staff who can move between the family office and the home, briefing one on the other. House managers and estate managers who understand both protocol and principal movement, rather than staff trained purely in hospitality, are the ones increasingly asked to hold that line.",
-      "why": "A family office allocation to security or AI is, at the household end, usually a vacancy: for a close protection officer, a chief of staff, or a house manager fluent in both the office and the home.",
-      "src": "UBS",
-      "url": "https://www.ubs.com/global/en/wealthmanagement/who-we-serve/family-office-and-uhnw/global-family-office-report.html"
+      "cat": "The Market",
+      "place": "New York, United States",
+      "tag": "The great rebalancing",
+      "section": "The Market",
+      "title": "Family offices are turning back toward public equities and further from home, Citi's newest survey finds, as globalisation reshapes where the money and the people managing it are based",
+      "body": "Citi Wealth's 2026 Global Family Office Report surveyed 351 family offices across 41 countries in June and July, representing an average family net worth of USD 2.1 billion among the roughly 1,900 offices Citi's Global Family Office Group serves. Close to 90 per cent reported positive returns for the year to date, and 41 per cent are still targeting annual returns of 7 to 10 per cent despite a volatile stretch for markets.\n\nThe clearest shift is where the money is going. Nearly half of the offices surveyed increased their exposure to public equities over the year, which the report names as the top destination for new capital, with global developed market equities identified as the asset class family offices favour most for future allocation. Concern about trade and tariffs, prominent in Citi's 2025 survey, has fallen sharply; inflation, interest rates and financial stability now top the list of what keeps family offices awake.\n\nAlongside the portfolio, the families themselves are becoming harder to pin to one place. 38 per cent of the offices surveyed expect the families they serve to become more global over the next five years, spreading residences, citizenships and now investment mandates across more jurisdictions than before, which Citi describes as a foundational challenge rather than a passing trend.\n\nFor the household side of that office, the practical result is a family whose base, and whose staff, may need to work across two or three jurisdictions rather than one, with payroll, visas and duty of care to match. A portfolio that globalises rarely stops at the balance sheet.",
+      "why": "A family office survey reads like an investment story, but the globalisation and mobility it describes are, on the ground, a staffing and logistics brief for whoever runs the family's residences across however many countries it now calls home.",
+      "src": "Citi Wealth",
+      "url": "https://www.businesswire.com/news/home/20260922001587/en/Citi-Wealths-2026-Global-Family-Office-Report-Reveals-Clients-Are-Shifting-Their-Focus-Towards-Public-Equities-While-Becoming-More-Deliberate-and-Resilient-Amid-Uncertainty"
     },
     {
       "cat": "The Private World",
-      "place": "Singapore",
-      "tag": "The moving households",
+      "place": "United States",
+      "tag": "The inherited house",
       "section": "The Private World",
-      "title": "Enquiries into UAE residence rose 41 per cent in three months, and every relocating family takes a household with it",
-      "body": "Henley & Partners' Private Wealth Migration Report 2026, published on 16 June, scores destinations on a Wealth Mobility Competitiveness Index. Singapore leads that index at 79.5 out of 100, followed by New Zealand at 75.8, the Cayman Islands at 74.3, Cyprus at 73.5 and Italy at 72.3, the last of these described in the report as among Europe's leading success stories for attracting relocating wealth.\n\nSeparately, the report records the sharpest rise in interest of any single destination in the United Arab Emirates, where enquiries rose 41 per cent between the fourth quarter of 2025 and the first quarter of 2026 and applications for alternative residence or citizenship rose 29 per cent. Applications from United States nationals doubled over 2025, with nearly half directed toward European programmes, while enquiries from United Kingdom nationals rose 15 per cent and from German nationals 16 per cent over the same window.\n\nNone of this migration happens without a household following, or being rebuilt, behind the principal. A family relocating to Singapore or the UAE typically needs staff sponsored on the correct visa category, local labour law understood before the first hire is made, and a house run to the family's standard from the first week rather than the first year. That coordination, more often than the move itself, now sits with the estate manager or the family office.",
-      "why": "Every relocation counted in a migration report is, on the household side, a restaffing project, and increasingly the estate manager's brief includes managing that move as much as the property it lands in.",
-      "src": "Henley & Partners",
-      "url": "https://www.henleyglobal.com/newsroom/press-releases/henley-private-wealth-migration-report-2026"
+      "title": "More family businesses are now being inherited than bought in the United States, Bank of America's research finds, and the households built around them usually change hands the same way",
+      "body": "Bank of America surveyed 1,400 US adults with at least USD 3 million in investable assets on how they intend to transfer their wealth, part of research into what commentators have called the Great Wealth Transfer, a shift of between USD 36 trillion and USD 124 trillion from the baby boomer generation to younger heirs over the next two decades, depending on the estimate used.\n\nThe clearest change is in how business ownership itself is changing hands. In 2026, 23 per cent of businesses among the wealthy Americans surveyed are projected to be inherited against 11 per cent bought, close to a reversal of 2022, when 28 per cent were purchased and only 5 per cent inherited. A notable share of owners currently have no plan to step back at all, but among those who do, the majority now expect to pass ownership to family rather than sell it.\n\nA business rarely transfers alone. The estate, the staff who run it, and the household infrastructure built around a founder generation typically pass with it, and the household that suited one owner does not automatically suit the next. Estate managers and house managers increasingly report being retained through a transition specifically because their knowledge of the property, the routines and the family's standards has value an incoming generation cannot easily replace.",
+      "why": "When a business passes to an heir rather than a buyer, the household around it usually passes too, which makes continuity of staff, not just of ownership, part of what a well managed transition actually protects.",
+      "src": "Bank of America, via Fortune",
+      "url": "https://fortune.com/2026/07/15/124-trillion-dollar-great-wealth-transfer-more-inherited-businesses-bofa-report/"
+    },
+    {
+      "cat": "At Sea & In the Air",
+      "place": "Monaco",
+      "tag": "Forty three afloat",
+      "section": "At Sea & In the Air",
+      "title": "The Monaco Yacht Show opens with 120 superyachts in the harbour and 43 of them delivered this year alone, led by a 102 metre Lurssen",
+      "body": "The 35th Monaco Yacht Show runs from 23 to 26 September in Port Hercule, bringing together 120 superyachts, of which 43 were delivered new in 2026, ranging from 23.98 metres up to the 102 metre Nixie, built by the German yard Lurssen and the largest delivery on show. Toby Moore, chief executive of organiser Informa Prestige, described the effect as being able to walk the decks of forty three yachts delivering this year within a single harbour over four days.\n\nThe fleet on the water this week is overwhelmingly a brokerage and charter one, 38 of the confirmed yachts, rather than boats built to a single owner's private order, alongside 7 sailing yachts and a small but growing multihull presence including Sunreef's Ipharra II and Lagoon's Eighty 3. The largest sailing yacht on show, Ares Yachts' 62 metre Simena, points to a segment of the market recovering more slowly than motor yachts but recovering nonetheless.\n\nFor crew and shoreside staff, a show week functions as a hiring and inspection event as much as a sales one. Captains and chief stewardesses move between vessels to view layouts before a season's refit decisions are made, and owners' representatives use the week to benchmark a boat against a fleet assembled in one place, something no brochure achieves.",
+      "why": "A show week is where the yachting world sets its benchmark for the season, and where the crew and shoreside teams who will run these vessels for an owner do a large share of their hiring and their homework.",
+      "src": "Monaco Yacht Show",
+      "url": "https://www.monacoyachtshow.com/en/2026-superyacht-list"
     },
     {
       "cat": "Objects & Culture",
-      "place": "London, United Kingdom",
-      "tag": "The fair returns",
+      "place": "Hong Kong",
+      "tag": "Ten times estimate",
       "section": "Objects & Culture",
-      "title": "Frieze London returns to Regent's Park with almost 300 galleries from 48 countries, and the works it sells will need someone to look after them",
-      "body": "Frieze London and Frieze Masters run from 14 to 18 October in Regent's Park. Frieze London brings 172 galleries from 42 countries and regions, Frieze Masters nearly 140 galleries from 30, close to 300 combined. New at Frieze London is The Code Universe, a section curated by Carol Yinghua Lu examining the forces shaping popular culture from the late 1970s to the present, alongside an expanded Artist to Artist programme pairing seven emerging artists with established figures including Firelei Baez and Yinka Shonibare. Frieze Masters adds Queering Modernism, a curatorial thread on LGBTQIA+ subjects in twentieth century art, and an expanded Spotlight section for overlooked mid century work. Frieze Sculpture, free and open to the public, runs in the park from 16 September to 1 November.\n\nThe week around a fair of this size is when private collections are most actively built, and the work rarely ends at the gallery door. Condition reports, framing, shipping, insurance and the eventual hang at the family's residence typically fall to house staff rather than the seller, and larger households with active collections increasingly write a curatorial or collections management function into a house manager's role rather than outsourcing it entirely.",
-      "why": "A fair week like Frieze is when a private collection grows, and what happens to a work after the sale, shipping, condition, insurance, permanent display, is usually a household's job, not the gallery's.",
-      "src": "Frieze",
-      "url": "https://www.frieze.com/article/frieze-london-frieze-masters-2026-artists-histories-galleries"
+      "title": "September's autumn auctions turned up a string of estimates blown through by ten times over, from a pair of Cartier earrings in Hong Kong to a Chinese daybed in New York",
+      "body": "The autumn auction season across Hong Kong, Paris, London and New York produced several lots that sold for many multiples of their pre sale estimate, a pattern dealers read as private buyers, rather than institutions, setting the pace. A pair of Cartier Tutti Frutti earrings set with rubies, emeralds, sapphires and diamonds sold at Sotheby's Hong Kong for roughly USD 1 million, about ten times its low estimate. A sixteenth to seventeenth century huanghuali daybed, previously exhibited at the Museum of Fine Arts, Boston, sold at Christie's New York for USD 3.17 million against an estimate of USD 120,000 to USD 180,000, more than seventeen times its low guide.\n\nAt Sotheby's Paris, a 1980 bronze console table by Diego Giacometti, Homage to Böcklin, sold for approximately USD 4.56 million as part of the Rochas Collection sale, and at Christie's London a Rickenbacker 330 guitar bought by Johnny Marr in 1983 and later loaned to Noel Gallagher for Oasis's debut album sold for USD 474,544 against an estimate of USD 79,000 to USD 105,900, a reminder that provenance now extends well beyond fine art and furniture into music and design objects a household's collections manager may never have catalogued before.\n\nFor anyone who manages a private collection, the pattern matters practically as much as it makes a good auction story. Insured values set even a season ago are, in a number of these categories, now understated, and the condition reporting and shipping around a purchase this far above estimate carry their own cost and timeline that a house or family office needs to plan for rather than discover afterward.",
+      "why": "A season of prices this far above estimate is, for whoever manages a family's collection, a prompt to update valuations and insurance cover rather than assume last year's figure still holds.",
+      "src": "Galerie",
+      "url": "https://galeriemagazine.com/september-auction-highlights-the-month-on-the-block/"
+    },
+    {
+      "cat": "Hotels & Escapes",
+      "place": "Florence, Italy",
+      "tag": "Six keys only",
+      "section": "Hotels & Escapes",
+      "title": "La Reserve opens its first Florence address next month, a six suite palazzo conversion rather than a hotel of any conventional size",
+      "body": "La Reserve Firenze opens on 16 October in a former Florentine palazzo converted into just six apartment style suites, with a rooftop terrace and a speakeasy style bar hidden within the building. The scale is deliberate: La Reserve's Geneva and Paris properties have built a reputation on running more like a very well staffed private residence than a hotel of any conventional size, and the Florence opening continues that model rather than departing from it.\n\nFor a family that travels with, or ahead of, its own household staff, a property this size changes the logistics rather than the appeal. Six suites means the entire building can realistically be taken by one party, with the hotel's own staff working alongside a family's travelling team rather than around them, a configuration increasingly requested by clients who want privacy without giving up hotel level service entirely.",
+      "why": "A six suite hotel is, in practice, close to a private house with a concierge desk attached, which is exactly the configuration UHNW travellers increasingly ask their own staff to arrange around.",
+      "src": "Travelsort",
+      "url": "https://travelsort.com/top-luxury-hotel-openings-2026/"
     }
   ],
   "briefs": [
     {
-      "t": "Geneva Watch Week, 7 to 9 November",
-      "b": "Five auction houses sell across three days in Switzerland this autumn: Phillips' Geneva Watch Auction XXIV and Antiquorum on 7 and 8 November, Sotheby's Important Watches on 8 November, and Christie's Rare Watches on 9 November. The season follows a run of records, among them a Patek Philippe ref. 2499 first series at about USD 10.2 million in Hong Kong in May and a unique white gold Cartier Cheich, one of five ever made, at roughly USD 3.4 million at Sotheby's Hong Kong on 18 September.",
-      "src": "Hautetime",
-      "url": "https://www.hautetime.com/watch-auctions-fall-2026-preview/"
+      "t": "The USD 260,000 chief of staff",
+      "b": "A family office chief of staff now carries a national median salary of USD 260,000 in the United States, rising to USD 365,000 in New York, with demand growing 18 per cent year on year against a pool recruiters estimate at only 18 to 45 qualified candidates nationally. Roles typically take about 22 weeks to fill.",
+      "src": "Rouka",
+      "url": "https://rouka.co/roles/chief-of-staff-family-office/"
     },
     {
-      "t": "The order book eases, Italy's share does not",
-      "b": "The global superyacht order book stood at 1,093 vessels in early March, down roughly 4 per cent on the previous year, according to SuperYacht24. Italian yards held 52 per cent of it, 568 vessels, a gain of two percentage points, with the country's recreational boating sector reporting more than EUR 13 billion in added value and close to 168,000 jobs in 2024.",
-      "src": "SuperYacht24",
-      "url": "https://www.superyacht24.it/en/2026/03/06/gli-ordini-mondiali-di-superyacht-scendono-a-1-093-litalia-sale-al-52/"
+      "t": "Heavy jets pull away from the rest of the market",
+      "b": "New heavy jet deliveries rose from 221 aircraft in 2024 to 269 in 2025 and are forecast to grow 4.9 per cent a year to 2030, while light and midsize jet demand grows barely 1 to 2 per cent over the same five years. Large cabin aircraft now sell in a median of 78 days, against 134 for midsize jets, evidence that scarcity, and waiting lists, now sit at the top of the private aviation market.",
+      "src": "GlobalAir",
+      "url": "https://www.globalair.com/articles/five-year-forecast-confirms-it-heavy-jets-are-pulling-away-from-the-rest-of-the-market/12675"
     },
     {
-      "t": "A Ritz-Carlton address for Brooklyn Heights",
-      "b": "Marriott and developer SomeraRoad plan to convert the landmark former Hotel Bossert in Brooklyn Heights into a standalone Ritz-Carlton Residences property, targeted for completion in 2029. It brings a concierge and security led address to a part of New York that has not previously had one.",
-      "src": "Skift",
-      "url": "https://dlr.skift.com/2026/09/16/marriott-to-bring-ritz-carlton-residences-to-brooklyn/"
+      "t": "US buyers retake the fine wine market",
+      "b": "US buyers accounted for 26.9 per cent of fine wine purchase value in the second quarter of 2026, up from 20.7 per cent across 2025, and paid an average of 1.1 per cent above market price for Liv-ex's Fine Wine 1000 basket. Asian buyers, by contrast, have pulled back, with local trade prices continuing to soften even as global indices stabilise.",
+      "src": "Liv-ex, via The Drinks Business",
+      "url": "https://www.thedrinksbusiness.com/2026/07/fine-wine-market-stabilised-during-h1-as-us-buyers-re-engaged/"
     }
   ]
 }
