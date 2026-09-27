@@ -1,5 +1,104 @@
 [
   {
+    "no": "No. 66",
+    "date": "Saturday, 26 September 2026",
+    "strap": "A daily dispatch from the world you are entering",
+    "lead": {
+      "cat": "The Craft",
+      "place": "Jersey, Channel Islands",
+      "tag": "The soft target",
+      "title": "Four in ten family offices have suffered a cyber attack in the past two years, a new survey finds, and the household staff who hold a family's calendar are increasingly where an attacker gets in",
+      "standfirst": "Ocorian's commissioned research finds 43 per cent of family offices breached within two years and a fifth with no defence plan at all, a gap that runs straight through the household staff who manage a principal's diary, travel and home network.",
+      "body": "Ocorian, a corporate and fiduciary services firm, commissioned PureProfile to survey 200 family offices and family members representing USD 119.37 billion in managed or owned wealth, across the United Kingdom, Switzerland, Mauritius, South Africa, India, Hong Kong, Singapore, Taiwan, the United Arab Emirates, Saudi Arabia, Bahrain, the United States and several offshore centres. The results, published in June and reported by Family Wealth Report, found that 43 per cent of family offices globally had experienced a cyber attack within the past two years.\n\nThe gaps sit alongside genuine effort. Seventy five per cent of respondents said they had strengthened their defences over the same two years, yet nearly 20 per cent still have no defence plan of any kind, though 18 per cent of those say one is coming, and 22 per cent have no incident response plan to follow if an attack happens. Only 7 per cent had a plan in place more than two years ago, which suggests most of the field is still building its response after the fact rather than before it.\n\nOutsourcing is where the trend is heading. Seventy two per cent of family offices expect to increase their cyber security outsourcing over the next three years, 41 per cent of those expecting a dramatic increase, and close to half already receive some third party support. More than one in ten described themselves as significantly challenged simply delivering the expertise internally, which is a striking admission from organisations built to manage far larger sums than most companies their size.\n\nFor whoever runs the household day to day, the practical exposure rarely looks like a headline breach. It looks like a calendar invite, a courier confirmation or a message that appears to come from the principal's own assistant, and the private staff who hold access to a family's diary, travel bookings and home network are, in practice, as much a part of the attack surface as any laptop in the family office itself. Training in basic cyber hygiene, verifying requests through a second channel and knowing what never gets confirmed by email are becoming as core to the role as any of the discretion a household has always been expected to keep.",
+      "why": "Cyber security in a private household is no longer a function the family office alone owns, it runs through every member of staff who touches a principal's calendar, travel or home network, which makes basic digital hygiene as much a part of the craft as discretion itself.",
+      "src": "Family Wealth Report, Ocorian",
+      "url": "https://www.familywealthreport.com/article.php/Family-Offices-Need-To-Bolster-Client-Security%C2%A0%E2%80%93-Survey-?id=207875"
+    },
+    "articles": [
+      {
+        "cat": "The Market",
+        "place": "London, United Kingdom",
+        "tag": "The great sort",
+        "section": "The Market",
+        "title": "Wealth is moving faster than governments can legislate for it, Henley and Partners' newest migration report finds, as tax changes reshape where the ultra wealthy call home within months rather than years",
+        "body": "Henley and Partners' Private Wealth Migration Report 2026 describes a millionaire population that has become markedly more responsive to policy change. Decisions about where to base a family that once took years to shift, the report finds, can now move within months of a single tax announcement. The United Kingdom is the clearest case in point: the abolition of the non dom regime and the closure of the investor visa route have both been named as drivers of outflow, pushing wealthy residents to weigh a move that, a few years ago, most would not have considered.\n\nThe beneficiaries are concentrated. The United Arab Emirates remains, in the report's words, one of the world's leading centres for internationally mobile wealth, continuing to draw relocating families and their capital. Mediterranean destinations are also gaining ground, Italy foremost among them after its flat tax threshold for new resident income rose to EUR 300,000 from 1 January 2026, a change the report treats as a case study in how quickly a single fiscal decision now moves the wealthy population that a household staffing market ultimately serves.\n\nFor the household side of a relocation, the report's own language, decisions taking effect within months rather than years, is the operative detail. A family that moves its base, or simply adds a second or third one, needs staff, payroll structures, work permits and duty of care rebuilt on a timeline set by tax policy rather than by the usual pace of hiring, and estate managers and family offices increasingly report being asked to plan for a move well before the family itself has confirmed it.",
+        "why": "When wealth migration moves on a policy timeline measured in months, the household infrastructure behind it, staff, payroll, visas and duty of care, has to be able to move on the same timeline, which is now as much a test of an estate management team as of a family's tax adviser.",
+        "src": "Henley and Partners",
+        "url": "https://www.henleyglobal.com/publications/henley-private-wealth-migration-report-2026/where-wealth-moving-2026-and-why"
+      },
+      {
+        "cat": "At Sea & In the Air",
+        "place": "Antibes, France",
+        "tag": "Paid to stay",
+        "section": "At Sea & In the Air",
+        "title": "Superyacht crew salaries are climbing across almost every rank in 2026, a new industry guide finds, as owners compete for the same small pool of experienced captains and chief stewardesses",
+        "body": "YPI Crew's 2026 salary guide sets out pay by vessel size across the ranks that run a superyacht. A captain on a yacht under 30 metres now earns from EUR 5,000 to EUR 6,000 a month, rising through the brackets to from EUR 16,000 to EUR 23,000 on an 80 to 100 metre yacht, and a largely discretionary figure above 100 metres, typically from EUR 9,500 upward under equal rotation schedules. Chief stewardesses and heads of housekeeping range from EUR 7,000 to EUR 8,500 on a 40 to 50 metre yacht up to EUR 8,500 or more on anything over 100 metres, while head chefs range from EUR 4,500 to EUR 6,000 on the smallest yachts up to EUR 10,000 or more on the largest.\n\nThe guide does not point to a single dramatic shortage, but its own language describes what is functionally one: increased competition for experienced crew and rising expectations around work life balance, it says, are what is now driving salary and leave structures, with packages increasingly built around qualifications, certifications and onboard responsibility rather than tenure alone.\n\nThe pattern will be familiar to anyone following the onshore household staffing market in these pages: the same scarcity premium reshaping estate manager and butler pay ashore is now visible afloat, concentrated at the same senior, hardest to replace roles. Crew and household staffing agencies increasingly work across both markets, cross referring candidates between a yacht's deck and a family's shore based residence as owners try to build one coherent team rather than two separate ones.",
+        "why": "The scarcity premium reshaping household staffing onshore is now setting pay afloat too, and a concierge coordinating a family's yacht season increasingly needs to understand both markets as one.",
+        "src": "YPI Crew",
+        "url": "https://www.ypicrew.com/yacht-crew-salary-guide"
+      },
+      {
+        "cat": "Objects & Culture",
+        "place": "Monterey, United States",
+        "tag": "Sixty six per cent",
+        "section": "Objects & Culture",
+        "title": "Monterey Car Week's 2026 auctions brought in USD 718.3 million, a rise of 66 per cent on last year, in a collector car market now sharply split between the exceptional and the merely rare",
+        "body": "Across the week's main auction houses, and excluding a separate USD 40 million Ferrari Luce charity sale, Monterey Car Week's 2026 auctions totalled USD 718.3 million, up from USD 432.7 million in 2025 and from USD 471.2 million in 2022, the last comparable post pandemic peak. The top results were led by a Shelby Cobra Daytona Coupe, sold by Gooding Christie's for USD 42.905 million, a record for an American built car, a McLaren F1 GTR at RM Sotheby's for USD 34.655 million, and a Ferrari F50 at Mecum for USD 14.575 million, a new public auction record for the model.\n\nThe results were not uniform. Broad Arrow's sell through rate reached 85 per cent, while other houses saw more mixed results, and several ambitious estimates across the week went unmet. Editors covering the sales described a market that has become sharply stratified: cars with strong specification, documented originality and a clean ownership history commanded serious competition, while rarity on its own no longer guaranteed a result.\n\nFor a family with a car collection, the practical reading is that provenance paperwork, build sheets, service history and an unbroken chain of ownership, is now as material to value as the object itself. That is a documentation burden that increasingly falls to a private collection manager or house archivist rather than to the owner personally, and a household that has let its own records lapse is, on this week's evidence, sitting on value it cannot yet prove.",
+        "why": "For whoever manages a family's collection, a week like this is a reminder that documentation, not rarity alone, is now what a strong result actually rewards.",
+        "src": "Magneto",
+        "url": "https://www.magnetomagazine.com/articles/monterey-2026-auctions-deliver-record-prices-and-mixed-fortunes-across-car-week-sales/"
+      },
+      {
+        "cat": "The Craft",
+        "place": "New York, United States",
+        "tag": "The rota nanny",
+        "section": "The Craft",
+        "title": "New York's ultra wealthy families are rebuilding childcare from the ground up in 2026, moving from a single nanny to full teams as senior salaries reach USD 200,000",
+        "body": "Research from Eden Private Staff into how New York's ultra wealthy families are rethinking childcare finds senior nannies now earning from USD 120,000 to more than USD 180,000, and luxury household positions running from USD 150,000 to more than USD 200,000, against from USD 75,000 to USD 85,000 for entry level candidates and from USD 90,000 to USD 120,000 for mid level ones. Specific offers cited include USD 150,000 with a Manhattan apartment, health insurance and pension, and USD 180,000 with enhanced benefits attached. The city these families are hiring in is a large one: New York counts 384,500 high net worth individuals, 818 centi millionaires and 66 billionaires among its residents.\n\nThe structural shift matters more than any single salary figure. Families are moving away from a single nanny model toward professional childcare teams, increasingly built around a rota system of one or two weeks on and off, and toward combined nanny governess roles that fold newborn expertise, early years education, multi child experience, travel readiness and formal discretion protocols into one senior position coordinated with the rest of the household.\n\nFormalisation is following the money. Healthcare, paid vacation, overtime structures and retirement contributions are now described as standard expectations rather than negotiated extras, part of the same professionalisation that agencies have reported across household staffing more broadly this year.",
+        "why": "Childcare is following the rest of the household into professionalised, team based structures, which is where a growing share of the profession's senior roles for graduates entering private service will sit.",
+        "src": "Eden Private Staff",
+        "url": "https://www.edenprivatestaff.com/nyc-ultra-wealthy-families-rethinking-childcare-2026/"
+      },
+      {
+        "cat": "The Private World",
+        "place": "Dubai, United Arab Emirates",
+        "tag": "Five hundred over ten",
+        "section": "The Private World",
+        "title": "Dubai recorded 500 home sales above USD 10 million last year, Knight Frank's newest prime property index finds, as the Middle East overtakes every other region for luxury housing growth",
+        "body": "Knight Frank's Prime International Residential Index for 2026 recorded global prime price growth of 3.2 per cent in 2025, down slightly from 3.6 per cent in 2024. Of the 100 markets it tracks, 73 rose in value and 24 fell. The Middle East led every region for performance, followed by Latin America and the Caribbean, with Asia Pacific and Europe close behind, while North America was the only region in negative territory overall, weighed down chiefly by weakness in Canada.\n\nDubai led the Middle East's performance with 500 home sales above USD 10 million in 2025, and Knight Frank names the United Arab Emirates the global leader in super prime residential performance, with Abu Dhabi now emerging as a destination for ultra high net worth buyers in its own right. Hong Kong recorded one of its strongest upticks in super prime sales at the end of 2025, Singapore continues to set price records despite constrained supply, and Aspen posted its third highest annual sales volume on record.\n\nEurope shows the clearest sign of tax driven relocation within the same index. London is losing capital tied directly to the tax rule changes described elsewhere in this edition, while Milan and Madrid are capturing a share of that mobile capital as second home destinations for the families leaving.\n\nEach of these markets is also, on the ground, a hiring market. A prime purchase in Dubai or Abu Dhabi typically arrives with a request to staff the property from scratch, while a departure from London usually means winding a household down rather than building one, and both jobs fall to the same estate management profession working from opposite ends of the same transaction.",
+        "why": "Every relocation on this index is, on the ground, a household being opened or closed, work that falls to estate managers and staffing agencies rather than to anything the index itself counts.",
+        "src": "Knight Frank",
+        "url": "https://www.knightfrank.com/research/article/2026/4/piri-100-ultimate-prime-residential-property-index"
+      }
+    ],
+    "briefs": [
+      {
+        "t": "Nearly 300 galleries for Frieze",
+        "b": "Frieze London and Frieze Masters return to Regent's Park from 14 to 18 October 2026 with close to 300 galleries between them, 172 at Frieze London and nearly 140 at Frieze Masters, drawn from 48 countries and regions, a slight increase on 2025's 282 galleries from 45 countries. New arrivals include London's Alice Amati and Galerina, Paris's Galerie Jocelyn Wolff and Kyiv's Voloshyn Gallery.",
+        "src": "Artsy",
+        "url": "https://www.artsy.net/article/artsy-editorial-frieze-announces-300-galleries-2026-london-fairs"
+      },
+      {
+        "t": "NetJets adds 80 aircraft",
+        "b": "NetJets expects to take delivery of more than 80 factory new aircraft in 2026, expanding a fleet that already numbered 826 at the end of last year and flies roughly 1,440 flights a day. More than half of this year's expected deliveries were pre sold as of last autumn, evidence of how far ahead owners are now booking capacity at the top of the private aviation market.",
+        "src": "Private Jet Card Comparisons",
+        "url": "https://privatejetcardcomparisons.com/2026/01/31/netjets-expects-to-take-delivery-of-over-80-private-jets-in-2026/"
+      },
+      {
+        "t": "A record CHF 75 million in Geneva",
+        "b": "Phillips' Geneva Watch Auction XXIII totalled CHF 75 million, about USD 96 million, across 224 lots in May, the highest total in the series' history, with 43 world records set and 14 timepieces exceeding CHF 1 million. A Patek Philippe reference 2523 with a South America dial led the sale at CHF 7,961,000, followed by an F. P. Journe Chronometre a Resonance Souscription at CHF 4,875,500.",
+        "src": "WatchPro",
+        "url": "https://www.watchpro.com/philipps-record-breaking-geneva-watch-auction/"
+      },
+      {
+        "t": "Nine per cent of billionaires plan to move",
+        "b": "UBS's latest billionaire research puts global billionaire wealth at USD 15.8 trillion across nearly 3,000 individuals, with 9 per cent considering relocation, mostly to Switzerland, Singapore and the United Arab Emirates. Quality of life, geopolitical concern and tax efficiency, cited by 36, 36 and 35 per cent of respondents respectively, are named as the leading reasons to move.",
+        "src": "Family Wealth Report, UBS",
+        "url": "https://www.familywealthreport.com/article.php/Billionaires'-Total-Wealth-Rises,-Continue-To-Eye-Relocation-%E2%80%93-UBS-Study?id=206395"
+      }
+    ]
+  },
+  {
     "no": "No. 65",
     "date": "Friday, 25 September 2026",
     "strap": "A daily dispatch from the world you are entering",
@@ -3523,105 +3622,6 @@
         "b": "Bvlgari Resort Ranfushi is due to open in Raa Atoll in the Maldives, around 45 minutes by seaplane from Male, across roughly 20 hectares. The property is planned with 54 villas and suites in total, including 33 beach villas with private pools, 20 overwater villas and a Bulgari Villa set on its own island. It is the group's tenth hotel and only its second resort.",
         "src": "Bulgari Hotels & Resorts",
         "url": "https://www.bulgarihotels.com/en_US/ranfushi"
-      }
-    ]
-  },
-  {
-    "no": "No. 26",
-    "date": "Friday, 14 August 2026",
-    "strap": "A daily dispatch from the world you are entering",
-    "lead": {
-      "cat": "The Private World",
-      "place": "Zurich, Switzerland",
-      "tag": "Responsibility first",
-      "title": "The inheriting generation says the responsibility arrives before the money, and USD 83 trillion is waiting behind it",
-      "standfirst": "UBS has surveyed more than 170 members of the world's inheriting families and found a generation already inside the family enterprise, well informed about the wealth, and impatient with the silence that surrounds it.",
-      "body": "The Global Next Generation Report 2026, published by UBS, rests on two surveys of members of the Young Investors Organization, one conducted in May 2025 and a second between December 2025 and January 2026, together with ten deep interviews carried out between 22 October and 29 December 2025. More than 170 responses were gathered in total. Europe supplied 49 per cent of respondents, North America 19 per cent, Latin America 16 per cent, Asia-Pacific 11 per cent and the Middle East and Africa 5 per cent. Most are aged between 26 and 40. Just over half already work inside the family business or the family office, about one in ten have founded ventures of their own, and the remaining third are employed elsewhere, studying, or still deciding.\n\nThe headline finding is a question of language. Asked what they associate most with wealth transfer, 41 per cent chose a shift of responsibility and 38 per cent chose the death of a family member. The split follows geography closely. In North America 67 per cent framed the moment as responsibility. In Asia-Pacific and Latin America around 60 per cent framed it as a bereavement. It also follows generational depth: among second and third generation families roughly 40 per cent think first of a death, a figure that falls to just above 20 per cent by the fourth generation, while the share thinking first of responsibility rises to 50 per cent among fourth and fifth generations. Behind all of it sits an estimated USD 83 trillion of private wealth expected to change hands worldwide over the next two to three decades.\n\nThe machinery is thinner than the rhetoric. Six in ten families have a will and around half have a legal and tax succession structure, but fewer than a quarter have formal governance, meaning defined family roles, written constitutions and agreed communication protocols. Nearly half, 48 per cent, say the generation before them had no structured transfer process at all, and 17 per cent simply do not know. When disagreements arise, 56 per cent address them informally as they occur and 35 per cent defer to a senior family figure. Communication failure is the single largest source of conflict at 33 per cent, ahead of disagreements about lifestyle, spending or work ethics at 27 per cent, differing views of fairness at 24 per cent and unclear roles at 16 per cent. Families that do have governance move faster: 74 per cent of those with strong processes are already planning or transferring.\n\nInstitutions are arriving to fill the gap. Thirty-seven per cent of respondents now manage their wealth through a single family office, 29 per cent through a wealth manager or private bank and 27 per cent directly. The generational gradient is stark: around 30 per cent of second generation families use a single family office, rising to 75 per cent by the fourth. Parents still open 60 per cent of transfer conversations, but as the process unfolds the next generation's share of driving it rises from 13 per cent to 22 per cent while the current generation's falls to 43 per cent. Fifty-six per cent believe the conversation should begin before the age of twenty, against the 17 per cent who actually first discussed wealth in childhood.\n\nTheir expectations of the people who serve them are equally explicit. Seventy-nine per cent want demonstrable expertise from an adviser, 56 per cent want a relationship that works across generations and 67 per cent say a strong personal connection matters. Eighty-three per cent want a blend of digital and in-person contact rather than one or the other. Among the services that make a provider stand out, networking is cited by 78 per cent, legal and tax support by 56 per cent and education by 29 per cent.",
-      "why": "The people who will sign the household contracts of the next thirty years are already in the room, and half of them are already working inside the family structure. They arrive with more advisers, more documentation and less tolerance for improvisation, which means the households they inherit will increasingly be judged on records, protocols and continuity rather than on personal loyalty alone.",
-      "src": "UBS, Global Next Generation Report 2026",
-      "url": "https://advisors.ubs.com/mediahandler/media/800754/ubs-global-next-generation-report-2026.pdf"
-    },
-    "articles": [
-      {
-        "cat": "Employment law",
-        "place": "London, United Kingdom",
-        "tag": "Day one duties",
-        "section": "The Craft",
-        "title": "Britain rewrites the rules for anyone who employs staff at home, and the private household becomes an employer like any other",
-        "body": "The Employment Rights Act 2025 has been arriving in stages, and the April 2026 tranche is the one that touches every private household with a payroll. Statutory sick pay reform took effect: the lower earnings limit of GBP 129 in average weekly earnings has been removed, so lower-paid employees are now entitled to sick pay worth 80 per cent of their wages, and the waiting period has gone, meaning sick pay is due from the first day of absence rather than the fourth. Paternity leave and unpaid parental leave became day one rights, as did bereaved partner's paternity leave, which entitles a father or partner to take up to 52 weeks where the mother or primary caregiver dies.\n\nA quieter change may prove the most consequential for estate offices. On 6 April 2026, implementing regulations introduced without prior indication a duty on employers to keep records of both annual leave entitlement and holiday pay, and to retain those records for six years. Employers who fail to keep records adequate to show compliance commit an offence punishable by a fine. For a household that has historically managed rotas on a shared calendar and settled holiday informally at the kitchen table, this is a documentary obligation with teeth.\n\nMore is scheduled. From 1 October 2026 the time limit for bringing most employment tribunal claims doubles from three months to six. From 30 October 2026 the workplace harassment reforms bite, including the duty to take all reasonable steps to prevent harassment and liability for harassment by third parties, a provision with obvious implications for houses that receive contractors, suppliers and guests. From 1 January 2027 the qualifying period for ordinary unfair dismissal falls from two years to six months, which in practice captures anyone engaged from 1 July 2026 onward, and the cap on unfair dismissal compensation is removed for terminations on or after that date. Pinsent Masons notes that the removal of the cap is significant for high earners and their employers.\n\nThe cumulative effect is that the informality which has long characterised domestic employment is being legislated out of existence. Contracts, payslips, written rotas, holiday records, grievance routes and a documented approach to harassment are no longer marks of an unusually organised house. They are the statutory minimum, and the person who holds them together is almost always the house or estate manager.",
-        "why": "Household employers are employers in law, and the paperwork that proves it now sits with whoever runs the house. A candidate who can arrive with a working knowledge of records, notice periods and the new dismissal timetable is offering the family risk management, not just service.",
-        "src": "Pinsent Masons, Out-Law guide, 17 July 2026",
-        "url": "https://www.pinsentmasons.com/out-law/guides/employment-rights-bill-timeline-2026-beyond"
-      },
-      {
-        "cat": "Wealth and residence",
-        "place": "London, United Kingdom",
-        "tag": "The quiet exit",
-        "section": "The Private World",
-        "title": "The non-dom register shrinks by 1,200 in its final year, and London's biggest houses change hands anyway",
-        "body": "HMRC released figures at the end of July covering the last full year of the non-domiciled regime, a status that had existed in British tax law since 1799, when it was created to shelter colonial investments. The number of non-dom taxpayers, including those deemed domiciled, fell by 1,200 from 83,100 to 81,900, a decline of 1 per cent. About 9,000 left during the 2024 to 2025 tax year against 11,200 the year before, while arrivals dropped from 10,000 to roughly 8,600. In the same period the group paid GBP 9.7 billion, about USD 13 billion, in capital gains, employment and income taxes, an increase of 9 per cent and the largest total in records going back to 2008.\n\nThe figures predate the reform itself. The regime was replaced in April 2025 with a residence-based system under which arrivals are exempt from tax on foreign income and gains for four years before being taxed as ordinary residents, and under which wealth held abroad is brought into the inheritance tax net. The government has said it will only be able to estimate departures since that change next year. It projects around GBP 33 billion in additional revenue over the coming years, a figure several research bodies dispute. Among those who have left are the Checkout.com founder Guillaume Pousaz and the Egyptian industrialist Nassef Sawiris. Italy and Greece have both built regimes designed to receive them.\n\nThe property data reads two ways at once. Across the twelve months following the April 2025 change, transactions in prime central London fell by more than 32 per cent and prices by 7 per cent, according to LonRes. Activity is down at every price point compared with each of the previous five years, with one exception: the band above GBP 30 million. Beauchamp Estates counts 34 sales above GBP 15 million in the first half of 2026, worth a combined GBP 1.24 billion, an increase of more than 78 per cent on the same period last year.\n\nThe individual deals explain the skew. Providence House in Chelsea sold for GBP 270 million, a record, in a sealed-bid process. The Holme in Regent's Park, a 40-room stucco mansion, sold for GBP 195 million, roughly 40 per cent above the price it fetched less than eighteen months earlier. Beauchamp's Rosy Khalastchy notes that a buyer at GBP 15 million and above typically has a net worth of at least GBP 100 million and a portfolio of houses across several cities, and may spend only a few weeks a year in London. Savills' Richard Gutteridge puts it plainly: extreme wealth may change where it resides most or least, but not where it chooses to buy.",
-        "why": "A house owned by someone who lives elsewhere is still a house that has to run. Fewer resident principals and more intermittently occupied trophy properties shifts the private service brief toward standing readiness, security, contractor supervision and the ability to bring a closed house to full operation at short notice.",
-        "src": "The National, 31 July 2026",
-        "url": "https://www.thenationalnews.com/business/money/2026/07/31/more-than-1000-non-doms-left-uk-before-tax-reform-took-effect/"
-      },
-      {
-        "cat": "Private aviation",
-        "place": "Louisville, United States",
-        "tag": "Nothing for sale",
-        "section": "At Sea & In the Air",
-        "title": "The pre-owned aircraft shelf empties, and the family that wants a large-cabin jet now joins a queue",
-        "body": "AMSTAT's second quarter analysis, published at the start of August, records a market that is busy and bare at the same time. Pre-owned transactions rose 11.2 per cent year on year in the quarter and ran 14 per cent above the ten-year average for the period. Yet listed turbine inventory stood at just 5.8 per cent of the active fleet at the end of June, the lowest reading since February 2024 and well below the ten-year average of 7.2 per cent. For jets specifically, 6.5 per cent of the fleet is for sale against a norm of 8.1 per cent.\n\nThe squeeze is sharpest at the top. Heavy jet transactions rose 43.8 per cent year on year, by a wide margin the strongest performance of any category, though the comparison flatters somewhat because the same quarter last year was unusually soft for large cabins. With only 5.2 per cent of the heavy fleet listed, the pricing signal to owners of late-model aircraft is unambiguous. Super-midsize activity, led by the Challenger 300 and the Gulfstream G280, was roughly flat, which leaves buyers in that segment more room to negotiate.\n\nHeadline asking prices tell a misleading story. They have fallen across several segments, which at a glance suggests cooling. Median transaction values, meaning what aircraft actually sold for, are up 5 per cent year on year and 2 per cent since January. The divergence reflects a two-speed market: younger, higher-value jets sell quickly, while older airframes sit and are discounted.\n\nNone of this resolves quickly. Manufacturers continue to face production constraints, and new aircraft supply is expected to remain tight through 2027 at best, which keeps pressure on the late-model pre-owned market. For anyone advising a family on how it flies, the practical consequence is a longer lead time and a stronger case for charter, fractional shares or a managed arrangement in the interim.",
-        "why": "The person who builds the family's travel calendar needs to know that an aircraft is no longer something that can be acquired on a whim. Understanding lead times, charter fallbacks and the difference between an owned, managed and fractional arrangement is now part of the logistical vocabulary of private service.",
-        "src": "GlobalAir.com, on AMSTAT Q2 2026 data, 4 August 2026",
-        "url": "https://www.globalair.com/articles/used-jet-inventory-is-the-tightest-since-early-2024/12559"
-      },
-      {
-        "cat": "Collecting",
-        "place": "Monterey, United States",
-        "tag": "Half a billion",
-        "section": "Objects & Culture",
-        "title": "Monterey heads for the first half-billion-dollar auction week in collecting history, and the buyers are getting younger",
-        "body": "The auctions that punctuate Monterey Car Week are forecast to take between USD 470 million and USD 500 million this year, according to Hagerty, which would surpass the all-time record of USD 471 million set in 2022. \"With strong bidding, this could be the first half-billion-dollar auction week the collector world has ever seen,\" said the company's chief executive, McKeel Hagerty. The sales run through to 15 August.\n\nThe most expensive lot of the week is a 1996 McLaren F1 GTR, offered by RM Sotheby's on 15 August with an estimate in excess of USD 35 million. It is the only example finished in the factory's scarlet and yellow pop art livery, and it spent twenty-five years in the collection of the Pink Floyd drummer Nick Mason before changing hands quietly in 2024.\n\nWhat is moving the market is a change of taste rather than a change of temperature. The Hagerty Supercar Index has risen 30 per cent over the past twelve months while the Blue Chip Index, which tracks the traditional pillars of the collector market, has fallen 2 per cent. Demand is being driven by Millennial and Gen Z buyers who are not competing for the 1950s and 1960s machinery their parents pursued, but bidding up the modern supercars of their own adolescence.\n\nThat divergence matters beyond the auction tent. A collection assembled on the assumptions of twenty years ago now contains two quite different asset classes, one appreciating on nostalgia and one drifting. The households that hold these cars are increasingly asked to think about storage conditions, event entries, transport logistics and insurance valuations that move faster than an annual review can capture.",
-        "why": "Cars are among the possessions a principal is most likely to discuss in company, and the person who arranges their movement, storage and entry to events needs the vocabulary to do so credibly. Knowing why a supercar index is outrunning a blue chip index is cultural fluency, not trivia.",
-        "src": "CNBC, 13 August 2026",
-        "url": "https://www.cnbc.com/2026/08/13/monterey-car-week-auctions-sales-estimates.html"
-      },
-      {
-        "cat": "Art market",
-        "place": "London, United Kingdom",
-        "tag": "The rebound",
-        "section": "The Market",
-        "title": "The salerooms recover their nerve with USD 6.8 billion in six months, and collections quietly become collateral",
-        "body": "Christie's, Sotheby's and Phillips together took USD 6.8 billion at auction in the first half of 2026, a rise of 70 per cent year on year and the strongest first half since 2022. Christie's reported half-year revenue of USD 4.5 billion, with public auction sales up 71 per cent at USD 3.5 billion and a sell-through rate of 91 per cent by lot. Sotheby's posted public auction sales of USD 3.4 billion, up 59 per cent, and total turnover of USD 4.4 billion including a record USD 826 million of private sales. Phillips rose 60 per cent to USD 507 million.\n\nSingle-owner collections did much of the work. The S.I. Newhouse collection totalled USD 630.8 million at Christie's in New York in May and produced the two highest prices of the year so far, Jackson Pollock's Number 7A at USD 181.2 million and Constantin Brancusi's <i>Danaide</i> at USD 107.6 million. Sotheby's sold the Joe Lewis collection in London in June for USD 406.2 million, the highest total for any sale of Impressionist, Modern and contemporary art ever staged in Europe.\n\nThe more revealing development sits behind the results. Both houses are expanding art-backed lending. Sotheby's completed a USD 900 million securitisation in January, bundling art loans into tradable notes, and for the first time the issue included loans secured against collectible cars. Christie's reports clients borrowing against cars, handbags, watches and, increasingly, wine. Its chief executive Bonnie Brennan notes that many finance clients are in no way short of capital and are simply optimising how they use it, often reinvesting in art.\n\nThe audience is also changing shape. Forty-seven per cent of Christie's new clients this year are Millennial or Gen Z, and 85 per cent of its bids came in online. Luxury, meaning watches, jewellery, cars, handbags and memorabilia, is now the second largest category at both houses and functions as the entry point for those buyers.\n\nOnce a collection is pledged against a loan, its condition, location and documentation stop being matters of taste and become matters of covenant. Provenance files, condition reports, storage conditions and movement records acquire a financial as well as a curatorial function.",
-        "why": "When a family borrows against its pictures, cars or wine, the household records that describe those objects become part of a credit file. The staff who log, insure, store and move them are handling balance-sheet assets, and accuracy is no longer a courtesy.",
-        "src": "The Art Newspaper, 15 July 2026",
-        "url": "https://www.theartnewspaper.com/2026/07/15/trophy-lots-and-luxury-goods-fuel-rebound-for-christies-and-sothebys-2026-half-year-results"
-      }
-    ],
-    "briefs": [
-      {
-        "t": "Europe slips as the jets fly on",
-        "b": "Global business aviation flight activity rose 5.6 per cent year on year in July, according to Argus, with North America powering the increase and turboprops leading the surge there. Europe recorded its first yearly decline in fourteen months.",
-        "src": "Aviation International News, 11 August 2026",
-        "url": "https://www.ainonline.com/aviation-news/business-aviation/2026-08-11/argus-july-global-business-aviation-activity-rose-56"
-      },
-      {
-        "t": "The counter-offer becomes the rule",
-        "b": "Multi-property estate managers now sit at a median of USD 280,000 and face a counter-offer rate of 52 per cent, the highest of any household role, with offer acceptance at just 56 per cent. Signing bonuses appear in 45 per cent of placements, from USD 20,000 to USD 45,000. Demand for personal assistants is growing fastest of all, at 22 per cent a year.",
-        "src": "Talent Gurus, Household Staff Salary Guide 2026",
-        "url": "https://www.talent-gurus.com/household-staff-salary-guide"
-      },
-      {
-        "t": "The watch room grows younger",
-        "b": "Millennials and Gen Z now account for roughly a third of watch bidders at Sotheby's, and the average watch bidder spends around USD 129,000, up about 60 per cent year on year. Demand is shifting toward independent makers such as F.P. Journe and Rexhep Rexhepi rather than speculative names.",
-        "src": "The Art Newspaper, 15 July 2026",
-        "url": "https://www.theartnewspaper.com/2026/07/15/trophy-lots-and-luxury-goods-fuel-rebound-for-christies-and-sothebys-2026-half-year-results"
-      },
-      {
-        "t": "A record for memorabilia",
-        "b": "The Americana collection of the late Jim Irsay totalled USD 105.2 million across five auctions at Christie's finishing on 6 July, the highest total ever achieved for a memorabilia collection. Heritage Auctions has reported a record USD 1.4 billion of sales so far this year.",
-        "src": "The Art Newspaper, 15 July 2026",
-        "url": "https://www.theartnewspaper.com/2026/07/15/trophy-lots-and-luxury-goods-fuel-rebound-for-christies-and-sothebys-2026-half-year-results"
       }
     ]
   }

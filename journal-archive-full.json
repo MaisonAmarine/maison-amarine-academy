@@ -1,5 +1,104 @@
 [
   {
+    "no": "No. 66",
+    "date": "Saturday, 26 September 2026",
+    "strap": "A daily dispatch from the world you are entering",
+    "lead": {
+      "cat": "The Craft",
+      "place": "Jersey, Channel Islands",
+      "tag": "The soft target",
+      "title": "Four in ten family offices have suffered a cyber attack in the past two years, a new survey finds, and the household staff who hold a family's calendar are increasingly where an attacker gets in",
+      "standfirst": "Ocorian's commissioned research finds 43 per cent of family offices breached within two years and a fifth with no defence plan at all, a gap that runs straight through the household staff who manage a principal's diary, travel and home network.",
+      "body": "Ocorian, a corporate and fiduciary services firm, commissioned PureProfile to survey 200 family offices and family members representing USD 119.37 billion in managed or owned wealth, across the United Kingdom, Switzerland, Mauritius, South Africa, India, Hong Kong, Singapore, Taiwan, the United Arab Emirates, Saudi Arabia, Bahrain, the United States and several offshore centres. The results, published in June and reported by Family Wealth Report, found that 43 per cent of family offices globally had experienced a cyber attack within the past two years.\n\nThe gaps sit alongside genuine effort. Seventy five per cent of respondents said they had strengthened their defences over the same two years, yet nearly 20 per cent still have no defence plan of any kind, though 18 per cent of those say one is coming, and 22 per cent have no incident response plan to follow if an attack happens. Only 7 per cent had a plan in place more than two years ago, which suggests most of the field is still building its response after the fact rather than before it.\n\nOutsourcing is where the trend is heading. Seventy two per cent of family offices expect to increase their cyber security outsourcing over the next three years, 41 per cent of those expecting a dramatic increase, and close to half already receive some third party support. More than one in ten described themselves as significantly challenged simply delivering the expertise internally, which is a striking admission from organisations built to manage far larger sums than most companies their size.\n\nFor whoever runs the household day to day, the practical exposure rarely looks like a headline breach. It looks like a calendar invite, a courier confirmation or a message that appears to come from the principal's own assistant, and the private staff who hold access to a family's diary, travel bookings and home network are, in practice, as much a part of the attack surface as any laptop in the family office itself. Training in basic cyber hygiene, verifying requests through a second channel and knowing what never gets confirmed by email are becoming as core to the role as any of the discretion a household has always been expected to keep.",
+      "why": "Cyber security in a private household is no longer a function the family office alone owns, it runs through every member of staff who touches a principal's calendar, travel or home network, which makes basic digital hygiene as much a part of the craft as discretion itself.",
+      "src": "Family Wealth Report, Ocorian",
+      "url": "https://www.familywealthreport.com/article.php/Family-Offices-Need-To-Bolster-Client-Security%C2%A0%E2%80%93-Survey-?id=207875"
+    },
+    "articles": [
+      {
+        "cat": "The Market",
+        "place": "London, United Kingdom",
+        "tag": "The great sort",
+        "section": "The Market",
+        "title": "Wealth is moving faster than governments can legislate for it, Henley and Partners' newest migration report finds, as tax changes reshape where the ultra wealthy call home within months rather than years",
+        "body": "Henley and Partners' Private Wealth Migration Report 2026 describes a millionaire population that has become markedly more responsive to policy change. Decisions about where to base a family that once took years to shift, the report finds, can now move within months of a single tax announcement. The United Kingdom is the clearest case in point: the abolition of the non dom regime and the closure of the investor visa route have both been named as drivers of outflow, pushing wealthy residents to weigh a move that, a few years ago, most would not have considered.\n\nThe beneficiaries are concentrated. The United Arab Emirates remains, in the report's words, one of the world's leading centres for internationally mobile wealth, continuing to draw relocating families and their capital. Mediterranean destinations are also gaining ground, Italy foremost among them after its flat tax threshold for new resident income rose to EUR 300,000 from 1 January 2026, a change the report treats as a case study in how quickly a single fiscal decision now moves the wealthy population that a household staffing market ultimately serves.\n\nFor the household side of a relocation, the report's own language, decisions taking effect within months rather than years, is the operative detail. A family that moves its base, or simply adds a second or third one, needs staff, payroll structures, work permits and duty of care rebuilt on a timeline set by tax policy rather than by the usual pace of hiring, and estate managers and family offices increasingly report being asked to plan for a move well before the family itself has confirmed it.",
+        "why": "When wealth migration moves on a policy timeline measured in months, the household infrastructure behind it, staff, payroll, visas and duty of care, has to be able to move on the same timeline, which is now as much a test of an estate management team as of a family's tax adviser.",
+        "src": "Henley and Partners",
+        "url": "https://www.henleyglobal.com/publications/henley-private-wealth-migration-report-2026/where-wealth-moving-2026-and-why"
+      },
+      {
+        "cat": "At Sea & In the Air",
+        "place": "Antibes, France",
+        "tag": "Paid to stay",
+        "section": "At Sea & In the Air",
+        "title": "Superyacht crew salaries are climbing across almost every rank in 2026, a new industry guide finds, as owners compete for the same small pool of experienced captains and chief stewardesses",
+        "body": "YPI Crew's 2026 salary guide sets out pay by vessel size across the ranks that run a superyacht. A captain on a yacht under 30 metres now earns from EUR 5,000 to EUR 6,000 a month, rising through the brackets to from EUR 16,000 to EUR 23,000 on an 80 to 100 metre yacht, and a largely discretionary figure above 100 metres, typically from EUR 9,500 upward under equal rotation schedules. Chief stewardesses and heads of housekeeping range from EUR 7,000 to EUR 8,500 on a 40 to 50 metre yacht up to EUR 8,500 or more on anything over 100 metres, while head chefs range from EUR 4,500 to EUR 6,000 on the smallest yachts up to EUR 10,000 or more on the largest.\n\nThe guide does not point to a single dramatic shortage, but its own language describes what is functionally one: increased competition for experienced crew and rising expectations around work life balance, it says, are what is now driving salary and leave structures, with packages increasingly built around qualifications, certifications and onboard responsibility rather than tenure alone.\n\nThe pattern will be familiar to anyone following the onshore household staffing market in these pages: the same scarcity premium reshaping estate manager and butler pay ashore is now visible afloat, concentrated at the same senior, hardest to replace roles. Crew and household staffing agencies increasingly work across both markets, cross referring candidates between a yacht's deck and a family's shore based residence as owners try to build one coherent team rather than two separate ones.",
+        "why": "The scarcity premium reshaping household staffing onshore is now setting pay afloat too, and a concierge coordinating a family's yacht season increasingly needs to understand both markets as one.",
+        "src": "YPI Crew",
+        "url": "https://www.ypicrew.com/yacht-crew-salary-guide"
+      },
+      {
+        "cat": "Objects & Culture",
+        "place": "Monterey, United States",
+        "tag": "Sixty six per cent",
+        "section": "Objects & Culture",
+        "title": "Monterey Car Week's 2026 auctions brought in USD 718.3 million, a rise of 66 per cent on last year, in a collector car market now sharply split between the exceptional and the merely rare",
+        "body": "Across the week's main auction houses, and excluding a separate USD 40 million Ferrari Luce charity sale, Monterey Car Week's 2026 auctions totalled USD 718.3 million, up from USD 432.7 million in 2025 and from USD 471.2 million in 2022, the last comparable post pandemic peak. The top results were led by a Shelby Cobra Daytona Coupe, sold by Gooding Christie's for USD 42.905 million, a record for an American built car, a McLaren F1 GTR at RM Sotheby's for USD 34.655 million, and a Ferrari F50 at Mecum for USD 14.575 million, a new public auction record for the model.\n\nThe results were not uniform. Broad Arrow's sell through rate reached 85 per cent, while other houses saw more mixed results, and several ambitious estimates across the week went unmet. Editors covering the sales described a market that has become sharply stratified: cars with strong specification, documented originality and a clean ownership history commanded serious competition, while rarity on its own no longer guaranteed a result.\n\nFor a family with a car collection, the practical reading is that provenance paperwork, build sheets, service history and an unbroken chain of ownership, is now as material to value as the object itself. That is a documentation burden that increasingly falls to a private collection manager or house archivist rather than to the owner personally, and a household that has let its own records lapse is, on this week's evidence, sitting on value it cannot yet prove.",
+        "why": "For whoever manages a family's collection, a week like this is a reminder that documentation, not rarity alone, is now what a strong result actually rewards.",
+        "src": "Magneto",
+        "url": "https://www.magnetomagazine.com/articles/monterey-2026-auctions-deliver-record-prices-and-mixed-fortunes-across-car-week-sales/"
+      },
+      {
+        "cat": "The Craft",
+        "place": "New York, United States",
+        "tag": "The rota nanny",
+        "section": "The Craft",
+        "title": "New York's ultra wealthy families are rebuilding childcare from the ground up in 2026, moving from a single nanny to full teams as senior salaries reach USD 200,000",
+        "body": "Research from Eden Private Staff into how New York's ultra wealthy families are rethinking childcare finds senior nannies now earning from USD 120,000 to more than USD 180,000, and luxury household positions running from USD 150,000 to more than USD 200,000, against from USD 75,000 to USD 85,000 for entry level candidates and from USD 90,000 to USD 120,000 for mid level ones. Specific offers cited include USD 150,000 with a Manhattan apartment, health insurance and pension, and USD 180,000 with enhanced benefits attached. The city these families are hiring in is a large one: New York counts 384,500 high net worth individuals, 818 centi millionaires and 66 billionaires among its residents.\n\nThe structural shift matters more than any single salary figure. Families are moving away from a single nanny model toward professional childcare teams, increasingly built around a rota system of one or two weeks on and off, and toward combined nanny governess roles that fold newborn expertise, early years education, multi child experience, travel readiness and formal discretion protocols into one senior position coordinated with the rest of the household.\n\nFormalisation is following the money. Healthcare, paid vacation, overtime structures and retirement contributions are now described as standard expectations rather than negotiated extras, part of the same professionalisation that agencies have reported across household staffing more broadly this year.",
+        "why": "Childcare is following the rest of the household into professionalised, team based structures, which is where a growing share of the profession's senior roles for graduates entering private service will sit.",
+        "src": "Eden Private Staff",
+        "url": "https://www.edenprivatestaff.com/nyc-ultra-wealthy-families-rethinking-childcare-2026/"
+      },
+      {
+        "cat": "The Private World",
+        "place": "Dubai, United Arab Emirates",
+        "tag": "Five hundred over ten",
+        "section": "The Private World",
+        "title": "Dubai recorded 500 home sales above USD 10 million last year, Knight Frank's newest prime property index finds, as the Middle East overtakes every other region for luxury housing growth",
+        "body": "Knight Frank's Prime International Residential Index for 2026 recorded global prime price growth of 3.2 per cent in 2025, down slightly from 3.6 per cent in 2024. Of the 100 markets it tracks, 73 rose in value and 24 fell. The Middle East led every region for performance, followed by Latin America and the Caribbean, with Asia Pacific and Europe close behind, while North America was the only region in negative territory overall, weighed down chiefly by weakness in Canada.\n\nDubai led the Middle East's performance with 500 home sales above USD 10 million in 2025, and Knight Frank names the United Arab Emirates the global leader in super prime residential performance, with Abu Dhabi now emerging as a destination for ultra high net worth buyers in its own right. Hong Kong recorded one of its strongest upticks in super prime sales at the end of 2025, Singapore continues to set price records despite constrained supply, and Aspen posted its third highest annual sales volume on record.\n\nEurope shows the clearest sign of tax driven relocation within the same index. London is losing capital tied directly to the tax rule changes described elsewhere in this edition, while Milan and Madrid are capturing a share of that mobile capital as second home destinations for the families leaving.\n\nEach of these markets is also, on the ground, a hiring market. A prime purchase in Dubai or Abu Dhabi typically arrives with a request to staff the property from scratch, while a departure from London usually means winding a household down rather than building one, and both jobs fall to the same estate management profession working from opposite ends of the same transaction.",
+        "why": "Every relocation on this index is, on the ground, a household being opened or closed, work that falls to estate managers and staffing agencies rather than to anything the index itself counts.",
+        "src": "Knight Frank",
+        "url": "https://www.knightfrank.com/research/article/2026/4/piri-100-ultimate-prime-residential-property-index"
+      }
+    ],
+    "briefs": [
+      {
+        "t": "Nearly 300 galleries for Frieze",
+        "b": "Frieze London and Frieze Masters return to Regent's Park from 14 to 18 October 2026 with close to 300 galleries between them, 172 at Frieze London and nearly 140 at Frieze Masters, drawn from 48 countries and regions, a slight increase on 2025's 282 galleries from 45 countries. New arrivals include London's Alice Amati and Galerina, Paris's Galerie Jocelyn Wolff and Kyiv's Voloshyn Gallery.",
+        "src": "Artsy",
+        "url": "https://www.artsy.net/article/artsy-editorial-frieze-announces-300-galleries-2026-london-fairs"
+      },
+      {
+        "t": "NetJets adds 80 aircraft",
+        "b": "NetJets expects to take delivery of more than 80 factory new aircraft in 2026, expanding a fleet that already numbered 826 at the end of last year and flies roughly 1,440 flights a day. More than half of this year's expected deliveries were pre sold as of last autumn, evidence of how far ahead owners are now booking capacity at the top of the private aviation market.",
+        "src": "Private Jet Card Comparisons",
+        "url": "https://privatejetcardcomparisons.com/2026/01/31/netjets-expects-to-take-delivery-of-over-80-private-jets-in-2026/"
+      },
+      {
+        "t": "A record CHF 75 million in Geneva",
+        "b": "Phillips' Geneva Watch Auction XXIII totalled CHF 75 million, about USD 96 million, across 224 lots in May, the highest total in the series' history, with 43 world records set and 14 timepieces exceeding CHF 1 million. A Patek Philippe reference 2523 with a South America dial led the sale at CHF 7,961,000, followed by an F. P. Journe Chronometre a Resonance Souscription at CHF 4,875,500.",
+        "src": "WatchPro",
+        "url": "https://www.watchpro.com/philipps-record-breaking-geneva-watch-auction/"
+      },
+      {
+        "t": "Nine per cent of billionaires plan to move",
+        "b": "UBS's latest billionaire research puts global billionaire wealth at USD 15.8 trillion across nearly 3,000 individuals, with 9 per cent considering relocation, mostly to Switzerland, Singapore and the United Arab Emirates. Quality of life, geopolitical concern and tax efficiency, cited by 36, 36 and 35 per cent of respondents respectively, are named as the leading reasons to move.",
+        "src": "Family Wealth Report, UBS",
+        "url": "https://www.familywealthreport.com/article.php/Billionaires'-Total-Wealth-Rises,-Continue-To-Eye-Relocation-%E2%80%93-UBS-Study?id=206395"
+      }
+    ]
+  },
+  {
     "no": "No. 65",
     "date": "Friday, 25 September 2026",
     "strap": "A daily dispatch from the world you are entering",
