@@ -1,71 +1,71 @@
 {
-  "no": "No. 80",
-  "date": "Sunday, 18 October 2026",
+  "no": "No. 81",
+  "date": "Monday, 19 October 2026",
   "strap": "A daily dispatch from the world you are entering",
   "lead": {
-    "cat": "Family Offices",
+    "cat": "The Market",
     "place": "New York",
-    "tag": "The USD 6.6m office",
-    "title": "A family office with USD 1 billion or more now costs USD 6.6 million a year to run, and talent is the reason, J.P. Morgan finds",
-    "standfirst": "The bank's 2026 survey of 333 single-family offices shows costs climbing as families replace relatives with paid professionals.",
-    "body": "The 2026 Global Family Office Report from J.P. Morgan Private Bank draws on 333 single-family offices in more than 30 countries, a sample 75 per cent larger than in 2024. Respondents have an average net worth of about USD 1.6 billion, and 59 per cent are based in the United States. It is one of the most detailed public pictures of what it costs to run the machinery that sits behind a great fortune.\n\nFor offices managing USD 1 billion or more, the average annual operating cost is USD 6.6 million, up from USD 6.1 million in the previous report. The scale is steep: about USD 0.9 million a year below USD 250 million, USD 1.7 million between USD 250 million and USD 500 million, and USD 3.3 million between USD 501 million and USD 999 million. The authors name talent as a major driver. Younger offices are often led by family members paid well below market rates, and costs rise as non-family professionals arrive. Investment teams are the most expensive, because they are paid at hedge fund and large asset manager levels.\n\nOutsourcing is the other half of the picture. On average about 26 per cent of costs go to external providers, and more than four in ten offices spend at least 30 per cent externally. Legal work (about 52 per cent) and trading and execution (over 45 per cent) are the functions most often sent outside, along with cybersecurity. Compensation and staffing, financial administration and reporting tend to stay in house.\n\nThe pattern describes a profession in transition. As a family office moves from relatives to employees, it needs people who can run payroll, contracts, vendors and confidentiality as carefully as it runs a portfolio, and those functions are the ones families choose to keep close.",
-    "why": "Staffing and compensation are among the functions families keep in house, which is where a household or estate manager who understands contracts, vendors and discretion becomes part of the office rather than an adjunct to it.",
-    "src": "J.P. Morgan Private Bank, 2026 Global Family Office Report",
-    "url": "https://privatebank.jpmorgan.com/nam/en/insights/reports/2026-family-office-report"
+    "tag": "Two kinds of fortune",
+    "title": "Tech billionaires gained USD 845 billion in nine months while every other kind of fortune lost USD 62 billion, Bloomberg's index shows",
+    "standfirst": "The record divergence means the households a private service professional is most likely to be hired by are increasingly those of the technology founder.",
+    "body": "The world's technology billionaires added a combined USD 845 billion to their fortunes in the first nine months of 2026, through 30 September, according to the Bloomberg Billionaires Index. It is a record for the period. Over the same stretch, billionaires whose wealth comes from other industries collectively lost USD 62 billion, as reported by Quartz on 5 October.\n\nThe roughly 100 technology fortunes on the index now total USD 4.6 trillion, or 36 per cent of the index's combined wealth. The same week, Bloomberg reported that the artificial intelligence boom had lifted Elon Musk and Mark Zuckerberg into the top ten of its ranking, a sign of how quickly the head of the list is being redrawn by a single theme.\n\nThe concentration matters for anyone who serves wealthy families. Technology wealth tends to be younger, more liquid and more exposed to a single sector than the industrial, retail or property fortunes it is overtaking. It often arrives with households that are being built from scratch: first estates, first aircraft, first full-time staff, and a founder who has never employed a house manager.\n\nIt also tends to bring a different set of expectations, from data discipline and digital privacy to a preference for systems and clear reporting over informal arrangements. Families whose fortunes fell, by contrast, are more likely to be reviewing costs, which tends to show up first in hiring pauses and renegotiated vendor contracts.",
+    "why": "Where the wealth is growing is where new households are being formed, and the professional who understands a founder's world, its tools and its exposure to one sector, is the one who is hired to build it.",
+    "src": "Quartz, citing the Bloomberg Billionaires Index",
+    "url": "https://qz.com/tech-billionaires-wealth-gains-ai-boom-bloomberg-100526"
   },
   "articles": [
     {
-      "cat": "Family Offices",
-      "place": "New York",
-      "tag": "One person too many",
-      "section": "The Market",
-      "title": "One in three family offices names over-reliance on a single person or provider as a continuity risk",
-      "body": "Alongside its cost findings, the J.P. Morgan report asks family offices what could break their continuity. The external risks are familiar: financial market disruption (46 per cent) and regulatory and tax complexity (38 per cent). The internal list is more revealing. Family conflict or misaligned values, lack of succession planning, and over-reliance on one person or provider each draw 33 per cent.\n\nThe last of those is a staffing question as much as a governance one. An office that depends on a single trusted manager, a single assistant or a single outside firm is exposed the day that person leaves, falls ill or is simply approached by someone else. Families respond by documenting procedures, sharing knowledge across a small team and naming deputies.\n\nGovernance differs sharply among families that still own an operating company. About 6 in 10 respondents run a business alongside the office. Among them, 41 per cent rank internal conflict among their top three risks, and 20 per cent rank it first, about twice the rate of other families. Sixty-six per cent of business-owning families have a formal constitution or written bylaws, against about 50 per cent of the rest. The report recommends investment committees with outside advisers and fiduciary boards that may include non-family members.",
-      "why": "A house or estate manager who documents routines, trains a deputy and keeps clear records reduces exactly the single-person dependency that families now list as a risk.",
-      "src": "J.P. Morgan Private Bank, 2026 Global Family Office Report",
-      "url": "https://privatebank.jpmorgan.com/nam/en/insights/reports/2026-family-office-report"
-    },
-    {
-      "cat": "Private Aviation",
-      "place": "Washington, D.C.",
-      "tag": "Charter climbs 27%",
-      "section": "At Sea & In the Air",
-      "title": "United States charter demand has risen 27 per cent in a year, Avinode reports, while departures stay stable",
-      "body": "Avinode, the marketplace through which operators and brokers trade charter flights, reports that United States charter demand climbed 27 per cent over the past year, according to Aviation International News on 15 October. The subheadline adds that departures have remained stable despite an influx of United States based brokers.\n\nThe gap between the two measures is worth reading carefully. Demand measured in requests can grow faster than flights actually flown, particularly when more intermediaries are sending enquiries to the same pool of aircraft. For a principal's team, that can mean more quotes for the same trip, and more need to judge which quote is real.\n\nTechnology is entering the same space. FlyJets has taken its JetGPT charter agent out of an eight-month beta, with booking, listing and route alerts, AIN reported on 12 October. The detail of the tool was not available at the time of writing, but the direction is plain: first contact with a charter market is becoming automated.",
-      "why": "Whoever arranges a family's flights will increasingly compare automated quotes from many brokers, so judgement about operator quality, safety and true availability matters more than speed of response.",
-      "src": "Aviation International News",
-      "url": "https://www.ainonline.com/aviation-news/business-aviation/2026-10-05/avinode-us-charter-demand-27-past-year"
-    },
-    {
-      "cat": "Art",
-      "place": "Paris, France",
-      "tag": "Grand Palais, fifth act",
+      "cat": "Objects & Culture",
+      "place": "London",
+      "tag": "Italy leads the cellar",
       "section": "Objects & Culture",
-      "title": "Art Basel Paris opens its fifth edition under a new director, with 206 galleries and a record 12 joint booths",
-      "body": "Art Basel Paris returns to the Grand Palais with preview days on 21 and 22 October and public days from 23 to 25 October. It is the first edition under director Karim Crippa. More than 200 exhibitors from 41 countries and territories take part, with more than 180 in the main Galeries sector, up from 177 last year, and a record 12 joint booths.\n\nNearly 30 galleries are new to the fair, among them ChertLüdde and Kraupa-Tuskany Zeidler from Berlin, Empty Gallery from Hong Kong, Luxembourg + Co. from London and Pace Di Donna Schrader from New York. More than 60 exhibitors operate spaces in France. Returning names include Gagosian, Hauser & Wirth, David Zwirner, White Cube, Thaddaeus Ropac, Perrotin and Pace. An invitation-only Avant-Première is scheduled for 20 October.\n\nThe backdrop is a French market that the Art Basel and UBS Global Art Market Report 2026 puts at USD 4.5 billion of sales in 2025, up 9 per cent on the year.",
-      "why": "Fair week means collectors, advisers and their staff converge on one city, and the person arranging the family's access, transport, security and shipping needs to know the calendar, and which days are invitation-only.",
-      "src": "USA Art News, citing Art Basel",
-      "url": "https://usaartnews.com/news/art-basel-paris-2026-exhibitor-list-includes-206-galleries"
+      "title": "Fine wine edges up 2.1 per cent in nine months, led by Italy and Champagne, while Bordeaux stays flat",
+      "body": "The Liv-ex 100, the benchmark of about 20 of the most traded fine wines, rose 2.1 per cent from January to September 2026 and 4.4 per cent over twelve months. The broader Liv-ex 1000 gained 1.3 per cent for the year to date and 2.2 per cent over twelve months, according to an analysis published by WineNews on 6 October.\n\nItaly was the standout. The Italy 100 index rose 3.5 per cent year to date and 4.9 per cent over twelve months, the best of any regional index over the past year, and Italian labels hold four of the top ten places in the Liv-ex 100. Champagne 50 gained 4.1 per cent this year, Burgundy 150 rose 1.7 per cent and Rhône 100 rose 0.5 per cent. Bordeaux 500 fell 0.2 per cent and is the only index still negative for the year.\n\nThe best individual performers were Bruno Giacosa Barolo Falletto Vigna Le Rocche Riserva 2016, up 31.7 per cent, Giacomo Conterno Barolo Monfortino Riserva 2019, up 19.4 per cent, Soldera Case Basse 2020, up 18.7 per cent, and Antinori Solaia 2021, up 14.1 per cent. The analysis describes the wider wine market as still in a slump, which makes the gains a bright spot concentrated in a small niche of prestige bottles.\n\nFor a cellar, the picture is one of rotation rather than a rising tide. Collectors who built their holdings around Bordeaux are seeing little movement, while demand has moved towards the Langhe, Tuscany and grower Champagne.",
+      "why": "A house manager who looks after a cellar is expected to speak about what is moving and why, and to advise on what to drink, hold or insure, not only on where it is stored.",
+      "src": "WineNews, citing Liv-ex data",
+      "url": "https://winenews.it/en/fine-wines-growth-in-the-first-9-months-of-2026-for-liv-ex-with-champagne-and-italy-leading-the-way_603549/"
+    },
+    {
+      "cat": "At Sea & In the Air",
+      "place": "Wichita, United States",
+      "tag": "The large-cabin pause",
+      "section": "At Sea & In the Air",
+      "title": "Large-cabin jet sales fell about 25 per cent in the third quarter, yet six months of supply keeps the segment the tightest in the market",
+      "body": "Sales of pre-owned large-cabin business jets fell roughly 25 per cent year on year in the third quarter of 2026, and the segment accounted for more than two thirds of the quarter's overall shortfall, according to GlobalAir.com's BrokerBeat report with data to 1 October. Sales for the twelve months to September were still 11 per cent ahead of the prior year, and September itself recovered to roughly the level of September 2025.\n\nSupply has not eased. There were 178 active large-cabin listings, the most of any jet class, representing 6.0 months of supply, the shortest of any turbine segment. The median time on the market was 77 days, the fastest among jets. Large-cabin aircraft made up 37 per cent of the 107 Aircraft Wanted requests sent through BrokerNet in the quarter, the largest share of any class.\n\nDealers describe a market of selective buyers. One said demand for premium late-model aircraft remains strong, with some receiving offers above asking price. Another expects less of a year-end rush than last year, citing labour shortages, parts delays and limited availability of pre-purchase inspection slots. The October to December 2025 period was the strongest in two years of data, so this quarter faces a hard comparison. IADA-accredited dealers closed 746 deals in the first half, up 21 per cent.\n\nOn the delivery side, dealers expect new aircraft from manufacturers to ease supply, with some softening likely in early 2027.",
+      "why": "A family that owns or charters a large-cabin aircraft depends on its coordinator to understand when an aircraft can be inspected, repositioned or replaced, and a tight maintenance calendar is now part of that planning.",
+      "src": "GlobalAir.com BrokerBeat",
+      "url": "https://www.globalair.com/articles/brokerbeat-large-cabin-jets-cooled-this-summer-raising-the-stakes-for-year-end/12743"
+    },
+    {
+      "cat": "The Market",
+      "place": "Zurich",
+      "tag": "2,600 a day",
+      "section": "The Market",
+      "title": "UBS counts nearly one million new dollar millionaires as personal wealth grows by more than 10 per cent",
+      "body": "The UBS Global Wealth Report 2026, the seventeenth edition, finds that personal wealth rose by more than 10 per cent, its fastest pace in several years. The number of US dollar millionaires grew again, adding nearly one million people worldwide, or more than 2,600 a day.\n\nThe report covers 56 markets that UBS says account for more than 92 per cent of the world's wealth, and it examines how the global wealth pyramid is shifting as faster-growing tiers reshape the picture of where affluence is emerging. The firm frames the analysis around how wealth is created, as well as how it is distributed across regions.\n\nFor the households at the very top, the relevant point is not the headcount of millionaires but the pace at which new wealth is being created and where. New fortunes mean new houses, new offices and new demand for people who can run them, and they tend to appear in markets where the private service profession is still young and agencies are few.",
+      "why": "The report is a map of where demand for private staff will come from next, and it rewards candidates who can read wealth data the way their employers do.",
+      "src": "UBS Global Wealth Report 2026",
+      "url": "https://www.ubs.com/global/en/wealthmanagement/insights/global-wealth-report.html"
     }
   ],
   "briefs": [
     {
-      "t": "Two thirds of family offices now plan for AI",
-      "b": "J.P. Morgan finds that 65 per cent of surveyed single-family offices plan to prioritise AI investments, now or later. Some 43 per cent hold venture or growth equity, averaging 3.3 per cent of their portfolios.",
-      "src": "J.P. Morgan Private Bank",
-      "url": "https://privatebank.jpmorgan.com/nam/en/insights/reports/2026-family-office-report"
+      "t": "Three new yachts from 40 to 80 metres reach the water in a month",
+      "b": "Custom Line launched its 40-metre Saetta 128 at Ancona on 8 October, while CRN delivered the 70-metre Cerulean on 16 September and ISA Yachts launched the 80-metre Belita on 15 September. Gulf Craft launched the 30-metre Nomad 101 Charisma on 12 October.",
+      "src": "YachtBuyer",
+      "url": "https://www.yachtbuyer.com/en-gb/news/fleet/2026"
     },
     {
-      "t": "Geopolitics tops the family office risk list",
-      "b": "Geopolitics is the leading macro concern for 64 per cent of surveyed offices, ahead of interest rates (61 per cent) and growth (59 per cent). Only 28 per cent hold gold, at an average 0.9 per cent of assets.",
-      "src": "J.P. Morgan Private Bank",
-      "url": "https://privatebank.jpmorgan.com/nam/en/insights/reports/2026-family-office-report"
+      "t": "Flexjet takes the first Praetor 600E",
+      "b": "Embraer delivered the first Praetor 600E to Flexjet, the fleet launch customer, on 2 October. Flexjet is also due to receive its first Praetor 500E in the fourth quarter of 2026.",
+      "src": "Aviation Week",
+      "url": "https://aviationweek.com/business-aviation/rolling-business-aviation-daily-briefs-october-2026"
     },
     {
-      "t": "Ocorian's family office report covers 25 jurisdictions",
-      "b": "Published on 10 April 2026 in six parts, it examines governance, risk, data and AI, and the role of specialist providers to families.",
-      "src": "Ocorian",
-      "url": "https://www.ocorian.com/knowledge-hub/reports-guides/ocorians-global-family-office-report-2026"
+      "t": "Autoland reaches more private cabins, and Northolt gains an FBO",
+      "b": "Pilatus received EASA and FAA approval for Safety Autoland on the PC-12 PRO on 8 October, and Epic won FAA certification for Garmin Autoland on the E1000 AX on 12 October. Gama Aviation began FBO operations at RAF Northolt in West London on 2 October.",
+      "src": "Aviation Week",
+      "url": "https://aviationweek.com/business-aviation/rolling-business-aviation-daily-briefs-october-2026"
     }
   ]
 }
