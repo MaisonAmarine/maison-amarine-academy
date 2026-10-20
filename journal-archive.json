@@ -1,5 +1,76 @@
 [
   {
+    "no": "No. 81",
+    "date": "Monday, 19 October 2026",
+    "strap": "A daily dispatch from the world you are entering",
+    "lead": {
+      "cat": "The Market",
+      "place": "New York",
+      "tag": "Two kinds of fortune",
+      "title": "Tech billionaires gained USD 845 billion in nine months while every other kind of fortune lost USD 62 billion, Bloomberg's index shows",
+      "standfirst": "The record divergence means the households a private service professional is most likely to be hired by are increasingly those of the technology founder.",
+      "body": "The world's technology billionaires added a combined USD 845 billion to their fortunes in the first nine months of 2026, through 30 September, according to the Bloomberg Billionaires Index. It is a record for the period. Over the same stretch, billionaires whose wealth comes from other industries collectively lost USD 62 billion, as reported by Quartz on 5 October.\n\nThe roughly 100 technology fortunes on the index now total USD 4.6 trillion, or 36 per cent of the index's combined wealth. The same week, Bloomberg reported that the artificial intelligence boom had lifted Elon Musk and Mark Zuckerberg into the top ten of its ranking, a sign of how quickly the head of the list is being redrawn by a single theme.\n\nThe concentration matters for anyone who serves wealthy families. Technology wealth tends to be younger, more liquid and more exposed to a single sector than the industrial, retail or property fortunes it is overtaking. It often arrives with households that are being built from scratch: first estates, first aircraft, first full-time staff, and a founder who has never employed a house manager.\n\nIt also tends to bring a different set of expectations, from data discipline and digital privacy to a preference for systems and clear reporting over informal arrangements. Families whose fortunes fell, by contrast, are more likely to be reviewing costs, which tends to show up first in hiring pauses and renegotiated vendor contracts.",
+      "why": "Where the wealth is growing is where new households are being formed, and the professional who understands a founder's world, its tools and its exposure to one sector, is the one who is hired to build it.",
+      "src": "Quartz, citing the Bloomberg Billionaires Index",
+      "url": "https://qz.com/tech-billionaires-wealth-gains-ai-boom-bloomberg-100526"
+    },
+    "articles": [
+      {
+        "cat": "Objects & Culture",
+        "place": "London",
+        "tag": "Italy leads the cellar",
+        "section": "Objects & Culture",
+        "title": "Fine wine edges up 2.1 per cent in nine months, led by Italy and Champagne, while Bordeaux stays flat",
+        "body": "The Liv-ex 100, the benchmark of about 20 of the most traded fine wines, rose 2.1 per cent from January to September 2026 and 4.4 per cent over twelve months. The broader Liv-ex 1000 gained 1.3 per cent for the year to date and 2.2 per cent over twelve months, according to an analysis published by WineNews on 6 October.\n\nItaly was the standout. The Italy 100 index rose 3.5 per cent year to date and 4.9 per cent over twelve months, the best of any regional index over the past year, and Italian labels hold four of the top ten places in the Liv-ex 100. Champagne 50 gained 4.1 per cent this year, Burgundy 150 rose 1.7 per cent and Rhône 100 rose 0.5 per cent. Bordeaux 500 fell 0.2 per cent and is the only index still negative for the year.\n\nThe best individual performers were Bruno Giacosa Barolo Falletto Vigna Le Rocche Riserva 2016, up 31.7 per cent, Giacomo Conterno Barolo Monfortino Riserva 2019, up 19.4 per cent, Soldera Case Basse 2020, up 18.7 per cent, and Antinori Solaia 2021, up 14.1 per cent. The analysis describes the wider wine market as still in a slump, which makes the gains a bright spot concentrated in a small niche of prestige bottles.\n\nFor a cellar, the picture is one of rotation rather than a rising tide. Collectors who built their holdings around Bordeaux are seeing little movement, while demand has moved towards the Langhe, Tuscany and grower Champagne.",
+        "why": "A house manager who looks after a cellar is expected to speak about what is moving and why, and to advise on what to drink, hold or insure, not only on where it is stored.",
+        "src": "WineNews, citing Liv-ex data",
+        "url": "https://winenews.it/en/fine-wines-growth-in-the-first-9-months-of-2026-for-liv-ex-with-champagne-and-italy-leading-the-way_603549/"
+      },
+      {
+        "cat": "At Sea & In the Air",
+        "place": "Wichita, United States",
+        "tag": "The large-cabin pause",
+        "section": "At Sea & In the Air",
+        "title": "Large-cabin jet sales fell about 25 per cent in the third quarter, yet six months of supply keeps the segment the tightest in the market",
+        "body": "Sales of pre-owned large-cabin business jets fell roughly 25 per cent year on year in the third quarter of 2026, and the segment accounted for more than two thirds of the quarter's overall shortfall, according to GlobalAir.com's BrokerBeat report with data to 1 October. Sales for the twelve months to September were still 11 per cent ahead of the prior year, and September itself recovered to roughly the level of September 2025.\n\nSupply has not eased. There were 178 active large-cabin listings, the most of any jet class, representing 6.0 months of supply, the shortest of any turbine segment. The median time on the market was 77 days, the fastest among jets. Large-cabin aircraft made up 37 per cent of the 107 Aircraft Wanted requests sent through BrokerNet in the quarter, the largest share of any class.\n\nDealers describe a market of selective buyers. One said demand for premium late-model aircraft remains strong, with some receiving offers above asking price. Another expects less of a year-end rush than last year, citing labour shortages, parts delays and limited availability of pre-purchase inspection slots. The October to December 2025 period was the strongest in two years of data, so this quarter faces a hard comparison. IADA-accredited dealers closed 746 deals in the first half, up 21 per cent.\n\nOn the delivery side, dealers expect new aircraft from manufacturers to ease supply, with some softening likely in early 2027.",
+        "why": "A family that owns or charters a large-cabin aircraft depends on its coordinator to understand when an aircraft can be inspected, repositioned or replaced, and a tight maintenance calendar is now part of that planning.",
+        "src": "GlobalAir.com BrokerBeat",
+        "url": "https://www.globalair.com/articles/brokerbeat-large-cabin-jets-cooled-this-summer-raising-the-stakes-for-year-end/12743"
+      },
+      {
+        "cat": "The Market",
+        "place": "Zurich",
+        "tag": "2,600 a day",
+        "section": "The Market",
+        "title": "UBS counts nearly one million new dollar millionaires as personal wealth grows by more than 10 per cent",
+        "body": "The UBS Global Wealth Report 2026, the seventeenth edition, finds that personal wealth rose by more than 10 per cent, its fastest pace in several years. The number of US dollar millionaires grew again, adding nearly one million people worldwide, or more than 2,600 a day.\n\nThe report covers 56 markets that UBS says account for more than 92 per cent of the world's wealth, and it examines how the global wealth pyramid is shifting as faster-growing tiers reshape the picture of where affluence is emerging. The firm frames the analysis around how wealth is created, as well as how it is distributed across regions.\n\nFor the households at the very top, the relevant point is not the headcount of millionaires but the pace at which new wealth is being created and where. New fortunes mean new houses, new offices and new demand for people who can run them, and they tend to appear in markets where the private service profession is still young and agencies are few.",
+        "why": "The report is a map of where demand for private staff will come from next, and it rewards candidates who can read wealth data the way their employers do.",
+        "src": "UBS Global Wealth Report 2026",
+        "url": "https://www.ubs.com/global/en/wealthmanagement/insights/global-wealth-report.html"
+      }
+    ],
+    "briefs": [
+      {
+        "t": "Three new yachts from 40 to 80 metres reach the water in a month",
+        "b": "Custom Line launched its 40-metre Saetta 128 at Ancona on 8 October, while CRN delivered the 70-metre Cerulean on 16 September and ISA Yachts launched the 80-metre Belita on 15 September. Gulf Craft launched the 30-metre Nomad 101 Charisma on 12 October.",
+        "src": "YachtBuyer",
+        "url": "https://www.yachtbuyer.com/en-gb/news/fleet/2026"
+      },
+      {
+        "t": "Flexjet takes the first Praetor 600E",
+        "b": "Embraer delivered the first Praetor 600E to Flexjet, the fleet launch customer, on 2 October. Flexjet is also due to receive its first Praetor 500E in the fourth quarter of 2026.",
+        "src": "Aviation Week",
+        "url": "https://aviationweek.com/business-aviation/rolling-business-aviation-daily-briefs-october-2026"
+      },
+      {
+        "t": "Autoland reaches more private cabins, and Northolt gains an FBO",
+        "b": "Pilatus received EASA and FAA approval for Safety Autoland on the PC-12 PRO on 8 October, and Epic won FAA certification for Garmin Autoland on the E1000 AX on 12 October. Gama Aviation began FBO operations at RAF Northolt in West London on 2 October.",
+        "src": "Aviation Week",
+        "url": "https://aviationweek.com/business-aviation/rolling-business-aviation-daily-briefs-october-2026"
+      }
+    ]
+  },
+  {
     "no": "No. 80",
     "date": "Sunday, 18 October 2026",
     "strap": "A daily dispatch from the world you are entering",
@@ -3236,105 +3307,6 @@
         "b": "The Knight Frank Luxury Investment Index closed 2025 down 0.4 per cent, a year of stabilisation after two years of losses, and is up 38.6 per cent over the decade. Within it the Liv-ex Fine Wine 100 fell 2.5 per cent in 2025 and sits almost 25 per cent below its 2022 peak, with Tuscan wines the most resilient category.",
         "src": "Knight Frank",
         "url": "https://www.knightfrank.com/research/article/2026/4/knight-frank-luxury-investment-index-luxury-holds-steady"
-      }
-    ]
-  },
-  {
-    "no": "No. 41",
-    "date": "Monday, 31 August 2026",
-    "strap": "A daily dispatch from the world you are entering",
-    "lead": {
-      "cat": "The Market",
-      "place": "Dubai, United Arab Emirates",
-      "tag": "1,289 in a year",
-      "title": "Dubai's financial centre closes the year with 1,289 family entities, and the households behind them arrive next",
-      "standfirst": "Family related entities in the Dubai International Financial Centre rose 61 per cent in twelve months, and family foundations rose 66 per cent, in a jurisdiction that did not exist as a wealth hub twenty years ago.",
-      "body": "The Dubai International Financial Centre closed 2025 with 1,289 family related entities on its register, an increase of 61 per cent in a single year, alongside 1,115 family foundations, up 66 per cent. More than 500 wealth and asset management firms now operate inside the centre, a figure 22 per cent higher than a year earlier. These are not marginal movements. They are the numbers of a jurisdiction that has compressed into three years the institutional depth other centres took a decade to assemble.\n\nThe capital behind the registrations is substantial. The top 120 families in Dubai are estimated to manage more than USD 1.2 trillion in assets globally, a concentration few hubs outside Switzerland and Singapore can claim. The emirate held its position as the world's leading destination for greenfield foreign direct investment for a fifth consecutive year and recorded GDP growth of 5.4 per cent. In a signal of where the private banks now see their clients, the Department of Economy and Tourism has signed a strategic agreement with Julius Baer, which manages CHF 547 billion, around USD 684 billion, across more than 25 countries and 60 locations.\n\nThe comparison that matters is Singapore, which counted roughly 1,650 single family offices at the end of 2025 with close to S$90 billion in combined assets. Singapore remains the more mature market, with longer regulatory memory and deeper advisory benches. Dubai is building the same institutional weight at considerably greater speed, and the questions families ask before they choose have shifted accordingly. Tax is no longer the first question. Banking access, governance that can evolve as the family grows, cross-border reporting and succession advice over the next ten years now carry as much weight.\n\nFor anyone who serves these families, the structural point is simple. A family office is a legal entity, but it is almost never only that. It arrives with a principal, a residence, a school run, a driver, a chef and a calendar that has to be held by somebody. The registrations recorded in the DIFC over the past eighteen months are, in the ordinary course of things, followed by houses that need running.",
-      "why": "Every family office that establishes itself in the Gulf eventually needs a household run near it. The estate managers, house managers and principals' assistants who will serve those families are being recruited now, and the terms of that market are being set now.",
-      "src": "IMC, on Dubai International Financial Centre data",
-      "url": "https://intuitconsultancy.com/dubai-family-office-numbers-just-crossed-a-threshold-most-hubs-take-a-decade-to-reach/"
-    },
-    "articles": [
-      {
-        "cat": "The Craft",
-        "section": "The Craft",
-        "place": "Kuwait City, Kuwait",
-        "tag": "Three to seven",
-        "title": "Domestic pay across the Gulf rises between 3 and 7 per cent, and the region sorts itself into distinct paying tiers",
-        "body": "The 2026 GCC Domestic Worker Salary Report records increases of between 3 per cent and 7 per cent across the Gulf Cooperation Council compared with 2025 levels. The strongest gains went to Filipino workers in the United Arab Emirates, up 7 per cent, and Ethiopian workers in Saudi Arabia, up 5 per cent. The United Arab Emirates remains the highest paying market in nominal terms for domestic drivers, followed closely by Saudi Arabia and Qatar.\n\nBelow that top tier sits a second group. Kuwait ranks under the three leading markets but remains broadly comparable to Bahrain and Oman, and continues to describe itself as one of the more affordable places in the region to employ household staff. Khaled Al-Dakhnan, head of the Kuwait Union of Domestic Labor Offices, noted that recruitment fees and costs have been revised three or four times in the past five years in response to operational change and market requirements, and that salaries in Kuwait remain among the lowest in the Gulf.\n\nThe consequence is a talent flow that runs in one direction. Al-Dakhnan was candid that lower commissions and salary packages affect the ability of overseas agencies to supply workers with higher qualifications and experience, and that the United Arab Emirates and Saudi Arabia increasingly attract the more experienced candidates, particularly skilled Filipino workers. Wage floor policies set by the countries that send staff are adding further upward pressure across the whole region.\n\nWhat the report describes, in effect, is a market where the cost of a household is now visibly stratified by jurisdiction rather than by role. The same profile of candidate commands materially different terms in Dubai than in Kuwait City, and the gap is widening rather than closing. For families operating houses in more than one Gulf state, the payroll is no longer a single line.",
-        "why": "Anyone advising or running a household in the Gulf needs to know that pay is set by jurisdiction as much as by post, and that the most experienced staff move towards the markets that pay most. Budgeting a house in Kuwait on Dubai assumptions, or the reverse, will fail on both sides.",
-        "src": "Kuwait Times, on the 2026 GCC Domestic Worker Salary Report",
-        "url": "https://kuwaittimes.com/article/45472/kuwait/other-news/kuwait-among-gccs-most-affordable-markets-for-employment-of-domestics/"
-      },
-      {
-        "cat": "At Sea & In the Air",
-        "section": "At Sea & In the Air",
-        "place": "Monaco",
-        "tag": "118 days to 83",
-        "title": "The charter booking window shortens by almost a third, and the summer is now decided in its final weeks",
-        "body": "Average booking lead times for yacht charter have fallen from 118 days in 2025 to 83 days in 2026, a reduction of almost 30 per cent year on year. It is the clearest change in charter behaviour recorded so far this season, and it is unusual by the standards of a market that has historically built its summer months steadily through the winter and spring.\n\nThe pattern is visible in the forward book. Nearly a third of forward June bookings were made for charters beginning in June itself, and more than 60 per cent were for departures taking place by the end of July. Demand remains heavily concentrated in the high season, with 939 of 1,162 forward June bookings, or 80.8 per cent of all activity, scheduled between June and August. Clients have not stopped chartering. They have stopped committing early.\n\nThe geography is unchanged. The Western Mediterranean, Eastern Mediterranean and Adriatic together account for almost 80 per cent of forward June bookings, with the Western Mediterranean the largest single region at 546 bookings. Athens leads embarkation points with 161 bookings, ahead of Nice at 53 and Monaco at 46. Charters are also running slightly longer, with the median length rising from seven days in June 2025 to eight days in June 2026, and eight to ten day charters overtaking the traditional week as the largest booking category at 42.9 per cent of activity.\n\nNorthrop & Johnson reads the shift as a response to the geopolitical backdrop rather than a permanent change of habit, and notes that the strongest yachts and the most desirable dates continue to be taken well in advance. The practical effect for anyone organising a family's summer is that availability now opens and closes in weeks rather than months, and that the compensation for booking late is a thinner choice of vessel.",
-        "why": "A shorter booking window moves the work of the person who arranges the family's travel closer to the departure date and compresses it. Provisioning, crew briefing, itineraries and shore side logistics all have to be assembled in a fraction of the time that was normal two seasons ago.",
-        "src": "Northrop & Johnson, Deep Data",
-        "url": "https://www.northropandjohnson.com/navigator-news/charter/2026-yacht-charter-market-trends-show-last-minute-booking-surge"
-      },
-      {
-        "cat": "Objects & Culture",
-        "section": "Objects & Culture",
-        "place": "London, United Kingdom",
-        "tag": "Strongest in five years",
-        "title": "Christie's and Sotheby's post their strongest first half in five years, and the collection starts behaving like collateral",
-        "body": "Christie's recorded first half revenue of USD 4.5 billion, with public auction sales up 71 per cent year on year at USD 3.5 billion against USD 2.1 billion in 2025, and a sell-through rate of 91 per cent by lot. Private sales added just over USD 1 billion. Sotheby's figures were strikingly similar: public auction sales of USD 3.4 billion, up 59 per cent, a sell-through rate of 90 per cent by lot, and total turnover of USD 4.4 billion including a record USD 826 million in private sales.\n\nSingle owner estates did much of the work. The S.I. Newhouse collection made USD 630.8 million at Christie's in New York in May and produced two of the three highest prices of the year, Jackson Pollock's <i>Number 7A</i> at USD 181.2 million and Constantin Brancusi's <i>Danaïde</i> at USD 107.6 million. Sotheby's took USD 908.6 million across its May marquee week, and the Joe Lewis collection in London made USD 406.2 million in June, the highest value sale of Impressionist, modern and contemporary art ever staged in Europe.\n\nBeneath the trophies, the category that grew fastest is the one closest to the house. Luxury, which covers watches, jewellery, motor cars, handbags and memorabilia, is now second by value at both firms, reaching USD 539 million at Christie's, up 15 per cent. Josh Pullan of Sotheby's luxury division points to a 1961 Ferrari 250 GT SWB California Spider at EUR 16.7 million in Monte Carlo and a record USD 35,000 for a bottle of tequila. Average watch bidder spend rose roughly 60 per cent year on year to USD 129,000.\n\nThe quieter development is financial. Sotheby's completed a USD 900 million securitisation in January, the first to include loans secured against collectible cars as well as art, and a USD 825 million bond issuance in April. Christie's, five years into its own art financing arm, reports clients borrowing against cars, handbags, watches and increasingly wine. The collection in the house is no longer only an aesthetic holding. It is a line that can be lent against without being sold.",
-        "why": "Collections are being valued, insured, moved and now pledged more often than before. The household that holds them is expected to know where each object is, what condition it is in and who to call before anyone asks twice.",
-        "src": "The Art Newspaper",
-        "url": "https://www.theartnewspaper.com/2026/07/15/trophy-lots-and-luxury-goods-fuel-rebound-for-christies-and-sothebys-2026-half-year-results"
-      },
-      {
-        "cat": "The Private World",
-        "section": "The Private World",
-        "place": "Málaga, Spain",
-        "tag": "62 per cent foreign",
-        "title": "Spain's prime market runs almost entirely on international money, and the service inside the house is now part of what is bought",
-        "body": "Spain has moved from the periphery of Europe's residential map to something close to its centre of gravity. Home sales in the first half of 2025 reached 379,484, the highest first half figure since before the financial crisis and 32.6 per cent above the decade average, while values rose between 8 and 13 per cent, the fastest pace in nearly twenty years. Prime prices are expected to rise between 3 and 6 per cent in 2026, and super-prime between 6 and 10 per cent.\n\nScarcity explains much of it. Total listings fell 15 per cent in the first half, yet the number of properties priced above EUR 2.5 million declined by only 1 per cent, leaving around 14,000 prime homes on the market. Four regions hold most of that stock: Málaga at 28.5 per cent, Mallorca at 25.3 per cent, Madrid at 11 per cent and Barcelona at 7.5 per cent. In transactions above EUR 2.5 million, 62 per cent of buyers are foreign, and 60 per cent of super-prime deals close without financing.\n\nThe composition of the buyer is changing too. European Union purchasers remain the largest group, followed by the United States and Latin America, notably Mexico, then the United Kingdom and a growing cohort from Southeast Asia. A newer group has emerged in 2026: technology founders, finance executives, professional athletes and figures from entertainment, whose habits differ from the traditional second home buyer. Around half to 60 per cent use the property as a second home or in a hybrid arrangement, and family offices continue to increase their exposure to residential as a long-term asset class.\n\nThe most instructive line in the report concerns what these buyers now expect once they are inside. Dils Lucas Fox lists domestic concierge living, meaning 24 hour service, housekeeping, private chefs and wellness clubs, as a defining demand rather than a flourish, alongside biophilic design and environmental certification. Branded residences have moved from niche to mainstream, with 38 schemes in Spain including Four Seasons, Mandarin Oriental and Six Senses, 25 more in development and a premium of between 20 and 40 per cent over comparable unbranded stock. Marbella leads with nine.",
-        "why": "When a buyer pays a premium of up to 40 per cent for a branded address, what they are buying is service delivered reliably. Whoever runs that house is holding up the part of the purchase the architecture cannot supply.",
-        "src": "Dils Lucas Fox, 2026 Spanish Market Report",
-        "url": "https://www.lucasfox.com/news-and-press/articles/dils-lucas-fox-2026-market-report"
-      },
-      {
-        "cat": "At Sea & In the Air",
-        "section": "At Sea & In the Air",
-        "place": "Utica, United States",
-        "tag": "Fractional pulls ahead",
-        "title": "Fractional flying grows 10.7 per cent while corporate flight departments contract, and the aircraft a family uses is less and less its own",
-        "body": "Global business jet departures reached 3.99 million on a twelve month basis to July, up 4.9 per cent, with North America accounting for 71.6 per cent of activity. The headline conceals a redistribution. Fractional ownership expanded 10.7 per cent over the same period and 8.2 per cent in July alone, while corporate flight departments contracted 7.1 per cent and branded charter softened 0.6 per cent. Demand is not only growing, it is moving between ownership models.\n\nThe divergence extends to the providers. NetJets holds 13.3 per cent of global activity and grew 10.4 per cent, Flexjet grew 13.5 per cent, and Wheels Up fell 25.7 per cent and now flies below its 2019 traffic. Fractional programmes also captured 18 per cent of new aircraft deliveries so far in 2026, up from 10 per cent before the pandemic, which suggests the shift is being built into the fleet rather than merely rented.\n\nThe existing fleet is working harder than at any point since before the pandemic. Year to date global utilisation reached 21.4 hours per tail per month, 10.5 per cent above 2019 levels, with super midsize jets leading at 30.8 hours. Active aircraft are approaching 20,500 on a monthly basis and hours per tail are still rising, meaning demand growth continues to outpace supply. Regionally, Africa grew 10.4 per cent and Latin America 7.4 per cent, while the Middle East remains down 5.7 per cent on the year, with monthly declines narrowing from above 20 per cent early in the year to 4.7 per cent in July.\n\nThe transaction market tells a more cautious story. Pre-owned transactions reached 2,815 on a twelve month basis, up only 3.7 per cent against 17.0 per cent for the whole of 2025, and large cabin asking prices have eased to an average of USD 14.20 million, effectively back to 2019 levels. Order books, by contrast, sit at decade highs, with combined backlog across the four major manufacturers reaching USD 61.6 billion.",
-        "why": "A family that flies fractionally rather than owning outright is dealing with programme rules, availability windows and call-out notice rather than its own crew. The person who books the aircraft has to understand the contract as well as the schedule.",
-        "src": "JETNET and WINGX, JIQ Market Barometer, August 2026",
-        "url": "https://www.jetnet.com/resources/blog/jiq-market-barometer-august-2026-edition-6"
-      }
-    ],
-    "briefs": [
-      {
-        "t": "Four Seasons opens on Mykonos",
-        "b": "Four Seasons has opened its first hotel on Mykonos for the inaugural summer season, on the coastline of Kalo Livadi Bay. The property holds 94 rooms, suites and villas across six hectares, arranged by the architect Nicos Valsamakis on the plan of a traditional Mykonian village rather than a single mass. There are four restaurants, a seven room spa pavilion, a private beach and two infinity pools.",
-        "src": "Greek City Times",
-        "url": "https://greekcitytimes.com/2026/07/24/four-seasons-opens-mykonos-resort-designed-as-traditional-village/"
-      },
-      {
-        "t": "Champagne holds where Bordeaux hesitates",
-        "b": "Liv-ex data shows a fine wine market still split between labels that continue to weaken and those that have found a floor. Pol Roger Réserve Brut rose from an average trade price of GBP 284 in the second quarter of 2025 to GBP 294 in the same quarter of 2026, an increase of about 3.5 per cent, while Jacques Selosse Initial climbed from GBP 3,264 to GBP 3,569, up roughly 9.3 per cent. Non-vintage Champagne is proving the steadier holding.",
-        "src": "Liv-ex, via Vinetur",
-        "url": "https://www.vinetur.com/en/20260708103939/liv-ex-finds-bordeaux-labels-posted-the-steadiest-gains-in-a-still-uneven-fine-wine-market.html"
-      },
-      {
-        "t": "Where the interior crew come from",
-        "b": "YPI CREW reports that candidates arriving from hospitality or cruise ship backgrounds adapt faster to yacht service and show significantly higher retention, while those without relevant experience frequently leave within their first season. Rotational posts are now standard above 60 metres, which keeps a large share of experienced senior interior crew committed elsewhere and unavailable to the market.",
-        "src": "YPI CREW, Superyacht Interior Crew Salary Guide 2026",
-        "url": "https://www.ypicrew.com/superyacht-interior-crew-salary-guide-2026-chief-stew-purser-specialist-roles"
-      },
-      {
-        "t": "The saleroom's new client is younger",
-        "b": "Christie's reports that 47 per cent of its new clients so far this year are Millennial or Generation Z, and that 85 per cent of its bids this year came from online. Bonnie Brennan, the chief executive, describes the online forum as the place where new buyers get to know the house before entering the larger live auctions. At Sotheby's, Millennials and Generation Z now account for roughly a third of watch bidders.",
-        "src": "The Art Newspaper",
-        "url": "https://www.theartnewspaper.com/2026/07/15/trophy-lots-and-luxury-goods-fuel-rebound-for-christies-and-sothebys-2026-half-year-results"
       }
     ]
   }
