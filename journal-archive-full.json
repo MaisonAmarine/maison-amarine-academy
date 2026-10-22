@@ -1,5 +1,76 @@
 [
   {
+    "no": "No. 83",
+    "date": "Wednesday, 21 October 2026",
+    "strap": "A daily dispatch from the world you are entering",
+    "lead": {
+      "cat": "At Sea & In the Air",
+      "place": "Fort Lauderdale, United States",
+      "tag": "Fewer sales, fuller decks",
+      "title": "Superyacht brokerage value slipped 4.7 per cent to USD 5.2 billion in nine months, yet charter bookings rose 18.5 per cent",
+      "standfirst": "Northrop & Johnson's third quarter report shows owners selling a little less and chartering a great deal more.",
+      "body": "Between January and September 2026, Northrop & Johnson counts 472 brokerage sales of yachts of 24 metres and above, against 477 a year earlier. Their combined value came to USD 5.2 billion, down 4.7 per cent from USD 5.46 billion. Motor yachts account for USD 5.02 billion of that total, while sailing yachts fell 13 per cent to USD 178 million. The quarter itself was slower: 126 sales in the third quarter, down 21.3 per cent from 160 in the second.\n\nThe shape of demand matters more than the headline. Sales of yachts from 40 to 50 metres rose from 49 to 63, an increase of about 29 per cent, while most other size bands fell or held flat. On the supply side the broker logged 1,400 new central agency listings, up 5.5 per cent, and 1,949 price reductions, up 7.2 per cent. In the third quarter, reduced listings had a median of 386 days on the market and an average cut of about USD 1.5 million. Sellers are negotiating, and buyers are taking their time.\n\nCharter tells the opposite story. Bookings rose 18.5 per cent year on year and booked days 17.4 per cent, with growth concentrated in June and July. Caribbean and Bahamas bookings each rose about 19 per cent, and Athens was the busiest pick up point in both years. Yachts receiving at least one booking edged up only 1.8 per cent, from 1,641 to 1,670, so the extra demand is falling on roughly the same fleet.\n\nThe new build market is quieter. Provisional figures show 216 new build sales against 266 in 2025, though the broker notes the number may rise as yard sales are confirmed. Speculative builds make up about 51 per cent of the total and custom builds about 36 per cent.",
+      "why": "A fleet that is chartered more is a fleet that is run harder: more turnovers, more guests, more provisioning and more coordination between the owner's office, the captain and the broker. The family's representative on shore sits at the centre of that traffic.",
+      "src": "Northrop & Johnson, Q3 2026 Superyacht Market Report",
+      "url": "https://www.northropandjohnson.com/navigator-news/brokerage-new-build/q3-2026-superyacht-market-report"
+    },
+    "articles": [
+      {
+        "cat": "The Craft",
+        "place": "London",
+        "tag": "The pay ladder",
+        "section": "The Craft",
+        "title": "A private chef can earn up to USD 300,000 and a household manager USD 150,000 to USD 250,000, Morgan & Mallet's database shows",
+        "body": "Morgan & Mallet International, the luxury household staffing agency, has published salary ceilings drawn from a database of more than 200,000 household staff across the United States, the United Kingdom, Europe and the Middle East. The data covers January 2024 to October 2025 and was reported by Entrepreneur in July 2026. Private chefs sit at the top with salaries of up to USD 300,000, followed by executive and personal assistants at up to USD 250,000, butlers at up to USD 180,000 and travelling nannies at up to USD 163,000.\n\nHousehold managers in the United States are placed at USD 150,000 to USD 250,000, and the agency describes them as the fastest growing salaries among household staff. The reason it gives is the expansion of clients' property portfolios: a skilled estate manager often oversees more than three properties across several countries. Chefs who cook to specific diets, such as gluten free, vegan or ketogenic, are described as able to name their price.\n\nThe report also sketches the terms of the job. Privacy, discretion and technology skills are the core hiring qualities, and the average tenure is now about three years, far shorter than the decades once expected. Staff who sign non disclosure agreements and follow security rules earn 15 to 20 per cent more, according to the agency, and some households ban social media or ask staff to leave phones at the door.",
+        "why": "The ladder shows where a career in private service can climb: the premium sits with those who coordinate several houses and carry the family's confidence. Knowing the ceilings, and what earns them, is the first step in negotiating a first contract.",
+        "src": "Entrepreneur, citing Morgan & Mallet International",
+        "url": "https://www.entrepreneur.com/business-news/wealthy-households-are-paying-this-growing-profession-300000"
+      },
+      {
+        "cat": "Objects & Culture",
+        "place": "New York",
+        "tag": "Cellars, still trading",
+        "section": "Objects & Culture",
+        "title": "Sotheby's Wine & Spirits sold USD 49.2 million at a 94 per cent sell through in the first half, and Acker reports its strongest half year on record",
+        "body": "Two of the leading houses in collectible wine have reported first half results for 2026, both self reported and not independently audited. Acker says total sales reached USD 125 million, of which USD 97 million came from auctions, and describes the period as the strongest first half in its history. It claims a 42 per cent share of the global wine auction market, a figure that is its own estimate.\n\nSotheby's Wine & Spirits held 29 auctions across the half, offering 13,000 lots for USD 49.2 million with a sell through rate of 94 per cent. Wine and spirits are reported together, so the wine only total cannot be isolated, and neither house gives an exact comparison with the previous year.\n\nThe autumn calendar is already set. Sotheby's presented five sales in New York between 16 and 19 September under the Nightcap banner, with a catalogue valued at more than USD 10 million. Estimates included six magnums of 1993 Henri Jayer Vosne-Romanée Cros Parantoux at USD 190,000 to USD 260,000 and a 6 litre bottle of 2002 Domaine de la Romanée-Conti Romanée-Conti at USD 150,000 to USD 200,000. French Burgundy, Bordeaux and Champagne dominate, with Italian labels in support.",
+        "why": "A cellar is an asset the household must store, insure, insure again and document. Whoever manages the house is expected to speak the language of provenance, condition and storage, and to know when a bottle is better opened than sold.",
+        "src": "Vinetur, citing Acker and Sotheby's",
+        "url": "https://www.vinetur.com/cn/20260907106729/collectible-wine-auctions-posted-a-stronger-first-half-in-2026.html"
+      },
+      {
+        "cat": "The Private World",
+        "place": "Abu Dhabi, United Arab Emirates",
+        "tag": "Mansions with a concierge",
+        "section": "The Private World",
+        "title": "Mandarin Oriental will run 35 private mansions in the grounds of Emirates Palace, with handover set for 2029",
+        "body": "Emirates Palace Company, developing with LEAD Development, has announced Emirates Palace, Mandarin Oriental Mansions: 35 standalone private mansions on the shoreline within the grounds of Emirates Palace, Mandarin Oriental, Abu Dhabi. The announcement dates from May 2026, and handover is scheduled for 2029. Mandarin Oriental will provide residential services on the owner's behalf, and the project joins its Residences portfolio.\n\nEach mansion is designed around privacy, sea views and landscaped outdoor space, with courtyards and gardens, and the architecture draws on the heritage and coastline of Abu Dhabi. Residents share a lounge with a Mandarin Oriental tea library, private meeting and work rooms, a residential style bar, a private beach club with cabanas, a children's room, a golf simulator and a chef's table, all linked to the hotel's own services. Sizes and prices were not published.\n\nThe model is increasingly familiar: a private house whose services, from housekeeping to dining, are supplied by a hotel operator rather than by the family's own employees.",
+        "why": "Where the operator supplies the services, the family still needs someone to set standards, brief the team and protect privacy. The estate manager's role shifts from running staff to directing a service contract.",
+        "src": "Travel Daily News",
+        "url": "https://www.traveldailynews.com/hotels-lodging/mandarin-oriental-announces-standalone-mansions-in-abu-dhabi/"
+      }
+    ],
+    "briefs": [
+      {
+        "t": "One in six yachts is for sale",
+        "b": "Northrop & Johnson counts a global fleet of about 12,775 yachts at 1 October 2026, of which 2,197, or 17.2 per cent, are on the market. The asking value totals USD 19.5 billion, an average of USD 9.7 million.",
+        "src": "Northrop & Johnson",
+        "url": "https://www.northropandjohnson.com/navigator-news/brokerage-new-build/q3-2026-superyacht-market-report"
+      },
+      {
+        "t": "Autumn boat shows put 104 new builds on display",
+        "b": "The Cannes Yachting Festival showed 60 new builds from 33 brands, including two world premieres, and the Monaco Yacht Show 44 from 33 brands. Together they set the delivery calendar owners will plan around.",
+        "src": "Northrop & Johnson",
+        "url": "https://www.northropandjohnson.com/navigator-news/brokerage-new-build/q3-2026-superyacht-market-report"
+      },
+      {
+        "t": "Christie's and Sotheby's recovery rests on a few large sales",
+        "b": "Christie's posted USD 2.7 billion in the first half, up 78 per cent, and Sotheby's USD 2.3 billion, up 88 per cent, with the latter leaning on the USD 392.6 million Lewis Collection sale. USA Art News calls the recovery uneven.",
+        "src": "USA Art News",
+        "url": "https://usaartnews.com/news/the-big-three-auction-houses-tell-two-different-stories/"
+      }
+    ]
+  },
+  {
     "no": "No. 82",
     "date": "Tuesday, 20 October 2026",
     "strap": "A daily dispatch from the world you are entering",
